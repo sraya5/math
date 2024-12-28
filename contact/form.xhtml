@@ -5,16 +5,16 @@
 </head>
 <body>
 <style>
-  input, label {
+  input, label, textarea {
     box-sizing: border-box;
     border-radius: 1em;
+    font-family: Heebo, Arial, sans-serif;
   }
   
   input[type=text], textarea {
     width: 100%;
     padding: 0.5em;
     border: 1px solid #555555;
-    text-align: right;
   }
   
   label {
@@ -30,7 +30,7 @@
     border-radius: 0.5em;
     cursor: pointer;
     float: left;
-    font-family: 'Suez One';
+    font-family: 'Suez One', Arial, sans-serif;
     font-size: 1.2em;
   }
   
@@ -46,7 +46,7 @@
         <label>שם מלא*</label>
       </div>
       <div>
-        <input type="text" id="name" name="$name" required="required" />
+        <input type="text" id="name" name="$name" style="text-align: right;" required="required" />
       </div>
     </div>
     <div class="row">
@@ -59,7 +59,7 @@
     </div>
     <div class="row">
       <label>כאן המקום לכתוב לי כל מה שתרצו*</label>
-      <textarea id="message" name="message" style="height: 7em;" required="required"></textarea>
+      <textarea id="message" name="message" style="height: 7em; text-align: right;" required="required"></textarea>
     </div>
     <div class="row">
       <input type="hidden" name="redirectTo" value="https://math.srayaa.com/contact" />
