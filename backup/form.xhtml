@@ -1,0 +1,120 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+<div class="container" style="background-color: #CCCCCC;" align="right">
+    <form action="https://api.staticforms.xyz/submit" method="post" id="staticform">
+      <input type="hidden" name="accessKey" value="7fbb3704-f316-4b2d-96d7-cde1713fa322">
+      <div class="field">
+        <label class="label">שם מלא*</label>
+        <div class="control">
+          <input class="input" type="text" name="$name" size="60" style="font-family: Heebo, Arial, sans-serif; font-size: 0.8em; text-align: right;" required>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">כתובת דוא"ל לתשובה (אופציונלי)</label>
+        <div class="control">
+          <input class="input" type="email" name="$email" size="60" style="font-family: Heebo, Arial, sans-serif; font-size: 0.8em;">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">כאן המקום לכתוב לי כל מה שתרצו*</label>
+        <div class="control">
+          <textarea class="textarea" name="message" cols="60" rows="5" style="font-family: Heebo, Arial, sans-serif; font-size: 0.8em; text-align: right;" required></textarea>
+        </div>
+      </div>
+      <button class="button is-primary" type="Submit" style="background-color: #084149; font-family: Suez One, serif; font-size: 1.5em; color: white; cursor: pointer; padding-left: 0.5em; padding-right: 0.5em;">שלח</button>
+    </form>
+</div>
+
+<div class="container" style="background-color: #CCCCCC;" align="right">
+  <form action="https://api.staticforms.xyz/submit" method="post" id="staticform">
+    <div class="row">
+      <div class="col-25">
+        <label for="$fname">שם*</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="name" name="$name">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">>כאן המקום לכתוב לי כל מה שתרצו*</label>
+      </div>
+      <div class="col-75">
+        <textarea id="message" name="message" style="height:200px"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+</body>
+</html>
