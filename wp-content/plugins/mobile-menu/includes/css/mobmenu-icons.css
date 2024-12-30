@@ -3,8 +3,8 @@
 /* Mobile Menu Admin CSS Style*/
 @font-face {
   font-family: 'mobmenu';
-  src: url('https://math.srayaa.com/wp-content/plugins/mobile-menu/includes/css/font/mobmenu.woff2?31192480') format('woff2'),
-       url('https://math.srayaa.com/wp-content/plugins/mobile-menu/includes/css/font/mobmenu.woff?31192480') format('woff');
+  src: url('font/mobmenu.woff2?31192480') format('woff2'),
+       url('font/mobmenu.woff?31192480') format('woff');
   font-weight: normal;
   font-style: normal;
 }
