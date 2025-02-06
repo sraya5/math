@@ -1,11 +1,8 @@
-import { hideElemByClass, toggleTailByClass } from 'hiding.js';
-import { treeView } from 'treeview.js';
-
 document.addEventListener("DOMContentLoaded", function() {
     function hideElemByClass(checkbox, classNames) {
         classNames.forEach(name => {
             document.querySelectorAll(`.${name}`).forEach(el => {
-                el.style.display = checkbox.checked ? "none" : "block";
+                el.style.display = checkbox.checked ? "block" : "none";
             });
         })
     }
