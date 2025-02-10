@@ -1,4 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
+    const root = document.getRootNode()
+    document.querySelectorAll(".Formula").forEach(el => {
+        if (el.clientWidth > screen.width*0.8) {
+            el.setAttribute("display", "none")
+        }
+    })
+
     function hideElemByClass(checkbox, classNames) {
         classNames.forEach(name => {
             document.querySelectorAll(`.${name}`).forEach(el => {
