@@ -16,13 +16,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #content_column * {
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
 #toc_container * {
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
 #tools_container * {
-    font-size: 0.8em;
+    font-size: 1em;
 }
