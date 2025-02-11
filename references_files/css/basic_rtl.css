@@ -8,6 +8,7 @@ body {
       color: light-dark(black, white);
       background-color: light-dark(white, black);
       position: relative;
+      font-size: 1.2em;
 }
 
 
