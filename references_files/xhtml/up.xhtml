@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="he-IL">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+    <style>
+        #scrollButton {
+            position: fixed; /* Keeps the button in a fixed position */
+            bottom: 0.7em; /* Distance from the bottom */
+            right: 0.7em; /* Distance from the right */
+            height: 1.5em;
+            width: 1.5em;
+            font-size: xx-large;
+            font-weight: bolder;
+            color: white;
+            cursor: pointer;
+            background-color: #084149;
+            opacity: 80%;
+        }
+    </style>
+    <button id="scrollButton" onclick="scrollToTop()">&#11165;</button>
+    <script>
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    </script>
+</body>
