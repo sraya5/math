@@ -14,7 +14,6 @@ h1, h2, h3, h4, h5, h6 {
     width: 0.6vw; /* Fixed width */
     overflow-x: auto; /* Enable horizontal scrolling */
     overflow-y: hidden; /* Prevent vertical scrolling */
-    white-space: nowrap; /* Keep content in a single line */
 }
 
 #content_column * {
