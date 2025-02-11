@@ -12,8 +12,9 @@ h1, h2, h3, h4, h5, h6 {
 
 #content_column {
     width: 0.6vw; /* Fixed width */
+    height: 0.8vh;
     overflow-x: auto; /* Enable horizontal scrolling */
-    overflow-y: hidden; /* Prevent vertical scrolling */
+    overflow-y: auto; /* Prevent vertical scrolling */
 }
 
 #content_column * {
