@@ -11,12 +11,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #content_column {
-    width: 0.6vw; /* Fixed width */
+    width: 0.6vw;
     height: 0.8vh;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    overflow-y: auto; /* Prevent vertical scrolling */
-}
-
-#content_column * {
-    display: inline-block; /* Ensures proper height adjustment */
+    overflow-x: auto;
+    overflow-y: auto;
 }
