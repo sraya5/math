@@ -11,7 +11,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #content_column {
-    width: 0.6vw;
     overflow-x: auto;
     overflow-y: hidden;
+}
+
+#content_column * {
+    font-size: small;
+}
+
+#toc_container * {
+    font-size: small;
+}
+
+#tools_container * {
+    font-size: small;
 }
