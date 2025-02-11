@@ -14,3 +14,7 @@ h1, h2, h3, h4, h5, h6 {
     overflow-x: auto;
     overflow-y: hidden;
 }
+
+.toc {
+    font-size: small;
+}
