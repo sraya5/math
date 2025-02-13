@@ -18,7 +18,7 @@
       <topic en_name="about_polynomials" he_name="על פולינומים" />
     </course>
   </branch>
-  <branch en_name="analysis" he_name="">
+  <branch en_name="analysis" he_name="אנליזה">
     <course en_name="calculus_1" course_number="80131" lecturer="רז קופרמן" semester="ב' תשפ&quot;ב" he_name="חשבון אינפיניטסימלי (1)">
       <title en_name="basic_subjects" he_name="נושאים בסיסיים">
         <import en_name="naive_set_theory" he_name="תורת הקבוצות הנאיבית" />
@@ -123,8 +123,8 @@
       </topic>
       <topic en_name="diophantine_approximations" he_name="קירובים דיופנטיים" />
     </course>
-    <course en_name="set_teory" course_number="80200" lecturer="עומר בן-נריה" tutor="דניאל יוסוב" semester="ב' תשפ&quot;ד" he_name="תורת הקבוצות">
-      <none ne_name="none" he_name="הסיכומים עדיין לא נכתבו" />
+    <course en_name="set_theory" course_number="80200" lecturer="עומר בן-נריה" tutor="דניאל יוסוב" semester="ב' תשפ&quot;ד" he_name="תורת הקבוצות">
+      <none en_name="none" he_name="הסיכומים עדיין לא נכתבו" />
     </course>
     <course en_name="probability" course_number="80420" lecturer="אורי גוראל-גורביץ" tutor="אמיר בכר" semester="א' תשפ&quot;ה" he_name="תורת ההסתברות (1)">
       <topic en_name="discrete_probability" he_name="הסתברות בדידה" />
