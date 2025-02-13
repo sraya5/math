@@ -2,11 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Suez+One&display=swap');
 
 
-@media only screen and (max-width: 950px) {
-    .desktop {display: none;}
-    .desktop * {display: none;}
-    footer {align-items: center;}
-    footer * {align-items: center;}
+.desktop {display: none;}
+.desktop * {display: none;}
+
+@media only screen and (min-width: 950px) {
+    .desktop {display: block;}
+    .desktop * {display: block;}
+    .mobile {display: none;}
+    .mobile * {display: none;}
 }
 
 
