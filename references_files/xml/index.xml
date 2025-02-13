@@ -2,32 +2,46 @@
 <root he_name="">
   <branch en_name="beginning" he_name="התחלה">
     <course en_name="introductions" he_name="הקדמות">
-      <topic en_name="a_mathematician's_apology" he_name="התנצלותו של המתמטיקאי" />
-      <topic en_name="common_mistakes" he_name="טעויות נפצות" />
-      <topic en_name="introduction_for_university_mathematics" he_name="הקדמה למתמטיקה אוניברסיטאית" />
       <topic en_name="README" he_name="README" />
+      <topic en_name="common_mistakes" he_name="טעויות נפצות" />
+      <topic en_name="a_mathematician's_apology" he_name="התנצלותו של המתמטיקאי" />
+      <topic en_name="introduction_for_university_mathematics" he_name="הקדמה למתמטיקה אוניברסיטאית" />
     </course>
     <course en_name="basic_subjects" he_name="נושאים בסיסיים">
-      <topic en_name="about_fields" he_name="על שדות" />
-      <topic en_name="about_polynomials" he_name="על פולינומים" />
-      <topic en_name="about_solving_equations_and_the_quadratic_formula" he_name="על פתרון משוואות ונוסחת השורשים" />
       <topic en_name="naive_set_theory" he_name="תורת הקבוצות הנאיבית" />
-      <topic en_name="the_complex_numbers" he_name="המספרים המרוכבים" />
+      <topic en_name="about_fields" he_name="על שדות" />
+      <topic en_name="about_solving_equations_and_the_quadratic_formula" he_name="על פתרון משוואות ונוסחת השורשים" />
+      <title en_name="the_complex_numbers" he_name="המספרים המרוכבים">
+        <introduction en_name="introduction-essence_of_the_complex_numbers" he_name="הקדמה - מהות המספרים המרוכבים" />
+        <topic en_name="the_complex_numbers" he_name="המספרים המרוכבים" />
+      </title>
+      <topic en_name="about_polynomials" he_name="על פולינומים" />
     </course>
   </branch>
   <branch en_name="analysis" he_name="">
     <course en_name="calculus_1" course_number="80131" lecturer="רז קופרמן" semester="ב' תשפ&quot;ב" he_name="חשבון אינפיניטסימלי (1)">
+      <title en_name="basic_subjects" he_name="נושאים בסיסיים">
+        <import en_name="naive_set_theory" he_name="תורת הקבוצות הנאיבית" />
+        <import en_name="about_fields" he_name="על שדות" />
+        <import en_name="about_solving_equations_and_the_quadratic_formula" he_name="על פתרון משוואות ונוסחת השורשים" />
+      </title>
       <topic en_name="the_real_numbers" he_name="המספרים הממשיים" />
       <topic en_name="sequences" he_name="סדרות" />
       <topic en_name="functions" he_name="פונקציות" />
       <topic en_name="derivatives" he_name="נגזרות" />
     </course>
     <course en_name="calculus_2" course_number="80132" lecturer="יורם לסט" semester="א' תשפ&quot;ג" he_name="חשבון אינפיניטסימלי (2)">
-      <topic en_name="series" he_name="טורים" />
-      <topic en_name="integrals" he_name="אינטגרלים">
-        <subtopic en_name="calculate_integrals_examples" he_name="דוגמאות לחישובי אינטגרלים" />
-        <subtopic en_name="integration_of_rational_functions" he_name="אינטגרציה של פונקציה רציונלית" />
-      </topic>
+      <title en_name="series" he_name="טורים">
+        <introduction en_name="introduction-countable_sets_and_infinity_sums" he_name="הקדמה - קבוצות בנות מנייה וסכומים אין-סופיים" />
+        <topic en_name="series" he_name="טורים" />
+        <appendix en_name="the_hyperbolic_functions" he_name="הפונקציות ההיפרבוליות" />
+      </title>
+      <title en_name="integrals" he_name="אינטגרלים">
+        <introduction en_name="introduction-about_areas_and_integrals" he_name="הקדמה - על שטחים ואינטגרלים" />
+        <topic en_name="integrals" he_name="אינטגרלים" />
+        <appendix en_name="integration_of_rational_functions" he_name="אינטגרציה של פונקציה רציונלית" />
+        <appendix en_name="calculate_integrals_examples" he_name="דוגמאות לחישובי אינטגרלים" />
+      </title>
       <topic en_name="sequences_and_series_of_functions" he_name="סדרות וטורים של פונקציות" />
     </course>
     <course en_name="elementary_multivariate_analysis" course_number="80116" lecturer="נועה ניצן" semester="ב' תשפ&quot;ג" he_name="אנליזה אלמנטרית רב-ממדית">
@@ -42,6 +56,10 @@
       <topic en_name="integrals" he_name="אינטגרלים" />
     </course>
     <course en_name="complex_variables" course_number="80519" lecturer="אילון לינדנשטראוס" tutor="שאול (שאולי) רגימוב" semester="א' תשפ&quot;ד" he_name="פונקציות מרוכבות">
+      <title en_name="the_complex_numbers" he_name="המספרים המרוכבים">
+        <import en_name="introduction-essence_of_the_complex_numbers" he_name="הקדמה - מהות המספרים המרוכבים" />
+        <import en_name="the_complex_numbers" he_name="המספרים המרוכבים" />
+      </title>
       <topic en_name="introduction_for_complex_analysis" he_name="מבוא לאנליזה מרוכבת" />
       <topic en_name="analytic_functions" he_name="פונקציות אנליטיות" />
     </course>
@@ -50,6 +68,9 @@
       <topic en_name="integrals_on_manifolds" he_name="אינגרלים על יריעות" />
       <topic en_name="divergence_theorem" he_name="משפט הדיברגנץ" />
     </course>
+    <course en_name="functional_analysis" course_number="80417" lecturer="שיא מאור" tutor="גיא ספיר" semester="ב' תשפ&quot;ד" he_name="אנליזה פונקציונלית">
+      <none en_name="None" he_name="לא נכתב" />
+    </course>
     <course en_name="extras" he_name="תוספות">
       <topic en_name="global_Cauchy_characterization_for_limit" he_name="תנאי קושי כללי לקיום גבול" />
       <topic en_name="pathologic_functions_repository" he_name="מאגר פונקציות פתולוגיות" />
@@ -57,20 +78,33 @@
   </branch>
   <branch en_name="algebra" he_name="אלגברה">
     <course en_name="linear_algebra_1" course_number="80134" lecturer="ערן נבו" semester="ב' תשפ&quot;ג" he_name="אלגברה לינארית (1)">
-      <topic en_name="introduction_for_linear_algebra" he_name="הקדמה לאלגברה לינארית" />
+      <title en_name="basic_subjects" he_name="נושאים בסיסיים">
+        <import en_name="naive_set_theory" he_name="תורת הקבוצות הנאיבית" />
+        <import en_name="about_fields" he_name="על שדות" />
+      </title>
+      <introduction en_name="introduction_for_linear_algebra" he_name="הקדמה לאלגברה לינארית" />
       <topic en_name="vector_spaces" he_name="מרחבים וקטוריים" />
       <topic en_name="matrices_and_coordinates_spaces" he_name="מטריצות ומרחבי קואורדינטות" />
       <topic en_name="linear_transformations" he_name="העתקות לינאריות" />
       <topic en_name="volume_forms" he_name="פונקציות נפח" />
     </course>
     <course en_name="linear_algebra_2" course_number="80135" lecturer="איתמר צביק" tutor="גיל לבנה ויואב כהן" semester="א' תשפ&quot;ג" he_name="אלגברה לינארית (2)">
+      <title en_name="the_complex_numbers" he_name="המספרים המרוכבים">
+        <import en_name="introduction-essence_of_the_complex_numbers" he_name="הקדמה - מהות המספרים המרוכבים" />
+        <import en_name="the_complex_numbers" he_name="המספרים המרוכבים" />
+      </title>
+      <import en_name="about_polynomials" he_name="על פולינומים" />
       <topic en_name="operators" he_name="אופרטורים" />
-      <topic en_name="inner_product_space" he_name="מרחבי מכפלה פנימית" />
+      <title en_name="inner_product_space" he_name="מרחבי מכפלה פנימית">
+        <introduction en_name="introduction-length,_angle_and_the_dot_product" he_name="הקדמה - אורך, זווית והמכפלה הסקלרית" />
+        <topic en_name="inner_product_space" he_name="מרחבי מכפלה פנימית" />
+      </title>
     </course>
     <course en_name="algebraic_structures_1" course_number="80445" lecturer="אורי פרזנצ'בסקי" tutor="ליאור נייהויזר" semester="א' תשפ&quot;ד" he_name="מבנים אלגבריים (1)">
       <topic en_name="group_theory" he_name="תורת החבורות" />
+      <topic en_name="important_groups" he_name="חבורות חשובות" />
     </course>
-    <course en_name="algebraic_structures_2" course_number="80446" lecturer="שי אברה" tutor="אור רז" semester="ב'" he_name="מבנים אלגבריים (2)">
+    <course en_name="algebraic_structures_2" course_number="80446" lecturer="שי אברה" tutor="אור רז" semester="ב' תשפ&quot;ד" he_name="מבנים אלגבריים (2)">
       <topic en_name="ring_theory" he_name="תורת החוגים" />
       <topic en_name="field_theory" he_name="תורת השדות" />
       <topic en_name="Galois_theory" he_name="תורת גלואה" />
@@ -78,18 +112,25 @@
   </branch>
   <branch en_name="additional_branches" he_name="ענפים נוספים">
     <course en_name="discrete_mathematics" course_number="80181" lecturer="צור לוריא" tutor="שני שלומי" semester="א' תשפ&quot;ג" he_name="מתמטיקה בדידה">
+      <import en_name="naive_set_theory" he_name="תורת הקבוצות הנאיבית" />
+      <none en_name="combinatorics" he_name="קומבינטוריקה" />
       <topic en_name="graph_theory" he_name="תורת הגרפים" />
     </course>
     <course en_name="number_theory" course_number="80115" lecturer="אהוד (אודי) דה-שליט" tutor="גיא ספיר" semester="ב' תשפ&quot;ג" he_name="תורת המספרים">
       <topic en_name="divisibility" he_name="התחלקות" />
       <topic en_name="modular_arithmetic" he_name="חשבון מודולרי">
-        <subtopic en_name="appendices_for_modular_arithmetics-definitions_and_theorems" he_name="נספחים לחשבון מודולרי" />
+        <appendix en_name="appendices_for_modular_arithmetics-definitions_and_theorems" he_name="נספחים לחשבון מודולרי" />
       </topic>
       <topic en_name="diophantine_approximations" he_name="קירובים דיופנטיים" />
     </course>
-    <course en_name="probability" course_number="80420" lecturer="אורי גוראל-גורביץ" tutor="אמיר בכר" semester="א" he_name="תורת ההסתברות (1)">
+    <course en_name="set_teory" course_number="80200" lecturer="עומר בן-נריה" tutor="דניאל יוסוב" semester="ב' תשפ&quot;ד" he_name="תורת הקבוצות">
+      <none ne_name="none" he_name="הסיכומים עדיין לא נכתבו" />
+    </course>
+    <course en_name="probability" course_number="80420" lecturer="אורי גוראל-גורביץ" tutor="אמיר בכר" semester="א' תשפ&quot;ה" he_name="תורת ההסתברות (1)">
       <topic en_name="discrete_probability" he_name="הסתברות בדידה" />
     </course>
-    <course en_name="Euclidean_geometry" he_name="גאוטמטריה אוקלידית" />
+    <course en_name="Euclidean_geometry" he_name="גאוטמטריה אוקלידית">
+      <topic en_name="first_file" he_name="קובץ ראשון" />
+    </course>
   </branch>
 </root>
