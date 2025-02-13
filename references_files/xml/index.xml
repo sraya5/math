@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='utf8'?>
+<root he_name="">
+  <branch en_name="beginning" he_name="התחלה">
+    <course en_name="introductions" he_name="הקדמות">
+      <topic en_name="a_mathematician's_apology" he_name="התנצלותו של המתמטיקאי" />
+      <topic en_name="common_mistakes" he_name="טעויות נפצות" />
+      <topic en_name="introduction_for_university_mathematics" he_name="הקדמה למתמטיקה אוניברסיטאית" />
+      <topic en_name="README" he_name="README" />
+    </course>
+    <course en_name="basic_subjects" he_name="נושאים בסיסיים">
+      <topic en_name="about_fields" he_name="על שדות" />
+      <topic en_name="about_polynomials" he_name="על פולינומים" />
+      <topic en_name="about_solving_equations_and_the_quadratic_formula" he_name="על פתרון משוואות ונוסחת השורשים" />
+      <topic en_name="naive_set_theory" he_name="תורת הקבוצות הנאיבית" />
+      <topic en_name="the_complex_numbers" he_name="המספרים המרוכבים" />
+    </course>
+  </branch>
+  <branch en_name="analysis" he_name="">
+    <course en_name="calculus_1" course_number="80131" lecturer="רז קופרמן" semester="ב' תשפ&quot;ב" he_name="חשבון אינפיניטסימלי (1)">
+      <topic en_name="the_real_numbers" he_name="המספרים הממשיים" />
+      <topic en_name="sequences" he_name="סדרות" />
+      <topic en_name="functions" he_name="פונקציות" />
+      <topic en_name="derivatives" he_name="נגזרות" />
+    </course>
+    <course en_name="calculus_2" course_number="80132" lecturer="יורם לסט" semester="א' תשפ&quot;ג" he_name="חשבון אינפיניטסימלי (2)">
+      <topic en_name="series" he_name="טורים" />
+      <topic en_name="integrals" he_name="אינטגרלים">
+        <subtopic en_name="calculate_integrals_examples" he_name="דוגמאות לחישובי אינטגרלים" />
+        <subtopic en_name="integration_of_rational_functions" he_name="אינטגרציה של פונקציה רציונלית" />
+      </topic>
+      <topic en_name="sequences_and_series_of_functions" he_name="סדרות וטורים של פונקציות" />
+    </course>
+    <course en_name="elementary_multivariate_analysis" course_number="80116" lecturer="נועה ניצן" semester="ב' תשפ&quot;ג" he_name="אנליזה אלמנטרית רב-ממדית">
+      <topic en_name="the_space" he_name="המרחב" />
+      <topic en_name="sequences_and_functions" he_name="סדרות ופונקציות" />
+      <topic en_name="differentiability" he_name="דיפרנציאביליות" />
+      <topic en_name="multivariate_integrals" he_name="אינטגרלים רב-ממדיים" />
+    </course>
+    <course en_name="calculus_3" course_number="80415" lecturer="תמר (תמי) ציגלר" semester="א' תשפ&quot;ד" he_name="חשבון אינפיניטסימלי (3)">
+      <topic en_name="metric_spaces" he_name="מרחבים מטריים" />
+      <topic en_name="differentiability" he_name="דיפרנציאביליות" />
+      <topic en_name="integrals" he_name="אינטגרלים" />
+    </course>
+    <course en_name="complex_variables" course_number="80519" lecturer="אילון לינדנשטראוס" tutor="שאול (שאולי) רגימוב" semester="א' תשפ&quot;ד" he_name="פונקציות מרוכבות">
+      <topic en_name="introduction_for_complex_analysis" he_name="מבוא לאנליזה מרוכבת" />
+      <topic en_name="analytic_functions" he_name="פונקציות אנליטיות" />
+    </course>
+    <course en_name="analysis_on_manifolds" course_number="80416" lecturer="אור הרשקוביץ" tutor="אור קדר" semester="ב' תשפ&quot;ד" he_name="אנליזה על יריעות">
+      <topic en_name="integrals_along_curves" he_name="אינטגרלים לאורך מסילות" />
+      <topic en_name="integrals_on_manifolds" he_name="אינגרלים על יריעות" />
+      <topic en_name="divergence_theorem" he_name="משפט הדיברגנץ" />
+    </course>
+    <course en_name="extras" he_name="תוספות">
+      <topic en_name="global_Cauchy_characterization_for_limit" he_name="תנאי קושי כללי לקיום גבול" />
+      <topic en_name="pathologic_functions_repository" he_name="מאגר פונקציות פתולוגיות" />
+    </course>
+  </branch>
+  <branch en_name="algebra" he_name="אלגברה">
+    <course en_name="linear_algebra_1" course_number="80134" lecturer="ערן נבו" semester="ב' תשפ&quot;ג" he_name="אלגברה לינארית (1)">
+      <topic en_name="introduction_for_linear_algebra" he_name="הקדמה לאלגברה לינארית" />
+      <topic en_name="vector_spaces" he_name="מרחבים וקטוריים" />
+      <topic en_name="matrices_and_coordinates_spaces" he_name="מטריצות ומרחבי קואורדינטות" />
+      <topic en_name="linear_transformations" he_name="העתקות לינאריות" />
+      <topic en_name="volume_forms" he_name="פונקציות נפח" />
+    </course>
+    <course en_name="linear_algebra_2" course_number="80135" lecturer="איתמר צביק" tutor="גיל לבנה ויואב כהן" semester="א' תשפ&quot;ג" he_name="אלגברה לינארית (2)">
+      <topic en_name="operators" he_name="אופרטורים" />
+      <topic en_name="inner_product_space" he_name="מרחבי מכפלה פנימית" />
+    </course>
+    <course en_name="algebraic_structures_1" course_number="80445" lecturer="אורי פרזנצ'בסקי" tutor="ליאור נייהויזר" semester="א' תשפ&quot;ד" he_name="מבנים אלגבריים (1)">
+      <topic en_name="group_theory" he_name="תורת החבורות" />
+    </course>
+    <course en_name="algebraic_structures_2" course_number="80446" lecturer="שי אברה" tutor="אור רז" semester="ב'" he_name="מבנים אלגבריים (2)">
+      <topic en_name="ring_theory" he_name="תורת החוגים" />
+      <topic en_name="field_theory" he_name="תורת השדות" />
+      <topic en_name="Galois_theory" he_name="תורת גלואה" />
+    </course>
+  </branch>
+  <branch en_name="additional_branches" he_name="ענפים נוספים">
+    <course en_name="discrete_mathematics" course_number="80181" lecturer="צור לוריא" tutor="שני שלומי" semester="א' תשפ&quot;ג" he_name="מתמטיקה בדידה">
+      <topic en_name="graph_theory" he_name="תורת הגרפים" />
+    </course>
+    <course en_name="number_theory" course_number="80115" lecturer="אהוד (אודי) דה-שליט" tutor="גיא ספיר" semester="ב' תשפ&quot;ג" he_name="תורת המספרים">
+      <topic en_name="divisibility" he_name="התחלקות" />
+      <topic en_name="modular_arithmetic" he_name="חשבון מודולרי">
+        <subtopic en_name="appendices_for_modular_arithmetics-definitions_and_theorems" he_name="נספחים לחשבון מודולרי" />
+      </topic>
+      <topic en_name="diophantine_approximations" he_name="קירובים דיופנטיים" />
+    </course>
+    <course en_name="probability" course_number="80420" lecturer="אורי גוראל-גורביץ" tutor="אמיר בכר" semester="א" he_name="תורת ההסתברות (1)">
+      <topic en_name="discrete_probability" he_name="הסתברות בדידה" />
+    </course>
+    <course en_name="Euclidean_geometry" he_name="גאוטמטריה אוקלידית" />
+  </branch>
+</root>
