@@ -29,6 +29,20 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <style id='wp-block-heading-inline-css'>
 h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-background,h6.has-background{padding:1.25em 2.375em}h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]){rotate:180deg}
 </style>
+<style id='wp-block-paragraph-inline-css'>
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:right;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em 0 0 .1em;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-right:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
+</style>
+<style id='wp-block-list-inline-css'>
+ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:1.25em 2.375em}
+
+				ul.is-style-checkmark-list {
+					list-style-type: "\2713";
+				}
+
+				ul.is-style-checkmark-list li {
+					padding-inline-start: 1ch;
+				}
+</style>
 <style id='wp-block-post-content-inline-css'>
 .wp-block-post-content{display:flow-root}
 </style>
@@ -68,9 +82,11 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
 :root :where(.wp-block-navigation){font-size: var(--wp--preset--font-size--medium);}
 :root :where(.wp-block-navigation a:where(:not(.wp-element-button))){text-decoration: none;}
 :root :where(.wp-block-navigation a:where(:not(.wp-element-button)):hover){text-decoration: underline;}
+:root :where(.wp-block-list){line-height: 1.5;margin-top: 0;margin-bottom: 0;}:root :where(.wp-block-list li){margin-top: 0.5rem;}
+:root :where(.wp-block-list > li){line-height: 1.5;margin-top: 0;margin-right: 0;margin-bottom: 0;margin-left: 0;padding-top: 0px;padding-right: 0;padding-bottom: 0px;padding-left: 0;}
 </style>
 <style id='core-block-supports-inline-css'>
-.wp-elements-43e55d99e6b500b2547b7f2000f9120d a:where(:not(.wp-element-button)){color:var(--wp--preset--color--base);}.wp-elements-43e55d99e6b500b2547b7f2000f9120d a:where(:not(.wp-element-button)):hover{color:var(--wp--preset--color--accent-3);}.wp-container-core-navigation-is-layout-1{gap:var(--wp--preset--spacing--30);}.wp-container-core-group-is-layout-1{flex-wrap:nowrap;gap:var(--wp--preset--spacing--30);}.wp-container-core-group-is-layout-2{flex-wrap:nowrap;justify-content:space-between;}.wp-elements-c21862f3003b1343b97d4e08180cf8e0 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--base);}.wp-container-core-group-is-layout-3{flex-direction:column;align-items:center;}.wp-container-core-group-is-layout-4 > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width:1000px;margin-left:auto !important;margin-right:auto !important;}.wp-container-core-group-is-layout-4 > .alignwide{max-width:1000px;}.wp-container-core-group-is-layout-4 .alignfull{max-width:none;}.wp-container-core-group-is-layout-4 > .alignfull{margin-right:calc(var(--wp--preset--spacing--40) * -1);margin-left:calc(var(--wp--preset--spacing--40) * -1);}.wp-container-core-post-content-is-layout-1 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-post-content-is-layout-1 > * + *{margin-block-start:0;margin-block-end:0;}.wp-elements-245daf2bf83b7cb991c9dd60d6a14300 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--base);}.wp-elements-245daf2bf83b7cb991c9dd60d6a14300 a:where(:not(.wp-element-button)):hover{color:var(--wp--preset--color--accent-3);}.wp-container-core-navigation-is-layout-2{gap:var(--wp--preset--spacing--20);flex-direction:column;align-items:flex-start;}.wp-container-core-group-is-layout-5{flex-direction:column;align-items:flex-start;}.wp-container-core-navigation-is-layout-3{gap:var(--wp--preset--spacing--20);flex-direction:column;align-items:flex-start;}.wp-container-core-group-is-layout-6{flex-direction:column;align-items:flex-start;}.wp-container-core-group-is-layout-7{gap:var(--wp--preset--spacing--80);}.wp-container-core-group-is-layout-8{flex-direction:column;align-items:flex-start;justify-content:center;}.wp-container-core-group-is-layout-9{flex-direction:column;align-items:flex-start;justify-content:flex-start;}.wp-container-core-group-is-layout-10{flex-wrap:nowrap;gap:var(--wp--preset--spacing--20);}.wp-container-core-group-is-layout-11{flex-direction:column;align-items:flex-end;justify-content:space-between;}.wp-container-core-group-is-layout-12{justify-content:space-between;align-items:stretch;}.wp-container-core-group-is-layout-13 > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width:1000px;margin-left:auto !important;margin-right:auto !important;}.wp-container-core-group-is-layout-13 > .alignwide{max-width:1000px;}.wp-container-core-group-is-layout-13 .alignfull{max-width:none;}.wp-duotone-rgb255255255-rgb255255255-2.wp-block-site-logo img, .wp-duotone-rgb255255255-rgb255255255-2.wp-block-site-logo .components-placeholder__illustration, .wp-duotone-rgb255255255-rgb255255255-2.wp-block-site-logo .components-placeholder::before{filter:url(#wp-duotone-rgb255255255-rgb255255255-2);}.wp-duotone-rgb255255255-rgb255255255-4.wp-block-site-logo img, .wp-duotone-rgb255255255-rgb255255255-4.wp-block-site-logo .components-placeholder__illustration, .wp-duotone-rgb255255255-rgb255255255-4.wp-block-site-logo .components-placeholder::before{filter:url(#wp-duotone-rgb255255255-rgb255255255-4);}.wp-duotone-rgb255255255-rgb255255255-5.wp-block-image img, .wp-duotone-rgb255255255-rgb255255255-5.wp-block-image .components-placeholder{filter:url(#wp-duotone-rgb255255255-rgb255255255-5);}
+.wp-elements-43e55d99e6b500b2547b7f2000f9120d a:where(:not(.wp-element-button)){color:var(--wp--preset--color--base);}.wp-elements-43e55d99e6b500b2547b7f2000f9120d a:where(:not(.wp-element-button)):hover{color:var(--wp--preset--color--accent-3);}.wp-container-core-navigation-is-layout-1{gap:var(--wp--preset--spacing--30);}.wp-container-core-group-is-layout-1{flex-wrap:nowrap;gap:var(--wp--preset--spacing--30);}.wp-container-core-group-is-layout-2{flex-wrap:nowrap;justify-content:space-between;}.wp-elements-c21862f3003b1343b97d4e08180cf8e0 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--base);}.wp-container-core-group-is-layout-3{flex-direction:column;align-items:center;}.wp-container-core-group-is-layout-4{flex-direction:column;align-items:stretch;}.wp-container-core-group-is-layout-5{flex-direction:column;align-items:flex-start;}.wp-container-core-group-is-layout-6 > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width:1000px;margin-left:auto !important;margin-right:auto !important;}.wp-container-core-group-is-layout-6 > .alignwide{max-width:1000px;}.wp-container-core-group-is-layout-6 .alignfull{max-width:none;}.wp-container-core-group-is-layout-6 > .alignfull{margin-right:calc(var(--wp--preset--spacing--40) * -1);margin-left:calc(var(--wp--preset--spacing--40) * -1);}.wp-container-core-post-content-is-layout-1 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-post-content-is-layout-1 > * + *{margin-block-start:0;margin-block-end:0;}.wp-elements-245daf2bf83b7cb991c9dd60d6a14300 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--base);}.wp-elements-245daf2bf83b7cb991c9dd60d6a14300 a:where(:not(.wp-element-button)):hover{color:var(--wp--preset--color--accent-3);}.wp-container-core-navigation-is-layout-2{gap:var(--wp--preset--spacing--20);flex-direction:column;align-items:flex-start;}.wp-container-core-group-is-layout-7{flex-direction:column;align-items:flex-start;}.wp-container-core-navigation-is-layout-3{gap:var(--wp--preset--spacing--20);flex-direction:column;align-items:flex-start;}.wp-container-core-group-is-layout-8{flex-direction:column;align-items:flex-start;}.wp-container-core-group-is-layout-9{gap:var(--wp--preset--spacing--80);}.wp-container-core-group-is-layout-10{flex-direction:column;align-items:flex-start;justify-content:center;}.wp-container-core-group-is-layout-11{flex-direction:column;align-items:flex-start;justify-content:flex-start;}.wp-container-core-group-is-layout-12{flex-wrap:nowrap;gap:var(--wp--preset--spacing--20);}.wp-container-core-group-is-layout-13{flex-direction:column;align-items:flex-end;justify-content:space-between;}.wp-container-core-group-is-layout-14{justify-content:space-between;align-items:stretch;}.wp-container-core-group-is-layout-15 > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width:1000px;margin-left:auto !important;margin-right:auto !important;}.wp-container-core-group-is-layout-15 > .alignwide{max-width:1000px;}.wp-container-core-group-is-layout-15 .alignfull{max-width:none;}.wp-duotone-rgb255255255-rgb255255255-2.wp-block-site-logo img, .wp-duotone-rgb255255255-rgb255255255-2.wp-block-site-logo .components-placeholder__illustration, .wp-duotone-rgb255255255-rgb255255255-2.wp-block-site-logo .components-placeholder::before{filter:url(#wp-duotone-rgb255255255-rgb255255255-2);}.wp-duotone-rgb255255255-rgb255255255-4.wp-block-site-logo img, .wp-duotone-rgb255255255-rgb255255255-4.wp-block-site-logo .components-placeholder__illustration, .wp-duotone-rgb255255255-rgb255255255-4.wp-block-site-logo .components-placeholder::before{filter:url(#wp-duotone-rgb255255255-rgb255255255-4);}.wp-duotone-rgb255255255-rgb255255255-5.wp-block-image img, .wp-duotone-rgb255255255-rgb255255255-5.wp-block-image .components-placeholder{filter:url(#wp-duotone-rgb255255255-rgb255255255-5);}
 </style>
 <style id='wp-block-template-skip-link-inline-css'>
 
@@ -105,7 +121,7 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
 		}
 </style>
 <link rel='stylesheet' id='twentytwentyfive-style-css' href='https://math.srayaa.com/references_files/wp-content/themes/twentytwentyfive/style.css?ver=1.1' media='all' />
-<link rel='stylesheet' id='mm-compiled-options-mobmenu-css' href='https://math.srayaa.com/references_files/wp-content/uploads/dynamic-mobmenu.css?ver=2.8.7-763' media='all' />
+<link rel='stylesheet' id='mm-compiled-options-mobmenu-css' href='https://math.srayaa.com/references_files/wp-content/uploads/dynamic-mobmenu.css?ver=2.8.7-513' media='all' />
 <link rel='stylesheet' id='cssmobmenu-icons-css' href='https://math.srayaa.com/references_files/wp-content/plugins/mobile-menu/includes/css/mobmenu-icons.css?ver=6.7.2' media='all' />
 <link rel='stylesheet' id='cssmobmenu-css' href='https://math.srayaa.com/references_files/wp-content/plugins/mobile-menu/includes/css/mobmenu.css?ver=2.8.7' media='all' />
 <script src="https://math.srayaa.com/references_files/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
@@ -558,11 +574,52 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
 
 
 
-<div id="body" class="wp-block-group has-accent-3-background-color has-background has-global-padding is-layout-constrained wp-container-core-group-is-layout-4 wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--40)">
+<div class="wp-block-group has-accent-3-background-color has-background has-global-padding is-layout-constrained wp-container-core-group-is-layout-6 wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--40)">
+<div class="wp-block-group is-vertical is-content-justification-stretch is-layout-flex wp-container-core-group-is-layout-4 wp-block-group-is-layout-flex">
+<p class="has-text-align-center">החלוקה מבוססת על חלוקת הנושאים בפורטל המתמטיקה של ויקיפדיה האנגלית (ראו <a href="https://en.wikipedia.org/wiki/Portal:Mathematics" target="_blank" rel="noreferrer noopener">כאן</a> בתחתית העמוד).</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong><a href="https://math.srayaa.com/" data-type="page" data-id="70">דף הבית</a></strong>
+<ul class="wp-block-list">
+<li><a href="https://math.srayaa.com/home/private_lessons/" data-type="page" data-id="684">שיעורים פרטיים</a></li>
+
+
+
+<li><a href="https://math.srayaa.com/home/donation/" data-type="page" data-id="694">תרומה</a></li>
+</ul>
+</li>
+
+
+
+<li><strong><a href="https://math.srayaa.com/about/" data-type="page" data-id="130">אודות</a></strong>
+<ul class="wp-block-list">
+<li><a href="https://math.srayaa.com/about/dedication/" data-type="page" data-id="155">הקדשה</a></li>
+
+
+
+<li>מפת אתר (דף זה)</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+
+<div id="content_list" class="wp-block-group is-vertical is-layout-flex wp-container-core-group-is-layout-5 wp-block-group-is-layout-flex">
 
 <ul>
-  <li class="branch">התחלה<ul>
-      <li class="course">הקדמות<ul>
+  <li class="branch" style="font-size: large;">
+    <strong>
+      <a href="../../beginning">התחלה</a>
+    </strong>
+    <ul>
+      <li class="course">
+        <strong>
+          <a href="../../beginning\introductions">הקדמות</a>
+        </strong>
+        <ul>
           <li class="topic">
             <a href="../../beginning\introductions\README.xhtml">README</a>
           </li>
@@ -577,7 +634,11 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
           </li>
         </ul>
       </li>
-      <li class="course">נושאים בסיסיים<ul>
+      <li class="course">
+        <strong>
+          <a href="../../beginning\basic_subjects">נושאים בסיסיים</a>
+        </strong>
+        <ul>
           <li class="topic">
             <a href="../../beginning\basic_subjects\naive_set_theory.xhtml">תורת הקבוצות הנאיבית</a>
           </li>
@@ -603,8 +664,16 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
       </li>
     </ul>
   </li>
-  <li class="branch">אנליזה<ul>
-      <li class="course">חשבון אינפיניטסימלי (1)<ul>
+  <li class="branch" style="font-size: large;">
+    <strong>
+      <a href="../../analysis">אנליזה</a>
+    </strong>
+    <ul>
+      <li class="course">
+        <strong>
+          <a href="../../analysis\calculus_1">חשבון אינפיניטסימלי (1)</a>
+        </strong>
+        <ul>
           <li class="title">נושאים בסיסיים<ul>
               <li class="import">
                 <a href="../../beginning\basic_subjects\naive_set_theory.xhtml">תורת הקבוצות הנאיבית</a>
@@ -631,7 +700,11 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
           </li>
         </ul>
       </li>
-      <li class="course">חשבון אינפיניטסימלי (2)<ul>
+      <li class="course">
+        <strong>
+          <a href="../../analysis\calculus_2">חשבון אינפיניטסימלי (2)</a>
+        </strong>
+        <ul>
           <li class="title">טורים<ul>
               <li class="introduction">
                 <a href="../../analysis\calculus_2\series\introduction-countable_sets_and_infinity_sums.xhtml">הקדמה - קבוצות בנות מנייה וסכומים אין-סופיים</a>
@@ -664,7 +737,11 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
           </li>
         </ul>
       </li>
-      <li class="course">אנליזה אלמנטרית רב-ממדית<ul>
+      <li class="course">
+        <strong>
+          <a href="../../analysis\elementary_multivariate_analysis">אנליזה אלמנטרית רב-ממדית</a>
+        </strong>
+        <ul>
           <li class="topic">
             <a href="../../analysis\elementary_multivariate_analysis\the_space.xhtml">המרחב</a>
           </li>
@@ -679,7 +756,11 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
           </li>
         </ul>
       </li>
-      <li class="course">חשבון אינפיניטסימלי (3)<ul>
+      <li class="course">
+        <strong>
+          <a href="../../analysis\calculus_3">חשבון אינפיניטסימלי (3)</a>
+        </strong>
+        <ul>
           <li class="topic">
             <a href="../../analysis\calculus_3\metric_spaces.xhtml">מרחבים מטריים</a>
           </li>
@@ -691,7 +772,11 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
           </li>
         </ul>
       </li>
-      <li class="course">פונקציות מרוכבות<ul>
+      <li class="course">
+        <strong>
+          <a href="../../analysis\complex_variables">פונקציות מרוכבות</a>
+        </strong>
+        <ul>
           <li class="title">המספרים המרוכבים<ul>
               <li class="import">
                 <a href="../../beginning\basic_subjects\the_complex_numbers\introduction-essence_of_the_complex_numbers.xhtml">הקדמה - מהות המספרים המרוכבים</a>
@@ -709,7 +794,11 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
           </li>
         </ul>
       </li>
-      <li class="course">אנליזה על יריעות<ul>
+      <li class="course">
+        <strong>
+          <a href="../../analysis\analysis_on_manifolds">אנליזה על יריעות</a>
+        </strong>
+        <ul>
           <li class="topic">
             <a href="../../analysis\analysis_on_manifolds\integrals_along_curves.xhtml">אינטגרלים לאורך מסילות</a>
           </li>
@@ -721,11 +810,19 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
           </li>
         </ul>
       </li>
-      <li class="course">אנליזה פונקציונלית<ul>
-          <li class="none">לא נכתב</li>
+      <li class="course">
+        <strong>
+          <a href="../../analysis\functional_analysis">אנליזה פונקציונלית</a>
+        </strong>
+        <ul>
+          <li class="none has-custom-1-color">לא נכתב</li>
         </ul>
       </li>
-      <li class="course">תוספות<ul>
+      <li class="course">
+        <strong>
+          <a href="../../analysis\extras">תוספות</a>
+        </strong>
+        <ul>
           <li class="topic">
             <a href="../../analysis\extras\global_Cauchy_characterization_for_limit.xhtml">תנאי קושי כללי לקיום גבול</a>
           </li>
@@ -736,8 +833,16 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
       </li>
     </ul>
   </li>
-  <li class="branch">אלגברה<ul>
-      <li class="course">אלגברה לינארית (1)<ul>
+  <li class="branch" style="font-size: large;">
+    <strong>
+      <a href="../../algebra">אלגברה</a>
+    </strong>
+    <ul>
+      <li class="course">
+        <strong>
+          <a href="../../algebra\linear_algebra_1">אלגברה לינארית (1)</a>
+        </strong>
+        <ul>
           <li class="title">נושאים בסיסיים<ul>
               <li class="import">
                 <a href="../../beginning\basic_subjects\naive_set_theory.xhtml">תורת הקבוצות הנאיבית</a>
@@ -764,7 +869,11 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
           </li>
         </ul>
       </li>
-      <li class="course">אלגברה לינארית (2)<ul>
+      <li class="course">
+        <strong>
+          <a href="../../algebra\linear_algebra_2">אלגברה לינארית (2)</a>
+        </strong>
+        <ul>
           <li class="title">המספרים המרוכבים<ul>
               <li class="import">
                 <a href="../../beginning\basic_subjects\the_complex_numbers\introduction-essence_of_the_complex_numbers.xhtml">הקדמה - מהות המספרים המרוכבים</a>
@@ -791,7 +900,11 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
           </li>
         </ul>
       </li>
-      <li class="course">מבנים אלגבריים (1)<ul>
+      <li class="course">
+        <strong>
+          <a href="../../algebra\algebraic_structures_1">מבנים אלגבריים (1)</a>
+        </strong>
+        <ul>
           <li class="topic">
             <a href="../../algebra\algebraic_structures_1\group_theory.xhtml">תורת החבורות</a>
           </li>
@@ -800,7 +913,11 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
           </li>
         </ul>
       </li>
-      <li class="course">מבנים אלגבריים (2)<ul>
+      <li class="course">
+        <strong>
+          <a href="../../algebra\algebraic_structures_2">מבנים אלגבריים (2)</a>
+        </strong>
+        <ul>
           <li class="topic">
             <a href="../../algebra\algebraic_structures_2\ring_theory.xhtml">תורת החוגים</a>
           </li>
@@ -814,18 +931,30 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
       </li>
     </ul>
   </li>
-  <li class="branch">ענפים נוספים<ul>
-      <li class="course">מתמטיקה בדידה<ul>
+  <li class="branch" style="font-size: large;">
+    <strong>
+      <a href="../../additional_branches">ענפים נוספים</a>
+    </strong>
+    <ul>
+      <li class="course">
+        <strong>
+          <a href="../../additional_branches\discrete_mathematics">מתמטיקה בדידה</a>
+        </strong>
+        <ul>
           <li class="import">
             <a href="../../beginning\basic_subjects\naive_set_theory.xhtml">תורת הקבוצות הנאיבית</a>
           </li>
-          <li class="none">קומבינטוריקה</li>
+          <li class="none has-custom-1-color">קומבינטוריקה</li>
           <li class="topic">
             <a href="../../additional_branches\discrete_mathematics\graph_theory.xhtml">תורת הגרפים</a>
           </li>
         </ul>
       </li>
-      <li class="course">תורת המספרים<ul>
+      <li class="course">
+        <strong>
+          <a href="../../additional_branches\number_theory">תורת המספרים</a>
+        </strong>
+        <ul>
           <li class="topic">
             <a href="../../additional_branches\number_theory\divisibility.xhtml">התחלקות</a>
           </li>
@@ -842,17 +971,29 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
           </li>
         </ul>
       </li>
-      <li class="course">תורת הקבוצות<ul>
-          <li class="none">הסיכומים עדיין לא נכתבו</li>
+      <li class="course">
+        <strong>
+          <a href="../../additional_branches\set_theory">תורת הקבוצות</a>
+        </strong>
+        <ul>
+          <li class="none has-custom-1-color">הסיכומים עדיין לא נכתבו</li>
         </ul>
       </li>
-      <li class="course">תורת ההסתברות (1)<ul>
+      <li class="course">
+        <strong>
+          <a href="../../additional_branches\probability">תורת ההסתברות (1)</a>
+        </strong>
+        <ul>
           <li class="topic">
             <a href="../../additional_branches\probability\discrete_probability.xhtml">הסתברות בדידה</a>
           </li>
         </ul>
       </li>
-      <li class="course">גאוטמטריה אוקלידית<ul>
+      <li class="course">
+        <strong>
+          <a href="../../additional_branches\Euclidean_geometry">גאוטמטריה אוקלידית</a>
+        </strong>
+        <ul>
           <li class="topic">
             <a href="../../additional_branches\Euclidean_geometry\first_file.xhtml">קובץ ראשון</a>
           </li>
@@ -861,6 +1002,7 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
     </ul>
   </li>
 </ul></div>
+</div>
 </div>
 
 <style>
@@ -887,10 +1029,10 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
 
 <footer class="wp-block-template-part">
 <div class="wp-block-group has-base-color has-text-color has-background has-link-color wp-elements-245daf2bf83b7cb991c9dd60d6a14300 has-global-padding is-layout-constrained wp-block-group-is-layout-constrained" style="background:linear-gradient(0deg,rgb(0,0,0) 83%,rgb(85,85,85) 100%);padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
-<div class="wp-block-group alignwide has-global-padding is-layout-constrained wp-container-core-group-is-layout-13 wp-block-group-is-layout-constrained">
-<div class="wp-block-group alignfull is-content-justification-space-between is-layout-flex wp-container-core-group-is-layout-12 wp-block-group-is-layout-flex">
-<div class="wp-block-group is-layout-flex wp-container-core-group-is-layout-7 wp-block-group-is-layout-flex">
-<div class="wp-block-group is-vertical is-layout-flex wp-container-core-group-is-layout-5 wp-block-group-is-layout-flex" style="padding-right:0;padding-left:0">
+<div class="wp-block-group alignwide has-global-padding is-layout-constrained wp-container-core-group-is-layout-15 wp-block-group-is-layout-constrained">
+<div class="wp-block-group alignfull is-content-justification-space-between is-layout-flex wp-container-core-group-is-layout-14 wp-block-group-is-layout-flex">
+<div class="wp-block-group is-layout-flex wp-container-core-group-is-layout-9 wp-block-group-is-layout-flex">
+<div class="wp-block-group is-vertical is-layout-flex wp-container-core-group-is-layout-7 wp-block-group-is-layout-flex" style="padding-right:0;padding-left:0">
 <h3 class="wp-block-heading has-medium-font-size" style="font-style:normal;font-weight:700">דפי האתר</h3>
 
 
@@ -898,7 +1040,7 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
 
 
 
-<div class="wp-block-group is-vertical is-layout-flex wp-container-core-group-is-layout-6 wp-block-group-is-layout-flex" style="padding-right:0;padding-left:0">
+<div class="wp-block-group is-vertical is-layout-flex wp-container-core-group-is-layout-8 wp-block-group-is-layout-flex" style="padding-right:0;padding-left:0">
 <h3 class="wp-block-heading has-medium-font-size" style="font-style:normal;font-weight:700">ענפים מתמטיים</h3>
 
 
@@ -907,9 +1049,9 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
 
 
 
-<div class="wp-block-group is-vertical is-content-justification-right is-layout-flex wp-container-core-group-is-layout-11 wp-block-group-is-layout-flex">
-<div class="wp-block-group desktop is-nowrap is-layout-flex wp-container-core-group-is-layout-10 wp-block-group-is-layout-flex" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
-<div class="wp-block-group desktop is-vertical is-layout-flex wp-container-core-group-is-layout-8 wp-block-group-is-layout-flex"><h1 class="desktop wp-block-site-title"><a href="https://math.srayaa.com" target="_self" rel="home">אקסיומת השלמות</a></h1>
+<div class="wp-block-group is-vertical is-content-justification-right is-layout-flex wp-container-core-group-is-layout-13 wp-block-group-is-layout-flex">
+<div class="wp-block-group desktop is-nowrap is-layout-flex wp-container-core-group-is-layout-12 wp-block-group-is-layout-flex" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+<div class="wp-block-group desktop is-vertical is-layout-flex wp-container-core-group-is-layout-10 wp-block-group-is-layout-flex"><h1 class="desktop wp-block-site-title"><a href="https://math.srayaa.com" target="_self" rel="home">אקסיומת השלמות</a></h1>
 
 <p class="desktop wp-block-site-tagline">סיכומי הרצאות במתמטיקה</p></div>
 
@@ -919,7 +1061,7 @@ h1.has-background,h2.has-background,h3.has-background,h4.has-background,h5.has-b
 
 
 
-<div class="wp-block-group desktop is-vertical is-layout-flex wp-container-core-group-is-layout-9 wp-block-group-is-layout-flex"><div class="desktop wp-block-site-logo wp-duotone-rgb255255255-rgb255255255-4"><a href="https://math.srayaa.com/" class="custom-logo-link" rel="home"><img width="50" height="62" src="https://math.srayaa.com/references_files/wp-content/uploads/logo-1.png" class="custom-logo" alt="אקסיומת השלמות" decoding="async" srcset="https://math.srayaa.com/references_files/wp-content/uploads/logo-1.png 832w, https://math.srayaa.com/references_files/wp-content/uploads/logo-1-239x300.png 239w, https://math.srayaa.com/references_files/wp-content/uploads/logo-1-817x1024.png 817w, https://math.srayaa.com/references_files/wp-content/uploads/logo-1-768x963.png 768w" sizes="(max-width: 50px) 100vw, 50px" /></a></div></div>
+<div class="wp-block-group desktop is-vertical is-layout-flex wp-container-core-group-is-layout-11 wp-block-group-is-layout-flex"><div class="desktop wp-block-site-logo wp-duotone-rgb255255255-rgb255255255-4"><a href="https://math.srayaa.com/" class="custom-logo-link" rel="home"><img width="50" height="62" src="https://math.srayaa.com/references_files/wp-content/uploads/logo-1.png" class="custom-logo" alt="אקסיומת השלמות" decoding="async" srcset="https://math.srayaa.com/references_files/wp-content/uploads/logo-1.png 832w, https://math.srayaa.com/references_files/wp-content/uploads/logo-1-239x300.png 239w, https://math.srayaa.com/references_files/wp-content/uploads/logo-1-817x1024.png 817w, https://math.srayaa.com/references_files/wp-content/uploads/logo-1-768x963.png 768w" sizes="(max-width: 50px) 100vw, 50px" /></a></div></div>
 </div>
 
 
