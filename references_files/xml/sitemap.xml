@@ -3,7 +3,7 @@
   <branch en_name="beginning" he_name="התחלה">
     <course en_name="introductions" he_name="הקדמות">
       <topic en_name="README" he_name="README" />
-      <topic en_name="common_mistakes" he_name="טעויות נפצות" />
+      <topic en_name="common_mistakes" he_name="טעויות נפוצות" />
       <topic en_name="a_mathematician's_apology" he_name="התנצלותו של המתמטיקאי" />
       <topic en_name="introduction_for_university_mathematics" he_name="הקדמה למתמטיקה אוניברסיטאית" />
     </course>
