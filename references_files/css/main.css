@@ -9,3 +9,7 @@
 
 
 .justify {text-align: justify;}
+
+.branch {font-size: large; font-weight: bold;}
+.course {font-weight: bold;}
+ul li ul li ul li ul {list-style-type: "- ";}
