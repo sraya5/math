@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf8'?>
 <root he_name="">
-  <branch en_name="beginning" he_name="התחלה">
+  <branch en_name="beginning" he_name="התחלה" divider="1">
     <course en_name="introductions" he_name="הקדמות">
       <topic en_name="README" he_name="README" />
       <topic en_name="common_mistakes" he_name="טעויות נפוצות" />
@@ -18,8 +18,8 @@
       <topic en_name="about_polynomials" he_name="על פולינומים" />
     </course>
   </branch>
-  <branch en_name="analysis" he_name="אנליזה">
-    <course en_name="calculus_1" course_number="80131" lecturer="רז קופרמן" semester="ב' תשפ&quot;ב" he_name="חשבון אינפיניטסימלי (1)">
+  <branch en_name="analysis" he_name="אנליזה" divider="3">
+    <course en_name="calculus_1" course_number="80131" lecturer="רז קופרמן" tutor="אור יער" semester="ב' תשפ&quot;ב" he_name="חשבון אינפיניטסימלי (1)">
       <title en_name="basic_subjects" he_name="נושאים בסיסיים">
         <import en_name="naive_set_theory" he_name="תורת הקבוצות הנאיבית" />
         <import en_name="about_fields" he_name="על שדות" />
@@ -30,7 +30,7 @@
       <topic en_name="functions" he_name="פונקציות" />
       <topic en_name="derivatives" he_name="נגזרות" />
     </course>
-    <course en_name="calculus_2" course_number="80132" lecturer="יורם לסט" semester="א' תשפ&quot;ג" he_name="חשבון אינפיניטסימלי (2)">
+    <course en_name="calculus_2" course_number="80132" lecturer="יורם לסט" tutor="דניאל אופנר ומתן בן-אשר" semester="א' תשפ&quot;ג" he_name="חשבון אינפיניטסימלי (2)">
       <title en_name="series" he_name="טורים">
         <introduction en_name="introduction-countable_sets_and_infinity_sums" he_name="הקדמה - קבוצות בנות מנייה וסכומים אין-סופיים" />
         <topic en_name="series" he_name="טורים" />
@@ -69,14 +69,14 @@
       <topic en_name="divergence_theorem" he_name="משפט הדיברגנץ" />
     </course>
     <course en_name="functional_analysis" course_number="80417" lecturer="שיא מאור" tutor="גיא ספיר" semester="ב' תשפ&quot;ד" he_name="אנליזה פונקציונלית">
-      <none en_name="None" he_name="לא נכתב" />
+      <none en_name="none" he_name="לא נכתב" />
     </course>
     <course en_name="extras" he_name="תוספות">
       <topic en_name="global_Cauchy_characterization_for_limit" he_name="תנאי קושי כללי לקיום גבול" />
       <topic en_name="pathologic_functions_repository" he_name="מאגר פונקציות פתולוגיות" />
     </course>
   </branch>
-  <branch en_name="algebra" he_name="אלגברה">
+  <branch en_name="algebra" he_name="אלגברה" divider="2">
     <course en_name="linear_algebra_1" course_number="80134" lecturer="ערן נבו" semester="ב' תשפ&quot;ג" he_name="אלגברה לינארית (1)">
       <title en_name="basic_subjects" he_name="נושאים בסיסיים">
         <import en_name="naive_set_theory" he_name="תורת הקבוצות הנאיבית" />
@@ -110,7 +110,7 @@
       <topic en_name="Galois_theory" he_name="תורת גלואה" />
     </course>
   </branch>
-  <branch en_name="additional_branches" he_name="ענפים נוספים">
+  <branch en_name="additional_branches" he_name="ענפים נוספים" divider="2">
     <course en_name="discrete_mathematics" course_number="80181" lecturer="צור לוריא" tutor="שני שלומי" semester="א' תשפ&quot;ג" he_name="מתמטיקה בדידה">
       <import en_name="naive_set_theory" he_name="תורת הקבוצות הנאיבית" />
       <none en_name="combinatorics" he_name="קומבינטוריקה" />
