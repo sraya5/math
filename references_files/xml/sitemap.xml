@@ -69,7 +69,7 @@
       <topic en_name="divergence_theorem" he_name="משפט הדיברגנץ" />
     </course>
     <course en_name="functional_analysis" course_number="80417" lecturer="שיא מאור" tutor="גיא ספיר" semester="ב' תשפ&quot;ד" he_name="אנליזה פונקציונלית">
-      <none en_name="none" he_name="לא נכתב" />
+      <none en_name="none" he_name="הסיכומים עדיין לא נכתבו" />
     </course>
     <course en_name="extras" he_name="תוספות">
       <topic en_name="global_Cauchy_characterization_for_limit" he_name="תנאי קושי כללי לקיום גבול" />
