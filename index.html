@@ -693,12 +693,15 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
             font-weight: bolder;
             color: white;
             cursor: pointer;
-            background-color: red;
+            background-color: blue;
             opacity: 80%;
-			font-family: sans-serif;
         }
     </style>
-    <button id="scrollButton" onclick="scrollToTop()">&#11165;</button>
+    <button id="scrollButton" onclick="scrollToTop()">
+		<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M12 4L6 10H10V20H14V10H18L12 4Z" fill="currentColor"/>
+		</svg>
+	</button>
     <script>
     function scrollToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
