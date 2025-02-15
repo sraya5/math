@@ -7,6 +7,7 @@
     .desktop * {display: none;}
 }
 
+* {z-index: 0;}
 
 .justify {text-align: justify;}
 
