@@ -1,0 +1,4831 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The head's design for summuries,make the layout more similar to abook:
+\AtBeginDocument{
+\renewcommand\headrule{%
+  \kern -7pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+  \kern 10pt
+}}
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Correct the reversed parentheses in labels:
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\newfontfamily{\hebrewfont}{David}
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+
+\end_preamble
+
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+customHeadersFooters
+\end_modules
+
+\maintain_unincluded_children false
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+
+
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size      Larger
+	  Series     Bold
+	EndFont
+End
+
+
+Style Solution
+
+	LabelString           "פתרון: "End
+
+
+Style Notation
+
+	LabelString           "סימון  \thetheorem: "End
+
+Style Theorem
+
+	LabelString           "משפט \thetheorem: "End
+
+Style Property
+
+	LabelString           "תזכורת: "End
+
+\end_local_layout
+
+\language hebrew
+
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\boxbgcolor #cccccc
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+
+\tocdepth 3
+
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename C:\Users\sraya\AppData\Roaming\LyX2.4\macros\MKmacros.lyx
+\end_inset
+
+\end_layout
+
+\begin_layout Right Header
+\begin_inset Argument 1
+status open
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+\begin_layout Plain Layout
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\begin_inset ERT
+status open
+\begin_layout Plain Layout
+\backslash
+leftmark
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Left Header
+\begin_inset Argument 1
+status open
+\begin_layout Plain Layout
+על פולינומים
+\end_layout
+
+\end_inset
+
+\begin_inset ERT
+status open
+\begin_layout Plain Layout
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Center Footer
+\end_layout
+
+\begin_layout Title
+\paragraph_spacing double
+\series bold
+\size huge
+על פולינומים
+\size default
+
+\series default
+
+\end_layout
+
+\begin_layout Standard
+\align center
+אלגברה ליניארית (
+\numeric on
+1
+\numeric off
+) -
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+80134
+\numeric off
+ 
+
+\end_layout
+
+\begin_layout Standard
+\align center
+מרצה: ערן נבו
+
+\end_layout
+
+\begin_layout Standard
+\align center
+מתרגלים: איתמר ישראלי ושני שלומי
+
+\end_layout
+
+\begin_layout Standard
+\align center
+סמסטר ב' תשפ"ב, האוניברסיטה העברית
+
+\end_layout
+
+\begin_layout Standard
+\align center
+-
+
+\end_layout
+
+\begin_layout Standard
+\align center
+אלגברה ליניארית (
+\numeric on
+2
+\numeric off
+) -
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+80135
+\numeric off
+ 
+
+\end_layout
+
+\begin_layout Standard
+\align center
+מרצה: איתמר צביק
+
+\end_layout
+
+\begin_layout Standard
+\align center
+מתרגלים: גיל לבנה ויואב כהן
+
+\end_layout
+
+\begin_layout Standard
+\align center
+סמסטר א' תשפ"ג, האוניברסיטה העברית
+
+\end_layout
+
+\begin_layout Standard
+\align center
+-
+
+\end_layout
+
+\begin_layout Standard
+\align center
+סוכם ע"י שריה אנסבכר
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset VSpace vfill
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\align center
+בליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+למדנו רק את הפרק הראשון והפרק הרביעי, שני הפרקים האחרים שייכים לליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\numeric off
+.
+\begin_inset Newline newline
+\end_inset
+בחרתי להביא את נושא הפולינומים רק בליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+מפני שבליניארית אחת לא עוסקים במה שמייחד את מרחב הפולינומים ממרחבים וקטוריים אחרים ולעומת זאת בליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+הפולינומים מהווים חלק מהותי מהקורס.
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula
+\[
+***
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\align center
+תודתי נתונה לגלעד שרם על 
+\begin_inset CommandInset href
+LatexCommand href
+name "סיכומיו"
+target https://drive.google.com/drive/folders/1OsoSSe5_djjdGd6LmAqGp83f6Oqp-rrh?usp=share_link
+literal false
+\end_inset
+ המצוינים שהיו לי לעזר רב עד כדי כך שניתן לומר שהסיכום הזה מבוסס על סיכומיו.
+
+\end_layout
+
+\begin_layout Standard
+\align center
+סיכומי קורס זה מוקדשים לאהרון כהן;
+\begin_inset Newline newline
+\end_inset
+אהרון, הידיעה שתקרא את הסיכומים הללו דרבנה אותי לאורך כל הדרך.
+\begin_inset Newline newline
+\end_inset
+בהצלחה!
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula
+\[
+***
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\align center
+סביר להניח שהסיכומים שלי מכילים טעויות רבות - אני מוצא כאלה כל יום (
+\begin_inset CommandInset href
+LatexCommand href
+name "רשימת טעויות נפוצות"
+target https://drive.google.com/file/d/1ZX_KNQe6_sGYisMaS6ShnBv7T0rPf3D_/view?usp=drive_link
+literal false
+\end_inset
+),
+\begin_inset Newline newline
+\end_inset
+אני מפציר בכם לעדכן אותי בכל טעות שאתם מוצאים (ממש כל טעות ללא יוצא מן הכלל);
+\begin_inset Newline newline
+\end_inset
+אתם מוזמנים להגיב על המסמכים ב-
+\lang english
+Google Drive
+\lang default
+
+\lang hebrew
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "לשלוח לי דוא“ל"
+target sraya.ansbacher@mail.huji.ac.il
+type mailto:
+literal false
+\end_inset
+ או 
+\begin_inset CommandInset href
+LatexCommand href
+name "למלא פנייה באתר"
+target https://srayaa.wixsite.com/math#contact-body
+literal false
+\end_inset
+.
+\lang default
+
+\end_layout
+
+\begin_layout Standard
+\align center
+לסיכומים נוספים היכנסו לאתר:
+\begin_inset Newline newline
+\end_inset
+אקסיומת השלמות - סיכומי הרצאות במתמטיקה
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset CommandInset href
+LatexCommand href
+name "https://srayaa.wixsite.com/math"
+target https://srayaa.wixsite.com/math
+literal false
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+התחלה
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ שדה.
+\end_layout
+
+\begin_layout Definition
+\bar under
+פולינום
+\bar default
+ מעל 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ הוא ביטוי מהצורה 
+\begin_inset Formula
+$a_{0}+a_{1}x+a_{2}x^{2}+...+a_{n}x^{n}$
+\end_inset
+ כאשר 
+\begin_inset Formula
+$a_{k}\in\MKfield$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq k\in\MKnatural$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+המקדם של החזקה הגדולה ביותר (
+\begin_inset Formula
+$a_{n}$
+\end_inset
+) נקרא 
+\bar under
+המקדם המוביל
+\bar default
+ והמקדם של החזקה ה-
+\begin_inset Formula
+$0$
+\end_inset
+ (
+\begin_inset Formula
+$a_{0}$
+\end_inset
+) נקרא 
+\bar under
+המקדם החופשי
+\bar default
+.
+\begin_inset Newline newline
+\end_inset
+נסמן את קבוצת הפולינומים מעל 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ ב-
+\begin_inset Formula
+$\MKfield\left[x\right]$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ 
+\bar under
+מונום
+\bar default
+ הוא פולינום בעל איבר יחיד, כלומר כל פולינום הוא חיבור של מונומים.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מבחינה פורמלית פולינומים הם פשוט מחרוזת תווים, כדאי לזכור זאת בהמשך מבלי לאבד את האינטואיציה המזהה פולינום כפונקציה פולינומיאלית.
+\begin_inset Newline newline
+\end_inset
+דוגמה הממחישה את העניין: הפולינומים 
+\begin_inset Formula
+$1$
+\end_inset
+, 
+\begin_inset Formula
+$x^{2}+x+1$
+\end_inset
+ ו-
+\begin_inset Formula
+$x^{3}+x+1$
+\end_inset
+ הם פולינומים שונים מעל 
+\begin_inset Formula
+$\MKfield_{2}$
+\end_inset
+ למרות שכפונקציות הם שווים:
+\begin_inset Formula
+\begin{align*}
+1^{3}+1+1 & =1=1^{2}+1+1\\
+0^{3}+0+1 & =1=0^{2}+0+1
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ה-
+\begin_inset Formula
+$x$
+\end_inset
+ בסימון 
+\begin_inset Formula
+$\MKfield\left[x\right]$
+\end_inset
+ הוא משתנה סרק, באותה מידה היה יכול להופיע שם כל קשקוש עקבי אחר, יתרה מזאת - לפעמים משתמשים בסימון זה כאשר במקום 
+\begin_inset Formula
+$x$
+\end_inset
+ כותבים מספר כלשהו ואז פירוש הסימון הוא קבוצת כל הביטויים הפולינומיאליים כשמציבים בהם את אותו מספר, לדוגמה (
+\begin_inset CommandInset href
+LatexCommand href
+name "חוג השלמים של גאוס"
+target https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%92_%D7%94%D7%A9%D7%9C%D7%9E%D7%99%D7%9D_%D7%A9%D7%9C_%D7%92%D7%90%D7%95%D7%A1
+literal false
+\end_inset
+):
+\begin_inset Formula
+\begin{align*}
+\MKinteger\left[i\right] & :=\left\{ \begin{array}{c|c}
+\begin{alignedat}{1}\sum_{k=0}^{n}a_{k}\cdot i^{k}\end{alignedat}
+ & a_{0},a_{1},\ldots,a_{n}\in\MKinteger\end{array}\right\} \\
+ & =\left\{ a+bi\mid a,b\in\MKinteger\right\} 
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כל מה שנראה בקובץ זה נכון גם עבור קבוצת הפולינומים מעל חוג (שאינו בהכרח שדה), למעט נקודה אחת שעליה נעיר במפורש.
+\end_layout
+
+\begin_layout Definition
+\series bold
+שוויון בין פולינומים
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$P,G\in\MKfield\left[x\right]$
+\end_inset
+ ויהיו 
+\begin_inset Formula
+$a_{0},a_{1},\ldots,a_{n},b_{0},b_{1},\ldots,b_{m}$
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\begin{align*}
+P\left(x\right) & =\sum_{k=0}^{n}a_{k}\cdot x^{k}\\
+G\left(x\right) & =\sum_{k=0}^{m}b_{k}\cdot x^{k}
+\end{align*}
+
+
+\end_inset
+נאמר ש-
+\begin_inset Formula
+$P=G$
+\end_inset
+ אם 
+\begin_inset Formula
+$a_{k}=b_{k}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$\min\left\{ n,m\right\} \geq k\in\MKnatural_{0}$
+\end_inset
+ ובנוסף מתקיים: 
+\begin_inset Formula
+$n\geq m$
+\end_inset
+ ו-
+\begin_inset Formula
+$a_{k}=0$
+\end_inset
+ לכל 
+\begin_inset Formula
+$m<k\in\MKnatural$
+\end_inset
+ ו/או 
+\begin_inset Formula
+$n\leq m$
+\end_inset
+ ו-
+\begin_inset Formula
+$b_{k}=0$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n<k\in\MKnatural$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+כלומר אם ממקום מסוים ואילך המקדמים של פולינום הם אפסים, אז מקדמים אלו (אך לא אלו שלפניהם) אינם משפיעים על זהות הפולינום.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\bar under
+הדרגה
+\bar default
+ או 
+\bar under
+המעלה
+\bar default
+ של פולינום 
+\begin_inset Formula
+$0\neq P\in\MKfield\left[x\right]$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+מדובר בפולינום האפס וכך גם בהמשך הקובץ.
+\end_layout
+
+\end_inset
+ (מסומנת ב-
+\begin_inset Formula
+$\deg P$
+\end_inset
+) היא החזקה הגדולה ביותר של הפולינום שהמקדם שלה אינו 
+\begin_inset Formula
+$0$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר אם 
+\begin_inset Formula
+$P\left(x\right)=\sum_{k=0}^{n}a_{k}\cdot x^{k}$
+\end_inset
+ אז 
+\begin_inset Formula
+$\deg P:=\max\left\{ k\in\MKnatural_{0}\mid a_{k}\neq0\right\} $
+\end_inset
+.
+\end_layout
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נסמן גם 
+\begin_inset Formula
+$\deg0:=-\infty$
+\end_inset
+ ונכתוב 
+\begin_inset Formula
+$\deg0<\deg P$
+\end_inset
+ לכל 
+\begin_inset Formula
+$0\neq P\in\MKfield\left[x\right]$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ באותה מידה היה אפשר להגדיר 
+\begin_inset Formula
+$\deg0:=-1$
+\end_inset
+ (או כל מספר שלילי אחר) ואז אפילו לא היינו צריכים להסכים ש-
+\begin_inset Formula
+$\deg0<\deg P$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ נזהה פולינום עם סדרת המקדמים האינסופית שלו, כלומר עם סדרה כזו: 
+\begin_inset Formula
+$\left(a_{0},a_{1},a_{2},...,a_{n},0,0,0,...\right)$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+סדרות כאלה (שהחל ממקום מסוים כל איבריהן אפסים) נקראות סדרות 
+\size normal
+\bar under
+נתמכות סופית
+\bar default
+.
+\size default
+
+\end_layout
+
+\end_inset
+, כך שהפולינום 
+\begin_inset Formula
+$1+x$
+\end_inset
+ והפולינום 
+\begin_inset Formula
+$1+x+0\cdot x^{2}$
+\end_inset
+ (לדוגמה) יזוהו כאותו פולינום.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ פולינומים מדרגה 
+\begin_inset Formula
+$0$
+\end_inset
+ נקראים 
+\bar under
+פולינומים קבועים
+\bar default
+ משום שכפונקציות הם מהווים פונקציות קבועות.
+\end_layout
+
+\begin_layout Definition
+יהיו 
+\begin_inset Formula
+$P,G\in\MKfield\left[x\right]$
+\end_inset
+ ויהיו 
+\begin_inset Formula
+$a_{0},a_{1},\ldots,a_{n},b_{0},b_{1},\ldots,b_{m}$
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\begin{align*}
+P\left(x\right) & =\sum_{k=0}^{n}a_{k}\cdot x^{k}\\
+G\left(x\right) & =\sum_{k=0}^{m}b_{k}\cdot x^{k}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+\bar under
+חיבור פולינומים
+\bar default
+ יוגדר ע"י
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+אם 
+\begin_inset Formula
+$n<m$
+\end_inset
+ אז נגדיר 
+\begin_inset Formula
+$a_{k}:=0$
+\end_inset
+ לכל 
+\begin_inset Formula
+$k\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$n<k\leq m$
+\end_inset
+ ואם 
+\begin_inset Formula
+$m<n$
+\end_inset
+ אז נגדיר 
+\begin_inset Formula
+$b_{k}:=0$
+\end_inset
+ לכל 
+\begin_inset Formula
+$k\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$m<k\leq n$
+\end_inset
+.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\[
+\left(P+G\right)\left(x\right):=\sum_{k=0}^{\max\left\{ n,m\right\} }\left(a_{k}+b_{k}\right)\cdot x^{k}=\left(\sum_{k=0}^{n}a_{k}\cdot x^{k}\right)+\left(\sum_{k=0}^{m}b_{k}\cdot x^{k}\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+\bar under
+כפל פולינומים
+\bar default
+ יוגדר ע"י:
+\begin_inset Formula
+\begin{align*}
+\left(P\cdot G\right)\left(x\right) & :=\left(\sum_{i=0}^{n}a_{i}\cdot x^{i}\right)\cdot\left(\sum_{j=0}^{m}b_{j}\cdot x^{j}\right):=\sum_{i=0}^{n}\left(a_{i}\cdot x^{i}\cdot\left(\sum_{j=0}^{m}b_{j}\cdot x^{j}\right)\right)\\
+ & :=\sum_{i=0}^{n}\left(\sum_{j=0}^{m}\left(a_{i}\cdot x^{i}\right)\cdot\left(b_{j}\cdot x^{j}\right)\right):=\sum_{i=0}^{n}\left(\sum_{j=0}^{m}a_{i}\cdot b_{j}\cdot\left(x^{i}\cdot x^{j}\right)\right)\\
+ & {\color{red}:=}\sum_{i=0}^{n}\left(\sum_{j=0}^{m}a_{i}\cdot b_{j}\cdot x^{i+j}\right)=\sum_{k=0}^{n+m}\left(\left(\sum_{i=0}^{k}a_{i}\cdot b_{k-i}\right)\cdot x^{k}\right)
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+\bar under
+כפל פולינום בסקלר
+\bar default
+ יוגדר ע"י (לכל 
+\begin_inset Formula
+$c\in\MKfield$
+\end_inset
+):
+\begin_inset Formula
+\[
+\left(c\cdot P\right):=\sum_{k=0}^{n}\left(c\cdot a_{k}\right)\cdot x^{k}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כפל בסקלר הוא בעצם כפל בפולינום הקבוע המתאים.
+\end_layout
+
+\begin_layout Claim
+\begin_inset Formula
+$\MKfield\left[x\right]$
+\end_inset
+ הוא חוג חילופי
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+חוג חילופי (קומוטטיבי) הוא קבוצה שעליה מוגדרות פעולות חיבור וכפל המקיימת את כל אקסיומות השדה מלבד קיום הופכי.
+\end_layout
+
+\end_inset
+ ביחס לפעולות החיבור והכפל הנ"ל.
+\end_layout
+
+\begin_layout Definition
+יהיו 
+\begin_inset Formula
+$P,G\in\MKfield\left[x\right]$
+\end_inset
+, נאמר ש-
+\begin_inset Formula
+$G$
+\end_inset
+ 
+\bar under
+מחלק
+\bar default
+ את 
+\begin_inset Formula
+$P$
+\end_inset
+ (או ש-
+\begin_inset Formula
+$P$
+\end_inset
+ הוא 
+\bar under
+כפולה
+\bar default
+ של 
+\begin_inset Formula
+$G$
+\end_inset
+) אם קיים 
+\begin_inset Formula
+$Q\in\MKfield\left[x\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P=Q\cdot G$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר שארית החלוקה של 
+\begin_inset Formula
+$P$
+\end_inset
+ ב-
+\begin_inset Formula
+$G$
+\end_inset
+ היא פולינום האפס.
+\end_layout
+
+\end_inset
+ ובמקרה כזה נסמן 
+\begin_inset Formula
+$G\mid P$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+יהיו 
+\begin_inset Formula
+$A,B,C\in\MKfield\left[x\right]$
+\end_inset
+, מתקיימים שלושת הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$A\mid B$
+\end_inset
+ אז 
+\begin_inset Formula
+$A\mid Q\cdot B$
+\end_inset
+ לכל 
+\begin_inset Formula
+$Q\in\MKfield\left[x\right]$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$A\mid B$
+\end_inset
+ וגם 
+\begin_inset Formula
+$A\mid C$
+\end_inset
+ אז 
+\begin_inset Formula
+$A\mid P\cdot B+G\cdot C$
+\end_inset
+ לכל 
+\begin_inset Formula
+$P,G\in\MKfield\left[x\right]$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+יחס החלוקה הוא טרנזיטיבי, כלומר אם 
+\begin_inset Formula
+$A\mid B$
+\end_inset
+ ו-
+\begin_inset Formula
+$B\mid C$
+\end_inset
+ אז 
+\begin_inset Formula
+$A\mid C$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Theorem
+לכל שני פולינומים 
+\begin_inset Formula
+$P,G\in\MKfield\left[x\right]$
+\end_inset
+ מתקיים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$\deg\left(P+G\right)\leq\max\left\{ \deg P,\deg,G\right\} $
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+בד"כ מתקיים שוויון אך אם 
+\begin_inset Formula
+$\deg P=\deg Q$
+\end_inset
+ וגם המקדמים המובילים נגדיים זה לזה (סכומם הוא 
+\begin_inset Formula
+$0_{\MKfield}$
+\end_inset
+) אז יתקיים א"ש חזק.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\deg\left(P\cdot G\right)=\deg P+\deg G$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+אם אחד הפולינומים הוא פולינום האפס, נגיד 
+\begin_inset Formula
+$P$
+\end_inset
+, אז 
+\begin_inset Formula
+$-\infty+\deg G:=-\infty=\deg\left(0\right)=\deg\left(P\cdot G\right)$
+\end_inset
+.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Corollary
+יהיו 
+\begin_inset Formula
+$0\neq P,Q\in\MKfield\left[x\right]$
+\end_inset
+, אם 
+\begin_inset Formula
+$Q\mid P$
+\end_inset
+ אז 
+\begin_inset Formula
+$\deg Q\leq\deg P$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+אם לפולינום 
+\begin_inset Formula
+$P\in\MKfield\left[x\right]$
+\end_inset
+ יש פולינום הופכי (כלומר קיים 
+\begin_inset Formula
+$G\in\MKfield\left[x\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P\cdot G=1$
+\end_inset
+), אז 
+\begin_inset Formula
+$P$
+\end_inset
+ הוא פולינום קבוע.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כלומר קבוצת האיברים ה
+\bar under
+הפיכים
+\bar default
+ בחוג פולינומים מעל שדה
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+מעל חוג (בניגוד לשדה) קבוצת הפולינומים ההפיכים תהיה קבוצת הפולינומים הקבועים כך שהקבוע המתאים להם הוא איבר הפיך בחוג.
+\end_layout
+
+\end_inset
+ היא קבוצת הפולינומים הקבועים.
+\end_layout
+
+\begin_layout Corollary
+יהיו 
+\begin_inset Formula
+$P,G\in\MKfield\left[x\right]$
+\end_inset
+, 
+\begin_inset Formula
+$P$
+\end_inset
+ ו-
+\begin_inset Formula
+$G$
+\end_inset
+ מחלקים זה את זה אם"ם קיים 
+\begin_inset Formula
+$0\neq c\in\MKfield$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P=c\cdot G$
+\end_inset
+, אותו 
+\begin_inset Formula
+$c$
+\end_inset
+ הוא המנה של חלוקת המקדם המוביל של 
+\begin_inset Formula
+$P$
+\end_inset
+ במקדם המוביל של 
+\begin_inset Formula
+$G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+יהיו 
+\begin_inset Formula
+$P,G\in\MKfield\left[x\right]$
+\end_inset
+ שני פולינומים המחלקים זה את זה ובעלי מקדמים זהים, מתקיים 
+\begin_inset Formula
+$P=G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+חילוק פולינומים עם שארית
+\series default
+
+\begin_inset Newline newline
+\end_inset
+לכל שני פולינומים 
+\begin_inset Formula
+$P,G\in\MKfield\left[x\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$G\neq0$
+\end_inset
+ קיימים שני פולינומים 
+\begin_inset Formula
+$Q,R\in\MKfield\left[x\right]$
+\end_inset
+ יחידים כך ש-
+\begin_inset Formula
+$P=Q\cdot G+R$
+\end_inset
+ ו-
+\begin_inset Formula
+$\deg R<\deg G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ 
+\begin_inset Formula
+$R$
+\end_inset
+ זה נקרא 
+\bar under
+השארית
+\bar default
+ של חלוקת 
+\begin_inset Formula
+$P$
+\end_inset
+ ב-
+\begin_inset Formula
+$G$
+\end_inset
+ ו-
+\begin_inset Formula
+$Q$
+\end_inset
+ נקרא 
+\bar under
+המנה
+\bar default
+ של חלוקה זו.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בעמוד הבא מופיע אלגוריתם לחילוק פולינומים עם שארית (דוגמאות לפעולת האלגוריתם ניתן למצוא ב
+\begin_inset CommandInset href
+LatexCommand href
+name "וויקיפדיה"
+target https://he.wikipedia.org/wiki/%D7%97%D7%9C%D7%95%D7%A7%D7%AA_%D7%A4%D7%95%D7%9C%D7%99%D7%A0%D7%95%D7%9E%D7%99%D7%9D
+literal false
+\end_inset
+ וב-
+\begin_inset CommandInset href
+LatexCommand href
+name "MathWorld"
+target https://mathworld.wolfram.com/LongDivision.html
+literal false
+\end_inset
+), האלגוריתם מוכיח את קיומם של פולינום המנה ופולינום השארית, והיחידות נובעת מהשוויון 
+\begin_inset Formula
+$P-Q\cdot G=R$
+\end_inset
+ ומהעובדה ש-
+\begin_inset Formula
+$\deg R<\deg G$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+שני הנתונים מחייבים ש-
+\begin_inset Formula
+$\deg P=\deg\left(Q\cdot G\right)$
+\end_inset
+ ושהמקדם המוביל ב-
+\begin_inset Formula
+$Q\cdot G$
+\end_inset
+ הוא הנגדי של המקדם המתאים ב-
+\begin_inset Formula
+$P$
+\end_inset
+, כלומר הדרגה של 
+\begin_inset Formula
+$Q$
+\end_inset
+ והמקדם המוביל שלו נקבעים ביחידות ע"י 
+\begin_inset Formula
+$P$
+\end_inset
+ ו-
+\begin_inset Formula
+$G$
+\end_inset
+, לאחר מכן המקדם הזה קובע ביחידות את המקדם הבא בתור וכן הלאה (ממש כפי שעובד האלגוריתם).
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ זהו אלגוריתם דומה מאד לאלגוריתם "
+\begin_inset CommandInset href
+LatexCommand href
+name "חילוק ארוך"
+target https://he.wikibooks.org/wiki/%D7%97%D7%A9%D7%91%D7%95%D7%9F/%D7%97%D7%99%D7%9C%D7%95%D7%A7_%D7%90%D7%A8%D7%95%D7%9A
+literal false
+\end_inset
+" שלמדנו בבית הספר היסודי
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+למעשה אלגוריתם "חילוק ארוך" הוא מקרה פרטי של חילוק פולינומים כאשר מציבים במשתנה את 
+\begin_inset Formula
+$10$
+\end_inset
+ (או, אם תרצו, זהו חילוק פולינומים ב-
+\begin_inset Formula
+$\MKreal\left[10\right]$
+\end_inset
+).
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+\begin_layout Plain Layout
+\series bold
+חילוק פולינומים עם שארית
+\series default
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+יהיו 
+\begin_inset Formula
+$P,G\in\MKfield\left[x\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$G\neq0$
+\end_inset
+, נרצה למצוא שני פולינומים 
+\begin_inset Formula
+$Q,R\in\MKfield\left[x\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P=Q\cdot G+R$
+\end_inset
+ ו-
+\begin_inset Formula
+$\deg R<\deg G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Plain Layout
+נסמן 
+\begin_inset Formula
+$R_{0}:=P$
+\end_inset
+ ו-
+\begin_inset Formula
+$Q_{0}=0$
+\end_inset
+, א"כ מתקיים 
+\begin_inset Formula
+$P=Q_{0}\cdot G+R_{0}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Plain Layout
+נסמן 
+\begin_inset Formula
+$n:=\deg G$
+\end_inset
+ ויהיו 
+\begin_inset Formula
+$a_{0},a_{1},\ldots,a_{n}\in\MKfield$
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+G\left(x\right)=\sum_{k=0}^{n}a_{k}\cdot x^{k}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+נסמן 
+\begin_inset Formula
+$i:=0$
+\end_inset
+ וכל עוד 
+\begin_inset Formula
+$\deg R_{i}\geq\deg G$
+\end_inset
+:
+\end_layout
+
+\begin_layout Itemize
+נסמן 
+\begin_inset Formula
+$r:=\deg R_{i}$
+\end_inset
+ ויהיו 
+\begin_inset Formula
+$b_{0},b_{1},\ldots,b_{m}\in\MKfield$
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+R_{i}\left(x\right)=\sum_{j=0}^{r}b_{j}\cdot x^{j}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+נגדיר (מהגדרה 
+\begin_inset Formula
+$a_{n}\neq0$
+\end_inset
+):
+\begin_inset Formula
+\begin{align*}
+q_{r-n} & :=\frac{b_{r}}{a_{n}}\\
+Q_{i+1}\left(x\right) & :=Q_{i}\left(x\right)+q_{r-n}\cdot x^{r-n}\\
+R_{i+1}\left(x\right) & :=R_{i}\left(x\right)-q_{r-n}\cdot x^{r-n}\cdot G\left(x\right)
+\end{align*}
+
+
+\end_inset
+נשים לב לשני דברים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+\begin{align*}
+P\left(x\right) & =Q_{i}\left(x\right)\cdot G\left(x\right)+R_{i}\left(x\right)\\
+ & ={\color{red}Q_{i}\left(x\right)}\cdot G\left(x\right)+{\color{red}q_{r-n}\cdot x^{r-n}}\cdot G\left(x\right)+R_{i+1}\left(x\right)\\
+ & =Q_{i+1}\left(x\right)\cdot G\left(x\right)+R_{i+1}\left(x\right)
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+המקדם המוביל של 
+\begin_inset Formula
+$q_{r-n}\cdot x^{r-n}\cdot G\left(x\right)$
+\end_inset
+ הוא 
+\begin_inset Formula
+$b_{r}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\deg\left(q_{r-n}\cdot x^{r-n}\cdot G\left(x\right)\right)=\left(r-n\right)+\deg G=r=\deg R_{i}$
+\end_inset
+,
+\begin_inset Newline newline
+\end_inset
+ומשכאן ש-
+\begin_inset Formula
+$\deg R_{i+1}<\deg R_{i}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+יהיו 
+\begin_inset Formula
+$P,G\in\MKfield\left[x\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$G\neq0$
+\end_inset
+, 
+\begin_inset Formula
+$G\mid P$
+\end_inset
+ אם"ם השארית של חלוקת 
+\begin_inset Formula
+$P$
+\end_inset
+ ב-
+\begin_inset Formula
+$G$
+\end_inset
+ היא פולינום האפס.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+יהיו 
+\begin_inset Formula
+$P,G\in\MKfield\left[x\right]$
+\end_inset
+, לכל 
+\begin_inset Formula
+$0\neq F\in\MKfield\left[x\right]$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$P\mid G$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$F\cdot P\mid F\cdot G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$0\neq F\in\MKfield\left[x\right]$
+\end_inset
+, ההוכחה שאם 
+\begin_inset Formula
+$P\mid G$
+\end_inset
+ אז 
+\begin_inset Formula
+$F\cdot P\mid F\cdot G$
+\end_inset
+ היא טריוויאלית, נוכיח את הכיוון השני.
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$F\cdot P\mid F\cdot G$
+\end_inset
+ ונחלק את 
+\begin_inset Formula
+$G$
+\end_inset
+ ב-
+\begin_inset Formula
+$P$
+\end_inset
+ עם שארית: יהיו 
+\begin_inset Formula
+$Q,R\in\MKfield\left[x\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$G=Q\cdot P+R$
+\end_inset
+ ו-
+\begin_inset Formula
+$\deg R<\deg P$
+\end_inset
+,
+\begin_inset Newline newline
+\end_inset
+מכאן שמתקיים 
+\begin_inset Formula
+$F\cdot G=Q\cdot F\cdot P+F\cdot R$
+\end_inset
+ ו-
+\begin_inset Formula
+$\deg\left(F\cdot R\right)<\deg\left(F\cdot P\right)$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מיחידות השארית נובע ש-
+\begin_inset Formula
+$F\cdot R$
+\end_inset
+ היא השארית של חלוקת 
+\begin_inset Formula
+$F\cdot G$
+\end_inset
+ ב-
+\begin_inset Formula
+$F\cdot P$
+\end_inset
+, א"כ 
+\begin_inset Formula
+$F\cdot R=0$
+\end_inset
+ ומכיוון ש-
+\begin_inset Formula
+$F\neq0$
+\end_inset
+ נדע ש-
+\begin_inset Formula
+$R=0$
+\end_inset
+ ולכן 
+\begin_inset Formula
+$P\mid G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+מחלק משותף מקסימלי וכפולה משותפת מינימלית
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ שדה.
+\end_layout
+
+\begin_layout Definition
+פולינום 
+\begin_inset Formula
+$P\in\MKfield\left[x\right]$
+\end_inset
+ יקרא 
+\bar under
+פולינום מתוקן
+\bar default
+ אם המקדם המוביל שלו הוא 
+\begin_inset Formula
+$1$
+\end_inset
+, פולינום האפס אינו נחשב מתוקן.
+\end_layout
+
+\begin_layout Theorem
+יהיו 
+\begin_inset Formula
+$P_{1},P_{2},\ldots,P_{r}\in\MKfield\left[x\right]$
+\end_inset
+, מתקיימים שני הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם קיים 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P_{i}\neq0$
+\end_inset
+ אז קיים פולינום מתוקן 
+\begin_inset Formula
+$D\in\MKfield\left[x\right]$
+\end_inset
+ יחיד כך ש-
+\begin_inset Formula
+$D\mid P_{i}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+\end_inset
+ ובנוסף לכל 
+\begin_inset Formula
+$Q\in\MKfield\left[x\right]$
+\end_inset
+ המחלק את כולם (
+\begin_inset Formula
+$Q\mid P_{i}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+\end_inset
+) מתקיים 
+\begin_inset Formula
+$Q\mid D$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$P_{i}\neq0$
+\end_inset
+ לכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+\end_inset
+ אז קיים פולינום מתוקן 
+\begin_inset Formula
+$L\in\MKfield\left[x\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P_{i}\mid L$
+\end_inset
+ לכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+\end_inset
+ ובנוסף לכל 
+\begin_inset Formula
+$M\in\MKfield\left[x\right]$
+\end_inset
+ המתחלק בכולם (
+\begin_inset Formula
+$P_{i}\mid M$
+\end_inset
+ לכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+\end_inset
+) מתקיים 
+\begin_inset Formula
+$L\mid M$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Definition
+\series bold
+מחלק משותף מקסימלי וכפולה משותפת מינימלית
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$P_{1},P_{2},\ldots,P_{r}\in\MKfield\left[x\right]$
+\end_inset
+,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם קיים 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P_{i}\neq0$
+\end_inset
+ אז נסמן ב-
+\begin_inset Formula
+$\gcd\left(P_{1},P_{2},\ldots,P_{r}\right)$
+\end_inset
+ את אותו 
+\begin_inset Formula
+$D$
+\end_inset
+ יחיד שמקיים את התנאים במשפט שלעיל, ונקרא לו 
+\bar under
+המחלק המשותף המקסימלי
+\bar default
+ של 
+\begin_inset Formula
+$P_{1},P_{2},\ldots,P_{r}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$P_{i}\neq0$
+\end_inset
+ לכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+\end_inset
+ אז נסמן ב-
+\begin_inset Formula
+$\MKlcm\left(P_{1},P_{2},\ldots,P_{r}\right)$
+\end_inset
+ את אותו 
+\begin_inset Formula
+$M$
+\end_inset
+ יחיד שמקיים את התנאים במשפט שלעיל ונקרא לו 
+\bar under
+הכפולה המשותפת המינימלית
+\bar default
+ של 
+\begin_inset Formula
+$P_{1},P_{2},\ldots,P_{r}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הגדרות שקולות ל-
+\begin_inset Formula
+$\gcd$
+\end_inset
+ ול-
+\begin_inset Formula
+$\MKlcm$
+\end_inset
+ הן:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+המחלק המשותף המקסימלי הוא הפולינום המתוקן המחלק את 
+\begin_inset Formula
+$P_{1},P_{2},\ldots,P_{r}$
+\end_inset
+ שדרגתו היא הגבוהה ביותר מבין אלה שמחלקים את כולם.
+\end_layout
+
+\begin_layout Itemize
+הכפולה המשותפת המינימלית היא הפולינום המתוקן המתחלק ב-
+\begin_inset Formula
+$P_{1},P_{2},\ldots,P_{r}$
+\end_inset
+ שדרגתו היא הנמוכה ביותר מבין אלה שמתחלקים בכולם.
+\end_layout
+
+\end_deeper
+
+\begin_layout Theorem
+יהיו 
+\begin_inset Formula
+$P,G\in\MKfield\left[x\right]$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$Q_{1},Q_{2},\ldots,Q_{r}\in\MKfield\left[x\right]$
+\end_inset
+, 
+\begin_inset Formula
+$n_{1},n_{2},\ldots,n_{r},m_{1},m_{2},\ldots,m_{r}\in\MKnatural_{0}$
+\end_inset
+ ו-
+\begin_inset Formula
+$a,b\in\MKfield$
+\end_inset
+ כך שהפירוקים של 
+\begin_inset Formula
+$P$
+\end_inset
+ ו-
+\begin_inset Formula
+$Q$
+\end_inset
+ לגורמים אי-פריקים הם
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+אם 
+\begin_inset Formula
+$Q_{i}$
+\end_inset
+ הוא גורם של 
+\begin_inset Formula
+$P$
+\end_inset
+ אך אינו גורם של 
+\begin_inset Formula
+$G$
+\end_inset
+ אז 
+\begin_inset Formula
+$m_{i}=0$
+\end_inset
+, ולהיפך, אם 
+\begin_inset Formula
+$Q_{i}$
+\end_inset
+ הוא גורם של 
+\begin_inset Formula
+$G$
+\end_inset
+ אך לא של 
+\begin_inset Formula
+$P$
+\end_inset
+ אז 
+\begin_inset Formula
+$n_{i}=0$
+\end_inset
+.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\begin{align*}
+P & =\prod_{i=1}^{r}\left(Q_{i}\right)^{n_{i}}\\
+G & =\prod_{i=1}^{r}\left(Q_{i}\right)^{m_{i}}
+\end{align*}
+
+
+\end_inset
+מתקיים:
+\begin_inset Formula
+\begin{align*}
+\gcd\left(P,G\right) & =\prod_{i=1}^{r}\left(Q_{i}\right)^{\min\left\{ n_{i},m_{i}\right\} }\\
+\MKlcm\left(P,G\right) & =\prod_{i=1}^{r}\left(Q_{i}\right)^{\max\left\{ n_{i},m_{i}\right\} }
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+יהיו 
+\begin_inset Formula
+$P,G\in\MKfield\left[x\right]$
+\end_inset
+, מתקיים:
+\begin_inset Formula
+\[
+\MKlcm\left(P,G\right)=\frac{P\cdot G}{\gcd\left(P,G\right)}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "calim 2.7"
+\end_inset
+יהיו 
+\begin_inset Formula
+$P,G,Q,R\in\MKfield\left[x\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P=Q\cdot G+R$
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$\gcd\left(P,G\right)=\gcd\left(G,R\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 2.8"
+\end_inset
+יהיו 
+\begin_inset Formula
+$P,G\in\MKfield\left[x\right]$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$\gcd\left(F,G\right)=\gcd\left(G,F\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$Q\in\MKfield\left[x\right]$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$Q\cdot\gcd\left(F,G\right)=\gcd\left(Q\cdot F,Q\cdot G\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם קיים 
+\begin_inset Formula
+$Q\in\MKfield\left[x\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$Q\mid F\cdot G$
+\end_inset
+ וגם 
+\begin_inset Formula
+$\gcd\left(G,Q\right)=1$
+\end_inset
+ אז 
+\begin_inset Formula
+$Q\mid F$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Definition
+\series bold
+פולינומים זרים
+\series default
+
+\begin_inset Newline newline
+\end_inset
+נאמר ששני פולינומים 
+\begin_inset Formula
+$P,G\in\MKfield\left[x\right]$
+\end_inset
+ 
+\bar under
+זרים זה לזה
+\bar default
+ אם 
+\begin_inset Formula
+$\gcd\left(P,G\right)=1$
+\end_inset
+, כלומר אין להם מחלק שאינו טריוויאלי.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+פולינומים ידידים
+\series default
+
+\begin_inset Newline newline
+\end_inset
+נאמר ששני פולינומים 
+\begin_inset Formula
+$P,G\in\MKfield\left[x\right]$
+\end_inset
+ הם 
+\bar under
+פולינומים ידידים
+\bar default
+ אם 
+\begin_inset Formula
+$P\mid G$
+\end_inset
+ וגם 
+\begin_inset Formula
+$G\mid P$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מהגדרה אם 
+\begin_inset Formula
+$P,G\in\MKfield\left[x\right]$
+\end_inset
+ הם פולינומים ידידים אז קיים 
+\begin_inset Formula
+$c\in\MKfield\left[x\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P=c\cdot G$
+\end_inset
+ ולכן בהכרח 
+\begin_inset Formula
+$\deg P=\deg G$
+\end_inset
+, אותו 
+\begin_inset Formula
+$c$
+\end_inset
+ הוא המנה בין שני המקדמים המובילים ולכן אם נתון בנוסך ששניהם מתוקנים אז הם שווים.
+\end_layout
+
+\begin_layout Definition
+\series bold
+אידיאל
+\series default
+
+\begin_inset Newline newline
+\end_inset
+קבוצה 
+\begin_inset Formula
+$I\subseteq\MKfield\left[x\right]$
+\end_inset
+ תקרא 
+\bar under
+אידיאל
+\bar default
+ אם מתקיימים שלושת התנאים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$0\in I$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$P,G\in I$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$P+G\in I$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$P\in I$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$Q\in\MKfield\left[x\right]$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$Q\cdot P\in I$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ למעשה זהו מקרה פרטי, בכל חוג חילופי קיימים אידאלים וזוהי ההגדרה שלהם.
+\end_layout
+
+\begin_layout Theorem
+יהי 
+\begin_inset Formula
+$I\subseteq\MKfield\left[x\right]$
+\end_inset
+ אידיאל, מתקיימת אחת משתי האפשרויות הבאות: 
+\begin_inset Formula
+$I=\left\{ 0\right\} $
+\end_inset
+ או שקיים פולינום מתוקן יחיד 
+\begin_inset Formula
+$P\in\MKfield\left[x\right]$
+\end_inset
+ כך שמתקיים 
+\begin_inset Formula
+$I=\left\{ Q\cdot P\mid Q\in\MKfield\left[x\right]\right\} $
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+נניח ש-
+\begin_inset Formula
+$I\neq\left\{ 0\right\} $
+\end_inset
+, יהי 
+\begin_inset Formula
+$P\in I$
+\end_inset
+ פולינום מתוקן מדרגה מינימלית, כלומר לכל 
+\begin_inset Formula
+$0\neq G\in I$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\deg P\leq\deg G$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$G\in I$
+\end_inset
+ פולינום ויהיו 
+\begin_inset Formula
+$Q,R\in\MKfield\left[x\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$G=Q\cdot P+R$
+\end_inset
+ ו-
+\begin_inset Formula
+$\deg R<\deg P$
+\end_inset
+, מהגדרת האידיאל נובע ש-
+\begin_inset Formula
+$R\in I$
+\end_inset
+ ולכן מהגדרת 
+\begin_inset Formula
+$P$
+\end_inset
+ נובע ש-
+\begin_inset Formula
+$R=0$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$G=Q\cdot P$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+היחידות נובעת מהעובדה שאם 
+\begin_inset Formula
+$G$
+\end_inset
+ מתוקן ו-
+\begin_inset Formula
+$\deg G=\deg P$
+\end_inset
+ אז 
+\begin_inset Formula
+$Q=1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+יהיו 
+\begin_inset Formula
+$P,G\in\MKfield\left[x\right]$
+\end_inset
+ שני פולינומים, הקבוצה 
+\begin_inset Formula
+$I:=\left\{ A\cdot P+B\cdot G\mid A,B\in\MKfield\left[x\right]\right\} $
+\end_inset
+ היא אידיאל ומתקיים 
+\begin_inset Formula
+$I=\left\{ 0\right\} $
+\end_inset
+ או
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$I=\left\{ Q\cdot\gcd\left\{ P,G\right\} \mid Q\in\MKfield\left[x\right]\right\} $
+\end_inset
+, בפרט אם 
+\begin_inset Formula
+$P\neq0$
+\end_inset
+ ו/או 
+\begin_inset Formula
+$G\neq0$
+\end_inset
+ אז קיימים 
+\begin_inset Formula
+$A,B\in\MKfield\left[x\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\gcd\left(P,G\right)=A\cdot P+B\cdot G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ נשים לב למספר נקודות דמיון בין 
+\begin_inset Formula
+$\MKfield\left[x\right]$
+\end_inset
+ לבין 
+\begin_inset Formula
+$\MKinteger$
+\end_inset
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+שניהם חוגים חילופיים, כלומר החיבור והכפל שלהם מקיימים את כל אקסיומות השדה מלבד קיום הופכי.
+\end_layout
+
+\begin_layout Enumerate
+בשניהם קיים חילוק עם שארית.
+\end_layout
+
+\begin_layout Enumerate
+בשניהם קיים יחס חלוקה ("
+\begin_inset Formula
+$a$
+\end_inset
+ מחלק את 
+\begin_inset Formula
+$b$
+\end_inset
+" או 
+\begin_inset Formula
+$a\mid b$
+\end_inset
+).
+\end_layout
+
+\begin_layout Enumerate
+בשניהם לכל איבר יש הצגה יחידה כמכפלה של אי-פריקים (ב-
+\begin_inset Formula
+$\MKinteger$
+\end_inset
+ האי-פריקים נקראים גם המספרים הראשוניים).
+\end_layout
+
+\begin_layout Enumerate
+בשניהם ניתן להגדיר מחלק משותף מקסימלי וכפולה משותפת מינימלית באותה צורה (ע"י יחס החלוקה הנ"ל), כמו כן, שני מספרים שלמים נקראים זרים אם המחלק המשותף המקסימלי שלהם הוא 
+\begin_inset Formula
+$1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+כל ההגדרות והטענות בפרק זה תקפות באותה צורה גם בחוג השלמים.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בקורס "תורת המספרים האלמנטרית" מופיע סיכום מקביל על המספרים השלמים תחת הכותרת "התחלקות".
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+אלגוריתם אוקלידס
+\end_layout
+
+\begin_layout Standard
+יהיו 
+\begin_inset Formula
+$P,G\in\MKfield\left[x\right]$
+\end_inset
+ כך שלפחות אחד מהם שונה מפולינום האפס, נרצה למצוא את 
+\begin_inset Formula
+$\gcd\left(P,G\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+נגדיר 
+\begin_inset Formula
+$R_{0}=P$
+\end_inset
+ ו-
+\begin_inset Formula
+$R_{1}=G$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כדאי להגדיר את 
+\begin_inset Formula
+$R_{0}$
+\end_inset
+ להיות בעל הדרגה הגדולה יותר מבין השניים משום שבשלב הראשון של האלגוריתם נחלק את 
+\begin_inset Formula
+$R_{0}$
+\end_inset
+ ב-
+\begin_inset Formula
+$R_{1}$
+\end_inset
+ עם שארית.
+\end_layout
+
+\end_inset
+ ונמצא את 
+\begin_inset Formula
+$\gcd\left(R_{0},R_{1}\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+לאלגוריתם ישנן שתי גרסאות: האלגוריתם הבסיסי והאלגוריתם המורחב, להלן הפירוט של שניהם בפסאודו-קוד.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+\begin_layout Plain Layout
+אלגוריתם אוקלידס הבסיסי
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+נגדיר 
+\begin_inset Formula
+$i:=0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Plain Layout
+כל עוד 
+\begin_inset Formula
+$R_{i+1}$
+\end_inset
+ אינו פולינום האפס:
+\end_layout
+
+\begin_layout Itemize
+נחלק את 
+\begin_inset Formula
+$R_{i}$
+\end_inset
+ ב-
+\begin_inset Formula
+$R_{i+1}$
+\end_inset
+ עם שארית, נסמן ב-
+\begin_inset Formula
+$Q_{i}$
+\end_inset
+ את המנה וב-
+\begin_inset Formula
+$R_{i+2}$
+\end_inset
+ את השארית (כלומר יהיו 
+\begin_inset Formula
+$Q_{i},R_{i+2}\in\MKfield\left[x\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\deg R_{i+2}<\deg R_{i+1}$
+\end_inset
+ וגם 
+\begin_inset Formula
+$R_{i}=R_{i+1}\cdot Q_{i}+R_{i+2}$
+\end_inset
+).
+\end_layout
+
+\begin_layout Itemize
+נגדיר את 
+\begin_inset Formula
+$i$
+\end_inset
+ להיות 
+\begin_inset Formula
+$i+1$
+\end_inset
+ ונעבור לשלב הבא בלולאה.
+\end_layout
+
+\begin_layout Plain Layout
+כעת מתקיים 
+\begin_inset Formula
+$R_{i+1}=0$
+\end_inset
+ו-
+\begin_inset Formula
+$R_{i}=\gcd\left(R_{0},R_{1}\right)$
+\end_inset
+.
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+\begin_layout Plain Layout
+אלגוריתם אוקלידס המורחב
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+נגדיר 
+\begin_inset Formula
+$i:=0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Plain Layout
+נגדיר 
+\begin_inset Formula
+${\color{red}A_{-1}:=0}$
+\end_inset
+ ו-
+\begin_inset Formula
+${\color{blue}B_{-1}:=1}$
+\end_inset
+ ומכאן שמתקיים:
+\begin_inset Formula
+\[
+R_{1}={\color{red}A_{-1}}\cdot R_{0}+{\color{blue}B_{-1}}\cdot R_{1}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+כל עוד 
+\begin_inset Formula
+$R_{i+1}\neq0$
+\end_inset
+:
+\end_layout
+
+\begin_layout Itemize
+נחלק את 
+\begin_inset Formula
+$R_{i}$
+\end_inset
+ ב-
+\begin_inset Formula
+$R_{i+1}$
+\end_inset
+ עם שארית, נסמן ב-
+\begin_inset Formula
+$Q_{i}$
+\end_inset
+ את המנה וב-
+\begin_inset Formula
+$R_{i+2}$
+\end_inset
+ את השארית.
+\end_layout
+
+\begin_layout Itemize
+נחלק למקרים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$i=0$
+\end_inset
+ אז נגדיר 
+\begin_inset Formula
+${\color{red}A_{0}:=1}$
+\end_inset
+ ו-
+\begin_inset Formula
+${\color{blue}B_{0}:=-Q_{0}}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אחרת, נגדיר 
+\begin_inset Formula
+${\color{red}A_{i}=A_{i-2}-Q_{i}\cdot A_{i-1}}$
+\end_inset
+ ו-
+\begin_inset Formula
+${\color{blue}B_{i}:=B_{i-2}-Q_{i}\cdot B_{i-1}}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+נגדיר את 
+\begin_inset Formula
+$i$
+\end_inset
+ להיות 
+\begin_inset Formula
+$i+1$
+\end_inset
+ ונעבור לשלב הבא בלולאה.
+\end_layout
+
+\begin_layout Plain Layout
+כעת מתקיים 
+\begin_inset Formula
+$R_{i+1}=0$
+\end_inset
+ וגם:
+\begin_inset Formula
+\[
+\gcd\left(R_{0},R_{1}\right)=R_{i}=A_{i-2}\cdot P+A_{i-2}\cdot G
+\]
+
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+בעמוד הבא נוכיח את הנכונות של האלגוריתם המורחב וממילא נקבל את הנכונות של האלגוריתם הבסיסי.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+נגדיר 
+\begin_inset Formula
+$i:=0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+נגדיר 
+\begin_inset Formula
+${\color{red}A_{-1}:=0}$
+\end_inset
+ ו-
+\begin_inset Formula
+${\color{blue}B_{-1}:=1}$
+\end_inset
+ ומכאן שמתקיים:
+\begin_inset Formula
+\[
+R_{1}={\color{red}A_{-1}}\cdot R_{0}+{\color{blue}B_{-1}}\cdot R_{1}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+כל עוד 
+\begin_inset Formula
+$R_{i+1}\neq0$
+\end_inset
+:
+\end_layout
+
+\begin_layout Itemize
+נחלק את 
+\begin_inset Formula
+$R_{i}$
+\end_inset
+ ב-
+\begin_inset Formula
+$R_{i+1}$
+\end_inset
+ עם שארית, נסמן ב-
+\begin_inset Formula
+$Q_{i}$
+\end_inset
+ את המנה וב-
+\begin_inset Formula
+$R_{i+2}$
+\end_inset
+ את השארית.
+\begin_inset Formula
+\[
+\Rightarrow R_{i+2}=R_{i}-R_{i+1}\cdot Q_{i}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+# מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "calim 2.7"
+plural false
+caps false
+noprefix false
+\end_inset
+ נובע שבכל שלב מתקיים 
+\begin_inset Formula
+$\gcd\left(R_{i+2},R_{i+1}\right)=\gcd\left(R_{i+1},R_{i}\right)=\ldots=\gcd\left(R_{0},R_{1}\right)$
+\end_inset
+,
+\begin_inset Newline newline
+\end_inset
+וגם 
+\begin_inset Formula
+$\deg R_{i+2}<\deg R_{i+1}$
+\end_inset
+ (לכן האלגוריתם מוכרח להיעצר בשלב כלשהו שהרי מדובר במספרים שלמים).
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+יהיו 
+\begin_inset Formula
+$A_{i},B_{i}\in\MKfield\left[x\right]$
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+R_{i+2}=A_{i}\cdot R_{0}+B_{i}\cdot R_{i+1}
+\]
+
+
+\end_inset
+נסביר כיצד למצוא 
+\begin_inset Formula
+$B_{i}$
+\end_inset
+ ו-
+\begin_inset Formula
+$A_{i}$
+\end_inset
+ כאלה:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$i=0$
+\end_inset
+ אז נגדיר 
+\begin_inset Formula
+${\color{red}A_{0}:=1}$
+\end_inset
+ ו-
+\begin_inset Formula
+${\color{blue}B_{0}:=-Q_{0}}$
+\end_inset
+ ואכן מתקיים 
+\begin_inset Formula
+$R_{2}={\color{red}1}\cdot R_{0}{\color{blue}-Q_{0}}\cdot R_{1}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אחרת, נזכור ש-
+\begin_inset Formula
+$R_{i+1}=A_{i-1}\cdot R_{0}+B_{i-1}\cdot R_{1}$
+\end_inset
+ וגם 
+\begin_inset Formula
+$R_{i}=A_{i-2}\cdot R_{0}+B_{i-2}\cdot R_{1}$
+\end_inset
+, ומכיוון ש-
+\begin_inset Formula
+$R_{i+2}=R_{i}-Q_{i}\cdot R_{i+1}$
+\end_inset
+ ניתן להציג את 
+\begin_inset Formula
+$R_{i+2}$
+\end_inset
+ כך:
+\begin_inset Formula
+\begin{align*}
+R_{i+2} & =R_{i}-R_{i+1}\cdot Q_{i}=\left(A_{i-2}\cdot R_{0}+B_{i-2}\cdot R_{1}\right)-\left(A_{i-1}\cdot R_{0}+B_{i-1}\cdot R_{1}\right)\cdot Q_{i}\\
+ & ={\color{red}\left(A_{i-2}-Q_{i}\cdot A_{i-1}\right)}\cdot R_{0}+{\color{blue}\left(B_{i-2}-Q_{i}\cdot B_{i-1}\right)}\cdot R_{1}
+\end{align*}
+
+
+\end_inset
+ולכן נגדיר 
+\begin_inset Formula
+${\color{red}A_{i}=A_{i-2}-Q_{i}\cdot A_{i-1}}$
+\end_inset
+ ו-
+\begin_inset Formula
+${\color{blue}B_{i}:=B_{i-2}-Q_{i}\cdot B_{i-1}}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+נגדיר את 
+\begin_inset Formula
+$i$
+\end_inset
+ להיות 
+\begin_inset Formula
+$i+1$
+\end_inset
+ ונעבור לשלב הבא בלולאה.
+\end_layout
+
+\begin_layout Standard
+כעת מתקיים 
+\begin_inset Formula
+$R_{i+1}=0$
+\end_inset
+, כלומר:
+\begin_inset Formula
+\[
+0=R_{i+1}=R_{i-1}-R_{i}\cdot Q_{i-1}
+\]
+
+
+\end_inset
+וממילא:
+\begin_inset Formula
+\begin{align*}
+R_{i} & =\gcd\left(R_{i+1},R_{i}\right)=\gcd\left(R_{i},R_{i-1}\right)=\ldots=\gcd\left(R_{0},R_{1}\right)
+\end{align*}
+
+
+\end_inset
+בנוסף מתקיים:
+\begin_inset Formula
+\[
+\gcd\left(R_{0},R_{1}\right)=R_{i}=A_{i-2}\cdot P+B_{i-2}\cdot G
+\]
+
+
+\end_inset
+ולכן נחזיר את 
+\begin_inset Formula
+$R_{i},A_{i-2},B_{i-2}$
+\end_inset
+ ונסיים.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+שורשים ופריקות
+\end_layout
+
+\begin_layout Subsection
+מעל שדה כללי
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ שדה.
+\end_layout
+
+\begin_layout Definition
+נאמר שפולינום לא קבוע 
+\begin_inset Formula
+$P\in\MKfield\left[x\right]$
+\end_inset
+ הוא 
+\bar under
+אי-פריק
+\bar default
+ אם לא קיים פולינום 
+\begin_inset Formula
+$G\in\MKfield\left[x\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$G\mid P$
+\end_inset
+ וגם 
+\begin_inset Formula
+$0<\deg G<\deg P$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+דרישות אלו נצרכות בגלל שבהכרח מתקיים 
+\begin_inset Formula
+$P\mid P$
+\end_inset
+ ו-
+\begin_inset Formula
+$1\mid P$
+\end_inset
+.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+סקלר 
+\begin_inset Formula
+$\lambda\in\MKfield$
+\end_inset
+ יקרא 
+\bar under
+שורש של פולינום
+\bar default
+ 
+\begin_inset Formula
+$P\in\MKfield\left[x\right]$
+\end_inset
+ אם מתקיים 
+\begin_inset Formula
+$P\left(\lambda\right)=0_{\MKfield}$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כאן אנו מתייחסים ל-
+\begin_inset Formula
+$P$
+\end_inset
+ כפונקציה מ-
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ ל-
+\begin_inset Formula
+$\MKfield$
+\end_inset
+.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ לכל פולינום מדרגה 
+\begin_inset Formula
+$1$
+\end_inset
+ יש שורש יחיד.
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula
+$P\in\MKfield\left[x\right]$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$a\in\MKfield$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$x-a\mid P\left(x\right)-P\left(a\right)$
+\end_inset
+ ובאופן שקול השארית של חלוקת 
+\begin_inset Formula
+$P$
+\end_inset
+ ב-
+\begin_inset Formula
+$x-a$
+\end_inset
+ היא 
+\begin_inset Formula
+$P\left(a\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+נחלק את 
+\begin_inset Formula
+$P\left(x\right)-P\left(a\right)$
+\end_inset
+ ב-
+\begin_inset Formula
+$x-a$
+\end_inset
+ עם שארית: יהיו 
+\begin_inset Formula
+$Q,R\in\MKfield\left[x\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P\left(x\right)-P\left(a\right)=Q\left(x\right)\cdot\left(x-a\right)+R\left(x\right)$
+\end_inset
+ ו-
+\begin_inset Formula
+$\deg R<\deg\left(x-a\right)$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מהגדרה 
+\begin_inset Formula
+$\deg\left(x-a\right)=1$
+\end_inset
+ ולכן 
+\begin_inset Formula
+$\deg R=0$
+\end_inset
+ ש-
+\begin_inset Formula
+$R$
+\end_inset
+ הוא פולינום האפס, בכל מקרה 
+\begin_inset Formula
+$R$
+\end_inset
+ הוא פולינום קבוע.
+\begin_inset Newline newline
+\end_inset
+נציב 
+\begin_inset Formula
+$a$
+\end_inset
+ בשני האגפים ונקבל:
+\begin_inset Formula
+\[
+0=P\left(a\right)-P\left(a\right)=Q\left(a\right)\cdot\left(a-a\right)+R\left(a\right)=Q\left(a\right)\cdot0+R\left(a\right)=R\left(a\right)
+\]
+
+
+\end_inset
+א"כ 
+\begin_inset Formula
+$R\left(a\right)=0$
+\end_inset
+ ומהיות של 
+\begin_inset Formula
+$R$
+\end_inset
+ פולינום קבוע נובע ש-
+\begin_inset Formula
+$R\left(x\right)=0$
+\end_inset
+ לכל 
+\begin_inset Formula
+$x\in\MKfield$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$R$
+\end_inset
+ הוא פולינום האפס ומכאן ש-
+\begin_inset Formula
+$x-a\mid P\left(x\right)-P\left(a\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+סקלר 
+\begin_inset Formula
+$\lambda\in\MKfield$
+\end_inset
+ הוא שורש של פולינום 
+\begin_inset Formula
+$P\in\MKfield\left[x\right]$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$x-\lambda\mid P\left(x\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula
+$P\in\MKfield\left[x\right]$
+\end_inset
+ ונסמן 
+\begin_inset Formula
+$n:=\deg P$
+\end_inset
+, ל-
+\begin_inset Formula
+$P$
+\end_inset
+ יש לכל היותר 
+\begin_inset Formula
+$n$
+\end_inset
+ שורשים שונים ב-
+\begin_inset Formula
+$\MKfield$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+אם לפולינום מדרגה גדולה מ-
+\begin_inset Formula
+$1$
+\end_inset
+ יש שורש אז הוא פריק.
+\end_layout
+
+\begin_layout Definition
+\series bold
+ריבוי שורש של פולינום
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$P\in\MKfield\left[x\right]$
+\end_inset
+ ונניח כי 
+\begin_inset Formula
+$\lambda\in\MKfield$
+\end_inset
+ הוא שורש של 
+\begin_inset Formula
+$P$
+\end_inset
+, ראינו שמתקיים 
+\begin_inset Formula
+$x-\lambda\mid P\left(x\right)$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$Q\in\MKfield\left[x\right]$
+\end_inset
+ ו-
+\begin_inset Formula
+$k\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P\left(x\right)=\left(x-\lambda\right)^{k}\cdot Q\left(x\right)$
+\end_inset
+ ו-
+\begin_inset Formula
+$\lambda$
+\end_inset
+ אינו שורש של 
+\begin_inset Formula
+$Q$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר 
+\begin_inset Formula
+$k$
+\end_inset
+ הוא החזקה המקסימלית המקיימת 
+\begin_inset Formula
+$\left(x-\lambda\right)^{k}\mid P\left(x\right)$
+\end_inset
+.
+\end_layout
+
+\end_inset
+, 
+\begin_inset Formula
+$k$
+\end_inset
+ יקרא 
+\bar under
+הריבוי האלגברי
+\bar default
+ של 
+\begin_inset Formula
+$\lambda$
+\end_inset
+ (ביחס ל-
+\begin_inset Formula
+$P$
+\end_inset
+).
+\end_layout
+
+\begin_layout Lemma
+אם 
+\begin_inset Formula
+$\lambda\in\MKfield$
+\end_inset
+ הוא שורש של פולינום 
+\begin_inset Formula
+$P\in\MKfield\left[x\right]$
+\end_inset
+ אז 
+\begin_inset Formula
+$\lambda$
+\end_inset
+ הוא שורש של 
+\begin_inset Formula
+$P\cdot Q$
+\end_inset
+ לכל 
+\begin_inset Formula
+$Q\in\MKfield\left[x\right]$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+אם לפולינום מדרגה 
+\begin_inset Formula
+$2$
+\end_inset
+ או 
+\begin_inset Formula
+$3$
+\end_inset
+ אין שורש אז הוא אי-פריק.
+\end_layout
+
+\begin_layout Proof
+אם הוא היה פריק אז אחד הגורמים שלו היה מוכרח להיות מדרגה 
+\begin_inset Formula
+$1$
+\end_inset
+ וכפי שראינו זה אומר שיש לו שורש.
+\end_layout
+
+\begin_layout Theorem
+פולינום 
+\begin_inset Formula
+$P\in\MKfield\left[x\right]$
+\end_inset
+ הוא אי-פריק אם"ם לכל 
+\begin_inset Formula
+$F,G\in\MKfield\left[x\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P\mid F\cdot G$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$P\mid F$
+\end_inset
+ ו/או 
+\begin_inset Formula
+$P\mid G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ לתכונה הנ"ל קוראים ראשוניות, כלומר פולינום הוא אי-פריק אם"ם הוא ראשוני.
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$P\in\MKfield\left[x\right]$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\Leftarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$P$
+\end_inset
+ אי-פריק ויהיו 
+\begin_inset Formula
+$F,G\in\MKfield\left[x\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P\mid F\cdot G$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נסמן 
+\begin_inset Formula
+$D:=\gcd\left(F,P\right)$
+\end_inset
+, מהגדרה 
+\begin_inset Formula
+$D\mid P$
+\end_inset
+ ולכן מהעובדה ש-
+\begin_inset Formula
+$P$
+\end_inset
+ אי-פריק נובע ש-
+\begin_inset Formula
+$D=1$
+\end_inset
+ או ש-
+\begin_inset Formula
+$D=c\cdot P$
+\end_inset
+ עבור 
+\begin_inset Formula
+$0\neq c\in\MKfield$
+\end_inset
+ כלשהו.
+\begin_inset Newline newline
+\end_inset
+אם 
+\begin_inset Formula
+$D=1$
+\end_inset
+ אז 
+\begin_inset Formula
+$D$
+\end_inset
+ ו-
+\begin_inset Formula
+$F$
+\end_inset
+ זרים ולכן מסעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+בטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 2.8"
+plural false
+caps false
+noprefix false
+\end_inset
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+נובע ש-
+\begin_inset Formula
+$P\mid G$
+\end_inset
+, ואם 
+\begin_inset Formula
+$D=c\cdot P$
+\end_inset
+ אז מהגדרת ה-
+\begin_inset Formula
+$\gcd$
+\end_inset
+ 
+\begin_inset Formula
+$P$
+\end_inset
+ מחלק את 
+\begin_inset Formula
+$F$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\Rightarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח שלכל 
+\begin_inset Formula
+$F,G\in\MKfield\left[x\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P\mid F\cdot G$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$P\mid F$
+\end_inset
+ ו/או 
+\begin_inset Formula
+$P\mid G$
+\end_inset
+, ויהי 
+\begin_inset Formula
+$G\in\MKfield\left[x\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$G\mid P$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$Q\in\MKfield\left[x\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$G\cdot Q=P$
+\end_inset
+, א"כ מתקיים 
+\begin_inset Formula
+$P\mid G\cdot Q$
+\end_inset
+ ולכן מההנחה נובע ש-
+\begin_inset Formula
+$P\mid G$
+\end_inset
+ או ש-
+\begin_inset Formula
+$P\mid Q$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+אם 
+\begin_inset Formula
+$P\mid G$
+\end_inset
+ אז 
+\begin_inset Formula
+$P$
+\end_inset
+ ו-
+\begin_inset Formula
+$G$
+\end_inset
+ הם פולינומים ידידים ולכן קיים 
+\begin_inset Formula
+$c\in\MKfield$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$c\cdot G=P$
+\end_inset
+ ואם 
+\begin_inset Formula
+$P\mid Q$
+\end_inset
+ אז קיים 
+\begin_inset Formula
+$c\in\MKfield$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$c\cdot Q=P$
+\end_inset
+,
+\begin_inset Newline newline
+\end_inset
+א"כ מתקיים 
+\begin_inset Formula
+$\deg G=\deg P$
+\end_inset
+ או 
+\begin_inset Formula
+$\deg Q=\deg P$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$\deg G=\deg P$
+\end_inset
+ או 
+\begin_inset Formula
+$\deg G=\deg0$
+\end_inset
+ ולכן מהגדרה 
+\begin_inset Formula
+$P$
+\end_inset
+ אי-פריק.
+\end_layout
+
+\end_deeper
+
+\begin_layout Lemma
+יהי 
+\begin_inset Formula
+$P\in\MKfield\left[x\right]$
+\end_inset
+ פולינום אי-פריק ויהיו 
+\begin_inset Formula
+$G_{1},G_{2},\ldots,G_{n}\in\MKfield\left[x\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P\mid G_{1}\cdot G_{2}\cdot\ldots\cdot G_{n}$
+\end_inset
+, קיים 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P\mid G_{i}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lemma 3.9"
+\end_inset
+יהי 
+\begin_inset Formula
+$P\in\MKfield\left[x\right]$
+\end_inset
+ פולינום אי-פריק מתוקן ויהיו 
+\begin_inset Formula
+$G_{1},G_{2},\ldots,G_{n}\in\MKfield\left[x\right]$
+\end_inset
+ פולינומים אי-פריקים מתוקנים כך ש-
+\begin_inset Formula
+$P\mid G_{1}\cdot G_{2}\cdot\ldots\cdot G_{n}$
+\end_inset
+, קיים 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P=G_{i}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+פירוק לגורמים אי-פריקים
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$G\in\MKfield\left[x\right]$
+\end_inset
+ פולינום. קיימים פולינומים מתוקנים 
+\begin_inset Formula
+$P_{1},P_{2},\ldots,P_{r}\in\MKfield\left[x\right]$
+\end_inset
+ שונים זה מזה, מספרים טבעיים 
+\begin_inset Formula
+$n_{1},n_{2},\ldots,n_{r}\in\MKnatural$
+\end_inset
+ וסקלר 
+\begin_inset Formula
+$c\in\MKfield$
+\end_inset
+ יחידים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+עד כדי שינוי סדר ושינוי סימן.
+\end_layout
+
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+G=c\cdot\prod_{i=1}^{r}\left(P_{i}\right)^{n_{i}}
+\]
+
+
+\end_inset
+הצגה זו נקראת הפירוק של 
+\begin_inset Formula
+$P$
+\end_inset
+ לגורמים אי-פריקים.
+\end_layout
+
+\begin_layout Proof
+ניתן להוכיח באינדוקציה שניתן להציג כל פולינום כמכפלה של פולינומים אי-פריקים מתוקנים וסקלר
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+מפרקים לגורמים עד שכבר א"א לחלק מפני שכל הגורמים אי-פריקים.
+\end_layout
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$P_{1},P_{2},\ldots P_{r},Q_{1},Q_{2},\ldots Q_{s}\in\MKfield\left[x\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P_{i}\neq P_{j}$
+\end_inset
+ אם 
+\begin_inset Formula
+$i\neq j$
+\end_inset
+ (לכל 
+\begin_inset Formula
+$r\geq i,j\in\MKnatural$
+\end_inset
+) וכמו כן 
+\begin_inset Formula
+$Q_{i}\neq Q_{j}$
+\end_inset
+ אם 
+\begin_inset Formula
+$i\neq j$
+\end_inset
+ (לכל 
+\begin_inset Formula
+$s\geq i,j\in\MKnatural$
+\end_inset
+), 
+\begin_inset Formula
+$n_{1},n_{2},\ldots,n_{r},m_{1},m_{2},\ldots,m_{s}\in\MKnatural$
+\end_inset
+ ו-
+\begin_inset Formula
+$c,c'\in\MKfield$
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+c\cdot\prod_{i=1}^{r}\left(P_{i}\right)^{n_{i}}=G=c'\cdot\prod_{j=1}^{s}\left(Q_{j}\right)^{m_{i}}
+\]
+
+
+\end_inset
+ראשית נשים לב לכך ש-
+\begin_inset Formula
+$c$
+\end_inset
+ ו-
+\begin_inset Formula
+$c'$
+\end_inset
+ מוכרחים להיות שווים למקדם המוביל של 
+\begin_inset Formula
+$G$
+\end_inset
+ משום שכל הפולינומים במכפלה מתוקנים.
+\begin_inset Newline newline
+\end_inset
+נגדיר פונקציה 
+\begin_inset Formula
+$f:\left\{ i\in\MKnatural\mid i\leq r\right\} \rightarrow\left\{ i\in\MKnatural\mid i\leq s\right\} $
+\end_inset
+ באופן אינדוקטיבי.
+\begin_inset Newline newline
+\end_inset
+נסמן 
+\begin_inset Formula
+$i:=1$
+\end_inset
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+לכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+\end_inset
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+מהלמה האחרונה (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 3.9"
+plural false
+caps false
+noprefix false
+\end_inset
+) נובע שקיים 
+\begin_inset Formula
+$s\geq j\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$Q_{j}=P_{i}$
+\end_inset
+ ובנוסף 
+\begin_inset Formula
+$n_{i}=m_{j}$
+\end_inset
+, יהי 
+\begin_inset Formula
+$j$
+\end_inset
+ כנ"ל ונסמן 
+\begin_inset Formula
+$f\left(i\right):=j$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+כעת נסיר מהמכפלה באגף שמאל את 
+\begin_inset Formula
+$\left(P_{i}\right)^{n_{i}}$
+\end_inset
+ ומאגף ימין נסיר את 
+\begin_inset Formula
+$\left(Q_{j}\right)^{m_{j}}$
+\end_inset
+ ושוב נקבל שוויון כך ש-
+\begin_inset Formula
+$\left(Q_{j}\right)^{m_{j}}$
+\end_inset
+ כבר אינו מופיע מופיע במכפלה הימנית ומכאן שהפונקציה שנגדיר תהיה חח"ע.
+\end_layout
+
+\begin_layout Itemize
+נעבור לשלב הבא בלולאה.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+כעת אגף שמאל הוא המכפלה הריקה השווה ל-
+\begin_inset Formula
+$1$
+\end_inset
+ ולכן גם אגף ימין שווה ל-
+\begin_inset Formula
+$1$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$s=r$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$f$
+\end_inset
+ על ומכיוון שהיא חח"ע הרי שהיא הפיכה.
+\end_layout
+
+\end_deeper
+
+\begin_layout Subsection
+מעל שדה המרוכבים
+\end_layout
+
+\begin_layout Theorem
+\series bold
+המשפט היסודי של האלגברה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$P\in\MKcomplex\left[x\right]$
+\end_inset
+ יש שורש מרוכב.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ לא הוכחנו את המשפט בכיתה, זהו חומר מתקדם יותר.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ שדה שלכל פולינום מעליו יש שורש בשדה נקרא 
+\bar under
+סגור אלגברית
+\bar default
+.
+\end_layout
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula
+$P\in\MKcomplex\left[x\right]$
+\end_inset
+ פולינום מתוקן ונסמן 
+\begin_inset Formula
+$n:=\deg P$
+\end_inset
+, קיימים 
+\begin_inset Formula
+$\lambda_{1},\lambda_{2},\ldots,\lambda_{n}\in\MKcomplex$
+\end_inset
+ (לאו דווקא שונים) כך שמתקיים:
+\begin_inset Formula
+\[
+P\left(x\right)=\prod_{i=1}^{n}\left(x-\lambda_{i}\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+כל פולינום אי-פריק מעל 
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+ הוא מדרגה 
+\begin_inset Formula
+$1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula
+$P\in\MKreal\left[x\right]\subseteq\MKcomplex\left[x\right]$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$\lambda\in\MKcomplex$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$P\left(\overline{\lambda}\right)=\overline{P\left(\lambda\right)}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הטענה נובעת מהעובדה שהצמדה היא כפלית וחיבורית (כלומר לכל 
+\begin_inset Formula
+$z,w\in\MKcomplex$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\overline{z+w}=\overline{z}+\overline{w}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\overline{z\cdot w}=\overline{z}\cdot\overline{w}$
+\end_inset
+), הטענה נכונה דווקא בפולינום בעל מקדמים ממשיים משום שרק אז המקדמים צמודים לעצמם.
+\end_layout
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula
+$P\in\MKreal\left[x\right]\subseteq\MKcomplex\left[x\right]$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$\lambda\in\MKcomplex$
+\end_inset
+ שורש של 
+\begin_inset Formula
+$P$
+\end_inset
+,  גם 
+\begin_inset Formula
+$\overline{\lambda}$
+\end_inset
+ הוא שורש של 
+\begin_inset Formula
+$P$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+לכל פולינום מדרגה אי-זוגית מעל 
+\begin_inset Formula
+$\MKreal$
+\end_inset
+ יש שורש ממשי.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+כל פולינום אי-פריק מעל 
+\begin_inset Formula
+$\MKreal$
+\end_inset
+ הוא פולינום מדרגה 
+\begin_inset Formula
+$1$
+\end_inset
+ או פולינום מדרגה 
+\begin_inset Formula
+$2$
+\end_inset
+ חסר שורשים.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כלומר הפולינומים האי-פריקים מעל 
+\begin_inset Formula
+$\MKreal$
+\end_inset
+ הם פולינומים ליניאריים ופולינומים ריבועיים שהדיסקרימיננטה שלהם שלילית.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+הפולינומים כמרחב וקטורי
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$n\in\MKnatural_{0}$
+\end_inset
+ ויהא 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ שדה.
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה שכל איבריה ב-
+\begin_inset Formula
+$\MKfield$
+\end_inset
+, נאמר ש-
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ היא 
+\bar under
+סדרה נתמכת סופית
+\bar default
+ אם קיים 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N<n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a_{n}=0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+קבוצת הסדרות הנתמכות סופית היא תמ"ו של קבוצת הסדרות (
+\begin_inset Formula
+$\MKfield^{\MKnatural}$
+\end_inset
+), וכמרחב וקטורי היא אינה נוצרת סופית.
+\end_layout
+
+\begin_layout Description
+סימון: 
+\begin_inset Formula
+$\MKfield_{n}\left[x\right]:=\MKfield_{\leq n}\left[x\right]:=\left\{ P\in\MKfield\left[x\right]\mid\deg P\leq n\right\} $
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula
+$\MKfield\left[x\right]$
+\end_inset
+ הוא מרחב וקטורי מעל 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ ביחס לפעולת החיבור והכפל בסקלר שהוגדרו בפרק הראשון, ו-
+\begin_inset Formula
+$\MKfield_{n}\left[x\right]$
+\end_inset
+ הוא תמ"ו שלו.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ נשים לב שישנו איזומורפיזם פשוט בין 
+\begin_inset Formula
+$\MKfield_{n}\left[x\right]$
+\end_inset
+ ל-
+\begin_inset Formula
+$\MKfield^{n+1}$
+\end_inset
+ ובין 
+\begin_inset Formula
+$\MKfield\left[x\right]$
+\end_inset
+ לקבוצת הסדרות הנתמכות סופית מעל 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+: נעתיק כל פולינום לסדרת המקדמים שלו.
+\end_layout
+
+\begin_layout Corollary
+\begin_inset Formula
+$\MKfield\left[x\right]$
+\end_inset
+ הוא מרחב וקטורי שאינו נוצר סופית אך 
+\begin_inset Formula
+$\dim\MKfield_{n}\left[x\right]=n+1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+\bar under
+הבסיס הסטנדרטי
+\bar default
+ של 
+\begin_inset Formula
+$\MKfield_{n}\left[x\right]$
+\end_inset
+ הוא 
+\begin_inset Formula
+$\left(1,x,x^{2},\ldots,x^{n}\right)$
+\end_inset
+.
+\end_layout
+
+\end_body
+
+\end_document
+

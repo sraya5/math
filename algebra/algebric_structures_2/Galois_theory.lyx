@@ -1,0 +1,8254 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The head's design for summuries,make the layout more similar to a book:
+\AtBeginDocument{
+\renewcommand\headrule{%
+  \kern -7pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+  \kern 10pt
+}}
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Correct the reversed parentheses in labels:
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\newfontfamily{\hebrewfont}{David}
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+
+
+
+\end_preamble
+
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+customHeadersFooters
+\end_modules
+
+\maintain_unincluded_children no
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size      Larger
+	  Series     Bold
+	EndFont
+End
+Style Solution
+	LabelString           "פתרון: "End
+Style Notation
+	LabelString           "סימון  \thetheorem: "End
+Style Theorem
+	LabelString           "משפט \thetheorem: "End
+Style Property
+	LabelString           "תזכורת: "End
+
+
+
+\end_local_layout
+
+\language hebrew
+
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\float_alignment class
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\boxbgcolor #cccccc
+\branch proofs
+\selected 1
+\filename_suffix 0
+\color background background
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+
+\tocdepth 3
+
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename C:\Users\sraya\AppData\Roaming\LyX2.4\macros\MKmacros.lyx
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+התחלה
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ הרחבת שדות.
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ תיקרא 
+\bar under
+הרחבה רדיקלית פשוטה
+\bar default
+ אם קיימים 
+\begin_inset Formula
+$\alpha\in\MKbbe$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$n\in\MKnatural$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKbbe=\MKfield\left(\alpha\right)$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\alpha^{n}\in\MKfield$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+כמו כן, 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ תיקרא 
+\bar under
+הרחבה רדיקלית
+\bar default
+ אם קיימים 
+\begin_inset Formula
+$\MKseq{\alpha},r\in\MKbbe$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKseq n,r\in\MKnatural$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKbbe=\MKfield\left(\MKseq{\alpha},r\right)$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(\alpha_{i}\right)^{n_{i}}\in\MKfield\left(\MKseq{\alpha},{i-1}\right)$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ מטרתנו היא לקבוע מתי ניתן לפתור פולינום נתון באמצעות חיבור, חיסור, כפל, חילוק והוצאת שורש; הצורה הפורמלית לומר זאת היא שהפולינום מתפצל בשדה הרחבה רדיקלית.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ מטרה נוספת היא לקבוע מתי יש נוסחה קבועה לפתרון כל הפולינומים ממעלה כלשהי מעל שדה נתון.
+\end_layout
+
+\begin_layout Definition
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+נאמר שפולינום 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ 
+\bar under
+ניתן לפתרון באמצעות רדיקלים
+\bar default
+ אם קיימת הרחבות שדות רדיקלית 
+\begin_inset Formula
+$\nicefrac{\MKbbk}{\MKfield}$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ מתפצל ב-
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+כמו כן נאמר שפולינום 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ הוא 
+\bar under
+פתיר
+\bar default
+ אם 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe_{f}}{\MKfield}\right)$
+
+
+\end_inset
+ היא חבורה פתירה, כאשר 
+\begin_inset Formula
+$\MKbbe_{f}$
+
+
+\end_inset
+ הוא שדה הפיצול של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ פולינום ונסמן ב-
+\begin_inset Formula
+$\MKbbe_{f}$
+
+
+\end_inset
+ את שדה הפיצול שלו, מתקיים 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ניתן לפתרון באמצעות רדיקלים אם"ם 
+\begin_inset Formula
+$\nicefrac{\MKbbe_{f}}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה רדיקלית.
+\end_layout
+
+\begin_layout Definition
+איבר 
+\begin_inset Formula
+$\zeta\in\MKfield$
+
+
+\end_inset
+ ייקרא 
+\bar under
+שורש יחידה
+\bar default
+ מסדר 
+\begin_inset Formula
+$n\in\MKnatural$
+
+
+\end_inset
+, אם 
+\begin_inset Formula
+$\zeta^{n}=1$
+
+
+\end_inset
+, כמו כן ייקרא 
+\bar under
+שורש יחידה פרימיטיבי
+\bar default
+ מסדר 
+\begin_inset Formula
+$n$
+
+
+\end_inset
+ אם (בנוסף) 
+\begin_inset Formula
+$\zeta^{k}\neq1$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$n>k\in\MKnatural$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+חבורת גלואה
+\series default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה: 
+\begin_inset CommandInset href
+LatexCommand href
+name "אווריסט גלואה"
+target https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%95%D7%A8%D7%99%D7%A1%D7%98_%D7%92%D7%9C%D7%95%D7%90%D7%94
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+
+\bar under
+חבורת גלואה
+\bar default
+ של ההרחבה 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right):=\left\{ \varphi\in\MKaut\left(\MKbbe\right):\varphi\mid_{\MKfield}=\MKid_{\MKfield}\right\} $
+
+
+\end_inset
+ (פעולת החבורה היא הרכבה כמובן).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+הערה:
+\series default
+ במקומות אחרים קוראים לקבוצה 
+\begin_inset Formula
+$\left\{ \varphi\in\MKaut\left(\MKbbe\right):\varphi\mid_{\MKfield}=\MKid_{\MKfield}\right\} $
+
+
+\end_inset
+ 
+\bar under
+חבורת האוטומורפיזמים
+\bar default
+ של ההרחבה 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ ומסמנים אותה ב-
+\begin_inset Formula
+$\MKaut\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+, את השם "חבורת גלואה" ואת הסימון 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ הם שומרים למקרה שבו 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבת גלואה (אנחנו נגדיר מהי הרחבת גלואה בהמשך).
+\end_layout
+
+\begin_layout Lemma
+לכל תת-חבורה 
+\begin_inset Formula
+$H\leqslant\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+, הקבוצה 
+\begin_inset Formula
+$\left\{ x\in\MKbbe\mid\forall\sigma\in H\ \sigma\left(x\right)=x\right\} $
+
+
+\end_inset
+ היא שדה המכיל את 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+לכל תת-חבורה 
+\begin_inset Formula
+$H\leqslant\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ נסמן 
+\begin_inset Formula
+$\MKbbe^{H}:=\left\{ x\in\MKbbe\mid\forall\sigma\in H\ \sigma\left(x\right)=x\right\} $
+
+
+\end_inset
+, 
+\begin_inset Formula
+$\MKbbe^{H}$
+
+
+\end_inset
+ ייקרא 
+\bar under
+שדה השבת
+\bar default
+ של 
+\begin_inset Formula
+$H$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+התאמות גלואה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+\bar under
+התאמות גלואה
+\bar default
+ של ההרחבה 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ הן שתי הפונקציות הבאות:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\MKclf:\left\{ H\mid H\leqslant\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\right\} \rightarrow\left\{ \MKbbk\mid\nicefrac{\MKbbe}{\MKbbk}\ \text{הוא שדה ביניים של}\MKbbk\right\} $
+
+
+\end_inset
+ המוגדרת ע
+\begin_inset Quotes qrd
+\end_inset
+י (לכל 
+\begin_inset Formula
+$H\leqslant\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+): 
+\begin_inset Formula
+\[
+\MKclf\left(H\right):=\MKbbe^{H}=\left\{ x\in\MKbbe\mid\forall\sigma\in H\ \sigma\left(x\right)=x\right\} 
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\MKclg:\left\{ \MKbbk\mid\nicefrac{\MKbbe}{\MKfield}\ \text{הוא שדה ביניים של}\MKbbk\right\} \rightarrow\left\{ H\mid H\leqslant\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\right\} $
+
+
+\end_inset
+ המוגדרת ע
+\begin_inset Quotes qrd
+\end_inset
+י (לכל שדה ביניים 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+):
+\begin_inset Formula
+\[
+\MKclg\left(\MKbbk\right):=\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)=\left\{ \sigma\in\MKaut\left(\MKbbe\right)\mid\forall x\in\MKbbk\ \sigma\left(x\right)=x\right\} 
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ כלומר 
+\begin_inset Formula
+$\MKclf$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKclg$
+
+
+\end_inset
+ הן פונקציות בין תתי-החבורות של חבורת גלואה של ההרחבה, לבין קבוצת שדות הביניים של ההרחבה: 
+\begin_inset Formula
+$\MKclf$
+
+
+\end_inset
+ מתאימה לכל תת-חבורה את שדה הביניים הגדול ביותר שנשמר תחת פעולתה, ו-
+\begin_inset Formula
+$\MKclg$
+
+
+\end_inset
+ מתאימה לכל שדה ביניים את תת-החבורה הגדולה ביותר שהשדה נשמר תחתיה. השאלה שנעסוק בה תהיה מתי 
+\begin_inset Formula
+$\MKclf$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKclg$
+
+
+\end_inset
+ הופכיות זו לזו, כלומר מתי יש התאמה חח"ע ועל בין שדות הביניים של הרחבת שדות לבין תתי-החבורות של חבורת גלואה. או אז נוכל להשתמש בכלים החזקים שפיתחנו בקורס הקודם כדי לחקור את שדות הביניים, ולקבוע מתי ניתן לפתור את הפולינום שיצר את ההרחבה.
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+ּצריך להסביר שהאוטומורפיזמים מאפשרים לנו לחקור את הקשרים האלגבריים בין שורשי הפולינום היוצר את ההרחבה מבלי "ללכלך את הידיים".
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Corollary
+מתקיים 
+\begin_inset Formula
+$\MKclf\left(\left\{ \MKid\right\} \right)=\MKbbe$
+
+
+\end_inset
+, 
+\begin_inset Formula
+$\MKclg\left(\MKbbe\right)=\left\{ \MKid\right\} $
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKclg\left(\MKfield\right)=\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ אין זה מוכרח שיתקיים 
+\begin_inset Formula
+$\MKclf\left(\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\right)=\MKfield$
+
+
+\end_inset
+, כך לדוגמה לכל 
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\MKrational\left(\sqrt[3]{2}\right)}{\MKrational}\right)$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\sigma\left(\sqrt[3]{2}\right)=\sqrt[3]{2}$
+
+
+\end_inset
+ ולכן 
+\begin_inset Formula
+$\MKclf\left(\MKgal\left(\nicefrac{\MKrational\left(\sqrt[3]{2}\right)}{\MKrational}\right)\right)=\MKrational\left(\sqrt[3]{2}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+נאמר ש-
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא 
+\bar under
+הרחבת גלואה
+\bar default
+ אם 
+\begin_inset Formula
+$\MKclf$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKclg$
+
+
+\end_inset
+ הופכיות זו לזו.
+\begin_inset Newline newline
+\end_inset
+כמו כן, אם 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבת גלואה נאמר ש-
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא 
+\bar under
+הרחבה ציקלית/אבלית/פתירה
+\bar default
+ אם 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ היא חבורה ציקלית/אבלית/פתירה.
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+בכיתה הגדרנו שהרחבת גלואה היא הרחבה נורמלית וספרבילית, אנחנו נראה בהמשך שאלה הן הגדרות שקולות.
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Corollary
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבת גלואה אם"ם לכל שדה ביניים 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ גם 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKbbk}$
+
+
+\end_inset
+ היא הרחבת גלואה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ הרחבת שדות.
+\end_layout
+
+\begin_layout Subsection
+קצת על חבורת גלואה
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lemma 1.1"
+\end_inset
+יהיו 
+\begin_inset Formula
+$\alpha\in\MKbbe$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f\left(\alpha\right)=0$
+
+
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$f\left(\sigma\left(\alpha\right)\right)=0$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+יהיו 
+\begin_inset Formula
+$\MKseqz a,n\in\MKfield$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f\left(x\right)=\sum_{i=0}^{n}a_{i}x^{i}$
+
+
+\end_inset
+, ויהי 
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+.
+\begin_inset Formula
+\[
+\Rightarrow f\left(\sigma\left(\alpha\right)\right)=\sum_{i=0}^{n}a_{i}\left(\sigma\left(\alpha\right)\right)^{i}=\sum_{i=0}^{n}\sigma\left(a_{i}\right)\cdot\left(\sigma\left(\alpha\right)\right)^{i}=\sigma\left(\sum_{i=0}^{n}a_{i}\alpha^{i}\right)=\sigma\left(0\right)=0
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+אם 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ הוא שדה פיצול של פולינום כלשהו ב-
+\begin_inset Formula
+$\MKfield\left[x\right]$
+
+
+\end_inset
+, אז לכל שדה הרחבה 
+\begin_inset Formula
+$\Omega$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+, ולכל 
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\Omega}{\MKfield}\right)$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\sigma\left(\MKbbe\right)=\MKbbe$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+נניח ש-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ הוא שדה פיצול של פולינום כלשהו ב-
+\begin_inset Formula
+$\MKfield\left[x\right]$
+
+
+\end_inset
+ ויהי 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ פולינום כלשהו
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+לאו דווקא זה ש-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ הוא שדה הפיצול שלו.
+\end_layout
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+אם קיים 
+\begin_inset Formula
+$\alpha\in\MKbbe$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f\left(\alpha\right)=0$
+
+
+\end_inset
+, אז 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ מתפצל ב-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ כלומר הפולינומים ב-
+\begin_inset Formula
+$\MKfield\left[x\right]$
+
+
+\end_inset
+ מתחלקים לשני סוגים: אלו שאין להם ולו שורש אחד ב-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+, ואלו שמתפצלים ב-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ - אין פולינומים שרק חלק מהשורשים שלהם ב-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ בהמשך נקרא להרחבות כאלה 
+\bar under
+הרחבות נורמליות
+\bar default
+.
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 1.4"
+\end_inset
+נניח ש-
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה אלגברית פשוטה, ויהי 
+\begin_inset Formula
+$\alpha\in\MKbbe$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKbbe=\MKfield\left(\alpha\right)$
+
+
+\end_inset
+; לכל שורש 
+\begin_inset Formula
+$\beta\in\MKbbe$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$m_{\alpha}$
+
+
+\end_inset
+ קיים 
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ יחיד כך ש-
+\begin_inset Formula
+$\sigma\left(\alpha\right)=\beta$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+היחידות נובעת מהעובדה שהיוצרים של הרחבה קובעים כל אוטומורפיזם, א"כ נוכיח את הקיום.
+\begin_inset Newline newline
+\end_inset
+ראינו בעבר כי לכל 
+\begin_inset Formula
+$\beta\in\MKbbe$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\MKfield\left(\beta\right)=\left\{ \begin{array}{c|c}
+\frac{P\left(\beta\right)}{Q\left(\beta\right)} & P,Q\in\MKfield,\ Q\left(\beta\right)\neq0\end{array}\right\} 
+\]
+
+
+
+
+\end_inset
+כאשר פעולות החיבור והכפל מוגדרות כמו בשדה שברים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר:
+\begin_inset Formula
+\begin{align*}
+\frac{P_{1}\left(\beta\right)}{Q_{1}\left(\beta\right)}+\frac{P_{2}\left(\beta\right)}{Q_{2}\left(\beta\right)} & :=\frac{P_{1}\left(\beta\right)\cdot Q_{2}\left(\beta\right)+P_{2}\left(\beta\right)\cdot Q_{1}\left(\beta\right)}{Q_{1}\left(\beta\right)\cdot Q_{2}\left(\beta\right)}\\
+\frac{P_{1}\left(\beta\right)}{Q_{1}\left(\beta\right)}\cdot\frac{P_{2}\left(\beta\right)}{Q_{2}\left(\beta\right)} & :=\frac{P_{1}\left(\beta\right)\cdot P_{2}\left(\beta\right)}{Q_{1}\left(\beta\right)\cdot Q_{2}\left(\beta\right)}
+\end{align*}
+
+
+
+
+\end_inset
+
+\end_layout
+
+\end_inset
+. בדיקה פשוטה מראה שההעתקה 
+\begin_inset Formula
+$\frac{P\left(\alpha\right)}{Q\left(\alpha\right)}\mapsto\frac{P\left(\beta\right)}{Q\left(\beta\right)}$
+
+
+\end_inset
+ (עבור 
+\begin_inset Formula
+$\beta\in\MKbbe$
+
+
+\end_inset
+ כלשהו) היא אנדומורפיזם
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+תזכורת: אנדומורפיזם הוא הומומורפיזם על (במקרה הזה על 
+\begin_inset Formula
+$\MKfield\left(\beta\right)$
+
+
+\end_inset
+).
+\end_layout
+
+\end_inset
+ המשמר את 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ (אם היא מוגדרת); הבעיות היחידות שיכולות לצוץ הן שההעתקה אינה מוכרחת להיות חח"ע, וייתכן שקיים 
+\begin_inset Formula
+$Q\in\MKfield\left[x\right]$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$Q\left(\alpha\right)\neq0$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$Q\left(\beta\right)=0$
+
+
+\end_inset
+ - שתי הבעיות הללו נפתרות אם"ם 
+\begin_inset Formula
+$m_{\alpha}=m_{\beta}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "theorem 1.5"
+\end_inset
+יהי 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ שדה ביניים של הרחבת שדות 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+, אם לכל 
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\sigma\left(\MKbbk\right)=\MKbbk$
+
+
+\end_inset
+, אז מתקיים 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)\trianglelefteq\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ ובנוסף 
+\begin_inset Formula
+$\nicefrac{\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)}{\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)}\cong\MKgal\left(\nicefrac{\MKbbk}{\MKfield}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+נניח ש-
+\begin_inset Formula
+$\sigma\left(\MKbbk\right)=\MKbbk$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+, ותהא 
+\begin_inset Formula
+$f:\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\rightarrow\MKgal\left(\nicefrac{\MKbbk}{\MKfield}\right)$
+
+
+\end_inset
+ פונקציה המוגדרת ע"י 
+\begin_inset Formula
+$f\left(\sigma\right):=\left.\sigma\right|_{\MKbbk}$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+מההנחה נובע ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ אכן מוגדרת היטב.
+\end_layout
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נשים לב לכך ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ היא הומומורפיזם של חבורות, שגרעינו הוא 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)$
+
+
+\end_inset
+ ותמונתו 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbk}{\MKfield}\right)$
+
+
+\end_inset
+. מכאן ש-
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)\trianglelefteq\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+, וע"פ משפט האיזומורפיזם הראשון מתקיים:
+\begin_inset Formula
+\[
+\nicefrac{\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)}{\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)}\cong\MKgal\left(\nicefrac{\MKbbk}{\MKfield}\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary 1.6"
+\end_inset
+יהי 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ שדה ביניים של הרחבת שדות 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+, אם 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ הוא שדה הפיצול של פולינום כלשהו ב-
+\begin_inset Formula
+$\MKfield\left[x\right]$
+
+
+\end_inset
+ אז 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)\trianglelefteq\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\nicefrac{\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)}{\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)}\cong\MKgal\left(\nicefrac{\MKbbk}{\MKfield}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\end_layout
+
+\end_layout
+
+\end_layout
+
+\begin_layout Subsection
+הרחבות רדיקליות
+\end_layout
+
+\begin_layout Claim
+נניח שיש ב-
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ שורש יחידה פרימיטיבי מסדר 
+\begin_inset Formula
+$n\in\MKnatural$
+
+
+\end_inset
+, ויהי 
+\begin_inset Formula
+$\zeta\in\MKfield$
+
+
+\end_inset
+ כנ"ל.
+\begin_inset Newline newline
+\end_inset
+קבוצת שורשי היחידה מסדר 
+\begin_inset Formula
+$n$
+
+
+\end_inset
+ היא הקבוצה 
+\begin_inset Formula
+$\left\{ \zeta^{k}\mid n\geq k\in\MKnatural\right\} $
+
+
+\end_inset
+, וקבוצת שורשי היחידה הפרימיטיביים מסדר 
+\begin_inset Formula
+$n$
+
+
+\end_inset
+ היא הקבוצה 
+\begin_inset Formula
+$\left\{ \zeta^{k}\mid n\geq k\in\MKnatural,\ \gcd\left(n,k\right)=1\right\} $
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ אנחנו רוצים לחקור הרחבות רדיקליות, ולשם כך נעסוק תחילה במקרה הכי פשוט של הרחבה כזו: 
+\begin_inset Formula
+$\nicefrac{\MKfield\left(\zeta\right)}{\MKfield}$
+
+
+\end_inset
+ כאשר 
+\begin_inset Formula
+$\zeta$
+
+
+\end_inset
+ הוא שורש יחידה פרימיטיבי מסדר 
+\begin_inset Formula
+$n$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+כדי לחקור הרחבה כזו נרצה תחילה למצוא את הפולינום המינימלי של 
+\begin_inset Formula
+$\zeta$
+
+
+\end_inset
+ כנ"ל, אנחנו יודעים שלכל 
+\begin_inset Formula
+$n\geq k\in\MKnatural$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\MKfield\left(\zeta\right)=\MKfield\left(\zeta^{k}\right)$
+
+
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$\gcd\left(n,k\right)=1$
+
+
+\end_inset
+, ולכן טבעי לנחש שהפולינום המינימלי של 
+\begin_inset Formula
+$\zeta$
+
+
+\end_inset
+ הוא:
+\begin_inset Formula
+\[
+\prod_{\gcd\left(n,k\right)}\left(x-\zeta^{k}\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+להכניס כאן פולינומים ציקלוטומיים?
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+סימון:
+\series default
+ לכל 
+\begin_inset Formula
+$a\in\MKfield$
+
+
+\end_inset
+ נסמן ב-
+\begin_inset Formula
+$\sqrt[n]{a}$
+
+
+\end_inset
+ שורש של הפולינום 
+\begin_inset Formula
+$x^{n}-a$
+
+
+\end_inset
+, ונסמן ב-
+\begin_inset Formula
+$\MKfield\left(\sqrt[n]{a}\right)$
+
+
+\end_inset
+ את ההרחבה הפשוטה.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ בכל פעם שנשתמש בסימון זה אנו טוענים בנוסף שכל מה שאמרנו נכון לכל שורש של 
+\begin_inset Formula
+$x^{n}-a$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lemma 1.8"
+\end_inset
+
+\begin_inset Formula
+$\MKhom\left(\MKbbe\right)$
+
+
+\end_inset
+ היא קבוצה בת"ל (כתת-קבוצה של מרחב הפונקציות 
+\begin_inset Formula
+$\MKbbe^{\MKbbe}$
+
+
+\end_inset
+ מעל 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+).
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+בכיתה ראינו את הלמה הזו עבור 
+\begin_inset Formula
+$\MKaut\left(\MKbbe\right)$
+
+
+\end_inset
+ בלבד.
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ למעשה הדבר היחיד שמעניין אותנו הוא ש-
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ בת"ל, אבל ההוכחה תופסת בכל 
+\begin_inset Formula
+$\MKhom\left(\MKbbe\right)$
+
+
+\end_inset
+, אז למה לא?
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+נניח בשלילה שזוהי קבוצה תלויה ליניארית, ויהיו 
+\begin_inset Formula
+$\MKseq a,m\in\MKbbe$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\sum_{i=1}^{m}a_{i}\cdot\sigma_{i}=0$
+
+
+\end_inset
+, ו-
+\begin_inset Formula
+$m$
+
+
+\end_inset
+ הוא המספר הטבעי
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+להוציא את 
+\begin_inset Formula
+$0$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+ המינימלי שעבורו קיים צר"ל כזה
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+בפרט 
+\begin_inset Formula
+$a_{i}\neq0$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$m\geq i\in\MKnatural$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$c\in\MKbbe$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\sigma_{1}\left(c\right)\neq\sigma_{m}\left(c\right)$
+
+
+\end_inset
+, ונשים לב לכך שלכל 
+\begin_inset Formula
+$x\in\MKbbe$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+S_{1} & :=\sum_{i=1}^{m}a_{i}\cdot\sigma_{i}\left(c\right)\cdot\sigma_{i}\left(x\right)=\sum_{i=1}^{m}a_{i}\cdot\sigma_{i}\left(cx\right)=0\\
+S_{2} & :=\sum_{i=1}^{m}a_{i}\cdot\sigma_{m}\left(c\right)\cdot\sigma_{i}\left(x\right)=\sigma_{m}\left(c\right)\cdot\sum_{i=1}^{m}a_{i}\cdot\sigma_{i}\left(x\right)=0
+\end{align*}
+
+
+
+
+\end_inset
+וממילא גם:
+\begin_inset Formula
+\[
+\sum_{i=1}^{{\color{red}m-1}}a_{i}\cdot\left(\sigma_{{\color{red}m}}\left(c\right)-\sigma_{i}\left(c\right)\right)\cdot\sigma_{i}\left(x\right)=\sum_{i=1}^{{\color{red}m}}a_{i}\cdot\left(\sigma_{{\color{red}m}}\left(c\right)-\sigma_{i}\left(c\right)\right)\cdot\sigma_{i}\left(x\right)=S_{2}-S_{1}=0
+\]
+
+
+
+
+\end_inset
+וזאת בסתירה להגדרת 
+\begin_inset Formula
+$m$
+
+
+\end_inset
+, שכן ע"פ הגדרת 
+\begin_inset Formula
+$c$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\sigma_{m}\left(c\right)-\sigma_{1}\left(c\right)\neq0$
+
+
+\end_inset
+, וכפי שכבר הזכרנו 
+\begin_inset Formula
+$a_{1}\neq0$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 1.9"
+\end_inset
+נניח שיש ב-
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ שורש יחידה פרימיטיבי מסדר 
+\begin_inset Formula
+$n\in\MKnatural$
+
+
+\end_inset
+ וש-
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבת גלואה (
+\series bold
+\color red
+לפי ההגדרה שלי: התאמות גלואה של 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ הופכיות זו לזו
+\color inherit
+
+\series default
+).
+\begin_inset Newline newline
+\end_inset
+אם 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ היא חבורה ציקלית מסדר 
+\begin_inset Formula
+$n$
+
+
+\end_inset
+ (כלומר 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה ציקלית), אז קיים 
+\begin_inset Formula
+$a\in\MKfield$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKbbe=\MKfield\left(\sqrt[n]{a}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ כמובן שטענה זו היא הסיבה שבגללה התחלנו להתעניין בהתאמות גלואה ובמקרים שבהם הן הופכיות זו לזו (כלומר בהרחבות גלואה).
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$\zeta\in\MKfield$
+
+
+\end_inset
+ שורש יחידה פרימיטיבי מסדר 
+\begin_inset Formula
+$n$
+
+
+\end_inset
+, ויהי 
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ יוצר של 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מהלמה (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 1.8"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+) נובע שקיים 
+\begin_inset Formula
+$x\in\MKbbe$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\sum_{i=0}^{n-1}\zeta^{i}\cdot\sigma^{i}\left(x\right)\neq0$
+
+
+\end_inset
+, יהי 
+\begin_inset Formula
+$x$
+
+
+\end_inset
+ כנ"ל ונסמן 
+\begin_inset Formula
+$y:=\sum_{i=0}^{n-1}\zeta^{i}\cdot\sigma^{i}\left(x\right)$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מכאן שלכל 
+\begin_inset Formula
+$n\geq k\in\MKnatural$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\sigma^{k}\left(y\right)=\sum_{i=0}^{n-1}\sigma^{i+k}\left(\zeta^{i}\right)\cdot\sigma^{i+k}\left(x\right)=\sum_{i=0}^{n-1}\zeta^{i}\cdot\sigma^{i+k}\left(x\right)=\zeta^{-k}\cdot\sum_{i=0}^{n-1}\zeta^{i+k}\cdot\sigma^{i+k}\left(x\right)=\zeta^{-k}\cdot\sum_{i=0}^{n-1}\zeta^{i}\cdot\sigma^{i}\left(x\right)=\zeta^{-k}\cdot y
+\]
+
+
+
+
+\end_inset
+מכאן ש-
+\begin_inset Formula
+$\sigma^{k}\left(y\right)\neq y$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\sigma^{k}\left(y^{n}\right)=y^{n}$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$n>k\in\MKnatural$
+
+
+\end_inset
+, ולפיכך 
+\begin_inset Formula
+$y^{n}\in\MKclf\left(\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\right)$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKclg\left(\MKfield\left(y\right)\right)=\left\{ \MKid\right\} $
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מהעובדה שהעתקות גלואה הופכיות זו לזו נובע כי:
+\begin_inset Formula
+\begin{align*}
+ & y\in\MKclf\left(\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\right)=\MKclf\left(\MKclg\left(\MKfield\right)\right)=\MKfield\\
+ & \MKfield\left(y\right)=\MKclf\left(\MKclg\left(\MKfield\left(y\right)\right)\right)=\MKclf\left(\left\{ \MKid\right\} \right)=\MKbbe
+\end{align*}
+
+
+
+
+\end_inset
+כלומר אם נסמן 
+\begin_inset Formula
+$a=y^{n}$
+
+
+\end_inset
+ נקבל ש-
+\begin_inset Formula
+$\MKbbe=\left(\sqrt[n]{a}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 1.10"
+\end_inset
+אם יש ב-
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ שורש יחידה פרימיטיבי מסדר 
+\begin_inset Formula
+$n\in\MKnatural$
+
+
+\end_inset
+, אז לכל 
+\begin_inset Formula
+$a\in\MKfield$
+
+
+\end_inset
+, החבורה 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKfield\left(\sqrt[n]{a}\right)}{\MKfield}\right)$
+
+
+\end_inset
+ היא חבורה ציקלית, ובנוסף מתקיים: 
+\begin_inset Formula
+\[
+\left|\MKgal\left(\nicefrac{\MKfield\left(\sqrt[n]{a}\right)}{\MKfield}\right)\right|=\min\left\{ \begin{array}{c|c}
+n\geq d\in\MKnatural & \left(\sqrt[n]{a}\right)^{d}\in\MKfield\end{array}\right\} =\left[\MKfield\left(\sqrt[n]{a}\right):\MKfield\right]
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ אנחנו נראה בהמשך שמהשוויון 
+\begin_inset Formula
+$\left|\MKgal\left(\nicefrac{\MKfield\left(\sqrt[n]{a}\right)}{\MKfield}\right)\right|=\left[\MKfield\left(\sqrt[n]{a}\right):\MKfield\right]$
+
+
+\end_inset
+ נובע ש-
+\begin_inset Formula
+$\nicefrac{\MKfield\left(\sqrt[n]{a}\right)}{\MKfield}$
+
+
+\end_inset
+ היא הרחבת גלואה.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+נסמן:
+\begin_inset Formula
+\[
+m:=\min\left\{ \begin{array}{c|c}
+n\geq d\in\MKnatural & \left(\sqrt[n]{a}\right)^{d}\in\MKfield\end{array}\right\} 
+\]
+
+
+
+
+\end_inset
+יהי 
+\begin_inset Formula
+$\zeta\in\MKfield$
+
+
+\end_inset
+ שורש יחידה פרימיטיבי מסדר 
+\begin_inset Formula
+$m\in\MKnatural$
+
+
+\end_inset
+, נשים לב לכך שלכל 
+\begin_inset Formula
+$m\geq k\in\MKnatural$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left(\sqrt[n]{a}\cdot\zeta^{k}\right)^{m}-a=0$
+
+
+\end_inset
+, ולכן מהלמה (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 1.1"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+) נובע שלכל 
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\MKfield\left(\sqrt[n]{a}\right)}{\MKfield}\right)$
+
+
+\end_inset
+ קיים 
+\begin_inset Formula
+$m\geq k\in\MKnatural$
+
+
+\end_inset
+ יחיד כך ש-
+\begin_inset Formula
+$\sigma\left(\sqrt[n]{a}\right)=\sqrt[n]{a}\cdot\zeta^{k}$
+
+
+\end_inset
+; א"כ תהא 
+\begin_inset Formula
+$f:\MKgal\left(\nicefrac{\MKfield\left(\sqrt[n]{a}\right)}{\MKfield}\right)\rightarrow\MKinteger_{m}$
+
+
+\end_inset
+ פונקציה המחזירה לכל 
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\MKfield\left(\sqrt[n]{a}\right)}{\MKfield}\right)$
+
+
+\end_inset
+ את אותו 
+\begin_inset Formula
+$k$
+
+
+\end_inset
+ יחיד.
+\begin_inset Newline newline
+\end_inset
+מכיוון ש-
+\begin_inset Formula
+$\nicefrac{\MKfield\left(\sqrt[n]{a}\right)}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה פשוטה ש-
+\begin_inset Formula
+$\sqrt[n]{a}$
+
+
+\end_inset
+ הוא יוצר שלה, נדע גם שלא קיימים 
+\begin_inset Formula
+$\sigma,\tau\in\MKgal\left(\nicefrac{\MKfield\left(\sqrt[n]{a}\right)}{\MKfield}\right)$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\sigma\neq\tau$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\sigma\left(\sqrt[n]{a}\right)=\tau\left(\sqrt[n]{a}\right)$
+
+
+\end_inset
+, כלומר 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ חח"ע.
+\begin_inset Newline newline
+\end_inset
+כעת נשים לב לכך ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ היא גם הומומורפיזם של חבורות, כלומר 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ הוא שיכון של 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$\MKinteger_{m}$
+
+
+\end_inset
+, ומכאן ש-
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ היא חבורה ציקלית ו-
+\begin_inset Formula
+$\left|\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\right|\leq m$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מצד שני לכל 
+\begin_inset Formula
+$m\geq d,e\in\MKnatural$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\sqrt[n]{a}\cdot\zeta^{d}=\sqrt[n]{a}\cdot\zeta^{e}\Longleftrightarrow\zeta^{d}=\zeta^{e}\Longleftrightarrow d=e$
+
+
+\end_inset
+, ולכן מהטענה הקודמת (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.4"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+) ומהעובדה ש-
+\begin_inset Formula
+$\left(\sqrt[n]{a}\cdot\zeta^{k}\right)^{m}-a=0$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$m\geq k\in\MKnatural$
+
+
+\end_inset
+ נובע ש-
+\begin_inset Formula
+$\left|\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\right|\geq m$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+העובדה ש-
+\begin_inset Formula
+$\left[\MKfield\left(\sqrt[n]{a}\right):\MKfield\right]=m$
+
+
+\end_inset
+ נובעת מהיות 
+\begin_inset Formula
+$\left\{ \begin{array}{c|c}
+\left(\sqrt[n]{a}\right)^{k} & m\geq k\in\MKnatural\end{array}\right\} $
+
+
+
+\end_inset
+ בסיס של 
+\begin_inset Formula
+$\MKfield\left(\sqrt[n]{a}\right)$
+
+
+\end_inset
+ מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+נניח שיש ב-
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ שורש יחידה פרימיטיבי מסדר 
+\begin_inset Formula
+$n\in\MKnatural$
+
+
+\end_inset
+ וש-
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבת גלואה (
+\series bold
+\color red
+לפי ההגדרה שלי: התאמות גלואה
+\begin_inset Newline newline
+\end_inset
+של 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ הופכיות זו לזו
+\color inherit
+
+\series default
+). 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה ציקלית אם"ם קיימים 
+\begin_inset Formula
+$a\in\MKfield$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$n\in\MKnatural$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKbbe=\MKfield\left(\sqrt[n]{a}\right)$
+
+
+\end_inset
+, ובמקרה כזה 
+\begin_inset Formula
+$\left|\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\right|=n$
+
+
+\end_inset
+ (כלומר 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\cong\MKinteger_{n}$
+
+
+\end_inset
+).
+\end_layout
+
+\begin_layout Theorem
+נניח ש-
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבת גלואה (
+\series bold
+\color red
+לפי ההגדרה שלי: התאמות גלואה של 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ הופכיות זו לזו
+\color inherit
+
+\series default
+), ויהי 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ שדה ביניים של 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מתקיים 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)\trianglelefteq\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ אם"ם לכל 
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\sigma\left(\MKbbk\right)=\MKbbk$
+
+
+\end_inset
+, ובמקרה כזה מתקיים גם 
+\begin_inset Formula
+$\nicefrac{\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)}{\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)}\cong\MKgal\left(\nicefrac{\MKbbk}{\MKfield}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\Leftarrow$
+
+
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח שקיים 
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\sigma\left(\MKbbk\right)\neq\MKbbk$
+
+
+\end_inset
+, ויהיו 
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$k\in\MKbbk$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\sigma\left(k\right)\notin\MKbbk$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+מהיות 
+\begin_inset Formula
+$\sigma$
+
+
+\end_inset
+ אוטומורפיזם נובע ש-
+\begin_inset Formula
+$\left[\sigma\left(\MKbbk\right):\MKfield\right]=\left[\MKbbk:\MKfield\right]$
+
+
+\end_inset
+, ולכן אם 
+\begin_inset Formula
+$\sigma\left(\MKbbk\right)\neq\MKbbk$
+
+
+\end_inset
+ אז 
+\begin_inset Formula
+$\sigma\left(\MKbbk\right)\nsubseteq\MKbbk$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מהיות 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ הרחבת גלואה נובע ששדה השבת של 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)$
+
+
+\end_inset
+ הוא בדיוק 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+\begin_inset Formula
+$\MKbbe^{\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)}=\MKclf\left(\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)\right)=\MKclf\left(\MKclg\left(\MKbbk\right)\right)=\MKbbk$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+, כלומר קיים 
+\begin_inset Formula
+$\tau\in\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\tau\left(\sigma\left(k\right)\right)\neq\sigma\left(k\right)$
+
+
+\end_inset
+, יהי 
+\begin_inset Formula
+$\tau$
+
+
+\end_inset
+ כנ"ל.
+\begin_inset Formula
+\[
+\Rightarrow\left(\sigma^{-1}\circ\tau\circ\sigma\right)\left(k\right)=\sigma^{-1}\left(\tau\left(\sigma\left(k\right)\right)\right)\neq\sigma^{-1}\left(\sigma\left(k\right)\right)=k
+\]
+
+
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow\sigma^{-1}\circ\tau\circ\sigma\notin\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)
+\]
+
+
+
+
+\end_inset
+ומכאן ש-
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)\ntrianglelefteq\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+. הוכחנו שאם קיים 
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\sigma\left(\MKbbk\right)\neq\MKbbk$
+
+
+\end_inset
+ אז 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)\ntrianglelefteq\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+, ולכן אם 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)\trianglelefteq\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ אז לכל 
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\sigma\left(\MKbbk\right)=\MKbbk$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\Rightarrow$
+
+
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+מקרה פרטי של משפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 1.5"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Theorem
+נניח ש-
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבת גלואה רדיקלית, ויהיו 
+\begin_inset Formula
+$\MKseq{\alpha},r\in\MKbbe$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKseq n,r\in\MKnatural$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKbbe=\MKfield\left(\MKseq{\alpha},r\right)$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(\alpha_{i}\right)^{n_{i}}\in\MKfield\left(\MKseq{\alpha},{i-1}\right)$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נסמן 
+\begin_inset Formula
+$N:=\MKlcm\left(\MKseq n,r\right)$
+
+
+\end_inset
+; אם קיים שדה 
+\begin_inset Formula
+$\Omega$
+
+
+\end_inset
+ המרחיב את 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ שבו יש שורש יחידה פרימיטיבי מסדר 
+\begin_inset Formula
+$N$
+
+
+\end_inset
+, אז 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה פתירה.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$\Omega$
+
+
+\end_inset
+ שדה הרחבה של 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ כך שקיים 
+\begin_inset Formula
+$\zeta\in\Omega$
+
+
+\end_inset
+ המהווה שורש יחידה פרימיטיבי מסדר 
+\begin_inset Formula
+$N$
+
+
+\end_inset
+, ויהי 
+\begin_inset Formula
+$\zeta\in\Omega$
+
+
+\end_inset
+ כנ"ל.
+\begin_inset Newline newline
+\end_inset
+נסמן 
+\begin_inset Formula
+$\MKbbk:=\MKfield\left(\zeta\right)$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKbbl:=\MKbbe\left(\zeta\right)$
+
+
+\end_inset
+ (א"כ 
+\begin_inset Formula
+$\MKbbl=\MKbbk\left(\MKseq{\alpha},r\right)=\MKfield\left(\MKseq{\alpha},r,\zeta\right)$
+
+
+\end_inset
+).
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ראשית נוכיח ש-
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbl}{\MKbbk}\right)$
+
+
+\end_inset
+ היא חבורה פתירה.
+\begin_inset Newline newline
+\end_inset
+נסמן 
+\begin_inset Formula
+$\MKbbk_{i}:=\MKbbk\left(\MKseq{\alpha},i\right)$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\beta_{i}:=\left(\alpha_{i}\right)^{n_{i}}$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+
+
+\end_inset
+, כמו כן נסמן 
+\begin_inset Formula
+$\MKbbk_{0}:=\MKbbk$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מהגדרת 
+\begin_inset Formula
+$N$
+
+
+\end_inset
+, ומהעובדה שיש ב-
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ שורש פרימיטיבי מסדר 
+\begin_inset Formula
+$N$
+
+
+\end_inset
+, נובע שלכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+
+
+\end_inset
+ ולכל 
+\begin_inset Formula
+$i\geq j\in\MKnatural$
+
+
+\end_inset
+, הפולינום 
+\begin_inset Formula
+$x^{n_{j}}-\beta_{j}$
+
+
+\end_inset
+ מתפצל ב-
+\begin_inset Formula
+$\MKbbk_{i}$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מכאן שע"פ למה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 1.1"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+: לכל 
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\MKbbl}{\MKbbk}\right)$
+
+
+\end_inset
+, לכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+
+
+\end_inset
+ ולכל 
+\begin_inset Formula
+$i\geq j\in\MKnatural$
+
+
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$\sigma\left(\alpha_{j}\right)\in\MKbbk_{i}$
+
+
+\end_inset
+, ולכן גם 
+\begin_inset Formula
+$\sigma\left(\MKbbk_{i}\right)=\MKbbk_{i}$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+ממשפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 1.5"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ נקבל שלכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+
+
+\end_inset
+, מתקיים:
+\begin_inset Formula
+\begin{align*}
+\MKgal\left(\nicefrac{\MKbbl}{\MKbbk_{i}}\right) & \trianglelefteq\MKgal\left(\nicefrac{\MKbbl}{\MKbbk}\right)\\
+\nicefrac{\MKgal\left(\nicefrac{\MKbbl}{\MKbbk_{i-1}}\right)}{\MKgal\left(\nicefrac{\MKbbl}{\MKbbk_{i}}\right)} & \cong\MKgal\left(\nicefrac{\MKbbk_{i}}{\MKbbk_{i-1}}\right)
+\end{align*}
+
+
+
+
+\end_inset
+ומכיוון שע"פ טענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.10"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ החבורה 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbk_{i}}{\MKbbk_{i-1}}\right)$
+
+
+\end_inset
+ היא חבורה ציקלית לכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+
+
+\end_inset
+, נדע של-
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbl}{\MKbbk}\right)$
+
+
+\end_inset
+ יש סדרה נורמלית בעלת גורמים ציקליים, כלומר 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbl}{\MKbbk}\right)$
+
+
+\end_inset
+ פתירה.
+\end_layout
+
+\begin_layout Itemize
+כעת נוכיח ש-
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbl}{\MKfield}\right)$
+
+
+\end_inset
+ היא חבורה פתירה.
+\begin_inset Newline newline
+\end_inset
+ע"פ למה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 1.1"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ לכל 
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\MKbbl}{\MKfield}\right)$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\sigma\left(\MKbbk\right)=\MKbbk$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+\begin_inset Formula
+$\sigma\left(\zeta\right)$
+
+
+\end_inset
+ מוכרח להיות שורש של הפולינום 
+\begin_inset Formula
+$x^{N}-1$
+
+
+\end_inset
+, ומצד שני הוא מוכרח להיות יוצר של חבורת שורשי הפולינום, כלומר שורש פרימיטיבי.
+\end_layout
+
+\end_inset
+, ולכן ממשפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 1.5"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ נקבל ש-
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbl}{\MKbbk}\right)\trianglelefteq\MKgal\left(\nicefrac{\MKbbl}{\MKfield}\right)$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\nicefrac{\MKgal\left(\nicefrac{\MKbbl}{\MKfield}\right)}{\MKgal\left(\nicefrac{\MKbbl}{\MKbbk}\right)}\cong\MKgal\left(\nicefrac{\MKbbk}{\MKfield}\right)$
+
+
+\end_inset
+, מכאן שאם נצליח להוכיח ש-
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbk}{\MKfield}\right)$
+
+
+\end_inset
+ פתירה הרי שבכך נוכיח כי 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbl}{\MKfield}\right)$
+
+
+\end_inset
+ פתירה. ואמנם, ההרחבה 
+\begin_inset Formula
+$\nicefrac{\MKbbk}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה ציקלוטומית ולכן 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbk}{\MKfield}\right)$
+
+
+\end_inset
+ היא חבורה אבלית (
+\series bold
+\color red
+צריך להוכיח זאת
+\color inherit
+
+\series default
+) ובפרט פתירה.
+\end_layout
+
+\begin_layout Itemize
+לבסוף נוכיח שההרחבה 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ פתירה.
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ הוא שדה הפיצול של הפולינום 
+\begin_inset Formula
+$\prod_{i=1}^{r}\left(x-\alpha_{i}\right)$
+
+
+\end_inset
+, ולכן ע"פ מסקנה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 1.6"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbl}{\MKbbe}\right)\trianglelefteq\MKgal\left(\nicefrac{\MKbbl}{\MKfield}\right)$
+
+
+\end_inset
+ וגם 
+\begin_inset Formula
+$\nicefrac{\MKgal\left(\nicefrac{\MKbbl}{\MKfield}\right)}{\MKgal\left(\nicefrac{\MKbbl}{\MKbbe}\right)}\cong\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+כזכור הוכחנו בשלב הקודם של ההוכחה ש-
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbl}{\MKfield}\right)$
+
+
+\end_inset
+ פתירה, ולפיכך נובע מהשורה הקודמת ש-
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ פתירה.
+\end_layout
+
+\end_deeper
+
+\begin_layout Lemma
+נניח ש-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ הוא שדה הפיצול של פולינום מהצורה 
+\begin_inset Formula
+$x^{n}-a$
+
+
+\end_inset
+ עבור 
+\begin_inset Formula
+$a\in\MKfield$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$n\in\MKnatural$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+אם יש ב-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ שורש יחידה פרימיטיבי מסדר 
+\begin_inset Formula
+$n$
+
+
+\end_inset
+, אז 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה פתירה.
+\end_layout
+
+\begin_layout Lemma
+\series bold
+\color red
+איפה אנחנו משתמשים בלמה הזו???
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status open
+\begin_layout Proof
+נניח שב-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ יש שורש יחידה פרימיטיבי מסדר 
+\begin_inset Formula
+$n\in\MKnatural$
+
+
+\end_inset
+, וקיים 
+\begin_inset Formula
+$a\in\MKfield$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ הוא שדה הפיצול של הפולינום 
+\begin_inset Formula
+$x^{n}-a$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$a\in\MKfield$
+
+
+\end_inset
+ כנ"ל, יהי 
+\begin_inset Formula
+$\zeta\in\MKbbe$
+
+
+\end_inset
+ שורש יחידה פרימיטיבי מסדר 
+\begin_inset Formula
+$n$
+
+
+\end_inset
+, ונסמן 
+\begin_inset Formula
+$\MKbbk:=\MKfield\left(\zeta\right)$
+
+
+\end_inset
+, א"כ החבורה 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)$
+
+
+\end_inset
+ היא חבורה ציקלית (טענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.9"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+).
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ הוא שדה הפיצול של הפולינום 
+\begin_inset Formula
+$x^{n}-1$
+
+
+\end_inset
+, ולכן ע"פ המסקנה (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 1.6"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+) מתקיים 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)\trianglelefteq\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\nicefrac{\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)}{\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)}\cong\MKgal\left(\nicefrac{\MKbbk}{\MKfield}\right)$
+
+
+\end_inset
+, מכאן שאם נצליח להוכיח ש-
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbk}{\MKfield}\right)$
+
+
+\end_inset
+ פתירה נוכיח בזה שגם 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ פתירה. ואכן, ההרחבה 
+\begin_inset Formula
+$\nicefrac{\MKbbk}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה ציקלוטומית ולכן 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbk}{\MKfield}\right)$
+
+
+\end_inset
+ היא חבורה אבלית (
+\series bold
+\color red
+צריך להוכיח זאת
+\color inherit
+
+\series default
+) ובפרט פתירה.
+\end_layout
+
+\begin_layout Theorem
+נניח ש-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ הוא שדה הפיצול של פולינום 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+, ונניח שקיים שדה 
+\begin_inset Formula
+$\Omega$
+
+
+\end_inset
+ המרחיב את 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ שבו יש שורש יחידה פרימיטיבי מסדר 
+\begin_inset Formula
+$\left[\MKbbe:\MKfield\right]$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ניתן לפתרון באמצעות רדיקלים אם"ם 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פתיר (כלומר חבורת גלואה שלו פתירה).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ כמובן שהמשפט הזה הוא הסיבה לכך שאנחנו קוראים לחבורות פתירות בשם זה.
+\end_layout
+
+\end_layout
+
+\end_layout
+
+\end_layout
+
+\end_layout
+
+\end_layout
+
+\end_layout
+
+\begin_layout Subsection
+התאמות גלואה
+\end_layout
+
+\begin_layout Claim
+לכל שתי תתי-חבורות 
+\begin_inset Formula
+$H_{1},H_{2}\leqslant\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$H_{1}\leqslant H_{2}$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\MKclf\left(H_{1}\right)\supseteq\MKclf\left(H_{2}\right)$
+
+
+\end_inset
+, וכמו כן לכל שני שדות ביניים 
+\begin_inset Formula
+$\MKbbk_{1},\MKbbk_{2}\subseteq\MKbbe$
+
+
+\end_inset
+ של ההרחבה 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKbbk_{1}\subseteq\MKbbk_{2}$
+
+
+\end_inset
+ מתקיים ו-
+\begin_inset Formula
+$\MKclg\left(\MKbbk_{1}\right)\supseteq\MKclg\left(\MKbbk_{2}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+לכל תת-חבורה 
+\begin_inset Formula
+$H\leqslant\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$H\subseteq\MKclg\left(\MKclf\left(H\right)\right)$
+
+
+\end_inset
+, ולכל שדה ביניים 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\MKbbk\subseteq\MKclf\left(\MKclg\left(\MKbbk\right)\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ אנחנו נראה בהמשך שאם 
+\begin_inset Formula
+$H$
+
+
+\end_inset
+ סופית אז 
+\begin_inset Formula
+$H=\MKclg\left(\MKclf\left(H\right)\right)$
+
+
+\end_inset
+, אך לעומת זאת לא תמיד מתקיים 
+\begin_inset Formula
+$\MKbbk=\MKclf\left(\MKclg\left(\MKbbk\right)\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+להביא דוגמה לכך שלא בהכרח מתקיים שוויון 
+\begin_inset Formula
+$\MKbbk\subseteq\MKclf\left(\MKclg\left(\MKbbk\right)\right)$
+
+
+\end_inset
+.
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "theorem 1.15"
+\end_inset
+תהא 
+\begin_inset Formula
+$H\leqslant\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ תת-חבורה סופית, מתקיים 
+\begin_inset Formula
+$\left|H\right|=\left[\MKbbe:\MKclf\left(H\right)\right]$
+
+
+\end_inset
+ (בפרט 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ נוצר סופית כמרחב וקטורי מעל 
+\begin_inset Formula
+$\MKclf\left(H\right)$
+
+
+\end_inset
+).
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+יהיו 
+\begin_inset Formula
+$\MKseq{\sigma},m$
+
+
+\end_inset
+ כל האוטומורפיזמים השונים ב-
+\begin_inset Formula
+$H$
+
+
+\end_inset
+, ותהא 
+\begin_inset Formula
+$\left(\MKseq a,n\right)$
+
+
+\end_inset
+ סדרה בת"ל ב-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ כמ"ו מעל 
+\begin_inset Formula
+$\MKclf\left(H\right)$
+
+
+\end_inset
+ (כאשר אם 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ נ"ס כמ"ו מעל 
+\begin_inset Formula
+$\MKclf\left(H\right)$
+
+
+\end_inset
+ אזי נדרוש ש-
+\begin_inset Formula
+$n=\left[\MKbbe:\MKclf\left(H\right)\right]$
+
+
+\end_inset
+). נתבונן במטריצה:
+\begin_inset Formula
+\[
+A:=\left[\begin{array}{cccc}
+\sigma_{1}\left(a_{1}\right) & \sigma_{1}\left(a_{2}\right) & \cdots & \sigma_{1}\left(a_{n}\right)\\
+\sigma_{2}\left(a_{1}\right) & \sigma_{2}\left(a_{2}\right) & \cdots & \sigma_{2}\left(a_{n}\right)\\
+\vdots & \vdots & \ddots & \vdots\\
+\sigma_{m}\left(a_{1}\right) & \sigma_{m}\left(a_{2}\right) & \cdots & \sigma_{m}\left(a_{n}\right)
+\end{array}\right]
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נניח בשלילה ש-
+\begin_inset Formula
+$n>m$
+
+
+\end_inset
+, מכאן שהעמודות של 
+\begin_inset Formula
+$A$
+
+
+\end_inset
+ תלויות ליניארית מעל 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+. נסמן ב-
+\begin_inset Formula
+$r$
+
+
+\end_inset
+ את הטבעי המינימלי שעבורו כל 
+\begin_inset Formula
+$r$
+
+
+\end_inset
+ עמודות מבין 
+\begin_inset Formula
+$r+1$
+
+
+\end_inset
+ העמודות הראשונות הן בת"ל מעל 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$\MKseq x,{r+1}\in\MKbbe$
+
+
+\end_inset
+ שכולם שונים מ-
+\begin_inset Formula
+$0$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+${\color{green}x_{r+1}=1}$
+
+
+\end_inset
+, כך שמתקיים (לכל 
+\begin_inset Formula
+$m\geq i\in\MKnatural$
+
+
+\end_inset
+):
+\begin_inset Formula
+\[
+{\color{red}\sum_{j=1}^{r+1}x_{j}\cdot\sigma_{i}\left(a_{j}\right)=0}
+\]
+
+
+
+
+\end_inset
+מהמינימליות של 
+\begin_inset Formula
+$r$
+
+
+\end_inset
+ נובע שאכן קיימים 
+\begin_inset Formula
+$\MKseq x,{r+1}$
+
+
+\end_inset
+ כאלה.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$m\geq k\in\MKnatural$
+
+
+\end_inset
+, לכל 
+\begin_inset Formula
+$m\geq i\in\MKnatural$
+
+
+\end_inset
+ קיים 
+\begin_inset Formula
+$m\geq l\in\MKnatural$
+
+
+\end_inset
+ יחיד כך שמתקיים:
+\begin_inset Formula
+\[
+0=\sum_{j=1}^{r+1}\sigma_{k}\left(x_{j}\right)\cdot\left(\sigma_{k}\circ\sigma_{i}\right)\left(a_{j}\right)=\sum_{j=1}^{r+1}\sigma_{k}\left(x_{j}\right)\cdot\sigma_{l}\left(a_{j}\right)
+\]
+
+
+
+
+\end_inset
+שכן הרכבת 
+\begin_inset Formula
+$\sigma_{k}$
+
+
+\end_inset
+ היא תמורה על 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKclf\left(H\right)}\right)$
+
+
+\end_inset
+. מכאן שלכל 
+\begin_inset Formula
+$m\geq i\in\MKnatural$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+{\color{blue}\sum_{j=1}^{r+1}\sigma_{k}\left(x_{j}\right)\cdot\sigma_{i}\left(a_{j}\right)=0}
+\]
+
+
+
+
+\end_inset
+וממילא גם:
+\begin_inset Formula
+\begin{align*}
+0 & =\sum_{j=1}^{r+1}\left({\color{blue}\sigma_{k}\left(x_{j}\right)}-{\color{red}x_{j}}\right)\cdot\sigma_{i}\left(a_{j}\right)=\sum_{j=1}^{r}\left(\sigma_{k}\left(x_{j}\right)-x_{j}\right)\cdot\sigma_{i}\left(a_{j}\right)+\left(\sigma_{k}\left({\color{green}1}\right)-{\color{green}1}\right)\cdot\sigma_{i}\left(a_{j}\right)\\
+ & =\sum_{j=1}^{r}\left(\sigma_{k}\left(x_{j}\right)-x_{j}\right)\cdot\sigma_{i}\left(a_{j}\right)+\left(1-1\right)\cdot\sigma_{i}\left(a_{j}\right)=\sum_{j=1}^{r}\left(\sigma_{k}\left(x_{j}\right)-x_{j}\right)\cdot\sigma_{i}\left(a_{j}\right)
+\end{align*}
+
+
+
+
+\end_inset
+ולכן מההנחה ש-
+\begin_inset Formula
+$r$
+
+
+\end_inset
+ העמודות הראשונות של 
+\begin_inset Formula
+$A$
+
+
+\end_inset
+ בת"ל נובע ש-
+\begin_inset Formula
+$\sigma_{k}\left(x_{j}\right)=x_{j}$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$r\geq j\in\MKnatural$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$k$
+
+
+\end_inset
+ הנ"ל היה שרירותי, ולכן לכל 
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\MKbbe}{\MKclf\left(H\right)}\right)$
+
+
+\end_inset
+ ולכל 
+\begin_inset Formula
+$r\geq j\in\MKnatural$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\sigma\left(x_{j}\right)=x_{j}$
+
+
+\end_inset
+, כלומר 
+\begin_inset Formula
+$\MKseq x,r\in\MKclf\left(H\right)$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+אבל 
+\begin_inset Formula
+$\MKid_{\MKbbe}\in\MKgal\left(\nicefrac{\MKbbe}{\MKclf\left(H\right)}\right)$
+
+
+\end_inset
+ ולכן:
+\begin_inset Formula
+\[
+{\color{red}0=\sum_{j=1}^{r+1}x_{j}\cdot\MKid_{\MKbbe}\left(a_{j}\right)}=\sum_{j=1}^{r+1}x_{j}\cdot a_{j}
+\]
+
+
+
+
+\end_inset
+בסתירה לכך ש-
+\begin_inset Formula
+$\left(\MKseq a,n\right)$
+
+
+\end_inset
+ היא סדרה בת"ל ו-
+\begin_inset Formula
+$x_{1}\neq0$
+
+
+\end_inset
+, מכאן שהנחת השלילה אינה נכונה ומתקיים 
+\begin_inset Formula
+$n\leq m$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+יהי 
+\begin_inset Formula
+$y\in\MKbbe^{m}$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A^{t}\cdot y=0$
+
+
+\end_inset
+, מכאן שלכל 
+\begin_inset Formula
+$n\geq j\in\MKnatural$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\sum_{i=1}^{m}y_{i}\cdot\sigma_{i}\left(a_{j}\right)=0
+\]
+
+
+
+
+\end_inset
+כעת יהי 
+\begin_inset Formula
+$v\in\MKbbe$
+
+
+\end_inset
+, ויהיו 
+\begin_inset Formula
+$\MKseq c,n\in\MKclf\left(H\right)$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$v=\sum_{j=1}^{n}c_{j}\cdot a_{j}$
+
+
+\end_inset
+ (ראינו ש-
+\begin_inset Formula
+$\left(\MKseq a,n\right)$
+
+
+\end_inset
+ בסיס).
+\begin_inset Formula
+\begin{align*}
+\Rightarrow\sum_{i=1}^{m}y_{i}\cdot\sigma_{i}\left(v\right) & =\sum_{i=1}^{m}y_{i}\cdot\sigma_{i}\left(\sum_{j=1}^{n}c_{j}\cdot a_{j}\right)=\sum_{i=1}^{m}\sum_{j=1}^{n}\cdot y_{i}\cdot\sigma_{i}\left(c_{j}\right)\cdot\sigma_{k}\left(a_{j}\right)=\sum_{i=1}^{m}\sum_{j=1}^{n}y_{i}\cdot c_{j}\cdot\sigma_{k}\left(a_{j}\right)\\
+ & =\sum_{j=1}^{n}\sum_{i=1}^{m}y_{i}\cdot c_{j}\cdot\sigma_{k}\left(a_{j}\right)=\sum_{j=1}^{n}c_{j}\cdot\sum_{i=1}^{m}y_{i}\cdot\sigma_{k}\left(a_{j}\right)=\sum_{j=1}^{n}c_{j}\cdot0=0
+\end{align*}
+
+
+
+
+\end_inset
+מהיות 
+\begin_inset Formula
+$v$
+
+
+\end_inset
+ שרירותי נובע כי 
+\begin_inset Formula
+$\sum_{i=1}^{m}y_{i}\cdot\sigma_{i}=0$
+
+
+\end_inset
+, ולכן מלמה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 1.8"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ נובע ש-
+\begin_inset Formula
+$y=0$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מכאן שהשורות של 
+\begin_inset Formula
+$A$
+
+
+\end_inset
+ בת"ל ובפרט 
+\begin_inset Formula
+$m\geq n$
+
+
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+נניח ש-
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה סופית.
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary 1.16"
+\end_inset
+מתקיימים ארבעת הפסוקים הבאים:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\left|\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\right|\leq\left[\MKbbe:\MKfield\right]$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\left|\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\right|=\left[\MKbbe:\MKfield\right]$
+
+
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$\MKfield=\MKclf\left(\MKclg\left(\MKfield\right)\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לכל תת-חבורה 
+\begin_inset Formula
+$H\leq\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$H=\MKclg\left(\MKclf\left(H\right)\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\MKclf$
+
+
+\end_inset
+ חח"ע ו-
+\begin_inset Formula
+$\MKclg$
+
+
+\end_inset
+ על.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ א"כ יש לנו כיוון כיצד לענות על השאלה שלנו: כדי ש-
+\begin_inset Formula
+$\MKclf$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKclg$
+
+
+\end_inset
+ תהיינה הופכיות זו לזו אנחנו צריכים למצוא מתי מתקיים 
+\begin_inset Formula
+$\left|\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)\right|=\left[\MKbbe:\MKbbk\right]$
+
+
+\end_inset
+ לכל שדה ביניים 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+את סעיף
+\family roman
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+ 
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+
+\emph default
+
+\size default
+
+\shape default
+
+\family default
+
+\numeric on
+3
+\family roman
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\family default
+
+\numeric off
+
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+ 
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+(ואת סעיף
+\family roman
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+ 
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+
+\emph default
+
+\size default
+
+\shape default
+
+\family default
+
+\numeric on
+4
+\family roman
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\family default
+
+\numeric off
+
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+ 
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+הנובע ממנו) ראינו רק במקרה שבו 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבת גלואה, וזאת למרות שהוא נכון לכל הרחבה.
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ לכל שדה ביניים 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+, המקיים את תנאי משפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 1.5"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+, מתקיים:
+\begin_inset Formula
+\[
+\left|\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\right|=\left|\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)\right|\cdot\left|\MKgal\left(\nicefrac{\MKbbk}{\MKfield}\right)\right|
+\]
+
+
+
+
+\end_inset
+לו היה הדבר נכון לכל שדה ביניים היינו יכולים להוכיח שאם 
+\begin_inset Formula
+$\left|\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\right|=\left[\MKbbe:\MKfield\right]$
+
+
+\end_inset
+ אז לכל שדה ביניים 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)\right|=\left[\MKbbe:\MKbbk\right]$
+
+
+\end_inset
+ .
+\begin_inset Newline newline
+\end_inset
+אלא שלא תמיד מתקיימים תנאי המשפט, ולכן הדבר היחיד שאנחנו יכולים לומר הוא שאם 
+\begin_inset Formula
+$\left|\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\right|=\left[\MKbbe:\MKfield\right]$
+
+
+\end_inset
+, אז לכל שדה ביניים 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ מתקיים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ההעתקה 
+\begin_inset Formula
+$\sigma\mapsto\left.\sigma\right|_{\MKbbk}$
+
+
+\end_inset
+ מוגדרת היטב על קבוצת המחלקות 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)/\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)$
+
+
+\end_inset
+, היא חח"ע, ותמונתה היא 
+\begin_inset Formula
+$\left\{ \sigma:\MKbbk\hookrightarrow\MKbbe\mid\sigma\mid_{\MKfield}=\MKid_{\MKfield}\right\} $
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\[
+\left|\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)/\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)\right|=\left|\left\{ \sigma:\MKbbk\hookrightarrow\MKbbe\mid\sigma\mid_{\MKfield}=\MKid_{\MKfield}\right\} \right|
+\]
+
+
+
+
+\end_inset
+למרות זאת, במשפט הבא אנחנו נראה שאמירה זו מספיקה כדי להוכיח את השוויון המבוקש לכל שדה ביניים.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "theorem 1.17"
+\end_inset
+אם 
+\begin_inset Formula
+$\left|\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\right|=\left[\MKbbe:\MKfield\right]$
+
+
+\end_inset
+, אז לכל שדה ביניים 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)\right|=\left[\MKbbe:\MKbbk\right]$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+ראינו את המשפט הזה בשלב מאוחר מאוד של הקורס, ואת ההוכחה שאביא כעת לא ראינו כלל.
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+נניח ש-
+\begin_inset Formula
+$\left|\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\right|=\left[\MKbbe:\MKfield\right]$
+
+
+\end_inset
+ ונסמן 
+\begin_inset Formula
+$I:=\left\{ \sigma:\MKbbk\hookrightarrow\MKbbe\mid\sigma\mid_{\MKfield}=\MKid_{\MKfield}\right\} $
+
+
+\end_inset
+.
+\begin_inset Formula
+\[
+\Rightarrow\left|I\right|=\left|\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)/\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)\right|=\frac{\left|\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\right|}{\left|\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)\right|}=\frac{\left[\MKbbe:\MKfield\right]}{\left|\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)\right|}
+\]
+
+
+
+
+\end_inset
+ולכן גם:
+\begin_inset Formula
+\[
+\left|\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)\right|=\frac{\left[\MKbbe:\MKfield\right]}{\left|I\right|}=\frac{\left[\MKbbe:\MKbbk\right]\cdot\left[\MKbbk:\MKfield\right]}{\left|I\right|}
+\]
+
+
+
+
+\end_inset
+וע"פ המסקנה האחרונה (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 1.16"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+) נקבל:
+\begin_inset Formula
+\[
+\left|\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)\right|=\left[\MKbbe:\MKbbk\right]\Longleftrightarrow\left|\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)\right|\geq\left[\MKbbe:\MKbbk\right]\Longleftrightarrow\left|I\right|\geq\left[\MKbbk:\MKfield\right]
+\]
+
+
+
+
+\end_inset
+א"כ נוכיח ש-
+\begin_inset Formula
+$\left|I\right|\geq\left[\MKbbk:\MKfield\right]$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$\left(\MKseq a,l\right)$
+
+
+\end_inset
+ בסיס של 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ כמ"ו מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+, ויהיו 
+\begin_inset Formula
+$\MKseq b,k\in\MKbbe$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left(\MKseq a,l;\MKseq b,k\right)$
+
+
+\end_inset
+ בסיס של 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ כמ"ו מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נסמן 
+\begin_inset Formula
+$n:=l+k=\left[\MKbbe:\MKfield\right]$
+
+
+\end_inset
+, יהיו 
+\begin_inset Formula
+$\MKseq{\sigma},m$
+
+
+\end_inset
+ כל האוטומורפיזמים השונים ב-
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+, ונסמן:
+\begin_inset Formula
+\[
+A:=\left[\begin{array}{ccc|ccc}
+\sigma_{1}\left(a_{1}\right) & \cdots & \sigma_{1}\left(a_{l}\right) & \sigma_{1}\left(b_{1}\right) & \cdots & \sigma_{1}\left(b_{k}\right)\\
+\sigma_{2}\left(a_{1}\right) & \cdots & \sigma_{2}\left(a_{l}\right) & \sigma_{2}\left(b_{1}\right) & \cdots & \sigma_{2}\left(b_{k}\right)\\
+\sigma_{3}\left(a_{1}\right) & \cdots & \sigma_{3}\left(a_{l}\right) & \sigma_{3}\left(b_{1}\right) & \cdots & \sigma_{3}\left(b_{k}\right)\\
+\vdots & \ddots & \vdots & \vdots & \ddots & \vdots\\
+\sigma_{m}\left(a_{1}\right) & \cdots & \sigma_{m}\left(a_{l}\right) & \sigma_{m}\left(b_{1}\right) & \cdots & \sigma_{m}\left(b_{k}\right)
+\end{array}\right]
+\]
+
+
+
+
+\end_inset
+מהעובדה ש-
+\begin_inset Formula
+$a_{i}\in\MKbbk$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$l\geq i\in\MKnatural$
+
+
+\end_inset
+, ומהעובדה שכל איבר ב-
+\begin_inset Formula
+$I$
+
+
+\end_inset
+ הוא צמצום של איבר 
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+, נובע שניתן לבצע פעולות שורה אלמנטריות על 
+\begin_inset Formula
+$A$
+
+
+\end_inset
+, ולקבל בבלוק השמאלי בדיוק 
+\begin_inset Formula
+$\left|I\right|$
+
+
+\end_inset
+ שורות שאינן שורות אפסים.
+\begin_inset Newline newline
+\end_inset
+אבל כפי שראינו בהוכחה של משפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 1.15"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ 
+\begin_inset Formula
+$A$
+
+
+\end_inset
+ היא מטריצה הפיכה, ולכן גם כל מטריצה שמתקבלת ממנה ע"י פעולות שורה אלמנטריות גם היא הפיכה, ומכאן שבהכרח מספר העמודות בבלוק השמאלי קטן או שווה למספר השורות שאינן שורות אפסים בבלוק זה, כלומר 
+\begin_inset Formula
+$\left[\MKbbk:\MKfield\right]=l\leq\left|I\right|$
+
+
+\end_inset
+ כנדרש.
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary 1.18"
+\end_inset
+
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבת גלואה אם"ם 
+\begin_inset Formula
+$\left|\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\right|=\left[\MKbbe:\MKfield\right]$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary 1.19"
+\end_inset
+נניח ש-
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה אלגברית פשוטה, ויהי 
+\begin_inset Formula
+$\alpha\in\MKbbe$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKbbe=\MKfield\left(\alpha\right)$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבת גלואה אם"ם 
+\begin_inset Formula
+$m_{\alpha}$
+
+
+\end_inset
+ מתפצל ב-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ לגורמים ליניאריים שונים.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\end_layout
+
+\end_layout
+
+\begin_layout Section
+הרחבות ספרביליות והרחבות נורמליות
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ שדה.
+\end_layout
+
+\begin_layout Definition
+נאמר שפולינום 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ הוא 
+\bar under
+ספרבילי
+\bar default
+ אם בשדה הפיצול שלו הוא מתפרק לגורמים ליניאריים שונים, כלומר הריבוי של כל אחד משורשיו הוא 
+\begin_inset Formula
+$1$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+בהינתן הרחבת שדות 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ נאמר שאיבר 
+\begin_inset Formula
+$\alpha\in\MKfield$
+
+
+\end_inset
+ הוא 
+\bar under
+ספרבילי
+\bar default
+ אם 
+\begin_inset Formula
+$m_{\alpha}$
+
+
+\end_inset
+ ספרבילי, וכמו כן נאמר ש-
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא 
+\bar under
+הרחבה ספרבילית
+\bar default
+ אם כל 
+\begin_inset Formula
+$\alpha\in\MKbbe$
+
+
+\end_inset
+ ספרבילי.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+סימון:
+\series default
+ יהיו 
+\begin_inset Formula
+$\Omega$
+
+
+\end_inset
+ שדה סגור אלגברית ו-
+\begin_inset Formula
+$\varphi:\MKfield\hookrightarrow\Omega$
+
+
+\end_inset
+ שיכון, לכל הרחבה סופית 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ נסמן 
+\begin_inset Formula
+$I_{\varphi,\Omega}\left(\nicefrac{\MKbbe}{\MKfield}\right):=\left\{ \hat{\varphi}:\MKbbe\hookrightarrow\Omega\mid\left.\hat{\varphi}\right|_{\MKfield}=\varphi\right\} $
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$i_{\varphi,\Omega}\left(\nicefrac{\MKbbe}{\MKfield}\right):=\left|I_{\varphi,\Omega}\left(\nicefrac{\MKbbe}{\MKfield}\right)\right|$
+
+
+\end_inset
+, כלומר 
+\begin_inset Formula
+$i_{\varphi,\Omega}\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ הוא מספר השיכונים של 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$\Omega$
+
+
+\end_inset
+ המרחיבים את 
+\begin_inset Formula
+$\varphi$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+סימון:
+\series default
+ לכל פולינום 
+\begin_inset Formula
+$f:=\sum_{i=0}^{n}a_{i}\cdot x^{i}\in\Omega$
+
+
+\end_inset
+ נסמן 
+\begin_inset Formula
+$\varphi\left(f\right):=\sum_{i=0}^{n}\varphi\left(a_{i}\right)\cdot x^{i}\in\Omega$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Lemma*
+יהיו 
+\begin_inset Formula
+$\Omega$
+
+
+\end_inset
+ שדה סגור אלגברית ו-
+\begin_inset Formula
+$\varphi:\MKfield\hookrightarrow\Omega$
+
+
+\end_inset
+ שיכון; לכל 
+\begin_inset Formula
+$\alpha\in\Omega$
+
+
+\end_inset
+, 
+\begin_inset Formula
+$i_{\varphi,\Omega}\left(\nicefrac{\MKfield\left(\alpha\right)}{\MKfield}\right)$
+
+
+\end_inset
+ שווה למספר השורשים השונים של 
+\begin_inset Formula
+$\varphi\left(m_{\alpha}\right)$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$\Omega$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Lemma*
+יהיו 
+\begin_inset Formula
+$\Omega$
+
+
+\end_inset
+ שדה סגור אלגברית ו-
+\begin_inset Formula
+$\varphi_{1},\varphi_{2}:\MKfield\hookrightarrow\Omega$
+
+
+\end_inset
+ שיכונים; לכל פולינום 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+, מספר השורשים השונים של 
+\begin_inset Formula
+$\varphi_{1}\left(f\right)$
+
+
+\end_inset
+ שווה למספר השורשים השונים של 
+\begin_inset Formula
+$\varphi_{2}\left(f\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem*
+תהיינה 
+\begin_inset Formula
+$\nicefrac{\MKbbk}{\MKfield}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKbbk}$
+
+
+\end_inset
+ הרחבות שדות, יהיו 
+\begin_inset Formula
+$\Omega_{1}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\Omega_{2}$
+
+
+\end_inset
+ שדות סגורים אלגברית, ויהיו 
+\begin_inset Formula
+$\varphi_{1}:\MKfield\hookrightarrow\Omega_{1}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\varphi_{2}:\MKfield\hookrightarrow\Omega_{2}$
+
+
+\end_inset
+ שיכונים.
+\begin_inset Newline newline
+\end_inset
+אם 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה סופית אז מתקיימים שלושת הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$i_{\varphi_{1},\Omega_{1}}\left(\nicefrac{\MKbbe}{\MKfield}\right)=i_{\varphi_{2},\Omega_{2}}\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$i_{\varphi_{1},\Omega_{1}}\left(\nicefrac{\MKbbe}{\MKfield}\right)\geq1$
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$i_{\varphi_{1},\Omega_{1}}\left(\nicefrac{\MKbbe}{\MKfield}\right)=i_{\varphi_{1},\Omega_{1}}\left(\nicefrac{\MKbbe}{\MKbbk}\right)\cdot i_{\varphi_{1},\Omega_{1}}\left(\nicefrac{\MKbbk}{\MKfield}\right)$
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+סימון: 
+\series default
+לכל הרחבה סופית 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ נסמן 
+\begin_inset Formula
+$i\left(\nicefrac{\MKbbe}{\MKfield}\right):=i_{\varphi,\Omega}\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ עבור שדה סגור אלגברית 
+\begin_inset Formula
+$\Omega$
+
+
+\end_inset
+ ושיכון 
+\begin_inset Formula
+$\varphi:\MKfield\hookrightarrow\Omega$
+
+
+\end_inset
+, ונקרא ל-
+\begin_inset Formula
+$i\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ 
+\bar under
+דרגת הספרביליות
+\bar default
+ של ההרחבה 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ דרגת הספרביליות נקראת כך משום שהיא מודדת עד כמה כל הרחבה פשוטה ב"מגדל" ההרחבות שיוצר את 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא ספרבילית (כמה שורשים שונים יש לפולינום המינימלי של יוצר ההרחבה).
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ הרחבת שדות, נאמר ש-
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא 
+\bar under
+הרחבה נורמלית
+\bar default
+ אם לכל פולינום אי-פריק 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+, כך שיש ל-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ שורש ב-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+, 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ מתפצל ב-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ הרחבת שדות, 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה נורמלית אם"ם לכל 
+\begin_inset Formula
+$\alpha\in\MKbbe$
+
+
+\end_inset
+ הפולינום המינימלי של 
+\begin_inset Formula
+$\alpha$
+
+
+\end_inset
+ מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ מתפצל ב-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ הרחבת שדות סופית, יהי 
+\begin_inset Formula
+$\Omega$
+
+
+\end_inset
+ שדה סגור אלגברית, ויהי 
+\begin_inset Formula
+$\varphi:\MKfield\hookrightarrow\Omega$
+
+
+\end_inset
+ שיכון.
+\end_layout
+
+\begin_layout Subsection
+הרחבות ספרביליות
+\end_layout
+
+\begin_layout Lemma
+לכל 
+\begin_inset Formula
+$\alpha\in\Omega$
+
+
+\end_inset
+, מספר השורשים השונים של 
+\begin_inset Formula
+$\varphi\left(m_{\alpha}\right)$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$\Omega$
+
+
+\end_inset
+ הוא 
+\begin_inset Formula
+$i_{\varphi,\Omega}\left(\nicefrac{\MKfield\left(\alpha\right)}{\MKfield}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ בפרט עבור 
+\begin_inset Formula
+$\varphi=\MKid$
+
+
+\end_inset
+ נקבל ש-
+\begin_inset Formula
+$i_{\varphi,\Omega}\left(\nicefrac{\MKfield\left(\alpha\right)}{\MKfield}\right)$
+
+
+\end_inset
+ שווה למספר השורשים השונים של 
+\begin_inset Formula
+$m_{\alpha}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Lemma
+יהיו 
+\begin_inset Formula
+$\Omega_{1}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\Omega_{2}$
+
+
+\end_inset
+ שדות סגורים אלגברית, ויהיו 
+\begin_inset Formula
+$\varphi_{1}:\MKfield\hookrightarrow\Omega_{1}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\varphi_{2}:\MKfield\hookrightarrow\Omega_{2}$
+
+
+\end_inset
+ שיכונים.
+\begin_inset Newline newline
+\end_inset
+לכל פולינום 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+, מספר השורשים השונים של 
+\begin_inset Formula
+$\varphi_{1}\left(f\right)$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$\Omega_{1}$
+
+
+\end_inset
+ שווה למספר השורשים השונים של 
+\begin_inset Formula
+$\varphi_{2}\left(f\right)$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$\Omega_{2}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+יהיו 
+\begin_inset Formula
+$\Omega_{1}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\Omega_{2}$
+
+
+\end_inset
+ שדות סגורים אלגברית, ויהיו 
+\begin_inset Formula
+$\varphi_{1}:\MKfield\hookrightarrow\Omega_{1}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\varphi_{2}:\MKfield\hookrightarrow\Omega_{2}$
+
+
+\end_inset
+ שיכונים, מתקיימים שלושת הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$i_{\varphi_{1},\Omega_{1}}\left(\nicefrac{\MKbbe}{\MKfield}\right)=i_{\varphi_{2},\Omega_{2}}\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$i_{\varphi_{1},\Omega_{1}}\left(\nicefrac{\MKbbe}{\MKfield}\right)\geq1$
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+לכל שדה ביניים 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$i_{\varphi_{1},\Omega_{1}}\left(\nicefrac{\MKbbe}{\MKfield}\right)=i_{\varphi_{1},\Omega_{1}}\left(\nicefrac{\MKbbe}{\MKbbk}\right)\cdot i_{\varphi_{1},\Omega_{1}}\left(\nicefrac{\MKbbk}{\MKfield}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+סימון: 
+\series default
+לכל הרחבה סופית 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ נסמן 
+\begin_inset Formula
+$i\left(\nicefrac{\MKbbe}{\MKfield}\right):=i_{\varphi,\Omega}\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ עבור שדה סגור אלגברית 
+\begin_inset Formula
+$\Omega$
+
+
+\end_inset
+ ושיכון 
+\begin_inset Formula
+$\varphi:\MKfield\hookrightarrow\Omega$
+
+
+\end_inset
+, ונקרא ל-
+\begin_inset Formula
+$i\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ 
+\bar under
+דרגת הספרביליות
+\bar default
+ של ההרחבה 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ דרגת הספרביליות נקראת כך משום שהיא מודדת עד כמה כל הרחבה פשוטה ב"מגדל" ההרחבות שיוצר את 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא ספרבילית (כמה שורשים שונים יש לפולינום המינימלי של יוצר ההרחבה).
+\end_layout
+
+\begin_layout Theorem
+\series bold
+יחידות שדה הפיצול
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ ויהיו 
+\begin_inset Formula
+$\MKbbe_{1}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKbbe_{2}$
+
+
+\end_inset
+ שדות פיצול של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$\MKbbe_{1}\cong\MKbbe_{2}$
+
+
+\end_inset
+; כלומר שדה פיצול של פולינום הוא יחיד עד כדי איזומורפיזם.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+לכל הרחבה סופית 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$i\left(\nicefrac{\MKbbe}{\MKfield}\right)\leq\left[\MKbbe:\MKfield\right]$
+
+
+\end_inset
+, ובנוסף מתקיים 
+\begin_inset Formula
+$i\left(\nicefrac{\MKbbe}{\MKfield}\right)=\left[\MKbbe:\MKfield\right]$
+
+
+\end_inset
+ אם
+\begin_inset Quotes qrd
+\end_inset
+ם ההרחבה 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ ספרבילית.
+\end_layout
+
+\begin_layout Corollary
+תהיינה 
+\begin_inset Formula
+$\nicefrac{\MKbbk}{\MKfield}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKbbk}$
+
+
+\end_inset
+ הרחבות סופיות, 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ ספרבילית אם"ם 
+\begin_inset Formula
+$\nicefrac{\MKbbk}{\MKfield}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKbbk}$
+
+
+\end_inset
+ ספרביליות.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+יהיו 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ פולינום ו-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ שדה פיצול של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+, אם 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ספרבילי אז גם ההרחבה 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ ספרבילית.
+\end_layout
+
+\begin_layout Claim
+תהא 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ הרחבה סופית, התנאים הבאים שקולים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה ספרבילית.
+\end_layout
+
+\begin_layout Enumerate
+לכל קבוצת יוצרים של 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ - כל איבריה ספרביליים מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+קיימת קבוצת יוצרים של 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ שכל איבריה ספרביליים מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Subsection
+הרחבות נורמליות
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ שדה ביניים של 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+, אם 
+\begin_inset Formula
+$\nicefrac{\MKbbk}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה נורמלית אז לכל 
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\sigma\left(\MKbbk\right)=\MKbbk$
+
+
+\end_inset
+,
+\begin_inset Newline newline
+\end_inset
+וע"פ משפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 1.5"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ מתקיים גם 
+\begin_inset Formula
+${\displaystyle \nicefrac{\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)}{\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)}\cong\MKgal\left(\nicefrac{\MKbbk}{\MKfield}\right)}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+מתקיים 
+\begin_inset Formula
+$\left|\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\right|\leq i\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+; ובנוסף, מתקיים 
+\begin_inset Formula
+$\left|\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\right|=i\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ אם"ם לכל שדה סגור אלגברית 
+\begin_inset Formula
+$\Omega$
+
+
+\end_inset
+ המכיל את 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+, ולכל שיכון 
+\begin_inset Formula
+$\tau:\MKbbe\hookrightarrow\Omega$
+
+
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$\tau\left(\MKbbe\right)=\MKbbe$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+התנאים הבאים שקולים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה נורמלית.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ הוא שדה פיצול של פולינום 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ כלשהו.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\left|\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\right|=i\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ שדה ביניים, 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה נורמלית אם"ם גם 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKbbk}$
+
+
+\end_inset
+ נורמלית.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ נשים לב: בניגוד לספרביליות לא מתקיים כאן שאם 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKbbk}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\nicefrac{\MKbbk}{\MKfield}$
+
+
+\end_inset
+ נורמליות אז 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ נורמלית. לדוגמה: ההרחבות 
+\begin_inset Formula
+$\nicefrac{\MKrational\left(\sqrt{2}\right)}{\MKrational}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\nicefrac{\MKrational\left(\sqrt{2},\sqrt[4]{2}\right)}{\MKrational\left(\sqrt{2}\right)}$
+
+
+\end_inset
+ הן הרחבות נורמלית שכן 
+\begin_inset Formula
+$\MKrational\left(\sqrt{2}\right)$
+
+
+\end_inset
+ הוא שדה הפיצול של 
+\begin_inset Formula
+$x^{2}-2$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKrational\left(\sqrt{2},\sqrt[4]{2}\right)$
+
+
+\end_inset
+ הוא שדה הפיצול של 
+\begin_inset Formula
+$x^{2}-\sqrt{2}$
+
+
+\end_inset
+, אבל למרות זאת ההרחבה 
+\begin_inset Formula
+$\nicefrac{\MKrational\left(\sqrt{2},\sqrt[4]{2}\right)}{\MKrational}$
+
+
+\end_inset
+ אינה נורמלית שכן לפולינום 
+\begin_inset Formula
+$x^{4}-2$
+
+
+\end_inset
+ יש שורש ב-
+\begin_inset Formula
+$\MKrational\left(\sqrt{2},\sqrt[4]{2}\right)$
+
+
+\end_inset
+ אך הוא אינו מתפצל ב-
+\begin_inset Formula
+$\MKrational\left(\sqrt{2},\sqrt[4]{2}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+הרחבות גלואה
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+נאמר שהרחבת שדות 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא 
+\bar under
+הרחבת גלואה
+\bar default
+ אם היא נורמלית וספרבילית.
+\end_layout
+
+\begin_layout Definition
+נאמר ש-
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ הוא 
+\bar under
+שדה משוכלל
+\bar default
+ אם כל הרחבה אלגברית שלו היא ספרבילית.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+הערה:
+\series default
+ במקומות אחרים אומרים על שדה כזה שהוא 
+\bar under
+מושלם
+\bar default
+.
+\end_layout
+
+\begin_layout Definition
+יהי 
+\begin_inset Formula
+${\displaystyle f\left(x\right):=\sum_{i=0}^{n}a_{i}\cdot x^{i}\in\MKfield\left[x\right]}$
+
+
+\end_inset
+ פולינום, 
+\bar under
+פולינום הנגזרת
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ הוא הפולינום 
+\begin_inset Formula
+${\displaystyle f'\left(x\right):=\sum_{i=0}^{n-1}\left(i+1\right)\cdot a_{i+1}\cdot x^{i}}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ נשים לב: כש-
+\begin_inset Formula
+$i$
+
+
+\end_inset
+ מופיע בחזקה (
+\begin_inset Formula
+$x^{i}$
+
+
+\end_inset
+) הוא איבר ב-
+\begin_inset Formula
+$\MKnatural_{0}$
+
+
+\end_inset
+, ואילו כאשר הוא מופיע במקדמי הפולינום (
+\begin_inset Formula
+$\left(i+1\right)\cdot a_{i+1}$
+
+
+\end_inset
+) הוא איבר ב-
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+, בפרט ייתכן שמקדמים יתאפסו (אם 
+\begin_inset Formula
+$\MKchar\left(\MKfield\right)$
+
+
+\end_inset
+ ראשוני) וכתוצאה מכך יתקיים 
+\begin_inset Formula
+$\deg f'<\deg f-1$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+סימון:
+\series default
+ יהי 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ שדה הרחבה של 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+, 
+\bar under
+הסגור הספרבילי
+\bar default
+ של 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ בתוך 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ הוא הקבוצה 
+\begin_inset Formula
+$\MKfield_{\MKbbe}^{\MKsep}:=\left\{ \alpha\in\MKbbe\mid\MKfield\ \text{ספרבילי מעל}\ \alpha\right\} $
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim*
+לכל שדה הרחבה 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+, גם 
+\begin_inset Formula
+$\MKfield_{\MKbbe}^{\MKsep}$
+
+
+\end_inset
+ הוא שדה הרחבה של 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ הרחבת שדות.
+\end_layout
+
+\begin_layout Subsection
+המשפט היסודי של תורת גלואה
+\end_layout
+
+\begin_layout Lemma
+לכל 
+\begin_inset Formula
+$H\leqslant\MKgal\left(\nicefrac{\MKbbe}{\MKbbh}\right)$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\MKbbe}{\MKbbh}\right)$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\sigma\left(\MKclf\left(H\right)\right)=\MKclf\left(\sigma H\sigma^{-1}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Lemma
+נניח ש-
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבת גלואה ויהי 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ שדה ביניים של 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+, ההרחבה 
+\begin_inset Formula
+$\nicefrac{\MKbbk}{\MKfield}$
+
+
+\end_inset
+ היא הרחבת גלואה אם"ם 
+\begin_inset Formula
+$\sigma\left(\MKbbk\right)=\MKbbk$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+, ובמקרה כזה מתקיים 
+\begin_inset Formula
+${\displaystyle \nicefrac{\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)}{\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)}\cong\MKgal\left(\nicefrac{\MKbbk}{\MKfield}\right)}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+המשפט היסודי של תורת גלואה
+\series default
+
+\end_layout
+
+\begin_layout Itemize
+נניח ש-
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ סופית, התנאים הבאים שקולים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבת גלואה (
+\series bold
+\color red
+לפי ההגדרה שלי: 
+\begin_inset Formula
+$\MKclf$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKclg$
+
+
+\end_inset
+ הופכיות זו לזו
+\color inherit
+
+\series default
+).
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה נורמלית וספרבילית (
+\series bold
+\color red
+זו ההגדרה שראינו בכיתה לכך ש-
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבת גלואה
+\color inherit
+
+\series default
+).
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ הוא שדה פיצול של פולינום ספרבילי 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ כלשהו.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\left|\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\right|=\left[\MKbbe:\MKfield\right]$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לכל שדה ביניים 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)\right|=\left[\MKbbe:\MKbbk\right]$
+
+
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+בנוסף, אם 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבת גלואה אז מתקיים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+לכל שדה ביניים 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\MKclg\left(\MKbbk\right)\trianglelefteq\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ (
+\begin_inset Formula
+$\MKclg\left(\MKbbk\right)$
+
+
+\end_inset
+ נורמלית) אם"ם 
+\begin_inset Formula
+$\nicefrac{\MKbbk}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה נורמלית, ובמקרה כזה מתקיים גם:
+\begin_inset Formula
+\[
+\nicefrac{\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)}{\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)}\cong\MKgal\left(\nicefrac{\MKbbk}{\MKfield}\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+לכל תת-חבורה 
+\begin_inset Formula
+$H\leqslant\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$H\trianglelefteq\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ (
+\begin_inset Formula
+$H$
+
+
+\end_inset
+ נורמלית) אם"ם 
+\begin_inset Formula
+$\nicefrac{\MKclf\left(H\right)}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה נורמלית, ובמקרה כזה מתקיים גם:
+\begin_inset Formula
+\[
+\nicefrac{\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)}{\MKgal\left(\nicefrac{\MKbbe}{\MKclf\left(H\right)}\right)}\cong\MKgal\left(\nicefrac{\MKclf\left(H\right)}{\MKfield}\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\series bold
+\color red
+לא ראינו את השקילות של סעיפים
+\family roman
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+ 
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+
+\emph default
+
+\size default
+
+\shape default
+
+\family default
+
+\numeric on
+1
+\family roman
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\family default
+
+\numeric off
+
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+ 
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+ו-
+\numeric on
+5
+\family roman
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\family default
+
+\numeric off
+
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+ לסעיפים האחרים (לפחות לא באופן מפורש), אלא ראינו רק שסעיפים 
+\numeric on
+\numeric off
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+2-4
+\family roman
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+ 
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+
+\emph default
+
+\size default
+
+\shape default
+
+\family default
+(ששקולים זה לזה) גוררים את
+\family roman
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+ 
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+
+\emph default
+
+\size default
+
+\shape default
+
+\family default
+
+\numeric on
+1
+\family roman
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\family default
+
+\numeric off
+
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+ 
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+ו-
+\numeric on
+5
+\numeric off
+.
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ א"כ מצאנו את מה שחיפשנו, השאלה היא רק מתי פולינום נתון הוא פולינום ספרבילי ובזה נעסוק בסעיף הבא.
+\end_layout
+
+\begin_layout Corollary
+אם 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבת גלואה אז לכל שדה ביניים 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left[\MKbbk:\MKfield\right]=\left[\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right):\MKgal\left(\nicefrac{\MKbbe}{\MKbbk}\right)\right]$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+מתי פולינום נתון הוא ספרבילי?
+\end_layout
+
+\begin_layout Theorem
+לכל שני פולינומים 
+\begin_inset Formula
+$f,g\in\MKfield\left[x\right]$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left(f+g\right)'=f'+g'$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(f\cdot g\right)'=f'\cdot g+f\cdot g'$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+יהיו 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ פולינום ו-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ שדה פיצול של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+, יהיו 
+\begin_inset Formula
+$\MKseq{\alpha},n\in\MKbbe$
+
+
+\end_inset
+ כל השורשים השונים של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+, ויהיו 
+\begin_inset Formula
+$\MKseq e,r\in\MKnatural$
+
+
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+f\left(x\right)=\prod_{i=1}^{r}\left(x-\alpha_{i}\right)^{e_{r}}
+\]
+
+
+
+
+\end_inset
+ מתקיים גם:
+\begin_inset Formula
+\[
+f'\left(x\right)=\sum_{i=1}^{r}e_{i}\cdot\frac{f\left(x\right)}{x-\alpha_{i}}
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+, הריבוי האלגברי של שורש 
+\begin_inset Formula
+$\alpha\in\MKfield$
+
+
+\end_inset
+ גדול מ-
+\begin_inset Formula
+$1$
+
+
+\end_inset
+ אם
+\begin_inset Quotes qrd
+\end_inset
+ם 
+\begin_inset Formula
+$x-\alpha\mid f'$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Lemma
+לכל שני פולינומים 
+\begin_inset Formula
+$f,g\in\MKfield\left[x\right]$
+
+
+\end_inset
+, המחלק המשותף המקסימלי שלהם מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ הוא גם המחלק המשותף המקסימלי מעל כל שדה הרחבה של 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ פולינום, 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ספרבילי אם
+\begin_inset Quotes qrd
+\end_inset
+ם 
+\begin_inset Formula
+$\gcd\left(f,f'\right)=1$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ פולינום אי-פריק ונחלק למקרים:
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$\MKchar\left(\MKfield\right)=0$
+
+
+\end_inset
+ אז 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ספרבילי.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$p:=\MKchar\left(\MKfield\right)$
+
+
+\end_inset
+ ראשוני ולא קיים 
+\begin_inset Formula
+$g\in\MKfield\left[x\right]$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f\left(x\right)=g\left(x^{p}\right)$
+
+
+\end_inset
+ אז 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ספרבילי.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$\MKchar\left(\MKfield\right)=0$
+
+
+\end_inset
+ אז כל הרחבה אלגברית 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא ספרבילית.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$p:=\MKchar\left(\MKfield\right)$
+
+
+\end_inset
+ ראשוני אז כל הרחבה סופית 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$p$
+
+
+\end_inset
+ אינו מחלק את 
+\begin_inset Formula
+$\left[\MKbbe:\MKfield\right]$
+
+
+\end_inset
+ היא הרחבה ספרבילית.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$\MKchar\left(\MKfield\right)=0$
+
+
+\end_inset
+ אז 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ הוא שדה משוכלל.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$p:=\MKchar\left(\MKfield\right)$
+
+
+\end_inset
+ ראשוני אז 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ הוא שדה משוכלל אם
+\begin_inset Quotes qrd
+\end_inset
+ם ההעתקה 
+\begin_inset Formula
+$x\mapsto x^{p}$
+
+
+\end_inset
+ היא על.
+\end_layout
+
+\begin_layout Lemma
+נניח ש-
+\begin_inset Formula
+$p:=\MKchar\left(\MKfield\right)$
+
+
+\end_inset
+ ראשוני, הפונקציה 
+\begin_inset Formula
+$\varphi:\MKfield\rightarrow\MKfield$
+
+
+\end_inset
+ המוגדרת ע
+\begin_inset Quotes qrd
+\end_inset
+י 
+\begin_inset Formula
+$\varphi\left(x\right):=x^{p}$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$x\in\MKfield$
+
+
+\end_inset
+ היא שיכון (של חוגים).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ שיכון זה נקרא ההומומורפיזם של פרובניוס
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה: 
+\begin_inset CommandInset href
+LatexCommand href
+name "פרדיננד גאורג פרובניוס"
+target https://he.wikipedia.org/wiki/%D7%A4%D7%A8%D7%93%D7%99%D7%A0%D7%A0%D7%93_%D7%92%D7%90%D7%95%D7%A8%D7%92_%D7%A4%D7%A8%D7%95%D7%91%D7%A0%D7%99%D7%95%D7%A1
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+כל שדה סופי הוא שדה משוכלל.
+\end_layout
+
+\begin_layout Claim
+לכל שדה הרחבה 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+, גם 
+\begin_inset Formula
+$\MKfield_{\MKbbe}^{\MKsep}$
+
+
+\end_inset
+ הוא שדה הרחבה של 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+תהא 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ הרחבה סופית, מתקיים 
+\begin_inset Formula
+$\left[\MKfield_{\MKbbe}^{\MKsep}:\MKfield\right]=i\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+מסקנות מתורת גלואה
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+האם יש הגדרות בפרק זה?
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+המשפט היסודי של האלגברה
+\end_layout
+
+\begin_layout Claim
+אם כל פולינום 
+\begin_inset Formula
+$f\in\MKreal\left[x\right]$
+
+
+\end_inset
+ מתפצל ב-
+\begin_inset Formula
+$\MKcomplex$
+
+
+\end_inset
+ אז גם כל פולינום 
+\begin_inset Formula
+$f\in\MKcomplex\left[x\right]$
+
+
+\end_inset
+ מתפצל ב-
+\begin_inset Formula
+$\MKcomplex$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+תזכורת:
+\series default
+ ראינו באינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+שלכל פולינום 
+\begin_inset Formula
+$f\in\MKreal\left[x\right]$
+
+
+\end_inset
+, אם הדרגה 
+\begin_inset Formula
+$\deg f$
+
+
+\end_inset
+ אי-זוגית אז קיים 
+\begin_inset Formula
+$x\in\MKreal$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f\left(x\right)=0$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+לכל פולינום אי-פריק 
+\begin_inset Formula
+$f\in\MKreal\left[x\right]$
+
+
+\end_inset
+ הדרגה 
+\begin_inset Formula
+$\deg f$
+
+
+\end_inset
+ זוגית, ומכאן שלכל הרחבה סופית לא טריוויאלית 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKreal}$
+
+
+\end_inset
+ דרגת ההרחבה 
+\begin_inset Formula
+$\left[\MKbbe:\MKreal\right]$
+
+
+\end_inset
+ זוגית.
+\end_layout
+
+\begin_layout Claim
+לכל הרחבת גלואה סופית 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKreal}$
+
+
+\end_inset
+ קיים 
+\begin_inset Formula
+$n\in\MKnatural_{0}$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left[\MKbbe:\MKreal\right]=2^{n}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+לכל פולינום אי-פריק 
+\begin_inset Formula
+$f\in\MKcomplex\left[x\right]$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\deg f\neq2$
+
+
+\end_inset
+, מכאן שלכל הרחבה סופית 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKcomplex}$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left[\MKbbe:\MKcomplex\right]\neq2$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+תזכורת:
+\series default
+ תהא 
+\begin_inset Formula
+$G$
+
+
+\end_inset
+ חבורה סופית, יהי 
+\begin_inset Formula
+$p\in\MKnatural$
+
+
+\end_inset
+ ראשוני ונסמן 
+\begin_inset Formula
+$n:=\max\left\{ k\in\MKnatural_{0}:\left|G\right|\ \text{מחלק את}\ p^{k}\right\} $
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+ראינו בקורס הקודם שבמקרה כזה לכל 
+\begin_inset Formula
+$n\geq k\in\MKnatural_{0}$
+
+
+\end_inset
+ קיימת תת-חבורה 
+\begin_inset Formula
+$H\leqslant G$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left|H\right|=p^{k}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+לא קיימת הרחבת גלואה סופית 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKcomplex}$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left[\MKbbe:\MKcomplex\right]=2^{n}$
+
+
+\end_inset
+ עבור 
+\begin_inset Formula
+$n\in\MKnatural$
+
+
+\end_inset
+ כלשהו.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+המשפט היסודי של האלגברה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+כל פולינום 
+\begin_inset Formula
+$f\in\MKcomplex\left[x\right]$
+
+
+\end_inset
+ מתפצל ב-
+\begin_inset Formula
+$\MKcomplex$
+
+
+\end_inset
+, כלומר 
+\begin_inset Formula
+$\MKcomplex$
+
+
+\end_inset
+ סגור אלגברית.
+\end_layout
+
+\begin_layout Subsection
+שדות סופיים
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$p\in\MKnatural$
+
+
+\end_inset
+ ראשוני.
+\end_layout
+
+\begin_layout Claim
+הפולינום 
+\begin_inset Formula
+$x^{p^{n}}-x\in\MKfield_{p}\left[x\right]$
+
+
+\end_inset
+ ספרבילי לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+
+
+\end_inset
+ קיים שדה בגודל 
+\begin_inset Formula
+$p^{n}$
+
+
+\end_inset
+, ושדה זה הוא יחיד עד כדי איזומורפיזם.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+סימון:
+\series default
+ ולכל 
+\begin_inset Formula
+$n\in\MKnatural$
+
+
+\end_inset
+ נסמן את השדה הנ
+\begin_inset Quotes qrd
+\end_inset
+ל ב-
+\begin_inset Formula
+$\MKfield_{p^{n}}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+
+
+\end_inset
+, ההרחבה 
+\begin_inset Formula
+$\nicefrac{\MKfield_{p^{n}}}{\MKfield_{p}}$
+
+
+\end_inset
+ היא הרחבת גלואה מדרגה 
+\begin_inset Formula
+$n$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+יהי 
+\begin_inset Formula
+$n\in\MKnatural$
+
+
+\end_inset
+, קיימת התאמה חח"ע ועל בין המחלקים של 
+\begin_inset Formula
+$n$
+
+
+\end_inset
+ לבין תתי-השדות של 
+\begin_inset Formula
+$\MKfield_{p^{n}}$
+
+
+\end_inset
+, בפרט: לכל 
+\begin_inset Formula
+$d\in\MKnatural$
+
+
+\end_inset
+, 
+\begin_inset Formula
+$\MKfield_{p^{d}}$
+
+
+\end_inset
+ הוא תת-שדה של 
+\begin_inset Formula
+$\MKfield_{p^{n}}$
+
+
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$d\mid n$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Lemma
+הפולינום 
+\begin_inset Formula
+$x^{p}-t\in\MKfield_{p}\left(t\right)\left[x\right]$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+\begin_inset Formula
+$\MKfield_{p}\left(t\right)\left[x\right]$
+
+
+\end_inset
+ הוא חוג הפולינומים מעל שדה הפונקציות הרציונליות 
+\begin_inset Formula
+$\MKfield_{p}\left(t\right)$
+
+
+\end_inset
+
+\end_layout
+
+\end_inset
+ אי-פריק מעל 
+\begin_inset Formula
+$\MKfield_{p}\left(t\right)$
+
+
+\end_inset
+ ובעל שורש יחיד ב-
+\begin_inset Formula
+$\overline{\MKfield_{p}\left(t\right)}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+נתבונן בהרחבה 
+\begin_inset Formula
+$\nicefrac{\MKfield_{p}\left(t\right)}{\MKfield_{p}}$
+
+
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$\left[\MKfield_{p}\left(\sqrt[p]{t}\right):\MKfield_{p}\right]=p$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\left|\MKgal\left(\nicefrac{\MKfield_{p}\left(\sqrt[p]{t}\right)}{\MKfield_{p}}\right)\right|=1$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+ההרחבה 
+\begin_inset Formula
+$\nicefrac{\MKfield_{p}\left(\sqrt[p]{t}\right)}{\MKfield_{p}}$
+
+
+\end_inset
+ היא הרחבה אלגברית שאינה ספרבילית.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+נספח: בניות בסרגל ובמחוגה
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+יש לכתוב פרק זה
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+יש לכתוב פרק זה
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+שאריות
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+\series bold
+הדיסקרימיננטה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ פולינום ו-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ שדה הפיצול של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+, ויהיו 
+\begin_inset Formula
+$\MKseq{\alpha},{\deg f},c\in\MKbbe$
+
+
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+f\left(x\right)=c\cdot\prod_{i=1}^{\deg f}\left(x-\alpha_{i}\right)
+\]
+
+
+
+
+\end_inset
+
+\bar under
+הדיסקרימיננטה
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ היא:
+\begin_inset Formula
+\[
+\Delta f=\prod_{i<j\leq\deg f}\left(\alpha_{i}-\alpha_{j}\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+מה???
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Lemma
+לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+
+
+\end_inset
+ ולכל 
+\begin_inset Formula
+$a\in\MKfield$
+
+
+\end_inset
+, שדה הפיצול של 
+\begin_inset Formula
+$x^{n}-a\in\MKrational\left[x\right]$
+
+
+\end_inset
+ הוא 
+\begin_inset Formula
+$\MKrational\left(\sqrt[n]{a},\MKcis\left(\frac{2\pi}{n}\right)\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+
+
+\end_inset
+, השדה 
+\begin_inset Formula
+$\MKrational\left(\MKcis\left(\frac{2\pi}{n}\right)\right)$
+
+
+\end_inset
+ ייקרא 
+\bar under
+השדה הציקלוטומי
+\bar default
+ מדרגה 
+\begin_inset Formula
+$n$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+נניח ש-
+\begin_inset Formula
+$\MKchar\left(\MKfield\right)=0$
+
+
+\end_inset
+, ויהיו 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ פולינום, 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ שדה הפיצול של 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$a\in\MKbbe$
+
+
+\end_inset
+; אם 
+\begin_inset Formula
+$\sigma\left(a\right)\in\MKfield$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$\sigma\in\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+ אז 
+\begin_inset Formula
+$a\in\MKfield$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+נניח ש-
+\begin_inset Formula
+$\MKchar\left(\MKfield\right)=0$
+
+
+\end_inset
+ ויהי 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ פולינום מדרגה 
+\begin_inset Formula
+$n$
+
+
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$\pm\sqrt{\Delta f}\in\MKfield$
+
+
+\end_inset
+ אם
+\begin_inset Quotes qrd
+\end_inset
+ם 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)\leqslant A_{n}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ שדה ראשוני, 
+\begin_inset Formula
+$\MKaut\left(\MKfield\right)$
+
+
+\end_inset
+ היא החבורה הטריוויאלית.
+\end_layout
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ שדה ראשוני, לכל הרחבת שדות 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\MKaut\left(\MKbbe\right)=\MKgal\left(\nicefrac{\MKbbe}{\MKfield}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\end_body
+
+\end_document
+

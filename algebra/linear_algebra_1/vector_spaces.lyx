@@ -1,0 +1,7997 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The head's design for summuries,make the layout more similar to abook:
+\AtBeginDocument{
+\renewcommand\headrule{%
+  \kern -7pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+  \kern 10pt
+}}
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Correct the reversed parentheses in labels:
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\newfontfamily{\hebrewfont}{David}
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+
+\end_preamble
+
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+customHeadersFooters
+\end_modules
+
+\maintain_unincluded_children false
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+
+
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size      Larger
+	  Series     Bold
+	EndFont
+End
+
+
+Style Solution
+
+	LabelString           "פתרון: "End
+
+
+Style Notation
+
+	LabelString           "סימון  \thetheorem: "End
+
+Style Theorem
+
+	LabelString           "משפט \thetheorem: "End
+
+Style Property
+
+	LabelString           "תזכורת: "End
+
+\end_local_layout
+
+\language hebrew
+
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\boxbgcolor #cccccc
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+
+\tocdepth 3
+
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "C:/Users/sraya/AppData/Roaming/LyX2.4/macros/MKmacros.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Right Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+leftmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Left Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+מרחבים וקטוריים
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Center Footer
+
+\end_layout
+
+\begin_layout Title
+
+\series bold
+\size huge
+מרחבים וקטוריים
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+התחלה
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ שדה.
+\end_layout
+
+\begin_layout Definition
+\bar under
+מרחב וקטורי
+\bar default
+ (להלן גם: 
+\bar under
+מ"ו
+\bar default
+) מעל לשדה 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ הוא קבוצה 
+\begin_inset Formula
+$V$
+\end_inset
+ (שאיבריה נקראים 
+\bar under
+וקטורים
+\bar default
+) בעלת איבר אחד לפחות שיקרא "וקטור האפס" (יסומן ב-
+\begin_inset Formula
+$0_{V}$
+\end_inset
+ ב-
+\begin_inset Formula
+$\vec{0}$
+\end_inset
+ או פשוט ב-
+\begin_inset Formula
+$0$
+\end_inset
+) שעליה מוגדרת פעולה דו-מקומית הנקראת "חיבור וקטורי" (תסומן ב-"
+\begin_inset Formula
+$+$
+\end_inset
+") ובנוסף קיימת פעולה דו-מקומית הנקראת "כפל בסקלר" (תסומן ב-"
+\begin_inset Formula
+$\cdot$
+\end_inset
+") מ-
+\begin_inset Formula
+$\MKfield\times V$
+\end_inset
+ ל-
+\begin_inset Formula
+$V$
+\end_inset
+ כך שמתקיימות
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+8
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+התכונות הבאות (נקראות גם "אקסיומות המרחב הווקטורי"):
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="3" class="lyxtabular xml">
+<features tabularvalignment="middle" class="features xml">
+<column alignment="center" valignment="top" class="column xml">
+<column alignment="center" valignment="top" class="column xml">
+<column alignment="center" valignment="top" class="column xml">
+<row class="row xml">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none" class="cell xml">
+\begin_inset Text
+\begin_layout Plain Layout
+כפל בסקלר (לכל 
+\begin_inset Formula
+$v,w\in V$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$a,b\in\MKfield$
+\end_inset
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none" class="cell xml">
+\begin_inset Text
+\begin_layout Plain Layout
+חיבור וקטורי (לכל 
+\begin_inset Formula
+$v,w,u\in V$
+\end_inset
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none" class="cell xml">
+\begin_inset Text
+\begin_layout Plain Layout
+תכונה
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row class="row xml">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none" class="cell xml">
+\begin_inset Text
+\begin_layout Plain Layout
+ראה הערה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\numeric off
+.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none" class="cell xml">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula
+$v+w=w+v$
+\end_inset
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none" class="cell xml">
+\begin_inset Text
+\begin_layout Plain Layout
+חילוף (קומוטטיביות)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row class="row xml">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none" class="cell xml">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula
+$a\cdot\left(b\cdot v\right)=\left(a\cdot b\right)\cdot v$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+נשים לב שבאגף שמאל שתי פעולות הכפל הן כפל וקטור בסקלר בעוד שבאגף ימין פעולת הכפל השמאלית מתבצעת בשדה.
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none" class="cell xml">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula
+$\left(v+w\right)+u=v+\left(w+u\right)$
+\end_inset
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none" class="cell xml">
+\begin_inset Text
+\begin_layout Plain Layout
+קיבוץ (אסוציאטיביות)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row class="row xml">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none" class="cell xml">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula
+$1\cdot v=v$
+\end_inset
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none" class="cell xml">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula
+$v+0_{V}=v$
+\end_inset
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none" class="cell xml">
+\begin_inset Text
+\begin_layout Plain Layout
+קיום איבר אדיש (ניטרלי)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row class="row xml">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none" class="cell xml">
+\begin_inset Text
+\begin_layout Plain Layout
+ראה הערה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\numeric off
+.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none" class="cell xml">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula
+$\exists x\in V:v+x=0_{V}$
+\end_inset
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none" class="cell xml">
+\begin_inset Text
+\begin_layout Plain Layout
+קיום איבר נגדי
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row class="row xml">
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none" class="cell xml">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula
+$a\cdot\left(v+w\right)=\left(a\cdot v\right)+\left(a\cdot w\right)$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ישנה מוסכמה שמצעים כפל לפני חיבור ולכן באגף ימין ניתן היה לכתוב 
+\begin_inset Formula
+$a\cdot\left(v+w\right)=a\cdot v+a\cdot w$
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none" class="cell xml">
+\begin_inset Text
+\begin_layout Plain Layout
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none" class="cell xml">
+\begin_inset Text
+\begin_layout Plain Layout
+פילוג (דיסטריבוטיביות) ביחס לחיבור וקטורי
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row class="row xml">
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none" class="cell xml">
+\begin_inset Text
+\begin_layout Plain Layout
+\begin_inset Formula
+$\left(a+b\right)\cdot v=\left(a\cdot v\right)+\left(b\cdot v\right)$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+נשים לב שהחיבור באגף שמאל הוא חיבור בשדה ואילו החיבור באגף ימין הוא חיבור וקטורי.
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none" class="cell xml">
+\begin_inset Text
+\begin_layout Plain Layout
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none" class="cell xml">
+\begin_inset Text
+\begin_layout Plain Layout
+פילוג (דיסטריבוטיביות) ביחס לחיבור בשדה
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\bar under
+הערות:
+\bar default
+
+\end_layout
+
+\begin_layout Enumerate
+אין צורך בחילוף משום שהסקלר נמצא תמיד משמאל לווקטור (ניתן כמובן לאפשר שיבוא מימין ואז לדרוש חילוף).
+\end_layout
+
+\begin_layout Enumerate
+לא שייך לדבר על איבר הופכי משום שהווקטור והסקלר באים (בד"כ) מקבוצות שונות.
+\end_layout
+
+\begin_layout Enumerate
+מהחילוף נובע שלכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ מתקיים גם 
+\begin_inset Formula
+$0_{V}+v=v$
+\end_inset
+ ושקיים 
+\begin_inset Formula
+$x\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$x+v=0_{V}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+נשים לב שלגבי החיבור הווקטורי דרשנו את כל הדרישות שדרשנו מחיבור בשדה ולכן ניתן "לייבא" טענות משם לכאן, בפרט לכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ קיים נגדי יחיד ומוצדק לתת לו סימון 
+\begin_inset Formula
+$-v$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+כמו בשדה גם במרחב וקטורי החיסור יוגדר כחיבור הנגדי.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ החילוף של החיבור הווקטורי נובע מהתכונות האחרות, לכל 
+\begin_inset Formula
+$v,w\in V$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+v+v+w+w & =1\cdot v+1\cdot v+1\cdot w+1\cdot w=\left(1+1\right)\cdot v+\left(1+1\right)\cdot w\\
+ & =1\cdot v+w+1\cdot v+w=v+w+v+w
+\end{align*}
+
+
+\end_inset
+כעת נחבר לשני האגפים את 
+\begin_inset Formula
+$-v$
+\end_inset
+ משמאל ו-
+\begin_inset Formula
+$-w$
+\end_inset
+ מימין ומהקיבוץ של החיבור הווקטורי נקבל שמתקיים 
+\begin_inset Formula
+$v+w=w+v$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+למרות זאת זוהי ההגדרה המקובלת, אך יותר מזה: אני לא דוגל בשיטה של "בואו נניח כמה שפחות ונרוויח כמה שיותר", מבחינתי אם המהות של המרחב הווקטורי דורשת שהחיבור הווקטורי יהיה חילופי (וזה אכן המצב) אז ראוי שההגדרה תכלול את התכונה הזו גם אם ניתן להסיק אותה מן האחרות.
+\end_layout
+
+\begin_layout Description
+סימון: יהי 
+\begin_inset Formula
+$V$
+\end_inset
+ מרחב וקטורי מעל לשדה 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+, לכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$0\neq a\in\MKfield$
+\end_inset
+ נסמן:
+\begin_inset Formula
+\[
+\frac{v}{a}:=\frac{1}{a}\cdot v
+\]
+
+
+\end_inset
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Description
+תזכורת: לכל קבוצה 
+\begin_inset Formula
+$A$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ הגדרנו
+\begin_inset Formula
+\[
+A^{n}:=\underset{\text{n פעמים}}{\underbrace{A\times A\times\ldots\times A}}=\left\{ \left(a_{1},a_{2},\ldots,a_{n}\right)\mid\forall n\geq i\in\MKnatural:a_{i}\in A\right\} 
+\]
+
+
+\end_inset
+כלומר 
+\begin_inset Formula
+$A^{n}$
+\end_inset
+ היא קבוצת הסדרות באורך 
+\begin_inset Formula
+$n$
+\end_inset
+ (נקראות גם: 
+\bar under
+\begin_inset Formula
+$n$
+\end_inset
+-יות
+\bar default
+) שכל איבריהן ב-
+\begin_inset Formula
+$A$
+\end_inset
+.
+\end_layout
+
+\begin_layout Description
+סימון: עד כה סימנו סדרות כך: 
+\begin_inset Formula
+$\left(a_{1},a_{2},\ldots,a_{n}\right)$
+\end_inset
+, באלגברה ליניארית נוהגים לסמן גם 
+\begin_inset Formula
+$\begin{pmatrix}a_{1}\\
+a_{2}\\
+\vdots\\
+a_{n}
+\end{pmatrix}$
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\begin{bmatrix}a_{1}\\
+a_{2}\\
+\vdots\\
+a_{n}
+\end{bmatrix}$
+
+\end_inset
+ - אלו סימונים שקולים.
+\end_layout
+
+\begin_layout Description
+סימון: נכתוב את ה-
+\begin_inset Formula
+$n$
+\end_inset
+-יות ב-
+\begin_inset Formula
+$\MKfield^{n}$
+\end_inset
+ גם בצורה אנכית, נסמן אותן באותיות קטנות ואת האיבר בכל קואורדינטה/אינדקס נסמן ע"י אותה אות קטנה עם האינדקס המתאים; כך יסומן האיבר ה-
+\begin_inset Formula
+$i$
+\end_inset
+ ב-
+\begin_inset Formula
+$n$
+\end_inset
+-יה 
+\begin_inset Formula
+$x\in\MKfield^{n}$
+\end_inset
+ ע"י 
+\begin_inset Formula
+$x_{i}$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+פעמים רבות יהיו אלה דווקא וקטורים ממוספרים ולא קואורדינטות של וקטור יחיד - אנו נאמר בפירוש שמדובר בווקטורים כשנעבוד כך, אך גם אם נשכח לעשות יהיה הדבר ברור מן ההקשר, ובנוסף הדבר יקרה כמעט תמיד עם האותיות 
+\begin_inset Formula
+$v$
+\end_inset
+, 
+\begin_inset Formula
+$w$
+\end_inset
+ ו-
+\begin_inset Formula
+$u$
+\end_inset
+ )כלומר 
+\begin_inset Formula
+$v_{1},v_{2},\ldots,v_{n}$
+\end_inset
+ הם וקטורים בעוד ש-
+\begin_inset Formula
+$x_{1},x_{2},\ldots,x_{n}$
+\end_inset
+ הן קואורדינטות של וקטור 
+\begin_inset Formula
+$x$
+\end_inset
+(.
+\end_layout
+
+\end_inset
+, כלומר (לכל 
+\begin_inset Formula
+$x\in\MKfield^{n}$
+\end_inset
+):
+\begin_inset Formula
+\[
+\begin{bmatrix}x_{1}\\
+x_{2}\\
+\vdots\\
+x_{n}
+\end{bmatrix}:=\begin{pmatrix}x_{1}\\
+x_{2}\\
+\vdots\\
+x_{n}
+\end{pmatrix}:=\left(x_{1},x_{2},\ldots,x_{n}\right):=x
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+להלן כמה דוגמאות למרחבים וקטוריים מעל השדה 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+.
+\end_layout
+
+\begin_layout Example
+\bar under
+מרחב הקואורדינטות
+\bar default
+ 
+\begin_inset Formula
+$\MKfield^{n}$
+\end_inset
+ עם פעולות החיבור הווקטורי והכפל בסקלר המוגדרות רכיב רכיב - לכל 
+\begin_inset Formula
+$x,y\in\MKfield^{n}$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$a\in\MKfield$
+\end_inset
+ נגדיר את החיבור הווקטורי והכפל בסקלר ע"י:
+\begin_inset Formula
+\begin{align*}
+x+y & :=\begin{bmatrix}x_{1}\\
+x_{2}\\
+\vdots\\
+x_{n}
+\end{bmatrix}+\begin{bmatrix}y_{1}\\
+y_{2}\\
+\vdots\\
+y_{n}
+\end{bmatrix}:=\begin{bmatrix}x_{1}+y_{1}\\
+x_{2}+y_{2}\\
+\vdots\\
+x_{n}+y_{n}
+\end{bmatrix}\\
+a\cdot x & :=a\cdot\begin{bmatrix}x_{1}\\
+x_{2}\\
+\vdots\\
+x_{n}
+\end{bmatrix}:=\begin{bmatrix}a\cdot x_{1}\\
+a\cdot x_{2}\\
+\vdots\\
+a\cdot x_{n}
+\end{bmatrix}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בקובץ ההקדמה לקורס פירטתי את האינטואיציה הגאומטרית של הפעולות הללו כאשר 
+\begin_inset Formula
+$\MKfield=\MKreal$
+\end_inset
+ ו-
+\begin_inset Formula
+$n=2$
+\end_inset
+ או 
+\begin_inset Formula
+$n=3$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ישנו איזומורפיזם ברור מאד בין 
+\begin_inset Formula
+$\MKfield^{1}$
+\end_inset
+ ל-
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ - נעתיק כל איבר בשדה לסדרה באורך 
+\begin_inset Formula
+$1$
+\end_inset
+ המכילה אותו, א"כ כל שדה הוא מרחב וקטורי מעל עצמו.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Example
+\bar under
+מרחב הקואורדינטות האין-סופי
+\bar default
+ 
+\begin_inset Formula
+$\MKfield^{\MKnatural}$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כזכור הגדרנו את 
+\begin_inset Formula
+$B^{A}$
+\end_inset
+ בתור קבוצת הפונקציות מ-
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+, א"כ 
+\begin_inset Formula
+$\MKfield^{\MKnatural}$
+\end_inset
+ היא קבוצת הפונקציות מ-
+\begin_inset Formula
+$\MKnatural$
+\end_inset
+ ל-
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ כלומר קבוצת הסדרות האין-סופיות שאיבריהן ב-
+\begin_inset Formula
+$\MKfield$
+\end_inset
+.
+\end_layout
+
+\end_inset
+ עם פעולות החיבור הווקטורי והכפל בסקלר המוגדרות אינדקס אינדקס כבדוגמה הקודמת הוא מרחב וקטורי מעל 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Example
+תהא 
+\begin_inset Formula
+$A$
+\end_inset
+ קבוצה, 
+\bar under
+מרחב הפונקציות
+\bar default
+ 
+\begin_inset Formula
+$\MKfield^{A}$
+\end_inset
+ עם פעולות החיבור והכפל שלו
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+לכל 
+\begin_inset Formula
+$f,g:A\rightarrow\MKfield$
+\end_inset
+ הגדרנו את 
+\begin_inset Formula
+$f+g$
+\end_inset
+ ע"י 
+\begin_inset Formula
+$\left(f+g\right)\left(x\right):=f\left(x\right)+g\left(x\right)$
+\end_inset
+ (לכל 
+\begin_inset Formula
+$x\in\MKfield$
+\end_inset
+), ולכל 
+\begin_inset Formula
+$f:A\rightarrow\MKfield$
+\end_inset
+ ו-
+\begin_inset Formula
+$c\in\MKfield$
+\end_inset
+ הגדרנו את 
+\begin_inset Formula
+$c\cdot f$
+\end_inset
+ ע"י 
+\begin_inset Formula
+$\left(c\cdot f\right)\left(x\right):=c\cdot f\left(x\right)$
+\end_inset
+. 
+\end_layout
+
+\end_inset
+ הוא מרחב וקטורי מעל 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בפרט ניתן היה להחליף בדוגמה הקודמת את 
+\begin_inset Formula
+$\MKnatural$
+\end_inset
+ ב-
+\begin_inset Formula
+$\MKinteger$
+\end_inset
+ ולקבל את מרחב הסדרות האין-סופיות לשני הכיוונים.
+\end_layout
+
+\begin_layout Example
+קבוצת הפולינומים בעלי מקדמים ב-
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ היא מרחב וקטורי מעליו.
+\begin_inset Newline newline
+\end_inset
+על מרחב זה כתבתי קובץ מפורט בשם "
+\begin_inset CommandInset href
+LatexCommand href
+name "פולינומים על"
+target https://drive.google.com/file/d/1vdjB6maT-y_gJKB7Ae1RQ7r8FKer0b0o/view?usp=drive_link
+literal false
+\end_inset
+" המופיע באתר שלי במשבצת של הנושאים הבסיסיים., קובץ זה כולל נושאים נוספים ששייכים לליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\numeric off
+, הפרקים השייכים לקורס זה הם הראשון והרביעי.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Example
+יהי 
+\begin_inset Formula
+$V$
+\end_inset
+ מרחב וקטורי מעל 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+, 
+\begin_inset Formula
+$V$
+\end_inset
+ הוא מרחב וקטורי מעל כל תת-שדה של 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ עם אותן פעולות חיבור וכפל.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ א"כ 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ הוא מרחב וקטורי מעל כל תת-שדה שלו.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ יש לשים לב שכעת הסקלר בו אנו מכפילים את הווקטורים מגיע כעת מתת-השדה ולא מכל השדה, לדוגמה 
+\begin_inset Formula
+$\MKreal^{n}$
+\end_inset
+ הוא מ"ו מעל 
+\begin_inset Formula
+$\MKrational$
+\end_inset
+ אך 
+\begin_inset Formula
+$\MKrational^{n}$
+\end_inset
+ אינו מ"ו מעל 
+\begin_inset Formula
+$\MKreal$
+\end_inset
+ מפני שהרי 
+\begin_inset Formula
+$\sqrt{2}\cdot\begin{bmatrix}1\\
+1\\
+\vdots\\
+1
+\end{bmatrix}\notin\MKrational^{n}$
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Example
+יהיו 
+\begin_inset Formula
+$V_{1},V_{2},\ldots,V_{n}$
+\end_inset
+ מרחבים וקטוריים מעל 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+, הקבוצה 
+\begin_inset Formula
+$V_{1}\times V_{2}\times\ldots\times V_{n}$
+\end_inset
+ עם פעולות החיבור הווקטורי והכפל בסקלר המוגדרות רכיב רכיב:
+\begin_inset Formula
+\begin{align*}
+\left(v_{1},v_{2},\ldots,v_{n}\right)+\left(w_{1},w_{2},\ldots,w_{n}\right) & =\left(v_{1}+w_{1},v_{2}+w_{2},\ldots,v_{n}+w_{n}\right)\\
+a\cdot\left(v_{1},v_{2},\ldots,v_{n}\right) & =\left(a\cdot v_{1},a\cdot v_{2},\ldots,a\cdot v_{n}\right)
+\end{align*}
+
+
+\end_inset
+היא מרחב וקטורי מעל 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$V$
+\end_inset
+ מ"ו מעל 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+תת-קבוצה 
+\begin_inset Formula
+$W\subseteq V$
+\end_inset
+ תקרא 
+\bar under
+תת-מרחב וקטורי
+\bar default
+ (להלן גם: 
+\bar under
+תמ"ו
+\bar default
+) או פשוט 
+\bar under
+תת-מרחב
+\bar default
+ אם מתקיימות שלוש התכונות הבאות:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$0_{V}\in W$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$W$
+\end_inset
+ סגורה לחיבור הווקטורי: לכל 
+\begin_inset Formula
+$w_{1},w_{2}\in W$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$w_{1}+w_{2}\in W$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$W$
+\end_inset
+ סגורה לכפל בסקלר: לכל 
+\begin_inset Formula
+$w\in W$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$a\in\MKfield$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a\cdot w\in W$
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ישנם שני תתי-מרחבים טריוויאליים: 
+\begin_inset Formula
+$V$
+\end_inset
+ הוא תמ"ו של עצמו ו-
+\begin_inset Formula
+$\left\{ 0_{V}\right\} $
+\end_inset
+ גם הוא תמ"ו של 
+\begin_inset Formula
+$V$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ניתן היה להחליף את התכונה הראשונה בכך ש-
+\begin_inset Formula
+$W\neq\emptyset$
+\end_inset
+: הנחנו ש-
+\begin_inset Formula
+$W\neq\emptyset$
+\end_inset
+ נוכל לומר "יהי 
+\begin_inset Formula
+$w\in W$
+\end_inset
+", מהתכונה השלישית נובע שגם 
+\begin_inset Formula
+$-w=-1\cdot w\in W$
+\end_inset
+ ולכן מהתכונה השנייה נקבל שגם 
+\begin_inset Formula
+$0_{V}=w-w\in W$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+ע"פ הפילוסופיה של "בואו נניח כמה שפחות ונרוויח כמה שיותר" זוהי הגדרה טובה יותר אך אני לא מאמין בפילוסופיה הזאת, מבחינתי המהות של תת-מרחב וקטורי היא שהוא מרחב וקטורי בפני עצמו (נראה זאת מיד) ומכיוון שהקיום של וקטור האפס הוא חלק מן המהות של מרחב וקטורי איני מוכן שלא יופיע בהגדרה.
+\end_layout
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula
+$W\subseteq V$
+\end_inset
+ תת-מרחב וקטורי, 
+\begin_inset Formula
+$W$
+\end_inset
+ הוא מ"ו בפני עצמו מעל לאותו שדה עם אותן פעולות חיבור וקטורי וכפל בסקלר של 
+\begin_inset Formula
+$V$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מסקנה זו היא המוטיבציה להגדרת תת-מרחב וקטורי.
+\end_layout
+
+\begin_layout Description
+סימון: פעמים רבות מקצרים וכותבים "
+\begin_inset Formula
+$W\leq V$
+\end_inset
+" במקום "
+\begin_inset Formula
+$W\subseteq V$
+\end_inset
+ הוא תמ"ו של 
+\begin_inset Formula
+$V$
+\end_inset
+", אני כמעט לא אשתמש בסימון הזה בסיכומים אלו.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הסימון הזה הוא סימון כללי במתמטיקה לתת-קבוצה המקיימת את התכונות של הקבוצה הגדולה יותר.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$V$
+\end_inset
+ מ"ו מעל לשדה 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "theorem 1.1"
+\end_inset
+
+\series bold
+תכונות בסיסיות של מ"ו
+\series default
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+יחידות האיבר האדיש לחיבור - יהיו 
+\begin_inset Formula
+$v,w\in V$
+\end_inset
+, אם 
+\begin_inset Formula
+$v+w=v$
+\end_inset
+ אז 
+\begin_inset Formula
+$w=0_{V}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+יחידות הנגדי - יהיו 
+\begin_inset Formula
+$v,w,u\in V$
+\end_inset
+, אם 
+\begin_inset Formula
+$v+w=0_{V}$
+\end_inset
+ וגם 
+\begin_inset Formula
+$v+u=0_{V}$
+\end_inset
+ אז 
+\begin_inset Formula
+$w=u$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+כפל בסקלר "אפס" - לכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$0\cdot v=0_{V}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+כפל בווקטור האפס - לכל 
+\begin_inset Formula
+$a\in\MKfield$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a\cdot0_{V}=0_{V}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+כפל בסקלר "
+\begin_inset Formula
+$-1$
+\end_inset
+" - לכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left(-1\right)\cdot v=-v$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Proof
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+נניח ש-
+\begin_inset Formula
+$v+w=v$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$x\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$x+v=0_{V}$
+\end_inset
+ (קיום הנגדי), מכאן שמתקיים:
+\begin_inset Formula
+\[
+0_{V}=x+v=x+\left(v+w\right)=\left(x+v\right)+w=0_{V}+w=w
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+נניח ש-
+\begin_inset Formula
+$v+w=0_{V}$
+\end_inset
+ וגם 
+\begin_inset Formula
+$v+u=0_{V}$
+\end_inset
+, מכאן ש-
+\begin_inset Formula
+$u+v=0_{V}$
+\end_inset
+ וממילא גם:
+\begin_inset Formula
+\[
+u=u+0_{V}=u+\left(v+w\right)=\left(u+v\right)+w=0_{V}+w=w
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$0\cdot v=\left(0+0\right)\cdot v=0\cdot v+0\cdot v$
+\end_inset
+ ומכאן שגם:
+\begin_inset Formula
+\[
+0_{V}=-\left(0\cdot v\right)+0\cdot v=-\left(0\cdot v\right)+\left(0\cdot v+0\cdot v\right)=\left(-\left(0\cdot v\right)+0\cdot v\right)+0\cdot v=0_{V}+0\cdot v=0\cdot v
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$a\in\MKfield$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a\cdot0_{V}=a\cdot\left(0_{V}+0_{V}\right)=a\cdot0_{V}+a\cdot0_{V}$
+\end_inset
+ ומכאן שגם:
+\begin_inset Formula
+\[
+0_{V}=-\left(a\cdot0_{V}\right)+a\cdot0_{V}=-\left(a\cdot0_{V}\right)+\left(a\cdot0_{V}+a\cdot0_{V}\right)=\left(-\left(a\cdot0_{V}\right)+a\cdot0_{V}\right)+a\cdot0_{V}=0_{V}+a\cdot0_{V}=a\cdot0_{V}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$0_{V}=0\cdot v=\left(1-1\right)\cdot v=1\cdot v+\left(-1\right)\cdot v=v+\left(-1\right)\cdot v$
+\end_inset
+, מיחידות הנגדי נובע ש-
+\begin_inset Formula
+$-v=\left(-1\right)\cdot v$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Claim
+יהיו 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ ו-
+\begin_inset Formula
+$a\in\MKfield$
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$a\cdot v=0_{V}$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$v=0_{V}$
+\end_inset
+ ו/או 
+\begin_inset Formula
+$a=0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+את הגרירה משמאל לימין כבר הוכחנו בסעיפים
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+ו-
+\numeric on
+4
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+של המשפט הקודם (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 1.1"
+plural false
+caps false
+noprefix false
+\end_inset
+), נוכיח כעת את הכיוון ההפוך.
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$v\neq0_{V}$
+\end_inset
+ וגם 
+\begin_inset Formula
+$a\neq0$
+\end_inset
+, מכאן שמתקיים:
+\begin_inset Formula
+\[
+a^{-1}\cdot\left(a\cdot v\right)=\left(a^{-1}\cdot a\right)\cdot v=1\cdot v=v\neq0_{V}
+\]
+
+
+\end_inset
+ומכאן ש-
+\begin_inset Formula
+$a\cdot v\neq0_{V}$
+\end_inset
+ (סעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+4
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+במשפט הנ"ל), כלומר אם 
+\begin_inset Formula
+$a\cdot v=0_{V}$
+\end_inset
+ אז 
+\begin_inset Formula
+$v=0_{V}$
+\end_inset
+ ו/או 
+\begin_inset Formula
+$a=0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+תהא 
+\begin_inset Formula
+$X$
+\end_inset
+ קבוצת תתי-מרחבים וקטוריים של 
+\begin_inset Formula
+$V$
+\end_inset
+, החיתוך של כל תתי-המרחבים ב-
+\begin_inset Formula
+$X$
+\end_inset
+ הוא תת-מרחב של 
+\begin_inset Formula
+$V$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ נשים לב לכך שיש כאן כמה אפשרויות:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$X$
+\end_inset
+ יכולה להיות סופית ואז קיימים תתי-מרחבים וקטוריים 
+\begin_inset Formula
+$W_{1},W_{2},\ldots,W_{r}\subseteq V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$X=\left\{ W_{1},W_{2},\ldots,W_{r}\right\} $
+\end_inset
+, ואז החיתוך של כל תתי-המרחבים בה הוא הקבוצה:
+\begin_inset Formula
+\[
+\bigcap_{W\in X}W=\bigcap_{i=1}^{r}W_{i}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$X$
+\end_inset
+ יכולה להיות אין-סופית בת-מנייה, כלומר ניתן לסדר את איבריה בסדרה אינסופית: 
+\begin_inset Formula
+$X=\left\{ W_{1},W_{2},\ldots\right\} $
+\end_inset
+ ואז החיתוך של כל תתי-המרחבים בה הוא הקבוצה:
+\begin_inset Formula
+\[
+\bigcap_{W\in X}W=\bigcap_{i=1}^{\infty}W_{i}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$X$
+\end_inset
+ יכולה להיות אין-סופית שאינה בת-מנייה, כלומר א"א לסדר את איבריה בסדרה אינסופית, ואז החיתוך של כל תתי-המרחבים בה הוא הקבוצה:
+\begin_inset Formula
+\[
+\bigcap_{W\in X}W
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+בכל מקרה החיתוך של כל תתי-המרחבים ב-
+\begin_inset Formula
+$X$
+\end_inset
+ הוא הקבוצה:
+\begin_inset Formula
+\[
+\left\{ \begin{array}{c|c}
+v & \forall W\in X:v\in W\end{array}\right\} 
+\]
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Proof
+נסמן:
+\begin_inset Formula
+\[
+U:=\bigcap_{W\in X}W
+\]
+
+
+\end_inset
+ונעבור על שלוש התכונות כדי להוכיח ש-
+\begin_inset Formula
+$U$
+\end_inset
+ הוא תמ"ו.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$W\in X$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$0_{V}\in W$
+\end_inset
+ ולכן מתקיים גם 
+\begin_inset Formula
+$0_{V}\in U$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+יהיו 
+\begin_inset Formula
+$u_{1},u_{2}\in U$
+\end_inset
+, מכאן ש-
+\begin_inset Formula
+$u_{1},u_{2}\in W$
+\end_inset
+ לכל 
+\begin_inset Formula
+$W\in X$
+\end_inset
+; כל 
+\begin_inset Formula
+$W\in X$
+\end_inset
+ הוא תמ"ו ולכן לכל 
+\begin_inset Formula
+$W\in X$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$u_{1}+u_{2}\in W$
+\end_inset
+ וממילא גם 
+\begin_inset Formula
+$u_{1}+u_{2}\in U$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+יהי 
+\begin_inset Formula
+$u\in U$
+\end_inset
+, מכאן ש-
+\begin_inset Formula
+$u\in W$
+\end_inset
+ לכל 
+\begin_inset Formula
+$W\in X$
+\end_inset
+ ולכן מהעובדה שכל 
+\begin_inset Formula
+$W\in X$
+\end_inset
+ הוא תמ"ו נובע ש-
+\begin_inset Formula
+$a\cdot u\in W$
+\end_inset
+ לכל 
+\begin_inset Formula
+$a\in\MKfield$
+\end_inset
+ וממילא גם 
+\begin_inset Formula
+$a\cdot u\in U$
+\end_inset
+ לכל 
+\begin_inset Formula
+$a\in\MKfield$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Proof
+\begin_inset Formula
+$u_{1}$
+\end_inset
+, 
+\begin_inset Formula
+$u_{2}$
+\end_inset
+ ו-
+\begin_inset Formula
+$u$
+\end_inset
+ הנ"ל היו שרירותיים ולכן הנ"ל נכון לכל זוג וקטורים / וקטור יחיד ב-
+\begin_inset Formula
+$U$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$U$
+\end_inset
+ הוא תמ"ו.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+תלות ליניארית ופרישה
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$V$
+\end_inset
+ מ"ו מעל לשדה 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+\series bold
+פרוש
+\series default
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+תהא 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ תת-קבוצה, 
+\bar under
+הפרוש
+\bar default
+ של 
+\begin_inset Formula
+$S$
+\end_inset
+ הוא חיתוך של כל תתי-המרחבים הווקטוריים שמכילים את 
+\begin_inset Formula
+$S$
+\end_inset
+, נסמן אותו ב-
+\begin_inset Formula
+$\MKspan S$
+\end_inset
+ או ב-
+\begin_inset Formula
+$\left\langle S\right\rangle $
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+תהא 
+\begin_inset Formula
+$\left(v_{i}\right)_{i=1}^{n}=\left(v_{1},v_{2},\ldots,v_{n}\right)$
+\end_inset
+ סדרת וקטורים ב-
+\begin_inset Formula
+$V$
+\end_inset
+ (
+\begin_inset Formula
+$v_{i}\in V$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+) 
+\bar under
+הפרוש
+\bar default
+ של 
+\begin_inset Formula
+$\left(v_{i}\right)_{i=1}^{n}$
+\end_inset
+ הוא הפרוש קבוצת איבריה:
+\begin_inset Formula
+\[
+\MKspan\left(v_{1},v_{2},\ldots,v_{n}\right):=\MKspan\left\{ v_{1},v_{2},\ldots,v_{n}\right\} 
+\]
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בניגוד לסדרה 
+\begin_inset Formula
+$\left(v_{i}\right)_{i=1}^{n}$
+\end_inset
+ הקבוצה 
+\begin_inset Formula
+$S$
+\end_inset
+ יכולה להיות אין-סופית, אמנם ניתן היה להגדיר פרוש גם עבור סדרות אין-סופיות אך אנו לא נעסוק בסדרות כאלה בקורס זה והכללה זו תסרבל את הכתיבה.
+\end_layout
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ תת-קבוצה, מתקיימים שלושת הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\MKspan S$
+\end_inset
+ הוא תמ"ו של 
+\begin_inset Formula
+$V$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$S\subseteq\MKspan S$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+לכל תמ"ו 
+\begin_inset Formula
+$W\subseteq V$
+\end_inset
+ המקיים 
+\begin_inset Formula
+$S\subseteq W$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\MKspan S\subseteq W$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מסקנה זו היא המוטיבציה להגדרת פרוש, זהו התמ"ו הקטן ביותר שמכיל את 
+\begin_inset Formula
+$S$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כמובן ששלושת הפסוקים הללו מתקיימים גם עבור סדרות ב-
+\begin_inset Formula
+$V$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+צירוף ליניארי
+\series default
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+תהא 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ תת-קבוצה, 
+\bar under
+צירוף ליניארי
+\bar default
+ (להלן גם: 
+\bar under
+צר"ל
+\bar default
+) של 
+\begin_inset Formula
+$S$
+\end_inset
+ הוא ביטוי מהצורה:
+\begin_inset Formula
+\[
+\sum_{i=1}^{n}a_{i}\cdot v_{i}=a_{1}\cdot v_{1}+a_{2}\cdot v_{2}+\ldots+a_{n}\cdot v_{n}
+\]
+
+
+\end_inset
+כאשר 
+\begin_inset Formula
+$a_{i}\in\MKfield$
+\end_inset
+ ו-
+\begin_inset Formula
+$v_{i}\in S$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+תהא 
+\begin_inset Formula
+$\left(w_{i}\right)_{i=1}^{n}=\left(w_{1},w_{2},\ldots,w_{n}\right)$
+\end_inset
+ סדרת וקטורים ב-
+\begin_inset Formula
+$V$
+\end_inset
+, 
+\bar under
+צירוף ליניארי
+\bar default
+ (להלן גם: 
+\bar under
+צר"ל
+\bar default
+) של 
+\begin_inset Formula
+$\left(w_{i}\right)_{i=1}^{n}$
+\end_inset
+ הוא ביטוי מהצורה:
+\begin_inset Formula
+\[
+\sum_{i=1}^{n}a_{i}\cdot w_{i}
+\]
+
+
+\end_inset
+כאשר 
+\begin_inset Formula
+$a_{i}\in\MKfield$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ שימו לב להבדל בין ההגדרה של צר"ל עבור קבוצה לבין ההגדרה עבור סדרה סופית: בהגדרה עבור סדרה סופית דרשנו שכל הווקטורים ישתתפו בסכימה, כמובן שאפשר לכפול וקטורים לא רצויים באפס ובכך להוציא אותם מהסכימה, אך להבדל הזה תהיה משמעות בהמשך.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הסכום הנ"ל יכול להיות ריק ואז הוא שווה לאיבר האדיש לחיבור שהוא 
+\begin_inset Formula
+$0_{V}$
+\end_inset
+, א"כ לקבוצה הריקה יש צר"ל יחיד שהוא סכום ריק השווה לווקטור האפס
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+תודה לנאוה מקונט על הבנה זו.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+תלות ליניארית
+\series default
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+תת-קבוצה 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ תקרא 
+\bar under
+תלויה ליניארית
+\bar default
+ (להלן גם: 
+\bar under
+ת"ל
+\bar default
+) אם קיים 
+\begin_inset Formula
+$v\in S$
+\end_inset
+ כך שקיים צר"ל של איברי 
+\begin_inset Formula
+$S\setminus\left\{ v\right\} $
+\end_inset
+ השווה ל-
+\begin_inset Formula
+$v$
+\end_inset
+, אחרת תקרא 
+\bar under
+בלתי תלויה ליניארית
+\bar default
+ (להלן גם: 
+\bar under
+בת"ל
+\bar default
+).
+\end_layout
+
+\begin_layout Itemize
+סדרת וקטורים 
+\begin_inset Formula
+$\left(v_{1},v_{2},\ldots,v_{n}\right)$
+\end_inset
+ ב-
+\begin_inset Formula
+$V$
+\end_inset
+ תקרא 
+\bar under
+תלויה ליניארית
+\bar default
+ (להלן גם: 
+\bar under
+ת"ל
+\bar default
+) אם קיים 
+\begin_inset Formula
+$n\geq k\in\MKnatural$
+\end_inset
+ כך שקיים צר"ל של הסדרה 
+\begin_inset Formula
+$\left(v_{1},v_{2},\ldots,v_{k-1},v_{k+1},\ldots,v_{n}\right)$
+\end_inset
+ השווה ל-
+\begin_inset Formula
+$v_{k}$
+\end_inset
+, אחרת תקרא 
+\bar under
+בלתי תלויה ליניארית
+\bar default
+ (להלן גם: 
+\bar under
+בת"ל
+\bar default
+).
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ראינו בקובץ הטענות שקבוצת הצר"ל של 
+\begin_inset Formula
+$S$
+\end_inset
+ היא בדיוק 
+\begin_inset Formula
+$\MKspan S$
+\end_inset
+ ולכן ההגדרה של קבוצה תלויה ליניארית שקולה לכך שקיים 
+\begin_inset Formula
+$v\in S$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$v\in\MKspan\left(S\setminus\left\{ v\right\} \right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בניגוד לקבוצה, בסדרה איבר יכול להופיע פעמיים ולכן ע"פ ההגדרה כל סדרה כזו היא תלויה ליניארית, מכאן שאם קבוצת האיברים של סדרה היא קבוצה תלויה ליניארית אז גם הסדרה תלויה ליניארית אך הכיוון ההפוך אינו נכון.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הקבוצה 
+\begin_inset Formula
+$\left\{ 0_{V}\right\} $
+\end_inset
+ נחשבת תלויה ליניארית משום ש-
+\begin_inset Formula
+$0_{V}$
+\end_inset
+ הוא ערכו של סכום ריק, כלומר קיים צר"ל של הקבוצה הריקה השווה ל-
+\begin_inset Formula
+$0_{V}$
+\end_inset
+; לעומת זאת הקבוצה הריקה נחשבת בלתי תלויה ליניארית משום שלא קיים בה וקטור הניתן להצגה כצר"ל של האחרים (לא קיים בה וקטור בכלל).
+\end_layout
+
+\begin_layout Definition
+\series bold
+פרישה
+\series default
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נאמר שתת-קבוצה 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ 
+\bar under
+פורשת
+\bar default
+ או 
+\bar under
+יוצרת
+\bar default
+ את 
+\begin_inset Formula
+$V$
+\end_inset
+ (או שהיא 
+\bar under
+קבוצה פורשת/יוצרת
+\bar default
+ של 
+\begin_inset Formula
+$V$
+\end_inset
+) אם 
+\begin_inset Formula
+$\MKspan S=V$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+נאמר שסדרת וקטורים 
+\begin_inset Formula
+$\left(v_{1},v_{2},\ldots,v_{n}\right)$
+\end_inset
+ ב-
+\begin_inset Formula
+$V$
+\end_inset
+ 
+\bar under
+פורשת
+\bar default
+ את 
+\begin_inset Formula
+$V$
+\end_inset
+ (או שהיא 
+\bar under
+סדרה פורשת
+\bar default
+ של 
+\begin_inset Formula
+$V$
+\end_inset
+) אם 
+\begin_inset Formula
+$\MKspan\left(v_{1},v_{2},\ldots,v_{n}\right)=V$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כפי שראינו 
+\begin_inset Formula
+$\MKspan S$
+\end_inset
+ הוא תמ"ו וכל תמ"ו הוא מ"ו בפני עצמו, א"כ כל קבוצה פורשת את הפרוש שלה.
+\end_layout
+
+\begin_layout Definition
+צר"ל של קבוצה/סדרה ייקרא 
+\bar under
+מתאפס
+\bar default
+ אם הוא שווה ל-
+\begin_inset Formula
+$0_{V}$
+\end_inset
+ וייקרא 
+\bar under
+טריוויאלי
+\bar default
+ אם כל הסקלרים שבו הם אפסים (משום שאז מובן מאליו שהוא שווה לווקטור האפס).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$V$
+\end_inset
+ מ"ו מעל לשדה 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "theorem 2.1"
+\end_inset
+
+\series bold
+תכונות של הפרוש
+\series default
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+לכל תמ"ו 
+\begin_inset Formula
+$W\subseteq V$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\MKspan W=W$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\MKspan\left(\emptyset\right)=\left\{ 0_{V}\right\} $
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+תהיינה 
+\begin_inset Formula
+$S,T\subseteq V$
+\end_inset
+ תתי-קבוצות כך ש-
+\begin_inset Formula
+$S\subseteq T$
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$\MKspan S\subseteq\MKspan T$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Proof
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+מהגדרה 
+\begin_inset Formula
+$W\subseteq W$
+\end_inset
+ ולכן מהיותו תמ"ו 
+\begin_inset Formula
+$W$
+\end_inset
+ מופיע בחיתוך המהווה את 
+\begin_inset Formula
+$\MKspan W$
+\end_inset
+, א"כ 
+\begin_inset Formula
+$\MKspan W\subseteq W$
+\end_inset
+; מצד שני ראינו כבר בקובץ ההגדרות שמהגדרת הפרוש נובע ש-
+\begin_inset Formula
+$W\subseteq\MKspan W$
+\end_inset
+ ולכן נסיק מכאן ש-
+\begin_inset Formula
+$\MKspan W=W$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\MKspan\left(\emptyset\right)$
+\end_inset
+ הוא תמ"ו וככזה הוא מקיים 
+\begin_inset Formula
+$\left\{ 0_{V}\right\} \subseteq\MKspan\left(\emptyset\right)$
+\end_inset
+, מצד שני 
+\begin_inset Formula
+$\emptyset\subseteq\left\{ 0_{V}\right\} $
+\end_inset
+ ולכן 
+\begin_inset Formula
+$\left\{ 0_{V}\right\} $
+\end_inset
+ מופיע בחיתוך המהווה את 
+\begin_inset Formula
+$\MKspan\left(\emptyset\right)$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$\MKspan\left(\emptyset\right)\subseteq\left\{ 0_{V}\right\} $
+\end_inset
+ וממילא 
+\begin_inset Formula
+$\MKspan\left(\emptyset\right)=\left\{ 0_{V}\right\} $
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+כפי שראינו בקובץ ההגדרות מתקיים 
+\begin_inset Formula
+$T\subseteq\MKspan T$
+\end_inset
+ ולכן גם 
+\begin_inset Formula
+$S\subseteq\MKspan T$
+\end_inset
+, א"כ מהיות 
+\begin_inset Formula
+$\MKspan T$
+\end_inset
+ תמ"ו נובע שהוא מופיע בחיתוך המהווה את 
+\begin_inset Formula
+$\MKspan S$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$\MKspan S\subseteq\MKspan T$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$W\subseteq V$
+\end_inset
+ תמ"ו ויהיו 
+\begin_inset Formula
+$v_{1},...,v_{n}\in W$
+\end_inset
+, לכל 
+\begin_inset Formula
+$a_{1},a_{2},...,a_{n}\in\MKfield$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a_{1}\cdot v_{1}+a_{2}\cdot v_{2}+\ldots+a_{n}\cdot v_{n}\in W$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+תהא 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ תת-קבוצה, הקבוצה:
+\begin_inset Formula
+\[
+\left\{ \begin{array}{c|c}
+\begin{alignedat}{1}\sum_{i=1}^{n}a_{i}\cdot v_{i}\end{alignedat}
+ & n\in\MKnatural,\ \forall n\geq i\in\MKnatural:a_{i}\in\MKfield\land v_{i}\in S\end{array}\right\} 
+\]
+
+
+\end_inset
+(שהיא אוסף כל הצר"ל של איברי 
+\begin_inset Formula
+$S$
+\end_inset
+) היא תמ"ו של 
+\begin_inset Formula
+$V$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ שימו לב שוב לכך ש-
+\begin_inset Formula
+$S$
+\end_inset
+ אינה מוכרחת להיות סופית.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ אם 
+\begin_inset Formula
+$S$
+\end_inset
+ היא הקבוצה הריקה אז קבוצת הצר"ל שלה היא מרחב האפס.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כשלמדנו על וקטורים בתיכון ראינו שניתן לאפיין ישר ע"י נקודה שעליו ווקטור יחיד הקובע את כיוונו של הישר, כל נקודה אחרת על הישר ניתנת לביטוי בתור אותה נקודה ועוד סקלר כפול אותו וקטור, כך למשל הקבוצה:
+\begin_inset Formula
+\[
+\left\{ \begin{array}{c|c}
+\begin{bmatrix}0\\
+0
+\end{bmatrix}+x\cdot\begin{bmatrix}1\\
+0
+\end{bmatrix} & x\in\MKreal\end{array}\right\} 
+\]
+
+
+\end_inset
+היא ציר ה-
+\begin_inset Formula
+$x$
+\end_inset
+ במישור; ראינו גם שניתן לאפיין כל מישור על נקודה שעליו ועוד 
+\series bold
+צר"ל
+\series default
+ של שני וקטורים, כך הקבוצה:
+\begin_inset Formula
+\[
+\left\{ \begin{array}{c|c}
+\begin{bmatrix}0\\
+0\\
+0
+\end{bmatrix}+x\cdot\begin{bmatrix}1\\
+0\\
+0
+\end{bmatrix}+y\cdot\begin{bmatrix}0\\
+1\\
+0
+\end{bmatrix} & x,y\in\MKreal\end{array}\right\} 
+\]
+
+
+\end_inset
+היא המישור הנפרש ע"י צירי ה-
+\begin_inset Formula
+$x$
+\end_inset
+ וה-
+\begin_inset Formula
+$y$
+\end_inset
+ יחדיו. כדי שישר או מישור כזה יהיו תתי-מרחבים וקטוריים הם מוכרחים להכיל את וקטור האפס ולכן נוח יותר לייצג אותם כקבוצת צר"ל בלבד ללא הוספת וקטור האפס בתחילה, א"כ כל קבוצת צר"ל כנ"ל היא כעין ישר או מישור במרחב שבו היא נמצאת, אין הבדל מהותי בשאלה אם יש בצר"ל שני וקטורים או עשרה.
+\end_layout
+
+\begin_layout Proof
+נסמן ב-
+\begin_inset Formula
+$W$
+\end_inset
+ את הקבוצה הנ"ל ונעבור על שלוש התכונות הנדרשות לתמ"ו:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$S=\emptyset$
+\end_inset
+ אז מהגדרת סכום ריק מתקיים 
+\begin_inset Formula
+$W=\left\{ 0_{V}\right\} $
+\end_inset
+ , אחרת לכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ מתקיים מהגדרה 
+\begin_inset Formula
+$0_{V}=0\cdot v\in W$
+\end_inset
+ (זהו צר"ל עם איבר אחד).
+\end_layout
+
+\begin_layout Enumerate
+הסכום של שני צר"ל הוא צר"ל בעצמו ולכן 
+\begin_inset Formula
+$W$
+\end_inset
+ סגורה לחיבור.
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$v\in W$
+\end_inset
+ מתקיים מהגדרה 
+\begin_inset Formula
+$a\cdot v\in W$
+\end_inset
+ (זהו צר"ל עם איבר אחד), כלומר 
+\begin_inset Formula
+$W$
+\end_inset
+ סגורה לכפל בסקלר.
+\end_layout
+
+\end_deeper
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary 2.4"
+\end_inset
+
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+תהא 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ תת-קבוצה, מתקיים:
+\begin_inset Formula
+\[
+\MKspan S=\left\{ \begin{array}{c|c}
+\begin{alignedat}{1}\sum_{i=1}^{n}a_{i}\cdot v_{i}\end{alignedat}
+ & n\in\MKnatural,\ \forall n\geq i\in\MKnatural:a_{i}\in\MKfield\land v_{i}\in S\end{array}\right\} 
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+תהא 
+\begin_inset Formula
+$\left(v_{i}\right)_{i=1}^{n}$
+\end_inset
+ סדרת וקטורים סופית ב-
+\begin_inset Formula
+$V$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\MKspan\left(v_{1},v_{2},\ldots,v_{n}\right)=\left\{ \begin{array}{c|c}
+\begin{alignedat}{1}\sum_{i=1}^{n}a_{i}\cdot v_{i}\end{alignedat}
+ & \forall n\geq i\in\MKnatural:a_{i}\in\MKfield\end{array}\right\} 
+\]
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מכאן שאם קבוצה/סדרה פורשת את המרחב כולו אז ניתן להציג כל וקטור במרחב כצר"ל שלה. 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מסקנה זו היא הסיבה לשם "פרוש" - הפרוש של קבוצה/סדרה הוא התמ"ו 
+\series bold
+הנפרש
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+בעברית התנ"כית יש הבדל בכתיבה בין "לפרו
+\series bold
+ש
+\series default
+ מפה", "לפרו
+\series bold
+ש
+\series default
+ כנפיים" לבין "לפרו
+\series bold
+ס
+\series default
+ לחם"; לדוגמה "וּפָרְשׂוּ עָלָיו בֶּגֶד אַרְגָּמָן" (במדבר, ד', י"ג) ו-"יִפְרֹשׂ כְּנָפָיו יִקָּחֵהוּ" (דברים, ל"ב, י"ג), ומצד שני "הֲלוֹא פָרֹס לָרָעֵב לַחְמֶךָ" (ישעיהו, נ"ח, ז') ו-"וְלֹא יִפְרְסוּ לָהֶם... וְלֹא יַשְׁקוּ אוֹתָם כּוֹס תַּנְחוּמִים" (ירמיהו, ט"ז, י"ז).
+\end_layout
+
+\end_inset
+
+\series default
+ ע"י איבריה ממש כפי שמישור 
+\series bold
+נפרש
+\series default
+ ע"י שני וקטורים במרחב.
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary 2.5"
+\end_inset
+תת-קבוצה 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ היא תלויה ליניארית אם"ם קיים 
+\begin_inset Formula
+$v\in S$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$v\in\MKspan\left(S\setminus\left\{ v\right\} \right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+תהא 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ תת-קבוצה.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$0_{V}\in S$
+\end_inset
+ אז 
+\begin_inset Formula
+$S$
+\end_inset
+ תלויה ליניארית (אפילו אם 
+\begin_inset Formula
+$S=\left\{ 0_{V}\right\} $
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+נזכיר: מקובל להגדיר סכום ריק כאפס של החיבור המדובר (במקרה שלנו זהו וקטור האפס) ולכן ניתן לבטא את וקטור האפס באמצעות צר"ל של הקבוצה הריקה.
+\end_layout
+
+\end_inset
+).
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$S$
+\end_inset
+ היא יחידון והיא תלויה ליניארית אז 
+\begin_inset Formula
+$S=\left\{ 0_{V}\right\} $
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+תהא 
+\begin_inset Formula
+$T\subseteq V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$S\subseteq T$
+\end_inset
+,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$S$
+\end_inset
+ תלויה ליניארית אז גם 
+\begin_inset Formula
+$T$
+\end_inset
+ תלויה ליניארית.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$T$
+\end_inset
+ בת"ל אז גם 
+\begin_inset Formula
+$S$
+\end_inset
+ בת"ל.
+\end_layout
+
+\end_deeper
+
+\end_deeper
+
+\begin_layout Corollary
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+כל סדרה המכילה את וקטור האפס היא סדרה תלויה ליניארית.
+\end_layout
+
+\begin_layout Itemize
+אם סדרה תלויה ליניארית היא באורך 
+\begin_inset Formula
+$1$
+\end_inset
+ אז היא הסדרה 
+\begin_inset Formula
+$\left(0_{V}\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם סדרה אחת מכילה את כל האיברים של סדרה אחרת וזו הראשונה תלויה ליניארית אז גם השנייה התלויה ליניארית.
+\end_layout
+
+\end_deeper
+
+\begin_layout Claim
+יהיו 
+\begin_inset Formula
+$v,w\in V$
+\end_inset
+ אם הקבוצה 
+\begin_inset Formula
+$\left\{ v,w\right\} $
+\end_inset
+ ו/או הסדרה 
+\begin_inset Formula
+$\left(v,w\right)$
+\end_inset
+ תלויות ליניארית וגם 
+\begin_inset Formula
+$v\neq0_{V}$
+\end_inset
+ אז קיים 
+\begin_inset Formula
+$c\in\MKfield$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$c\cdot v=w$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 2.9"
+\end_inset
+קבוצת וקטורים ב-
+\begin_inset Formula
+$V$
+\end_inset
+ היא תלויה ליניארית אם"ם יש לה צר"ל מתאפס לא טריוויאלי של וקטורים שונים זה מזה.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מכאן שכדי להוכיח שקבוצה/סדרה אינה תלויה ליניארית נוכל להוכיח שהצר"ל המתאפס היחיד שלה הוא הטריוויאלי.
+\end_layout
+
+\begin_layout Proof
+תהא 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ תת-קבוצה.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\Leftarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$S$
+\end_inset
+ תלויה ליניארית, א"כ יהיו 
+\begin_inset Formula
+$v\in S$
+\end_inset
+, 
+\begin_inset Formula
+$v_{1},v_{2},\ldots,v_{n}\in S\setminus\left\{ v\right\} $
+\end_inset
+ וקטורים שונים זה מזה ו-
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{n}\in\MKfield$
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+v=\sum_{i=1}^{n}a_{i}\cdot v_{i}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow0_{V}=-v+\sum_{i=1}^{n}a_{i}\cdot v_{i}=\left(-1\right)\cdot v+\sum_{i=1}^{n}a_{i}\cdot v_{i}
+\]
+
+
+\end_inset
+הביטוי שבאגף ימין הוא צר"ל לא טריוויאלי של 
+\begin_inset Formula
+$S$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\Rightarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח שקיים צר"ל לא טריוויאלי מתאפס של 
+\begin_inset Formula
+$S$
+\end_inset
+, א"כ יהיו 
+\begin_inset Formula
+$w_{1},w_{2},\ldots,w_{m}\in S$
+\end_inset
+ וקטורים שונים זה מזה ו-
+\begin_inset Formula
+$b_{1},b_{2},\ldots,b_{m}\in\MKfield$
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+0_{V}=\sum_{i=1}^{m}b_{i}\cdot w_{i}
+\]
+
+
+\end_inset
+וקיים 
+\begin_inset Formula
+$m\geq k\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$b_{k}\neq0$
+\end_inset
+, יהי 
+\begin_inset Formula
+$k\in\MKnatural$
+\end_inset
+ כנ"ל.
+\begin_inset Formula
+\begin{align*}
+\Rightarrow b_{k}\cdot w_{k} & =\sum_{i=1}^{k-1}\left(-b_{i}\right)\cdot w_{i}+\sum_{i=k+1}^{m}\left(-b_{i}\right)\cdot w_{i}\\
+\Rightarrow w_{k} & =\sum_{i=1}^{k-1}-\frac{b_{i}}{b_{k}}\cdot w_{i}+\sum_{i=k+1}^{m}-\frac{b_{i}}{b_{k}}\cdot w_{i}
+\end{align*}
+
+
+\end_inset
+א"כ ניתן להציג את 
+\begin_inset Formula
+$w_{k}$
+\end_inset
+ כצר"ל של איברי 
+\begin_inset Formula
+$S\setminus\left\{ w_{k}\right\} $
+\end_inset
+ ומהגדרה 
+\begin_inset Formula
+$S$
+\end_inset
+ תלויה ליניארית.
+\end_layout
+
+\end_deeper
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary 2.10"
+\end_inset
+סדרת וקטורים סופית ב-
+\begin_inset Formula
+$V$
+\end_inset
+ היא תלויה ליניארית אם"ם יש לה צר"ל מתאפס לא טריוויאלי.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מכאן שכדי להוכיח שקבוצה/סדרה אינה תלויה ליניארית נוכל להוכיח שהצר"ל המתאפס היחיד שלה הוא הטריוויאלי.
+\end_layout
+
+\begin_layout Proof
+לכל סדרת וקטורים סופית ב-
+\begin_inset Formula
+$V$
+\end_inset
+: אם מופיע בה איבר פעמיים אז היא תלויה ליניארית ויש לה צר"ל מתאפס - נכפול את אותו איבר פעם ב-
+\begin_inset Formula
+$1$
+\end_inset
+ ופעם ב-
+\begin_inset Formula
+$-1$
+\end_inset
+ ואת כל שאר הווקטורים נכפול ב-
+\begin_inset Formula
+$0$
+\end_inset
+, ואם לא מופיע בה איבר פעמיים אז כל צר"ל שלה הוא גם צר"ל שלה הוא גם צר"ל של וקטורים שונים בקבוצת איבריה ולכן מהטענה הקודמת (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 2.9"
+plural false
+caps false
+noprefix false
+\end_inset
+) היא תלויה ליניארית אם"ם יש לה צר"ל מתאפס לא טריוויאלי.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 2.11"
+\end_inset
+תהא 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ תת-קבוצה בת"ל, אם קיים 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$v\notin\MKspan S$
+\end_inset
+ אז עבור אותו 
+\begin_inset Formula
+$v$
+\end_inset
+ מתקיים גם ש-
+\begin_inset Formula
+$S\cup\left\{ v\right\} $
+\end_inset
+ בת"ל.
+\end_layout
+
+\begin_layout Proof
+נניח שקיים 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$v\notin\MKspan S$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$v$
+\end_inset
+ כנ"ל.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$v_{1},v_{2},\ldots,v_{n}\in S$
+\end_inset
+ וקטורים שונים זה מזה ויהיו 
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{n},a\in\MKfield$
+\end_inset
+ כך מתקיים:
+\begin_inset Formula
+\[
+a\cdot v+\sum_{i=1}^{n}a_{i}\cdot v_{i}=0_{V}
+\]
+
+
+\end_inset
+אם 
+\begin_inset Formula
+$a$
+\end_inset
+ היה שונה מ-
+\begin_inset Formula
+$0$
+\end_inset
+ אז היינו מקבלים שניתן להציג את 
+\begin_inset Formula
+$v$
+\end_inset
+ כצר"ל של 
+\begin_inset Formula
+$S$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+נעביר את 
+\begin_inset Formula
+$a\cdot v$
+\end_inset
+ אגף ונחלק ב-
+\begin_inset Formula
+$-a$
+\end_inset
+.
+\end_layout
+
+\end_inset
+ בסתירה להגדרתו, מכאן ש-
+\begin_inset Formula
+$a=0$
+\end_inset
+ וממילא:
+\begin_inset Formula
+\[
+\sum_{i=1}^{n}a_{i}\cdot v_{i}=a\cdot v+\sum_{i=1}^{n}a_{i}\cdot v_{i}=0_{V}
+\]
+
+
+\end_inset
+מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 2.9"
+plural false
+caps false
+noprefix false
+\end_inset
+ נובע ש-
+\begin_inset Formula
+$a_{i}=0$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+, א"כ הוכחנו שהצר"ל המתאפס היחיד של וקטורים שונים ב-
+\begin_inset Formula
+$S\cup\left\{ v\right\} $
+\end_inset
+ הוא הטריוויאלי ומכאן ש-
+\begin_inset Formula
+$S\cup\left\{ v\right\} $
+\end_inset
+ בת"ל.
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 2.12"
+\end_inset
+תהא 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+, אם קיים 
+\begin_inset Formula
+$v\in S$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$v\in\MKspan\left(S\setminus\left\{ v\right\} \right)$
+\end_inset
+ אז עבור אותו 
+\begin_inset Formula
+$v$
+\end_inset
+ מתקיים גם 
+\begin_inset Formula
+$\MKspan\left(S\setminus\left\{ v\right\} \right)=\MKspan S$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+נניח שקיים 
+\begin_inset Formula
+$v\in S$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$v\in\MKspan\left(S\setminus\left\{ v\right\} \right)$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$v$
+\end_inset
+ כנ"ל.
+\begin_inset Newline newline
+\end_inset
+מהגדרה 
+\begin_inset Formula
+$S\setminus\left\{ v\right\} \subseteq S$
+\end_inset
+ ולכן ממשפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 2.1"
+plural false
+caps false
+noprefix false
+\end_inset
+ נובע ש-
+\begin_inset Formula
+$\MKspan\left(S\setminus\left\{ v\right\} \right)\subseteq\MKspan S$
+\end_inset
+, נוכיח את ההכלה בכיוון השני.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$w\in\MKspan S$
+\end_inset
+, ממסקנה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 2.4"
+plural false
+caps false
+noprefix false
+\end_inset
+ נובע שניתן להציג את 
+\begin_inset Formula
+$w$
+\end_inset
+ כצר"ל של 
+\begin_inset Formula
+$S$
+\end_inset
+ ואת 
+\begin_inset Formula
+$v$
+\end_inset
+ כצר"ל של 
+\begin_inset Formula
+$S\setminus\left\{ v\right\} $
+\end_inset
+,
+\begin_inset Newline newline
+\end_inset
+אם קיים צר"ל כזה ש-
+\begin_inset Formula
+$v$
+\end_inset
+ אינו מופיע בו אז 
+\begin_inset Formula
+$w$
+\end_inset
+ ניתן להצגה כצר"ל של 
+\begin_inset Formula
+$S\setminus\left\{ v\right\} $
+\end_inset
+ ולכן ע"פ אותה מסקנה 
+\begin_inset Formula
+$w\in\MKspan\left(S\setminus\left\{ v\right\} \right)$
+\end_inset
+;
+\begin_inset Newline newline
+\end_inset
+אחרת יהיו 
+\begin_inset Formula
+$v\neq w_{1},w_{2},\ldots,w_{n}\in S$
+\end_inset
+ ו-
+\begin_inset Formula
+$a,a_{1},a_{2},\ldots,a_{n}\in\MKfield$
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+w=a\cdot v+\sum_{i=1}^{n}a_{i}\cdot w_{i}
+\]
+
+
+\end_inset
+ויהיו 
+\begin_inset Formula
+$v_{1},v_{2},\ldots,v_{m}\in S\setminus\left\{ v\right\} $
+\end_inset
+ ו-
+\begin_inset Formula
+$b_{1},b_{2},\ldots,b_{m}\in\MKfield$
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+v=\sum_{j=1}^{m}b_{j}\cdot v_{j}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow w=a\cdot\sum_{j=1}^{m}b_{j}\cdot v_{j}+\sum_{i=1}^{n}a_{i}\cdot w_{i}=\sum_{j=1}^{m}\left(a\cdot b_{j}\right)\cdot v_{j}+\sum_{i=1}^{n}a_{i}\cdot w_{i}
+\]
+
+
+\end_inset
+אגף שמאל הוא צר"ל של 
+\begin_inset Formula
+$S\setminus\left\{ v\right\} $
+\end_inset
+ ולכן שוב מאותה מסקנה נקבל ש-
+\begin_inset Formula
+$w\in\MKspan\left(S\setminus\left\{ v\right\} \right)$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$w$
+\end_inset
+ הנ"ל היה שרירותי ולכן הנ"ל מתקיים לכל 
+\begin_inset Formula
+$w\in\MKspan S$
+\end_inset
+ ומהגדרה 
+\begin_inset Formula
+$\MKspan\left(S\setminus\left\{ v\right\} \right)\supseteq\MKspan S$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$\MKspan\left(S\setminus\left\{ v\right\} \right)=\MKspan S$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+בסיסים וממדים
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$V$
+\end_inset
+ מ"ו מעל לשדה 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+נאמר ש-
+\begin_inset Formula
+$V$
+\end_inset
+ 
+\bar under
+נוצר סופית
+\bar default
+ (להלן גם: 
+\bar under
+נ"ס
+\bar default
+) אם יש לו קבוצה/סדרה סופית
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כולל הקבוצה הריקה והסדרה הריקה, כלומר גם מרחב האפס הוא מרחב נ"ס.
+\end_layout
+
+\end_inset
+ פורשת.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+בסיס
+\series default
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נאמר שתת-קבוצה 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ היא 
+\bar under
+בסיס
+\bar default
+ של 
+\begin_inset Formula
+$V$
+\end_inset
+ אם היא בת"ל ופורשת את 
+\begin_inset Formula
+$V$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+נאמר שסדרת וקטורים 
+\begin_inset Formula
+$\left(v_{1},v_{2},\ldots,v_{n}\right)$
+\end_inset
+ ב-
+\begin_inset Formula
+$V$
+\end_inset
+ היא 
+\bar under
+בסיס
+\bar default
+ (להלן גם: 
+\bar under
+בסיס סדור
+\bar default
+) של 
+\begin_inset Formula
+$V$
+\end_inset
+ אם היא בת"ל ופורשת את 
+\begin_inset Formula
+$V$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בקובץ הטענות אנחנו נראה שאם 
+\begin_inset Formula
+$V$
+\end_inset
+ נ"ס אז יש לו בסיסים וכל שני בסיסים הם בהכרח סופיים ובאותו הגודל, לכן מוצדק לדבר על הגודל הזה כתכונה של 
+\begin_inset Formula
+$V$
+\end_inset
+ ולתת לו שם.
+\end_layout
+
+\begin_layout Standard
+נניח ש-
+\begin_inset Formula
+$V$
+\end_inset
+ נ"ס.
+\end_layout
+
+\begin_layout Definition
+נסמן ב-
+\begin_inset Formula
+$\dim V$
+\end_inset
+ את גודל הבסיסים של 
+\begin_inset Formula
+$V$
+\end_inset
+ ונקרא לגודל זה 
+\bar under
+הממד
+\bar default
+ של 
+\begin_inset Formula
+$V$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ עם קצת אינטואיציה לגאומטריה אוקלידית במרחב ניתן לראות שנקודה אחת מגדירה רק את עצמה, שתי נקודות שונות מגדירות ישר, שלוש נקודות שונות שאינן נמצאות על אותו הישר (לא תלויות ליניארית!) מגדירות מישור וארבע נקודות שאינן נמצאות על מישור אחד כבר פורשות את המרחב התלת-ממדי כולו. מכיוון שאנחנו דורשים שכל תמ"ו יכיל את וקטור האפס כבר יש לנו נקודה אחת ולכן כל וקטור שונה מאפס פורש ישר וכל שני וקטורים שאינם תלויים ליניארית פורשים מישור ושלושה כאלה כבר פורשים את המרחב התלת-ממדי כולו. זו הסיבה לכך שאנו אומרים שהממד של נקודה הוא 
+\begin_inset Formula
+$0$
+\end_inset
+ או שהיא חסרת ממדים, שישר הוא מממד 
+\begin_inset Formula
+$1$
+\end_inset
+, הממד של המישור הוא 
+\begin_inset Formula
+$2$
+\end_inset
+ והמרחב התלת-ממדי נקרא כך מפני שממדו הוא 
+\begin_inset Formula
+$3$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ נחזור לרגע אל הדוגמאות שהבאנו בתחילת הקובץ:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\MKfield^{n}$
+\end_inset
+ הוא מרחב וקטורי נ"ס מעל 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ ומתקיים 
+\begin_inset Formula
+$\dim\MKfield^{n}=n$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+הקבוצה הריקה היא בסיס של מרחב האפס ולכן 
+\begin_inset Formula
+$\dim\left\{ 0_{V}\right\} =\left|\emptyset\right|=0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם הקבוצה 
+\begin_inset Formula
+$A$
+\end_inset
+ אין-סופית אז המרחב 
+\begin_inset Formula
+$\MKfield^{A}$
+\end_inset
+ אינו נוצר סופית, בפרט מרחב הקואורדינטות האין-סופי (
+\begin_inset Formula
+$\MKfield^{\MKnatural}$
+\end_inset
+) אינו נוצר סופית.
+\end_layout
+
+\begin_layout Itemize
+הממד של 
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+, כמרחב וקטורי מעל 
+\begin_inset Formula
+$\MKreal$
+\end_inset
+, הוא 
+\begin_inset Formula
+$2$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\MKreal$
+\end_inset
+, כמרחב וקטורי מעל 
+\begin_inset Formula
+$\MKrational$
+\end_inset
+, אינו נוצר סופית.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$V$
+\end_inset
+ מ"ו נ"ס מעל לשדה 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בפרק זה נעסוק בעיקר בקבוצות אך כל הטענות תהיינה תקפות גם עבור סדרות וקטורים ב-
+\begin_inset Formula
+$V$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+למת ההחלפה של שטייניץ (
+\lang english
+Steinitz
+\lang default
+
+\lang hebrew
+)
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה האנגלית: 
+\begin_inset CommandInset href
+LatexCommand href
+name "Ernst Steinitz"
+target https://en.wikipedia.org/wiki/Ernst_Steinitz
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+
+\lang default
+
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$S,T\subseteq V$
+\end_inset
+ תתי-קבוצות סופיות כך ש-
+\begin_inset Formula
+$S$
+\end_inset
+ פורשת את 
+\begin_inset Formula
+$V$
+\end_inset
+ ו-
+\begin_inset Formula
+$T$
+\end_inset
+ בת"ל, מתקיימים שני הפסוקים הבאים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+למעשה הפסוק הראשון נובע משני שכן 
+\begin_inset Formula
+$0\leq\left|S'\right|$
+\end_inset
+, למרות זאת הבאנו אותו בנפרד כדי להדגיש שכל קבוצה פורשת גדולה מכל קבוצה בת"ל.
+\end_layout
+
+\end_inset
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$\left|S\right|\geq\left|T\right|$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+קיימת תת-קבוצה 
+\begin_inset Formula
+$S'\subseteq S$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left|S'\right|=\left|S\right|-\left|T\right|$
+\end_inset
+ ו-
+\begin_inset Formula
+$V=\MKspan\left(T\cup S'\right)$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Proof
+נוכיח את הטענה באינדוקציה על הגודל של 
+\begin_inset Formula
+$T$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+\bar under
+בסיס האינדוקציה
+\bar default
+
+\begin_inset Newline newline
+\end_inset
+אם 
+\begin_inset Formula
+$\left|T\right|=0$
+\end_inset
+ אז 
+\begin_inset Formula
+$T=\emptyset$
+\end_inset
+ אז מהגדרה מתקיים 
+\begin_inset Formula
+$\left|T\right|=0\leq\left|S\right|$
+\end_inset
+ ו-
+\begin_inset Formula
+$S$
+\end_inset
+ עצמה מקיימת 
+\begin_inset Formula
+$\left|S\right|=\left|S\right|-0=\left|S\right|-\left|T\right|$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+
+\bar under
+צעד האינדוקציה
+\bar default
+
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$\left|T\right|>0$
+\end_inset
+, נסמן 
+\begin_inset Formula
+$n:=\left|S\right|$
+\end_inset
+ ו-
+\begin_inset Formula
+$m:=\left|T\right|$
+\end_inset
+, ונניח שהמשפט מתקיים לכל תת-קבוצה בת"ל שגודלה הוא 
+\begin_inset Formula
+$m-1$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$w_{1},w_{2},\ldots,w_{m}$
+\end_inset
+ כל הווקטורים ב-
+\begin_inset Formula
+$T$
+\end_inset
+ ונסמן 
+\begin_inset Formula
+$T_{0}:=T\setminus\left\{ w_{m}\right\} $
+\end_inset
+, מכאן ש-
+\begin_inset Formula
+$\left|T_{0}\right|=m-1$
+\end_inset
+ ולכן ע"פ הנחת האינדוקציה קיימת 
+\begin_inset Formula
+$S_{0}\subseteq S$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$V=\MKspan\left(T_{0}\cup S_{0}\right)$
+\end_inset
+ ובנוסף:
+\begin_inset Formula
+\[
+\left|S'\right|=\left|S\right|-\left|T'\right|=n-\left(m-1\right)=n-m+1
+\]
+
+
+\end_inset
+תהא 
+\begin_inset Formula
+$S_{0}$
+\end_inset
+ כנ"ל ויהיו 
+\begin_inset Formula
+$v_{m},v_{m+1},\ldots,v_{n}$
+\end_inset
+ כל הווקטורים ב-
+\begin_inset Formula
+$S_{0}$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+נשים לב לכך ש-
+\begin_inset Formula
+$S_{0}$
+\end_inset
+ יכולה להיות ריקה, זה לא ישפיע על מהלך ההוכחה ומאוחר יותר אנחנו נראה ש-
+\begin_inset Formula
+$S_{0}$
+\end_inset
+ בהכרח אינה ריקה.
+\end_layout
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+הקבוצה 
+\begin_inset Formula
+$T_{0}\cup S_{0}=\left\{ w_{1},w_{2},\ldots,w_{m-1},v_{m},v_{m+1},\ldots,v_{n}\right\} $
+\end_inset
+ פורשת את 
+\begin_inset Formula
+$V$
+\end_inset
+, ולכן ניתן להציג את 
+\begin_inset Formula
+$w_{m}$
+\end_inset
+ כצר"ל של איבריה, א"כ יהיו 
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{n}\in\MKfield$
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+w_{m}=\sum_{i=1}^{m-1}a_{i}\cdot w_{i}+\sum_{i=m}^{n}a_{i}\cdot v_{i}
+\]
+
+
+\end_inset
+ולכן גם:
+\begin_inset Formula
+\[
+1\cdot w_{m}+\sum_{i=1}^{m-1}\left(-a_{i}\right)\cdot w_{i}=\sum_{i=m}^{n}a_{i}\cdot v_{i}
+\]
+
+
+\end_inset
+אגף שמאל הוא צר"ל לא טריוויאלי של איברי 
+\begin_inset Formula
+$T$
+\end_inset
+ ולכן מהעובדה ש-
+\begin_inset Formula
+$T$
+\end_inset
+ בת"ל נובע כי:
+\begin_inset Formula
+\[
+\sum_{i=m}^{n}a_{i}\cdot v_{i}\neq0_{V}
+\]
+
+
+\end_inset
+בפרט זהו סכום שאינו ריק ולכן בהכרח 
+\begin_inset Formula
+$\left|S\right|=n\geq m=\left|T\right|$
+\end_inset
+ ובכך הוכחנו את הסעיף הראשון במשפט.
+\begin_inset Newline newline
+\end_inset
+בנוסף, נובע מזה שקיים 
+\begin_inset Formula
+$j\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$m\leq j\leq n$
+\end_inset
+ ו-
+\begin_inset Formula
+$a_{j}\neq0$
+\end_inset
+, נניח בהג"כ שאותו 
+\begin_inset Formula
+$j$
+\end_inset
+ הוא 
+\begin_inset Formula
+$m$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+א"כ מתקיים:
+\begin_inset Formula
+\[
+v_{m}=\frac{1}{a_{m}}\cdot w+\sum_{i=1}^{m-1}-\frac{a_{i}}{a_{m}}\cdot w_{i}+\sum_{i=m+1}^{n}-\frac{a_{i}}{a_{m}}\cdot v_{i}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow v_{m}\in\MKspan\left\{ w_{1},w_{2},\ldots,w_{m},v_{m+1},v_{m+2},\ldots,v_{n}\right\} 
+\]
+
+
+\end_inset
+
+\begin_inset Newpage newpage
+\end_inset
+נגדיר 
+\begin_inset Formula
+$S':=\left\{ v_{m+1},v_{m+2},\ldots,v_{n}\right\} $
+\end_inset
+, מהגדרה 
+\begin_inset Formula
+$S'$
+\end_inset
+ מקיימת 
+\begin_inset Formula
+$\left|S'\right|=n-m=\left|S\right|-\left|T\right|$
+\end_inset
+ ובנוסף:
+\begin_inset Formula
+\[
+T_{0}\cup S_{0}=\left\{ w_{1},w_{2},\ldots,w_{m-1},v_{m},v_{m+1},\ldots,v_{n}\right\} \subseteq\MKspan\left\{ w_{1},w_{2},\ldots,w_{m},v_{m+1},v_{m+2},\ldots,v_{n}\right\} =\MKspan\left(T\cup S'\right)
+\]
+
+
+\end_inset
+ולכן 
+\begin_inset Formula
+$V=\MKspan\left(T_{0}\cup S_{0}\right)\subseteq\MKspan\left(T\cup S'\right)$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$V=\MKspan\left(T\cup S'\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary 3.2"
+\end_inset
+כל תת-קבוצה אין-סופית של 
+\begin_inset Formula
+$V$
+\end_inset
+ היא קבוצה תלויה ליניארית.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "theorem 3.3"
+\end_inset
+תהא 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ תת-קבוצה סופית.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$S$
+\end_inset
+ פורשת את 
+\begin_inset Formula
+$V$
+\end_inset
+ אז קיימת תת-קבוצה 
+\begin_inset Formula
+$\MKclb\subseteq S$
+\end_inset
+ המהווה בסיס של 
+\begin_inset Formula
+$V$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$S$
+\end_inset
+ בת"ל אז קיימת תת-קבוצה 
+\begin_inset Formula
+$\MKclb\subseteq V$
+\end_inset
+ המהווה בסיס של 
+\begin_inset Formula
+$V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$S\subseteq\MKclb$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ההוכחה של משפט זה נותנת לנו גם את הכלים למצוא בסיסים כאלה (ראו להלן), כלומר אנחנו יכולים לדלל כל קבוצה פורשת לבסיס ולהרחיב כל קבוצה בת"ל לבסיס.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בפרט לכל מרחב וקטורי נוצר סופית יש בסיס וע"פ מסקנה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 3.2"
+plural false
+caps false
+noprefix false
+\end_inset
+ כל בסיס כזה הוא סופי.
+\end_layout
+
+\begin_layout Proof
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נניח ש-
+\begin_inset Formula
+$S$
+\end_inset
+ פורשת את 
+\begin_inset Formula
+$V$
+\end_inset
+, מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 2.12"
+plural false
+caps false
+noprefix false
+\end_inset
+ וממסקנה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 2.5"
+plural false
+caps false
+noprefix false
+\end_inset
+ נובע שכל עוד 
+\begin_inset Formula
+$S$
+\end_inset
+ תלויה ליניארית נוכל לגרוע ממנה וקטורים בזה אחר זה תוך שמירה על הפרוש שלה, התהליך הזה מוכרח להסתיים בשלב כלשהו מפני ש-
+\begin_inset Formula
+$S$
+\end_inset
+ סופית, א"כ לאחר שנסיים את התהליך נקבל תת-קבוצה 
+\begin_inset Formula
+$\MKclb\subseteq S$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKspan\MKclb=\MKspan S=V$
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ בת"ל, כלומר 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ בסיס.
+\end_layout
+
+\begin_layout Itemize
+נניח ש-
+\begin_inset Formula
+$S$
+\end_inset
+ בת"ל ותהא 
+\begin_inset Formula
+$T\subseteq V$
+\end_inset
+ תת-קבוצה סופית הפורשת את 
+\begin_inset Formula
+$V$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 2.11"
+plural false
+caps false
+noprefix false
+\end_inset
+ נובע שכל עוד קיים 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$v\notin\MKspan S$
+\end_inset
+ נוכל להוסיף ל-
+\begin_inset Formula
+$S$
+\end_inset
+ וקטורים כך שתישאר בת"ל, התהליך הזה מוכרח להיעצר מפני שע"פ למת ההחלפה ברגע שהגודל של 
+\begin_inset Formula
+$S$
+\end_inset
+ (לאחר הוספת הווקטורים) יעבור את 
+\begin_inset Formula
+$\left|T\right|$
+\end_inset
+ - 
+\begin_inset Formula
+$S$
+\end_inset
+ תהיה תלויה ליניארית. נסמן 
+\begin_inset Formula
+$k:=\left|T\right|-\left|S\right|$
+\end_inset
+ (ע"פ למת ההחלפה 
+\begin_inset Formula
+$k\geq0$
+\end_inset
+) ומכאן שקיימים 
+\begin_inset Formula
+$v_{1},v_{2},\ldots,v_{k}\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$v_{1},v_{2},\ldots,v_{k}\notin\MKspan S$
+\end_inset
+ ו-
+\begin_inset Formula
+$S\cup\left\{ v_{1},v_{2},\ldots,v_{k}\right\} $
+\end_inset
+ בת"ל, ובנוסף לא קיים 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+v\notin\MKspan\left(S\cup\left\{ v_{1},v_{2},\ldots,v_{k}\right\} \right)
+\]
+
+
+\end_inset
+כלומר 
+\begin_inset Formula
+$V\subseteq\MKspan\left(S\cup\left\{ v_{1},v_{2},\ldots,v_{k}\right\} \right)$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$V=\MKspan\left(S\cup\left\{ v_{1},v_{2},\ldots,v_{k}\right\} \right)$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$S\cup\left\{ v_{1},v_{2},\ldots,v_{k}\right\} $
+\end_inset
+ בת"ל ופורשת את 
+\begin_inset Formula
+$V$
+\end_inset
+ ולכן גם בסיס.
+\end_layout
+
+\end_deeper
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "theorem 3.4"
+\end_inset
+תהא 
+\begin_inset Formula
+$\MKclb:=\left(v_{1},v_{2},\ldots,v_{n}\right)$
+\end_inset
+ סדרת וקטורים ב-
+\begin_inset Formula
+$V$
+\end_inset
+, 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ הוא בסיס של 
+\begin_inset Formula
+$V$
+\end_inset
+ אם"ם לכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ קיימים סקלרים 
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{n}\in\MKfield$
+\end_inset
+ יחידים כך שמתקיים:
+\begin_inset Formula
+\[
+v=\sum_{i=1}^{n}a_{i}\cdot v_{i}
+\]
+
+
+\end_inset
+כלומר ניתן להציג כל וקטור במרחב כצר"ל של בסיס סדור במרחב באופן יחיד.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מכאן שגם קבוצת וקטורים היא בסיס אם"ם כל וקטור במרחב ניתן להצגה כצר"ל שלה באופן יחיד.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\Leftarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ הוא בסיס של 
+\begin_inset Formula
+$V$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$v\in V$
+\end_inset
+, מהעובדה ש-
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ פורש את 
+\begin_inset Formula
+$V$
+\end_inset
+ נובע ש-
+\begin_inset Formula
+$v\in\MKspan\MKclb$
+\end_inset
+ ולכן ע"פ מסקנה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 2.4"
+plural false
+caps false
+noprefix false
+\end_inset
+ ניתן להציג את 
+\begin_inset Formula
+$v$
+\end_inset
+ כצר"ל של 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+, א"כ נותר להוכיח את היחידות של הצגה זו.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$a_{1},a_{2},\ldots a_{n},b_{1},b_{2},\ldots,b_{n}\in\MKfield$
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+v=\sum_{i=1}^{n}a_{i}\cdot v_{i}=v=\sum_{i=1}^{n}b_{i}\cdot v_{i}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow0_{V}=v-v=\sum_{i=1}^{n}a_{i}\cdot v_{i}-\sum_{i=1}^{n}b_{i}\cdot v_{i}=\sum_{i=1}^{n}\left(a_{i}-b_{i}\right)\cdot v_{i}
+\]
+
+
+\end_inset
+מהעובדה ש-
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ בת"ל ומטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 2.10"
+plural false
+caps false
+noprefix false
+\end_inset
+ נובע ש-
+\begin_inset Formula
+$a_{i}-b_{i}=0$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$a_{i}=b_{i}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\Rightarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח שלכל וקטור ב-
+\begin_inset Formula
+$V$
+\end_inset
+ קיים צר"ל יחיד של 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ השווה לאותו וקטור, ראשית נשים לב לכך שמהקיום של צר"ל כזה לכל וקטור וממסקנה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 2.4"
+plural false
+caps false
+noprefix false
+\end_inset
+ נובע ש-
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ פורש את 
+\begin_inset Formula
+$V$
+\end_inset
+, בנוסף היחידות מתקיימת בפרט עבור 
+\begin_inset Formula
+$0_{V}$
+\end_inset
+ - כלומר הצר"ל המתאפס היחיד של 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ הוא הטריוויאלי ולכן 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ בת"ל.
+\end_layout
+
+\end_deeper
+
+\begin_layout Theorem
+יהי 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ בסיס של 
+\begin_inset Formula
+$V$
+\end_inset
+ ותהא 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ תת-קבוצה סופית.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$\left|S\right|>\left|\MKclb\right|$
+\end_inset
+ אז 
+\begin_inset Formula
+$S$
+\end_inset
+ תלויה ליניארית.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$\left|S\right|<\left|\MKclb\right|$
+\end_inset
+ אז 
+\begin_inset Formula
+$S$
+\end_inset
+ אינה פורשת את 
+\begin_inset Formula
+$V$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כלומר בסיס הוא קבוצה בלתי תלויה מקסימלית - אם מוסיפים לה עוד וקטור אחד היא הופכת לתלויה ליניארית, וכמו כן בסיס הוא קבוצה פורשת מינימלית - אם מסירים ממנה ולו וקטור אחד היא כבר לא פורשת את 
+\begin_inset Formula
+$V$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+המשפט נובע ישירות מלמת ההחלפה:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+מהיותו בסיס 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ פורש את 
+\begin_inset Formula
+$V$
+\end_inset
+ ולכן אם 
+\begin_inset Formula
+$S$
+\end_inset
+ הייתה בת"ל היה מתקיים 
+\begin_inset Formula
+$\left|\MKclb\right|\geq\left|S\right|$
+\end_inset
+, מכאן שאם 
+\begin_inset Formula
+$\left|S\right|>\left|\MKclb\right|$
+\end_inset
+ אז 
+\begin_inset Formula
+$S$
+\end_inset
+ תלויה ליניארית.
+\end_layout
+
+\begin_layout Itemize
+מהיות 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ בסיס נובע ש-
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ בת"ל ולכן אם 
+\begin_inset Formula
+$S$
+\end_inset
+ הייתה קבוצה פורשת של 
+\begin_inset Formula
+$V$
+\end_inset
+ היה מתקיים 
+\begin_inset Formula
+$\left|S\right|\geq\left|\MKclb\right|$
+\end_inset
+, מכאן שאם 
+\begin_inset Formula
+$\left|S\right|<\left|\MKclb\right|$
+\end_inset
+ אז 
+\begin_inset Formula
+$S$
+\end_inset
+ אינה פורשת את 
+\begin_inset Formula
+$V$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Corollary
+יהיו 
+\begin_inset Formula
+$\MKclb,\MKclc\subseteq V$
+\end_inset
+ בסיסים של 
+\begin_inset Formula
+$V$
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$\left|\MKclb\right|=\left|\MKclc\right|$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כלומר כל הבסיסים של 
+\begin_inset Formula
+$V$
+\end_inset
+ הם באותו הגודל ולכן ניתן לדבר על גודל זה כתכונה של 
+\begin_inset Formula
+$V$
+\end_inset
+, לתת לו שם - 
+\bar under
+הממד
+\bar default
+ של 
+\begin_inset Formula
+$V$
+\end_inset
+ - ולסמן אותו ב-
+\begin_inset Formula
+$\dim V$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary 3.7"
+\end_inset
+תהא 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ תת-קבוצה סופית, מתקיימים כל הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$\left|S\right|>\dim V$
+\end_inset
+ אז 
+\begin_inset Formula
+$S$
+\end_inset
+ תלויה ליניארית.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$\left|S\right|<\dim V$
+\end_inset
+ אז 
+\begin_inset Formula
+$S$
+\end_inset
+ אינה פורשת את 
+\begin_inset Formula
+$V$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "theorem 3.8"
+\end_inset
+תהא 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ תת-קבוצה סופית, כל שניים משלושת הפסוקים הבאים גוררים את השלישי:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$S$
+\end_inset
+ פורשת את 
+\begin_inset Formula
+$V$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$S$
+\end_inset
+ בת"ל
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\left|S\right|=\dim V$
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בפרט אם 
+\begin_inset Formula
+$\left|S\right|=\dim V$
+\end_inset
+ ובנוסף ידוע ש-
+\begin_inset Formula
+$S$
+\end_inset
+ בת"ל 
+\series bold
+או
+\series default
+ פורשת אז 
+\begin_inset Formula
+$S$
+\end_inset
+ בסיס (כלומר בת"ל 
+\series bold
+וגם
+\series default
+ פורשת).
+\end_layout
+
+\begin_layout Proof
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+ו-
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+גוררים את
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+מהגדרת בסיס וממד.
+\end_layout
+
+\begin_layout Itemize
+נניח ש-
+\begin_inset Formula
+$S$
+\end_inset
+ פורשת ו-
+\begin_inset Formula
+$\left|S\right|=\dim V$
+\end_inset
+, כפי שכבר ראינו מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 2.12"
+plural false
+caps false
+noprefix false
+\end_inset
+ וממסקנה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 2.5"
+plural false
+caps false
+noprefix false
+\end_inset
+ נובע שכל עוד 
+\begin_inset Formula
+$S$
+\end_inset
+ תלויה ליניארית קיים 
+\begin_inset Formula
+$v\in S$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKspan\left(S\setminus\left\{ v\right\} \right)=\MKspan S=V$
+\end_inset
+, מצד שני ממסקנה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 3.7"
+plural false
+caps false
+noprefix false
+\end_inset
+ נובע שלכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\MKspan\left(S\setminus\left\{ v\right\} \right)\neq V$
+\end_inset
+ ולכן 
+\begin_inset Formula
+$S$
+\end_inset
+ מוכרחה להיות בת"ל (
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+ו-
+\numeric on
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+גוררים את
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\numeric off
+).
+\end_layout
+
+\begin_layout Itemize
+נניח ש-
+\begin_inset Formula
+$S$
+\end_inset
+ בת"ל ו-
+\begin_inset Formula
+$\left|S\right|=\dim V$
+\end_inset
+, כפי שכבר ראינו מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 2.11"
+plural false
+caps false
+noprefix false
+\end_inset
+ נובע שכל עוד 
+\begin_inset Formula
+$\MKspan S\neq V$
+\end_inset
+ קיים 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$v\notin\MKspan S$
+\end_inset
+ (ובפרט 
+\begin_inset Formula
+$v\notin S$
+\end_inset
+) כך ש-
+\begin_inset Formula
+$S\cup\left\{ v\right\} $
+\end_inset
+ בת"ל, מצד שני ע"פ מסקנה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 3.7"
+plural false
+caps false
+noprefix false
+\end_inset
+ לכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$v\notin S$
+\end_inset
+ הקבוצה 
+\begin_inset Formula
+$S\cup\left\{ v\right\} $
+\end_inset
+ תלויה ליניארית ולכן בהכרח מתקיים 
+\begin_inset Formula
+$\MKspan S=V$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$S$
+\end_inset
+ פורשת את 
+\begin_inset Formula
+$V$
+\end_inset
+ (
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+ו-
+\numeric on
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+גוררים את
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\numeric off
+).
+\end_layout
+
+\end_deeper
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$W\subseteq V$
+\end_inset
+ תמ"ו, גם 
+\begin_inset Formula
+$W$
+\end_inset
+ הוא מרחב וקטורי נוצר סופית.
+\end_layout
+
+\begin_layout Proof
+מלמת ההחלפה נובע שקיים גודל מרבי לקבוצות בת"ל המוכלות ב-
+\begin_inset Formula
+$W$
+\end_inset
+ (בפרט כל קבוצה בת"ל ב-
+\begin_inset Formula
+$W$
+\end_inset
+ היא קבוצה סופית), א"כ תהא 
+\begin_inset Formula
+$S\subseteq W$
+\end_inset
+ קבוצה בת"ל בעלת גודל מרבי, כלומר לכל 
+\begin_inset Formula
+$T\subseteq W$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$T$
+\end_inset
+ בת"ל מתקיים 
+\begin_inset Formula
+$\left|T\right|\leq\left|S\right|$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 2.11"
+plural false
+caps false
+noprefix false
+\end_inset
+ נובע שאם 
+\begin_inset Formula
+$\MKspan S\neq W$
+\end_inset
+ אז קיים 
+\begin_inset Formula
+$w\in W$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$w\notin\MKspan S$
+\end_inset
+ (ובפרט 
+\begin_inset Formula
+$w\notin S$
+\end_inset
+) כך ש-
+\begin_inset Formula
+$S\cup\left\{ w\right\} $
+\end_inset
+ בת"ל, אבל מהגדרת 
+\begin_inset Formula
+$S$
+\end_inset
+ לכל 
+\begin_inset Formula
+$w\in E$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$w\notin S$
+\end_inset
+ הקבוצה 
+\begin_inset Formula
+$S\cup\left\{ w\right\} $
+\end_inset
+ תלויה ליניארית.
+\begin_inset Newline newline
+\end_inset
+מכאן ש-
+\begin_inset Formula
+$\MKspan S=W$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$S$
+\end_inset
+ פורשת את 
+\begin_inset Formula
+$W$
+\end_inset
+ ומהגדרה 
+\begin_inset Formula
+$W$
+\end_inset
+ נ"ס.
+\end_layout
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula
+$W\subseteq V$
+\end_inset
+ תמ"ו, מתקיים 
+\begin_inset Formula
+$\dim W\leq\dim V$
+\end_inset
+ ובמקרה של שוויון (
+\begin_inset Formula
+$\dim W=\dim V$
+\end_inset
+) מתקיים 
+\begin_inset Formula
+$W=V$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ בסיס של 
+\begin_inset Formula
+$W$
+\end_inset
+, מהגדרה 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ בת"ל ולכן ממשפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 3.3"
+plural false
+caps false
+noprefix false
+\end_inset
+ נובע שקיים בסיס 
+\begin_inset Formula
+$\MKclc$
+\end_inset
+ של 
+\begin_inset Formula
+$V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKclb\subseteq\MKclc$
+\end_inset
+ וממילא מתקיים 
+\begin_inset Formula
+$\dim W=\left|\MKclb\right|\leq\left|\MKclc\right|=\dim V$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+חיבור קבוצות במרחב וקטורי
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$V$
+\end_inset
+ מ"ו מעל לשדה 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+.
+\end_layout
+
+\begin_layout Description
+תזכורת: כמו עבור כל פעולה גם עבור החיבור הווקטורי אנו מגדירים 
+\begin_inset Formula
+$S+T:=\left\{ s+t\mid s\in S,\ t\in T\right\} $
+\end_inset
+ לכל 
+\begin_inset Formula
+$S,T\subseteq V$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+\series bold
+סכום ישר
+\series default
+
+\begin_inset Newline newline
+\end_inset
+נאמר שסדרת תתי-מרחבים 
+\begin_inset Formula
+$\left(V_{1},V_{2},\ldots,V_{n}\right)$
+\end_inset
+ של מ"ו 
+\begin_inset Formula
+$V$
+\end_inset
+ היא 
+\bar under
+בת"ל
+\bar default
+ אם כל סדרת וקטורים 
+\begin_inset Formula
+$\left(v_{1},v_{2},\ldots,v_{n}\right)$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$0_{V}\neq v_{i}\in V_{i}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ היא סדרה בת"ל.
+\begin_inset Newline newline
+\end_inset
+נאמר שסדרה כזו היא 
+\bar under
+סכום ישר
+\bar default
+ של 
+\begin_inset Formula
+$V$
+\end_inset
+ אם היא בת"ל ומתקיים 
+\begin_inset Formula
+$V=V_{1}+V_{2}+\ldots+V_{n}$
+\end_inset
+, במקרה כזה נסמן:
+\begin_inset Formula
+\[
+V=V_{1}\oplus V_{2}\oplus\ldots\oplus V_{n}=\bigoplus_{i=1}^{n}V_{i}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+שני תתי-מרחבים 
+\begin_inset Formula
+$U,W\subseteq V$
+\end_inset
+ ייקראו 
+\bar under
+משלימים
+\bar default
+ (זה את זה) אם 
+\begin_inset Formula
+$V=W\oplus U$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+קבוצה 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ תקרא 
+\bar under
+ישריה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\bar default
+(יִשְרִיָּה) אם קיימים תמ"ו 
+\begin_inset Formula
+$W\subseteq V$
+\end_inset
+ ו-
+\begin_inset Formula
+$v\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$S=\left\{ v\right\} +W$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ נשים לב שאותו 
+\begin_inset Formula
+$v$
+\end_inset
+ מקיים 
+\begin_inset Formula
+$v\in S$
+\end_inset
+ שכן מהיות 
+\begin_inset Formula
+$W$
+\end_inset
+ תמ"ו נובע ש-
+\begin_inset Formula
+$0_{V}\in W$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ במרחב התלת-ממדי ישריות הן נקודות, ישרים ומישורים שאינם עוברים בהכרח בראשית הצירים: אנו לוקחים את 
+\begin_inset Formula
+$W$
+\end_inset
+ ומזיזים כל נקודה בו ע"פ הווקטור 
+\begin_inset Formula
+$v$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מהגדרה לכל 
+\begin_inset Formula
+$s\in S$
+\end_inset
+ קיים 
+\begin_inset Formula
+$w\in W$
+\end_inset
+ יחיד כך ש-
+\begin_inset Formula
+$s=v+w$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+תהיינה 
+\begin_inset Formula
+$S_{1},S_{2}\subseteq V$
+\end_inset
+ ישריות, גם 
+\begin_inset Formula
+$S_{1}+S_{2}$
+\end_inset
+ היא ישריה.
+\end_layout
+
+\begin_layout Claim*
+תהא 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ ישריה ויהיו 
+\begin_inset Formula
+$W,U\subseteq V$
+\end_inset
+ תמ"וים ו-
+\begin_inset Formula
+$v_{1},v_{2}$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$S=\left\{ v_{1}\right\} +W$
+\end_inset
+ וגם 
+\begin_inset Formula
+$S=\left\{ v_{2}\right\} +U$
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$W=U$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ א"כ לכל ישריה קיים תמ"ו יחיד המקיים את ההגדרה עבורה, מסיבה זו מוצדק לתת לו שם.
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ ישריה ויהיו 
+\begin_inset Formula
+$W\subseteq V$
+\end_inset
+ תמ"ו ו-
+\begin_inset Formula
+$v\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$S=\left\{ v\right\} +W$
+\end_inset
+, 
+\begin_inset Formula
+$W$
+\end_inset
+ זה יקרא 
+\bar under
+מרחב הכיוונים
+\bar default
+ של 
+\begin_inset Formula
+$S$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$V$
+\end_inset
+ מ"ו מעל לשדה 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+.
+\end_layout
+
+\begin_layout Subsection
+סכומים של תתי-מרחבים וקטוריים
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula
+$S,T\subseteq V$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\MKspan S+\MKspan T=\MKspan\left(S\cup T\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+תהיינה 
+\begin_inset Formula
+$S,T\subseteq V$
+\end_inset
+, לכל 
+\begin_inset Formula
+$v\in\MKspan S+\MKspan T$
+\end_inset
+ קיימים צירופים ליניאריים של 
+\begin_inset Formula
+$S$
+\end_inset
+ ושל 
+\begin_inset Formula
+$T$
+\end_inset
+ שסכומם הוא 
+\begin_inset Formula
+$v$
+\end_inset
+, כל סכום כזה הוא צר"ל של 
+\begin_inset Formula
+$S\cup T$
+\end_inset
+ ולכן 
+\begin_inset Formula
+$\MKspan S+\MKspan T\subseteq\MKspan\left(S\cup T\right)$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$v\in S$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$w\in T$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$v=v+0_{V}$
+\end_inset
+ ו-
+\begin_inset Formula
+$w=0_{V}+w$
+\end_inset
+ ולכן גם 
+\begin_inset Formula
+$v,w\in\MKspan S+\MKspan T$
+\end_inset
+, מכאן ש-
+\begin_inset Formula
+$S,T\subseteq\MKspan S+\MKspan T$
+\end_inset
+ ולכן גם 
+\begin_inset Formula
+$S\cup T\subseteq\MKspan S+\MKspan T$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$\MKspan S+\MKspan T\supseteq\MKspan\left(S\cup T\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corllary 4.2"
+\end_inset
+יהיו 
+\begin_inset Formula
+$W,U\subseteq V$
+\end_inset
+ תתי-מרחבים וקטוריים, מתקיים 
+\begin_inset Formula
+$W+U=\MKspan\left(W\cup U\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בפרט נובע מכאן שסכום של תתי-מרחבים וקטוריים הוא תמ"ו בעצמו.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+משפט הממדים
+\series default
+
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$V$
+\end_inset
+ נ"ס ויהיו 
+\begin_inset Formula
+$W,U\subseteq V$
+\end_inset
+ תתי-מרחבים וקטוריים, מתקיים:
+\begin_inset Formula
+\[
+\dim\left(W+U\right)=\dim W+\dim U-\dim\left(W\cap U\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ המשפט הזה מזכיר את עיקרון ההכלה וההדחה, זה לא מקרי, אנחנו נשתמש בו בהוכחה.
+\end_layout
+
+\begin_layout Proof
+נזכיר שמהגדרה מתקיים 
+\begin_inset Formula
+$W\cap U\subseteq W$
+\end_inset
+ ו-
+\begin_inset Formula
+$W\cap U\subseteq U$
+\end_inset
+ ולכן נוכל להרחיב כל בסיס של 
+\begin_inset Formula
+$W\cap U$
+\end_inset
+ לבסיס של 
+\begin_inset Formula
+$W$
+\end_inset
+ ולבסיס של 
+\begin_inset Formula
+$U$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נסמן 
+\begin_inset Formula
+${\color{red}k}:=\dim{\color{red}W\cap U}$
+\end_inset
+, 
+\begin_inset Formula
+${\color{blue}n}:=\dim{\color{blue}W}-k$
+\end_inset
+ ו-
+\begin_inset Formula
+${\color{green}m}:=\dim{\color{green}U}-k$
+\end_inset
+ ויהיו 
+\begin_inset Formula
+${\color{red}v_{1},v_{2},\ldots,v_{k}},{\color{blue}w_{1},w_{2},\ldots,w_{n}},{\color{green}u_{1},u_{2},\ldots,u_{m}}\in V$
+\end_inset
+ כך שמתקיים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+${\color{red}\MKclc_{1}}:=\left({\color{red}v_{1},v_{2},\ldots,v_{k}}\right)$
+\end_inset
+ הוא בסיס של 
+\begin_inset Formula
+${\color{red}W\cap U}$
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+${\color{blue}\MKclc_{2}}:=\left({\color{red}v_{1},v_{2},\ldots,v_{k}},{\color{blue}w_{1},w_{2},\ldots,w_{n}}\right)$
+\end_inset
+ הוא בסיס של 
+\begin_inset Formula
+${\color{blue}W}$
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+${\color{green}\MKclc_{3}}:=\left({\color{red}v_{1},v_{2},\ldots,v_{k}},{\color{green}u_{1},u_{2},\ldots,u_{m}}\right)$
+\end_inset
+ הוא בסיס של 
+\begin_inset Formula
+${\color{green}U}$
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Proof
+נסמן 
+\begin_inset Formula
+$\MKclb:=\left({\color{red}v_{1},v_{2},\ldots,v_{k}},{\color{blue}w_{1},w_{2},\ldots,w_{n}},{\color{green}u_{1},u_{2},\ldots,u_{m}}\right)$
+\end_inset
+, מהמסקנה האחרונה (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corllary 4.2"
+plural false
+caps false
+noprefix false
+\end_inset
+) נובע ש-
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ פורש את 
+\begin_inset Formula
+$W+U$
+\end_inset
+, ולכן כל מה שנותר לנו הוא להוכיח ש-
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ בת"ל ואז נקבל:
+\begin_inset Formula
+\[
+\dim\left({\color{blue}W}+{\color{green}U}\right)={\color{red}k}+{\color{blue}n}+{\color{green}m}=\left({\color{red}k}+{\color{blue}n}\right)+\left({\color{red}k}+{\color{green}m}\right)-{\color{red}k}={\color{blue}\dim W}+{\color{green}\dim U}-{\color{red}\dim\left(U\cap W\right)}
+\]
+
+
+\end_inset
+יהיו 
+\begin_inset Formula
+${\color{red}a_{1},a_{2},\ldots,a_{k}},{\color{blue}b_{1},b_{2},\ldots,b_{n}},{\color{green}c_{1},c_{2},\ldots,c_{m}}\in\MKfield$
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+{\color{red}\sum_{i=1}^{k}a_{i}\cdot v_{i}}+{\color{blue}\sum_{j=1}^{n}b_{j}\cdot w_{j}}+{\color{green}\sum_{l=1}^{m}c_{l}\cdot u_{l}}=0_{V}
+\]
+
+
+\end_inset
+ונסמן:
+\begin_inset Formula
+\[
+{\color{red}v:=\sum_{i=1}^{k}a_{i}\cdot v_{i}},\ {\color{blue}w:=\sum_{j=1}^{n}b_{j}\cdot w_{j}},\ {\color{green}u:=\sum_{l=1}^{m}c_{l}\cdot u_{l}}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow{\color{green}u}=-{\color{red}v}-{\color{blue}w}
+\]
+
+
+\end_inset
+כלומר 
+\begin_inset Formula
+${\color{green}u}\in{\color{green}U}$
+\end_inset
+ וגם 
+\begin_inset Formula
+${\color{green}u}\in{\color{blue}W}$
+\end_inset
+ וממילא 
+\begin_inset Formula
+${\color{green}u}\in{\color{red}W\cap U}$
+\end_inset
+. מכאן שניתן לבטא את 
+\begin_inset Formula
+${\color{green}u}$
+\end_inset
+ כצר"ל של 
+\begin_inset Formula
+${\color{red}\MKclc_{1}}$
+\end_inset
+ ולכן אם קיים 
+\begin_inset Formula
+$m\geq l\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$c_{l}\neq0$
+\end_inset
+ אז יש ל-
+\begin_inset Formula
+${\color{green}\MKclc_{3}}$
+\end_inset
+ צר"ל מתאפס לא טריוויאלי, א"כ 
+\begin_inset Formula
+$c_{l}=0$
+\end_inset
+ לכל 
+\begin_inset Formula
+$m\geq l\in\MKnatural$
+\end_inset
+.
+\begin_inset Formula
+\[
+\Rightarrow{\color{red}\sum_{i=1}^{k}a_{i}\cdot v_{i}}+{\color{blue}\sum_{j=1}^{n}b_{j}\cdot w_{j}}=0_{V}
+\]
+
+
+\end_inset
+זהו צר"ל מתאפס של 
+\begin_inset Formula
+${\color{blue}\MKclc_{2}}$
+\end_inset
+, ולכן מהיותו בסיס נובע שזהו הצר"ל הטריוויאלי, כלומר 
+\begin_inset Formula
+$a_{i}=0$
+\end_inset
+ לכל 
+\begin_inset Formula
+$k\geq i\in\MKnatural$
+\end_inset
+ ו-
+\begin_inset Formula
+$b_{j}=0$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq j\in\MKnatural$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+א"כ הוכחנו שהצר"ל המתאפס היחיד של 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ הוא הטריוויאלי ולכן 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ בת"ל.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+אפיונים שקולים לסכום ישר
+\series default
+
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$V$
+\end_inset
+ נ"ס ויהיו 
+\begin_inset Formula
+$V_{1},V_{2},\ldots,V_{n}\subseteq V$
+\end_inset
+ תמ"וים כך ש-
+\begin_inset Formula
+$V=V_{1}+V_{2}+\ldots+V_{n}$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+כל אחד מהתנאים הבאים שקול לכך ש-
+\begin_inset Formula
+$V=V_{1}\oplus V_{2}\oplus\ldots\oplus V_{n}$
+\end_inset
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ קיימת הצגה יחידה מהצורה 
+\begin_inset Formula
+$\sum_{i=1}^{n}v_{i}$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$v_{i}\in V_{i}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+החיתוך של כל תמ"ו בסדרה עם הסכום של השאר הוא מרחב האפס.
+\end_layout
+
+\begin_layout Enumerate
+שרשור
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+שרשור של סדרות 
+\begin_inset Formula
+$\left(a_{1},a_{2},\ldots,a_{k}\right)$
+\end_inset
+, 
+\begin_inset Formula
+$\left(b_{1},b_{2},\ldots,b_{n}\right)$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(c_{1},c_{2},\ldots,c_{m}\right)$
+\end_inset
+ הוא סדרה כגון 
+\begin_inset Formula
+$\left(a_{1},a_{2},\ldots,a_{k},b_{1},b_{2},\ldots,b_{n},c_{1},c_{2},\ldots,c_{m}\right)$
+\end_inset
+.
+\end_layout
+
+\end_inset
+ בסיסים סדורים של כל אחד מתתי-המרחבים בסדרה הוא בת"ל.
+\end_layout
+
+\begin_layout Enumerate
+מתקיים 
+\begin_inset Formula
+$\dim V=\sum_{i=1}^{n}\dim V_{i}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Proof
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\Leftarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח שלכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ קיימת הצגה יחידה כנ"ל ותהא 
+\begin_inset Formula
+$\left(v_{1},v_{2},\ldots,v_{n}\right)$
+\end_inset
+ סדרת וקטורים כך ש-
+\begin_inset Formula
+$0_{V}\neq v_{i}\in V_{i}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נניח בשלילה שזוהי סדרה תלויה ליניארית ומכאן שיש לה צר"ל מתאפס לא טריוויאלי, א"כ יהיו 
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{n}\in\MKfield$
+\end_inset
+ כך שלא כולם אפסים המקיימים:
+\begin_inset Formula
+\[
+\sum_{i=1}^{n}a_{i}\cdot v_{i}=0_{V}
+\]
+
+
+\end_inset
+יהי 
+\begin_inset Formula
+$n\geq k\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a_{k}\neq0$
+\end_inset
+, א"כ ניתן להציג את 
+\begin_inset Formula
+$v_{k}$
+\end_inset
+ בשתי צורות:
+\begin_inset Formula
+\[
+\sum_{i=1}^{k-1}0_{V}+v_{k}+\sum_{i=k+1}^{n}0_{V}=v_{k}=\sum_{i=1}^{k-1}-\frac{a_{i}}{a_{k}}\cdot v_{i}+\sum_{i=k+1}^{n}-\frac{a_{i}}{a_{k}}\cdot v_{i}
+\]
+
+
+\end_inset
+בסתירה להנחה. מכאן שהנחת השלילה אינה נכונה וזוהי סדרה בת"ל.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\Rightarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח שהסכום הנ"ל אכן ישר ויהי 
+\begin_inset Formula
+$v\in V$
+\end_inset
+, מהעובדה ש-
+\begin_inset Formula
+$V=V_{1}+V_{2}+\ldots+V_{n}$
+\end_inset
+ נובע שאכן יש ל-
+\begin_inset Formula
+$v$
+\end_inset
+ הצגה כנ"ל, נוכיח שהיא יחידה.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$v_{1},v_{2},\ldots,v_{n},w_{1},w_{2},\ldots,w_{n}\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$v_{i},w_{i}\in V_{i}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ ומתקיים:
+\begin_inset Formula
+\[
+v=\sum_{i=1}^{n}v_{i}=\sum_{i=1}^{n}w_{i}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow0_{V}=v-v=\sum_{i=1}^{n}v_{i}-w_{i}
+\]
+
+
+\end_inset
+נניח בשלילה שקיים 
+\begin_inset Formula
+$n\geq k\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$v_{k}\neq w_{k}$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$v_{k}-w_{k}\neq0_{V}$
+\end_inset
+, יהי 
+\begin_inset Formula
+$k$
+\end_inset
+ כנ"ל.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$u_{1},u_{2},\ldots,u_{n}\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$0_{V}\neq u_{i}\in V_{i}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ ובנוסף 
+\begin_inset Formula
+$u_{i}=v_{i}-w_{i}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$v_{i}-w_{i}\neq0_{V}$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{n}\in\MKfield$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a_{i}=1$
+\end_inset
+ אם 
+\begin_inset Formula
+$v_{i}-w_{i}\neq0_{V}$
+\end_inset
+ ו-
+\begin_inset Formula
+$a_{i}=0$
+\end_inset
+ אם 
+\begin_inset Formula
+$v_{i}-w_{i}=0_{V}$
+\end_inset
+, מכאן שמתקיים:
+\begin_inset Formula
+\[
+\sum_{i=1}^{n}a_{i}\cdot u_{i}=\sum_{i=1}^{n}v_{i}-w_{i}=0_{V}
+\]
+
+
+\end_inset
+אך זהו צר"ל מתאפס לא טריוויאלי שכן 
+\begin_inset Formula
+$a_{k}\neq0$
+\end_inset
+ בסתירה לכך ש-
+\begin_inset Formula
+$\left(u_{1},u_{2},\ldots,u_{n}\right)$
+\end_inset
+ בת"ל.
+\begin_inset Newline newline
+\end_inset
+מכאן שהנחת השלילה אינה נכונה - לא קיים 
+\begin_inset Formula
+$n\geq k\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$v_{k}\neq w_{k}$
+\end_inset
+, כלומר ההצגה של 
+\begin_inset Formula
+$v$
+\end_inset
+ אכן יחידה.
+\end_layout
+
+\end_deeper
+
+\begin_layout Enumerate
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\Leftarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח שהחיתוך של כל תמ"ו בסדרה עם הסכום של האחרים הוא מרחב האפס ותהא 
+\begin_inset Formula
+$\left(v_{1},v_{2},\ldots,v_{n}\right)$
+\end_inset
+ סדרת וקטורים כך ש-
+\begin_inset Formula
+$0_{V}\neq v_{i}\in V_{i}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+סדרה זו מוכרחה להיות בת"ל משום שאחרת קיים 
+\begin_inset Formula
+$n\geq k\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$v_{k}=-\left(\sum_{i=1}^{k-1}v_{i}+\sum_{i=k+1}^{n}v_{i}\right)$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$v_{k}$
+\end_inset
+ שייך לסכום של כל תתי-המרחבים מלבד 
+\begin_inset Formula
+$V_{k}$
+\end_inset
+ וזאת בסתירה להנחה ולכך ש-
+\begin_inset Formula
+$v_{k}\neq0_{V}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\Rightarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח שהסכום הנ"ל הוא סכום ישר, יהי 
+\begin_inset Formula
+$n\geq k\in\MKnatural$
+\end_inset
+ ויהא 
+\begin_inset Formula
+$w$
+\end_inset
+ וקטור בחיתוך של 
+\begin_inset Formula
+$V_{k}$
+\end_inset
+ עם הסכום של שאר תתי-המרחבים בסדרה, א"כ יהיו 
+\begin_inset Formula
+$v_{1},v_{2},\ldots,v_{k-1},v_{k+1},\ldots,v_{n}\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$v_{i}\in V_{i}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$i\neq k$
+\end_inset
+ ובנוסף מתקיים:
+\begin_inset Formula
+\[
+w=\sum_{i=1}^{k-1}v_{i}+\sum_{i=k+1}^{n}v_{i}
+\]
+
+
+\end_inset
+מכאן ש-
+\begin_inset Formula
+$w$
+\end_inset
+ ניתן להצגה כסכום של וקטור אחד מכל תמ"ו בשתי צורות: זו שלעיל (נבחר את 
+\begin_inset Formula
+$0_{V}$
+\end_inset
+ בתור הווקטור מ-
+\begin_inset Formula
+$V_{k}$
+\end_inset
+) וכמובן הצורה 
+\begin_inset Formula
+$w=\sum_{i=1}^{k-1}0_{V}+w+\sum_{i=k+1}^{n}0_{V}$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מההנחה ומהסעיף הקודם נובע ששתי הצורות הללו הן למעשה צורה אחת, כלומר 
+\begin_inset Formula
+$v_{i}=0_{V}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$i\neq k$
+\end_inset
+ ו-
+\begin_inset Formula
+$w=0_{V}$
+\end_inset
+, מכאן שהחיתוך של 
+\begin_inset Formula
+$V_{k}$
+\end_inset
+ עם הסכום של שאר תתי-המרחבים הוא מרחב האפס.
+\end_layout
+
+\end_deeper
+
+\begin_layout Enumerate
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\Leftarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח ששרשור בסיסים של כל תתי-המרחבים בסדרה הוא בת"ל, ממסקנה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corllary 4.2"
+plural false
+caps false
+noprefix false
+\end_inset
+ נובע שכל שרשור בסיסים כזה גם פורש את 
+\begin_inset Formula
+$V$
+\end_inset
+ ולכן זהו בסיס של 
+\begin_inset Formula
+$V$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+ממשפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 3.4"
+plural false
+caps false
+noprefix false
+\end_inset
+ נובע שלכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ קיימת הצגה יחידה כצר"ל של שרשור הבסיסים, ולכן יש לו גם הצגה יחידה כסכום של וקטור אחד מכל תמ"ו בסדרה, מפני שע"פ אותה טענה כל וקטור באחד מתתי-המרחבים ניתן להצגה בצורה יחידה כצר"ל של הבסיס המתאים, וממילא ע"פ סעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+זהו סכום ישר.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\Rightarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח שזהו אכן סכום ישר, מסעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+נובע שכל וקטור במרחב ניתן להצגה באופן יחיד כסכום של וקטור אחד מכל תמ"ו וממשפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 3.4"
+plural false
+caps false
+noprefix false
+\end_inset
+ נובע שבכל תמ"ו כל וקטור כזה ניתן להצגה באופן יחיד כצר"ל של הבסיס הסדור המתאים, מכאן שכל וקטור במרחב ניתן להצגה באופן יחיד כצר"ל של שרשור הבסיסים ולכן מאותו משפט (בכיוון ההפוך) נובע ששרשור הבסיסים הוא בסיס של 
+\begin_inset Formula
+$V$
+\end_inset
+ ובפרט בת"ל.
+\end_layout
+
+\end_deeper
+
+\begin_layout Enumerate
+סעיף זה נובע ישירות מהסעיף הקודם: אם מדובר בסכום ישר אז שרשור הבסיסים של תתי-המרחבים בסדרה הוא בסיס של 
+\begin_inset Formula
+$V$
+\end_inset
+ ולכן הממד של 
+\begin_inset Formula
+$V$
+\end_inset
+ הוא סכום האורכים של כל הבסיסים הללו - כלומר סכום הממדים של תתי-המרחבים, מצד שני אם 
+\begin_inset Formula
+$\dim V=\sum_{i=1}^{n}\dim V_{i}$
+\end_inset
+ אז שרשור הבסיסים הוא סדרה פורשת באורך הממד של 
+\begin_inset Formula
+$V$
+\end_inset
+ ולכן ממשפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 3.8"
+plural false
+caps false
+noprefix false
+\end_inset
+ נובע שהיא גם בת"ל ולכן ע"פ הסעיף הקודם זהו סכום ישר.
+\end_layout
+
+\begin_layout Subsection
+ישריות
+\end_layout
+
+\begin_layout Claim
+תהא 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ ישריה ויהיו 
+\begin_inset Formula
+$W,U\subseteq V$
+\end_inset
+ תתי-מרחבים ו-
+\begin_inset Formula
+$v_{1},v_{2}\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$S=\left\{ v_{1}\right\} +W$
+\end_inset
+ וגם 
+\begin_inset Formula
+$S=\left\{ v_{2}\right\} +U$
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$W=U$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+מהגדרה 
+\begin_inset Formula
+$v_{1}\in S$
+\end_inset
+ שכן 
+\begin_inset Formula
+$0_{V}\in W$
+\end_inset
+, מכאן שקיים 
+\begin_inset Formula
+$u\in U$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$u+v_{2}=v_{1}$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$v_{2}-v_{1}=-u\in U$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$w\in W$
+\end_inset
+, מכאן ש-
+\begin_inset Formula
+$w+v_{1}\in S$
+\end_inset
+ ולכן קיים 
+\begin_inset Formula
+$u'\in U$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$u'+v_{2}=w+v_{1}$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$w=u'+v_{2}-v_{1}=u'-u\in U$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+א"כ 
+\begin_inset Formula
+$W\subseteq U$
+\end_inset
+ ובאותה צורה ניתן להוכיח ש-
+\begin_inset Formula
+$U\subseteq W$
+\end_inset
+ (הטענה סימטרית לחלוטין), מכאן ש-
+\begin_inset Formula
+$W=U$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 4.6"
+\end_inset
+יהי 
+\begin_inset Formula
+$W\subseteq V$
+\end_inset
+ תמ"ו ויהיו 
+\begin_inset Formula
+$v_{1},v_{2}\in V$
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$\left\{ v_{1}\right\} +W=\left\{ v_{2}\right\} +W$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$v_{1}-v_{2}\in W$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+את הגרירה מימין לשמאל כבר הוכחנו כחלק מההוכחה של הטענה הקודמת, נוכיח כעת את הכיוון ההפוך.
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$v_{1}-v_{2}\in W$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$u\in\left\{ v_{1}\right\} +W$
+\end_inset
+, א"כ קיים 
+\begin_inset Formula
+$w\in W$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$u=v_{1}+w$
+\end_inset
+, מההנחה נובע שעבור אותו 
+\begin_inset Formula
+$w$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$w':=v_{1}-v_{2}+w\in W$
+\end_inset
+ וממילא גם 
+\begin_inset Formula
+$u=v_{1}+w=v_{2}+w'\in\left\{ v_{2}\right\} +W$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 4.7"
+\end_inset
+תהא 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ ישריה ויהיו 
+\begin_inset Formula
+$W\subseteq V$
+\end_inset
+ ו-
+\begin_inset Formula
+$v\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$S=\left\{ v\right\} +W$
+\end_inset
+, לכל 
+\begin_inset Formula
+$u\in S$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$S=\left\{ u\right\} +W$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$u\in S$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$w\in W$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$u=v+w$
+\end_inset
+, מכאן ש-
+\begin_inset Formula
+$u-v=w$
+\end_inset
+ וע"פ הטענה הקודמת (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 4.6"
+plural false
+caps false
+noprefix false
+\end_inset
+) מתקיים 
+\begin_inset Formula
+$S=\left\{ v\right\} +W=\left\{ u\right\} +W$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+ישריה 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ היא תמ"ו אם"ם 
+\begin_inset Formula
+$0_{V}\in S$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+תהיינה 
+\begin_inset Formula
+$S_{1},S_{2}\subseteq V$
+\end_inset
+ ישריות בעלות מרחב כיוונים זהה, אם 
+\begin_inset Formula
+$S_{1}\neq S_{2}$
+\end_inset
+ אז 
+\begin_inset Formula
+$S_{1}\cap S_{2}=\emptyset$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מבחינה אינטואיטיבית זה ברור שישריות בעלות מרחב כיוונים זהה תהיינה שוות או זרות - אלו ישרים/מישורים מקבילים
+\end_layout
+
+\begin_layout Claim
+תהיינה 
+\begin_inset Formula
+$S_{1},S_{2}\subseteq V$
+\end_inset
+ ישריות ויהיו 
+\begin_inset Formula
+$W$
+\end_inset
+ ו-
+\begin_inset Formula
+$U$
+\end_inset
+ מרחבי הכיוונים שלהן (בהתאמה), אם 
+\begin_inset Formula
+$S_{1}\cap S_{2}\neq\emptyset$
+\end_inset
+ אז גם 
+\begin_inset Formula
+$S_{1}\cap S_{2}$
+\end_inset
+ היא ישריה ומרחב הכיוונים שלה הוא 
+\begin_inset Formula
+$W\cap U$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+נניח ש-
+\begin_inset Formula
+$S_{1}\cap S_{2}\neq\emptyset$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$v\in S_{1}\cap S_{2}$
+\end_inset
+, מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 4.7"
+plural false
+caps false
+noprefix false
+\end_inset
+ נובע כי 
+\begin_inset Formula
+$\left\{ v\right\} +W\cap U\subseteq S_{1}$
+\end_inset
+ וגם 
+\begin_inset Formula
+$\left\{ v\right\} +W\cap U\subseteq S_{2}$
+\end_inset
+ ולכן 
+\begin_inset Formula
+$\left\{ v\right\} +W\cap U\subseteq S_{1}\cap S_{2}$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מצד שני ע"פ אותה טענה מתקיים 
+\begin_inset Formula
+$S_{1}=\left\{ v\right\} +W$
+\end_inset
+ ו-
+\begin_inset Formula
+$S_{2}=\left\{ v\right\} +U$
+\end_inset
+, ולכן לכל 
+\begin_inset Formula
+$v'\in S_{1}\cap S_{2}$
+\end_inset
+ קיימים 
+\begin_inset Formula
+$w\in W$
+\end_inset
+ ו-
+\begin_inset Formula
+$u\in U$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$v'=v+w$
+\end_inset
+ ו-
+\begin_inset Formula
+$v'=v+u$
+\end_inset
+ וממילא אותם 
+\begin_inset Formula
+$w$
+\end_inset
+ ו-
+\begin_inset Formula
+$u$
+\end_inset
+ שווים ובפרט נמצאים בחיתוך 
+\begin_inset Formula
+$W\cap U$
+\end_inset
+, כלומר לכל 
+\begin_inset Formula
+$v'\in S_{1}\cap S_{2}$
+\end_inset
+ קיים 
+\begin_inset Formula
+$x\in W\cap U$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$v'=v+x$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$\left\{ v\right\} +W\cap U\supseteq S_{1}\cap S_{2}$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$\left\{ v\right\} +W\cap U=S_{1}\cap S_{2}$
+\end_inset
+.
+\end_layout
+
+\end_body
+
+\end_document
+

@@ -1,0 +1,7288 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The head's design for summuries,make the layout more similar to a book:
+\AtBeginDocument{
+\renewcommand\headrule{%
+  \kern -7pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+  \kern 10pt
+}}
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Correct the reversed parentheses in labels:
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\newfontfamily{\hebrewfont}{David}
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+
+\end_preamble
+
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+customHeadersFooters
+\end_modules
+
+\maintain_unincluded_children no
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size      Larger
+	  Series     Bold
+	EndFont
+End
+Style Solution
+	LabelString           "פתרון: "End
+Style Notation
+	LabelString           "סימון  \thetheorem: "End
+Style Theorem
+	LabelString           "משפט \thetheorem: "End
+Style Property
+	LabelString           "תזכורת: "End
+
+\end_local_layout
+
+\language hebrew
+
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\boxbgcolor #cccccc
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+
+\tocdepth 3
+
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "C:/Users/sraya/AppData/Roaming/LyX2.4/macros/MKmacros.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Right Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+leftmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Left Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+סדרות
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Center Footer
+
+\end_layout
+
+\begin_layout Title
+
+\series bold
+\size huge
+סדרות
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+גבול של סדרה
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$\left(P_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרת פסוקים לוגיים.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נאמר ש-
+\begin_inset Formula
+$P_{n}$
+\end_inset
+ מתקיימת 
+\bar under
+באופן שכיח
+\bar default
+ אם לכל 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ קיים 
+\begin_inset Formula
+$N<n\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P_{n}=\text{True}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+נאמר ש-
+\begin_inset Formula
+$P_{n}$
+\end_inset
+מתקיימת 
+\bar under
+ממקום מסוים ואילך/ עבור 
+\begin_inset Formula
+$n$
+\end_inset
+ גדול דיו/ כמעט תמיד
+\bar default
+ אם קיים 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N<n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$P_{n}=\text{True}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מכאן ואילך כל הסדרות שנדבר עליהן הן סדרות אינסופיות של מספרים ממשיים אלא אם נכתב אחרת.
+\end_layout
+
+\begin_layout Description
+תזכורת: הגדרנו את 
+\bar under
+הכדור הפתוח
+\bar default
+ שרדיוסו 
+\begin_inset Formula
+$r\in\MKreal$
+\end_inset
+ מסביב לנקודה 
+\begin_inset Formula
+$\alpha\in\MKreal$
+\end_inset
+ ע"י 
+\begin_inset Formula
+$B_{r}\left(\alpha\right):=\left(\alpha-r,\alpha+r\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+\series bold
+גבול של סדרה
+\series default
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נאמר ש-
+\begin_inset Formula
+$L\in\MKreal$
+\end_inset
+ הוא 
+\bar under
+גבול של סדרה
+\bar default
+ 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ אם לכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ ועבור 
+\begin_inset Formula
+$n$
+\end_inset
+ גדול דיו מתקיים 
+\begin_inset Formula
+$a_{n}\in B_{\varepsilon}\left(L\right)$
+\end_inset
+,
+\begin_inset Newline newline
+\end_inset
+כלומר לכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ קיים 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N<n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|a_{n}-L\right|<\varepsilon$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+בקובץ הטענות נראה שגבול של סדרה הוא יחיד, כלומר אם 
+\begin_inset Formula
+$\alpha\in\MKreal$
+\end_inset
+ וגם 
+\begin_inset Formula
+$\beta\in\MKreal$
+\end_inset
+ הם גבולות
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+המשפט אינו נכון מבחינה לשונית משום שמדובר במספר אחד ולכן לא שייך לדבר עליו ברבים, אך הכוונה ברורה ולפני שהמשכנו ואמרנו שהם שווים לא ידענו שבהכרח מדובר באותו מספר (לא יכולתי להתאפק...).
+\end_layout
+
+\end_inset
+ של 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ אז 
+\begin_inset Formula
+$\alpha=\beta$
+\end_inset
+; לכן מוצדק לדבר על 
+\bar under
+הגבול
+\bar default
+ של 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ ולכתוב:
+\begin_inset Formula
+\[
+\lim_{n\rightarrow\infty}a_{n}=L,\ a_{n}\xrightarrow[n\rightarrow\infty]{}L
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+סדרה תקרא 
+\bar under
+מתכנסת
+\bar default
+ אם יש לה גבול, אחרת תקרא 
+\bar under
+מתבדרת
+\bar default
+.
+\begin_inset Newline newline
+\end_inset
+כלומר:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+סדרה תקרא 
+\bar under
+מתכנסת
+\bar default
+ אם קיים 
+\begin_inset Formula
+$L\in\MKreal$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ קיים 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N<n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|a_{n}-L\right|<\varepsilon$
+\end_inset
+, במקרה כזה נאמר שהסדרה 
+\bar under
+מתכנסת
+\bar default
+ ל-
+\begin_inset Formula
+$L$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+סדרה תקרא 
+\bar under
+מתבדרת
+\bar default
+ אם לכל 
+\begin_inset Formula
+$L\in\MKreal$
+\end_inset
+ קיים 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ קיים 
+\begin_inset Formula
+$N<n\in\MKnatural$
+\end_inset
+ כך שמתקיים 
+\begin_inset Formula
+$\left|a_{n}-L\right|\geq\varepsilon$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\end_deeper
+
+\begin_layout Description
+הסכמה: נסכים שבכל מקום שבו נכתב ביטוי מהצורה 
+\begin_inset Formula
+$\lim_{n\rightarrow\infty}a_{n}=L$
+\end_inset
+ או 
+\begin_inset Formula
+$L=\lim_{n\rightarrow\infty}a_{n}$
+\end_inset
+ הכוונה היא שהגבול קיים ומתקיים השוויון.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+תהיינה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרות ויהי 
+\begin_inset Formula
+$\alpha\in\MKreal$
+\end_inset
+, אם קיים 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N<n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a_{n}=b_{n}$
+\end_inset
+ אז 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ מתכנסת ל-
+\begin_inset Formula
+$\alpha$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ מתכנסת ל-
+\begin_inset Formula
+$\alpha$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כלומר בכל הקשור להתכנסות לא מעניין אותנו מה קורה בתחילת הסדרה אלא אך ורק מה שקורה באין-סוף.
+\end_layout
+
+\begin_layout Lemma
+יהיו 
+\begin_inset Formula
+$\alpha,\beta\in\MKreal$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\alpha\neq\beta$
+\end_inset
+, קיים 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ כך שהקבוצות 
+\begin_inset Formula
+$B_{\varepsilon}\left(\alpha\right)$
+\end_inset
+ ו-
+\begin_inset Formula
+$B_{\varepsilon}\left(\beta\right)$
+\end_inset
+ זרות (כלומר 
+\begin_inset Formula
+$B_{\varepsilon}\left(\alpha\right)\cap B_{\varepsilon}\left(\beta\right)=\emptyset$
+\end_inset
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Lemma
+תהיינה 
+\begin_inset Formula
+$\left(P_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(Q_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרות פסוקים לוגיים, אם 
+\begin_inset Formula
+$\left(P_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ מתקיימת ממקום מסוים ואילך וגם 
+\begin_inset Formula
+$\left(Q_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ מתקיימת מסוים ואילך אז 
+\begin_inset Formula
+$\left(P_{n}\land Q_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ מתקיימת ממקום מסוים ואילך.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+יחידות הגבול
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה מתכנסת, אם 
+\begin_inset Formula
+$\alpha\in\MKreal$
+\end_inset
+ וגם 
+\begin_inset Formula
+$\beta\in\MKreal$
+\end_inset
+ הם גבולות
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+המשפט אינו נכון מבחינה לשונית משום שמדובר במספר אחד ולכן לא שייך לדבר עליו ברבים, אך הכוונה ברורה ולפני שהמשכנו ואמרנו שהם שווים לא ידענו שבהכרח מדובר באותו מספר (לא יכולתי להתאפק...).
+\end_layout
+
+\end_inset
+ של 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ אז 
+\begin_inset Formula
+$\alpha=\beta$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+חסימות וסדר
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+\series bold
+סדרות חסומות מלעיל/מלרע
+\series default
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+סדרה תקרא 
+\bar under
+חסומה/חסומה מלעיל/חסומה מלרע
+\bar default
+ אם קבוצת איבריה כזו.
+\end_layout
+
+\begin_layout Itemize
+מספר ממשי ייקרא 
+\bar under
+חסם מלעיל/מלרע
+\bar default
+ של סדרה אם הוא חסם מלעיל/מלרע של קבוצת איבריה.
+\end_layout
+
+\begin_layout Itemize
+מספר ממשי ייקרא 
+\bar under
+חסם עליון/תחתון
+\bar default
+ של סדרה אם הוא חסם מלעיל/מלרע של קבוצת איבריה.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+סדרה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ תקרא 
+\bar under
+סדרה חיובית/שלילית/אי-שלילית/אי-חיובית
+\bar default
+ אם כל איבריה חיוביים/שליליים/אי-שליליים/אי-חיוביים.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+כל סדרה מתכנסת היא סדרה חסומה.
+\end_layout
+
+\begin_layout Claim
+תהיינה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרות מתכנסות (נסמן את גבולותיהן ב-
+\begin_inset Formula
+$\alpha$
+\end_inset
+ ו-
+\begin_inset Formula
+$\beta$
+\end_inset
+ בהתאמה), אם 
+\begin_inset Formula
+$\alpha<\beta$
+\end_inset
+ אז עבור 
+\begin_inset Formula
+$n$
+\end_inset
+ גדול דיו מתקיים 
+\begin_inset Formula
+$a_{n}<b_{n}$
+\end_inset
+,
+\begin_inset Newline newline
+\end_inset
+כלומר קיים 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N<n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a_{n}<b_{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה המתכנסת ל-
+\begin_inset Formula
+$\alpha\in\MKreal$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$\alpha<\beta\in\MKreal$
+\end_inset
+, עבור 
+\begin_inset Formula
+$n$
+\end_inset
+ גדול דיו מתקיים 
+\begin_inset Formula
+$a_{n}<\beta$
+\end_inset
+,
+\begin_inset Newline newline
+\end_inset
+כלומר קיים 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N<n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a_{n}<\beta$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+תהיינה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרות מתכנסות (נסמן את גבולותיהן ב-
+\begin_inset Formula
+$\alpha$
+\end_inset
+ ו-
+\begin_inset Formula
+$\beta$
+\end_inset
+ בהתאמה),
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם עבור 
+\begin_inset Formula
+$n$
+\end_inset
+ גדול דיו מתקיים 
+\begin_inset Formula
+$a_{n}\leq b_{n}$
+\end_inset
+ אז 
+\begin_inset Formula
+$\alpha\leq\beta$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$\alpha<\beta$
+\end_inset
+ אז עבור 
+\begin_inset Formula
+$n$
+\end_inset
+ גדול דיו מתקיים 
+\begin_inset Formula
+$a_{n}<b_{n}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ גם אם היה נתון בסעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\numeric off
+ שעבור 
+\begin_inset Formula
+$n$
+\end_inset
+ גדול דיו מתקיים 
+\begin_inset Formula
+$a_{n}<b_{n}$
+\end_inset
+ עדיין נוכל לומר רק ש-
+\begin_inset Formula
+$\alpha\leq\beta$
+\end_inset
+ ולא ש-
+\begin_inset Formula
+$\alpha<\beta$
+\end_inset
+, כמו כן גם אם היינו יודעים בסעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+שמתקיים רק 
+\begin_inset Formula
+$\alpha\leq\beta$
+\end_inset
+ לא היינו יכולים לומר דבר על היחס בין 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ ל-
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ באין-סוף.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+משפט הכריך
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(c_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרות המתכנסות ל-
+\begin_inset Formula
+$L\in\MKreal$
+\end_inset
+ ותהא 
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה כך שעבור 
+\begin_inset Formula
+$n$
+\end_inset
+ גדול דיו מתקיים 
+\begin_inset Formula
+$a_{n}\leq b_{n}\leq c_{n}$
+\end_inset
+, גם 
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ מתכנסת ל-
+\begin_inset Formula
+$L$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+אריתמטיקה של גבולות
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+סדרה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=0}^{\infty}$
+\end_inset
+ תקרא 
+\bar under
+סדרה חשבונית
+\bar default
+ אם קיים 
+\begin_inset Formula
+$d\in\MKreal$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$n\in\MKnatural_{0}$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a_{n+1}=a_{n}+d$
+\end_inset
+, 
+\begin_inset Formula
+$d$
+\end_inset
+ כזה הוא יחיד וייקרא 
+\bar under
+הפרש הסדרה
+\bar default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+סדרה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=0}^{\infty}$
+\end_inset
+תקרא 
+\bar under
+סדרה הנדסית
+\bar default
+ אם קיים 
+\begin_inset Formula
+$q\in\MKreal$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$n\in\MKnatural_{0}$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a_{n+1}=a_{n}\cdot q$
+\end_inset
+, 
+\begin_inset Formula
+$q$
+\end_inset
+ כזה הוא יחיד וייקרא 
+\bar under
+מנת הסדרה
+\bar default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+התחלה
+\end_layout
+
+\begin_layout Lemma
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה ויהי 
+\begin_inset Formula
+$\alpha\in\MKreal$
+\end_inset
+, הפסוקים הבאים שקולים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$\lim_{n\rightarrow\infty}a_{n}=\alpha$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\lim_{n\rightarrow\infty}\left(a_{n}-\alpha\right)=0$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\lim_{n\rightarrow\infty}\left|a_{n}-\alpha\right|=0$
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Claim
+אם סדרה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ מתכנסת אז 
+\begin_inset Formula
+$\left(\left|a_{n}\right|\right)_{n=1}^{\infty}$
+\end_inset
+ מתכנסת ל-
+\begin_inset Formula
+$\left|\lim_{n\rightarrow\infty}a_{n}\right|$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ שלוש הלמות הבאות נדרשות להוכחת משפט האריתמטיקה של גבולות (להלן).
+\end_layout
+
+\begin_layout Lemma
+יהיו 
+\begin_inset Formula
+$\alpha,\beta\in\MKreal$
+\end_inset
+, יהי 
+\begin_inset Formula
+$0<r\in\MKreal$
+\end_inset
+ ויהיו 
+\begin_inset Formula
+$x\in B_{r}\left(\alpha\right),\ y\in B_{r}\left(\beta\right)$
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$x+y\in B_{2r}\left(\alpha+\beta\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Lemma
+יהי 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ ויהיו 
+\begin_inset Formula
+$\alpha,\beta,x,y\in\MKreal$
+\end_inset
+, אם 
+\begin_inset Formula
+$\begin{alignedat}{1}\left|x-\alpha\right|<\frac{\varepsilon}{2\left(\left|\beta\right|+1\right)}\end{alignedat}
+$
+
+\end_inset
+ וגם 
+\begin_inset Formula
+$\begin{alignedat}{1}\left|y-\beta\right|<\min\left\{ 1,\frac{\varepsilon}{2\left(\left|\alpha\right|+1\right)}\right\} \end{alignedat}
+$
+
+\end_inset
+ אז
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$\left|x\cdot y-\alpha\cdot\beta\right|<\varepsilon$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+מא"ש המשולש ההפוך נובע ש-
+\begin_inset Formula
+$\left|\left|y\right|-\left|\beta\right|\right|\leq\left|y-\beta\right|<1$
+\end_inset
+, ומכאן ש-
+\begin_inset Formula
+$\left|y\right|<\left|\beta\right|+1$
+\end_inset
+.
+\begin_inset Formula
+\begin{align*}
+\Rightarrow\left|x\cdot y-\alpha\cdot\beta\right| & =\left|x\cdot y-y\cdot\alpha+y\cdot\alpha-\alpha\cdot\beta\right|\\
+ & =\left|y\cdot\left(x-\alpha\right)+\left(y-\beta\right)\cdot\alpha\right|\\
+ & \leq\left|y\cdot\left(x-\alpha\right)\right|+\left|\left(y-\beta\right)\cdot\alpha\right|\\
+ & =\left|y\right|\cdot\left|x-\alpha\right|+\left|y-\beta\right|\cdot\left|\alpha\right|\\
+ & <\left|y\right|\cdot\frac{\varepsilon}{2\left(\left|\beta\right|+1\right)}+\frac{\varepsilon}{2\left(\left|\alpha\right|+1\right)}\cdot\left|\alpha\right|\\
+ & <\left(\left|\beta\right|+1\right)\cdot\frac{\varepsilon}{2\left(\left|\beta\right|+1\right)}+\frac{\varepsilon}{2\left(\left|\alpha\right|+1\right)}\cdot\left|\alpha\right|\\
+ & <\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Lemma
+יהיו 
+\begin_inset Formula
+$0\neq\beta\in\MKreal$
+\end_inset
+, 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ ו-
+\begin_inset Formula
+$y\in\MKreal$
+\end_inset
+, אם:
+\begin_inset Formula
+\[
+\left|y-\beta\right|<\min\left\{ \frac{\left|\beta\right|}{2},\frac{\left|\beta\right|^{2}\cdot\varepsilon}{2}\right\} 
+\]
+
+
+\end_inset
+אז 
+\begin_inset Formula
+$y\neq0$
+\end_inset
+ וגם:
+\begin_inset Formula
+\[
+\left|\frac{1}{y}-\frac{1}{\beta}\right|<\varepsilon
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+מההנחה נקבל שמתקיים:
+\begin_inset Formula
+\begin{align*}
+\left|\beta\right|-\left|y\right| & \leq\left|\left|\beta\right|-\left|y\right|\right|=\left|\left|y\right|-\left|\beta\right|\right|\leq\left|y-\beta\right|\leq\frac{\left|\beta\right|}{2}\\
+\Rightarrow & 0<\frac{\left|\beta\right|}{2}=\left|\beta\right|-\frac{\left|\beta\right|}{2}\leq\left|y\right|\\
+\Rightarrow & y\neq0
+\end{align*}
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+\Rightarrow\left|\frac{1}{y}-\frac{1}{\beta}\right| & =\left|\frac{\beta-y}{y\cdot\beta}\right|=\frac{\left|y-\beta\right|}{\left|y\right|\cdot\left|\beta\right|}\\
+ & <\frac{\left|\beta\right|^{2}\cdot\varepsilon}{2\cdot\left|y\right|\cdot\left|\beta\right|}=\frac{\left|\beta\right|\cdot\varepsilon}{2\cdot\left|y\right|}\\
+ & \leq\frac{\left|\beta\right|\cdot\varepsilon}{2\cdot\frac{\left|\beta\right|}{2}}=\varepsilon
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+אריתמטיקה של גבולות
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרות המתכנסות ל-
+\begin_inset Formula
+$\alpha\in\MKreal$
+\end_inset
+ ו-
+\begin_inset Formula
+$\beta\in\MKreal$
+\end_inset
+ בהתאמה, מתקיימים שלושת הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$\lim_{n\rightarrow\infty}\left(a_{n}+b_{n}\right)=\alpha+\beta$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\lim_{n\rightarrow\infty}\left(a_{n}\cdot b_{n}\right)=\alpha\cdot\beta$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$\beta\neq0$
+\end_inset
+ אז 
+\begin_inset Formula
+$\lim_{n\rightarrow\infty}\frac{1}{b_{n}}=\frac{1}{\beta}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$\beta\neq0$
+\end_inset
+ אז 
+\begin_inset Formula
+$\lim_{n\rightarrow\infty}\frac{a_{n}}{b_{n}}=\frac{\alpha}{\beta}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה המתכנסת ל-
+\begin_inset Formula
+$\alpha\in\MKreal$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$b\in\MKreal$
+\end_inset
+, הסדרה 
+\begin_inset Formula
+$\left(b\cdot a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ מתכנסת ל-
+\begin_inset Formula
+$b\cdot\alpha$
+\end_inset
+.
+\end_layout
+
+\begin_layout Subsection
+טענות נוספות
+\end_layout
+
+\begin_layout Theorem
+\series bold
+כלל אפסה וחסומה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה המתכנסת ל-
+\begin_inset Formula
+$0$
+\end_inset
+ ותהא 
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה חסומה, הסדרה 
+\begin_inset Formula
+$\left(a_{n}\cdot b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ מתכנסת ל-
+\begin_inset Formula
+$0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lemma 3.9"
+\end_inset
+יהי 
+\begin_inset Formula
+$q\in\left(0,1\right)$
+\end_inset
+, הסדרה 
+\begin_inset Formula
+$\left(q^{n}\right)_{n=1}^{\infty}$
+\end_inset
+ מתכנסת ל-
+\begin_inset Formula
+$0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula
+\[
+0<q<1\Rightarrow1<\frac{1}{q}
+\]
+
+
+\end_inset
+נגדיר 
+\begin_inset Formula
+$h:=\frac{1}{q}-1$
+\end_inset
+ (נשים לב ש-
+\begin_inset Formula
+$0<h$
+\end_inset
+), כלומר 
+\begin_inset Formula
+$q=\frac{1}{h+1}$
+\end_inset
+ ומכאן שע"פ א"ש ברנולי לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+0<q^{n}=\frac{1}{\left(h+1\right)^{n}}\leq\frac{1}{1+n\cdot h}<\frac{1}{n\cdot h}
+\]
+
+
+\end_inset
+מאריתמטיקה של גבולות וממשפט הכריך נקבל את המבוקש.
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$0<q\in\MKreal$
+\end_inset
+, הסדרה 
+\begin_inset Formula
+$\left(\sqrt[n]{q}\right)_{n=1}^{\infty}$
+\end_inset
+ מתכנסת ל-
+\begin_inset Formula
+$1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+נחלק למקרים.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$q=1$
+\end_inset
+ הטענה טריוויאלית.
+\end_layout
+
+\begin_layout Enumerate
+נניח ש-
+\begin_inset Formula
+$q<1$
+\end_inset
+ ונניח בשלילה ש-
+\begin_inset Formula
+$\left(\sqrt[n]{q}\right)_{n=1}^{\infty}$
+\end_inset
+ אינה מתכנסת ל-
+\begin_inset Formula
+$1$
+\end_inset
+, א"כ קיים 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ קיים 
+\begin_inset Formula
+$N<n\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$1-\sqrt[n]{q}=\left|\sqrt[n]{q}-1\right|\geq\varepsilon$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$\varepsilon<1$
+\end_inset
+ כנ"ל, א"כ לכל 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ קיים 
+\begin_inset Formula
+$N<n\in\MKnatural$
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+1-\sqrt[n]{q}\geq\varepsilon
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow1-\varepsilon\geq\sqrt[n]{q}>0\\
+ & \Rightarrow\left(1-\varepsilon\right)^{n}\geq q>0
+\end{align*}
+
+
+\end_inset
+מלמה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 3.9"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+, הסדרה 
+\begin_inset Formula
+$\left(\left(1-\varepsilon\right)^{n}\right)_{n=1}^{\infty}$
+\end_inset
+ מתכנסת ל-
+\begin_inset Formula
+$0$
+\end_inset
+, כלומר קיים 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N<n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left(1-\varepsilon\right)^{n}<q$
+\end_inset
+בסתירה למה שראינו לעיל, מכאן שהנחת השלילה אינה נכונה ו-
+\begin_inset Formula
+$\left(\sqrt[n]{q}\right)_{n=1}^{\infty}$
+\end_inset
+מתכנסת ל-
+\begin_inset Formula
+$1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+נניח ש-
+\begin_inset Formula
+$1<q$
+\end_inset
+, מכאן ש-
+\begin_inset Formula
+$0<\frac{1}{q}<1$
+\end_inset
+, במקרה הקודם הוכחנו כי:
+\begin_inset Formula
+\[
+1=\lim_{n\rightarrow\infty}\sqrt[n]{\frac{1}{q}}=\lim_{n\rightarrow\infty}\frac{1}{\sqrt[n]{q}}
+\]
+
+
+\end_inset
+מאריתמטיקה של גבולות נקבל:
+\begin_inset Formula
+\[
+\lim_{n\rightarrow\infty}\sqrt[n]{q}=\frac{1}{\lim_{n\rightarrow\infty}\frac{1}{\sqrt[n]{q}}}=1
+\]
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Theorem
+\series bold
+משפט צ'זארו (
+\lang english
+Cesàro
+\lang default
+
+\lang hebrew
+)
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה האנגלית: 
+\begin_inset CommandInset href
+LatexCommand href
+name "Ernesto Cesàro"
+target https://en.wikipedia.org/wiki/Ernesto_Ces%C3%A0ro
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+
+\lang default
+
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה המתכנסת ל-
+\begin_inset Formula
+$\alpha\in\MKreal$
+\end_inset
+, גם הסדרה 
+\begin_inset Formula
+$\left(\frac{1}{n}\cdot\sum_{k=1}^{n}a_{k}\right)_{n=1}^{\infty}$
+\end_inset
+ (שהיא 
+\shape italic
+\bar under
+סדרת הממוצעים
+\bar default
+ של 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+)
+\shape default
+ מתכנסת ל-
+\begin_inset Formula
+$\alpha$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מהיות 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה מתכנסת קיים 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N<n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|a_{n}-\alpha\right|<\frac{\varepsilon}{2}$
+\end_inset
+, יהי 
+\begin_inset Formula
+$N$
+\end_inset
+ כנ"ל.
+\begin_inset Newline newline
+\end_inset
+כל קבוצה סופית היא קבוצה חסומה, מכאן שקיים 
+\begin_inset Formula
+$M\in\MKreal$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N\geq n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|a_{n}\right|\leq M$
+\end_inset
+, יהי 
+\begin_inset Formula
+$M$
+\end_inset
+ כזה.
+\begin_inset Newline newline
+\end_inset
+מכאן שלכל 
+\begin_inset Formula
+$N\geq n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|a_{n}-\alpha\right|\leq\left|a_{n}\right|+\left|\alpha\right|\leq M+\left|\alpha\right|$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$N<n\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+\left|\left(\frac{1}{n}\cdot\sum_{k=1}^{n}a_{k}\right)-\alpha\right| & =\left|\frac{1}{n}\cdot\sum_{k=1}^{n}\left(a_{k}-\alpha\right)\right|\\
+ & \leq\left|\frac{1}{n}\cdot\sum_{k=1}^{N}\left(a_{k}-\alpha\right)\right|+\left|\frac{1}{n}\cdot\sum_{k=N+1}^{n}\left(a_{k}-\alpha\right)\right|\\
+ & =\frac{1}{n}\cdot\sum_{k=1}^{N}\left|a_{k}-\alpha\right|+\frac{1}{n}\cdot\sum_{k=N+1}^{n}\left|a_{k}-\alpha\right|\\
+ & \leq\frac{N\cdot\left(M+\left|\alpha\right|\right)}{n}+\frac{n-N}{n}\cdot\frac{\varepsilon}{2}
+\end{align*}
+
+
+\end_inset
+נגדיר:
+\begin_inset Formula
+\[
+N':=\max\left\{ N,\frac{2N\cdot\left(M+\left|\alpha\right|\right)}{\varepsilon}\right\} 
+\]
+
+
+\end_inset
+מכאן שלכל 
+\begin_inset Formula
+$N'<n\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left|\frac{1}{n}\cdot\sum_{k=1}^{n}\left(a_{k}\right)-\alpha\right|\leq\frac{N\cdot\left(M+\left|\alpha\right|\right)}{n}+\frac{n-N}{n}\cdot\frac{\varepsilon}{2}<\frac{N\cdot\left(M+\left|\alpha\right|\right)}{\frac{2N\cdot\left(M+\left|\alpha\right|\right)}{\varepsilon}}+\frac{\varepsilon}{2}=\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Lemma
+לכל 
+\begin_inset Formula
+$0<x_{1},x_{2},...,x_{n}\in\MKreal$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\prod_{i=1}^{n}x_{i}=1\Rightarrow n\leq\sum_{i=1}^{n}x_{i}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+נוכיח את הטענה באינדוקציה.
+\begin_inset Newline newline
+\end_inset
+
+\bar under
+בסיס האינדוקציה
+\bar default
+
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$0<x_{1}\in\MKreal$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\prod_{i=1}^{1}x_{i}=1\ \Rightarrow\ x_{1}=1\geq1=\sum_{i=1}^{1}x_{i}
+\]
+
+
+\end_inset
+
+\bar under
+צעד האינדוקציה
+\bar default
+
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ ונניח שלכל 
+\begin_inset Formula
+$0<x_{1},x_{2},...,x_{n}\in\MKreal$
+\end_inset
+ המקיימים 
+\begin_inset Formula
+$x_{1}\cdot x_{2}\cdot...\cdot x_{n}=1$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$n\leq x_{1}+x_{2}+...+x_{n}$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$0<x_{1},x_{2},...,x_{n},x_{n+1}\in\MKreal$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$x_{1}\leq x_{2}\leq...\leq x_{n}\leq x_{n+1}$
+\end_inset
+ וגם 
+\begin_inset Formula
+$x_{1}\cdot x_{2}\cdot...\cdot x_{n}\cdot x_{n+1}=1$
+\end_inset
+.
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow x_{1}\leq1,\ 1\leq x_{n+1}\\
+ & \Rightarrow0\leq1-x_{1},\ 0\leq x_{n+1}-1\\
+ & \Rightarrow{\color{green}1}\leq{\color{blue}x_{1}}{\color{green}+x_{n+1}}{\color{red}-x_{1}\cdot x_{n+1}}
+\end{align*}
+
+
+\end_inset
+מהנחת האינדוקציה נובע שמתקיים: 
+\begin_inset Formula
+$n\leq x_{2}+...+x_{n}+x_{1}\cdot x_{n+1}$
+\end_inset
+,
+\begin_inset Formula
+\begin{align*}
+\Rightarrow n+{\color{green}1} & \leq x_{2}+...+x_{n}{\color{red}+x_{1}\cdot x_{n+1}}+{\color{blue}x_{1}}+{\color{green}x_{n+1}}{\color{red}-x_{1}\cdot x_{n+1}}\\
+ & ={\color{blue}x_{1}}+x_{2}+...+x_{n}+{\color{green}x_{n+1}}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+אי-שוויון הממוצעים
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה חיובית, לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left(\frac{1}{n}\cdot\sum_{k=1}^{n}\frac{1}{a_{k}}\right)^{-1}\leq\sqrt[n]{\prod_{k=1}^{n}a_{k}}\leq\frac{1}{n}\cdot\sum_{k=1}^{n}a_{k}
+\]
+
+
+\end_inset
+כלומר: לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים הממוצע החשבוני 
+\begin_inset Formula
+$\leq$
+\end_inset
+ הממוצע הגאומטרי 
+\begin_inset Formula
+$\leq$
+\end_inset
+ הממוצע ההרמוני (של כל איברי הסדרה עד ל-
+\begin_inset Formula
+$a_{n}$
+\end_inset
+).
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ ונבנה סדרה בת 
+\begin_inset Formula
+$n$
+\end_inset
+ איברים 
+\begin_inset Formula
+$\left(b_{k}\right)_{k=1}^{n}$
+\end_inset
+ כשלכל 
+\begin_inset Formula
+$n\geq k\in\MKnatural$
+\end_inset
+ האיבר ה-
+\begin_inset Formula
+$k$
+\end_inset
+ יהיה:
+\begin_inset Formula
+\[
+b_{k}:=\frac{a_{k}}{\sqrt[n]{\prod_{j=1}^{n}a_{j}}}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow\prod_{k=1}^{n}b_{k}=\prod_{k=1}^{n}\frac{a_{k}}{\sqrt[n]{\prod_{j=1}^{n}a_{j}}}=\frac{\prod_{k=1}^{n}a_{k}}{\prod_{j=1}^{n}a_{j}}=1
+\]
+
+
+\end_inset
+מהלמה נקבל:
+\begin_inset Formula
+\[
+n\leq\sum_{k=1}^{n}b_{k}=\sum_{k=1}^{n}\frac{a_{k}}{\sqrt[n]{\prod_{j=1}^{n}a_{j}}}=\frac{\sum_{k=1}^{n}a_{k}}{\sqrt[n]{\prod_{j=1}^{n}a_{j}}}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow\sqrt[n]{\prod_{j=1}^{n}a_{j}}\leq\frac{1}{n}\cdot\sum_{k=1}^{n}a_{k}
+\]
+
+
+\end_inset
+נתבונן בסדרה 
+\begin_inset Formula
+$\left(\frac{1}{a_{n}}\right)_{n=1}^{\infty}$
+\end_inset
+, מהשורה הקודמת נובע שמתקיים:
+\begin_inset Formula
+\[
+0<\prod_{k=1}^{n}\frac{1}{\sqrt[n]{a_{k}}}=\sqrt[n]{\prod_{k=1}^{n}\frac{1}{a_{k}}}\leq\frac{1}{n}\cdot\sum_{k=1}^{n}\frac{1}{a_{k}}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow0<\left(\frac{1}{n}\cdot\sum_{k=1}^{n}\frac{1}{a_{k}}\right)^{-1}\leq\left(\prod_{k=1}^{n}\frac{1}{\sqrt[n]{a_{k}}}\right)^{-1}=\prod_{k=1}^{n}\sqrt[n]{a_{k}}=\sqrt[n]{\prod_{k=1}^{n}a_{k}}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה חיובית המתכנסת ל-
+\begin_inset Formula
+$0\neq\alpha\in\MKreal$
+\end_inset
+, גם הסדרות 
+\begin_inset Formula
+$\left(\left(\frac{1}{n}\cdot\sum_{k=1}^{n}\frac{1}{a_{k}}\right)^{-1}\right)_{n=1}^{\infty}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(\sqrt[n]{\prod_{k=1}^{n}a_{k}}\right)_{n=1}^{\infty}$
+\end_inset
+ מתכנסות ל-
+\begin_inset Formula
+$\alpha$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ יחד עם משפט צ'זארו נוכל לומר שכל שלושת הממוצעים של סדרה חיובית מתכנסים לגבול שלה (אם הוא קיים ושונה מ-
+\begin_inset Formula
+$0$
+\end_inset
+).
+\end_layout
+
+\begin_layout Proof
+מאריתמטיקה של גבולות נובע שהסדרה 
+\begin_inset Formula
+$\left(\frac{1}{a_{n}}\right)_{n=1}^{\infty}$
+\end_inset
+ מתכנסת ל-
+\begin_inset Formula
+$\frac{1}{\alpha}$
+\end_inset
+ ולכן ממשט צ'זארו נובע שמתקיים:
+\begin_inset Formula
+\[
+\lim_{n\rightarrow\infty}\left(\frac{1}{n}\cdot\sum_{k=1}^{n}\frac{1}{a_{k}}\right)=\frac{1}{\alpha}
+\]
+
+
+\end_inset
+ושוב מאריתמטיקה של גבולות נובע שמתקיים:
+\begin_inset Formula
+\[
+\lim_{n\rightarrow\infty}\left(\frac{1}{n}\cdot\sum_{k=1}^{n}\frac{1}{a_{k}}\right)^{-1}=\left(\frac{1}{\alpha}\right)^{-1}=\alpha
+\]
+
+
+\end_inset
+ולכן מאי-שוויון הממוצעים וממשפט הכריך נובע שמתקיים גם:
+\begin_inset Formula
+\[
+\lim_{n\rightarrow\infty}\sqrt[n]{\prod_{k=1}^{n}a_{k}}=\alpha
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה המוגדרת ע"י 
+\begin_inset Formula
+$a_{n}=\sqrt[n]{n}$
+\end_inset
+ (לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+), 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ מתכנסת ל-
+\begin_inset Formula
+$1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+תהא 
+\begin_inset Formula
+$\left(b_{k}\right)_{k=1}^{\infty}$
+\end_inset
+ סדרה המוגדרת ע"י 
+\begin_inset Formula
+$b_{1}=1$
+\end_inset
+ ו-
+\begin_inset Formula
+$b_{k}=\frac{k}{k-1}$
+\end_inset
+ (לכל 
+\begin_inset Formula
+$1<k\in\MKnatural$
+\end_inset
+), מכאן שלכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\prod_{k=1}^{n}b_{k}=n
+\]
+
+
+\end_inset
+ולכן מהמסקנה הקודמת ומאריתמטיקה של גבולות נקבל שמתקיים:
+\begin_inset Formula
+\[
+1=\lim_{k\rightarrow\infty}\frac{k}{k-1}=\lim_{k\rightarrow\infty}b_{k}=\lim_{n\rightarrow\infty}\sqrt[n]{\prod_{k=1}^{n}b_{k}}=\lim_{n\rightarrow\infty}\sqrt[n]{n}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+סדרה חשבונית וסדרה הנדסית
+\end_layout
+
+\begin_layout Claim
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=0}^{\infty}$
+\end_inset
+ סדרה חשבונית ויהי 
+\begin_inset Formula
+$d\in\MKreal$
+\end_inset
+ הפרש הסדרה, לכל 
+\begin_inset Formula
+$n\in\MKnatural_{0}$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a_{n}=a_{0}+d\cdot n$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=0}^{\infty}$
+\end_inset
+ סדרה חשבונית ויהי 
+\begin_inset Formula
+$d\in\MKreal$
+\end_inset
+ הפרש הסדרה, לכל 
+\begin_inset Formula
+$N\in\MKnatural_{0}$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\sum_{k=0}^{n}a_{k}=\frac{n}{2}\cdot\left(a_{0}+a_{n}\right)=\frac{n}{2}\cdot\left(2a_{0}+d\cdot n\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כדי להוכיח את הטענה הזו די לשים לב לכך שלכל 
+\begin_inset Formula
+$n\geq k\in\MKnatural_{0}$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a_{k}+a_{n-k}=a_{0}+a_{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=0}^{\infty}$
+\end_inset
+ סדרה הנדסית ותהא 
+\begin_inset Formula
+$q\in\MKreal$
+\end_inset
+ הפרש הסדרה, לכל 
+\begin_inset Formula
+$n\in\MKnatural_{0}$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a_{n}=a_{0}\cdot q^{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula
+$1\neq q\in\MKreal$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$n\in\MKnatural_{0}$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\sum_{k=0}^{n}q^{k}=\frac{q^{n+1}-1}{q-1}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ נשים לב לאינטואיציה מעניינת עבור הנוסחה:
+\begin_inset Formula
+\begin{align*}
+\sum_{k=0}^{n}10^{k} & =\overset{\text{n+1 פעמים}}{\overbrace{1111111111111111}}=\frac{\overset{\text{n+1 פעמים}}{\overbrace{999999999999999}}}{9}\\
+ & =\frac{\overset{\text{n+1 פעמים}}{1\overbrace{000000000000000}}-1}{9}=\frac{10^{n+1}-1}{9}=\frac{q^{n+1}-1}{q-1}
+\end{align*}
+
+
+\end_inset
+כמובן שזה לא מיוחד עבור 
+\begin_inset Formula
+$10$
+\end_inset
+, זה יעבוד לכל בסיס ספירה שנבחר (כלומר לכל 
+\begin_inset Formula
+$1<q\in\MKnatural$
+\end_inset
+).
+\begin_inset Newline newline
+\end_inset
+ניתן אפילו להמציא בסיס ספירה עבור כל מספר ממשי חיובי השונה מ-
+\begin_inset Formula
+$1$
+\end_inset
+, כך למשל אם נרצה להציג את 
+\begin_inset Formula
+$\pi$
+\end_inset
+ בבסיס ספירה 
+\begin_inset Formula
+$\sqrt{2}$
+\end_inset
+ נקבל מספר בן ארבע ספרות משמאל לנקודה (כי 
+\begin_inset Formula
+$\left(\sqrt{4}\right)^{4}>\pi>\left(\sqrt{2}\right)^{3}$
+\end_inset
+) ו"אין-סוף" ספרות אחריה (כי א"א להציג את השארית כסכום של שברים מהצורה )
+\begin_inset Formula
+$\left(\sqrt{2}\right)^{-n}$
+\end_inset
+(: הספרה השמאלית ביותר תהיה 
+\begin_inset Formula
+$1$
+\end_inset
+ )כי אין לנו ספרה גדולה יותר(, שלוש הספרות הבאות תהיינה 
+\begin_inset Formula
+$0$
+\end_inset
+ כי 
+\begin_inset Formula
+$\pi-\left(\sqrt{2}\right)^{3}<\left(\sqrt{2}\right)^{0}<\sqrt{2}<\left(\sqrt{2}\right)^{2}$
+\end_inset
+, שלוש הספרות הראשונות אחרי הנקודה תהיינה גם הן אפסים כי 
+\begin_inset Formula
+$\pi-\left(\sqrt{2}\right)^{3}<\left(\sqrt{2}\right)^{-3}<\left(\sqrt{2}\right)^{-2}<\left(\sqrt{2}\right)^{-1}$
+\end_inset
+ והספרה הבאה תהיה 
+\begin_inset Formula
+$1$
+\end_inset
+ כי 
+\begin_inset Formula
+$\pi-\left(\sqrt{2}\right)^{3}>\left(\sqrt{2}\right)^{-4}$
+\end_inset
+ וכן הלאה, הגבול של הסדרה הזו הוא הוא אכן 
+\begin_inset Formula
+$\pi$
+\end_inset
+ )לכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ קיים 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$0<\left(\sqrt{2}\right)^{-n}<\varepsilon$
+\end_inset
+(
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+עבור מספר חיובי קטן מ-
+\begin_inset Formula
+$1$
+\end_inset
+ התפקידים של "משמאל לנקודה" ו-"מימין לנקודה" מתהפכים.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ א"א לעבוד עם בסיס ספירה שלילי, ועבור בסיסי ספירה קטנים מ-
+\begin_inset Formula
+$1$
+\end_inset
+ האינטואיציה לא תעבוד מפני שכאשר נחסיר מהם 
+\begin_inset Formula
+$1$
+\end_inset
+ נקבל "ספרה" שלילית; למרות זאת הפירמול של הוכחה זו עובד גם עבור מספרים קטנים מ-
+\begin_inset Formula
+$1$
+\end_inset
+ ומספרים שליליים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+תודתי נתונה למשה רוזנשטיין על העיון המשותף בנושא.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+\bar under
+הוכחה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+- נוסחת הכפל המקוצר
+\bar default
+
+\begin_inset Newline newline
+\end_inset
+ראינו בקובץ על המספרים הממשיים שלכל 
+\begin_inset Formula
+$a,b\in\MKreal$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+a^{n}-b^{n}=\left(a-b\right)\cdot\sum_{k=0}^{n-1}a^{n-1-k}\cdot b^{k}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow q^{n+1}-1^{n+1}=\left(q-1\right)\cdot\sum_{k=0}^{n}q^{n-k}\cdot1^{k}\\
+ & \Rightarrow\frac{q^{n+1}-1}{q-1}=\sum_{k=0}^{n}q^{n-k}=\sum_{k=0}^{n}q^{k}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+\bar under
+הוכחה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+- פירמול הרעיון של בסיסי ספירה
+\bar default
+
+\begin_inset Newline newline
+\end_inset
+מתקיים:
+\begin_inset Formula
+\[
+\sum_{k=0}^{n}q^{k}=\frac{1}{q-1}\cdot\sum_{k=0}^{n}\left(\left(q-1\right)\cdot q^{k}\right)=\frac{1}{q-1}\cdot\sum_{k=0}^{n}\left(q^{k+1}-q^{k}\right)=\frac{q^{n+1}-1}{q-1}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+\bar under
+הוכחה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+- אלגברה פשוטה
+\bar default
+
+\begin_inset Newline newline
+\end_inset
+מתקיים:
+\begin_inset Formula
+\[
+q\cdot\sum_{k=0}^{n}q^{k}=\sum_{k=1}^{n+1}q^{k}=q^{n+1}-1+\sum_{k=0}^{n}q^{k}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow\left(q-1\right)\cdot\sum_{k=0}^{n}q^{k}=q^{n+1}-1\\
+ & \Rightarrow\sum_{k=0}^{n}q^{k}=\frac{q^{n+1}-1}{q-1}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary 3.20"
+\end_inset
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=0}^{\infty}$
+\end_inset
+ סדרה הנדסית כך ש-
+\begin_inset Formula
+$1\neq q\in\MKreal$
+\end_inset
+ היא מנת הסדרה, לכל 
+\begin_inset Formula
+$n\in\MKnatural_{0}$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\sum_{k=0}^{n}a_{k}=a_{0}\cdot\frac{q^{n+1}-1}{q-1}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כמובן שאם 
+\begin_inset Formula
+$q=1$
+\end_inset
+ אז הסכום החלקי ה-
+\begin_inset Formula
+$n$
+\end_inset
+-י הוא 
+\begin_inset Formula
+$a_{0}\cdot\left(n+1\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=0}^{\infty}$
+\end_inset
+ סדרה הנדסית כך שמנת הסדרה 
+\begin_inset Formula
+$q\in\MKreal$
+\end_inset
+ מקיימת 
+\begin_inset Formula
+$\left|q\right|<1$
+\end_inset
+, מתקיים:
+\begin_inset Formula
+\[
+\sum_{n=0}^{\infty}a_{n}:=\lim_{N\rightarrow\infty}\sum_{n=0}^{N}a_{n}=a_{0}\cdot\frac{1}{1-q}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+מהמסקנה הקודמת )
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 3.20"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+(, מלמה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 3.9"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+הסדרה 
+\begin_inset Formula
+$\left(q^{n}\right)_{n=1}^{\infty}$
+\end_inset
+ "כלואה" בין הסדרות 
+\begin_inset Formula
+$\left(\left|q\right|^{n}\right)_{n=1}^{\infty}$
+\end_inset
+ ל-
+\begin_inset Formula
+$\left(-\left|q\right|^{n}\right)_{n=1}^{\infty}$
+\end_inset
+ וע"פ הלמה שתיהן מתכנסות ל-
+\begin_inset Formula
+$0$
+\end_inset
+ )עבור הסדרה השנייה יש להשתמש גם באריתמטיקה של גבולות(.
+\end_layout
+
+\end_inset
+ ומאריתמטיקה של גבולות נובע כי:
+\begin_inset Formula
+\begin{align*}
+\lim_{N\rightarrow\infty}\sum_{n=0}^{N}a_{n} & =\lim_{N\rightarrow\infty}\sum_{n=0}^{N}\left(a_{0}\cdot q^{n}\right)=\lim_{N\rightarrow\infty}\left(a_{0}\cdot\frac{q^{N+1}-1}{q-1}\right)\\
+ & =\frac{a_{0}}{q-1}\cdot\lim_{N\rightarrow\infty}\left(q^{N+1}-1\right)\\
+ & =\frac{a_{0}}{q-1}\cdot\left[0-1\right]=a_{0}\cdot\frac{1}{1-q}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+גבולות במובן הרחב
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+\series bold
+שאיפה ל-
+\begin_inset Formula
+$\pm\infty$
+\end_inset
+
+\series default
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+סדרה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ תקרא 
+\bar under
+שואפת לאין-סוף
+\bar default
+ אם לכל 
+\begin_inset Formula
+$M\in\MKreal$
+\end_inset
+ ועבור 
+\begin_inset Formula
+$n$
+\end_inset
+ גדול דיו מתקיים 
+\begin_inset Formula
+$a_{n}>M$
+\end_inset
+,
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+כלומר קיים 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N<n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a_{n}>M$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+נסמן:
+\begin_inset Formula
+\[
+\lim_{n\rightarrow\infty}a_{n}=\infty
+\]
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+סדרה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ תקרא 
+\bar under
+שואפת למינוס אין-סוף
+\bar default
+ אם לכל 
+\begin_inset Formula
+$m\in\MKreal$
+\end_inset
+ ועבור 
+\begin_inset Formula
+$n$
+\end_inset
+ גדול דיו מתקיים 
+\begin_inset Formula
+$a_{n}<m$
+\end_inset
+,
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+כלומר קיים 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N<n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a_{n}<m$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+נסמן:
+\begin_inset Formula
+\[
+\lim_{n\rightarrow\infty}a_{n}=-\infty
+\]
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+אם סדרה שואפת ל-
+\begin_inset Formula
+$\pm\infty$
+\end_inset
+ נאמר שהיא 
+\bar under
+מתכנסת במובן הרחב
+\bar default
+ וש-
+\begin_inset Formula
+$\pm\infty$
+\end_inset
+ הוא 
+\bar under
+גבול
+\bar default
+ שלה 
+\bar under
+במובן הרחב
+\bar default
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ חשוב לשים לב: סדרות השואפות לאין-סוף / למינוס אין-סוף הן 
+\bar under
+סדרות מתבדרות
+\bar default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+סדרה השואפת לאין-סוף אינה חסומה מלעיל, כמו כן, סדרה השואפת למינוס אין-סוף אינה חסומה מלרע.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+משפט הפרוסה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרות המקיימות 
+\begin_inset Formula
+$a_{n}\leq b_{n}$
+\end_inset
+ ממקום מסוים ואילך;
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ שואפת לאין-סוף אז גם 
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ שואפת לאין-סוף,
+\end_layout
+
+\begin_layout Itemize
+כמו כן, אם 
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ שואפת למינוס אין-סוף אז גם 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ שואפת למינוס אין-סוף.
+\end_layout
+
+\end_deeper
+
+\begin_layout Claim
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרת מספרים שונים מ-
+\begin_inset Formula
+$0$
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$\lim_{n\rightarrow\infty}a_{n}=0$
+\end_inset
+ אז 
+\begin_inset Formula
+$\lim_{n\rightarrow\infty}\frac{1}{\left|a_{n}\right|}=\infty$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$\lim_{n\rightarrow\infty}\left|a_{n}\right|=\infty$
+\end_inset
+ אז 
+\begin_inset Formula
+$\lim_{n\rightarrow\infty}\frac{1}{a_{n}}=0$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מה שהטענה אומרת בעצם הוא שלכל סדרה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\lim_{n\rightarrow\infty}\left|a_{n}\right|=\infty\Longleftrightarrow\lim_{n\rightarrow\infty}\frac{1}{a_{n}}=0
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+מונוטוניות
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+\series bold
+סדרות מונוטוניות
+\series default
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+סדרה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ תקרא 
+\bar under
+מונוטונית עולה
+\bar default
+ אם לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a_{n+1}\geq a_{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+סדרה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ תקרא 
+\bar under
+עולה ממש
+\bar default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+יש אומרים מונוטונית עולה ממש וכן לגבי מונוטונית יורדת ממש.
+\end_layout
+
+\end_inset
+ אם לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a_{n+1}>a_{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+סדרה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ תקרא 
+\bar under
+מונוטונית יורדת
+\bar default
+ אם לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a_{n+1}\leq a_{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+סדרה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ תקרא 
+\bar under
+יורדת ממש
+\bar default
+ אם לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a_{n+1}<a_{n}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה מונוטונית ויהיו 
+\begin_inset Formula
+$n,m\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$n<m$
+\end_inset
+,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם היא מונוטונית עולה אז 
+\begin_inset Formula
+$a_{m}\geq a_{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם היא עולה ממש אז 
+\begin_inset Formula
+$a_{m}>a_{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם היא מונוטונית יורדת אז 
+\begin_inset Formula
+$a_{m}\leq a_{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם היא יורדת ממש אז 
+\begin_inset Formula
+$a_{m}<a_{n}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "theorem 5.2"
+\end_inset
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה מונוטונית,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם היא מונוטונית 
+\series bold
+\color blue
+עולה
+\color inherit
+
+\series default
+ וחסומה 
+\series bold
+\color blue
+מלעיל
+\color inherit
+ 
+\series default
+אז היא מתכנסת )במובן הצר, גבולה הוא ה
+\series bold
+\color blue
+סופרמום
+\color inherit
+
+\series default
+ שלה(, אחרת היא שואפת
+\begin_inset Newline newline
+\end_inset
+ל
+\series bold
+\color blue
+אין-סוף
+\color inherit
+
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+אם היא מונוטונית 
+\series bold
+\color blue
+יורדת
+\color inherit
+
+\series default
+ וחסומה 
+\series bold
+\color blue
+מלרע
+\color inherit
+
+\series default
+ אז היא מתכנסת )במובן הצר, גבולה הוא ה
+\series bold
+\color blue
+אינפימום
+\color inherit
+
+\series default
+ שלה(, אחרת היא שואפת
+\begin_inset Newline newline
+\end_inset
+ל
+\series bold
+\color blue
+מינוס אין-סוף
+\color inherit
+
+\series default
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Corollary
+כל סדרה מונוטונית מתכנסת במובן הרחב.
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lemma 5.4"
+\end_inset
+לכל 
+\begin_inset Formula
+$4\leq k\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$2^{k}<k!$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+הסדרה 
+\begin_inset Formula
+$\left(\left(1+\frac{1}{n}\right)^{n}\right)_{n=1}^{\infty}$
+\end_inset
+ מונוטונית עולה וחסומה ומכאן שהיא מתכנסת.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הגבול של סדרה זו הוא הקבוע המתמטי 
+\begin_inset Formula
+$e$
+\end_inset
+ )זוהי הדרך הקלאסית להגדיר אותו(, ניתקל בו שוב בקבצים העוסקים בפונקציות ובנגזרות כאשר נדבר על פונקציית האקספוננט.
+\end_layout
+
+\begin_layout Proof
+מהבינום של ניוטון נובע שלכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+\left(1+\frac{1}{n}\right)^{n} & =\sum_{k=0}^{n}\left(\frac{n!}{k!\cdot\left(n-k\right)!}\cdot1^{n-k}\cdot\left(\frac{1}{n}\right)^{k}\right)\\
+ & =\sum_{k=0}^{n}\left(\frac{1}{k!}\cdot\left(\frac{1}{n}\right)^{k}\cdot\prod_{j=0}^{k-1}\left(n-j\right)\right)\\
+ & =\sum_{k=0}^{n}\left(\frac{1}{k!}\cdot\prod_{j=0}^{k-1}\left(1-\frac{j}{n}\right)\right)
+\end{align*}
+
+
+\end_inset
+נשים לב לכך שלכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$n\geq k\in\MKnatural_{0}$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\frac{1}{k!}\cdot\prod_{j=0}^{k-1}\left(1-\frac{j}{n}\right)\leq\frac{1}{k!}\cdot\prod_{j=0}^{k-1}\left(1-\frac{j}{n+1}\right)
+\]
+
+
+\end_inset
+ומכאן שלכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left(1+\frac{1}{n}\right)^{n}=\sum_{k=0}^{n}\left(\frac{1}{k!}\cdot\prod_{j=0}^{k-1}\left(1-\frac{j}{n}\right)\right)\leq\sum_{k=0}^{n+1}\left(\frac{1}{k!}\cdot\prod_{j=0}^{k-1}\left(1-\frac{j}{n+1}\right)\right)=\left(1+\frac{1}{n+1}\right)^{n+1}
+\]
+
+
+\end_inset
+בנוסף נובע מהנוסחה הנ"ל ומלמה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 5.4"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ שלכל 
+\begin_inset Formula
+$4\leq n\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+\left(1+\frac{1}{n}\right)^{n} & =\sum_{k=0}^{n}\left(\frac{1}{k!}\cdot\prod_{j=0}^{k-1}\left(1-\frac{j}{n}\right)\right)\leq\sum_{k=0}^{n}\frac{1}{k!}=1+1+\frac{1}{2}+\frac{1}{6}+\sum_{k=4}^{n}\frac{1}{k!}\\
+ & \leq1+1+\frac{1}{2}+\frac{1}{6}+\sum_{k=4}^{n}\frac{1}{2^{k}}<1+1+\frac{1}{2}+\frac{1}{6}+\frac{1}{8}\\
+ & =1+1+\frac{12}{24}+\frac{4}{24}+\frac{3}{24}<2\frac{19}{24}\thickapprox2.7916667
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+הלמה של קנטור
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$\left(I_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרת קטעים סגורים )נסמן 
+\begin_inset Formula
+$\left[a_{n},b_{n}\right]:=I_{n}$
+\end_inset
+( המקיימת:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$I_{n+1}\subseteq I_{n}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\lim_{n\rightarrow\infty}\left(b_{n}-a_{n}\right)=0$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Theorem
+קיים 
+\begin_inset Formula
+$c\in\MKreal$
+\end_inset
+ יחיד המקיים:
+\begin_inset Formula
+\[
+\bigcap_{n=1}^{\infty}I_{n}=\left\{ c\right\} 
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+\bar under
+הוכחה 
+\numeric on
+1
+\numeric off
+ - שימוש במונוטוניות של קצות הקטעים
+\bar default
+
+\begin_inset Newline newline
+\end_inset
+מסעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+נובע שלכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a_{1}\leq a_{n}\leq b_{n}\leq b_{1}$
+\end_inset
+, מכאן ש-
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ היא סדרה מונוטונית עולה וחסומה מלעיל ו-
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ היא סדרה מונוטונית יורדת וחסומה מלרע ולכן ממשפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 5.2"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ נובע ששתיהן מתכנסות ומתקיים:
+\begin_inset Formula
+\[
+\alpha:=\lim_{n\rightarrow\infty}a_{n}=\sup\left\{ a_{n}\mid n\in\MKnatural\right\} ,\ \beta:=\lim_{n\rightarrow\infty}b_{n}=\sup\left\{ b_{n}\mid n\in\MKnatural\right\} 
+\]
+
+
+\end_inset
+מסעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+ומאריתמטיקה של גבולות נובע שמתקיים:
+\begin_inset Formula
+\[
+\beta-\alpha=\lim_{n\rightarrow\infty}\left(b_{n}-a_{n}\right)=0
+\]
+
+
+\end_inset
+מכאן שלכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a_{n}\leq\alpha=\beta\leq b_{n}$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$\alpha\in I_{n}$
+\end_inset
+ ומכאן שגם:
+\begin_inset Formula
+\[
+\alpha\in\bigcap_{n=1}^{\infty}I_{n}
+\]
+
+
+\end_inset
+יהי 
+\begin_inset Formula
+$\begin{alignedat}{1}\gamma\in\bigcap_{n=1}^{\infty}I_{n}\end{alignedat}
+$
+
+\end_inset
+, כלומר לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\gamma\in I_{n}$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$a_{n}\leq\gamma\leq b_{n}$
+\end_inset
+; מכאן שלכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$0\leq\left|\alpha-\gamma\right|\leq b_{n}-a_{n}$
+\end_inset
+ ולכן ממשפט הכריך נובע ש-
+\begin_inset Formula
+$\alpha-\gamma=0$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$\alpha=\gamma$
+\end_inset
+.
+\begin_inset Formula
+\[
+\Rightarrow\bigcap_{n=1}^{\infty}I_{n}=\left\{ \alpha\right\} 
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+\bar under
+הוכחה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+- באמצעות למת החתכים
+\bar default
+
+\begin_inset Newline newline
+\end_inset
+מסעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+נובע שלכל 
+\begin_inset Formula
+$n,m\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$n\leq m$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$I_{m}\subseteq I_{n}$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$a_{n}\leq a_{m}\leq b_{m}\leq b_{n}$
+\end_inset
+, מכאן שלכל 
+\begin_inset Formula
+$n,m\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a_{n}\leq b_{m}$
+\end_inset
+; נסמן 
+\begin_inset Formula
+$A:=\left\{ a_{n}\mid n\in\MKnatural\right\} $
+\end_inset
+ ו-
+\begin_inset Formula
+$B:=\left\{ b_{n}\mid n\in\MKnatural\right\} $
+\end_inset
+, א"כ לכל 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$b\in B$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a\leq b$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מסעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+נובע שלכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ קיים 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$b_{n}-a_{n}<\varepsilon$
+\end_inset
+, א"כ לכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ קיימים 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ ו-
+\begin_inset Formula
+$b\in B$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$b-a<\varepsilon$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מכאן שע"פ למת החתכים קיים 
+\begin_inset Formula
+$c\in\MKreal$
+\end_inset
+ יחיד כך ש-
+\begin_inset Formula
+$a\leq c\leq b$
+\end_inset
+ לכל 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$b\in B$
+\end_inset
+, בפרט קיים 
+\begin_inset Formula
+$c\in\MKreal$
+\end_inset
+ יחיד המקיים 
+\begin_inset Formula
+$a_{n}\leq c\leq b_{n}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ וזה שקול לכך שקיים 
+\begin_inset Formula
+$c\in\MKreal$
+\end_inset
+ יחיד המקיים 
+\begin_inset Formula
+$c\in I_{n}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+; יהי 
+\begin_inset Formula
+$c$
+\end_inset
+ כנ"ל ומכאן שמתקיים:
+\begin_inset Formula
+\[
+\bigcap_{n=1}^{\infty}I_{n}=\left\{ c\right\} 
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+תתי-סדרות וגבולות חלקיים
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה; נאמר שסדרה 
+\begin_inset Formula
+$\left(b_{k}\right)_{k=1}^{\infty}$
+\end_inset
+ היא 
+\bar under
+תת-סדרה
+\bar default
+ של 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+, אם קיימת סדרה 
+\begin_inset Formula
+$\left(n_{k}\right)_{k=1}^{\infty}$
+\end_inset
+ עולה ממש שכל איבריה טבעיים )סדרת אינדקסים( כך שלכל 
+\begin_inset Formula
+$k\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$b_{k}=a_{n_{k}}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נאמר ש-
+\begin_inset Formula
+$\alpha\in\MKreal$
+\end_inset
+ הוא 
+\bar under
+גבול חלקי
+\bar default
+ של 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ אם יש ל-
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ תת-סדרה ש-
+\begin_inset Formula
+$\alpha$
+\end_inset
+ הוא הגבול שלה,
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+כלומר קיימת סדרה 
+\begin_inset Formula
+$\left(n_{k}\right)_{k=1}^{\infty}$
+\end_inset
+ עולה ממש שכל איבריה טבעיים )סדרת אינדקסים( כך ש-
+\begin_inset Formula
+$\lim_{k\rightarrow\infty}a_{n_{k}}=\alpha$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+כמו כן נאמר ש-
+\begin_inset Formula
+$\pm\infty$
+\end_inset
+ הוא 
+\bar under
+גבול חלקי
+\bar default
+ של 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ אם יש ל-
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ תת-סדרה השואפת ל-
+\begin_inset Formula
+$\pm\infty$
+\end_inset
+,
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+כלומר קיימת סדרה 
+\begin_inset Formula
+$\left(n_{k}\right)_{k=1}^{\infty}$
+\end_inset
+ עולה ממש שכל איבריה טבעיים )סדרת אינדקסים( כך ש-
+\begin_inset Formula
+$\lim_{k\rightarrow\infty}a_{n_{k}}=\pm\infty$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+לכל סדרה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+, אינדקס 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ יקרא 
+\bar under
+אינדקס שיא
+\bar default
+ אם לכל 
+\begin_inset Formula
+$n<k\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a_{k}\leq a_{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Lemma
+תהא 
+\begin_inset Formula
+$\left(P_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרת פסוקים לוגיים ותהא 
+\begin_inset Formula
+$\left(n_{k}\right)_{k=1}^{\infty}$
+\end_inset
+ סדרה עולה ממש שכל איבריה טבעיים )סדרת אינדקסים(.
+\begin_inset Newline newline
+\end_inset
+מתקיימים שלושת הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$k\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$n_{k}\geq k$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$P_{n}$
+\end_inset
+ מתקיים ממקום מסוים ואילך אז גם 
+\begin_inset Formula
+$P_{n_{k}}$
+\end_inset
+ מתקיים ממקום מסוים ואילך,
+\begin_inset Newline newline
+\end_inset
+כלומר: אם קיים 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P_{n}=\text{True}$
+\end_inset
+ עבור כל 
+\begin_inset Formula
+$N<n\in\MKnatural$
+\end_inset
+ אז קיים 
+\begin_inset Formula
+$K\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P_{n_{k}}=True$
+\end_inset
+ עבור כל 
+\begin_inset Formula
+$K<k\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$P_{n_{k}}$
+\end_inset
+ מתקיים ממקום מסוים ואילך אז 
+\begin_inset Formula
+$P_{n}$
+\end_inset
+ מתקיים באופן שכיח,
+\begin_inset Newline newline
+\end_inset
+כלומר: אם קיים 
+\begin_inset Formula
+$K\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P_{n_{k}}=\text{True}$
+\end_inset
+ עבור כל 
+\begin_inset Formula
+$K<k\in\MKnatural$
+\end_inset
+ אז לכל 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ קיים 
+\begin_inset Formula
+$N<n\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P_{n}=\text{True}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Lemma
+תהא 
+\begin_inset Formula
+$A\subseteq\MKnatural$
+\end_inset
+ קבוצה שאינה חסומה, קיימת סדרת אינדקסים )=שכל איבריה טבעיים( עולה ממש 
+\begin_inset Formula
+$\left(n_{k}\right)_{k=1}^{\infty}$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$k\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$n_{k}\in A$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Lemma
+תהא 
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ תת-סדרה של 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ ותהא 
+\begin_inset Formula
+$\left(c_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ תת-סדרה של 
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+, 
+\begin_inset Formula
+$\left(c_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ היא תת-סדרה של 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+משפט הירושה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה,
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ מתכנסת ל-
+\begin_inset Formula
+$\alpha\in\MKreal$
+\end_inset
+ אז גם כל תתי-הסדרות שלה מתכנסות ל-
+\begin_inset Formula
+$\alpha$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ שואפת ל-
+\begin_inset Formula
+$\pm\infty$
+\end_inset
+ אז גם כל תתי-הסדרות שלה שואפות ל-
+\begin_inset Formula
+$\pm\infty$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ מונוטונית אז גם כל תתי-הסדרות שלה מונוטוניות, ומאותו סוג מונוטוניות.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ חסומה מלעיל אז גם כל תתי-הסדרות שלה חסומות מלעיל.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ חסומה מלרע אז גם כל תתי-הסדרות שלה חסומות מלרע.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ חסומה אז גם כל תתי-הסדרות שלה חסומות.
+\end_layout
+
+\end_deeper
+
+\begin_layout Corollary
+אם לסדרה יש שני גבולות חלקיים אז היא אינה מתכנסת.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 6.6"
+\end_inset
+מספר ממשי 
+\begin_inset Formula
+$\alpha$
+\end_inset
+ הוא גבול חלקי של סדרה אם"ם כל סביבה שלו מכילה אין-סוף איברים של סדרה זו.
+\begin_inset Newline newline
+\end_inset
+במילים אחרות: 
+\begin_inset Formula
+$\alpha$
+\end_inset
+ הוא גבול חלקי של 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ אם"ם לכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ הקבוצה 
+\begin_inset Formula
+$\left\{ n\in\MKnatural:\left|a_{n}-\alpha\right|<\varepsilon\right\} $
+\end_inset
+ אינה חסומה.
+\end_layout
+
+\begin_layout Corollary
+מספר ממשי 
+\begin_inset Formula
+$\alpha$
+\end_inset
+ 
+\bar under
+אינו
+\bar default
+ גבול חלקי של סדרה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ אם"ם קיים 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left|a_{n}-\alpha\right|\geq\varepsilon$
+\end_inset
+ עבור 
+\begin_inset Formula
+$n$
+\end_inset
+ גדול דיו.
+\end_layout
+
+\begin_layout Lemma
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה שאינה חסומה מלעיל, לכל 
+\begin_inset Formula
+$M\in\MKreal$
+\end_inset
+ הקבוצה 
+\begin_inset Formula
+$\left\{ n\in\MKnatural:a_{n}>M\right\} $
+\end_inset
+ אינה חסומה מלעיל.
+\end_layout
+
+\begin_layout Claim
+\begin_inset Formula
+$\pm\infty$
+\end_inset
+ הוא גבול חלקי של סדרה אם"ם היא אינה חסומה מלעיל/מלרע )בהתאמה(.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+לכל סדרה יש תת-סדרה מונוטונית.
+\end_layout
+
+\begin_layout Proof
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה ותהא 
+\begin_inset Formula
+$I$
+\end_inset
+ קבוצת אינדקסי השיא של 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$I:=\left\{ n\in\MKnatural\mid\forall k\in\MKnatural:k>n\rightarrow a_{n}\geq a_{k}\right\} $
+\end_inset
+; אם 
+\begin_inset Formula
+$I$
+\end_inset
+ אינה חסומה מלעיל )כלומר היא אינסופית( אז נסדר את האינדקסים שבה בסדר עולה ונקבל סדרת אינדקסים עולה ממש 
+\begin_inset Formula
+$\left(n_{j}\right)_{j=1}^{\infty}$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$k,k'\in\MKnatural$
+\end_inset
+ המקיימים 
+\begin_inset Formula
+$k'<k$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a_{n_{k}}\leq a_{n_{k'}}$
+\end_inset
+ ולכן הסדרה 
+\begin_inset Formula
+$\left(a_{n_{j}}\right)_{j=1}^{\infty}$
+\end_inset
+ היא תת-סדרה מונוטונית יורדת; אחרת, אם 
+\begin_inset Formula
+$I$
+\end_inset
+ חסומה מלעיל אז קיים 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N<n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$n\notin I$
+\end_inset
+ ולכן קיים 
+\begin_inset Formula
+$n<j\in\MKnatural$
+\end_inset
+ המקיים 
+\begin_inset Formula
+$a_{n}<a_{j}$
+\end_inset
+, מכאן שקיימת סדרת אינדקסים עולה ממש 
+\begin_inset Formula
+$\left(n_{j}\right)_{j=1}^{\infty}$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left(a_{n_{j}}\right)_{j=1}^{\infty}$
+\end_inset
+ יורדת ממש.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+משפט בולצאנו-ויירשטראס )
+\lang english
+B.W. - Bolzano–Weierstrass
+\lang default
+
+\lang hebrew
+(
+\lang default
+
+\series default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערכים בוויקיפדיה: 
+\begin_inset CommandInset href
+LatexCommand href
+name "בולצאנו ברנרד"
+target https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%A0%D7%A8%D7%93_%D7%91%D7%95%D7%9C%D7%A6%D7%90%D7%A0%D7%95
+literal false
+\end_inset
+ ו-
+\begin_inset CommandInset href
+LatexCommand href
+name "ויירשטראס קארל"
+target https://he.wikipedia.org/wiki/%D7%A7%D7%90%D7%A8%D7%9C_%D7%95%D7%99%D7%99%D7%A8%D7%A9%D7%98%D7%A8%D7%90%D7%A1
+literal false
+\end_inset
+. המשפט הוכח לראשונה על ידי ברנרד בולצאנו ב-
+\numeric on
+1817
+\numeric off
+ כטענת עזר בדרך להוכחת משפט ערך הביניים. חשיבות המשפט לא הוכרה אז והוא נשכח, עד שכחמישים שנה מאוחר יותר קארל ויירשטראס הוכיח אותו שוב באופן בלתי תלוי )ציטוט מוויקיפדיה בערך של המשפט(.
+\end_layout
+
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+לכל סדרה חסומה יש תת-סדרה מתכנסת.
+\end_layout
+
+\begin_layout Proof
+ראינו שכל סדרה מונוטונית וחסומה היא סדרה מתכנסת ומהטענה הקודמת נובע שלכל סדרה חסומה יש תת-סדרה חסומה, לכן ממשפט הירושה נקבל שלכל סדרה חסומה יש תת-סדרה מתכנסת.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ דרך נוספת להוכיח זאת היא ליצור סדרת קטעים העומדת בתנאי הלמה של קנטור שכל איבריה מכילים אינסוף מאיברי הסדרה )באמצעות 
+\begin_inset CommandInset href
+LatexCommand href
+name "בינארי חיפוש"
+target https://he.wikipedia.org/wiki/%D7%97%D7%99%D7%A4%D7%95%D7%A9_%D7%91%D7%99%D7%A0%D7%90%D7%A8%D7%99
+literal false
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ניקח את קטע שבו נמצאים כל איברי הסדרה )מהיותה חסומה נובע שקיים קטע כזה( - קטע זה יהיה האיבר הראשון בסדרת הקטעים, נחצה את הקטע לשניים, כעת אם בקטע המהווה את החצי הימני יש אין-סוף איברים של 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ - נבחר בו בתור האיבר הבא בסדרה, אחרת בקטע המהווה את החצי השמאלי יש אין-סוף מאיברי 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ ונבחר בו בתור הקטע הבא בסדרה; את התהליך הזה נבצע על כל קטע בסדרה כדי לקבל את הקטע הבא אחריו בסדרה וכך בעצם הגדרנו באופן אינדוקטיבי סדרת קטעים כנדרש.
+\end_layout
+
+\end_inset
+( ואז מהלמה של קנטור ומטענה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 6.6"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ נקבל גבול חלקי של הסדרה.
+\end_layout
+
+\begin_layout Corollary
+לכל סדרה יש תת-סדרה מתכנסת במובן הרחב.
+\end_layout
+
+\begin_layout Claim
+תהיינה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרות חסומות, קיימת סדרת אינדקסים עולה ממש 
+\begin_inset Formula
+$\left(n_{k}\right)_{k=1}^{\infty}$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left(a_{n_{k}}\right)_{k=1}^{\infty}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(b_{n_{k}}\right)_{n=1}^{\infty}$
+\end_inset
+ מתכנסות.
+\end_layout
+
+\begin_layout Proof
+ממשפט בולצאנו-ויירשטראס נובע שקיימת סדרת אינדקסים עולה ממש 
+\begin_inset Formula
+$\left(n_{j}\right)_{j=1}^{\infty}$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left(a_{n_{j}}\right)_{j=1}^{\infty}$
+\end_inset
+ מתכנסת וממשפט הירושה נובע ש-
+\begin_inset Formula
+$\left(b_{n_{j}}\right)_{j=1}^{\infty}$
+\end_inset
+ חסומה. ושוב, ממשפט בולצאנו-ויירשטראס נובע שקיימת סדרת אינדקסים עולה ממש 
+\begin_inset Formula
+$\left(n_{j_{k}}\right)_{k=1}^{\infty}$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left(b_{n_{j_{k}}}\right)_{k=1}^{\infty}$
+\end_inset
+ היא סדרה מתכנסת וממשפט הירושה נובע ש-
+\begin_inset Formula
+$\left(a_{n_{j_{k}}}\right)_{k=1}^{\infty}$
+\end_inset
+ היא סדרה מתכנסת; א"כ הסדרה 
+\begin_inset Formula
+$\left(n_{j_{k}}\right)_{k=1}^{\infty}$
+\end_inset
+ מקיימת את הנדרש.
+\end_layout
+
+\begin_layout Claim
+לכל סדרה שאינה מתכנסת כלל, כלומר כזו שאינה מתכנסת אפילו לא במובן הרחב, יש לפחות שני גבולות חלקיים במובן הרחב.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+גבול עליון וגבול תחתון
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+נושא זה נלמד באינפי'
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+)יורם לסט, סמסטר א' תשפ"ג(.
+\end_layout
+
+\end_inset
+ תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה חסומה ותהא 
+\begin_inset Formula
+$A$
+\end_inset
+ קבוצת הגבולות החלקיים של סדרה זו
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ממשפט בולצאנו-ויירשטראס נובע ש-
+\begin_inset Formula
+$A$
+\end_inset
+ אינה ריקה ומכאן שיש לה סופרמום ואינפימום.
+\end_layout
+
+\end_inset
+, 
+\begin_inset Formula
+$\sup A$
+\end_inset
+ ייקרא 
+\bar under
+הגבול התחתון
+\bar default
+ של 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\inf A$
+\end_inset
+ ייקרא 
+\bar under
+הגבול התחתון
+\bar default
+ של 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נסמן:
+\begin_inset Formula
+\begin{align*}
+\underset{n\rightarrow\infty}{\overline{\lim}}a_{n} & :=\limsup_{n\rightarrow\infty}a_{n}:=\sup A\\
+\underset{n\rightarrow\infty}{\underline{\lim}}a_{n} & :=\liminf_{n\rightarrow\infty}a_{n}:=\inf A
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה חסומה, 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ מתכנסת אם"ם 
+\begin_inset Formula
+$\begin{alignedat}{1}\begin{alignedat}{1}\limsup_{n\rightarrow\infty}a_{n}=\liminf_{n\rightarrow\infty}a_{n}\end{alignedat}
+\end{alignedat}
+$
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ אינה חסומה מלעיל נגדיר:
+\begin_inset Formula
+\[
+\underset{n\rightarrow\infty}{\overline{\lim}}a_{n}:=\limsup_{n\rightarrow\infty}a_{n}:=\infty
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$\lim_{n\rightarrow\infty}a_{n}=\infty$
+\end_inset
+ נגדיר
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+אחרת יש לקבוצת הגבולות החלקיים חסם תחתון והוא הגבול התחתון או שהיא אינה חסומה מלרע ואז )כפי שנראה בסעיף הבא( הגבול התחתון הוא 
+\begin_inset Formula
+$-\infty$
+\end_inset
+.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\[
+\underset{n\rightarrow\infty}{\underline{\lim}}a_{n}:=\liminf_{n\rightarrow\infty}a_{n}:=\infty
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ אינה חסומה מלרע נגדיר:
+\begin_inset Formula
+\[
+\underset{n\rightarrow\infty}{\underline{\lim}}a_{n}:=\liminf_{n\rightarrow\infty}a_{n}:=-\infty
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$\lim_{n\rightarrow\infty}a_{n}=-\infty$
+\end_inset
+ נגדיר:
+\begin_inset Formula
+\[
+\underset{n\rightarrow\infty}{\overline{\lim}}a_{n}:=\limsup_{n\rightarrow\infty}a_{n}:=-\infty
+\]
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כעת לכל סדרה יש גבול עליון וגבול תחתון.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ באופן כללי אין אריתמטיקה של גבולות עבור גבול עליון/תחתון, שהרי מדובר בגבול חלקי של הסדרה, כלומר גבול של תת-סדרה והאינדקסים של זו לא מוכרחים להסתדר עם האינדקסים המתאימים בסדרה האחרת; בנוסף ייתכן שתתי-סדרות אחרות הן שתהפוכנה לאלו שהגבול שלהן הוא הגבול העליון/תחתון לאחר הפעולה האריתמטית. בקובץ הטענות נראה פירוט ודוגמאות בנושא זה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+אפיונים
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+משפט זה והבא אחריו נלמדו באינפי'
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+)יורם לסט, סמסטר א' תשפ"ג(.
+\end_layout
+
+\end_inset
+ תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה חסומה ותהא 
+\begin_inset Formula
+$A$
+\end_inset
+ קבוצת הגבולות החלקיים של סדרה זו, ל-
+\begin_inset Formula
+$A$
+\end_inset
+ יש מקסימום ומינימום ויתרה מזאת מתקיים:
+\begin_inset Formula
+\begin{align*}
+\limsup_{n\rightarrow\infty}a_{n} & {\color{blue}=}\max A{\color{red}\boldsymbol{=}}\inf\left\{ \sup\left\{ a_{n},a_{n+1},a_{n+2},...\right\} \mid n\in\MKnatural\right\} \\
+\liminf_{n\rightarrow\infty}a_{n} & {\color{blue}=}\min A{\color{red}\boldsymbol{=}}\sup\left\{ \inf\left\{ a_{n},a_{n+1},a_{n+2},...\right\} \mid n\in\MKnatural\right\} 
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ נשמע מסובך, לא? אנחנו מדברים כאן )תחזיקו חזק!( על החסם התחתון של קבוצת החסמים העליונים של קבוצות האיברים של הסדרה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ החל ממקום מסוים ואילך, אולי הכתיב הבא יהיה קצת יותר קומפקטי:
+\begin_inset Formula
+\begin{align*}
+ & \inf\left\{ \sup\left\{ a_{n}:n\geq N\right\} \mid N\in\MKnatural\right\} \\
+ & \sup\left\{ \inf\left\{ a_{n}:n\geq N\right\} \mid N\in\MKnatural\right\} 
+\end{align*}
+
+
+\end_inset
+על כל פנים בהוכחה נסביר טוב יותר מה הולך כאן )ראו בקובץ ההוכחות(.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הדגש במשפט הוא על הקיום של גבול חלקי מקסימלי/מינימלי ועל סימני השוויון המודגשים באדום, אלו המסומנים בכחול נובעים ישירות מן ההגדרה של גבול עליון/תחתון שהרי לכל קבוצה המקסימום/מינימום שלה )אם הוא קיים( הוא גם הסופרמום/אינפימום שלה )בהתאמה(.
+\end_layout
+
+\begin_layout Proof
+נוכיח את האי-שוויון השני, ההוכחה עבור הראשון דומה למדי.
+\begin_inset Newline newline
+\end_inset
+נוכיח ש-
+\begin_inset Formula
+$c:=\sup\left\{ \inf\left\{ a_{n},a_{n+1},a_{n+2},...\right\} \mid n\in\MKnatural\right\} $
+\end_inset
+ הוא גבול חלקי של 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ )כלומר שייך ל-
+\begin_inset Formula
+$A$
+\end_inset
+( ושהוא חסם מלרע של 
+\begin_inset Formula
+$A$
+\end_inset
+ ומכאן שהוא המינימום שלה.
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ נסמן ב-
+\begin_inset Formula
+$b_{n}$
+\end_inset
+ את 
+\begin_inset Formula
+$\inf\left\{ a_{n},a_{n+1},a_{n+2},...\right\} $
+\end_inset
+, נשים לב ש-
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ היא סדרה מונוטונית עולה שהרי לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left\{ a_{n+1},a_{n+2},...\right\} \subseteq\left\{ a_{n},a_{n+1},a_{n+2},...\right\} $
+\end_inset
+ ולכן האינפימום יכול רק לגדול, כלומר 
+\begin_inset Formula
+$b_{n+1}\geq b_{n}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+; בנוסף, מכיוון ש-
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ חסומה גם 
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ )שהיא סדרת החסמים התחתונים של זנבותיה( חסומה מלעיל ומכאן שהיא מתכנסת אל החסם העליון שלה )אותו סימנו לעיל ב-
+\begin_inset Formula
+$c$
+\end_inset
+(.
+\begin_inset Newline newline
+\end_inset
+כעת נזכור שלכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+, 
+\begin_inset Formula
+$b_{n}$
+\end_inset
+ הוא החסם התחתון של 
+\begin_inset Formula
+$\left(a_{k}\right)_{k=n}^{\infty}$
+\end_inset
+, מכאן שלכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ קיים 
+\begin_inset Formula
+$n\leq k_{n}\in\MKnatural$
+\end_inset
+ כך שמתקיים 
+\begin_inset Formula
+$b_{n}\leq a_{k_{n}}\leq b_{n}+\frac{1}{n}$
+\end_inset
+, וממשפט הכריך נובע שהסדרה 
+\begin_inset Formula
+$\left(a_{k_{n}}\right)_{n=1}^{\infty}$
+\end_inset
+ מתכנסת ל-
+\begin_inset Formula
+$c$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+כאן יש לשים לב ש-
+\begin_inset Formula
+$\left(a_{k_{n}}\right)_{n=1}^{\infty}$
+\end_inset
+ אינה בהכרח תת-סדרה של 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+: ייתכן שהסדרה 
+\begin_inset Formula
+$\left(k_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ חוזרת על עצמה ו/או אינה מסודרת לפי הסדר )כלומר שקיימים 
+\begin_inset Formula
+$n,m\in\MKnatural$
+\end_inset
+ המקיימים 
+\begin_inset Formula
+$n<m$
+\end_inset
+ כך שמתקיים 
+\begin_inset Formula
+$k_{n}\geq k_{m}$
+\end_inset
+(, לכן עוד לא סיימנו להוכיח ש-
+\begin_inset Formula
+$c\in A$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נשים לב שהסדרה 
+\begin_inset Formula
+$\left(k_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ כוללת אינסוף טבעיים שונים: אילו היה בה מספר סופי של טבעיים שונים אזי היה להם מקסימום, כלומר היה קיים 
+\begin_inset Formula
+$m\in\MKnatural$
+\end_inset
+ כך שמתקיים 
+\begin_inset Formula
+$m+1>k_{n}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ ובפרט עבור 
+\begin_inset Formula
+$k_{m+1}$
+\end_inset
+ בסתירה לצורה שבה נבנתה הסדרה, לכן אפשר לחלץ ממנה תת-סדרה עולה ממש 
+\begin_inset Formula
+$\left(k_{n_{j}}\right)_{j=1}^{\infty}$
+\end_inset
+; כעת נתבונן בסדרה 
+\begin_inset Formula
+$\left(a_{k_{n_{j}}}\right)_{j=1}^{\infty}$
+\end_inset
+ זוהי תת-סדרה של 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ אך זוהי גם תת-סדרה של 
+\begin_inset Formula
+$\left(a_{k_{n}}\right)_{n=1}^{\infty}$
+\end_inset
+, ממשפט הירושה נובע שהיא מתכנסת ל-
+\begin_inset Formula
+$c$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$c\in A$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+כעת נוכיח ש-
+\begin_inset Formula
+$c$
+\end_inset
+ הוא חסם מלרע של 
+\begin_inset Formula
+$A$
+\end_inset
+ ובזה נסיים.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$c>d\in\MKreal$
+\end_inset
+, מהיות 
+\begin_inset Formula
+$c$
+\end_inset
+ החסם העליון של 
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ נובע שקיים 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ כך שמתקיים 
+\begin_inset Formula
+$c\geq b_{N}>d$
+\end_inset
+, ומכיוון ש-
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ היא סדרה מונוטונית עולה נובע מזה שלכל 
+\begin_inset Formula
+$N\leq n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\inf\left\{ a_{n},a_{n+1},a_{n+2},...\right\} =b_{n}\geq b_{N}$
+\end_inset
+ ולכן גם 
+\begin_inset Formula
+$a_{n}\geq b_{N}$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$\left|a_{n}-d\right|>b_{N}-d>0$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+כלומר קיימים 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ ו-
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N<n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a_{n}\notin B_{\varepsilon}\left(d\right)$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$d$
+\end_inset
+ אינו גבול חלקי של 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$d\notin A$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$d$
+\end_inset
+ הנ"ל היה שרירותי ומכאן שלכל 
+\begin_inset Formula
+$c>d\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$d\notin A$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$\sup\left\{ \inf\left\{ a_{n},a_{n+1},a_{n+2},...\right\} \mid n\in\MKnatural\right\} =c=\min A$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+אפיון נוסף לגבול עליון ולגבול תחתון
+\series default
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה שיש לה גבול עליון, מספר ממשי 
+\begin_inset Formula
+$M\in\MKreal$
+\end_inset
+ הוא הגבול העליון של 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ אם"ם:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ האי-שוויון 
+\begin_inset Formula
+$M-\varepsilon<a_{n}$
+\end_inset
+ מתקיים באופן שכיח
+\end_layout
+
+\begin_layout Enumerate
+האי-שוויון 
+\begin_inset Formula
+$M+\varepsilon>a_{n}$
+\end_inset
+ מתקיים כמעט תמיד
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה שיש לה גבול עליון, מספר ממשי 
+\begin_inset Formula
+$m\in\MKreal$
+\end_inset
+ הוא הגבול התחתון של 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ אם"ם:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ הא"ש 
+\begin_inset Formula
+$m+\varepsilon>a_{n}$
+\end_inset
+ מתקיים באופן שכיח
+\end_layout
+
+\begin_layout Enumerate
+האי-שוויון 
+\begin_inset Formula
+$m-\varepsilon<a_{n}$
+\end_inset
+ מתקיים כמעט תמיד
+\end_layout
+
+\end_deeper
+
+\end_deeper
+
+\begin_layout Subsection
+סדר
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כמעט כל הטענות שבסעיף זה והבא אחריו נלקחו מהספר "
+\begin_inset CommandInset href
+LatexCommand href
+name "אינפיניטסימלי חשבון"
+target https://huji.primo.exlibrisgroup.com/permalink/972HUJI_INST/uh9eeg/alma990020201180203701
+literal false
+\end_inset
+" שכתב מיכאל הוכמן יחד עם יונתן הראל, איתי וייס ואופק שילון. זהו נושא מבלבל מאד ולכן אשנה מהרגלי ואביא דוגמאות רבות המראות שבאופן כללי אין אריתמטיקה של גבולות עבור גבול עליון/תחתון ואפילו כדי שישתמר יחס סדר צריכים להתקיים תנאים מסוימים.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בכל הטענות שלהלן ניתן להסתפק בחסימות מלעיל/מלרע בשביל הגבול העליון/התחתון, דרשנו חסימות מלעיל ומלרע כדי שנוכל לדבר על שניהם יחד.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box "1"
+inner_pos "t"
+use_parbox "0"
+use_makebox "0"
+width "40col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+\begin_layout Claim
+תהיינה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ שתי סדרות חסומות, אם מתקיים 
+\begin_inset Formula
+$a_{n}\leq b_{n}$
+\end_inset
+ ממקום מסוים ואילך אז מתקיים גם:
+\begin_inset Formula
+\begin{align*}
+\limsup_{n\rightarrow\infty}a_{n} & \leq\limsup_{n\rightarrow\infty}b_{n}\\
+\liminf_{n\rightarrow\infty}a_{n} & \leq\liminf_{n\rightarrow\infty}b_{n}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\begin_inset space \space{}
+\end_inset
+
+\begin_inset space \space{}
+\end_inset
+
+\begin_inset space \space{}
+\end_inset
+
+\begin_inset space \space{}
+\end_inset
+
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box "1"
+inner_pos "t"
+use_parbox "0"
+use_makebox "0"
+width "40col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+\begin_layout Example
+נשים לב שאי אפשר לומר שמתקיים:
+\begin_inset Formula
+\[
+\limsup_{n\rightarrow\infty}a_{n}\leq\liminf_{n\rightarrow\infty}b_{n}
+\]
+
+
+\end_inset
+לדוגמה:
+\begin_inset Formula
+\[
+a_{n}:=\begin{cases}
+1 & n\in\MKodd\\
+3 & n\in\MKeven
+\end{cases},\ b_{n}:=\begin{cases}
+2 & n\in\MKodd\\
+4 & n\in\MKeven
+\end{cases}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box "1"
+inner_pos "t"
+use_parbox "0"
+use_makebox "0"
+width "40col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+\begin_layout Claim
+תהיינה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ שתי סדרות חסומות, מתקיים:
+\begin_inset Formula
+\begin{align*}
+\limsup_{n\rightarrow\infty}\left(a_{n}+b_{n}\right) & \leq\limsup_{n\rightarrow\infty}a_{n}+\limsup_{n\rightarrow\infty}b_{n}\\
+\liminf_{n\rightarrow\infty}\left(a_{n}+b_{n}\right) & \geq\liminf_{n\rightarrow\infty}a_{n}+\liminf_{n\rightarrow\infty}b_{n}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\begin_inset space \space{}
+\end_inset
+
+\begin_inset space \space{}
+\end_inset
+
+\begin_inset space \space{}
+\end_inset
+
+\begin_inset space \space{}
+\end_inset
+
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box "1"
+inner_pos "t"
+use_parbox "0"
+use_makebox "0"
+width "40col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+\begin_layout Example
+נשים לב שלא מתקיימים בהכרח שוויונות, לדוגמה:
+\begin_inset Formula
+\[
+a_{n}:=\left(-1\right)^{n},\ b_{n}:=\left(-1\right)^{n+1}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+\limsup_{n\rightarrow\infty}\left(a_{n}+b_{n}\right) & 0<2=\limsup_{n\rightarrow\infty}a_{n}+\limsup_{n\rightarrow\infty}b_{n}\\
+\liminf_{n\rightarrow\infty}\left(a_{n}+b_{n}\right) & 0>-2=\liminf_{n\rightarrow\infty}a_{n}+\liminf_{n\rightarrow\infty}b_{n}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+נסמן ב-
+\begin_inset Formula
+$A$
+\end_inset
+ את קבוצת הגבולות החלקיים של 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+, ב-
+\begin_inset Formula
+$B$
+\end_inset
+ את זו של 
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ וב-
+\begin_inset Formula
+$C$
+\end_inset
+ את קבוצת הגבולות החלקיים של 
+\begin_inset Formula
+$\left(a_{n}+b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+, מהגדרה שלוש הקבוצות חסומות ומכאן שיש לכל אחת מהן סופרמום ואינפימום; כמו כן, מהגדרה ומאריתמטיקה של גבולות נובע ש-
+\begin_inset Formula
+$C\subseteq A+B$
+\end_inset
+.
+\begin_inset Formula
+\begin{align*}
+\Rightarrow\limsup_{n\rightarrow\infty}\left(a_{n}+b_{n}\right) & =\sup C\leq\sup\left(A+B\right)=\sup A+\sup B=\limsup_{n\rightarrow\infty}a_{n}+\limsup_{n\rightarrow\infty}b_{n}\\
+\Rightarrow\liminf_{n\rightarrow\infty}\left(a_{n}+b_{n}\right) & =\inf C\geq\inf\left(A+B\right)=\inf A+\inf B=\liminf_{n\rightarrow\infty}a_{n}+\liminf_{n\rightarrow\infty}b_{n}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box "1"
+inner_pos "t"
+use_parbox "0"
+use_makebox "0"
+width "85col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+\begin_layout Claim
+תהיינה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ שתי סדרות חסומות ואי-שליליות, מתקיים:
+\begin_inset Formula
+\begin{align*}
+\limsup_{n\rightarrow\infty}\left(a_{n}\cdot b_{n}\right) & \leq\limsup_{n\rightarrow\infty}a_{n}\cdot\limsup_{n\rightarrow\infty}b_{n}\\
+\liminf_{n\rightarrow\infty}\left(a_{n}\cdot b_{n}\right) & \geq\liminf_{n\rightarrow\infty}a_{n}\cdot\liminf_{n\rightarrow\infty}b_{n}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box "1"
+inner_pos "t"
+use_parbox "0"
+use_makebox "0"
+width "40col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+\begin_layout Example
+נשים לב שלא מתקיימים בהכרח שוויונות, לדוגמה:
+\begin_inset Formula
+\[
+a_{n}:=\begin{cases}
+1 & n\in\MKodd\\
+2 & n\in\MKeven
+\end{cases},\ b_{n}:=\begin{cases}
+2 & n\in\MKodd\\
+1 & n\in\MKeven
+\end{cases}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+\limsup_{n\rightarrow\infty}\left(a_{n}\cdot b_{n}\right) & =2<4=\limsup_{n\rightarrow\infty}a_{n}\cdot\limsup_{n\rightarrow\infty}b_{n}\\
+\liminf_{n\rightarrow\infty}\left(a_{n}\cdot b_{n}\right) & =2>1=\liminf_{n\rightarrow\infty}a_{n}\cdot\liminf_{n\rightarrow\infty}b_{n}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\begin_inset space \space{}
+\end_inset
+
+\begin_inset space \space{}
+\end_inset
+
+\begin_inset space \space{}
+\end_inset
+
+\begin_inset space \space{}
+\end_inset
+
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box "1"
+inner_pos "t"
+use_parbox "0"
+use_makebox "0"
+width "40col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+\begin_layout Example
+אם נרשה לסדרות להיות אי-שליליות נוכל אפילו להפוך את כיווני האי-שוויונות, לדוגמה:
+\begin_inset Formula
+\[
+a_{n}:=b_{n}:=\begin{cases}
+1 & n\in\MKodd\\
+-2 & n\in\MKeven
+\end{cases}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+\limsup_{n\rightarrow\infty}\left(a_{n}\cdot b_{n}\right) & =4>1=\limsup_{n\rightarrow\infty}a_{n}\cdot\limsup_{n\rightarrow\infty}b_{n}\\
+\liminf_{n\rightarrow\infty}\left(a_{n}\cdot b_{n}\right) & =1<4=\liminf_{n\rightarrow\infty}a_{n}\cdot\liminf_{n\rightarrow\infty}b_{n}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+ההוכחה זהה לזו של הטענה הקודמת )עד כדי החלפת החיבור בכפל(, כאשר המעברים:
+\begin_inset Formula
+\begin{align*}
+\sup\left(A+B\right) & =\sup A+\sup B\\
+\inf\left(A\cdot B\right) & =\inf A\cdot\inf B
+\end{align*}
+
+
+\end_inset
+מוצדקים משום שמדובר בקבוצות אי-שליליות.
+\end_layout
+
+\begin_layout Subsection
+אריתמטיקה
+\end_layout
+
+\begin_layout Claim
+תהיינה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ שתי סדרות חסומות, מתקיים:
+\begin_inset Formula
+\begin{align*}
+\limsup_{n\rightarrow\infty}\left(-a_{n}\right) & =-\liminf_{n\rightarrow\infty}a_{n}\\
+\liminf_{n\rightarrow\infty}\left(-a_{n}\right) & =-\limsup_{n\rightarrow\infty}a_{n}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+טענה זו נלמדה באינפי'
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+)יורם לסט, סמסטר א' תשפ"ג(.
+\end_layout
+
+\end_inset
+ תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה חסומה וחיובית, מתקיים:
+\begin_inset Formula
+\begin{align*}
+\limsup_{n\rightarrow\infty}\left(\frac{1}{a_{n}}\right) & =\frac{1}{\begin{alignedat}{1}\liminf_{n\rightarrow\infty}\left(a_{n}\right)\end{alignedat}
+}\\
+\liminf_{n\rightarrow\infty}\left(\frac{1}{a_{n}}\right) & =\frac{1}{\begin{alignedat}{1}\limsup_{n\rightarrow\infty}\left(a_{n}\right)\end{alignedat}
+}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+תהיינה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה מתכנסת לגבול 
+\begin_inset Formula
+$l\in\MKreal$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה חסומה, מתקיים:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula
+\begin{align*}
+\limsup_{n\rightarrow\infty}\left(a_{n}+b_{n}\right) & =l+\limsup_{n\rightarrow\infty}b_{n}\\
+\liminf_{n\rightarrow\infty}\left(a_{n}+b_{n}\right) & =l+\liminf_{n\rightarrow\infty}b_{n}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Proof
+נסמן ב-
+\begin_inset Formula
+$B$
+\end_inset
+ את קבוצת הגבולות החלקיים של 
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ וב-
+\begin_inset Formula
+$C$
+\end_inset
+ את זו של 
+\begin_inset Formula
+$\left(a_{n}+b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+, מאריתמטיקה של גבולות נובע שמתקיים 
+\begin_inset Formula
+$C=\left\{ l\right\} +B$
+\end_inset
+ )ראו הוכחה דומה ומפורטת בטענה הבאה(.
+\begin_inset Formula
+\begin{align*}
+\Rightarrow\limsup_{n\rightarrow\infty}\left(a_{n}+b_{n}\right) & =\sup C=\sup\left(\left\{ l\right\} +B\right)=l+\sup\left\{ B\right\} =l+\limsup_{n\rightarrow\infty}b_{n}\\
+\liminf_{n\rightarrow\infty}\left(a_{n}+b_{n}\right) & =\inf C=\inf\left(\left\{ l\right\} +B\right)=l+\inf\left\{ B\right\} =l+\liminf_{n\rightarrow\infty}b_{n}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+תהיינה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה מתכנסת לגבול 
+\begin_inset Formula
+$0\leq l\in\MKreal$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה חסומה, מתקיים:
+\begin_inset Formula
+\begin{align*}
+\limsup_{n\rightarrow\infty}\left(a_{n}\cdot b_{n}\right) & =l\cdot\limsup_{n\rightarrow\infty}b_{n}\\
+\liminf_{n\rightarrow\infty}\left(a_{n}\cdot b_{n}\right) & =l\cdot\liminf_{n\rightarrow\infty}b_{n}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+ראשית נשים לב לכך שאם 
+\begin_inset Formula
+$l=0$
+\end_inset
+ אז הטענה נובעת ישירות מכלל אפסה וחסומה, א"כ נוכל להניח ש-
+\begin_inset Formula
+$l>0$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נסמן ב-
+\begin_inset Formula
+$B$
+\end_inset
+ את קבוצת הגבולות החלקיים של 
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ וב-
+\begin_inset Formula
+$C$
+\end_inset
+ את קבוצת הגבולות החלקיים של הסדרה 
+\begin_inset Formula
+$\left(a_{n}\cdot b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ ונרצה להוכיח שמתקיים 
+\begin_inset Formula
+$C=\left\{ l\right\} \cdot B$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$b\in B$
+\end_inset
+ ותהא 
+\begin_inset Formula
+$\left(n_{k}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרת אינדקסים עולה ממש כך ש-
+\begin_inset Formula
+$\lim_{k\rightarrow\infty}b_{n_{k}}=b$
+\end_inset
+, מאריתמטיקה של גבולות וממשפט הירושה נובע שמתקיים:
+\begin_inset Formula
+\[
+\lim_{k\rightarrow\infty}\left(a_{n_{k}}\cdot b_{n_{k}}\right)=\lim_{k\rightarrow\infty}a_{n_{k}}\cdot\lim_{k\rightarrow\infty}b_{n_{k}}=l\cdot b
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow l\cdot b\in C
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+$b$
+\end_inset
+ הנ"ל היה שרירותי ומכאן ש-
+\begin_inset Formula
+$\left\{ l\right\} \cdot B\subseteq C$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$c\in C$
+\end_inset
+ ותהא 
+\begin_inset Formula
+$\left(n_{j}\right)_{j=1}^{\infty}$
+\end_inset
+ סדרת אינדקסים עולה ממש כך ש-
+\begin_inset Formula
+$\lim_{j\rightarrow\infty}\left(a_{n_{j}}\cdot b_{n_{j}}\right)=c$
+\end_inset
+, מאריתמטיקה של גבולות וממשפט הירושה נובע שמתקיים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+\begin_inset Formula
+$l>0$
+\end_inset
+ ולכן 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ חיובית ממקום מסוים ואילך.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\[
+\lim_{j\rightarrow\infty}b_{n_{j}}=\lim_{j\rightarrow\infty}\left(\frac{1}{a_{n_{j}}}\cdot a_{n_{j}}\cdot b_{n_{j}}\right)=\lim_{j\rightarrow\infty}\frac{1}{a_{n_{j}}}\cdot\lim_{j\rightarrow\infty}\left(a_{n_{j}}\cdot b_{n_{j}}\right)=l^{-1}\cdot c
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow l^{-1}\cdot c\in B\\
+ & \Rightarrow c\in l\cdot B
+\end{align*}
+
+
+\end_inset
+
+\begin_inset Formula
+$c$
+\end_inset
+ הנ"ל היה שרירותי ומכאן ש-
+\begin_inset Formula
+$C\subseteq\left\{ l\right\} \cdot B$
+\end_inset
+.
+\begin_inset Formula
+\[
+\Rightarrow C=\left\{ l\right\} \cdot B
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow\limsup_{n\rightarrow\infty}\left(a_{n}\cdot b_{n}\right)=\sup C=\sup\left(\left\{ l\right\} \cdot B\right)=l\cdot\sup B=l\cdot\limsup_{n\rightarrow\infty}b_{n}\\
+ & \Rightarrow\liminf_{n\rightarrow\infty}\left(a_{n}\cdot b_{n}\right)=\inf C=\inf\left(\left\{ l\right\} \cdot B\right)=l\cdot\inf B=l\cdot\liminf_{n\rightarrow\infty}b_{n}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+תהיינה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה מתכנסת לגבול 
+\begin_inset Formula
+$0>l\in\MKreal$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה חסומה, מתקיים:
+\begin_inset Formula
+\begin{align*}
+\limsup_{n\rightarrow\infty}\left(a_{n}\cdot b_{n}\right) & =-l\cdot\liminf_{n\rightarrow\infty}b_{n}\\
+\liminf_{n\rightarrow\infty}\left(a_{n}\cdot b_{n}\right) & =-l\cdot\limsup_{n\rightarrow\infty}b_{n}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+תנאי קושי
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+נאמר שסדרה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ היא 
+\bar under
+סדרת קושי
+\bar default
+ אם לכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ קיים 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N<n,m\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|a_{n}-a_{m}\right|<\varepsilon$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה מתכנסת ותהא 
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה המוגדרת ע"י 
+\begin_inset Formula
+$b_{n}=a_{n+1}-a_{n}$
+\end_inset
+, הסדרה 
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ מתכנסת ל-
+\begin_inset Formula
+$0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הדוגמה הבאה מפריכה את הכיוון ההפוך ולכן אנו נזקקים לתנאי קושי.
+\end_layout
+
+\begin_layout Example
+נתבונן בסדרה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ המוגדרת ע"י 
+\begin_inset Formula
+$a_{n}=\sum_{k=1}^{n}\frac{1}{k}$
+\end_inset
+ )לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+(, אכן מתקיים ש-
+\begin_inset Formula
+$\lim_{n\rightarrow\infty}\left(a_{n+1}-a_{n}\right)=\lim_{n\rightarrow\infty}\frac{1}{n}=0$
+\end_inset
+ אך למרות זאת 
+\begin_inset Formula
+$\lim_{n\rightarrow\infty}a_{n}=\infty$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$M\in\MKreal$
+\end_inset
+, מארכימדיות של 
+\begin_inset Formula
+$\MKreal$
+\end_inset
+ נובע שקיים 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$M<\frac{N}{2}$
+\end_inset
+, יהי 
+\begin_inset Formula
+$N$
+\end_inset
+ כנ"ל. נשים לב שלכל 
+\begin_inset Formula
+$2^{N}<n\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+a_{n}=\sum_{k=1}^{n}\frac{1}{k} & >\left(1\right)+\left(\frac{1}{2}+\frac{1}{3}\right)+\left(\frac{1}{4}+\frac{1}{5}+\ldots+\frac{1}{7}\right)+\left(\frac{1}{8}+\frac{1}{9}+\ldots+\frac{1}{15}\right)+\ldots+\left(\frac{1}{2^{N-1}}+\frac{1}{2^{N-1}+1}\ldots+\frac{1}{2^{N}-1}\right)\\
+ & >1+2\cdot\frac{1}{4}+4\cdot\frac{1}{8}+8\cdot\frac{1}{16}+\ldots+2^{N-1}\cdot\frac{1}{2^{N}}=1+\left(N-1\right)\cdot\frac{1}{2}>\frac{N}{2}>M
+\end{align*}
+
+
+\end_inset
+
+\begin_inset Formula
+$M$
+\end_inset
+ הנ"ל היה שרירותי ולכן הנ"ל נכון לכל 
+\begin_inset Formula
+$M\in\MKreal$
+\end_inset
+ ומהגדרה 
+\begin_inset Formula
+$\lim_{n\rightarrow\infty}a_{n}=\infty$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+תנאי קושי להתכנסות סדרות
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תנאי הכרחי ומספיק לכך שסדרה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ תתכנס הוא שלכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ קיים 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N<n,m\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|a_{n}-a_{m}\right|<\varepsilon$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+כלומר כל סדרה מתכנסת היא סדרת קושי וכל סדרת קושי היא סדרה מתכנסת.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הרעיון שמאחורי תנאי קושי
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+שאם כולם מתקרבים לגבול אז כולם מתקרבים לכולם ואם כולם מתקרבים לכולם אז כולם מתקרבים לגבול.
+\end_layout
+
+\end_inset
+ תקף כמעט עבור כל סוגי הגבולות ואנחנו נפגש בגרסאות רבות שלו בקורס הבא
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ראו 
+\begin_inset CommandInset href
+LatexCommand href
+name "כאן"
+target https://drive.google.com/open?id=1U4EIUhknFXcQ89SEEHx8crvH2xU2gli9&usp=drive_fs
+literal false
+\end_inset
+ הוכחה כללית לשקילות בין כל סוגי הגבולות לכל תנאי קושי המתאימים.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\Leftarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה המתכנסת לגבול 
+\begin_inset Formula
+$L\in\MKreal$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+, מהיותה סדרה מתכנסת נובע שקיים 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N<n,m\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|a_{n}-L\right|<\frac{\varepsilon}{2}$
+\end_inset
+ וגם 
+\begin_inset Formula
+$\left|a_{m}-L\right|<\frac{\varepsilon}{2}$
+\end_inset
+, יהי 
+\begin_inset Formula
+$N$
+\end_inset
+ כנ"ל.
+\begin_inset Formula
+\[
+\Rightarrow\left|a_{n}-a_{m}\right|=\left|a_{n}-L+L-a_{m}\right|\leq\left|a_{n}-L\right|+\left|L-a_{m}\right|<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+$\varepsilon$
+\end_inset
+ הנ"ל היה שרירותי ולכן הנ"ל נכון לכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\Rightarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה המקיימת את תנאי קושי, א"כ קיים 
+\begin_inset Formula
+$N_{1}\in\MKnatural$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N_{1}<n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|b_{N_{1}+1}-b_{n}\right|<1$
+\end_inset
+ ולכן גם 
+\begin_inset Formula
+$\left|b_{n}\right|<\left|b_{N_{1}+1}\right|+1$
+\end_inset
+, א"כ 
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ היא סדרה חסומה ולכן ממשפט בולצאנו ויירשטראס יש לה תת-סדרה חסומה. תהא 
+\begin_inset Formula
+$\left(n_{k}\right)_{k=1}^{\infty}$
+\end_inset
+ סדרת אינדקסים עולה ממש כך ש-
+\begin_inset Formula
+$\left(b_{n_{k}}\right)_{k=1}^{\infty}$
+\end_inset
+ מתכנסת לגבול 
+\begin_inset Formula
+$L'\in\MKreal$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+, מתנאי קושי נובע שקיים 
+\begin_inset Formula
+$N_{2}\in\MKnatural$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N_{2}<n,m\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|b_{n}-b_{m}\right|<\frac{\varepsilon}{2}$
+\end_inset
+; יהי 
+\begin_inset Formula
+$N_{2}$
+\end_inset
+ כנ"ל ויהי 
+\begin_inset Formula
+$k\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$N_{2}<n_{k}$
+\end_inset
+ וגם 
+\begin_inset Formula
+$\left|b_{n_{k}}-L\right|<\frac{\varepsilon}{2}$
+\end_inset
+, וא"כ לכל 
+\begin_inset Formula
+$N_{2}<n\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left|b_{n}-L'\right|=\left|b_{n}-b_{n_{k}}+b_{n_{k}}-L'\right|\leq\left|b_{n}-b_{n_{k}}\right|+\left|b_{n_{k}}-L'\right|=\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+$\varepsilon$
+\end_inset
+ הנ"ל היה שרירותי ולכן הנ"ל נכון לכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ ומהגדרה 
+\begin_inset Formula
+$\left(b_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ מתכנסת ל-
+\begin_inset Formula
+$L'$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\end_body
+
+\end_document
+

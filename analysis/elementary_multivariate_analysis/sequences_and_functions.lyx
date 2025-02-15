@@ -1,0 +1,4031 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The head's design for summuries,make the layout more similar to a book:
+\AtBeginDocument{
+\renewcommand\headrule{%
+  \kern -7pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+  \kern 10pt
+}}
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Correct the reversed parentheses in labels:
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\newfontfamily{\hebrewfont}{David}
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+
+
+
+\end_preamble
+
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+customHeadersFooters
+\end_modules
+
+\maintain_unincluded_children false
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+
+
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size      Larger
+	  Series     Bold
+	EndFont
+End
+
+
+Style Solution
+
+	LabelString           "פתרון: "End
+
+
+Style Notation
+
+	LabelString           "סימון  \thetheorem: "End
+
+Style Theorem
+
+	LabelString           "משפט \thetheorem: "End
+
+Style Property
+
+	LabelString           "תזכורת: "End
+
+
+
+\end_local_layout
+
+\language hebrew
+
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\boxbgcolor #cccccc
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+
+\tocdepth 3
+
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename C:\Users\sraya\AppData\Roaming\LyX2.4\macros\MKmacros.lyx
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+סדרות
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+\series bold
+סביבות סימטריות של נקודה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$d$
+
+
+\end_inset
+ מטריקה על 
+\begin_inset Formula
+$\MKreal^{k}$
+
+
+\end_inset
+ ותהא 
+\begin_inset Formula
+$P_{0}\in\MKreal^{k}$
+
+
+\end_inset
+, נסמן (לכל 
+\begin_inset Formula
+$0<r\in\MKreal$
+
+
+\end_inset
+):
+\begin_inset Formula
+\begin{align*}
+B_{r}\left(P_{0}\right) & :=\left\{ P\in\MKreal^{k}\mid d_{2}\left(P,P_{0}\right)<r\right\} \\
+B_{r}^{\circ}\left(P_{0}\right) & :=\left\{ P\in\MKreal^{k}\mid0<d_{2}\left(P,P_{0}\right)<r\right\} \\
+\overline{B_{r}}\left(P_{0}\right) & :=\left\{ P\in\MKreal^{k}\mid d_{2}\left(P,P_{0}\right)\leq r\right\} \\
+\overline{B_{r}^{\circ}}\left(P_{0}\right) & :=\left\{ P\in\MKreal^{k}\mid0<d_{2}\left(P,P_{0}\right)\leq r\right\} 
+\end{align*}
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$B_{r}\left(P_{0}\right)$
+
+
+\end_inset
+ תיקרא 
+\bar under
+סביבה
+\bar default
+ של 
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ (או 
+\bar under
+כדור פתוח
+\bar default
+ ברדיוס 
+\begin_inset Formula
+$r$
+
+
+\end_inset
+ שמרכזו בנקודה 
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+) ו-
+\begin_inset Formula
+$B_{r}^{\circ}\left(P_{0}\right)$
+
+
+\end_inset
+ תיקרא 
+\bar under
+סביבה מנוקבת
+\bar default
+ של 
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ (או 
+\bar under
+כדור פתוח מנוקב
+\bar default
+ ברדיוס 
+\begin_inset Formula
+$r$
+
+
+\end_inset
+ שמרכזו בנקודה 
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+).
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\overline{B_{r}\left(P_{0}\right)}$
+
+
+\end_inset
+ תיקרא 
+\bar under
+סביבה סגורה
+\bar default
+ של 
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ (או 
+\bar under
+כדור פתוח
+\bar default
+ ברדיוס 
+\begin_inset Formula
+$r$
+
+
+\end_inset
+ שמרכזו בנקודה 
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+) ו-
+\begin_inset Formula
+$\overline{B_{r}^{\circ}\left(P_{0}\right)}$
+
+
+\end_inset
+ תיקרא 
+\bar under
+סביבה סגורה מנוקבת
+\bar default
+ של 
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ (או 
+\bar under
+כדור פתוח מנוקב
+\bar default
+ ברדיוס 
+\begin_inset Formula
+$r$
+
+
+\end_inset
+ שמרכזו בנקודה 
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+).
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+קבוצה פתוחה, קבוצה סגורה וקבוצה קומפקטית
+\series default
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נאמר שקבוצה 
+\begin_inset Formula
+$U\subseteq\MKreal^{k}$
+
+
+\end_inset
+ היא 
+\bar under
+קבוצה חסומה
+\bar default
+ אם קיימים 
+\begin_inset Formula
+$P\in\MKreal^{k}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$0<r\in\MKreal$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$U\subseteq B_{r}\left(P\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+נאמר שקבוצה 
+\begin_inset Formula
+$U\subseteq\MKreal^{k}$
+
+
+\end_inset
+ היא 
+\bar under
+קבוצה פתוחה
+\bar default
+ אם לכל 
+\begin_inset Formula
+$P\in U$
+
+
+\end_inset
+ קיים 
+\begin_inset Formula
+$0<r\in\MKreal$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$B_{r}\left(P\right)\subseteq U$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+נאמר שקבוצה 
+\begin_inset Formula
+$U\subseteq\MKreal^{k}$
+
+
+\end_inset
+ היא 
+\bar under
+קבוצה סגורה
+\bar default
+ אם 
+\begin_inset Formula
+$\MKreal^{k}\setminus U$
+
+
+\end_inset
+ היא קבוצה פתוחה.
+\end_layout
+
+\begin_layout Itemize
+נאמר שקבוצה 
+\begin_inset Formula
+$K\subseteq\MKreal^{k}$
+
+
+\end_inset
+ היא 
+\bar under
+קבוצה קומפקטית
+\bar default
+ אם היא סגורה וחסומה.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+שפה של קבוצה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$D\subseteq\MKreal^{k}$
+
+
+\end_inset
+ קבוצה, נקודה 
+\begin_inset Formula
+$P\in D$
+
+
+\end_inset
+ תקרא 
+\bar under
+נקודת שפה
+\bar default
+ של 
+\begin_inset Formula
+$D$
+
+
+\end_inset
+ אם לכל סביבה 
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$P$
+
+
+\end_inset
+ קיימות 
+\begin_inset Formula
+$P_{1},P_{2}\in U$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P_{1}\in D$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$P_{2}\notin D$
+
+
+\end_inset
+, קבוצת נקודות השפה של 
+\begin_inset Formula
+$D$
+
+
+\end_inset
+ תסומן ב-
+\begin_inset Formula
+$\partial D$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Description
+סימון: בהינתן סדרת נקודות 
+\begin_inset Formula
+$\left(P_{n}\right)_{n=1}^{\infty}$
+
+
+\end_inset
+ נסמן גם (לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+
+
+\end_inset
+):
+\begin_inset Formula
+\[
+\begin{pmatrix}x_{n,1}\\
+x_{n,2}\\
+\vdots\\
+x_{n,k}
+\end{pmatrix}:=P_{n}
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+חסימות
+\series default
+
+\begin_inset Newline newline
+\end_inset
+נאמר שסדרת נקודות 
+\begin_inset Formula
+$\left(P_{n}\right)_{n=1}^{\infty}$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$\MKreal^{k}$
+
+
+\end_inset
+ היא 
+\bar under
+סדרה חסומה
+\bar default
+ אם קבוצת איבריה כזו.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+גבול של סדרה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$\left(P_{n}\right)_{n=1}^{\infty}$
+
+
+\end_inset
+ סדרת נקודות ב-
+\begin_inset Formula
+$\MKreal^{k}$
+
+
+\end_inset
+, נאמר שנקודה 
+\begin_inset Formula
+$L\in\MKreal^{k}$
+
+
+\end_inset
+ היא 
+\bar under
+גבול
+\bar default
+ של הסדרה 
+\begin_inset Formula
+$\left(P_{n}\right)_{n=1}^{\infty}$
+
+
+\end_inset
+ אם לכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+
+
+\end_inset
+ קיים 
+\begin_inset Formula
+$N\in\MKnatural$
+
+
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N<n\in\MKnatural$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$P_{n}\in B_{\varepsilon}\left(L\right)$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+גבול של סדרה הוא יחיד ולכן מוצדק לדבר על 
+\bar under
+הגבול
+\bar default
+ של 
+\begin_inset Formula
+$\left(P_{n}\right)_{n=1}^{\infty}$
+
+
+\end_inset
+ ולסמן:
+\begin_inset Formula
+\[
+\lim_{n\rightarrow\infty}P_{n}:=L
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$\left(P_{n}\right)_{n=1}^{\infty}$
+
+
+\end_inset
+ סדרת נקודות ב-
+\begin_inset Formula
+$\MKreal^{k}$
+
+
+\end_inset
+ ונסמן ב-
+\begin_inset Formula
+$x_{nj}$
+
+
+\end_inset
+ את הקואורדינטה ה-
+\begin_inset Formula
+$j$
+
+
+\end_inset
+ של הנקודה 
+\begin_inset Formula
+$P_{n}$
+
+
+\end_inset
+ (לכל 
+\begin_inset Formula
+$k\geq j\in\MKnatural$
+
+
+\end_inset
+ ולכל 
+\begin_inset Formula
+$n\in\MKnatural$
+
+
+\end_inset
+).
+\end_layout
+
+\begin_layout Claim
+\begin_inset Formula
+$\left(P_{n}\right)_{n=1}^{\infty}$
+
+
+\end_inset
+ היא סדרה חסומה (ב-
+\begin_inset Formula
+$\MKreal^{k}$
+
+
+\end_inset
+) אם"ם לכל 
+\begin_inset Formula
+$k\geq j\in\MKnatural$
+
+
+\end_inset
+ הסדרה 
+\begin_inset Formula
+$\left(x_{nj}\right)_{n=1}^{\infty}$
+
+
+\end_inset
+ היא סדרה חסומה (ב-
+\begin_inset Formula
+$\MKreal$
+
+
+\end_inset
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+אם 
+\begin_inset Formula
+$\left(P_{n}\right)_{n=1}^{\infty}$
+
+
+\end_inset
+ מתכנסת אז היא גם חסומה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset Formula
+$\left(P_{n}\right)_{n=1}^{\infty}$
+
+
+\end_inset
+ היא סדרה מתכנסת (ב-
+\begin_inset Formula
+$\MKreal^{k}$
+
+
+\end_inset
+) אם"ם לכל 
+\begin_inset Formula
+$k\geq j\in\MKnatural$
+
+
+\end_inset
+ הסדרה 
+\begin_inset Formula
+$\left(x_{n,j}\right)_{n=1}^{\infty}$
+
+
+\end_inset
+ היא סדרה מתכנסת (ב-
+\begin_inset Formula
+$\MKreal$
+
+
+\end_inset
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+קבוצה 
+\begin_inset Formula
+$U\subseteq\MKreal^{k}$
+
+
+\end_inset
+ היא קבוצה סגורה אם"ם לכל סדרת נקודות מתכנסת 
+\begin_inset Formula
+$\left(P_{n}\right)_{n=1}^{\infty}$
+
+
+\end_inset
+ שכל איבריה ב-
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ מתקיים ש-
+\begin_inset Formula
+$\lim_{n\rightarrow\infty}P_{n}\in U$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+קבוצה 
+\begin_inset Formula
+$K\subseteq\MKreal^{k}$
+
+
+\end_inset
+ היא קבוצה קומפקטית אם"ם לכל סדרת נקודות 
+\begin_inset Formula
+$\left(P_{n}\right)_{n=1}^{\infty}$
+
+
+\end_inset
+ שכל איבריה ב-
+\begin_inset Formula
+$K$
+
+
+\end_inset
+ קיימת תת-סדרה מתכנסת שגבולה ב-
+\begin_inset Formula
+$K$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+משפט בולצאנו-ויירשטראס
+\series default
+
+\begin_inset Newline newline
+\end_inset
+אם 
+\begin_inset Formula
+$\left(P_{n}\right)_{n=1}^{\infty}$
+
+
+\end_inset
+ היא סדרה חסומה אז יש לה תת-סדרה מתכנסת.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+פונקציות
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ עד כה למדנו בקורסי אינפי' על פונקציות שהתחום והטווח שלהן היו תתי-קבוצות של 
+\begin_inset Formula
+$\MKreal$
+
+
+\end_inset
+ (שהוא מ"ו מממד 
+\begin_inset Formula
+$1$
+
+
+\end_inset
+), בקורס זה נעסוק בעיקר בפונקציות מהצורה 
+\begin_inset Formula
+$f:D\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ כאשר 
+\begin_inset Formula
+$D\subseteq\MKreal^{m}$
+
+
+\end_inset
+ ובראש ובראשונה בפונקציות כנ"ל המקיימות 
+\begin_inset Formula
+$n+m=3$
+
+
+\end_inset
+ (יש בדיוק שתי אפשרויות) משום שאת הגרף של אלו ניתן לסרטט במרחב התלת-ממדי.
+\end_layout
+
+\begin_layout Definition
+נאמר שנקודה 
+\begin_inset Formula
+$P\in D\subseteq\MKreal^{n}$
+
+
+\end_inset
+ היא 
+\bar under
+נקודה פנימית
+\bar default
+ ב-
+\begin_inset Formula
+$D$
+
+
+\end_inset
+ אם קיים 
+\begin_inset Formula
+$0<r\in\MKreal$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$B_{r}\left(P\right)\subseteq D$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+נאמר שפונקציה 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ 
+\bar under
+חסומה
+\bar default
+ אם תמונתה היא קבוצה חסומה, כמו כן נאמר ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ 
+\bar under
+חסומה בקבוצה
+\bar default
+ 
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ (שמוכלת בתחום של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+) אם 
+\begin_inset Formula
+$f\left(U\right)$
+
+
+\end_inset
+ היא קבוצה חסומה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+גבול של פונקציה בנקודה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$f:D\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ פונקציה כנ"ל המוגדרת בסביבה מנוקבת של נקודה 
+\begin_inset Formula
+$P_{0}\in\MKreal^{m}$
+
+
+\end_inset
+, נאמר שנקודה (או וקטור) 
+\begin_inset Formula
+$L\in\MKreal^{n}$
+
+
+\end_inset
+ היא 
+\bar under
+גבול
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ אם לכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+
+
+\end_inset
+ קיימת 
+\begin_inset Formula
+$0<\delta\in\MKreal$
+
+
+\end_inset
+ כך שלכל נקודה 
+\begin_inset Formula
+$P\in B_{\delta}^{0}\left(P_{0}\right)$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$f\left(P\right)\in B_{\varepsilon}\left(L\right)$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+גבול של פונקציה הוא יחיד ולכן מוצדק לדבר על 
+\bar under
+הגבול
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ולסמן:
+\begin_inset Formula
+\[
+\lim_{P\rightarrow P_{0}}f\left(P\right):=L
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+רציפות של פונקציה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$f:D\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ פונקציה כנ"ל, נאמר ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ 
+\bar under
+רציפה בנקודה
+\bar default
+ 
+\begin_inset Formula
+$P_{0}\in D$
+
+
+\end_inset
+ אם הגבול 
+\begin_inset Formula
+$\lim_{P\rightarrow P_{0}}f\left(P\right)$
+
+
+\end_inset
+ קיים ושווה ל-
+\begin_inset Formula
+$f\left(P\right)$
+
+
+\end_inset
+, נאמר ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ 
+\bar under
+רציפה
+\bar default
+ אם 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ רציפה ב-
+\begin_inset Formula
+$P'$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$P'\in D$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ ניתן להסתכל על כל פונקציה מהצורה 
+\begin_inset Formula
+$f:\MKreal\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ כסדרה סופית של פונקציות שהתחום והטווח שלהן הם תתי-קבוצות של 
+\begin_inset Formula
+$\MKreal$
+
+
+\end_inset
+, כך:
+\begin_inset Formula
+\[
+\begin{pmatrix}f_{1}\left(t\right)\\
+f_{2}\left(t\right)\\
+\vdots\\
+f_{n}\left(t\right)
+\end{pmatrix}:=f\left(t\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+יהיו 
+\begin_inset Formula
+$I\subseteq\MKreal$
+
+
+\end_inset
+ מקטע ו-
+\begin_inset Formula
+$2\leq n\in\MKnatural$
+
+
+\end_inset
+, פונקציה מהצורה 
+\begin_inset Formula
+$\gamma:I\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ תקרא 
+\bar under
+מסילה
+\bar default
+ אם היא רציפה בכל רכיב בנפרד
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר (במונחי ההערה שלעיל) 
+\begin_inset Formula
+$f_{i}$
+
+
+\end_inset
+ רציפה לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+, התמונה של מסילה נקראת 
+\bar under
+מסלול
+\bar default
+, ויצירת מסילה שהמסלול שלה הוא קבוצה נתונה תיקרא 
+\bar under
+פרמטריזציה
+\bar default
+ של אותה קבוצה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+נאמר שמסילה היא 
+\bar under
+מסילה פשוטה
+\bar default
+ אם היא חח"ע.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$\gamma:I\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ מסילה ויהיו 
+\begin_inset Formula
+$t,t'\in I$
+
+
+\end_inset
+, 
+\bar under
+וקטור המהירות הממוצעת
+\bar default
+ של 
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ בין 
+\begin_inset Formula
+$t$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$t'$
+
+
+\end_inset
+ הוא הווקטור:
+\begin_inset Formula
+\[
+\frac{1}{t-t'}\cdot\left[\gamma\left(t\right)-\gamma\left(t'\right)\right]=\frac{1}{t-t'}\cdot\left[\begin{pmatrix}f_{1}\left(t\right)\\
+f_{2}\left(t\right)\\
+\vdots\\
+f_{n}\left(t\right)
+\end{pmatrix}-\begin{pmatrix}f_{1}\left(t'\right)\\
+f_{2}\left(t'\right)\\
+\vdots\\
+f_{n}\left(t'\right)
+\end{pmatrix}\right]=\frac{1}{t-t'}\cdot\left[\begin{pmatrix}f_{1}\left(t\right)-f_{1}\left(t'\right)\\
+f_{2}\left(t\right)-f_{2}\left(t'\right)\\
+\vdots\\
+f_{n}\left(t\right)-f_{n}\left(t'\right)
+\end{pmatrix}\right]
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$\gamma:I\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ מסילה ותהא 
+\begin_inset Formula
+$t_{0}\in I$
+
+
+\end_inset
+ נקודה פנימית ב-
+\begin_inset Formula
+$I$
+
+
+\end_inset
+, נאמר ש-
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ 
+\bar under
+גזירה
+\bar default
+ ב-
+\begin_inset Formula
+$t_{0}$
+
+
+\end_inset
+ אם קיים הגבול:
+\begin_inset Formula
+\[
+\lim_{t\rightarrow t_{0}}\left(\frac{1}{t-t_{0}}\cdot\left(\gamma\left(t\right)-\gamma\left(t_{0}\right)\right)\right)
+\]
+
+
+
+
+\end_inset
+ואז נקרא לאותו גבול
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+שהוא הגבול של וקטורי המהירות הממוצעת בנקודה 
+\begin_inset Formula
+$t_{0}$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+ 
+\bar under
+וקטור הנגזרת
+\bar default
+ של 
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ בנקודה 
+\begin_inset Formula
+$t_{0}$
+
+
+\end_inset
+ ונסמן אותו ע"י 
+\begin_inset Formula
+$\gamma'\left(t_{0}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$\gamma:I\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ מסילה הגזירה בנקודה פנימית 
+\begin_inset Formula
+$t_{0}$
+
+
+\end_inset
+, 
+\bar under
+המסילה המשיקה
+\bar default
+ ל-
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ בנקודה 
+\begin_inset Formula
+$t_{0}$
+
+
+\end_inset
+ היא המסילה המוגדרת ע"י (לכל 
+\begin_inset Formula
+$t\in\MKreal$
+
+
+\end_inset
+):
+\begin_inset Formula
+\[
+f\left(t\right):=\gamma\left(t_{0}\right)+\gamma'\left(t_{0}\right)\cdot\left(t-t_{0}\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ כמובן שהרעיון שלה הגדרה זו הוא מסילה שתמונתה היא ישר העוברת בנקודת ההשקה "באותו הזמן" של הפונקציה המקורית ובאותו כיוון.
+\end_layout
+
+\begin_layout Definition
+מסילה 
+\begin_inset Formula
+$\gamma:I\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ תקרא 
+\bar under
+גזירה
+\bar default
+ ב-
+\begin_inset Formula
+$I$
+
+
+\end_inset
+ אם היא גזירה לכל 
+\begin_inset Formula
+$t\in I$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+מסילה 
+\begin_inset Formula
+$\gamma:I\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ תקרא 
+\bar under
+חלקה
+\bar default
+ אם היא גזירה ב-
+\begin_inset Formula
+$I$
+
+
+\end_inset
+ ובנוסף וקטור הנגזרת שלה שונה מווקטור האפס בכל נקודה.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ הסיבה לדרישה שווקטור הנגזרת יהיה שונה מווקטור האפס היא כדי שההגדרה תתלכד עם קיום ישר משיק.
+\end_layout
+
+\begin_layout Theorem
+תהא 
+\begin_inset Formula
+$\gamma:I\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ מסילה ותהיינה 
+\begin_inset Formula
+$f_{1},f_{2},\ldots,f_{n}\in\MKreal^{I}$
+
+
+\end_inset
+ פונקציות כך שלכל 
+\begin_inset Formula
+$n\geq j\in\MKnatural$
+
+
+\end_inset
+ ולכל 
+\begin_inset Formula
+$t\in I$
+
+
+\end_inset
+ יתקיים:
+\begin_inset Formula
+\[
+\gamma\left(t\right)=\begin{pmatrix}f_{1}\left(t\right)\\
+f_{2}\left(t\right)\\
+\vdots\\
+f_{n}\left(t\right)
+\end{pmatrix}
+\]
+
+
+
+
+\end_inset
+ראינו בקובץ הטענות ש-
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ גזירה בנקודה 
+\begin_inset Formula
+$t_{0}\in I$
+
+
+\end_inset
+ אם"ם לכל 
+\begin_inset Formula
+$n\geq j\in\MKnatural$
+
+
+\end_inset
+ הפונקציה 
+\begin_inset Formula
+$f_{j}$
+
+
+\end_inset
+ גזירה ב-
+\begin_inset Formula
+$t_{0}$
+
+
+\end_inset
+ ואז וקטור הנגזרת של 
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$t_{0}$
+
+
+\end_inset
+ הוא:
+\begin_inset Formula
+\[
+\begin{bmatrix}f_{1}'\left(t_{0}\right)\\
+f_{2}'\left(t_{0}\right)\\
+\vdots\\
+f_{n}'\left(t_{0}\right)
+\end{bmatrix}
+\]
+
+
+
+
+\end_inset
+לכן נאמר ש-
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ 
+\bar under
+גזירה פעמיים
+\bar default
+ בנקודה 
+\begin_inset Formula
+$t_{0}\in I$
+
+
+\end_inset
+ אם לכל 
+\begin_inset Formula
+$n\geq j\in\MKnatural$
+
+
+\end_inset
+ הפונקציה 
+\begin_inset Formula
+$f_{j}$
+
+
+\end_inset
+ גזירה פעמיים ב-
+\begin_inset Formula
+$t_{0}$
+
+
+\end_inset
+ ואז 
+\bar under
+וקטור התאוצה
+\bar default
+ של 
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$t_{0}$
+
+
+\end_inset
+ הוא:
+\begin_inset Formula
+\[
+\begin{bmatrix}f_{1}''\left(t_{0}\right)\\
+f_{2}''\left(t_{0}\right)\\
+\vdots\\
+f_{n}''\left(t_{0}\right)
+\end{bmatrix}
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+כשאנו אומרים "פונקציה מרובת משתנים" כוונתנו לפונקציה שהתחום שלה הוא קבוצת סדרות סופיות כלשהו (למשל 
+\begin_inset Formula
+$\MKreal^{n}$
+
+
+\end_inset
+) שהרי מהגדרתה פונקציה אינה יכולה לקבל יותר ממשתנה אחד, הדרך "לעקוף" זאת היא לתת לה משתנה אחד (כגון סדרה) המכיל בתוכו יותר ממשתנה אחד; לעת עתה נעסוק בעיקר בפונקציות מהצורה 
+\begin_inset Formula
+$f:D\rightarrow\MKreal$
+
+
+\end_inset
+ כאשר 
+\begin_inset Formula
+$D\subseteq\MKreal^{2}$
+
+
+\end_inset
+, הגרף של פונקציה מצורה זו נקרא 
+\bar under
+יריעה
+\bar default
+.
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$f:D\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה כנ"ל, הגרף של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ הוא תת-קבוצה של מרחב התלת-ממדי 
+\begin_inset Formula
+$\MKreal^{3}$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כאשר המישור הנפרש ע"י צי ה-
+\begin_inset Formula
+$x$
+
+
+\end_inset
+ וציר ה-
+\begin_inset Formula
+$y$
+
+
+\end_inset
+ ייצג את התחום ואילו הישר שיוצר ציר ה-
+\begin_inset Formula
+$z$
+
+
+\end_inset
+ מייצג את הטווח.
+\end_layout
+
+\end_inset
+ ומבחינה אינטואיטיבית הוא מהווה מפה תלת-ממדית של "פני השטח" הנוצרים ע"י הפונקציה (הפונקציה קובעת מה יהיה גובה פני הקרקע בכל נקודה במישור); אינטואיציה זו מאפשרת לנו לייצג את היריעה גם במישור כאשר בכל נקודה/אזור אנו כותבים מהו "גובה הפונקציה" בנקודה או באזור הללו, לייצוג כזה קוראים 
+\bar under
+מפה טופוגרפית
+\bar default
+ וכמתבקש לקבוצת הנקודות בגרף של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ שכולן בגובה נתון נקרא 
+\bar under
+קו גובה
+\bar default
+, כך למשל קו הגובה 
+\begin_inset Formula
+$3$
+
+
+\end_inset
+ יהיה הקבוצה 
+\begin_inset Formula
+$\left\{ \left(x,y,3\right)\in\MKreal^{3}\mid3=f\left(x,y\right)\right\} $
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ המחשות טובות ניתן לקבל באתר: 
+\begin_inset CommandInset href
+LatexCommand href
+name "https://www.math3d.org"
+target https://www.math3d.org
+literal false
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color blue
+כל הפונקציות שנעסוק בהן בסעיף זה הן פונקציות מהצורה 
+\begin_inset Formula
+$f:D\rightarrow\MKreal$
+
+
+\end_inset
+ כאשר 
+\begin_inset Formula
+$D\subseteq\MKreal^{n}$
+
+
+\end_inset
+ ולכן לא אטרח לציין זאת בכל פעם מחדש.
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+נקודות קיצון כלליות (גלובליות)
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$f:D\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה ותהא 
+\begin_inset Formula
+$A\subseteq D$
+
+
+\end_inset
+, נאמר שנקודה 
+\begin_inset Formula
+$P\in A$
+
+
+\end_inset
+ היא 
+\bar under
+נקודת מקסימום/מינימום כללית (גלובלית)
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$A$
+
+
+\end_inset
+ אם לכל נקודה 
+\begin_inset Formula
+$P'\in D$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$f\left(P'\right)\leq f\left(P\right)$
+
+
+\end_inset
+ (מקסימום) או 
+\begin_inset Formula
+$f\left(P'\right)\geq f\left(P\right)$
+
+
+\end_inset
+ (מינימום) ובמקרה כזה הערך 
+\begin_inset Formula
+$f\left(P\right)$
+
+
+\end_inset
+ יקרא 
+\bar under
+הערך המקסימלי/המינימלי
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$A$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+נקודות קיצון מקומיות
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה המוגדרת בסביבה מלאה של נקודה 
+\begin_inset Formula
+$P\in\MKreal^{n}$
+
+
+\end_inset
+, נאמר ש-
+\begin_inset Formula
+$P$
+
+
+\end_inset
+ היא 
+\bar under
+נקודת מקסימום/מינימום מקומית
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ אם קיימת סביבה מלאה של 
+\begin_inset Formula
+$P$
+
+
+\end_inset
+ שבה 
+\begin_inset Formula
+$P$
+
+
+\end_inset
+ היא נקודת מקסימות כללית של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+אם לפונקציה 
+\begin_inset Formula
+$f:D\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ יש גבול בנקודה 
+\begin_inset Formula
+$P_{0}\in D\subseteq\MKreal^{m}$
+
+
+\end_inset
+ אז קיימת סביבה מנוקבת 
+\begin_inset Formula
+$U\subseteq D$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f\left(U\right)$
+
+
+\end_inset
+ היא קבוצה חסומה.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+תנאי היינה לגבול של פונקציה בנקודה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$f:D\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ פונקציה המוגדרת בסביבה מנוקבת 
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ של נקודה 
+\begin_inset Formula
+$P_{0}\in\MKreal^{m}$
+
+
+\end_inset
+ (
+\begin_inset Formula
+$D\subseteq\MKreal^{m}$
+
+
+\end_inset
+).
+\begin_inset Newline newline
+\end_inset
+תנאי הכרחי ומספיק לכך ש-
+\begin_inset Formula
+$\lim_{P\rightarrow P_{0}}f\left(P\right)=L\in\MKreal^{n}$
+
+
+\end_inset
+ הוא שלכל סדרת נקודות 
+\begin_inset Formula
+$\left(P_{n}\right)_{n=1}^{\infty}$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ המתכנסת ל-
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\lim_{n\rightarrow\infty}f\left(P_{n}\right)=L$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+\series bold
+תנאי היינה לרציפות של פונקציה בנקודה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$f:D\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ פונקציה המוגדרת בסביבה מלאה 
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ של נקודה 
+\begin_inset Formula
+$P_{0}\in\MKreal^{m}$
+
+
+\end_inset
+ (
+\begin_inset Formula
+$D\subseteq\MKreal^{m}$
+
+
+\end_inset
+).
+\begin_inset Newline newline
+\end_inset
+תנאי הכרחי ומספיק לכך ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ רציפה ב-
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ הוא שלכל סדרת נקודות 
+\begin_inset Formula
+$\left(P_{n}\right)_{n=1}^{\infty}$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ המתכנסת ל-
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\lim_{n\rightarrow\infty}f\left(P_{n}\right)=f\left(P_{0}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+משפט ההצבה בגבולות
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$f:D_{1}\rightarrow D_{2}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$g:D_{2}\rightarrow\MKreal^{k}$
+
+
+\end_inset
+ (כאשר 
+\begin_inset Formula
+$D_{1}\subseteq\MKreal^{m}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$D_{2}\subseteq\MKreal^{n}$
+
+
+\end_inset
+) ותהיינה 
+\begin_inset Formula
+$P_{0}\in D_{1}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$Q_{0}\in D_{2}$
+
+
+\end_inset
+ נקודות פנימיות (בהתאמה).
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם ל-
+\begin_inset Formula
+$g$
+
+
+\end_inset
+ יש גבול ב-
+\begin_inset Formula
+$Q_{0}$
+
+
+\end_inset
+, ל-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ יש גבול ב-
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\lim_{P\rightarrow P_{0}}f\left(P\right)=Q_{0}$
+
+
+\end_inset
+, ובנוסף קיימת סביבה מנוקבת 
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$P\in U$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$f\left(P\right)\neq Q_{0}$
+
+
+\end_inset
+, אז ל-
+\begin_inset Formula
+$g\circ f$
+
+
+\end_inset
+ יש גבול ב-
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ ומתקיים:
+\begin_inset Formula
+\[
+\lim_{P\rightarrow P_{0}}g\left(f\left(P\right)\right)=\lim_{Q\rightarrow Q_{0}}g\left(Q\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$g$
+
+
+\end_inset
+ רציפות ב-
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ וב-
+\begin_inset Formula
+$Q_{0}$
+
+
+\end_inset
+ (בהתאמה) אז 
+\begin_inset Formula
+$g\circ f$
+
+
+\end_inset
+ רציפה ב-
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ ומתקיים 
+\begin_inset Formula
+$g\left(f\left(P_{0}\right)\right)=g\left(Q_{0}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Subsection
+מסילות
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "theorem 2.5"
+\end_inset
+תהא 
+\begin_inset Formula
+$\gamma:I\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ מסילה ותהיינה 
+\begin_inset Formula
+$f_{1},f_{2},\ldots,f_{n}\in\MKreal^{I}$
+
+
+\end_inset
+ פונקציות כך שלכל 
+\begin_inset Formula
+$n\geq j\in\MKnatural$
+
+
+\end_inset
+ ולכל 
+\begin_inset Formula
+$t\in I$
+
+
+\end_inset
+ יתקיים:
+\begin_inset Formula
+\[
+\gamma\left(t\right)=\begin{pmatrix}f_{1}\left(t\right)\\
+f_{2}\left(t\right)\\
+\vdots\\
+f_{n}\left(t\right)
+\end{pmatrix}
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$t_{0}\in I$
+
+
+\end_inset
+ נקודה פנימית ב-
+\begin_inset Formula
+$I$
+
+
+\end_inset
+, 
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ גזירה בנקודה 
+\begin_inset Formula
+$t_{0}\in I$
+
+
+\end_inset
+ אם"ם לכל 
+\begin_inset Formula
+$n\geq j\in\MKnatural$
+
+
+\end_inset
+ הפונקציה 
+\begin_inset Formula
+$f_{j}$
+
+
+\end_inset
+ גזירה ב-
+\begin_inset Formula
+$t_{0}$
+
+
+\end_inset
+ ואז וקטור הנגזרת של 
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$t_{0}$
+
+
+\end_inset
+ הוא:
+\begin_inset Formula
+\[
+\begin{bmatrix}f_{1}'\left(t_{0}\right)\\
+f_{2}'\left(t_{0}\right)\\
+\vdots\\
+f_{n}'\left(t_{0}\right)
+\end{bmatrix}
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+יהיו 
+\begin_inset Formula
+$a,b\in\MKreal$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a<b$
+
+
+\end_inset
+ ותהיינה 
+\begin_inset Formula
+$f,g:\left[a,b\right]\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציות רציפות בקטע 
+\begin_inset Formula
+$\left[a,b\right]$
+
+
+\end_inset
+ וגזירות בקטע 
+\begin_inset Formula
+$\left(a,b\right)$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$g'\left(t\right)\neq0$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$t\in\left(a,b\right)$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+תהא גם 
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{2}$
+
+
+\end_inset
+ מסילה המוגדרת ע"י (לכל 
+\begin_inset Formula
+$t\in\left[a,b\right]$
+
+
+\end_inset
+):
+\begin_inset Formula
+\[
+\gamma\left(t\right):=\begin{pmatrix}g\left(t\right)\\
+f\left(t\right)
+\end{pmatrix}
+\]
+
+
+
+
+\end_inset
+קיימת נקודה 
+\begin_inset Formula
+$c\in\left(a,b\right)$
+
+
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+\frac{g\left(b\right)-g\left(a\right)}{g'\left(c\right)}\cdot\gamma'\left(c\right)=\gamma\left(b\right)-\gamma\left(a\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ כלומר משפט הערך הממוצע של קושי אומר שקיימת נקודה 
+\begin_inset Formula
+$c\in\left(a,b\right)$
+
+
+\end_inset
+ שבה שיפוע הישר המשיק למסלול של 
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ הוא בדיוק השיפוע של הקטע המחבר בין 
+\begin_inset Formula
+$\gamma\left(a\right)$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$\gamma\left(b\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ כדי להוכיח את המשפט יש להשתמש במשפט הערך הממוצע של קושי, ע"פ משפט הערך הממוצע של קושי נובע קיימת 
+\begin_inset Formula
+$c\in\left(a,b\right)$
+
+
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+\frac{f'\left(c\right)}{g'\left(c\right)}=\frac{f\left(b\right)-f\left(a\right)}{g\left(b\right)-g\left(a\right)}
+\]
+
+
+
+
+\end_inset
+וממילא גם:
+\begin_inset Formula
+\[
+\frac{g\left(b\right)-g\left(a\right)}{g'\left(c\right)}\cdot f'\left(c\right)=f\left(b\right)-f\left(a\right)
+\]
+
+
+
+
+\end_inset
+ומכאן שע"פ המשפט הקודם (
+\color blue
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 2.5"
+plural false
+caps false
+noprefix false
+\end_inset
+
+\color inherit
+) מתקיים:
+\begin_inset Formula
+\[
+\frac{g\left(b\right)-g\left(a\right)}{g'\left(c\right)}\cdot\gamma'\left(t_{0}\right)=\frac{g\left(b\right)-g\left(a\right)}{g'\left(c\right)}\cdot\begin{bmatrix}f'\left(c\right)\\
+g'\left(c\right)
+\end{bmatrix}=\begin{pmatrix}f\left(b\right)-f\left(a\right)\\
+g\left(b\right)-g\left(a\right)
+\end{pmatrix}=\gamma\left(b\right)-\gamma\left(a\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+פונקציות מרובות משתנים
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color blue
+כל הפונקציות שנעסוק בהן בסעיף זה הן פונקציות מהצורה 
+\begin_inset Formula
+$f:D\rightarrow\MKreal$
+
+
+\end_inset
+ כאשר 
+\begin_inset Formula
+$D\subseteq\MKreal^{n}$
+
+
+\end_inset
+ ולכן לא אטרח לציין זאת בכל פעם מחדש.
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Claim
+תהא 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה כך של-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ יש גבול 
+\begin_inset Formula
+$L\in\MKreal$
+
+
+\end_inset
+ בנקודה 
+\begin_inset Formula
+$P_{0}\in\MKreal^{n}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+אם 
+\begin_inset Formula
+$0<L$
+
+
+\end_inset
+ אז קיימת סביבה מנוקבת 
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$P\in U$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\frac{L}{2}<f\left(P\right)<\frac{3L}{2}$
+
+
+\end_inset
+,
+\end_layout
+
+\begin_layout Standard
+ואם 
+\begin_inset Formula
+$L<0$
+
+
+\end_inset
+ אז קיימת סביבה מנוקבת 
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$P\in U$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\frac{3L}{2}<f\left(P\right)<\frac{L}{2}$
+
+
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה כך של-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ יש גבול 
+\begin_inset Formula
+$L\in\MKreal$
+
+
+\end_inset
+ בנקודה 
+\begin_inset Formula
+$P_{0}\in\MKreal^{m}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+אם 
+\begin_inset Formula
+$0<L$
+
+
+\end_inset
+ אז קיימת סביבה מנוקבת של 
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ שבה 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ חיובית ואם 
+\begin_inset Formula
+$L<0$
+
+
+\end_inset
+ אז קיימת סביבה מנוקבת של 
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ שבה 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ שלילית.
+\end_layout
+
+\end_deeper
+
+\begin_layout Theorem
+\series bold
+"האנלוג הרציף של תנאי היינה"
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה המוגדרת בסביבה מנוקבת של נקודה 
+\begin_inset Formula
+$P_{0}\in\MKreal^{n}$
+
+
+\end_inset
+, ל-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ יש גבול 
+\begin_inset Formula
+$L\in\MKreal$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ אם"ם לכל מסילה 
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{m}$
+
+
+\end_inset
+ המקיימת 
+\begin_inset Formula
+$\gamma\left(\left(a,b\right]\right)\subseteq D\setminus\left\{ P_{0}\right\} $
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\gamma\left(a\right)=P_{0}$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\lim_{t\rightarrow a^{+}}\left(f\circ\gamma\right)\left(t\right)=L
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ נזכור שמהגדרתה מסילה היא פונקציה רציפה ולכן 
+\begin_inset Formula
+$\lim_{x\rightarrow a^{+}}\gamma\left(t\right)=\gamma\left(a\right)=P_{0}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ נשים לב ש-
+\begin_inset Formula
+$f\circ\gamma$
+
+
+\end_inset
+ היא פונקציה שהתחום שלה הוא 
+\begin_inset Formula
+$\left(a,b\right]$
+
+
+\end_inset
+ והטווח שלה הוא 
+\begin_inset Formula
+$D\setminus\left\{ P_{0}\right\} $
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+אריתמטיקה של גבולות
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$g$
+
+
+\end_inset
+ פונקציות כך שקיימים הגבולות (עבור 
+\begin_inset Formula
+$P_{0}\in\MKreal^{n}$
+
+
+\end_inset
+):
+\begin_inset Formula
+\[
+L_{1}:=\lim_{P\rightarrow P_{0}}f\left(P\right),\ L_{2}:=\lim_{P\rightarrow P_{0}}g\left(P\right)
+\]
+
+
+
+
+\end_inset
+מתקיימים ארבעת הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+לפונקציה 
+\begin_inset Formula
+$f+g$
+
+
+\end_inset
+ יש גבול בנקודה 
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ ןערכו הוא 
+\begin_inset Formula
+$L_{1}+L_{2}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לפונקציה 
+\begin_inset Formula
+$f\cdot g$
+
+
+\end_inset
+ יש גבול בנקודה 
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ וערכו הוא 
+\begin_inset Formula
+$L_{1}\cdot L_{2}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$L_{2}\neq0$
+
+
+\end_inset
+ אז לפונקציה 
+\begin_inset Formula
+$\frac{1}{g}$
+
+
+\end_inset
+ יש גבול בנקודה 
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ וערכו הוא 
+\begin_inset Formula
+$\frac{1}{L_{2}}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$L_{2}\neq0$
+
+
+\end_inset
+ אז לפונקציה 
+\begin_inset Formula
+$\frac{f}{g}$
+
+
+\end_inset
+ יש גבול בנקודה 
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ וערכו הוא 
+\begin_inset Formula
+$\frac{L_{1}}{L_{2}}$
+
+
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Corollary
+\series bold
+אריתמטיקה של רציפות
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$g$
+
+
+\end_inset
+ פונקציות רציפות בנקודה 
+\begin_inset Formula
+$P_{0}\in\MKreal^{n}$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מתקיימים ארבעת הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+הפונקציה 
+\begin_inset Formula
+$f+g$
+
+
+\end_inset
+ רציפה ב-
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(f+g\right)\left(P_{0}\right)=f\left(P_{0}\right)+g\left(P_{0}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+הפונקציה 
+\begin_inset Formula
+$f\cdot g$
+
+
+\end_inset
+ רציפה ב-
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(f\cdot g\right)\left(P_{0}\right)=f\left(P_{0}\right)\cdot g\left(P_{0}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$g\left(P_{0}\right)\neq0$
+
+
+\end_inset
+ אז הפונקציה 
+\begin_inset Formula
+$\frac{1}{g}$
+
+
+\end_inset
+ רציפה ב-
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(\frac{1}{g}\right)\left(P_{0}\right)=\frac{1}{g\left(P_{0}\right)}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$g\left(P_{0}\right)\neq0$
+
+
+\end_inset
+ אז הפונקציה 
+\begin_inset Formula
+$\frac{1}{g}$
+
+
+\end_inset
+ רציפה ב-
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(\frac{f}{g}\right)\left(P_{0}\right)=\frac{f\left(P_{0}\right)}{g\left(P_{0}\right)}$
+
+
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+תהיינה 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$g$
+
+
+\end_inset
+ פונקציות כך שקיימים הגבולות (עבור 
+\begin_inset Formula
+$P_{0}\in\MKreal^{n}$
+
+
+\end_inset
+):
+\begin_inset Formula
+\[
+L_{1}:=\lim_{P\rightarrow P_{0}}f\left(P\right),\ L_{2}:=\lim_{P\rightarrow P_{0}}g\left(P\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+כלל חסומה ואפסה: אם 
+\begin_inset Formula
+$L_{1}=0$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$g$
+
+
+\end_inset
+ חסומה בסביבה מנוקבת של 
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ אז ל-
+\begin_inset Formula
+$f\cdot g$
+
+
+\end_inset
+ יש גבול ב-
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ והוא 
+\begin_inset Formula
+$0$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם קיימת סביבה מנוקבת 
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$P\in U$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$f\left(P\right)\leq g\left(P\right)$
+
+
+\end_inset
+ אז 
+\begin_inset Formula
+$L_{1}\leq L_{2}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$L_{1}<L_{2}$
+
+
+\end_inset
+ אז קיימת סביבה מנוקבת 
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$P\in U$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$f\left(P\right)<g\left(P\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ כפי שראינו באינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+גם כאן א"ש חזק בין 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$g$
+
+
+\end_inset
+ בסעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+לא יגרום לא"ש חזק בין הגבולות ובסעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+א"א לוותר על הא"ש החזק.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+משפט הכריך
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+, 
+\begin_inset Formula
+$g$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$h$
+
+
+\end_inset
+ פונקציות המוגדרות בסביבה מנוקבת 
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ של נקודה 
+\begin_inset Formula
+$P_{0}\in\MKreal^{n}$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+אם לכל 
+\begin_inset Formula
+$P\in U$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$f\left(P\right)\leq g\left(P\right)\leq h\left(P\right)$
+
+
+\end_inset
+ ובנוסף ל-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ול-
+\begin_inset Formula
+$h$
+
+
+\end_inset
+ יש גבול בנקודה 
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+L:=\lim_{P\rightarrow P_{0}}f\left(P\right)=\lim_{P\rightarrow P_{0}}h\left(P\right)
+\]
+
+
+
+
+\end_inset
+אז גם ל-
+\begin_inset Formula
+$g$
+
+
+\end_inset
+ יש גבול ב-
+\begin_inset Formula
+$P_{0}$
+
+
+\end_inset
+ ומתקיים:
+\begin_inset Formula
+\[
+\lim_{P\rightarrow P_{0}}g\left(P\right)=L
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+משפט ויירשטראס הראשון
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה המוגדרת בעל קבוצה קומפקטית 
+\begin_inset Formula
+$\emptyset\neq K\subseteq\MKreal^{n}$
+
+
+\end_inset
+, 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ חסומה ב-
+\begin_inset Formula
+$K$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+עיקרון המקסימום והמינימום של ויירשטראס (משפט ויירשטראס השני)
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה המוגדרת בעל קבוצה קומפקטית 
+\begin_inset Formula
+$\emptyset\neq K\subseteq\MKreal^{n}$
+
+
+\end_inset
+, 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ מקבלת מקסימום ומינימום ב-
+\begin_inset Formula
+$K$
+
+
+\end_inset
+ (או במילים אחרות 
+\begin_inset Formula
+$f\left(K\right)$
+
+
+\end_inset
+ היא קטע סגור ב-
+\begin_inset Formula
+$\MKreal$
+
+
+\end_inset
+).
+\end_layout
+
+\end_body
+
+\end_document
+

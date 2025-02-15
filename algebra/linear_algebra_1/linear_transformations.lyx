@@ -1,0 +1,6415 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The head's design for summuries,make the layout more similar to a book:
+\AtBeginDocument{
+\renewcommand\headrule{%
+  \kern -7pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+  \kern 10pt
+}}
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Correct the reversed parentheses in labels:
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\newfontfamily{\hebrewfont}{David}
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+
+\end_preamble
+
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+customHeadersFooters
+\end_modules
+
+\maintain_unincluded_children false
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+
+
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size      Larger
+	  Series     Bold
+	EndFont
+End
+
+
+Style Solution
+
+	LabelString           "פתרון: "End
+
+
+Style Notation
+
+	LabelString           "סימון  \thetheorem: "End
+
+Style Theorem
+
+	LabelString           "משפט \thetheorem: "End
+
+Style Property
+
+	LabelString           "תזכורת: "End
+
+\end_local_layout
+
+\language hebrew
+
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\boxbgcolor #cccccc
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+
+\tocdepth 3
+
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "C:/Users/sraya/AppData/Roaming/LyX2.4/macros/MKmacros.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Right Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+leftmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Left Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+העתקות לינאריות
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Center Footer
+
+\end_layout
+
+\begin_layout Title
+
+\series bold
+\size huge
+העתקות לינאריות
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+התחלה
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בנושא השני בקורס זה - "מטריצות ומרחבי קואורדינטות" - ראינו את הקשר בין מטריצות מעל שדה למרחב הקואורדינטות שלו, בנושא זה נראה הכללה של נקודה זו למרחבים וקטוריים כלליים ונראה גם עד כמה מרחב הקואורדינטות עוזר לנו להבין אותם.
+\end_layout
+
+\begin_layout Standard
+יהיו 
+\begin_inset Formula
+$V$
+\end_inset
+ ו-
+\begin_inset Formula
+$W$
+\end_inset
+ מרחבים וקטוריים מעל לשדה 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+פונקציה 
+\begin_inset Formula
+$T:V\rightarrow W$
+\end_inset
+ תיקרא 
+\bar under
+העתקה ליניארית
+\bar default
+ (להלן גם: 
+\bar under
+ה"ל
+\bar default
+) אם היא מקיימת את שתי התכונות הבאות:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+חיבוריות (אדיטיביות) - לכל 
+\begin_inset Formula
+$v_{1},v_{2}\in V$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$T\left(v_{1}+v_{2}\right)=T\left(v_{1}\right)+T\left(v_{2}\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+כפליות (הומוגניות) - לכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$c\in\MKfield$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$T\left(c\cdot v\right)=c\cdot T\left(v\right)$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כלומר העתקה ליניארית היא פונקציה 
+\series bold
+השומרת על המבנה
+\series default
+ של המרחב הווקטורי (בקובץ הטענות נראה שבהכרח מתקיים 
+\begin_inset Formula
+$T\left(0_{V}\right)=0_{W}$
+\end_inset
+).
+\begin_inset Newline newline
+\end_inset
+מבחינה גאומטרית זה אומר שבניגוד לכל פונקציה 
+\begin_inset Formula
+$f:\MKreal^{n}\rightarrow\MKreal^{n}$
+\end_inset
+ שיכולה לעוות את המרחב בכל דרך שנעלה על הדעת, העתקות ליניאריות מוגבלות ביכולת העיוות שלהן - הגבלה זו מתבטאת בכך שראשית הצירים מועתקת בהכרח אל עצמה ושקווים ישרים אינם מתעקמים; הנה 
+\begin_inset CommandInset href
+LatexCommand href
+name "סרטון"
+target https://www.youtube.com/watch?v=kYB8IZa5AuE&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=3
+literal false
+\end_inset
+ של
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\lang english
+3blue1brown
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\lang default
+
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+שמסביר את הנקודה הזו בצורה נהדרת (כמו תמיד).
+\lang default
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ שימו לב: החיבור הווקטורי והכפל בסקלר שבאגף שמאל הם אלו של 
+\begin_inset Formula
+$V$
+\end_inset
+ ואילו החיבור הווקטורי והכפל בסקלר שבאגף ימין הם אלו של 
+\begin_inset Formula
+$W$
+\end_inset
+, זו הסיבה שהעתקה ליניארית יכולה להיות רק בין שני מרחבים וקטוריים מעל לאותו שדה.
+\end_layout
+
+\begin_layout Example
+פונקציית האפס (
+\begin_inset Formula
+$f\left(v\right):=0_{W}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+) ופונקציית הזהות (
+\begin_inset Formula
+$\MKid_{V}$
+\end_inset
+) הן העתקות ליניאריות.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Example
+בדוגמה הזו נתקלנו כבר בנושא הקודם - כל מטריצה 
+\begin_inset Formula
+$A\in M_{m\times n}\left(\MKfield\right)$
+\end_inset
+ מגדירה העתקה ליניארית 
+\begin_inset Formula
+$T_{A}:\MKfield^{n}\rightarrow\MKfield^{m}$
+\end_inset
+ ע"י 
+\begin_inset Formula
+$T_{A}\left(v\right):=A\cdot v$
+\end_inset
+ (לכל 
+\begin_inset Formula
+$v\in\MKfield^{n}$
+\end_inset
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Example
+תהא 
+\begin_inset Formula
+$A$
+\end_inset
+ קבוצה, ראינו שקבוצת הפונקציות מ-
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ היא מרחב וקטורי, כל איבר 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ מגדיר העתקה ליניארית 
+\begin_inset Formula
+$T_{a}:\MKfield^{A}\rightarrow\MKfield$
+\end_inset
+ ע"י הצבה - 
+\begin_inset Formula
+$T_{a}\left(f\right):=f\left(a\right)$
+\end_inset
+ (לכל 
+\begin_inset Formula
+$f\in\MKfield^{A}$
+\end_inset
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Example
+כל איבר 
+\begin_inset Formula
+$r\in\MKfield$
+\end_inset
+ מגדיר העתקה ליניארית 
+\begin_inset Formula
+$T_{r}:\MKfield^{\MKfield}\rightarrow\MKfield^{\MKfield}$
+\end_inset
+ ע"י 
+\begin_inset Formula
+$T_{r}\left(f\right)x:=f\left(x-r\right)$
+\end_inset
+ (לכל 
+\begin_inset Formula
+$f\in\MKfield^{\MKfield}$
+\end_inset
+)
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר 
+\begin_inset Formula
+$T_{r}$
+\end_inset
+ מעתיקה את 
+\begin_inset Formula
+$f$
+\end_inset
+ לפונקציה 
+\begin_inset Formula
+$g:\MKfield\rightarrow\MKfield$
+\end_inset
+ המוגדרת ע"י 
+\begin_inset Formula
+$g\left(x\right):=f\left(x-r\right)$
+\end_inset
+ (לכל 
+\begin_inset Formula
+$x\in\MKfield$
+\end_inset
+).
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$A\in M_{n}\left(\MKfield\right)$
+\end_inset
+ מטריצה ריבועית, 
+\bar under
+העקבה
+\bar default
+ (באנגלית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\bar under
+\lang english
+Trace
+\lang default
+
+\bar default
+
+\lang hebrew
+) של 
+\begin_inset Formula
+$A$
+\end_inset
+ היא סכום האיברים שעל האלכסון הראשי, כלומר:
+\begin_inset Formula
+\[
+\MKtrace A:=\sum_{i=1}^{n}\left[A\right]_{ii}
+\]
+
+
+\end_inset
+
+\lang default
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ אנחנו ניתקל בעקבה של מטריצה פעם נוספת באחת הדוגמאות למכפלה פנימית (ליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\numeric off
+).
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+מה המשמעות הגאומטרית של עקבה???
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Corollary
+פונקציית העקבה (
+\begin_inset Formula
+$\MKtrace:M_{n}\left(\MKfield\right)\rightarrow\MKfield$
+\end_inset
+) היא העתקה ליניארית.
+\end_layout
+
+\begin_layout Corollary
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+יהיו 
+\begin_inset Formula
+$V$
+\end_inset
+ ו-
+\begin_inset Formula
+$W$
+\end_inset
+ מרחבים וקטוריים מעל לשדה 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "theorem 1.1"
+\end_inset
+
+\series bold
+תכונות של העתקות ליניאריות
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$T:V\rightarrow W$
+\end_inset
+ העתקה ליניארית, מתקיימים שלושת הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$T\left(0_{V}\right)=0_{W}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$T\left(-v\right)=-T\left(v\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$T$
+\end_inset
+ מכבדת צירופים ליניאריים - לכל 
+\begin_inset Formula
+$v_{1},v_{2},\ldots,v_{n}\in V$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{n}\in\MKfield$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$T\left(\sum_{i=1}^{n}a_{i}\cdot v_{i}\right)=\sum_{i=1}^{n}a_{i}\cdot T\left(v_{i}\right)$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Proof
+מהיות 
+\begin_inset Formula
+$T$
+\end_inset
+ העתקה ליניארית נובע כי:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$T\left(0_{V}\right)=T\left(0\cdot0_{V}\right)=0\cdot T\left(0_{V}\right)=0_{W}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$T\left(-v\right)=T\left(-1\cdot v\right)=-1\cdot T\left(v\right)=-T\left(v\right)$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Proof
+כדי להוכיח את סעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+יש להשתמש באינדוקציה על הגדרת העתקה ליניארית.
+\end_layout
+
+\begin_layout Theorem
+נניח ש-
+\begin_inset Formula
+$V$
+\end_inset
+ נ"ס ויהי 
+\begin_inset Formula
+$\MKclb:=\left(v_{1},v_{2},\ldots,v_{n}\right)$
+\end_inset
+ בסיס של 
+\begin_inset Formula
+$V$
+\end_inset
+, לכל 
+\begin_inset Formula
+$w_{1},w_{2},\ldots,w_{n}\in W$
+\end_inset
+ קיימת העתקה ליניארית 
+\begin_inset Formula
+$T:V\rightarrow W$
+\end_inset
+ יחידה כך ש-
+\begin_inset Formula
+$T\left(v_{i}\right)=w_{i}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כלומר ניתן להגדיר העתקה ליניארית ע"י הגדרת פעולתה על איברי בסיס בלבד.
+\end_layout
+
+\begin_layout Proof
+יהיו 
+\begin_inset Formula
+$w_{1},w_{2},\ldots,w_{n}\in W$
+\end_inset
+ ונגדיר העתקה ליניארית 
+\begin_inset Formula
+$T:V\rightarrow W$
+\end_inset
+ ע"י (לכל 
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{n}\in\MKfield$
+\end_inset
+):
+\begin_inset Formula
+\[
+T\left(\sum_{i=1}^{n}a_{i}\cdot v_{i}\right)=\sum_{i=1}^{n}a_{i}\cdot w_{i}
+\]
+
+
+\end_inset
+ראינו שכל וקטור 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ ניתן להצגה באופן יחיד כצר"ל של 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ ולכן 
+\begin_inset Formula
+$T$
+\end_inset
+ מוגדרת היטב.
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$T$
+\end_inset
+ היא העתקה ליניארית שכן לכל 
+\begin_inset Formula
+$u,u'\in V$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$c\in\MKfield$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+T\left(u+u'\right) & =T\left(\sum_{i=1}^{n}a_{i}\cdot v_{i}+\sum_{i=1}^{n}b_{i}\cdot v_{i}\right)=T\left(\sum_{i=1}^{n}\left(a_{i}+b_{i}\right)\cdot v_{i}\right)=\sum_{i=1}^{n}\left(a_{i}+b_{i}\right)\cdot w_{i}\\
+ & =\sum_{i=1}^{n}a_{i}\cdot w_{i}+\sum_{i=1}^{n}b_{i}\cdot w_{i}=T\left(\sum_{i=1}^{n}a_{i}\cdot v_{i}\right)+T\left(\sum_{i=1}^{n}b_{i}\cdot v_{i}\right)=T\left(u\right)+T\left(u'\right)\\
+T\left(c\cdot u\right) & =T\left(c\cdot\sum_{i=1}^{n}a_{i}\cdot v_{i}\right)=T\left(\sum_{i=1}^{n}c\cdot a_{i}\cdot v_{i}\right)=\sum_{i=1}^{n}c\cdot a_{i}\cdot w_{i}=c\cdot\sum_{i=1}^{n}a_{i}\cdot w_{i}=c\cdot T\left(u\right)
+\end{align*}
+
+
+\end_inset
+כאשר 
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{n},b_{1},b_{2},\ldots,b_{n}$
+\end_inset
+ הם הסקלרים היחידים ב-
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ המקיימים 
+\begin_inset Formula
+$u=\sum_{i=1}^{n}a_{i}\cdot v_{i}$
+\end_inset
+ ו-
+\begin_inset Formula
+$u'=\sum_{i=1}^{n}b_{i}\cdot v_{i}$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+היחידות של 
+\begin_inset Formula
+$T$
+\end_inset
+ נובעת מהעובדה ש-
+\begin_inset Formula
+$T$
+\end_inset
+ מכבדת צירופים ליניאריים (משפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 1.1"
+plural false
+caps false
+noprefix false
+\end_inset
+) ושכל וקטור 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ ניתן להצגה באופן יחיד כצר"ל של 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula
+$T:\MKfield^{n}\rightarrow\MKfield^{m}$
+\end_inset
+ העתקה ליניארית, קיימת 
+\begin_inset Formula
+$A\in M_{m\times n}\left(\MKfield\right)$
+\end_inset
+ יחידה כך ש-
+\begin_inset Formula
+$T=T_{A}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כבר ראינו שהעמודה ה-
+\begin_inset Formula
+$j$
+\end_inset
+ של מטריצה 
+\begin_inset Formula
+$A\in M_{m\times n}\left(\MKfield\right)$
+\end_inset
+ היא 
+\begin_inset Formula
+$T_{A}\left(e_{j}\right)=A\cdot e_{j}$
+\end_inset
+ ולכן ניתן למצוא את המטריצה המתאימה ע"י הפעלת 
+\begin_inset Formula
+$T$
+\end_inset
+ על איברי הבסיס הסטנדרטי.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 1.4"
+\end_inset
+לכל 
+\begin_inset Formula
+$A,B\in M_{n}\left(\MKfield\right)$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\MKtrace\left(AB\right)=\MKtrace\left(BA\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+מהגדרה מתקיים:
+\begin_inset Formula
+\begin{align*}
+\MKtrace\left(AB\right) & =\sum_{\boldsymbol{{\color{blue}i}}=1}^{n}\left[AB\right]_{\boldsymbol{{\color{blue}ii}}}=\sum_{\boldsymbol{{\color{blue}i}}=1}^{n}\left(\sum_{\boldsymbol{{\color{red}k}}=1}^{n}\left[A\right]_{\boldsymbol{{\color{blue}i}{\color{red}k}}}\cdot\left[B\right]_{\boldsymbol{{\color{red}k}{\color{blue}i}}}\right)=\sum_{\boldsymbol{{\color{red}k}}=1}^{n}\left(\sum_{\boldsymbol{{\color{blue}i}}=1}^{n}\left[A\right]_{\boldsymbol{{\color{blue}i}{\color{red}k}}}\cdot\left[B\right]_{\boldsymbol{{\color{red}k}{\color{blue}i}}}\right)\\
+ & =\sum_{\boldsymbol{{\color{red}k}}=1}^{n}\left(\sum_{\boldsymbol{{\color{blue}i}}=1}^{n}\left[B\right]_{\boldsymbol{{\color{red}k}{\color{blue}i}}}\cdot\left[A\right]_{\boldsymbol{{\color{blue}i}{\color{red}k}}}\right)=\sum_{\boldsymbol{{\color{red}k}}=1}^{n}\left[BA\right]_{\boldsymbol{{\color{red}kk}}}=\MKtrace\left(BA\right)
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+גרעין ותמונה, הרכבה והפיכות
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+יהיו 
+\begin_inset Formula
+$V$
+\end_inset
+ ו-
+\begin_inset Formula
+$W$
+\end_inset
+ מרחבים וקטוריים מעל לשדה 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+, ותהא 
+\begin_inset Formula
+$T:V\rightarrow W$
+\end_inset
+ העתקה ליניארית.
+\end_layout
+
+\begin_layout Definition
+\bar under
+הגרעין
+\bar default
+ של 
+\begin_inset Formula
+$T$
+\end_inset
+ הוא קבוצת כל הווקטורים ב-
+\begin_inset Formula
+$V$
+\end_inset
+ ש-
+\begin_inset Formula
+$T$
+\end_inset
+ מעתיקה אל 
+\begin_inset Formula
+$0_{W}$
+\end_inset
+, כלומר:
+\begin_inset Formula
+\[
+\ker T:=\left\{ v\in V\mid T\left(v\right)=0_{W}\right\} 
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בפרט, הגרעין של העתקה 
+\begin_inset Formula
+$T_{A}:\MKfield^{n}\rightarrow\MKfield^{m}$
+\end_inset
+ המוגדרת ע"י מטריצה 
+\begin_inset Formula
+$A\in M_{m\times n}\left(\MKfield\right)$
+\end_inset
+ הוא בדיוק מרחב הפתרונות של הממ"ל ההומוגנית 
+\begin_inset Formula
+$A\cdot x=\vec{0}$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+כמו כן התמונה של 
+\begin_inset Formula
+$T_{A}$
+\end_inset
+ היא בדיוק 
+\begin_inset Formula
+$\left\{ b\in\MKfield^{m}\mid\exists x\in\MKfield^{n}:A\cdot x=b\right\} $
+\end_inset
+, כלומר קבוצת כל הווקטורים ב-
+\begin_inset Formula
+$\MKfield^{m}$
+\end_inset
+ שעבורם יש לממ"ל 
+\begin_inset Formula
+$A\cdot x=b$
+\end_inset
+ פתרון (
+\begin_inset Formula
+$b\in\MKfield^{m}$
+\end_inset
+).
+\end_layout
+
+\begin_layout Claim*
+הגרעין והתמונה של 
+\begin_inset Formula
+$T$
+\end_inset
+ הם תתי-מרחבים של 
+\begin_inset Formula
+$V$
+\end_inset
+ ו-
+\begin_inset Formula
+$W$
+\end_inset
+ בהתאמה.
+\end_layout
+
+\begin_layout Definition
+נניח ש-
+\begin_inset Formula
+$\ker T$
+\end_inset
+ נ"ס, 
+\bar under
+האפסיות
+\bar default
+ של 
+\begin_inset Formula
+$T$
+\end_inset
+ מוגדרת ע"י 
+\begin_inset Formula
+$\MKnull T:=\dim\left(\ker T\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+נניח ש-
+\begin_inset Formula
+$\MKim T$
+\end_inset
+ נ"ס, 
+\bar under
+הדרגה
+\bar default
+ של 
+\begin_inset Formula
+$T$
+\end_inset
+ מוגדרת ע"י 
+\begin_inset Formula
+$\MKrank T:=\dim\left(\MKim T\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+אולי כדאי לתלות את ההגדרה של האפסיות והדרגה בכך ש-
+\begin_inset Formula
+$V$
+\end_inset
+ נ"ס???
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Claim*
+נניח שקיימת העתקה ליניארית הפיכה 
+\begin_inset Formula
+$S:V\rightarrow W$
+\end_inset
+, גם ההופכית שלה 
+\begin_inset Formula
+$S^{-1}:W\rightarrow V$
+\end_inset
+ היא העתקה ליניארית.
+\end_layout
+
+\begin_layout Definition
+נאמר ש-
+\begin_inset Formula
+$V$
+\end_inset
+ ו-
+\begin_inset Formula
+$W$
+\end_inset
+ 
+\bar under
+איזומורפיים
+\bar default
+ זה לזה אם קיימת העתקה ליניארית 
+\begin_inset Formula
+$S:V\rightarrow W$
+\end_inset
+ חח"ע ועל, 
+\begin_inset Formula
+$S$
+\end_inset
+ כזו תיקרא 
+\bar under
+איזומורפיזם
+\bar default
+ בין 
+\begin_inset Formula
+$V$
+\end_inset
+ ל-
+\begin_inset Formula
+$W$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ רעיון האיזומורפיזם אינו מיוחד לאלגברה ליניארית, הוא משותף לכל תחומי המתמטיקה ומשמעותו היא ששני אובייקטים מתמטיים זהים מכל בחינה שמעניינת אותנו בהקשר מסוים. לתפיסתי האיזומורפיזם הוא נשמת אפה של המתמטיקה וכבר כתבתי על כך בקובץ "
+\begin_inset CommandInset href
+LatexCommand href
+name "אוניברסיטאית למתמטיקה הקדמה"
+target https://drive.google.com/file/d/1fb0pn2bCO24Or07ZIayNiy0TXpCQjxk6/view?usp=drive_link
+literal false
+\end_inset
+", מי שרוצה לקרוא עוד בנושא ולראות הגדרה פורמלית יכול לקרוא את הערך 
+\begin_inset CommandInset href
+LatexCommand href
+name "איזומורפיזם"
+target https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%96%D7%95%D7%9E%D7%95%D7%A8%D7%A4%D7%99%D7%96%D7%9D
+literal false
+\end_inset
+ בוויקיפדיה.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ אם שני מרחבים וקטוריים נוצרים סופית איזומורפיים זה לזה אז הם בפרט שווי ממד.
+\end_layout
+
+\begin_layout Standard
+נניח ש-
+\begin_inset Formula
+$V$
+\end_inset
+ נ"ס.
+\end_layout
+
+\begin_layout Definition
+נסמן 
+\begin_inset Formula
+$n:=\dim V$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$\MKclb:=\left(v_{1},v_{2},\ldots,v_{n}\right)$
+\end_inset
+ בסיס של 
+\begin_inset Formula
+$V$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+תהא 
+\begin_inset Formula
+$\omega_{\MKclb}:V\rightarrow\MKfield^{n}$
+\end_inset
+ פונקציה המוגדרת ע"י 
+\begin_inset Formula
+$\omega_{\MKclb}\left(v\right):=\left[v\right]_{\MKclb}$
+\end_inset
+ (לכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+), כלומר אם 
+\begin_inset Formula
+$v=\sum_{i=1}^{n}a_{i}\cdot v_{i}$
+\end_inset
+ אז:
+\begin_inset Formula
+\[
+\omega_{\MKclb}\left(v\right):=\begin{bmatrix}a_{1}\\
+a_{2}\\
+\vdots\\
+a_{n}
+\end{bmatrix}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+מהגדרה 
+\begin_inset Formula
+$\omega_{\MKclb}$
+\end_inset
+ היא פונקציה הפיכה, א"כ תהא 
+\begin_inset Formula
+$\tau_{\MKclb}:\MKfield^{n}\rightarrow V$
+\end_inset
+ הפונקציה ההופכית שלה, כלומר:
+\begin_inset Formula
+\[
+\tau_{\MKclb}\begin{pmatrix}a_{1}\\
+a_{2}\\
+\vdots\\
+a_{n}
+\end{pmatrix}:=\sum_{i=1}^{n}a_{i}\cdot v_{i}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Corollary
+\begin_inset Formula
+$\omega_{\MKclb}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\tau_{\MKclb}$
+\end_inset
+ הן העתקות ליניאריות.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+\begin_inset Formula
+$V$
+\end_inset
+ איזומורפי ל- 
+\begin_inset Formula
+$\MKfield^{n}$
+\end_inset
+ והפונקציה 
+\begin_inset Formula
+$\omega_{\MKclb}$
+\end_inset
+ היא איזומורפיזם בין 
+\begin_inset Formula
+$V$
+\end_inset
+ ל-
+\begin_inset Formula
+$\MKfield^{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ שימו לב ש-
+\begin_inset Formula
+$V$
+\end_inset
+ יכול להיות בעצמו 
+\begin_inset Formula
+$\MKfield^{n}$
+\end_inset
+ ואז המסקנה אומרת בעצם שאין שום הבדל בין בסיס 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ של 
+\begin_inset Formula
+$\MKfield^{n}$
+\end_inset
+ (כל בסיס!) לבין הבסיס הסטנדרטי, שניהם מתנהגים באותה צורה בדיוק ורק הנוחות שלנו כבני אדם גורמת לנו להעדיף את הבסיס הסטנדרטי על פני הבסיסים האחרים.
+\end_layout
+
+\begin_layout Corollary
+אם 
+\begin_inset Formula
+$V$
+\end_inset
+ ו-
+\begin_inset Formula
+$W$
+\end_inset
+ מאותו ממד (בפרט גם 
+\begin_inset Formula
+$W$
+\end_inset
+ נ"ס) אז הם איזומורפיים.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+יהיו 
+\begin_inset Formula
+$V$
+\end_inset
+ ו-
+\begin_inset Formula
+$W$
+\end_inset
+ מרחבים וקטוריים מעל לשדה 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+, ותהא 
+\begin_inset Formula
+$T:V\rightarrow W$
+\end_inset
+ העתקה ליניארית.
+\end_layout
+
+\begin_layout Claim
+הגרעין והתמונה של 
+\begin_inset Formula
+$T$
+\end_inset
+ הם תתי-מרחבים של 
+\begin_inset Formula
+$V$
+\end_inset
+ ו-
+\begin_inset Formula
+$W$
+\end_inset
+ בהתאמה.
+\end_layout
+
+\begin_layout Description
+תזכורת: עבור פונקציה 
+\begin_inset Formula
+$f:A\rightarrow B$
+\end_inset
+ ותת-קבוצה 
+\begin_inset Formula
+$S\subseteq B$
+\end_inset
+ אנו מגדירים 
+\begin_inset Formula
+$f^{-1}\left(S\right):=\left\{ a\in A\mid f\left(a\right)\in S\right\} $
+\end_inset
+, גם אם 
+\begin_inset Formula
+$f$
+\end_inset
+ אינה הפיכה.
+\end_layout
+
+\begin_layout Claim
+לכל תמ"ו 
+\begin_inset Formula
+$U\subseteq W$
+\end_inset
+ גם 
+\begin_inset Formula
+$T^{-1}\left(U\right)$
+\end_inset
+ הוא תמ"ו (של 
+\begin_inset Formula
+$V$
+\end_inset
+), כמו כן לכל ישריה 
+\begin_inset Formula
+$S\subseteq W$
+\end_inset
+ הקבוצה 
+\begin_inset Formula
+$T^{-1}\left(S\right)$
+\end_inset
+ היא ישריה או הקבוצה הריקה.
+\end_layout
+
+\begin_layout Proof
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+יהי 
+\begin_inset Formula
+$U\subseteq W$
+\end_inset
+ תמ"ו.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ממשפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 1.1"
+plural false
+caps false
+noprefix false
+\end_inset
+ ומהיות 
+\begin_inset Formula
+$U$
+\end_inset
+ תמ"ו נובע ש-
+\begin_inset Formula
+$T\left(0_{V}\right)=0_{W}\in U$
+\end_inset
+ ולכן 
+\begin_inset Formula
+$0_{V}\in T^{-1}\left(U\right)$
+\end_inset
+.}
+\end_layout
+
+\begin_layout Itemize
+יהיו 
+\begin_inset Formula
+$v_{1},v_{2}\in T^{-1}\left(U\right)$
+\end_inset
+, מכאן ש-
+\begin_inset Formula
+$T\left(v_{1}\right),T\left(v_{2}\right)\in U$
+\end_inset
+ ולכן מהיות 
+\begin_inset Formula
+$U$
+\end_inset
+ תמ"ו נובע ש-
+\begin_inset Formula
+$T\left(v_{1}+v_{2}\right)=T\left(v_{1}\right)+T\left(v_{2}\right)\in U$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$v_{1}+v_{2}\in T^{-1}\left(U\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+יהיו 
+\begin_inset Formula
+$v\in T^{-1}\left(U\right)$
+\end_inset
+ ו-
+\begin_inset Formula
+$c\in\MKfield$
+\end_inset
+, מכאן ש-
+\begin_inset Formula
+$T\left(v\right)\in U$
+\end_inset
+ ולכן מהיות 
+\begin_inset Formula
+$U$
+\end_inset
+ תמ"ו נובע ש-
+\begin_inset Formula
+$T\left(c\cdot v\right)=c\cdot T\left(v\right)\in U$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$c\cdot v\in T^{-1}\left(U\right)$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+תהא 
+\begin_inset Formula
+$S\subseteq W$
+\end_inset
+ ישריה, יהי 
+\begin_inset Formula
+$U\subseteq W$
+\end_inset
+ מרחב הכיוונים שלה ונניח ש-
+\begin_inset Formula
+$T^{-1}\left(S\right)\neq\emptyset$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$v_{0}\in T^{-1}\left(S\right)$
+\end_inset
+, א"כ 
+\begin_inset Formula
+$T\left(v_{0}\right)\in S$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$S=\left\{ T\left(v_{0}\right)\right\} +U$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+ראינו ש-
+\begin_inset Formula
+$T^{-1}\left(U\right)$
+\end_inset
+ הוא תמ"ו ולכן אם נוכיח ש-
+\begin_inset Formula
+$T^{-1}\left(S\right)=\left\{ v_{0}\right\} +T^{-1}\left(U\right)$
+\end_inset
+ נקבל את המבוקש.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$v_{1}\in T^{-1}\left(S\right)$
+\end_inset
+, א"כ 
+\begin_inset Formula
+$T\left(v_{1}\right)\in S$
+\end_inset
+ ולכן 
+\begin_inset Formula
+$T\left(v_{1}-v_{0}\right)=T\left(v_{1}\right)-T\left(v_{0}\right)\in U$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$v_{1}-v_{0}\in T^{-1}\left(U\right)$
+\end_inset
+ ו-
+\begin_inset Formula
+$v_{1}\in\left\{ v_{0}\right\} +T^{-1}\left(U\right)$
+\end_inset
+.
+\begin_inset Formula
+\[
+\Rightarrow T^{-1}\left(S\right)\subseteq\left\{ v_{0}\right\} +T^{-1}\left(U\right)
+\]
+
+
+\end_inset
+יהי 
+\begin_inset Formula
+$v_{2}\in\left\{ v_{0}\right\} +T^{-1}\left(U\right)$
+\end_inset
+, א"כ 
+\begin_inset Formula
+$v_{2}-v_{0}\in T^{-1}\left(U\right)$
+\end_inset
+ ולכן 
+\begin_inset Formula
+$T\left(v_{2}\right)-T\left(v_{0}\right)=T\left(v_{2}-v_{0}\right)\in U$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$T\left(v_{2}\right)\in S$
+\end_inset
+ ו-
+\begin_inset Formula
+$v_{2}\in T^{-1}\left(S\right)$
+\end_inset
+.
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow T^{-1}\left(S\right)\supseteq\left\{ v_{0}\right\} +T^{-1}\left(U\right)\\
+ & \Rightarrow T^{-1}\left(S\right)=\left\{ v_{0}\right\} +T^{-1}\left(U\right)
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 2.3"
+\end_inset
+
+\begin_inset Formula
+$T$
+\end_inset
+ חח"ע אם"ם 
+\begin_inset Formula
+$\ker T=\left\{ 0_{V}\right\} $
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\Leftarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$\ker T\neq\left\{ 0_{V}\right\} $
+\end_inset
+, ממשפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 1.1"
+plural false
+caps false
+noprefix false
+\end_inset
+ נובע ש-
+\begin_inset Formula
+$\ker T\supseteq\left\{ 0_{V}\right\} $
+\end_inset
+ ולכן ע"פ ההנחה קיים 
+\begin_inset Formula
+$0_{V}\neq v\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$T\left(v\right)=0_{W}$
+\end_inset
+ ומכיוון ש-
+\begin_inset Formula
+$T\left(0_{V}\right)=0_{W}$
+\end_inset
+ (משפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 1.1"
+plural false
+caps false
+noprefix false
+\end_inset
+) נובע מזה ש-
+\begin_inset Formula
+$T$
+\end_inset
+ אינה חח"ע.
+\begin_inset Newline newline
+\end_inset
+מכאן שאם 
+\begin_inset Formula
+$T$
+\end_inset
+ חח"ע אז 
+\begin_inset Formula
+$\ker T=\left\{ 0_{V}\right\} $
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\Rightarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$\ker T=\left\{ 0_{V}\right\} $
+\end_inset
+ ויהיו 
+\begin_inset Formula
+$v_{1},v_{2}\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$T\left(v_{1}\right)=T\left(v_{2}\right)$
+\end_inset
+, מכאן ש-
+\begin_inset Formula
+$T\left(v_{1}-v_{2}\right)=T\left(v_{1}\right)-T\left(v_{2}\right)=0_{W}$
+\end_inset
+ וע"פ ההנחה 
+\begin_inset Formula
+$v_{1}-v_{2}=0_{V}$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$v_{1}=v_{2}$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$v_{1}$
+\end_inset
+ ו-
+\begin_inset Formula
+$v_{2}$
+\end_inset
+ הנ"ל היו שרירותיים ומכאן שלכל 
+\begin_inset Formula
+$v_{1},v_{2}\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$T\left(v_{1}\right)=T\left(v_{2}\right)$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$v_{1}=v_{2}$
+\end_inset
+ - כלומר 
+\begin_inset Formula
+$T$
+\end_inset
+ חח"ע.
+\end_layout
+
+\end_deeper
+
+\begin_layout Corollary
+\begin_inset Formula
+$T$
+\end_inset
+ חח"ע אם"ם לכל תת-קבוצה 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ בת"ל גם 
+\begin_inset Formula
+$T\left(S\right)$
+\end_inset
+ בת"ל.
+\end_layout
+
+\begin_layout Proof
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\Leftarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$T$
+\end_inset
+ חח"ע ותהא 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ תת-קבוצה בת"ל.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$w_{1},w_{2},\ldots,w_{n}\in T\left(S\right)$
+\end_inset
+ ו-
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{n}\in\MKfield$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\sum_{i=1}^{n}a_{i}\cdot w_{i}=0_{W}$
+\end_inset
+, ויהיו 
+\begin_inset Formula
+$v_{1},v_{2},\ldots,v_{n}\in S$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$T\left(v_{i}\right)=w_{i}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+.
+\begin_inset Formula
+\[
+\Rightarrow T\left(\sum_{i=1}^{n}a_{i}\cdot v_{i}\right)=\sum_{i=1}^{n}a_{i}\cdot T\left(v_{i}\right)=\sum_{i=1}^{n}a_{i}\cdot w_{i}=0_{W}
+\]
+
+
+\end_inset
+מההנחה ומהטענה האחרונה (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 2.3"
+plural false
+caps false
+noprefix false
+\end_inset
+) נובע ש-
+\begin_inset Formula
+$\sum_{i=1}^{n}a_{i}\cdot v_{i}=0_{V}$
+\end_inset
+ ומכיוון ש-
+\begin_inset Formula
+$S$
+\end_inset
+ בת"ל 
+\begin_inset Formula
+$a_{i}=0$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+; א"כ הצר"ל המתאפס היחיד של 
+\begin_inset Formula
+$T\left(S\right)$
+\end_inset
+ הוא הטריוויאלי ולכן היא בת"ל.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\Rightarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$T$
+\end_inset
+ אינה חח"ע, מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 2.3"
+plural false
+caps false
+noprefix false
+\end_inset
+ נובע שקיים 
+\begin_inset Formula
+$0_{V}\neq v\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$T\left(v\right)=0_{W}$
+\end_inset
+, יהי 
+\begin_inset Formula
+$v$
+\end_inset
+ כנ"ל.
+\begin_inset Newline newline
+\end_inset
+הקבוצה 
+\begin_inset Formula
+$\left\{ v\right\} $
+\end_inset
+ היא קבוצה בת"ל אך הקבוצה 
+\begin_inset Formula
+$T\left(\left\{ v\right\} \right)=\left\{ T\left(v\right)\right\} =\left\{ 0_{W}\right\} $
+\end_inset
+ תלויה ליניארית,
+\begin_inset Newline newline
+\end_inset
+מכאן שאם לכל תת-קבוצה 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ בת"ל גם 
+\begin_inset Formula
+$T\left(S\right)$
+\end_inset
+ בת"ל אז 
+\begin_inset Formula
+$T$
+\end_inset
+ חח"ע.
+\end_layout
+
+\end_deeper
+
+\begin_layout Claim
+תהא 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ תת-קבוצה, אם 
+\begin_inset Formula
+$T\left(S\right)$
+\end_inset
+ בת"ל אז גם 
+\begin_inset Formula
+$S$
+\end_inset
+ בת"ל.
+\end_layout
+
+\begin_layout Proof
+נניח ש-
+\begin_inset Formula
+$T\left(S\right)$
+\end_inset
+ בת"ל, יהיו 
+\begin_inset Formula
+$v_{1},v_{2},\ldots,v_{n}\in S$
+\end_inset
+ ויהיו 
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{n}\in\MKfield$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\sum_{i=1}^{n}a_{i}\cdot v_{i}=0_{V}$
+\end_inset
+.
+\begin_inset Formula
+\[
+\Rightarrow0_{W}=T\left(0_{V}\right)=T\left(\sum_{i=1}^{n}a_{i}\cdot v_{i}\right)=\sum_{i=1}^{n}a_{i}\cdot T\left(v_{i}\right)
+\]
+
+
+\end_inset
+מהיות 
+\begin_inset Formula
+$T\left(S\right)$
+\end_inset
+ בת"ל נובע ש-
+\begin_inset Formula
+$a_{i}=0$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ ומכאן שגם 
+\begin_inset Formula
+$S$
+\end_inset
+ בת"ל.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 2.6"
+\end_inset
+תהא 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ תת-קבוצה פורשת (
+\begin_inset Formula
+$\MKspan S=V$
+\end_inset
+), הקבוצה 
+\begin_inset Formula
+$T\left(S\right)$
+\end_inset
+ פורשת את 
+\begin_inset Formula
+$\MKim T$
+\end_inset
+ (
+\begin_inset Formula
+$\MKspan T\left(S\right)=\MKim T$
+\end_inset
+).
+\end_layout
+
+\begin_layout Corollary
+אם 
+\begin_inset Formula
+$V$
+\end_inset
+ נ"ס אז גם 
+\begin_inset Formula
+$\MKim T$
+\end_inset
+ נ"ס.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary 2.8"
+\end_inset
+נניח ש-
+\begin_inset Formula
+$V$
+\end_inset
+ ו-
+\begin_inset Formula
+$W$
+\end_inset
+ נ"ס, 
+\begin_inset Formula
+$T$
+\end_inset
+ חח"ע ועל אם"ם לכל בסיס 
+\begin_inset Formula
+$\MKclb\subseteq V$
+\end_inset
+ (של 
+\begin_inset Formula
+$V$
+\end_inset
+) גם 
+\begin_inset Formula
+$T\left(\MKclb\right)$
+\end_inset
+ בסיס (של 
+\begin_inset Formula
+$W$
+\end_inset
+).
+\end_layout
+
+\begin_layout Claim
+לכל מטריצה 
+\begin_inset Formula
+$A\in M_{m\times n}\left(\MKfield\right)$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\MKrank T_{A}=\MKrank A$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+תהא 
+\begin_inset Formula
+$A\in M_{m\times n}\left(\MKfield\right)$
+\end_inset
+ מטריצה, אנחנו יודעים שעמודות המטריצה הן התמונות של איברי הבסיס הסטנדרטי ולכן הן פורשות את 
+\begin_inset Formula
+$\MKim T_{A}$
+\end_inset
+, א"כ 
+\begin_inset Formula
+$\MKim T_{A}$
+\end_inset
+ הוא פרוש העמודות של 
+\begin_inset Formula
+$A$
+\end_inset
+ ולכן 
+\begin_inset Formula
+$\MKrank A=\dim\left(\MKim T_{A}\right)$
+\end_inset
+ ומכיוון שע"פ ההגדרה גם 
+\begin_inset Formula
+$\MKrank T_{A}=\dim\left(\MKim T_{A}\right)$
+\end_inset
+ הרי ש-
+\begin_inset Formula
+$\MKrank T_{A}=\MKrank A$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+משפט הדרגה (משפט הממדים השני)
+\series default
+
+\begin_inset Newline newline
+\end_inset
+מתקיים:
+\begin_inset Formula
+\[
+\dim V=\dim\left(\ker T\right)+\dim\left(\MKim T\right)=\MKnull T+\MKrank T
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+יהיו 
+\begin_inset Formula
+$v_{1},v_{2},\ldots,v_{k}\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKclb_{0}:=\left(v_{1},v_{2},\ldots,v_{k}\right)$
+\end_inset
+ הוא בסיס סדור של 
+\begin_inset Formula
+$\ker T$
+\end_inset
+, ויהיו 
+\begin_inset Formula
+$v_{k+1},v_{k+2},\ldots,v_{n}\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKclb:=\left(v_{1},v_{2},\ldots,v_{k},v_{k+1},v_{k+2},\ldots,v_{n}\right)$
+\end_inset
+ הוא בסיס של 
+\begin_inset Formula
+$V$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 2.6"
+plural false
+caps false
+noprefix false
+\end_inset
+ נובע שהסדרה 
+\begin_inset Formula
+$\left(T\left(v_{1}\right),T\left(v_{2}\right),\ldots,T\left(v_{k}\right),T\left(v_{k+1}\right),T\left(v_{k+2}\right),\ldots,T\left(v_{n}\right)\right)$
+\end_inset
+ פורשת את 
+\begin_inset Formula
+$\MKim T$
+\end_inset
+, ומהגדרת 
+\begin_inset Formula
+$\MKclb_{0}$
+\end_inset
+ נובע שהסדרה 
+\begin_inset Formula
+$\MKclc:=\left(T\left(v_{k+1}\right),T\left(v_{k+2}\right),\ldots,T\left(v_{n}\right)\right)$
+\end_inset
+ פורשת את 
+\begin_inset Formula
+$\MKim T$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$a_{k+1},a_{k+2},\ldots,a_{n}\in\MKfield$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\sum_{i=k+1}^{n}a_{i}\cdot T\left(v_{i}\right)=0_{W}$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$T\left(\sum_{i=k+1}^{n}a_{i}\cdot v_{i}\right)=0_{W}$
+\end_inset
+, א"כ 
+\begin_inset Formula
+$\sum_{i=k+1}^{n}a_{i}\cdot v_{i}\in\ker T$
+\end_inset
+ ולכן מהגדרת 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ נובע ש-
+\begin_inset Formula
+$a_{i}=0$
+\end_inset
+ לכל 
+\begin_inset Formula
+$i\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$k+1\leq i\leq n$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+כלומר הצר"ל המתאפס היחיד של 
+\begin_inset Formula
+$\MKclc$
+\end_inset
+ הוא הטריוויאלי ולכן 
+\begin_inset Formula
+$\MKclc$
+\end_inset
+ בת"ל וממילא גם בסיס של 
+\begin_inset Formula
+$\MKim T$
+\end_inset
+.
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow\dim\left(\MKim T\right)=n-k=\dim V-\dim\left(\ker T\right)\\
+ & \Rightarrow\dim V=\dim\left(\ker T\right)+\dim\left(\MKim T\right)
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+אם 
+\begin_inset Formula
+$V$
+\end_inset
+ נ"ס ו-
+\begin_inset Formula
+$T$
+\end_inset
+ חח"ע ועל אז 
+\begin_inset Formula
+$W$
+\end_inset
+ נ"ס ומתקיים 
+\begin_inset Formula
+$\dim V=\dim W$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+נניח ש-
+\begin_inset Formula
+$V$
+\end_inset
+ נ"ס, מתקיימים ארבעת הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$\dim V\geq\dim\left(\MKim T\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$T$
+\end_inset
+ על אז 
+\begin_inset Formula
+$\dim V\geq\dim W$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$T$
+\end_inset
+ חח"ע אז 
+\begin_inset Formula
+$\dim V=\dim\left(\MKim T\right)$
+\end_inset
+ ומכאן שאם 
+\begin_inset Formula
+$W$
+\end_inset
+ נ"ס אז 
+\begin_inset Formula
+$\dim V\leq\dim W$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+נניח ש-
+\begin_inset Formula
+$W$
+\end_inset
+ נ"ס וש-
+\begin_inset Formula
+$\dim V=\dim W$
+\end_inset
+, 
+\begin_inset Formula
+$T$
+\end_inset
+ על אם"ם היא חח"ע.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+נניח שקיימת העתקה ליניארית הפיכה 
+\begin_inset Formula
+$S:V\rightarrow W$
+\end_inset
+, גם ההופכית שלה 
+\begin_inset Formula
+$S^{-1}:W\rightarrow V$
+\end_inset
+ היא העתקה ליניארית.
+\end_layout
+
+\begin_layout Proof
+יהיו 
+\begin_inset Formula
+$w,w'\in W$
+\end_inset
+ ו-
+\begin_inset Formula
+$c\in\MKfield$
+\end_inset
+, ויהיו 
+\begin_inset Formula
+$v,v'\in V$
+\end_inset
+ אותם וקטורים יחידים כך ש-
+\begin_inset Formula
+$S\left(v\right)=w$
+\end_inset
+ ו-
+\begin_inset Formula
+$S\left(v'\right)=w'$
+\end_inset
+.
+\begin_inset Formula
+\begin{align*}
+\Rightarrow S^{-1}\left(w+w'\right) & =S^{-1}\left(S\left(v\right)+\left(v'\right)\right)=S^{-1}\left(S\left(v+v'\right)\right)=v+v'=S^{-1}\left(w\right)+S^{-1}\left(w'\right)\\
+\Rightarrow S^{-1}\left(c\cdot w\right) & =S^{-1}\left(c\cdot S\left(v\right)\right)=S^{-1}\left(S\left(c\cdot v\right)\right)=c\cdot v=c\cdot S^{-1}\left(w\right)
+\end{align*}
+
+
+\end_inset
+מהיות 
+\begin_inset Formula
+$w$
+\end_inset
+, 
+\begin_inset Formula
+$w'$
+\end_inset
+ ו-
+\begin_inset Formula
+$c$
+\end_inset
+ שרירותיים נובע ש-
+\begin_inset Formula
+$S^{-1}$
+\end_inset
+ היא העתקה ליניארית.
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$U$
+\end_inset
+ מרחב וקטורי מעל 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ ותהא 
+\begin_inset Formula
+$S:W\rightarrow U$
+\end_inset
+ העתקה ליניארית, גם 
+\begin_inset Formula
+$S\circ T$
+\end_inset
+ היא העתקה ליניארית.
+\end_layout
+
+\begin_layout Proof
+יהיו 
+\begin_inset Formula
+$v,v'\in V$
+\end_inset
+ ו-
+\begin_inset Formula
+$c\in\MKfield$
+\end_inset
+.
+\begin_inset Formula
+\begin{align*}
+\Rightarrow\left(S\circ T\right)\left(v+v'\right) & =S\left(T\left(v+v'\right)\right)=S\left(T\left(v\right)+T\left(v'\right)\right)=S\left(T\left(v\right)\right)+S\left(T\left(v'\right)\right)=\left(S\circ T\right)\left(v\right)+\left(S\circ T\right)\left(v'\right)\\
+\Rightarrow\left(S\circ T\right)\left(c\cdot v\right) & =S\left(T\left(c\cdot v\right)\right)=S\left(T\left(v\right)\right)=c\cdot S\left(T\left(v\right)\right)=c\cdot\left(S\circ T\right)\left(v\right)
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 2.15"
+\end_inset
+יהי 
+\begin_inset Formula
+$U$
+\end_inset
+ מרחב וקטורי מעל 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ ותהא 
+\begin_inset Formula
+$S:W\rightarrow U$
+\end_inset
+ העתקות ליניאריות, מתקיים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$T$
+\end_inset
+ על אז 
+\begin_inset Formula
+$\MKrank\left(S\circ T\right)=\MKrank S$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$S$
+\end_inset
+ חח"ע אז 
+\begin_inset Formula
+$\MKrank\left(S\circ T\right)=\MKrank T$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Proof
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$T$
+\end_inset
+ על אז 
+\begin_inset Formula
+$\MKim\left(S\circ T\right)=\MKim S$
+\end_inset
+ ולכן 
+\begin_inset Formula
+$\MKrank\left(S\circ T\right)=\MKrank S$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$S$
+\end_inset
+ חח"ע אז ממשפט הדרגה נובע ש-
+\begin_inset Formula
+$\dim\left(\MKim\left(S\mid_{\MKim T}\right)\right)=\dim\left(\MKim T\right)=\MKrank T$
+\end_inset
+, ומכיוון ש-
+\begin_inset Formula
+$\MKim\left(S\mid_{\MKim T}\right)=\MKim\left(S\circ T\right)$
+\end_inset
+ נדע שמתקיים:
+\begin_inset Formula
+\[
+\MKrank\left(S\circ T\right)=\dim\left(\MKim\left(S\circ T\right)\right)=\dim\left(\MKim\left(S\mid_{\MKim T}\right)\right)=\MKrank T
+\]
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+המטריצה המייצגת
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+יהיו 
+\begin_inset Formula
+$V$
+\end_inset
+ ו-
+\begin_inset Formula
+$W$
+\end_inset
+ מרחבים וקטוריים נוצרים סופית מעל לשדה 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+, ויהיו 
+\begin_inset Formula
+$\MKclb:=\left(v_{1},v_{2},\ldots,v_{n}\right)$
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKclc:=\left(w_{1},w_{2},\ldots,w_{m}\right)$
+\end_inset
+ בסיסים סדורים של 
+\begin_inset Formula
+$V$
+\end_inset
+ ו-
+\begin_inset Formula
+$W$
+\end_inset
+ בהתאמה (
+\begin_inset Formula
+$n:=\dim V$
+\end_inset
+ ו-
+\begin_inset Formula
+$m:=\dim W$
+\end_inset
+).
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$T:V\rightarrow W$
+\end_inset
+ העתקה ליניארית, 
+\bar under
+המטריצה המייצגת
+\bar default
+ של 
+\begin_inset Formula
+$T$
+\end_inset
+ ביחס ל-
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKclc$
+\end_inset
+ היא מטריצה מסדר 
+\begin_inset Formula
+$m\times n$
+\end_inset
+ שהעמודה ה-
+\begin_inset Formula
+$j$
+\end_inset
+ שלה היא 
+\begin_inset Formula
+$\left[T\left(v_{j}\right)\right]_{\MKclc}$
+\end_inset
+ (לכל 
+\begin_inset Formula
+$n\geq j\in\MKnatural$
+\end_inset
+), כלומר:
+\begin_inset Formula
+\[
+\left[T\right]_{\MKclc}^{\MKclb}:=\left[\begin{array}{c|c|c|c}
+| & | & | & |\\
+\left[T\left(v_{1}\right)\right]_{\MKclc} & \left[T\left(v_{1}\right)\right]_{\MKclc} & ... & \left[T\left(v_{n}\right)\right]_{\MKclc}\\
+| & | & | & |
+\end{array}\right]
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ אנחנו נראה בקובץ הטענות כיצד המטריצה המייצגת אכן מייצגת את ההעתקה הליניארית, הביטוי העיקרי לייצוג זה הוא העובדה שלכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left[T\right]_{\MKclc}^{\MKclb}\cdot\left[v\right]_{\MKclb}=\left[T\left(v\right)\right]_{\MKclc}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+יהי 
+\begin_inset Formula
+$\MKcla$
+\end_inset
+ בסיס סדור של 
+\begin_inset Formula
+$V$
+\end_inset
+, המטריצה 
+\begin_inset Formula
+$\left[\MKid_{V}\right]_{\MKclb}^{\MKcla}$
+\end_inset
+ נקראת 
+\bar under
+מטריצת מעבר בסיס
+\bar default
+ מ-
+\begin_inset Formula
+$\MKcla$
+\end_inset
+ ל-
+\begin_inset Formula
+$\MKclb$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הסיבה להגדרה זו היא שלכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left[\MKid_{V}\right]_{\MKclb}^{\MKcla}\cdot\left[v\right]_{\MKcla}=\left[v\right]_{\MKclb}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+יהיו 
+\begin_inset Formula
+$V$
+\end_inset
+ ו-
+\begin_inset Formula
+$W$
+\end_inset
+ מרחבים וקטוריים נוצרים סופית מעל לשדה 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+, יהיו 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKclc$
+\end_inset
+ בסיסים סדורים של 
+\begin_inset Formula
+$V$
+\end_inset
+ ו-
+\begin_inset Formula
+$W$
+\end_inset
+ בהתאמה ותהא 
+\begin_inset Formula
+$T:V\rightarrow W$
+\end_inset
+ העתקה ליניארית.
+\end_layout
+
+\begin_layout Subsection
+התחלה
+\end_layout
+
+\begin_layout Claim
+תהא 
+\begin_inset Formula
+$A\in M_{m\times n}\left(\MKfield\right)$
+\end_inset
+ ויהיו 
+\begin_inset Formula
+$E_{1}$
+\end_inset
+ ו-
+\begin_inset Formula
+$E_{2}$
+\end_inset
+ הבסיסים הסטנדרטיים של 
+\begin_inset Formula
+$\MKfield^{n}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKfield^{m}$
+\end_inset
+ בהתאמה, מתקיים 
+\begin_inset Formula
+$\left[T_{A}\right]_{E_{2}}^{E_{1}}=A$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 3.2"
+\end_inset
+נסמן 
+\begin_inset Formula
+$n:=\dim V$
+\end_inset
+ ו-
+\begin_inset Formula
+$m:=\dim W$
+\end_inset
+ ותהא 
+\begin_inset Formula
+$A\in M_{m\times n}\left(\MKfield\right)$
+\end_inset
+, קיימת ה"ל 
+\begin_inset Formula
+$S:V\rightarrow W$
+\end_inset
+ יחידה כך ש-
+\begin_inset Formula
+$A=\left[S\right]_{\MKclc}^{\MKclb}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בהינתן מטריצה 
+\begin_inset Formula
+$A\in M_{m\times n}\left(\MKfield\right)$
+\end_inset
+ נוכל למצוא את אותה 
+\begin_inset Formula
+$S$
+\end_inset
+ יחידה ע"י הפעלת 
+\begin_inset Formula
+$\tau_{\MKclc}$
+\end_inset
+ על כל אחת מעמודות 
+\begin_inset Formula
+$A$
+\end_inset
+ בנפרד ובכך למצוא לאן מעתיקה 
+\begin_inset Formula
+$T$
+\end_inset
+ את איברי 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ (מה שמגדיר ה"ל יחידה).
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "theorem 3.3"
+\end_inset
+לכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left[T\right]_{\MKclc}^{\MKclb}\cdot\left[v\right]_{\MKclb}=\left[T\left(v\right)\right]_{\MKclc}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ משפט זה הוא הסיבה העיקרית לכך שהמטריצה המייצגת נקראת בשם זה.
+\end_layout
+
+\begin_layout Proof
+נסמן 
+\begin_inset Formula
+$n:=\dim V$
+\end_inset
+ ויהיו 
+\begin_inset Formula
+$v_{1},v_{2},\ldots,v_{n}\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKclb=\left(v_{1},v_{2},\ldots,v_{n}\right)$
+\end_inset
+, כמו כן יהי 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ ונסמן את הקואורדינטה ה-
+\begin_inset Formula
+$i$
+\end_inset
+ של 
+\begin_inset Formula
+$\left[v\right]_{\MKclb}$
+\end_inset
+ ב-
+\begin_inset Formula
+$a_{i}$
+\end_inset
+ (לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+).
+\begin_inset Newline newline
+\end_inset
+מהגדרת המטריצה המייצגת ומהגדרת כפל מטריצה בווקטור נובע כי:
+\begin_inset Formula
+\begin{align*}
+\left[T\right]_{\MKclc}^{\MKclb}\cdot\left[v\right]_{\MKclb} & =\sum_{i=1}^{n}a_{i}\cdot\left[T\left(v_{i}\right)\right]_{\MKclc}=\sum_{i=1}^{n}a_{i}\cdot\omega_{\MKclc}\left(T\left(v_{i}\right)\right)=\sum_{i=1}^{n}\omega_{\MKclc}\left(a_{i}\cdot T\left(v_{i}\right)\right)\\
+ & =\sum_{i=1}^{n}\omega_{\MKclc}\left(T\left(a_{i}\cdot v_{i}\right)\right)=\omega_{\MKclc}\left(\sum_{i=1}^{n}T\left(a_{i}\cdot v_{i}\right)\right)\\
+ & =\omega_{\MKclc}\left(T\left(\sum_{i=1}^{n}a_{i}\cdot v_{i}\right)\right)=\omega_{\MKclc}\left(T\left(v\right)\right)=\left[T\left(v\right)\right]_{\MKclc}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula
+$U$
+\end_inset
+ מ"ו נ"ס מעל 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+, יהי 
+\begin_inset Formula
+$\MKcla$
+\end_inset
+ בסיס סדור של 
+\begin_inset Formula
+$U$
+\end_inset
+ ותהא 
+\begin_inset Formula
+$S:W\rightarrow U$
+\end_inset
+ העתקה ליניארית; מתקיים:
+\begin_inset Formula
+\[
+\left[S\circ T\right]_{\MKcla}^{\MKclb}=\left[S\right]_{\MKcla}^{\MKclc}\cdot\left[T\right]_{\MKclc}^{\MKclb}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary 3.5"
+\end_inset
+נסמן 
+\begin_inset Formula
+$A:=\left[T\right]_{\MKclc}^{\MKclb}$
+\end_inset
+, מתקיים:
+\begin_inset Formula
+\begin{align*}
+T & =\tau_{\MKclc}\circ T_{A}\circ\omega_{\MKclb}\\
+T_{A} & =\omega_{\MKclc}\circ T\circ\tau_{\MKclb}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+מתקיים 
+\begin_inset Formula
+$\MKrank\left[T\right]_{\MKclc}^{\MKclb}=\MKrank T$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+נסמן 
+\begin_inset Formula
+$A:=\left[T\right]_{\MKclc}^{\MKclb}$
+\end_inset
+, אנחנו יודעים ש-
+\begin_inset Formula
+$\MKrank A=\MKrank T_{A}$
+\end_inset
+ ולכן מספיק שנוכיח כי 
+\begin_inset Formula
+$\MKrank T_{A}=\MKrank T$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+אנחנו יודעים ש-
+\begin_inset Formula
+$\omega_{\MKclb},\omega_{\MKclc},\tau_{\MKclb},\tau_{\MKclc}$
+\end_inset
+ הן העתקות ליניאריות הפיכות (כלומר חח"ע ועל), ולכן מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 2.15"
+plural false
+caps false
+noprefix false
+\end_inset
+ ומהמסקנה הקודמת (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 3.5"
+plural false
+caps false
+noprefix false
+\end_inset
+) נובע ש-
+\begin_inset Formula
+$\MKrank T_{A}=\MKrank T$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+שלושת הפסוקים הבאים שקולים.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$T$
+\end_inset
+ הפיכה.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+קיים
+\series default
+ זוג בסיסים 
+\begin_inset Formula
+$B$
+\end_inset
+ ו-
+\begin_inset Formula
+$C$
+\end_inset
+ (של 
+\begin_inset Formula
+$V$
+\end_inset
+ ו-
+\begin_inset Formula
+$W$
+\end_inset
+ בהתאמה) כך ש-
+\begin_inset Formula
+$\left[T\right]_{C}^{B}$
+\end_inset
+ הפיכה.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+לכל
+\series default
+ זוג בסיסים 
+\begin_inset Formula
+$B$
+\end_inset
+ ו-
+\begin_inset Formula
+$C$
+\end_inset
+ (של 
+\begin_inset Formula
+$V$
+\end_inset
+ ו-
+\begin_inset Formula
+$W$
+\end_inset
+ בהתאמה) המטריצה 
+\begin_inset Formula
+$\left[T\right]_{C}^{B}$
+\end_inset
+ הפיכה.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ נשים לב לכך שכל אחד מהתנאים דורש שיתקיים 
+\begin_inset Formula
+$\dim V=\dim W$
+\end_inset
+.
+\end_layout
+
+\begin_layout Subsection
+מטריצת מעבר בסיס
+\end_layout
+
+\begin_layout Corollary
+\series bold
+תכונות של מטריצת מעבר בסיס
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$\MKcla$
+\end_inset
+ בסיס סדור של 
+\begin_inset Formula
+$V$
+\end_inset
+ ונסמן 
+\begin_inset Formula
+$n:=\dim V$
+\end_inset
+,
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+מתקיים 
+\begin_inset Formula
+$\left[\MKid_{V}\right]_{\MKclb}^{\MKclb}=I_{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left[\MKid_{V}\right]_{\MKclb}^{\MKcla}\cdot\left[v\right]_{\MKcla}=\left[v\right]_{\MKclb}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+יהי 
+\begin_inset Formula
+$\SrayaDBasis$
+\end_inset
+ בסיס סדור של 
+\begin_inset Formula
+$V$
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$\left[\MKid_{V}\right]_{\SrayaDBasis}^{\MKclb}\cdot\left[\MKid_{V}\right]_{\MKclb}^{\MKcla}=\left[\MKid\right]_{\SrayaDBasis}^{\MKcla}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+מתקיים 
+\begin_inset Formula
+$\left[\MKid_{V}\right]_{\MKcla}^{\MKclb}\cdot\left[\MKid_{V}\right]_{\MKclb}^{\MKcla}=I_{n}$
+\end_inset
+, כלומר אלו מטריצות הפיכות והופכיות זו לזו.
+\end_layout
+
+\begin_layout Enumerate
+יהי 
+\begin_inset Formula
+$B:=\left(b_{1},b_{2},\ldots,b_{k}\right)$
+\end_inset
+ בסיס סדור של 
+\begin_inset Formula
+$\MKfield^{k}$
+\end_inset
+ ונסמן ב-
+\begin_inset Formula
+$E$
+\end_inset
+ את הבסיס הסטנדרטי של 
+\begin_inset Formula
+$\MKfield^{n}$
+\end_inset
+, 
+\begin_inset Formula
+$\left[\MKid\right]_{E}^{B}$
+\end_inset
+ היא מטריצה שהעמודה ה-
+\begin_inset Formula
+$j$
+\end_inset
+ שלה היא 
+\begin_inset Formula
+$b_{j}$
+\end_inset
+ (לכל 
+\begin_inset Formula
+$k\geq j\in\MKnatural$
+\end_inset
+).
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ראינו כבר שמטריצה הפיכה היא מטריצה שהעמודות שלה מהוות בסיס למרחב הקואורדינטות, כעת (לאחר שראינו את סעיפים
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+4
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+ו-
+\numeric on
+5
+\numeric off
+) אנו יכולים לומר שכל המטריצות ההפיכות הן מהצורה 
+\begin_inset Formula
+$\left[\MKid\right]_{E}^{B}$
+\end_inset
+ כאשר 
+\begin_inset Formula
+$B$
+\end_inset
+ הוא בסיס של מרחב הקואורדינטות המתאים ולכל אחת מהן המטריצה ההופכית היא 
+\begin_inset Formula
+$\left[\MKid\right]_{B}^{E}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+יהיו 
+\begin_inset Formula
+$\MKclb'$
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKclc'$
+\end_inset
+ בסיסים סדורים של 
+\begin_inset Formula
+$V$
+\end_inset
+ ו-
+\begin_inset Formula
+$W$
+\end_inset
+ בהתאמה, מתקיים:
+\begin_inset Formula
+\[
+\left[T\right]_{\MKclc'}^{\MKclb'}=\left[\MKid_{W}\right]_{\MKclc'}^{\MKclc}\cdot\left[T\right]_{\MKclc}^{\MKclb}\cdot\left[\MKid_{V}\right]_{\MKclb}^{\MKclb'}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כלומר ניתן לעבור ממטריצה מייצגת אחת של העתקה ליניארית להצגה אחרת ע"י כפל במטריצות מעבר בסיס מתאימות.
+\end_layout
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula
+$f:V\rightarrow V$
+\end_inset
+ העתקה לינארית ויהי 
+\begin_inset Formula
+$\MKclb'$
+\end_inset
+ בסיס סדור של 
+\begin_inset Formula
+$V$
+\end_inset
+, מתקיים:
+\begin_inset Formula
+\begin{align*}
+\left[f\right]_{\MKclb'}^{\MKclb'} & =\left[\MKid_{V}\right]_{\MKclb'}^{\MKclb}\cdot\left[f\right]_{\MKclb}^{\MKclb}\cdot\left[\MKid_{V}\right]_{\MKclb}^{\MKclb'}\\
+ & =\left(\left[\MKid_{V}\right]_{\MKclb}^{\MKclb'}\right)^{-1}\cdot\left[f\right]_{\MKclb}^{\MKclb}\cdot\left[\MKid_{V}\right]_{\MKclb}^{\MKclb'}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+דמיון מטריצות
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ שדה.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בפרק הקודם ראינו שניתן לייצג ע"י מטריצה כל העתקה ליניארית על מרחבים וקטוריים נוצרים סופית, הדרך שבה ייצגנו את העתקה ליניארית הסתמכה על בחירת בסיסים שרירותיים למרחבים הווקטוריים המהווים את התחום והטווח שלה - לו היינו בוחרים בסיסים אחרים ייתכן שהיינו מקבלים מטריצה מייצגת שונה; ההבנה הזו גורמת לנו לרצות ולהגדיר יחס שקילות בין מטריצות המייצגות את אותה העתקה ליניארית.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כדי לפשט את העניין אנחנו לא עומדים לעסוק בכל הדרכים לייצג ה"ל באמצעות מטריצה אלא רק בדרכים שבהן הבסיס של התחום והבסיס של הטווח זהים - כלומר ייצוג מהצורה 
+\begin_inset Formula
+$\left[f\right]_{\MKclb}^{\MKclb}$
+\end_inset
+, ממילא זה אומר שנעסוק אך ורק בהעתקות ליניאריות ממרחב וקטורי לעצמו ויחס השקילות המבוקש יוגדר על מטריצות ריבועיות בלבד. בפרק הקודם ראינו (בקובץ הטענות) שניתן לעבור ממטריצה מייצגת אחת של העתקה ליניארית להצגה אחרת ע"י כפל במטריצות מעבר בסיס מתאימות (אחת מימין ואחת משמאל), ובנוסף, אם מדובר בהעתקה ליניארית ממ"ו נ"ס לעצמו ואנו עוסקים רק בייצוגים מהצורה 
+\begin_inset Formula
+$\left[f\right]_{\MKclb}^{\MKclb}$
+\end_inset
+ אז מטריצות המעבר המתאימות הופכיות זו לזו (וכמובן שגם המטריצות המייצגות ריבועיות).
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+מה יקרה אם נרשה לעצמנו להשתמש בייצוגים שבהם הבסיס של הטווח והבסיס של התחום אינם זהים, ברור שלא נוכל להשתמש בהגדרה שלהלן אך אולי יש בכל זאת דרך לדבר על זה?
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Definition
+שתי מטריצות ריבועיות 
+\begin_inset Formula
+$A,B\in M_{n}\left(\MKfield\right)$
+\end_inset
+ תיקראנה 
+\bar under
+דומות זו לזו
+\bar default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+זהו יחס שקילות ולכן אין צורך להקפיד ולומר ש-
+\begin_inset Formula
+$A$
+\end_inset
+ דומה ל-
+\begin_inset Formula
+$B$
+\end_inset
+ או להפך.
+\end_layout
+
+\end_inset
+ אם קיימת מטריצה הפיכה 
+\begin_inset Formula
+$P\in M_{n}\left(\MKfield\right)$
+\end_inset
+ כך שמתקיים 
+\begin_inset Formula
+$A=P^{-1}\cdot B\cdot P$
+\end_inset
+, ואז נסמן 
+\begin_inset Formula
+$A\sim B$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ העמודות של מטריצה הפיכה 
+\begin_inset Formula
+$P$
+\end_inset
+ הן בסיס ו-
+\begin_inset Formula
+$P$
+\end_inset
+ היא מטריצת המעבר מבסיס זה אל הבסיס הסטנדרטי, לפיכך 
+\begin_inset Formula
+$P^{-1}$
+\end_inset
+ היא מטריצת המעבר מהבסיס הסטנדרטי לבסיס העמודות של 
+\begin_inset Formula
+$P$
+\end_inset
+ ולכן קיום השוויון הנ"ל מראה ש-
+\begin_inset Formula
+$T_{A}$
+\end_inset
+ ו-
+\begin_inset Formula
+$T_{B}$
+\end_inset
+ הם בעצם אותה העתקה ליניארית אך ביחס לבסיסים שונים שכן מתקיים (כאשר 
+\begin_inset Formula
+$\MKclc$
+\end_inset
+ הוא בסיס העמודות של 
+\begin_inset Formula
+$P$
+\end_inset
+):
+\begin_inset Formula
+\[
+\left[T_{A}\right]_{E}^{E}=\left[\MKid\right]_{\MKclc}^{E}\cdot\left[T_{B}\right]_{E}^{E}\cdot\left[\MKid\right]_{E}^{\MKclc}=\left[T_{B}\right]_{\MKclc}^{\MKclc}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+דמיון מטריצות הוא יחס שקילות.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$V$
+\end_inset
+ מ"ו נ"ס מעל לשדה 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ ונסמן 
+\begin_inset Formula
+$n:=\dim V$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+לכל בסיס 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ של 
+\begin_inset Formula
+$V$
+\end_inset
+ ולכל מטריצה הפיכה 
+\begin_inset Formula
+$P\in M_{n}\left(\MKfield\right)$
+\end_inset
+, קיים בסיס יחיד 
+\begin_inset Formula
+$\MKclc$
+\end_inset
+ של 
+\begin_inset Formula
+$V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left[\MKid_{V}\right]_{\MKclb}^{\MKclc}=P$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ נסמן 
+\begin_inset Formula
+$v_{i}:=\tau_{\MKclb}\left(c_{i}\right)$
+\end_inset
+ כאשר 
+\begin_inset Formula
+$c_{i}$
+\end_inset
+ היא העמודה ה-
+\begin_inset Formula
+$i$
+\end_inset
+ של 
+\begin_inset Formula
+$P$
+\end_inset
+; סדרת העמודות של 
+\begin_inset Formula
+$P$
+\end_inset
+ היא בסיס של 
+\begin_inset Formula
+$\MKfield^{n}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\tau_{\MKclb}$
+\end_inset
+ היא העתקה ליניארית הפיכה, מכאן שע"פ מסקנה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 2.8"
+plural false
+caps false
+noprefix false
+\end_inset
+ הסדרה 
+\begin_inset Formula
+$\MKclc:=\left(v_{1},v_{2},\ldots,v_{n}\right)$
+\end_inset
+ היא בסיס סדור של 
+\begin_inset Formula
+$V$
+\end_inset
+; מהגדרה מתקיים 
+\begin_inset Formula
+$\left[\MKid_{V}\left(v_{i}\right)\right]_{\MKclb}=\left[v_{i}\right]_{\MKclb}=c_{i}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$\left[\MKid_{V}\right]_{\MKclb}^{\MKclc}=P$
+\end_inset
+. א"כ הוכחנו את הקיום של בסיס כנ"ל, היחידות נובעת מההפיכות של 
+\begin_inset Formula
+$\omega_{\MKclb}$
+\end_inset
+ ומהעובדה שכל בסיס 
+\begin_inset Formula
+$\left(w_{1},w_{2},\ldots,w_{n}\right)$
+\end_inset
+ כנ"ל מוכרח לקיים 
+\begin_inset Formula
+$\left[\MKid_{V}\left(w_{i}\right)\right]_{\MKclb}=\left[w_{i}\right]_{\MKclb}=c_{i}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula
+$f:V\rightarrow V$
+\end_inset
+ העתקה ליניארית, לכל בסיס 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ של 
+\begin_inset Formula
+$V$
+\end_inset
+ ולכל מטריצה 
+\begin_inset Formula
+$A\in M_{n}\left(\MKfield\right)$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A\sim\left[f\right]_{\MKclb}^{\MKclb}$
+\end_inset
+ קיים בסיס 
+\begin_inset Formula
+$\MKclc$
+\end_inset
+ של 
+\begin_inset Formula
+$V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left[f\right]_{\MKclc}^{\MKclc}=A$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula
+$f:V\rightarrow V$
+\end_inset
+ העתקה ליניארית, לכל זוג בסיסים 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKclc$
+\end_inset
+ של 
+\begin_inset Formula
+$V$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left[f\right]_{\MKclb}^{\MKclb}\sim\left[f\right]_{\MKclc}^{\MKclc}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+תכונות של מטריצות דומות
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$A,B\in M_{n}\left(\MKfield\right)$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A\sim B$
+\end_inset
+, מתקיימים כל הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$\MKrank A=\MKrank B$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\MKtrace A=\MKtrace B$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$c\cdot A\sim c\cdot B$
+\end_inset
+ לכל 
+\begin_inset Formula
+$c\in\MKfield$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$c\in\MKfield$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$A+c\cdot I_{n}\sim B+c\cdot I_{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$A$
+\end_inset
+ היא מטריצה סקלרית
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כזכור 
+\begin_inset Formula
+$A$
+\end_inset
+ היא מטריצה סקלרית אם"ם קיים 
+\begin_inset Formula
+$c\in\MKfield$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A=c\cdot I_{n}$
+\end_inset
+.
+\end_layout
+
+\end_inset
+ אז 
+\begin_inset Formula
+$A=B$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$A^{m}\sim B^{m}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$m\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$A^{2}=A$
+\end_inset
+ אז 
+\begin_inset Formula
+$B^{2}=B$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר אם 
+\begin_inset Formula
+$A$
+\end_inset
+ מייצגת הטלה (בפרק הבא) אז גם 
+\begin_inset Formula
+$B$
+\end_inset
+ מייצגת הטלה.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כשנלמד על הדטרמיננטה נראה שגם הדטרמיננטות של מטריצות דומות הן שוות.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כל התכונות הללו יכולות לקבוע ששתי מטריצות 
+\series bold
+אינן
+\series default
+ דומות (אם אחת התכונות אינה מתקיימת) אך אינן יכולות לומר ששתי מטריצות נתונות דומות זו לזו, בקורס הבא אנחנו נראה כיצד ניתן (בתנאים מסוימים) לקבוע באופן חד משמעי אם שתי מטריצות דומות זו לזו אם לאו.
+\end_layout
+
+\begin_layout Proof
+תהא 
+\begin_inset Formula
+$P\in M_{n}\left(\MKfield\right)$
+\end_inset
+ מטריצה הפיכה כך ש-
+\begin_inset Formula
+$A=P^{-1}\cdot B\cdot P$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+כשלמדנו על מטריצות ומרחבי קואורדינטות ראינו שכפל במטריצה הפיכה (הן מימין והן משמאל) אינו משנה את הדרגה.
+\end_layout
+
+\begin_layout Enumerate
+מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 2.15"
+plural false
+caps false
+noprefix false
+\end_inset
+ ומהקיבוץ של כפל מטריצות נובע שמתקיים:
+\begin_inset Formula
+\begin{align*}
+\MKtrace\left(A\right) & =\MKtrace\left(P^{-1}\cdot\left(B\cdot P\right)\right)=\MKtrace\left(\left(B\cdot P\right)\cdot P^{-1}\right)\\
+ & =\MKtrace\left(B\cdot\left(P\cdot P^{-1}\right)\right)=\MKtrace\left(B\cdot I_{n}\right)=\MKtrace\left(B\right)
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+נספחים
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$V$
+\end_inset
+ מ"ו מעל לשדה 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+יהיו 
+\begin_inset Formula
+$W,U\subseteq V$
+\end_inset
+ תתי-מרחבים כך ש-
+\begin_inset Formula
+$V=W\oplus U$
+\end_inset
+ (נניח שיש כאלה).
+\begin_inset Newline newline
+\end_inset
+
+\bar under
+ההטלה על
+\bar default
+ 
+\begin_inset Formula
+$W$
+\end_inset
+ 
+\bar under
+במקביל
+\bar default
+ ל-
+\begin_inset Formula
+$U$
+\end_inset
+ היא הפונקציה 
+\begin_inset Formula
+$p:V\rightarrow V$
+\end_inset
+ המוגדרת ע"י 
+\begin_inset Formula
+$p\left(w+u\right):=w$
+\end_inset
+ לכל 
+\begin_inset Formula
+$w\in W$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$u\in U$
+\end_inset
+,
+\begin_inset Newline newline
+\end_inset
+כלומר 
+\begin_inset Formula
+$p$
+\end_inset
+ מפרקת כל וקטור 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ לרכיביו ב-
+\begin_inset Formula
+$W$
+\end_inset
+ וב-
+\begin_inset Formula
+$U$
+\end_inset
+ ומחזירה את הרכיב שב-
+\begin_inset Formula
+$W$
+\end_inset
+ בלבד.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ במילים אחרות: 
+\begin_inset Formula
+$W=\MKim p$
+\end_inset
+, 
+\begin_inset Formula
+$U=\ker p$
+\end_inset
+ ו-
+\begin_inset Formula
+$p\mid_{W}=\MKid_{W}$
+\end_inset
+; א"כ 
+\begin_inset Formula
+$V=\MKim p\oplus\ker p$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+שימו לב שלא כל פונקציה המקיימת את השוויון 
+\begin_inset Formula
+$V=\MKim p\oplus\ker p$
+\end_inset
+ היא הטלה מפני שלא בהכרח מתקיים גם 
+\begin_inset Formula
+$p\mid_{W}=\MKid_{W}$
+\end_inset
+.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ אנחנו מכירים בעיקר את ההטלה של וקטור על אחד הצירים ב-
+\begin_inset Formula
+$\MKreal^{2}$
+\end_inset
+ או ב-
+\begin_inset Formula
+$\MKreal^{3}$
+\end_inset
+ שהיא הטלה על ציר אחד במקביל לצירים ה
+\series bold
+מאונכים
+\series default
+ לו, אך ניתן להטיל על תתי-מרחבים אחרים ובצורה שאינה אנכית.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ במקומות אחרים (כגון 
+\begin_inset CommandInset href
+LatexCommand href
+name "ויקיפדיה"
+target https://he.wikipedia.org/wiki/%D7%94%D7%98%D7%9C%D7%94_)%D7%9E%D7%AA%D7%9E%D7%98%D7%99%D7%A7%D7%94(
+literal false
+\end_inset
+) מגדירים הטלה כהעתקה ליניארית 
+\begin_inset Formula
+$p:V\rightarrow V$
+\end_inset
+ המקיימת 
+\begin_inset Formula
+$p^{2}=p$
+\end_inset
+, זוהי הגדרה שקולה ואנחנו נראה זאת בקובץ ההוכחות.
+\end_layout
+
+\begin_layout Standard
+באיור הבא ניתן לראות כיצד מתבצעת הטלה על ישר אחד במקביל לישר אחר בתוך המישור (
+\begin_inset Formula
+$\MKreal^{2}$
+\end_inset
+):
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+filename C:\Users\sraya\Documents\HUJI\archive\for_LyX\summaries\3#algebra\1#linear_algebra_1\3#linear_transformations\figures\projection.png
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+\begin_layout Plain Layout
+הטלה על הישר הכחול במקביל לישר האדום
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+ כל וקטור שנמצא על קו מקווקו מועתק אל הנקודה שעליה מצביע החץ המתאים, כלומר המישור מתכווץ לתוך הישר הכחול ע"פ הזווית שמגדיר הישר האדום.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+יהיו 
+\begin_inset Formula
+$W,U\subseteq V$
+\end_inset
+ תתי-מרחבים כך ש-
+\begin_inset Formula
+$V=W\oplus U$
+\end_inset
+ (נניח שיש כאלה).
+\begin_inset Newline newline
+\end_inset
+
+\bar under
+השיקוף ביחס
+\bar default
+ ל-
+\begin_inset Formula
+$W$
+\end_inset
+ (או 
+\bar under
+דרך
+\bar default
+ 
+\begin_inset Formula
+$W$
+\end_inset
+) 
+\bar under
+ובמקביל
+\bar default
+ ל-ֹ
+\begin_inset Formula
+$U$
+\end_inset
+ היא הפונקציה 
+\begin_inset Formula
+$r:V\rightarrow V$
+\end_inset
+ המוגדרת ע"י 
+\begin_inset Formula
+$r\left(w+u\right)=w-u$
+\end_inset
+,
+\begin_inset Newline newline
+\end_inset
+כלומר 
+\begin_inset Formula
+$r$
+\end_inset
+ מפרקת כל וקטור 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ לרכיביו ב-
+\begin_inset Formula
+$W$
+\end_inset
+ וב-
+\begin_inset Formula
+$U$
+\end_inset
+ ואז היא הופכת את הכיוון של הרכיב ב-
+\begin_inset Formula
+$U$
+\end_inset
+ ומשאירה את הרכיב ב-
+\begin_inset Formula
+$W$
+\end_inset
+ על כנו.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כלומר בשיקוף יש תמ"ו אחד המתפקד כ"מראה" ולפיכך אינו משתנה וכל שאר המרחב "משתקף" בו - כלומר הופך את כיוונו.
+\end_layout
+
+\begin_layout Corollary
+הטלות ושיקופים הן העתקות ליניאריות.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ראשית, שכנעו את עצמכם שסיבוב של המישור ב-
+\begin_inset Formula
+$\theta$
+\end_inset
+ רדיאנים נגד כיוון השעון הוא אכן העתקה ליניארית, כלומר הוא שומר על החיבור הווקטורי ועל הכפל בסקלר - זה דורש מעט דמיון.
+\begin_inset Newline newline
+\end_inset
+כעת מהי המטריצה המייצגת של העתקה ליניארית כזו (בבסיס הסטנדרטי)?
+\end_layout
+
+\begin_layout Definition
+\bar under
+מטריצת הסיבוב
+\bar default
+ ב-
+\begin_inset Formula
+$\theta$
+\end_inset
+ רדיאנים נגד כיוון השעון היא המטריצה (לכל 
+\begin_inset Formula
+$\theta\in\MKreal$
+\end_inset
+):
+\begin_inset Formula
+\[
+R\left(\theta\right):=\left[\begin{array}{cc}
+\cos\theta & -\sin\theta\\
+\sin\theta & \cos\theta
+\end{array}\right]
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ואכן, כשמסובבים את המישור ב-
+\begin_inset Formula
+$\theta$
+\end_inset
+ רדיאנים נגד כיוון השעון הווקטור 
+\begin_inset Formula
+$\begin{bmatrix}1\\
+0
+\end{bmatrix}$
+
+\end_inset
+ מועתק לווקטור 
+\begin_inset Formula
+$\begin{bmatrix}\cos\theta\\
+\sin\theta
+\end{bmatrix}$
+
+\end_inset
+ והווקטור 
+\begin_inset Formula
+$\begin{bmatrix}0\\
+1
+\end{bmatrix}$
+
+\end_inset
+ מועתק לווקטור 
+\begin_inset Formula
+$\begin{bmatrix}-\sin\theta\\
+\cos\theta
+\end{bmatrix}$
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כעת ניתן להוכיח את הזהויות הטריגונומטריות של קוסינוס וסינוס של סכום זוויות
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+לכל 
+\begin_inset Formula
+$\alpha,\beta\in\MKreal$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+\sin\left(\alpha\pm\beta\right) & =\sin\alpha\cdot\cos\beta\pm\cos\alpha\cdot\sin\beta\\
+\cos\left(\alpha\pm\beta\right) & =\cos\alpha\cdot\cos\beta\mp\sin\alpha\cdot\sin\beta
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\end_inset
+ באמצעות כפל מטריצות, מבחינה 
+\series bold
+גאומטרית
+\series default
+ ברור שסיבוב של המישור ב-
+\begin_inset Formula
+$\beta$
+\end_inset
+ רדיאנים ואח"כ סיבוב ב-
+\begin_inset Formula
+$\alpha$
+\end_inset
+ רדיאנים שקול לסיבוב ב-
+\begin_inset Formula
+$\alpha+\beta$
+\end_inset
+ רדיאנים ולכן מהשקילות בין כפל מטריצות להרכבת העתקות ליניאריות נובע שמתקיים:
+\begin_inset Formula
+\[
+{\color{purple}\left[\begin{array}{cc}
+\cos\left(\alpha+\beta\right) & -\sin\left(\alpha+\beta\right)\\
+\sin\left(\alpha+\beta\right) & \cos\left(\alpha+\beta\right)
+\end{array}\right]}={\color{red}\left[\begin{array}{cc}
+\cos\alpha & -\sin\alpha\\
+\sin\alpha & \cos\alpha
+\end{array}\right]}\cdot{\color{blue}\left[\begin{array}{cc}
+\cos\beta & -\sin\beta\\
+\sin\beta & \cos\beta
+\end{array}\right]}
+\]
+
+
+\end_inset
+מהגדרת כפל מטריצות נובע שמתקיים:
+\begin_inset Formula
+\begin{align*}
+\cos\left(\alpha+\beta\right) & ={\color{red}\cos\alpha}\cdot{\color{blue}\cos\beta}{\color{red}-\sin\alpha}\cdot{\color{blue}\sin\beta}\\
+\sin\left(\alpha+\beta\right) & ={\color{red}\sin\alpha}\cdot{\color{blue}\cos\beta}+{\color{red}\cos\alpha}\cdot{\color{blue}\sin\beta}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+מטריצה 
+\begin_inset Formula
+$A\in M_{2}\left(\MKreal\right)$
+\end_inset
+ תיקרא 
+\bar under
+מטריצת סיבוב ומתיחה
+\bar default
+ אם ניתן להציג אותה ככפולה של מטריצת סיבוב בסקלר אי-שלילי, כלומר אם קיימים 
+\begin_inset Formula
+$0\leq c\in\MKreal$
+\end_inset
+ ו-
+\begin_inset Formula
+$\theta\in\MKreal$
+\end_inset
+ כך שמתקיים 
+\begin_inset Formula
+$A=c\cdot R\left(\theta\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ המושג הזה אינו מקובל אך כולם יבינו את כוונתו משמו בלבד.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+יהי גם 
+\begin_inset Formula
+$W$
+\end_inset
+ מרחב וקטורי מעל 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+, נסמן ב-
+\begin_inset Formula
+$\MKhom\left(V,W\right)$
+\end_inset
+ את קבוצת ההעתקות הליניאריות מ-
+\begin_inset Formula
+$V$
+\end_inset
+ ל-
+\begin_inset Formula
+$W$
+\end_inset
+ ולאחר שנוכיח שהיא מ"ו נקרא לה 
+\bar under
+מרחב ההעתקות (הליניאריות)
+\bar default
+ מ-
+\begin_inset Formula
+$V$
+\end_inset
+ ל-
+\begin_inset Formula
+$W$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim*
+קבוצת ההעתקות הליניאריות 
+\begin_inset Formula
+$\MKhom\left(V,W\right)$
+\end_inset
+, יחד עם פעולות החיבור והכפל בסקלר שלה
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+לכל 
+\begin_inset Formula
+$f,g:A\rightarrow\MKfield$
+\end_inset
+ הגדרנו את 
+\begin_inset Formula
+$f+g$
+\end_inset
+ ע"י 
+\begin_inset Formula
+$\left(f+g\right)\left(x\right):=f\left(x\right)+g\left(x\right)$
+\end_inset
+ (לכל 
+\begin_inset Formula
+$x\in\MKfield$
+\end_inset
+), ולכל 
+\begin_inset Formula
+$f:A\rightarrow\MKfield$
+\end_inset
+ ו-
+\begin_inset Formula
+$c\in\MKfield$
+\end_inset
+ הגדרנו את 
+\begin_inset Formula
+$c\cdot f$
+\end_inset
+ ע"י 
+\begin_inset Formula
+$\left(c\cdot f\right)\left(x\right):=c\cdot f\left(x\right)$
+\end_inset
+.
+\end_layout
+
+\end_inset
+, היא מרחב וקטורי מעל 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ (לכל מ"ו 
+\begin_inset Formula
+$W$
+\end_inset
+ מעל 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כלומר סכום של העתקות ליניאריות וכפל העתקה ליניארית בסקלר הם העתקות ליניאריות, ובנוסף, מתקיימות
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset Formula
+$8$
+\end_inset
+ האקסיומות של מרחב וקטורי.
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\end_layout
+
+\begin_layout Definition
+יהי 
+\begin_inset Formula
+$W\subseteq V$
+\end_inset
+ תמ"ו, נאמר ששני וקטורים 
+\begin_inset Formula
+$v,u\in V$
+\end_inset
+ 
+\bar under
+שקולים זה לזה ביחס ל-
+\bar default
+
+\begin_inset Formula
+$W$
+\end_inset
+ אם 
+\begin_inset Formula
+$v-u\in W$
+\end_inset
+ ונסמן 
+\begin_inset Formula
+$v\sim u$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+היחס שהוגדר לעיל הוא אכן יחס שקילות.
+\end_layout
+
+\begin_layout Description
+סימון: נסמן את מחלקת השקילות של וקטור 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ ביחס הנ"ל ע"י 
+\begin_inset Formula
+$\left[v\right]$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+יהי 
+\begin_inset Formula
+$W\subseteq V$
+\end_inset
+ תמ"ו, נסמן את קבוצת מחלקות השקילות (קבוצת המנה) של היחס הנ"ל ב-
+\begin_inset Formula
+$V/W$
+\end_inset
+ ולאחר שנוכיח שהיא מ"ו נקרא לה 
+\bar under
+מרחב המנה
+\bar default
+ של 
+\begin_inset Formula
+$W$
+\end_inset
+.
+\end_layout
+
+\begin_layout Description
+סימון: תהא 
+\begin_inset Formula
+$\pi:V\rightarrow V/W$
+\end_inset
+ 
+\bar under
+העתקת המנה
+\bar default
+ המוגדרת ע"י 
+\begin_inset Formula
+$\pi\left(v\right)=\left[v\right]$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$S:=\left(v_{1},v_{2},\ldots,v_{n}\right)$
+\end_inset
+ סדרת וקטורים ב-
+\begin_inset Formula
+$V$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$x\in\MKfield^{n}$
+\end_inset
+, נגדיר את המכפלה 
+\begin_inset Formula
+$S\cdot x$
+\end_inset
+ ע"י:
+\begin_inset Formula
+\[
+S\cdot x=\left(v_{1},v_{2},\ldots,v_{n}\right)\cdot x:=\sum_{i=1}^{n}x_{i}\cdot v_{i}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ נשים לב 
+\begin_inset Formula
+$S$
+\end_inset
+ אינה בהכרח בסיס ולכן 
+\begin_inset Formula
+$x$
+\end_inset
+ אינו בהכרח וקטור הקואורדינטות של 
+\begin_inset Formula
+$\sum_{i=1}^{n}x_{i}\cdot v_{i}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כפי שכבר הזכרנו בעבר ניתן להתייחס למטריצה ב-
+\begin_inset Formula
+$M_{m\times n}\left(\MKfield\right)$
+\end_inset
+ כסדרה של 
+\begin_inset Formula
+$n$
+\end_inset
+ וקטורים ב-
+\begin_inset Formula
+$\MKfield^{m}$
+\end_inset
+, מנקודת זו ההגדרה שהגדרנו זה עתה היא הכללה של כפל מטריצה בווקטור.
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$S:=\left(v_{1},v_{2},\ldots,v_{n}\right)$
+\end_inset
+ סדרת וקטורים ב-
+\begin_inset Formula
+$V$
+\end_inset
+ ותהא 
+\begin_inset Formula
+$A\in M_{n\times m}\left(\MKfield\right)$
+\end_inset
+ מטריצה, נגדיר את המכפלה 
+\begin_inset Formula
+$S\cdot A$
+\end_inset
+ ע"י:
+\begin_inset Formula
+\[
+S\cdot A=S\cdot\left[\begin{array}{cccc}
+\mid & \mid & \mid & \mid\\
+c_{1} & c_{2} & \cdots & c_{m}\\
+\mid & \mid & \mid & \mid
+\end{array}\right]:=\left(S\cdot c_{1},S\cdot c_{2},\ldots,S\cdot c_{m}\right)
+\]
+
+
+\end_inset
+כלומר 
+\begin_inset Formula
+$S\cdot A$
+\end_inset
+ היא סדרה באורך 
+\begin_inset Formula
+$m$
+\end_inset
+ של וקטורים ב-
+\begin_inset Formula
+$V$
+\end_inset
+ שהאיבר ה-
+\begin_inset Formula
+$j$
+\end_inset
+ שלה הוא 
+\begin_inset Formula
+$\begin{alignedat}{1}\sum_{i=1}^{n}\left[A\right]_{ij}\cdot v_{i}\end{alignedat}
+$
+
+\end_inset
+ (לכל 
+\begin_inset Formula
+$m\geq j\in\MKnatural$
+\end_inset
+).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ושוב, מנקודת המבט של האיזומורפיזם בין 
+\begin_inset Formula
+$M_{m\times n}\left(\MKfield\right)$
+\end_inset
+ ל-
+\begin_inset Formula
+$\left(\MKfield^{m}\right)^{n}$
+\end_inset
+ הגדרה זו היא הכללה של כפל מטריצות.
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$V$
+\end_inset
+ מרחב וקטורי מעל לשדה 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+.
+\end_layout
+
+\begin_layout Subsection
+הטלות ושיקופים
+\end_layout
+
+\begin_layout Standard
+נניח שניתן להציג את 
+\begin_inset Formula
+$V$
+\end_inset
+ כסכום ישר של שני תמ"וים שלו.
+\end_layout
+
+\begin_layout Claim
+תהא 
+\begin_inset Formula
+$p:V\rightarrow V$
+\end_inset
+ העתקה ליניארית, 
+\begin_inset Formula
+$p$
+\end_inset
+ היא הטלה אם"ם 
+\begin_inset Formula
+$p^{2}=p$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\Leftarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$p$
+\end_inset
+ היא הטלה על תמ"ו 
+\begin_inset Formula
+$W\subseteq V$
+\end_inset
+ ביחס לתמ"ו 
+\begin_inset Formula
+$U\subseteq V$
+\end_inset
+ (
+\begin_inset Formula
+$V=W\oplus U$
+\end_inset
+) ויהי 
+\begin_inset Formula
+$v\in V$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$w\in W$
+\end_inset
+ ו-
+\begin_inset Formula
+$u\in U$
+\end_inset
+ אותם וקטורים יחידים המקיימים 
+\begin_inset Formula
+$v=w+u$
+\end_inset
+, מהגדרה מתקיים:
+\begin_inset Formula
+\[
+p^{2}\left(v\right)=p\left(p\left(w+u\right)\right)=p\left(w\right)=w=p\left(v\right)
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+$v$
+\end_inset
+ הנ"ל היה שרירותי ומכאן שמתקיים 
+\begin_inset Formula
+$p^{2}\left(v\right)=p\left(v\right)$
+\end_inset
+ לכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$p^{2}=p$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\Rightarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$p^{2}=p$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$v'\in V$
+\end_inset
+, נסמן 
+\begin_inset Formula
+$w':=p\left(v'\right)$
+\end_inset
+ ו-
+\begin_inset Formula
+$u':=v'-w'$
+\end_inset
+ (מהגדרה 
+\begin_inset Formula
+$v'=w'+u'$
+\end_inset
+).
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow p\left(w'\right)=p^{2}\left(v'\right)=p\left(v'\right)\\
+ & \Rightarrow p\left(u'\right)=p\left(v'-w'\right)=p\left(v'\right)-p\left(w'\right)=0_{V}
+\end{align*}
+
+
+\end_inset
+
+\begin_inset Formula
+$v'$
+\end_inset
+ הנ"ל היה שרירותי ומכאן שניתן להציג כל וקטור ב-
+\begin_inset Formula
+$V$
+\end_inset
+ כסכום של וקטור מ-
+\begin_inset Formula
+$\MKim p$
+\end_inset
+ ווקטור מ-
+\begin_inset Formula
+$\ker p$
+\end_inset
+, א"כ 
+\begin_inset Formula
+$V=\MKim p+\ker p$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$y\in\MKim p\cap\ker p$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$x\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$p\left(x\right)=y$
+\end_inset
+ (כאן השתמשנו בעובדה ש-
+\begin_inset Formula
+$y\in\MKim p$
+\end_inset
+), א"כ מתקיים 
+\begin_inset Formula
+$y=p\left(x\right)=p^{2}\left(x\right)=p\left(y\right)=0_{V}$
+\end_inset
+ (כאן השתמשנו בעובדה ש-
+\begin_inset Formula
+$y\in\ker p$
+\end_inset
+).
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow\MKim p\cap\ker p=\left\{ 0_{V}\right\} \\
+ & \Rightarrow V=\MKim p\oplus\ker p
+\end{align*}
+
+
+\end_inset
+מהעובדה ש-
+\begin_inset Formula
+$p^{2}=p$
+\end_inset
+ נובע גם ש-
+\begin_inset Formula
+$p\mid_{\MKim p}=\MKid_{\MKim p}$
+\end_inset
+ שכן לכל 
+\begin_inset Formula
+$y'\in\MKim p$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$x'\in V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$p\left(x'\right)=y'$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$y'=p\left(x'\right)=p^{2}\left(x'\right)=p\left(y'\right)$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מכאן שעבור 
+\begin_inset Formula
+$v'$
+\end_inset
+ הנ"ל מתקיים 
+\begin_inset Formula
+$p\left(v'\right)=p\left(w'+u'\right)=p\left(w'\right)+p\left(u'\right)=w'+0_{V}=w'$
+\end_inset
+ ומכיוון ש-
+\begin_inset Formula
+$v'$
+\end_inset
+ היה שרירותי נובע מזה ש-
+\begin_inset Formula
+$p$
+\end_inset
+ היא העתקה (נזכור ש-
+\begin_inset Formula
+$w'$
+\end_inset
+ ו-
+\begin_inset Formula
+$u'$
+\end_inset
+ הם אותם וקטורים יחידים המקיימים 
+\begin_inset Formula
+$w'\in\MKim p$
+\end_inset
+, 
+\begin_inset Formula
+$u'\in\ker p$
+\end_inset
+ ו-
+\begin_inset Formula
+$v'=w'+u'$
+\end_inset
+).
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+תכונות של הטלות
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$p:V\rightarrow V$
+\end_inset
+ הטלה על תמ"ו 
+\begin_inset Formula
+$W$
+\end_inset
+ במקביל לתמ"ו 
+\begin_inset Formula
+$U$
+\end_inset
+ (
+\begin_inset Formula
+$V=W\oplus U$
+\end_inset
+), מתקיימים כל הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\MKid_{V}-p$
+\end_inset
+ היא ההטלה על 
+\begin_inset Formula
+$U$
+\end_inset
+ במקביל ל-
+\begin_inset Formula
+$W$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+נסמן ב-
+\begin_inset Formula
+$q$
+\end_inset
+ את ההטלה על 
+\begin_inset Formula
+$U$
+\end_inset
+ במקביל ל-
+\begin_inset Formula
+$W$
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$p+q=\MKid_{V}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$p\circ q=0=q\circ p$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ ויהיו 
+\begin_inset Formula
+$w\in W$
+\end_inset
+ ו-
+\begin_inset Formula
+$u\in U$
+\end_inset
+ אותם וקטורים יחידים המקיימים 
+\begin_inset Formula
+$v=w+u$
+\end_inset
+.
+\begin_inset Formula
+\begin{align*}
+\Rightarrow\left(\MKid_{V}-p\right)\left(v\right) & =\MKid_{V}\left(v\right)-p\left(v\right)=v-w=u\\
+\Rightarrow\left(p+q\right)\left(v\right) & =p\left(v\right)+q\left(v\right)=w+u=v\\
+\Rightarrow\left(p\circ q\right)\left(v\right) & =p\left(q\left(v\right)\right)=p\left(u\right)=0_{V}\\
+ & =q\left(w\right)=q\left(p\left(v\right)\right)=\left(q\circ p\right)\left(v\right)
+\end{align*}
+
+
+\end_inset
+
+\begin_inset Formula
+$v$
+\end_inset
+ הנ"ל היה שרירותי ולכן הנ"ל מתקיים לכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ ובך הוכחנו את שלושת הסעיפים.
+\end_layout
+
+\begin_layout Claim
+כל שיקוף 
+\begin_inset Formula
+$r:V\rightarrow V$
+\end_inset
+ הוא העתקה הפיכה ובנוסף הוא ההעתקה ההופכית של עצמו.
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$r:V\rightarrow V$
+\end_inset
+ שיקוף דרך תמ"ו 
+\begin_inset Formula
+$W\subseteq V$
+\end_inset
+ ובמקביל לתמ"ו 
+\begin_inset Formula
+$U\subseteq V$
+\end_inset
+ (
+\begin_inset Formula
+$V=W\oplus U$
+\end_inset
+).
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ ויהיו 
+\begin_inset Formula
+$w\in W$
+\end_inset
+ ו-
+\begin_inset Formula
+$u\in U$
+\end_inset
+ אותם וקטורים יחידים המקיימים 
+\begin_inset Formula
+$v=w+u$
+\end_inset
+,
+\begin_inset Formula
+\[
+\Rightarrow\left(r\circ r\right)\left(v\right)=r\left(r\left(w+u\right)\right)=r\left(w-u\right)=r\left(w+\left(-u\right)\right)=w-\left(-u\right)=w+u=v=\MKid_{V}\left(v\right)
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+$v$
+\end_inset
+ הנ"ל היה שרירותי ומכאן ש-
+\begin_inset Formula
+$r\circ r=\MKid_{V}$
+\end_inset
+ ומהגדרה הפונקציה 
+\begin_inset Formula
+$r$
+\end_inset
+ הפיכה ו-
+\begin_inset Formula
+$r^{-1}=r$
+\end_inset
+.
+\end_layout
+
+\begin_layout Subsection
+סיבובים
+\end_layout
+
+\begin_layout Claim
+כל מטריצת סיבוב היא מטריצה הפיכה וההופכית שלה היא מטריצת הסיבוב בזווית הנגדית, כלומר ההופכית של 
+\begin_inset Formula
+$R\left(\theta\right)$
+\end_inset
+ היא 
+\begin_inset Formula
+$R\left(-\theta\right)$
+\end_inset
+ (לכל 
+\begin_inset Formula
+$\theta$
+\end_inset
+).
+\end_layout
+
+\begin_layout Proof
+מהגדרת כפל מטריצות ומטריגונומטריה בסיסית
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+לכל 
+\begin_inset Formula
+$\alpha,\beta\in\MKreal$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+\sin\left(\alpha+\beta\right) & =\sin\alpha\cdot\cos\beta+\cos\alpha\cdot\sin\beta\\
+\cos\left(\alpha+\beta\right) & =\cos\alpha\cdot\cos\beta-\sin\alpha\cdot\sin\beta
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\end_inset
+ נובע שלכל 
+\begin_inset Formula
+$\theta\in\MKreal$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+{\color{red}R\left(\theta\right)}\cdot{\color{blue}R\left(-\theta\right)} & ={\color{red}\left[\begin{array}{cc}
+\cos\left(\theta\right) & -\sin\left(\theta\right)\\
+\sin\left(\theta\right) & \cos\left(\theta\right)
+\end{array}\right]}\cdot{\color{blue}\left[\begin{array}{cc}
+\cos\left(-\theta\right) & -\sin\left(-\theta\right)\\
+\sin\left(-\theta\right) & \cos\left(-\theta\right)
+\end{array}\right]}\\
+ & =\left[\begin{array}{c|c}
+{\color{red}\cos\left(\theta\right)}\cdot{\color{blue}\cos\left(-\theta\right)}{\color{red}-\sin\left(\theta\right)}\cdot{\color{blue}\sin\left(-\theta\right)} & {\color{red}\cos\left(\theta\right)}\cdot{\color{blue}\left(-\sin\left(-\theta\right)\right)}{\color{red}-\sin\left(\theta\right)}\cdot{\color{blue}\cos\left(-\theta\right)}\\
+\hline {\color{red}\sin\left(\theta\right)}\cdot{\color{blue}\cos\left(-\theta\right)}+{\color{red}\cos\left(\theta\right)}\cdot{\color{blue}\sin\left(-\theta\right)} & {\color{red}\sin\left(\theta\right)}\cdot{\color{blue}\left(-\sin\left(-\theta\right)\right)}+{\color{red}\cos\left(\theta\right)}\cdot{\color{blue}\cos\left(-\theta\right)}
+\end{array}\right]\\
+ & =\left[\begin{array}{c|c}
+{\color{red}\cos\left(\theta\right)}\cdot{\color{blue}\cos\left(-\theta\right)}{\color{red}-\sin\left(\theta\right)}\cdot{\color{blue}\sin\left(-\theta\right)} & -{\color{red}\cos\left(\theta\right)}\cdot{\color{blue}\sin\left(-\theta\right)}{\color{red}-\sin\left(\theta\right)}\cdot{\color{blue}\cos\left(-\theta\right)}\\
+\hline {\color{red}\sin\left(\theta\right)}\cdot{\color{blue}\cos\left(-\theta\right)}+{\color{red}\cos\left(\theta\right)}\cdot{\color{blue}\sin\left(-\theta\right)} & {\color{red}\cos\left(\theta\right)}\cdot{\color{blue}\cos\left(-\theta\right)}-{\color{red}\sin\left(\theta\right)}\cdot{\color{blue}\sin\left(-\theta\right)}
+\end{array}\right]\\
+ & ={\color{purple}\left[\begin{array}{cc}
+\cos\left(\theta+\left(-\theta\right)\right) & -\sin\left(\theta+\left(-\theta\right)\right)\\
+\sin\left(\theta+\left(-\theta\right)\right) & \cos\left(\theta+\left(-\theta\right)\right)
+\end{array}\right]}={\color{purple}\left[\begin{array}{cc}
+\cos\left(0\right) & -\sin\left(0\right)\\
+\sin\left(0\right) & \cos\left(0\right)
+\end{array}\right]}={\color{purple}R\left(0\right)}=I_{n}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+כל מטריצת סיבוב ומתיחה שאינה מטריצת האפס היא מטריצה הפיכה, וההופכית שלה היא מטריצת הסיבוב והמתיחה המהווה את מטריצת הסיבוב בזווית הנגדית כשהיא מוכפלת בסקלר ההופכי, כלומר המטריצה ההופכית של מטריצת סיבוב ומתיחה 
+\begin_inset Formula
+$c\cdot R\left(\theta\right)$
+\end_inset
+ היא 
+\begin_inset Formula
+$c^{-1}\cdot R\left(-\theta\right)$
+\end_inset
+ (לכל 
+\begin_inset Formula
+$c,\theta\in\MKreal$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$c\neq0$
+\end_inset
+).
+\end_layout
+
+\begin_layout Claim
+יהיו 
+\begin_inset Formula
+$a,b\in\MKreal$
+\end_inset
+, המטריצה:
+\begin_inset Formula
+\[
+\left[\begin{array}{cc}
+a & -b\\
+b & a
+\end{array}\right]
+\]
+
+
+\end_inset
+היא מטריצת סיבוב ומתיחה, כלומר קיימים 
+\begin_inset Formula
+$c,\theta\in\MKreal$
+\end_inset
+ כך שמתקיים 
+\begin_inset Formula
+$a=c\cdot\cos\theta$
+\end_inset
+ ו-
+\begin_inset Formula
+$b=c\cdot\sin\theta$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+ע"פ משפט פיתגורס והגדרת 
+\begin_inset Formula
+$\cos$
+\end_inset
+ ו-
+\begin_inset Formula
+$\sin$
+\end_inset
+ קיימת 
+\begin_inset Formula
+$\theta\in\MKreal$
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\begin{align*}
+\cos\theta & =\frac{a}{\sqrt{a^{2}+b^{2}}}\\
+\sin\theta & =\frac{b}{\sqrt{a^{2}+b^{2}}}
+\end{align*}
+
+
+\end_inset
+תהא 
+\begin_inset Formula
+$\theta\in\MKreal$
+\end_inset
+ כנ"ל, א"כ מתקיים:
+\begin_inset Formula
+\[
+\left[\begin{array}{cc}
+a & -b\\
+b & a
+\end{array}\right]=\sqrt{a^{2}+b^{2}}\cdot\left[\begin{array}{cc}
+\frac{a}{\sqrt{a^{2}+b^{2}}} & -\frac{b}{\sqrt{a^{2}+b^{2}}}\\
+\frac{b}{\sqrt{a^{2}+b^{2}}} & \frac{a}{\sqrt{a^{2}+b^{2}}}
+\end{array}\right]=\sqrt{a^{2}+b^{2}}\cdot\left[\begin{array}{cc}
+\cos\left(\theta\right) & -\sin\left(\theta\right)\\
+\sin\left(\theta\right) & \cos\left(\theta\right)
+\end{array}\right]=\sqrt{a^{2}+b^{2}}\cdot R\left(\theta\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כמובן שגם הכיוון ההפוך נכון: כל מטריצת סיבוב ומתיחה היא מהצורה הנ"ל.
+\end_layout
+
+\begin_layout Claim
+לכל שתי מטריצות סיבוב ומתיחה 
+\begin_inset Formula
+$A,B\in M_{2}\left(\MKreal\right)$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$A\cdot B=B\cdot A$
+\end_inset
+, כלומר כפל מטריצות סיבוב ומתיחה מקיים את חוק החילוף.
+\end_layout
+
+\begin_layout Proof
+יהיו 
+\begin_inset Formula
+$0\leq a,b\in\MKreal$
+\end_inset
+ ו-
+\begin_inset Formula
+$\alpha,\beta\in\MKreal$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A=a\cdot R\left(\alpha\right)$
+\end_inset
+ ו-
+\begin_inset Formula
+$B=b\cdot\left(\beta\right)$
+\end_inset
+, מהגדרת כפל מטריצות ומטריגונומטריה בסיסית נובע כי:
+\begin_inset Formula
+\begin{align*}
+{\color{blue}A}\cdot{\color{red}B} & ={\color{red}\left(a\cdot\left[\begin{array}{cc}
+\cos\alpha & -\sin\alpha\\
+\sin\alpha & \cos\alpha
+\end{array}\right]\right)}\cdot{\color{blue}\left(b\cdot\left[\begin{array}{cc}
+\cos\beta & -\sin\beta\\
+\sin\beta & \cos\beta
+\end{array}\right]\right)}\\
+ & ={\color{red}a}\cdot{\color{blue}b}\cdot\left[\begin{array}{c|c}
+{\color{red}\cos\alpha}\cdot{\color{blue}\cos\beta}{\color{red}-\sin\alpha}\cdot{\color{blue}\sin\beta} & {\color{red}\cos\alpha}\cdot{\color{blue}\left(-\sin\beta\right)}{\color{red}-\sin\alpha}\cdot{\color{blue}\cos\left(\beta\right)}\\
+\hline {\color{red}\sin\alpha}\cdot{\color{blue}\cos\beta}+{\color{red}\cos\alpha}\cdot{\color{blue}\sin\beta} & {\color{red}\sin\alpha}\cdot{\color{blue}\left(-\sin\beta\right)}+{\color{red}\cos\alpha}\cdot{\color{blue}\cos\left(\beta\right)}
+\end{array}\right]\\
+ & ={\color{red}a}\cdot{\color{blue}b}\cdot\left[\begin{array}{c|c}
+\cos\left({\color{red}\alpha}+{\color{blue}\beta}\right) & \sin\left({\color{red}\alpha}+{\color{blue}\beta}\right)\\
+\hline \sin\left({\color{red}\alpha}+{\color{blue}\beta}\right) & \cos\left({\color{red}\alpha}+{\color{blue}\beta}\right)
+\end{array}\right]={\color{red}a}\cdot{\color{blue}b}\cdot\left[\begin{array}{c|c}
+\cos\left({\color{blue}\beta}+{\color{red}\alpha}\right) & \sin\left({\color{blue}\beta}+{\color{red}\alpha}\right)\\
+\hline \sin\left({\color{blue}\beta}+{\color{red}\alpha}\right) & \cos\left({\color{blue}\beta}+{\color{red}\alpha}\right)
+\end{array}\right]\\
+ & ={\color{blue}\left(b\cdot\left[\begin{array}{cc}
+\cos\beta & -\sin\beta\\
+\sin\beta & \cos\beta
+\end{array}\right]\right)}\cdot{\color{red}\left(a\cdot\left[\begin{array}{cc}
+\cos\alpha & -\sin\alpha\\
+\sin\alpha & \cos\alpha
+\end{array}\right]\right)}={\color{red}B}\cdot{\color{blue}A}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+קבוצת מטריצות הסיבוב והמתיחה היא שדה.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ למעשה מדובר בשדה מוכר למדי - זהו שדה המרוכבים!
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$a,b,c,d\in\MKreal$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left[\begin{array}{cc}
+a & -b\\
+b & a
+\end{array}\right]\cdot\left[\begin{array}{cc}
+c & -d\\
+d & c
+\end{array}\right]=\left[\begin{array}{cc}
+ac-bd & -ad-bc\\
+bc+ad & -bd+ac
+\end{array}\right]=\left[\begin{array}{cc}
+{\color{red}ac-bd} & -\left({\color{blue}bc+ad}\right)\\
+{\color{blue}bc+ad} & {\color{red}ac-bd}
+\end{array}\right]
+\]
+
+
+\end_inset
+וגם: 
+\begin_inset Formula
+$\left(a+bi\right)\cdot\left(c+di\right)=\left({\color{red}ac-bd}\right)+\left({\color{blue}ad+bc}\right)\cdot i$
+\end_inset
+.
+\end_layout
+
+\begin_layout Subsection
+מרחב ההעתקות
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$W$
+\end_inset
+ גם הוא מ"ו מעל 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+, קבוצת ההעתקות הליניאריות 
+\begin_inset Formula
+$\MKhom\left(V,W\right)$
+\end_inset
+, יחד עם פעולות החיבור והכפל בסקלר שלה
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+לכל 
+\begin_inset Formula
+$f,g:A\rightarrow\MKfield$
+\end_inset
+ הגדרנו את 
+\begin_inset Formula
+$f+g$
+\end_inset
+ ע"י 
+\begin_inset Formula
+$\left(f+g\right)\left(x\right):=f\left(x\right)+g\left(x\right)$
+\end_inset
+ (לכל 
+\begin_inset Formula
+$x\in\MKfield$
+\end_inset
+), ולכל 
+\begin_inset Formula
+$f:A\rightarrow\MKfield$
+\end_inset
+ ו-
+\begin_inset Formula
+$c\in\MKfield$
+\end_inset
+ הגדרנו את 
+\begin_inset Formula
+$c\cdot f$
+\end_inset
+ ע"י 
+\begin_inset Formula
+$\left(c\cdot f\right)\left(x\right):=c\cdot f\left(x\right)$
+\end_inset
+.
+\end_layout
+
+\end_inset
+, היא מרחב וקטורי מעל 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ (לכל מ"ו 
+\begin_inset Formula
+$W$
+\end_inset
+ מעל 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כלומר סכום של העתקות ליניאריות וכפל העתקה ליניארית בסקלר הם העתקות ליניאריות, ובנוסף, מתקיימות
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset Formula
+$8$
+\end_inset
+ האקסיומות של מרחב וקטורי.
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\end_layout
+
+\begin_layout Claim
+נניח ש-
+\begin_inset Formula
+$V$
+\end_inset
+ נ"ס ויהי 
+\begin_inset Formula
+$W$
+\end_inset
+ גם הוא מ"ו נ"ס מעל 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+, ונסמן 
+\begin_inset Formula
+$n:=\dim V$
+\end_inset
+ ו-
+\begin_inset Formula
+$m:=\dim W$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKclc$
+\end_inset
+ בסיסים של 
+\begin_inset Formula
+$V$
+\end_inset
+ ו-
+\begin_inset Formula
+$W$
+\end_inset
+ בהתאמה ותהא 
+\begin_inset Formula
+$\omega_{\MKclb,\MKclc}:\MKhom\left(V,W\right)\rightarrow M_{m\times n}\left(\MKfield\right)$
+\end_inset
+ פונקציה המוגדרת ע"י 
+\begin_inset Formula
+$\omega_{\MKclb,\MKclc}\left(T\right):=\left[T\right]_{\MKclb}^{\MKclc}$
+\end_inset
+ (לכל ה"ל 
+\begin_inset Formula
+$T:V\rightarrow W$
+\end_inset
+).
+\begin_inset Newline newline
+\end_inset
+המרחבים 
+\begin_inset Formula
+$\MKhom\left(V,W\right)$
+\end_inset
+ ו-
+\begin_inset Formula
+$M_{m\times n}\left(\MKfield\right)$
+\end_inset
+ איזומורפיים זה לזה ו-
+\begin_inset Formula
+$\omega_{\MKclb,\MKclc}$
+\end_inset
+ היא איזומורפיזם ביניהם ובפרט היא העתקה ליניארית.
+\end_layout
+
+\begin_layout Corollary
+נניח ש-
+\begin_inset Formula
+$V$
+\end_inset
+ נ"ס ויהי 
+\begin_inset Formula
+$W$
+\end_inset
+ גם הוא מ"ו נ"ס מעל 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+, ונסמן 
+\begin_inset Formula
+$n:=\dim V$
+\end_inset
+ ו-
+\begin_inset Formula
+$m:=\dim W$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מתקיים 
+\begin_inset Formula
+$\dim\left(\MKhom\left(V,W\right)\right)=\dim M_{m\times n}\left(\MKfield\right)=m\cdot n$
+\end_inset
+.
+\end_layout
+
+\begin_layout Subsection
+מרחבי מנה
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$W\subseteq V$
+\end_inset
+ תמ"ו, מחלקת השקילות של וקטור 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ ביחס ל-
+\begin_inset Formula
+$W$
+\end_inset
+ היא הישרייה 
+\begin_inset Formula
+$\left\{ v\right\} +W$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כלומר מה שיחס המנה עושה הוא "לפרוס" את המרחב 
+\begin_inset Formula
+$V$
+\end_inset
+ לפרוסות שכל אחת מהן היא ישרייה שמרחב הכיוונים שלה הוא 
+\begin_inset Formula
+$W$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$W\subseteq V$
+\end_inset
+ תמ"ו, לכל 
+\begin_inset Formula
+$v,u\in V$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$c\in\MKfield$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left[v\right]+\left[u\right]=\left[v+u\right]$
+\end_inset
+ ו-
+\begin_inset Formula
+$c\cdot\left[v\right]=\left[c\cdot v\right]$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula
+$W\subseteq V$
+\end_inset
+ תמ"ו, קבוצת מחלקות השקילות (שתסומן ב-
+\begin_inset Formula
+$V/W$
+\end_inset
+), יחד עם פעולות החיבור והכפל בסקלר שלה, היא מרחב וקטורי מעל 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+העתקת המנה של תמ"ו 
+\begin_inset Formula
+$W\subseteq V$
+\end_inset
+ היא פונקציה על וגרעינה הוא 
+\begin_inset Formula
+$W$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula
+$W\subseteq V$
+\end_inset
+ תמ"ו, לכל תמ"ו 
+\begin_inset Formula
+$U\subseteq V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$V=W\oplus U$
+\end_inset
+ הצמצום של העתקת המנה ל-
+\begin_inset Formula
+$U$
+\end_inset
+ הוא איזומורפיזם בין 
+\begin_inset Formula
+$U$
+\end_inset
+ ל-
+\begin_inset Formula
+$V/W$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+נניח ש-
+\begin_inset Formula
+$V$
+\end_inset
+ נ"ס ויהי 
+\begin_inset Formula
+$W\subseteq V$
+\end_inset
+ תמ"ו, מתקיים 
+\begin_inset Formula
+$\dim V=\dim W+\dim V/W$
+\end_inset
+.
+\end_layout
+
+\begin_layout Subsection
+כפל סדרות וקטורים בווקטורים ממרחב הקואורדינטות ובמטריצות
+\end_layout
+
+\begin_layout Claim
+נניח ש-
+\begin_inset Formula
+$V$
+\end_inset
+ נ"ס.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+לכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ ולכל בסיס סדור 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ (של 
+\begin_inset Formula
+$V$
+\end_inset
+) מתקיים 
+\begin_inset Formula
+$v=\MKclb\cdot\left[v\right]_{\MKclb}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+לכל שני בסיסים סדורים 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKclc$
+\end_inset
+ (של 
+\begin_inset Formula
+$V$
+\end_inset
+) מתקיים 
+\begin_inset Formula
+$\MKclc=\MKclb\cdot\left[\MKid_{V}\right]_{\MKclb}^{\MKclc}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+תהא 
+\begin_inset Formula
+$A\in M_{n}\left(\MKfield\right)$
+\end_inset
+ מטריצה ותהא 
+\begin_inset Formula
+$S:=\left(v_{1},v_{2},\ldots,v_{n}\right)$
+\end_inset
+ סדרת וקטורים ב-
+\begin_inset Formula
+$V$
+\end_inset
+, אם 
+\begin_inset Formula
+$A$
+\end_inset
+ אינה הפיכה אז 
+\begin_inset Formula
+$S\cdot A$
+\end_inset
+ תלויה ליניארית.
+\end_layout
+
+\begin_layout Itemize
+תהא 
+\begin_inset Formula
+$A\in M_{n}\left(\MKfield\right)$
+\end_inset
+ מטריצה, 
+\begin_inset Formula
+$A$
+\end_inset
+ הפיכה אם"ם 
+\series bold
+קיים
+\series default
+ בסיס סדור 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ (של 
+\begin_inset Formula
+$V$
+\end_inset
+) כך ש-
+\begin_inset Formula
+$\MKclb\cdot A$
+\end_inset
+ בת"ל (וממילא 
+\begin_inset Formula
+$\MKclb\cdot A$
+\end_inset
+ בסיס).
+\end_layout
+
+\begin_layout Itemize
+תהא 
+\begin_inset Formula
+$A\in M_{n}\left(\MKfield\right)$
+\end_inset
+ מטריצה, 
+\begin_inset Formula
+$A$
+\end_inset
+ הפיכה אם"ם 
+\series bold
+לכל
+\series default
+ בסיס סדור 
+\begin_inset Formula
+$\MKclb$
+\end_inset
+ (של 
+\begin_inset Formula
+$V$
+\end_inset
+) הסדרה 
+\begin_inset Formula
+$\MKclb\cdot A$
+\end_inset
+ בת"ל (וממילא 
+\begin_inset Formula
+$\MKclb\cdot A$
+\end_inset
+ בסיס).
+\end_layout
+
+\end_deeper
+
+\end_body
+
+\end_document
+

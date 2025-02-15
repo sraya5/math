@@ -1,0 +1,3168 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The head's design for summuries,make the layout more similar to a book:
+\AtBeginDocument{
+\renewcommand\headrule{%
+  \kern -7pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+  \kern 10pt
+}}
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Correct the reversed parentheses in labels:
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\newfontfamily{\hebrewfont}{David}
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+
+\end_preamble
+
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+customHeadersFooters
+\end_modules
+
+\maintain_unincluded_children false
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+
+
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size      Larger
+	  Series     Bold
+	EndFont
+End
+
+
+Style Solution
+
+	LabelString           "פתרון: "End
+
+
+Style Notation
+
+	LabelString           "סימון  \thetheorem: "End
+
+Style Theorem
+
+	LabelString           "משפט \thetheorem: "End
+
+Style Property
+
+	LabelString           "תזכורת: "End
+
+\end_local_layout
+
+\language hebrew
+
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\boxbgcolor #cccccc
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+
+\tocdepth 3
+
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "C:/Users/sraya/AppData/Roaming/LyX2.4/macros/MKmacros.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Right Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+leftmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Left Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+תורת הגרפים
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Center Footer
+
+\end_layout
+
+\begin_layout Title
+
+\series bold
+\size huge
+תורת הגרפים
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+התחלה
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+\series bold
+גרף לא מכוון
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$V$
+\end_inset
+ קבוצה סופית ולא ריקה ותהא 
+\begin_inset Formula
+$E\subseteq P\left(V\right)$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$e\in E$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|e\right|=2$
+\end_inset
+, הזוג 
+\begin_inset Formula
+$G:=\left(V,E\right)$
+\end_inset
+ הוא 
+\bar under
+גרף לא מכוון
+\bar default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+גרף מכוון
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$V$
+\end_inset
+ קבוצה סופית ולא ריקה ותהא 
+\begin_inset Formula
+$E\subseteq V\times V$
+\end_inset
+, הזוג 
+\begin_inset Formula
+$G:=\left(V,E\right)$
+\end_inset
+ הוא 
+\bar under
+גרף מכוון
+\bar default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+יהי 
+\begin_inset Formula
+$G:=\left(V,E\right)$
+\end_inset
+ גרף (מכוון/לא מכוון), איברי 
+\begin_inset Formula
+$V$
+\end_inset
+ נקראים 
+\bar under
+קודקודים
+\bar default
+ או 
+\bar under
+צמתים
+\bar default
+ ואיברי 
+\begin_inset Formula
+$E$
+\end_inset
+ נקראים 
+\bar under
+צלעות
+\bar default
+ או 
+\bar under
+קשתות
+\bar default
+.
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$G:=\left(V,E\right)$
+\end_inset
+ גרף לא מכוון.
+\end_layout
+
+\begin_layout Definition
+נאמר ש-
+\begin_inset Formula
+$G$
+\end_inset
+ הוא 
+\bar under
+גרף שלם
+\bar default
+ אם 
+\begin_inset Formula
+$E=\left\{ e\in P\left(V\right):\left|e\right|=2\right\} $
+\end_inset
+, הגרף השלם מגודל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מסומן ב-
+\begin_inset Formula
+$K_{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\bar under
+הגרף המשלים
+\bar default
+ של 
+\begin_inset Formula
+$G$
+\end_inset
+ הוא 
+\begin_inset Formula
+$\overline{G}:=\left(V,\overline{E}\right)$
+\end_inset
+ כאשר 
+\begin_inset Formula
+$\overline{E}:=\left\{ e\in P\left(V\right):\left|e\right|=2,\ e\notin E\right\} $
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+נאמר שקודקודים 
+\begin_inset Formula
+$v,u\in V$
+\end_inset
+ הם 
+\bar under
+שכנים
+\bar default
+ אם מחברת ביניהם צלע (כלומר 
+\begin_inset Formula
+$\left\{ v,u\right\} \in E$
+\end_inset
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+יהי 
+\begin_inset Formula
+$v\in V$
+\end_inset
+, ה
+\bar under
+דרגה
+\bar default
+ של 
+\begin_inset Formula
+$v$
+\end_inset
+ (מסומנת ב-
+\begin_inset Formula
+$\deg\left(v\right)$
+\end_inset
+) היא מספר הקודקודים השכנים שלו (ששווה למספר הצלעות שבהן הוא מופיע).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+נאמר שקודקוד 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ הוא 
+\bar under
+עלה
+\bar default
+ אם 
+\begin_inset Formula
+$\deg\left(v\right)=1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+נאמר ש-
+\begin_inset Formula
+$G$
+\end_inset
+ הוא 
+\bar under
+\begin_inset Formula
+$d$
+\end_inset
+-רגולרי
+\bar default
+ (וגם באופן כללי 
+\bar under
+גרף רגולרי
+\bar default
+) אם לכל 
+\begin_inset Formula
+$v,u\in V$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\deg v=d=\deg u$
+\end_inset
+ (עבור 
+\begin_inset Formula
+$d\in\MKnatural_{0}$
+\end_inset
+ כלשהו).
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$G':=\left(V',E'\right)$
+\end_inset
+ גרף מכוון ויהי 
+\begin_inset Formula
+$v\in V'$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+\bar under
+דרגת היציאה
+\bar default
+ של 
+\begin_inset Formula
+$v$
+\end_inset
+ היא מספר הצלעות היוצאות ממנו (מספר הצלעות שבהן הוא מופיע ראשון) ו
+\bar under
+דרגת הכניסה
+\bar default
+ של 
+\begin_inset Formula
+$v$
+\end_inset
+ היא מספר הצלעות הנכנסות אליו (אלה שבהן הוא מופיע שני), דרגת הכניסה מסומנת ב-
+\begin_inset Formula
+$\text{indegree}\left(v\right)$
+\end_inset
+ ודרגת היציאה מסומנת ב-
+\begin_inset Formula
+$\text{outdegree}\left(v\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+ה
+\bar under
+דרגה
+\bar default
+ של 
+\begin_inset Formula
+$v$
+\end_inset
+ היא 
+\begin_inset Formula
+$\deg\left(v\right):=\text{indegree}\left(v\right)+\text{outdegree}\left(v\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מספר הצלעות ב-
+\begin_inset Formula
+$K_{n}$
+\end_inset
+ הוא 
+\begin_inset Formula
+$\sum_{i=1}^{n-1}i=\frac{n^{2}-n}{2}={n \choose 2}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$G:=\left(V,E\right)$
+\end_inset
+ גרף.
+\end_layout
+
+\begin_layout Claim
+נסמן 
+\begin_inset Formula
+$\left\{ v_{1},v_{2},\ldots,v_{n}\right\} :=V$
+\end_inset
+ וא"כ 
+\begin_inset Formula
+$\sum_{i=1}^{n}\deg\left(v_{i}\right)=2\left|E\right|$
+\end_inset
+, בפרט סכום דרגות הקודקודים של כל גרף הוא זוגי.
+\end_layout
+
+\begin_layout Corollary
+מספר הקודקודים ב-
+\begin_inset Formula
+$G$
+\end_inset
+ שדרגתם אי-זוגית הוא אי-זוגי.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+מסלולים וקשירות
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$G:=\left(V,E\right)$
+\end_inset
+ גרף לא מכוון.
+\end_layout
+
+\begin_layout Definition
+נאמר שסדרת קודקודים 
+\begin_inset Formula
+$\left(v_{1},v_{2},\ldots,v_{n}\right)$
+\end_inset
+ היא 
+\bar under
+מסלול
+\bar default
+ אם 
+\begin_inset Formula
+$\left\{ v_{i},v_{i+1}\right\} \in E$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n-1\geq i\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+נאמר ש-
+\begin_inset Formula
+$G$
+\end_inset
+ הוא 
+\bar under
+גרף קשיר
+\bar default
+ אם לכל שני קודקודים 
+\begin_inset Formula
+$v,u\in V$
+\end_inset
+ קיים מסלול המחבר ביניהם
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר קיים מסלול שהם נמצאים בקצותיו.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\bar under
+יחס הקשירות
+\bar default
+ הוא יחס שקילות על 
+\begin_inset Formula
+$V$
+\end_inset
+ שבו כל שני קודקודים 
+\shape italic
+שונים
+\shape default
+ שקולים זה לזה אם קיים מסלול המחבר ביניהם (וכל קודקוד שקול לעצמו).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+מחלקות השקילות של יחס הקשירות נקראות 
+\bar under
+רכיבי קשירות
+\bar default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\bar under
+מסלול פשוט
+\bar default
+ הוא מסלול שאין בו חזרה על קודקוד פעמיים.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+מסלול שבו אין חזרה על צלע אחת פעמיים נקרא 
+\bar under
+מסילה
+\bar default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\bar under
+מסילה פשוטה
+\bar default
+ היא מסילה שבה אין חזרה על קודקוד פעמיים.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מסלול פשוט ומסילה פשוטה הם מושגים שקולים מפני שגם מסלול פשוט אינו יכול לחזור על צלע פעמיים.
+\end_layout
+
+\begin_layout Definition
+מסלול 
+\begin_inset Formula
+$\left(v_{0},v_{2},\ldots,v_{n}\right)$
+\end_inset
+ יקרא 
+\bar under
+מעגל
+\bar default
+ אם 
+\begin_inset Formula
+$v_{0}=v_{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+מעגל יקרא 
+\bar under
+מעגל פשוט
+\bar default
+ אם אין בו חזרה על קודקוד פעמיים (מלבד החזרה המובנית של הקודקוד הראשון והאחרון).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בכל מעגל יש מעגל פשוט.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$G:=\left(V,E\right)$
+\end_inset
+ גרף לא מכוון.
+\end_layout
+
+\begin_layout Claim
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$G$
+\end_inset
+ קשיר אם"ם ל-
+\begin_inset Formula
+$G$
+\end_inset
+ יש רכיב קשירות יחיד.
+\end_layout
+
+\begin_layout Enumerate
+החיתוך של שני רכיבי קשירות שונים ריק.
+\end_layout
+
+\begin_layout Enumerate
+לכל שני קודקודים ברכיבי קשירות שונים 
+\begin_inset Formula
+$v,u$
+\end_inset
+ אין צלע המחברת ביניהם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+(
+\begin_inset Formula
+$\left\{ v,u\right\} \notin E$
+\end_inset
+).
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+נסמן ב-
+\begin_inset Formula
+$r$
+\end_inset
+ את מספר רכיבי הקשירות של 
+\begin_inset Formula
+$G$
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$r\geq\left|V\right|-\left|E\right|$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+מסלולים מיוחדים
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$G:=\left(V,E\right)$
+\end_inset
+ גרף לא מכוון.
+\end_layout
+
+\begin_layout Definition
+מסלול פשוט העובר על כל הקודקודים ב-
+\begin_inset Formula
+$V$
+\end_inset
+ יקרא 
+\bar under
+מסלול המילטון
+\bar default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה: 
+\begin_inset CommandInset href
+LatexCommand href
+name "ויליאם ריאן המילטון"
+target https://he.wikipedia.org/wiki/%D7%95%D7%99%D7%9C%D7%99%D7%90%D7%9D_%D7%A8%D7%95%D7%90%D7%9F_%D7%94%D7%9E%D7%99%D7%9C%D7%98%D7%95%D7%9F
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+ (וגם 
+\bar under
+מסילת המילטון
+\bar default
+ מפני שמסלול פשוט ומסילה פשוטה הם מושגים שקולים).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+מעגל פשוט העובר על כל הקודקודים ב-
+\begin_inset Formula
+$V$
+\end_inset
+ יקרא 
+\bar under
+מעגל המילטון
+\bar default
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ נכון להיום אין בנמצא אלגוריתם יעיל הקובע לכל גרף אם יש בו מעגל המילטון, וכנראה שגם לא יהיה, שכן בעיה זו היא בעיית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\lang english
+NP
+\lang default
+
+\lang hebrew
+-
+\begin_inset CommandInset href
+LatexCommand href
+name "שלמה"
+target https://he.wikipedia.org/wiki/NP_(%D7%9E%D7%97%D7%9C%D7%A7%D7%AA_%D7%A1%D7%99%D7%91%D7%95%D7%9B%D7%99%D7%95%D7%AA)#%D7%91%D7%A2%D7%99%D7%95%D7%AA_NP-%D7%A7%D7%A9%D7%95%D7%AA_(NP-Hard)_%D7%95%D7%91%D7%A2%D7%99%D7%95%D7%AA_NP-%D7%A9%D7%9C%D7%9E%D7%95%D7%AA_(NPC)
+literal false
+\end_inset
+ ולכן קיום של פתרון יעיל עבורה (אלגוריתם בעל זמן ריצה פולינומיאלי) יגרור ש-
+\begin_inset CommandInset href
+LatexCommand href
+name "P=NP"
+target https://he.wikipedia.org/wiki/%D7%91%D7%A2%D7%99%D7%99%D7%AA_P%3DNP
+literal false
+\end_inset
+.
+\lang default
+
+\end_layout
+
+\begin_layout Definition
+מסילה העוברת על כל הצלעות ב-
+\begin_inset Formula
+$E$
+\end_inset
+ תקרא 
+\bar under
+מסילת אוילר
+\bar default
+ (וגם 
+\bar under
+מסלול אוילר
+\bar default
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+מעגל העובר על כל צלע ב-
+\begin_inset Formula
+$E$
+\end_inset
+ פעם אחת בדיוק יקרא 
+\bar under
+מעגל אוילר
+\bar default
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ אי אפשר לדבר על מעגל אוילר מבלי לדבר על 
+\begin_inset CommandInset href
+LatexCommand href
+name "בעיית הגשרים של קניגסברג"
+target https://he.wikipedia.org/wiki/%D7%94%D7%92%D7%A9%D7%A8%D7%99%D7%9D_%D7%A9%D7%9C_%D7%A7%D7%A0%D7%99%D7%92%D7%A1%D7%91%D7%A8%D7%92
+literal false
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$G:=\left(V,E\right)$
+\end_inset
+ גרף לא מכוון.
+\end_layout
+
+\begin_layout Claim
+אם 
+\begin_inset Formula
+$\left|V\right|\geq3$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left|E\right|\geq\left|V\right|$
+\end_inset
+ אז יש ב-
+\begin_inset Formula
+$G$
+\end_inset
+ מעגל פשוט.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ אין גרפים המקיימים 
+\begin_inset Formula
+$\left|E\right|\geq\left|V\right|$
+\end_inset
+ וגם 
+\begin_inset Formula
+$\left|V\right|<3$
+\end_inset
+, התנאי הראשון מיותר.
+\end_layout
+
+\begin_layout Standard
+נניח ש-
+\begin_inset Formula
+$G$
+\end_inset
+ קשיר.
+\end_layout
+
+\begin_layout Claim
+אם יש ב-
+\begin_inset Formula
+$G$
+\end_inset
+ מעגל אוילר אז דרגתו של כל אחד מן הקודקודים זוגית.
+\end_layout
+
+\begin_layout Theorem
+יש ב-
+\begin_inset Formula
+$G$
+\end_inset
+ מעגל אוילר אם"ם דרגתו של כל אחד מן הקודקודים זוגית.
+\end_layout
+
+\begin_layout Claim
+אם יש ב-
+\begin_inset Formula
+$G$
+\end_inset
+ מסילת אוילר אז דרגתו של כל אחד מן הקודקודים זוגית או שיש בדיוק שני קודקודים שדרגתם אי-זוגית.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+עצים
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+גרף קשיר 
+\begin_inset Formula
+$G$
+\end_inset
+ יקרא 
+\bar under
+עץ
+\bar default
+ אם אין בו מעגלים פשוטים.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מכיוון שבכל מעגל יש מעגל פשוט וכל מעגל פשוט הוא מעגל הדבר שקול לגרף קשיר שאין בו מעגלים כלל.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+בכל עץ יש עלה.
+\end_layout
+
+\begin_layout Corollary
+בכל עץ עם יותר מקודקוד אחד יש שני עלים.
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$G:=\left(V,E\right)$
+\end_inset
+ עץ, מתקיים 
+\begin_inset Formula
+$\left|E\right|=\left|V\right|-1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$G:=\left(V,E\right)$
+\end_inset
+ גרף קשיר כך ש-
+\begin_inset Formula
+$\left|E\right|=\left|V\right|-1$
+\end_inset
+, אין ב-
+\begin_inset Formula
+$G$
+\end_inset
+ מעגל פשוט (כלומר 
+\begin_inset Formula
+$G$
+\end_inset
+ הוא עץ).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ יחד עם טענה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+3.1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+נקבל שבגרף קשיר יש מעגל פשוט אם"ם 
+\begin_inset Formula
+$\left|E\right|\geq\left|V\right|$
+\end_inset
+.
+\end_layout
+
+\begin_layout Lemma
+יהי 
+\begin_inset Formula
+$G:=\left(V,E\right)$
+\end_inset
+ גרף קשיר, אם 
+\begin_inset Formula
+$\left(v_{1},v_{2},\ldots,v_{n}\right)$
+\end_inset
+ הוא מעגל פשוט ב-
+\begin_inset Formula
+$G$
+\end_inset
+ אז גם הגרף 
+\begin_inset Formula
+$G':=\left(V,E\setminus\left\{ v_{1},v_{2}\right\} \right)$
+\end_inset
+ הוא גרף קשיר.
+\end_layout
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula
+$G:=\left(V,E\right)$
+\end_inset
+ גרף, כל שניים מהתנאים הבאים גוררים את השלישי:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$G$
+\end_inset
+ קשיר.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$G$
+\end_inset
+ חסר מעגלים פשוטים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+שקול לחסר מעגלים.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+מתקיים 
+\begin_inset Formula
+$\left|E\right|=\left|V\right|-1$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בפרט אם 
+\begin_inset Formula
+$\left|E\right|=\left|V\right|-1$
+\end_inset
+ ומתקיים אחד משני התנאים האחרים אז 
+\begin_inset Formula
+$G$
+\end_inset
+ הוא עץ.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+תורת רמזי
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$G:=\left(V,E\right)$
+\end_inset
+ גרף לא מכוון.
+\end_layout
+
+\begin_layout Definition
+\bar under
+צביעה
+\bar default
+ של 
+\begin_inset Formula
+$G$
+\end_inset
+ היא פונקציה מ-
+\begin_inset Formula
+$E$
+\end_inset
+ לקבוצת צבעים נתונה 
+\begin_inset Formula
+$\left\{ c_{1},c_{2},\ldots,c_{n}\right\} $
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim*
+יהיו 
+\begin_inset Formula
+$2\leq n,m\in\MKnatural$
+\end_inset
+, אם קיימים 
+\begin_inset Formula
+$a,b\in\MKnatural$
+\end_inset
+ כך שמתקיים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+ב-
+\begin_inset Formula
+$K_{a}$
+\end_inset
+ הצבוע באדום וכחול יש בהכרח תת-גרף 
+\begin_inset Formula
+$K_{n}$
+\end_inset
+ הצבוע כולו 
+\color red
+אדום
+\color inherit
+ ו/או תת-גרף 
+\begin_inset Formula
+$K_{m-1}$
+\end_inset
+ הצבוע כולו 
+\color blue
+כחול
+\color inherit
+.
+\end_layout
+
+\begin_layout Enumerate
+ב-
+\begin_inset Formula
+$K_{b}$
+\end_inset
+ הצבוע באדום וכחול יש בהכרח תת-גרף 
+\begin_inset Formula
+$K_{n-1}$
+\end_inset
+ הצבוע כולו 
+\color red
+אדום
+\color inherit
+ ו/או תת-גרף 
+\begin_inset Formula
+$K_{m}$
+\end_inset
+ הצבוע כולו 
+\color blue
+כחול
+\color inherit
+.
+\end_layout
+
+\begin_layout Standard
+אז ב-
+\begin_inset Formula
+$K_{a+b}$
+\end_inset
+ הצבוע באדום וכחול יש בהכרח תת-גרף 
+\begin_inset Formula
+$K_{n}$
+\end_inset
+ הצבוע כולו 
+\color red
+אדום
+\color inherit
+ ו/או 
+\begin_inset Formula
+$K_{m}$
+\end_inset
+ הצבוע כולו 
+\color blue
+כחול
+\color inherit
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Theorem*
+\series bold
+משפט רמזי
+\series default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה: 
+\begin_inset CommandInset href
+LatexCommand href
+name "פרנק רמזי"
+target https://he.wikipedia.org/wiki/%D7%A4%D7%A8%D7%A0%D7%A7_%D7%A8%D7%9E%D7%96%D7%99
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$2\leq n,m\in\MKnatural$
+\end_inset
+, נסמן 
+\begin_inset Formula
+$N:={n+m-2 \choose n-1}$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$K_{N}$
+\end_inset
+ כשהוא צבוע באדום וכחול, יש ב-
+\begin_inset Formula
+$K_{N}$
+\end_inset
+ תת-גרף 
+\begin_inset Formula
+$K_{n}$
+\end_inset
+ שכולו צבוע 
+\color red
+אדום
+\color inherit
+ ו/או שיש ב-
+\begin_inset Formula
+$K_{N}$
+\end_inset
+ תת-גרף 
+\begin_inset Formula
+$K_{m}$
+\end_inset
+ שכולו צבוע 
+\color blue
+כחול
+\color inherit
+.
+\end_layout
+
+\begin_layout Corollary*
+לכל 
+\begin_inset Formula
+$N<M\in\MKnatural$
+\end_inset
+ ובהינתן צביעה של 
+\begin_inset Formula
+$K_{M}$
+\end_inset
+ באדום וכחול יש ב-
+\begin_inset Formula
+$K_{M}$
+\end_inset
+ תת-גרף 
+\begin_inset Formula
+$K_{n}$
+\end_inset
+ שכולו צבוע 
+\color red
+אדום
+\color inherit
+ ו/או שיש ב-
+\begin_inset Formula
+$K_{M}$
+\end_inset
+ תת-גרף 
+\begin_inset Formula
+$K_{m}$
+\end_inset
+ שכולו צבוע 
+\color blue
+כחול
+\color inherit
+.
+\end_layout
+
+\begin_layout Definition
+\bar under
+מספר רמזי
+\bar default
+ 
+\begin_inset Formula
+$R\left(n,m\right)$
+\end_inset
+ מוגדר להיות המספר הטבעי המינימלי שעבורו לכל צביעה באדום וכחול של הגרף השלם המתאים יש בו 
+\begin_inset Formula
+$K_{n}$
+\end_inset
+ שכולו צבוע אדום ו/או שיש בו גרף 
+\begin_inset Formula
+$K_{m}$
+\end_inset
+ שכולו צבוע כחול.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ נכון להיום אין בנמצא אלגוריתם יעיל לחישוב מספרי רמזי (!).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+יהיו 
+\begin_inset Formula
+$2\leq n,m\in\MKnatural$
+\end_inset
+, אם קיימים 
+\begin_inset Formula
+$a,b\in\MKnatural$
+\end_inset
+ כך שמתקיים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+ב-
+\begin_inset Formula
+$K_{a}$
+\end_inset
+ הצבוע באדום וכחול יש בהכרח תת-גרף 
+\begin_inset Formula
+$K_{n}$
+\end_inset
+ הצבוע כולו 
+\color red
+אדום
+\color inherit
+ ו/או תת-גרף 
+\begin_inset Formula
+$K_{m-1}$
+\end_inset
+ הצבוע כולו 
+\color blue
+כחול
+\color inherit
+.
+\end_layout
+
+\begin_layout Enumerate
+ב-
+\begin_inset Formula
+$K_{b}$
+\end_inset
+ הצבוע באדום וכחול יש בהכרח תת-גרף 
+\begin_inset Formula
+$K_{n-1}$
+\end_inset
+ הצבוע כולו 
+\color red
+אדום
+\color inherit
+ ו/או תת-גרף 
+\begin_inset Formula
+$K_{m}$
+\end_inset
+ הצבוע כולו 
+\color blue
+כחול
+\color inherit
+.
+\end_layout
+
+\begin_layout Standard
+אז ב-
+\begin_inset Formula
+$K_{a+b}$
+\end_inset
+ הצבוע באדום וכחול יש בהכרח תת-גרף 
+\begin_inset Formula
+$K_{n}$
+\end_inset
+ הצבוע כולו 
+\color red
+אדום
+\color inherit
+ ו/או 
+\begin_inset Formula
+$K_{m}$
+\end_inset
+ הצבוע כולו 
+\color blue
+כחול
+\color inherit
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Proof
+נניח שקיימים 
+\begin_inset Formula
+$a,b$
+\end_inset
+ כנ"ל ונגדיר 
+\begin_inset Formula
+$\left(V,E\right):=K_{a+b}$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$v\in V$
+\end_inset
+, מהגדרת 
+\begin_inset Formula
+$K_{a+b}$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\deg\left(v\right)=a+b-1$
+\end_inset
+ ולכן מעקרון שובך היונים נובע שאחד מן השניים מתקיים:
+\end_layout
+
+\begin_layout Itemize
+מקרה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\numeric off
+: יש לפחות 
+\begin_inset Formula
+$a$
+\end_inset
+ צלעות ב-
+\begin_inset Formula
+$E$
+\end_inset
+ הכוללות את 
+\begin_inset Formula
+$v$
+\end_inset
+ וצבועות כולן ב
+\color blue
+כחול
+\color inherit
+.
+\end_layout
+
+\begin_layout Itemize
+מקרה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\numeric off
+: יש לפחות 
+\begin_inset Formula
+$b$
+\end_inset
+ צלעות ב-
+\begin_inset Formula
+$E$
+\end_inset
+ הכוללות את 
+\begin_inset Formula
+$v$
+\end_inset
+ וצבועות כולן ב
+\color red
+אדום
+\color inherit
+.
+\end_layout
+
+\begin_layout Standard
+במקרה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+נתבונן ב-
+\begin_inset Formula
+$K_{a}$
+\end_inset
+המורכב מהקודקודים המתאימים, ע"פ הנתון יש בו 
+\begin_inset Formula
+$K_{n}$
+\end_inset
+ הצבוע כולו 
+\color red
+אדום
+\color inherit
+ (וסיימנו) או שיש בו 
+\begin_inset Formula
+$K_{m-1}$
+\end_inset
+ הצבוע כולו 
+\color blue
+כחול
+\color inherit
+ (ואז נצרף אליו את 
+\begin_inset Formula
+$v$
+\end_inset
+ ונקבל 
+\begin_inset Formula
+$K_{m}$
+\end_inset
+ 
+\color blue
+כחול
+\color inherit
+ וסיימנו).
+\end_layout
+
+\begin_layout Standard
+במקרה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+נתבונן ב-
+\begin_inset Formula
+$K_{b}$
+\end_inset
+המורכב מהקודקודים המתאימים, ע"פ הנתון יש בו יש בו 
+\begin_inset Formula
+$K_{m}$
+\end_inset
+ הצבוע כולו 
+\color blue
+כחול
+\color inherit
+ (וסיימנו) או שיש בו 
+\begin_inset Formula
+$K_{n-1}$
+\end_inset
+ הצבוע כולו 
+\color red
+אדום
+\color inherit
+ (ואז נצרף אליו את 
+\begin_inset Formula
+$v$
+\end_inset
+ ונקבל 
+\begin_inset Formula
+$K_{n}$
+\end_inset
+ 
+\color red
+אדום
+\color inherit
+ וסיימנו).
+\end_layout
+
+\end_deeper
+
+\begin_layout Theorem
+\series bold
+משפט רמזי
+\series default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה: 
+\begin_inset CommandInset href
+LatexCommand href
+name "פרנק רמזי"
+target https://he.wikipedia.org/wiki/%D7%A4%D7%A8%D7%A0%D7%A7_%D7%A8%D7%9E%D7%96%D7%99
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$2\leq n,m\in\MKnatural$
+\end_inset
+, נסמן 
+\begin_inset Formula
+$N:={n+m-2 \choose n-1}$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$K_{N}$
+\end_inset
+ כשהוא צבוע באדום וכחול, יש ב-
+\begin_inset Formula
+$K_{N}$
+\end_inset
+ תת-גרף 
+\begin_inset Formula
+$K_{n}$
+\end_inset
+ שכולו צבוע 
+\color red
+אדום
+\color inherit
+ ו/או שיש ב-
+\begin_inset Formula
+$K_{N}$
+\end_inset
+ תת-גרף 
+\begin_inset Formula
+$K_{m}$
+\end_inset
+ שכולו צבוע 
+\color blue
+כחול
+\color inherit
+.
+\end_layout
+
+\begin_layout Proof
+נוכיח את הטענה באינדוקציה על 
+\begin_inset Formula
+$n+m$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\bar under
+בסיס האינדוקציה:
+\bar default
+ 
+\begin_inset Formula
+$n+m=4$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$n=m=2$
+\end_inset
+ ו-
+\begin_inset Formula
+$N:={2+2-2 \choose 2-1}={2 \choose 1}=2$
+\end_inset
+ ואכן ב-
+\begin_inset Formula
+$K_{2}$
+\end_inset
+ יש רק צלע אחת וממילא הוא מקיים שיש בו תת-גרף 
+\begin_inset Formula
+$K_{2}$
+\end_inset
+ הצבוע כולו באותו צבע (
+\color red
+אדום
+\color inherit
+/
+\color blue
+כחול
+\color inherit
+).
+\end_layout
+
+\begin_layout Itemize
+\bar under
+צעד האינדוקציה:
+\bar default
+ יהי 
+\begin_inset Formula
+$4\leq k\in\MKnatural$
+\end_inset
+ ונניח שלכל 
+\begin_inset Formula
+$2\leq a,b\in\MKnatural$
+\end_inset
+ המקיימים 
+\begin_inset Formula
+$k=a+b$
+\end_inset
+ יש ב-
+\begin_inset Formula
+$K_{N}$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כאשר 
+\begin_inset Formula
+$N:={a+b-2 \choose a-1}$
+\end_inset
+.
+\end_layout
+
+\end_inset
+ (כשהוא צבוע אדום וכחול) תת-גרף 
+\begin_inset Formula
+$K_{a}$
+\end_inset
+צבוע כולו 
+\color red
+אדום
+\color inherit
+ ו/או שיש בו תת-גרף 
+\begin_inset Formula
+$K_{b}$
+\end_inset
+ הצבוע כולו 
+\color blue
+כחול
+\color inherit
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+יהיו 
+\begin_inset Formula
+$2\leq n.m\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$k+1=n+m$
+\end_inset
+, נשים לב שמתקיים 
+\begin_inset Formula
+$k=n+\left(m-1\right)$
+\end_inset
+ ו-
+\begin_inset Formula
+$k=\left(n-1\right)+m$
+\end_inset
+ ונגדיר:
+\begin_inset Formula
+\[
+N:={n+m-2 \choose n-1}={n+m-3 \choose n-1}+{n+m-3 \choose n-2}={n+\left(m-1\right)-2 \choose n-1}+{\left(n-1\right)+m-2 \choose \left(n-1\right)-1}
+\]
+
+
+\end_inset
+מהנחת האינדוקציה ומהטענה הקודמת נובע שיש ב-
+\begin_inset Formula
+$K_{N}$
+\end_inset
+ תת-גרף 
+\begin_inset Formula
+$K_{n}$
+\end_inset
+ שכולו צבוע 
+\color red
+אדום
+\color inherit
+ ו/או שיש ב-
+\begin_inset Formula
+$K_{N}$
+\end_inset
+ תת-גרף 
+\begin_inset Formula
+$K_{m}$
+\end_inset
+ שכולו צבוע 
+\color blue
+כחול
+\color inherit
+.
+\end_layout
+
+\end_deeper
+
+\end_deeper
+
+\begin_layout Corollary
+לכל 
+\begin_inset Formula
+$N<M\in\MKnatural$
+\end_inset
+ ובהינתן צביעה של 
+\begin_inset Formula
+$K_{M}$
+\end_inset
+ באדום וכחול יש ב-
+\begin_inset Formula
+$K_{M}$
+\end_inset
+ תת-גרף 
+\begin_inset Formula
+$K_{n}$
+\end_inset
+ שכולו צבוע 
+\color red
+אדום
+\color inherit
+ ו/או שיש ב-
+\begin_inset Formula
+$K_{M}$
+\end_inset
+ תת-גרף 
+\begin_inset Formula
+$K_{m}$
+\end_inset
+ שכולו צבוע 
+\color blue
+כחול
+\color inherit
+.
+\end_layout
+
+\begin_layout Claim
+בהינתן צביעה של 
+\begin_inset Formula
+$K_{6}$
+\end_inset
+ באדום וכחול קיים ב-
+\begin_inset Formula
+$K_{6}$
+\end_inset
+ תת-גרף 
+\begin_inset Formula
+$K_{3}$
+\end_inset
+ שכל צלעותיו צבועות באותו הצבע.
+\end_layout
+
+\begin_layout Corollary
+\begin_inset Formula
+$R\left(3,3\right)=6$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula
+$2\leq n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$R\left(2,n\right)=n$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+מתקיים 
+\begin_inset Formula
+$R\left(3,4\right)=9$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula
+$2\leq n,m\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$R\left(n,m\right)=R\left(m,n\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+קוביות, גרפים דו-צדדיים וזיווגים
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+\bar under
+הקוביה ה-
+\begin_inset Formula
+$n$
+\end_inset
+ מימדית
+\bar default
+ היא הגרף 
+\begin_inset Formula
+$Q_{n}:=\left(V,E\right)$
+\end_inset
+ כאשר 
+\begin_inset Formula
+$V:=\left\{ 0,1\right\} ^{n}$
+\end_inset
+ ובין כל שני קודקודים השונים זה מזה בקואורדינטה אחת בדיוק מחברת צלע.
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$G:=\left(V,E\right)$
+\end_inset
+ גרף לא מכוון.
+\end_layout
+
+\begin_layout Definition
+\series bold
+גרף דו-צדדי
+\series default
+
+\begin_inset Newline newline
+\end_inset
+נאמר ש-
+\begin_inset Formula
+$G$
+\end_inset
+ הוא 
+\bar under
+דו-צדדי
+\bar default
+ אם קיימים 
+\begin_inset Formula
+$V_{1},V_{2}\subseteq V$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$V_{1}\cup V_{2}=V$
+\end_inset
+ ו-
+\begin_inset Formula
+$V_{1}\cap V_{2}=\emptyset$
+\end_inset
+ ובנוסף לכל 
+\begin_inset Formula
+$e\in E$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|V_{1}\cap e\right|=1$
+\end_inset
+ (כלומר כל צלע מכילה בדיוק קודקוד אחד מ-
+\begin_inset Formula
+$V_{1}$
+\end_inset
+ וקודקוד אחד מ-
+\begin_inset Formula
+$V_{2}$
+\end_inset
+), תתי-הקבוצות 
+\begin_inset Formula
+$V_{1}$
+\end_inset
+ ו-
+\begin_inset Formula
+$V_{2}$
+\end_inset
+ נקראות 
+\bar under
+הצדדים
+\bar default
+ של 
+\begin_inset Formula
+$G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+גרף דו-צדדי שלם
+\series default
+
+\begin_inset Newline newline
+\end_inset
+נאמר ש-
+\begin_inset Formula
+$G$
+\end_inset
+ הוא 
+\bar under
+דו-צדדי שלם
+\bar default
+ אם הוא דו-צדדי וכל קודקוד בצד אחד של 
+\begin_inset Formula
+$G$
+\end_inset
+ הוא שכן של כל קודקוד בצד האחר, נסמן ב-
+\begin_inset Formula
+$K_{n,m}$
+\end_inset
+ את הגרף הדו-צדדי השלם שצדדיו בגודל 
+\begin_inset Formula
+$m$
+\end_inset
+ ו-
+\begin_inset Formula
+$n$
+\end_inset
+ (יש רק אחד כזה).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ב-
+\begin_inset Formula
+$K_{n,m}$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|V\right|=n+m$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left|E\right|=n\cdot m$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+נאמר ש-
+\begin_inset Formula
+$M\subseteq E$
+\end_inset
+ הוא 
+\bar under
+זיווג
+\bar default
+ אם לכל 
+\begin_inset Formula
+$e_{1},e_{2}\in M$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$e_{1}\cap e_{2}=\emptyset$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+נאמר שזיווג 
+\begin_inset Formula
+$M\subseteq E$
+\end_inset
+ הוא 
+\bar under
+זיווג מושלם
+\bar default
+ אם לכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ קיימת 
+\begin_inset Formula
+$e\in M$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$v\in e$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+לכל 
+\begin_inset Formula
+$S\subseteq V$
+\end_inset
+ נגדיר את 
+\begin_inset Formula
+$N\left(S\right)$
+\end_inset
+ להיות קבוצת השכנים של איברי 
+\begin_inset Formula
+$S$
+\end_inset
+ (יש המסמנים אותה ב-
+\begin_inset Formula
+$\Gamma\left(S\right)$
+\end_inset
+).
+\end_layout
+
+\begin_layout Claim
+ב-
+\begin_inset Formula
+$Q_{n}=\left(V,E\right)$
+\end_inset
+ מתקיים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$\left|V\right|=2^{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\deg\left(v\right)=n$
+\end_inset
+ לכל 
+\begin_inset Formula
+$v\in V$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\left|E\right|=n\cdot2^{n-1}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula
+$2\leq n\in\MKnatural$
+\end_inset
+ יש ב-
+\begin_inset Formula
+$Q_{n}$
+\end_inset
+ מעגל המילטון.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$G:=\left(V_{1}\cup V_{2},E\right)$
+\end_inset
+ גרף דו-צדדי כאשר 
+\begin_inset Formula
+$V_{1}$
+\end_inset
+ ו-
+\begin_inset Formula
+$V_{2}$
+\end_inset
+ הם צדדיו.
+\end_layout
+
+\begin_layout Claim
+לכל מעגל 
+\begin_inset Formula
+$\left(v_{0},v_{1},v_{2},\ldots,v_{n}\right)$
+\end_inset
+ ב-
+\begin_inset Formula
+$G$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$n\in\MKeven$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ זיווג מושלם בגרף דו-צדדי מגדיר פונקציה חח"ע ועל מצד אחד לצד השני, מכאן שאם יש בגרף דו-צדדי זיווג מושלם אז צדדיו באותו גודל.
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 6.4"
+\end_inset
+אם קיימים 
+\begin_inset Formula
+$v,u\in V_{1}$
+\end_inset
+ שדרגתם היא 
+\begin_inset Formula
+$1$
+\end_inset
+ וקיים 
+\begin_inset Formula
+$w\in V_{2}$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left\{ w,v\right\} ,\left\{ w,u\right\} \in E$
+\end_inset
+ אז אין ב-
+\begin_inset Formula
+$G$
+\end_inset
+ זיווג מושלם.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula
+$S\subseteq V_{1}$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$N\left(S\right)\subseteq V_{2}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+אם יש ב-
+\begin_inset Formula
+$G$
+\end_inset
+ זיווג מושלם אז לכל 
+\begin_inset Formula
+$S\subseteq V_{1}$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|N\left(S\right)\right|\geq\left|S\right|$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ זוהי הכללה של טענה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\color blue
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 6.4"
+plural false
+caps false
+noprefix false
+\end_inset
+.
+\color inherit
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+משפט החתונה - משפט הול
+\series default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה: 
+\begin_inset CommandInset href
+LatexCommand href
+name "פיליפ הול"
+target https://he.wikipedia.org/wiki/%D7%A4%D7%99%D7%9C%D7%99%D7%A4_%D7%94%D7%95%D7%9C
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+אם 
+\begin_inset Formula
+$\left|V_{1}\right|=\left|V_{2}\right|$
+\end_inset
+ וגם לכל 
+\begin_inset Formula
+$S\subseteq V_{1}$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|N\left(S\right)\right|\geq\left|S\right|$
+\end_inset
+ אז יש ב-
+\begin_inset Formula
+$G$
+\end_inset
+ זיווג מושלם.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בהנחה ש-
+\begin_inset Formula
+$\left|V_{1}\right|=\left|V_{2}\right|$
+\end_inset
+ מתקיים: יש ב-
+\begin_inset Formula
+$G$
+\end_inset
+ זיווג מושלם אם"ם 
+\begin_inset Formula
+$\left|N\left(S\right)\right|\geq\left|S\right|$
+\end_inset
+ לכל 
+\begin_inset Formula
+$S\subseteq V_{1}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+אם 
+\begin_inset Formula
+$G$
+\end_inset
+ הוא גם 
+\begin_inset Formula
+$d$
+\end_inset
+-רגולרי (עבור 
+\begin_inset Formula
+$d\in\MKnatural$
+\end_inset
+ כלשהו
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+\begin_inset Formula
+$d$
+\end_inset
+ בהכרח שונה מ-
+\begin_inset Formula
+$0$
+\end_inset
+.
+\end_layout
+
+\end_inset
+) אז יש ב-
+\begin_inset Formula
+$G$
+\end_inset
+ זיווג מושלם.
+\end_layout
+
+\end_body
+
+\end_document
+

@@ -1,0 +1,3806 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The head's design for summuries,make the layout more similar to a book:
+\AtBeginDocument{
+\renewcommand\headrule{%
+  \kern -7pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+  \kern 10pt
+}}
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Correct the reversed parentheses in labels:
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\newfontfamily{\hebrewfont}{David}
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+
+
+
+\end_preamble
+
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+customHeadersFooters
+\end_modules
+
+\maintain_unincluded_children no
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size      Larger
+	  Series     Bold
+	EndFont
+End
+Style Solution
+	LabelString           "פתרון: "End
+Style Notation
+	LabelString           "סימון  \thetheorem: "End
+Style Theorem
+	LabelString           "משפט \thetheorem: "End
+Style Property
+	LabelString           "תזכורת: "End
+
+
+
+\end_local_layout
+
+\language hebrew
+
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\boxbgcolor #cccccc
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+
+\tocdepth 3
+
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename C:\Users\sraya\AppData\Roaming\LyX2.4\macros\MKmacros.lyx
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+התחלה
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Description
+תזכורת: באינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+הגדרנו מסילה כפונקציה רציפה 
+\begin_inset Formula
+$\gamma:I\rightarrow\MKbbx$
+
+
+\end_inset
+ כאשר 
+\begin_inset Formula
+$I\subseteq\MKreal$
+
+
+\end_inset
+ הוא מקטע (בד"כ קטע סגור) ו-
+\begin_inset Formula
+$\MKbbx$
+
+
+\end_inset
+ הוא מרחב מטרי, ואמרנו שפונקציה 
+\begin_inset Formula
+$f:\MKreal^{k}\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ היא 
+\bar under
+חלקה
+\bar default
+ אם היא גזירה מכל סדר
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+עבור מסילות שתחום ההגדרה שלהן כולל קצה/קצוות של הקטע/הקרן נדרוש גם גזירות חד-צדדית בקצוות מכל סדר.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ בניגוד לשלושת קורסי אינפי' שלמדנו עד כה, בקורס זה לא נבקש לנסח משפטים עם התנאים המינימליים הדרושים לכך שיתקיימו אלא נקל על עצמנו ונדרוש שכל הפונקציות שנעסוק בהן תהיינה חלקות.
+\end_layout
+
+\begin_layout Description
+תזכורת: 
+\bar under
+פרמטריזציה
+\bar default
+ של קבוצה 
+\begin_inset Formula
+$S\subseteq\MKreal^{n}$
+
+
+\end_inset
+ היא מסילה 
+\begin_inset Formula
+$\gamma:I\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\gamma^{*}=S$
+
+
+\end_inset
+ (
+\begin_inset Formula
+$\gamma^{*}:=\MKim\varphi$
+
+
+\end_inset
+ - זהו סימון מקובל לתמונה של מסילה).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ בקורס זה לא המסילות עצמן הן שיעניינו אותנו אלא תמונותיהן שעליהן נבצע אנליזה (אינטגרלים, נגזרות וכו').
+\end_layout
+
+\begin_layout Definition
+תהיינה 
+\begin_inset Formula
+$V,U\subseteq\MKreal^{k}$
+
+
+\end_inset
+ קבוצות פתוחות, העתקה 
+\begin_inset Formula
+$\phi:V\rightarrow U$
+
+
+\end_inset
+ תיקרא 
+\bar under
+דיפאומורפיזם
+\bar default
+ בין 
+\begin_inset Formula
+$V$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ אם היא חלקה, הפיכה, ההופכית שלה חלקה, ונגזרותיהן הפיכות בכל נקודה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+נאמר שמסילה חלקה 
+\begin_inset Formula
+$\mu:\left[c,d\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ מתקבלת ממסילה 
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ ע"י 
+\bar under
+רה-פרמטריזציה
+\bar default
+ אם קיימת פונקציה חלקה ועולה ממש 
+\begin_inset Formula
+$\phi:\left[c,d\right]\rightarrow\left[a,b\right]$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\phi\left(c\right)=a$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\phi\left(d\right)=b$
+
+
+\end_inset
+ המקיימת 
+\begin_inset Formula
+$\mu=\gamma\circ\phi$
+
+
+\end_inset
+, 
+\begin_inset Formula
+$\phi$
+
+
+\end_inset
+ כזו תיקרא 
+\bar under
+רה-פרמטריזציה
+\bar default
+ של 
+\begin_inset Formula
+$\left[a,b\right]$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ אם 
+\begin_inset Formula
+$\mu=\gamma\circ\phi$
+
+
+\end_inset
+ אז 
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ בהכרח חלקה גם היא.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ מהגדרה 
+\begin_inset Formula
+$\phi$
+
+
+\end_inset
+ כזו היא דיפאומורפיזם בין 
+\begin_inset Formula
+$\left[a,b\right]$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$\left[c,d\right]$
+
+
+\end_inset
+ ולכן גם 
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ מתקבלת מ-
+\begin_inset Formula
+$\mu$
+
+
+\end_inset
+ ע"י רה-פרמטריזציה (
+\begin_inset Formula
+$\mu\circ\phi^{-1}=\gamma$
+
+
+\end_inset
+).
+\begin_inset Newline newline
+\end_inset
+בנוסף, כמובן שכל מסילה מתקבלת מעצמה ע"י רה-פרמטריזציה (
+\begin_inset Formula
+$\gamma=\gamma\circ\MKid$
+
+
+\end_inset
+); ואם מסילה 
+\begin_inset Formula
+$\gamma_{3}$
+
+
+\end_inset
+ מתקבלת ממסילה 
+\begin_inset Formula
+$\gamma_{2}$
+
+
+\end_inset
+ ע"י רה-פרמטריזציה 
+\begin_inset Formula
+$\phi$
+
+
+\end_inset
+, ו-
+\begin_inset Formula
+$\gamma_{2}$
+
+
+\end_inset
+ מתקבלת מ-
+\begin_inset Formula
+$\gamma_{1}$
+
+
+\end_inset
+ ע"י רה-פרמטריזציה 
+\begin_inset Formula
+$\varphi$
+
+
+\end_inset
+, אז 
+\begin_inset Formula
+$\gamma_{3}$
+
+
+\end_inset
+ מתקבלת מ-
+\begin_inset Formula
+$\gamma_{1}$
+
+
+\end_inset
+ ע"י רה-פרמטריזציה (
+\begin_inset Formula
+$\gamma_{3}=\gamma_{2}\circ\phi=\gamma_{1}\circ\left(\varphi\circ\phi\right)$
+
+
+\end_inset
+). מכאן שרה-פרמטריזציה היא יחס שקילות על כל המסילות החלקות מקטעים סגורים ב-
+\begin_inset Formula
+$\MKreal$
+
+
+\end_inset
+ שתמונתן זהה והן בעלות נקודות קצה
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+נקודות הקצה של מסילה 
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ הן 
+\begin_inset Formula
+$\gamma\left(a\right)$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\gamma\left(b\right)$
+
+
+\end_inset
+, הנקודה הראשונה היא נקודת ההתחלה והשנייה היא נקודת הסיום.
+\end_layout
+
+\end_inset
+ זהות.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ נזכור שמה שמעניין אותנו הוא אנליזה על תמונות המסילות ולכן נרצה שהאנליזה שלנו לא תהיה תלויה במסילה המהווה את הפרמטריזציה של הקבוצה המבוקשת, כלומר נרצה שהאנליזה תישאר זהה לכל שתי מסילות המתקבלות זו מזו ע"י רה-פרמטריזציה.
+\end_layout
+
+\begin_layout Corollary
+תהיינה 
+\begin_inset Formula
+$\mu:\left[c,d\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ מסילות חלקות כך ש-
+\begin_inset Formula
+$\mu$
+
+
+\end_inset
+ מתקבלת מ-
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ ע"י רה-פרמטריזציה 
+\begin_inset Formula
+$\phi:\left[c,d\right]\rightarrow\left[a,b\right]$
+
+
+\end_inset
+, לכל 
+\begin_inset Formula
+$t\in\left[c,d\right]$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\mu'\left(t\right)=\gamma'\left(\phi\left(t\right)\right)\cdot\phi'\left(t\right)$
+
+
+\end_inset
+ ומכאן שגם 
+\begin_inset Formula
+$\MKspan\left(\mu'\left(t\right)\right)=\MKspan\left(\gamma'\left(\phi\left(t\right)\right)\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+מסילה 
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ תיקרא 
+\bar under
+רגולרית בנקודה
+\bar default
+ 
+\begin_inset Formula
+$t\in\left[a,b\right]$
+
+
+\end_inset
+ אם 
+\begin_inset Formula
+$\gamma'\left(t\right)\neq0$
+
+
+\end_inset
+, ותיקרא 
+\bar under
+רגולרית
+\bar default
+ אם היא רגולרית בכל נקודה 
+\begin_inset Formula
+$t\in\left[a,b\right]$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ הגדרה זו באה למנוע מצב שבו המסילה אמנם חלקה אך תמונתה אינה "חלקה"
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+שימו לב לכך שלא הגדרנו עדיין מתי 
+\series bold
+קבוצה
+\series default
+ היא חלקה, אנו מדברים כאן רק על האינטואיציה להיותה של קבוצה חלקה.
+\end_layout
+
+\end_inset
+, נביא לכך דוגמה.
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$\gamma:\left[-1,1\right]\rightarrow\MKreal^{2}$
+
+
+\end_inset
+ מסילה המוגדרת ע"י (לכל 
+\begin_inset Formula
+$t\in\left[-1,1\right]$
+
+
+\end_inset
+):
+\begin_inset Formula
+\[
+\gamma\left(t\right):=\begin{cases}
+\left(-e^{-\frac{1}{t^{2}}},e^{-\frac{1}{t^{2}}}\right) & t<0\\
+\left(0,0\right) & t=0\\
+\left(e^{-\frac{1}{t^{2}}},e^{-\frac{1}{t^{2}}}\right) & t>0
+\end{cases}
+\]
+
+
+
+
+\end_inset
+אנחנו יודעים שזוהי מסילה חלקה
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כי ראינו באינפי'
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\size normal
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\emph off
+\emph default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+את הפונקציה 
+\begin_inset Formula
+$x\mapsto e^{-\frac{1}{x^{2}}}$
+
+
+\end_inset
+ (כשהתמונה של 
+\begin_inset Formula
+$0$
+
+
+\end_inset
+ היא 
+\begin_inset Formula
+$0$
+
+
+\end_inset
+) ואז הוכחנו שהיא גזירה מכל סדר ב-
+\begin_inset Formula
+$0$
+
+
+\end_inset
+ וכל הנגזרות שלה ב-
+\begin_inset Formula
+$0$
+
+
+\end_inset
+ מתאפסות.
+\size default
+
+\end_layout
+
+\end_inset
+, אך תמונתה היא הקבוצה 
+\begin_inset Formula
+$\left\{ \left(x,y\right)\in\MKreal^{2}\mid x\in\left[-e^{-1},e^{-1}\right],\ y=\left|x\right|\right\} $
+
+
+\end_inset
+, כלומר הגרף של פונקציית הערך המוחלט בקטע 
+\begin_inset Formula
+$\left[-e^{-1},e^{-1}\right]$
+
+
+\end_inset
+ הכולל את 
+\begin_inset Formula
+$0$
+
+
+\end_inset
+ שהיא נקודת "שפיץ".
+\end_layout
+
+\begin_layout Corollary
+תהיינה 
+\begin_inset Formula
+$\mu:\left[c,d\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ מסילות חלקות כך ש-
+\begin_inset Formula
+$\mu$
+
+
+\end_inset
+ מתקבלת מ-
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ ע"י רה-פרמטריזציה 
+\begin_inset Formula
+$\phi:\left[c,d\right]\rightarrow\left[a,b\right]$
+
+
+\end_inset
+, 
+\begin_inset Formula
+$\mu$
+
+
+\end_inset
+ רגולרית בנקודה 
+\begin_inset Formula
+$t\in\left[c,d\right]$
+
+
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ רגולרית ב-
+\begin_inset Formula
+$\phi\left(t\right)$
+
+
+\end_inset
+, ובמקרה כזה מתקיים:
+\begin_inset Formula
+\[
+\frac{\gamma'\left(\phi\left(t\right)\right)}{\left\Vert \gamma'\left(\phi\left(t\right)\right)\right\Vert }=\frac{\mu'\left(t\right)}{\left\Vert \mu'\left(t\right)\right\Vert }
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ מסילה רגולרית בנקודה 
+\begin_inset Formula
+$t\in\left[a,b\right]$
+
+
+\end_inset
+, 
+\bar under
+הישר המשיק
+\bar default
+ ל-
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$\gamma\left(t\right)$
+
+
+\end_inset
+ הוא 
+\begin_inset Formula
+$\gamma\left(t\right)+\MKspan\left(\gamma'\left(t\right)\right)$
+
+
+\end_inset
+, ו-
+\begin_inset Formula
+$\frac{\gamma'\left(t\right)}{\left\Vert \gamma'\left(t\right)\right\Vert }$
+
+
+\end_inset
+ ייקרא 
+\bar under
+משיק היחידה
+\bar default
+ ל-
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ בנקודה 
+\begin_inset Formula
+$\gamma\left(t\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ משתי המסקנות שראינו נובע שהישר המשיק ומשיק היחידה אינם תלויים בפרמטריזציה.
+\end_layout
+
+\begin_layout Theorem*
+תהא 
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ מסילה חלקה, ותהא 
+\begin_inset Formula
+$\varphi:\left[0,L\left[\gamma\right]\right]\rightarrow\left[a,b\right]$
+
+
+\end_inset
+ פונקציה המוגדרת ע"י (לכל 
+\begin_inset Formula
+$x\in\left[0,L\left[\gamma\right]\right]$
+
+
+\end_inset
+):
+\begin_inset Formula
+\[
+\varphi\left(x\right):=\intop_{0}^{x}\left\Vert \gamma'\left(t\right)\right\Vert dt
+\]
+
+
+
+
+\end_inset
+
+\begin_inset Formula
+$\varphi$
+
+
+\end_inset
+ היא רה-פרמטריזציה של 
+\begin_inset Formula
+$\left[a,b\right]$
+
+
+\end_inset
+, ולכל 
+\begin_inset Formula
+$x\in\left[0,L\left[\gamma\right]\right]$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left\Vert \left(\gamma\circ\varphi\right)'\left(x\right)\right\Vert =1$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+בהינתן מסילה חלקה 
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+, 
+\begin_inset Formula
+$\varphi$
+
+
+\end_inset
+ המוגדרת שבמשפט שלעיל תיקרא 
+\bar under
+הרה-פרמטריזציה
+\bar default
+ של 
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ 
+\bar under
+לפי אורך קשת
+\bar default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+\series bold
+\size normal
+\color red
+לא ברור לי שזהו הניסוח המדויק של המונח, ודבר זה נכון גם עבור השם של 
+\begin_inset Formula
+$\overline{\gamma}$
+
+
+\end_inset
+להלן.
+\color inherit
+
+\size default
+
+\series default
+
+\end_layout
+
+\end_inset
+, ו-
+\begin_inset Formula
+$\overline{\gamma}:=\gamma\circ\varphi$
+
+
+\end_inset
+ תיקרא 
+\bar under
+הפרמטריזציה
+\bar default
+ של 
+\begin_inset Formula
+$\gamma^{*}$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+\series bold
+\color red
+בדף התרגול נכתב כאן 
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ במקום 
+\begin_inset Formula
+$\gamma^{*}$
+
+
+\end_inset
+, זה נראה לי מוזר.
+\color inherit
+
+\series default
+
+\end_layout
+
+\end_inset
+ 
+\bar under
+לפי אורך קשת
+\bar default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ בקובץ ההגדרות הגדרנו מסילה רגולרית כדי להימנע ממצב שבו מסילה נתונה היא אכן חלקה אך תמונתה אינה כזו. כמו כן הבאנו שם דוגמה למסילה חלקה שאינה רגולרית ותמונתה אינה "חלקה" (מבחינה אינטואיטיבית), אך לא הראינו שהתמונה של כל מסילה רגולרית היא אכן "חלקה".
+\end_layout
+
+\begin_layout Theorem
+תהא 
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ מסילה חלקה, ונניח ש-
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ רגולרית בנקודה 
+\begin_inset Formula
+$t\in\left[a,b\right]$
+
+
+\end_inset
+, במקרה כזה קיימים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+קטע סגור 
+\begin_inset Formula
+$I\subseteq\left[a,b\right]$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$t\in I$
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+דיפאומורפיזם 
+\begin_inset Formula
+$\phi:\left[c,d\right]\rightarrow I$
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+פונקציה חלקה 
+\begin_inset Formula
+$h:\left[c,d\right]\rightarrow\MKreal^{n-1}$
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+העתקה ליניארית אורתוגונלית 
+\begin_inset Formula
+$A:\MKreal^{n}\rightarrow\MKreal^{n}$
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Theorem
+כך ש-
+\begin_inset Formula
+$\left(x,h\left(x\right)\right)=A\left(\left(\gamma\circ\phi\right)\left(x\right)\right)$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$x\in\left[c,d\right]$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ כלומר 
+\begin_inset Formula
+$\gamma^{*}$
+
+
+\end_inset
+ נראית כמו גרף של פונקציה חלקה בסביבת 
+\begin_inset Formula
+$\gamma\left(t\right)$
+
+
+\end_inset
+, זהו האפיון הכי ברור לכך ש-
+\begin_inset Formula
+$\gamma^{*}$
+
+
+\end_inset
+ "חלקה" בסביבה זו.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+האינטגרל המסילתי
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ בהינתן עקומה במרחב 
+\begin_inset Formula
+$\MKreal^{n}$
+
+
+\end_inset
+ היינו רוצים להיות מסוגלים למדוד את אורכה, כמו כן בהינתן עקומה ב-
+\begin_inset Formula
+$\MKreal^{n}$
+
+
+\end_inset
+ ופונקציה (רציפה) 
+\begin_inset Formula
+$f:\MKreal^{n}\rightarrow\MKreal$
+
+
+\end_inset
+ היינו רוצים להיות מסוגלים לחשב את האינטגרל של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ לאורך עקומה ב-
+\begin_inset Formula
+$\MKreal^{n}$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ראו 
+\begin_inset CommandInset href
+LatexCommand href
+name "כאן"
+target https://commons.wikimedia.org/wiki/File:Line_integral_of_scalar_field.gif
+literal false
+\end_inset
+ המחשה לכך.
+\end_layout
+
+\end_inset
+ - ממש כפי שחישבנו את האינטגרל שלה לאורך קטע סגור.
+\end_layout
+
+\begin_layout Definition
+בהינתן מסילה חלקה 
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ וחלוקה 
+\begin_inset Formula
+$P$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$\left[a,b\right]$
+
+
+\end_inset
+, נסמן:
+\begin_inset Formula
+\[
+S_{\gamma}\left(P\right):=\sum_{i=1}^{r}\left\Vert \gamma\left(x_{i}\right)-\gamma\left(x_{i-1}\right)\right\Vert 
+\]
+
+
+
+
+\end_inset
+כאשר 
+\begin_inset Formula
+$P=\left\{ x_{0},x_{1},\ldots,x_{r}\right\} $
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$x_{i-1}<x_{i}$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+מהיות 
+\begin_inset Formula
+$P$
+
+
+\end_inset
+ חלוקה נובע ש-
+\begin_inset Formula
+$x_{0}=a$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$x_{r}=b$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+, זהו 
+\bar under
+סכום רימן
+\bar default
+ של 
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ עבור החלוקה 
+\begin_inset Formula
+$P$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Description
+תזכורת: בהינתן חלוקה 
+\begin_inset Formula
+$P:=\left\{ x_{0},x_{1},\ldots,x_{r}\right\} $
+
+
+\end_inset
+ של קטע 
+\begin_inset Formula
+$\left[a,b\right]$
+
+
+\end_inset
+ סימנו את 
+\bar under
+פרמטר החלוקה
+\bar default
+ של 
+\begin_inset Formula
+$P$
+
+
+\end_inset
+ ע"י
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+\series bold
+\color red
+בשיעור אור סימן את פרמטר החלוקה ב-
+\begin_inset Formula
+$\text{Mesh}\left(P\right)$
+
+
+\end_inset
+.
+\color inherit
+
+\series default
+
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\[
+\lambda\left(P\right):=\max\left\{ \left|x_{i}-x_{i-1}\right|:r\geq i\in\MKnatural\right\} 
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ מסילה חלקה, נאמר ש-
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ 
+\bar under
+בעלת אורך
+\bar default
+ אם קיים הגבול:
+\begin_inset Formula
+\[
+\lim_{\lambda\left(P\right)\rightarrow0}S_{\gamma}\left(P\right)
+\]
+
+
+
+
+\end_inset
+ובמקרה כזה נסמן אותו ב-
+\begin_inset Formula
+$L\left[\gamma\right]$
+
+
+\end_inset
+ ונקרא ל-
+\begin_inset Formula
+$L\left[\gamma\right]$
+
+
+\end_inset
+ 
+\bar under
+האורך
+\bar default
+ של 
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ משמעות הגבול היא כמו באינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\numeric off
+: קיים 
+\begin_inset Formula
+$L\in\MKreal$
+
+
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+
+
+\end_inset
+ קיימת 
+\begin_inset Formula
+$0<\delta\in\MKreal$
+
+
+\end_inset
+ כך שלכל חלוקה 
+\begin_inset Formula
+$P$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$\left[a,b\right]$
+
+
+\end_inset
+ המקיימת 
+\begin_inset Formula
+$\lambda\left(P\right)<\delta$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|S_{\gamma}\left(P\right)-L\right|<\varepsilon$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+לכל מסילה חלקה 
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ בעלת אורך מתקיים:
+\begin_inset Formula
+\[
+L\left[\gamma\right]=\sup\left\{ S_{\gamma}\left(P\right)\mid\left[a,b\right]\ \text{היא חלוקה של}\ P\right\} 
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+תהיינה 
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ מסילה חלקה, 
+\begin_inset Formula
+$P:=\left\{ x_{0},x_{1},\ldots,x_{r}\right\} $
+
+
+\end_inset
+ חלוקה של 
+\begin_inset Formula
+$\left[a,b\right]$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$x_{i-1}<x_{i}$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+
+
+\end_inset
+, 
+\begin_inset Formula
+$P^{*}:=\left\{ t_{1},t_{2},\ldots,t_{r}\right\} $
+
+
+\end_inset
+ בחירת נקודות עבור 
+\begin_inset Formula
+$P$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר 
+\begin_inset Formula
+$t_{i}\in\left[x_{i-1},x_{i}\right]$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+, ו-
+\begin_inset Formula
+$f:\MKreal^{n}\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה רציפה. נסמן:
+\begin_inset Formula
+\[
+S_{\gamma}\left(f,P,P^{*}\right)=\sum_{i=1}^{r}f\left(\gamma\left(t_{i}\right)\right)\cdot\left\Vert \gamma\left(x_{i}\right)-\gamma\left(x_{i-1}\right)\right\Vert 
+\]
+
+
+
+
+\end_inset
+זהו 
+\bar under
+סכום רימן
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ לאורך 
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ עבור החלוקה 
+\begin_inset Formula
+$P$
+
+
+\end_inset
+ ובחירת הנקודות 
+\begin_inset Formula
+$P^{*}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ מסילה חלקה ותהא 
+\begin_inset Formula
+$f:\MKreal^{n}\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה רציפה, 
+\bar under
+האינטגרל המסילתי של
+\bar default
+ 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ 
+\bar under
+לאורך
+\bar default
+ 
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ 
+\bar under
+ביחס לפרמטר האורך
+\bar default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+בוויקיפדיה אינטגרל זה נקרא "
+\begin_inset CommandInset href
+LatexCommand href
+name "אינטגרל קווי מסוג ראשון"
+target https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%A0%D7%98%D7%92%D7%A8%D7%9C_%D7%A7%D7%95%D7%95%D7%99#%D7%90%D7%99%D7%A0%D7%98%D7%92%D7%A8%D7%9C_%D7%A7%D7%95%D7%95%D7%99_%D7%9E%D7%A1%D7%95%D7%92_%D7%A8%D7%90%D7%A9%D7%95%D7%9F
+literal false
+\end_inset
+".
+\end_layout
+
+\end_inset
+ הוא:
+\begin_inset Formula
+\[
+\intop_{\gamma}f\ ds:=\lim_{\lambda\left(P\right)\rightarrow0}S_{\gamma}\left(f,P,P^{*}\right)
+\]
+
+
+
+
+\end_inset
+בהנחה שגבול זה אכן קיים.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ גם כאן משמעות הגבול היא כמו באינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\numeric off
+: קיים 
+\begin_inset Formula
+$L\in\MKreal$
+
+
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+
+
+\end_inset
+ קיימת 
+\begin_inset Formula
+$0<\delta\in\MKreal$
+
+
+\end_inset
+ כך שלכל חלוקה 
+\begin_inset Formula
+$P$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$\left[a,b\right]$
+
+
+\end_inset
+ המקיימת 
+\begin_inset Formula
+$\lambda\left(P\right)<\delta$
+
+
+\end_inset
+, ולכל בחירת נקודות 
+\begin_inset Formula
+$P^{*}$
+
+
+\end_inset
+ עבור 
+\begin_inset Formula
+$P$
+
+
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$\left|S_{\gamma}\left(f,P,P^{*}\right)-L\right|<\varepsilon$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+לכל מסילה חלקה 
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ בעלת אורך מתקיים 
+\begin_inset Formula
+$L\left[\gamma\right]=\intop_{\gamma}1\ ds$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+תהא 
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ מסילה חלקה בעלת אורך, ותהא 
+\begin_inset Formula
+$f:\MKreal^{n}\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה רציפה. האינטגרל 
+\begin_inset Formula
+$\intop_{\gamma}f\ ds$
+
+
+\end_inset
+ קיים, ומתקיים:
+\begin_inset Formula
+\[
+\intop_{\gamma}f\ ds=\intop_{a}^{b}f\left(\gamma\left(t\right)\right)\cdot\left\Vert \gamma'\left(t\right)\right\Vert dt
+\]
+
+
+
+
+\end_inset
+ובפרט:
+\begin_inset Formula
+\[
+L\left[\gamma\right]=\intop_{a}^{b}\left\Vert \gamma'\left(t\right)\right\Vert dt
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+תהיינה 
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\mu:\left[c,d\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ מסילות חלקות המתקבלות זו מזו ע"י רה-פרמטריזציה, לכל פונקציה רציפה 
+\begin_inset Formula
+$f:\MKreal^{n}\rightarrow\MKreal$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+\intop_{\gamma}f\ ds & =\intop_{\mu}f\ ds\\
+L\left[\gamma\right] & =L\left[\mu\right]
+\end{align*}
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ כלומר הפרמטריזציה אינה משפיע על האינטגרל של פונקציה לאורך עקומה, וכן אינה משפיע על אורך העקומה; א"כ מושגים אלו הוגדרו באופן הרצוי.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+תהא 
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ מסילה חלקה, ותהא 
+\begin_inset Formula
+$\varphi:\left[0,L\left[\gamma\right]\right]\rightarrow\left[a,b\right]$
+
+
+\end_inset
+ פונקציה המוגדרת ע"י (לכל 
+\begin_inset Formula
+$x\in\left[0,L\left[\gamma\right]\right]$
+
+
+\end_inset
+):
+\begin_inset Formula
+\[
+\varphi\left(x\right):=\intop_{0}^{x}\left\Vert \gamma'\left(t\right)\right\Vert dt
+\]
+
+
+
+
+\end_inset
+
+\begin_inset Formula
+$\varphi$
+
+
+\end_inset
+ היא רה-פרמטריזציה של 
+\begin_inset Formula
+$\left[a,b\right]$
+
+
+\end_inset
+, ולכל 
+\begin_inset Formula
+$x\in\left[0,L\left[\gamma\right]\right]$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left\Vert \left(\gamma\circ\varphi\right)'\left(x\right)\right\Vert =1$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+האינטגרל הקווי
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ בסוף 
+\begin_inset CommandInset href
+LatexCommand href
+name "ההקדמה שלי"
+target https://drive.google.com/file/d/1wAJjp68AE92kRRU278cB3lVsODcNCqfk/view?usp=drive_link
+literal false
+\end_inset
+ לנושא "מרחבי מכפלה פנימית" (ליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\numeric off
+), הבאתי המחשה פיזיקלית כדי להסביר את האינטואיציה למכפלה פנימית, אביא אותה כאן שוב:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align left
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+inner_pos "t"
+use_makebox "0"
+width "90col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+\begin_layout Plain Layout
+אם אני מפעיל על גוף 
+\begin_inset Formula
+$\boldsymbol{A}$
+
+
+\end_inset
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "כוח"
+target https://he.wikipedia.org/wiki/%D7%9B%D7%95%D7%97_)%D7%A4%D7%99%D7%96%D7%99%D7%A7%D7%94(
+literal false
+\end_inset
+ קבוע 
+\begin_inset Formula
+$\boldsymbol{{\color{orange}\vec{F}}}$
+
+
+\end_inset
+ ובכך מזיז אותו מנקודה 
+\begin_inset Formula
+$P$
+
+
+\end_inset
+ לנקודה 
+\begin_inset Formula
+$Q$
+
+
+\end_inset
+, אז ה
+\begin_inset CommandInset href
+LatexCommand href
+name "עבודה"
+target https://he.wikipedia.org/wiki/%D7%A2%D7%91%D7%95%D7%93%D7%94_)%D7%A4%D7%99%D7%96%D7%99%D7%A7%D7%94(
+literal false
+\end_inset
+ שביצעתי היא המכפלה הסקלרית 
+\begin_inset Formula
+$\boldsymbol{{\color{orange}\vec{F}}\cdot{\color{green}\overrightarrow{PQ}}}$
+
+
+\end_inset
+ (כאשר 
+\begin_inset Formula
+$\boldsymbol{{\color{green}\overrightarrow{PQ}}}$
+
+
+\end_inset
+ הוא וקטור ה
+\begin_inset CommandInset href
+LatexCommand href
+name "העתק"
+target https://he.wikipedia.org/wiki/%D7%94%D7%A2%D7%AA%D7%A7_)%D7%A4%D7%99%D7%96%D7%99%D7%A7%D7%94(
+literal false
+\end_inset
+ מ-
+\begin_inset Formula
+$P$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$Q$
+
+
+\end_inset
+). שימו לב - חלק מהכוח שהפעלתי לא תרם לכך שהגוף זז מפני שהוא מאונך לכיוון התנועה של הגוף 
+\begin_inset Formula
+$\boldsymbol{A}$
+
+
+\end_inset
+ (ראו באיור), כלומר המכפלה הסקלרית בדקה עד כמה "הצלחתי" להזיז את הגוף בכיוון הרצוי ע"י הכוח ועשתה זאת ע"י הטלת וקטור הכוח בכיוון של וקטור ההעתק וכפל באורכו של וקטור ההעתק.
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+scale 75
+	filename C:/Users/sraya/Documents/HUJI/COMPLEX/3algebra/2linear algebra (2)/3inner product space/איורים/הקשר בין עבודה למכפלה הסקלרית.png
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+\begin_layout Plain Layout
+העבודה היא המכפלה הסקלרית של וקטור הכוח בווקטור ההעתק
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+אני מקווה שגם מי שלא למד פיזיקה בתיכון קיבל רושם טוב ממה שהולך כאן, לא הייתה לי שום דרך להסביר זאת מבלי לערב מושגים פיזיקליים ולא במקרה...
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$ $
+
+
+\end_inset
+ כל זה היה טוב ויפה אבל מה קורה כאשר אני מניע את הגוף ע"י כוח משתנה לאורך מסלול עקום? אז לא נוכל פשוט לכפול את הווקטורים מפני שאי אפשר לבטא את המסלול העקום והכוח המשתנה ע"י שני וקטורים בלבד.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ כדי לפתור את הבעיה נסתכל קודם על מקרה פשוט יותר: נניח שהייתי מניע את הגוף לאורך מסלול המורכב מקטעים ישרים, ובכל קטע בנפרד הייתי מפעיל על הגוף כוח קבוע (כלומר בתוך קטע אחד הכוח קבוע אך ייתכן שבשני קטעים שונים הפעלתי כוחות שונים). במקרה כזה היה ברור לכולנו שיש לבצע את החישוב הקודם בנפרד ולסכום את כל תוצאות החישוב, וזה בדיוק מה שנעשה כשנרצה לחשב את העובדה שביצע כוח משתנה לאורך מסלול עקום: נקרב את המסלול העקום ע"י קווים ישרים ובכל קטע נדגום בנקודה אחת את הכוח, וככל שהקטעים הישרים יקרבו טוב יותר את המסלול כך החישוב שלנו יהיה קרוב יותר לאמת, וכאשר ניקח גבול נקבל את התוצאה הרצויה.
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$U\subseteq\MKreal^{n}$
+
+
+\end_inset
+ קבוצה פתוחה, 
+\bar under
+שדה וקטורי
+\bar default
+ על 
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ הוא פונקציה חלקה 
+\begin_inset Formula
+$X:U\rightarrow\MKreal^{n}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Description
+סימון: לפעמים, כשנרצה להדגיש שפונקציה 
+\begin_inset Formula
+$X:U\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ היא שדה וקטורי, נסמן אותה ב-
+\begin_inset Formula
+$\vec{X}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+תהיינה 
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ מסילה חלקה, 
+\begin_inset Formula
+$P:=\left\{ x_{0},x_{1},\ldots,x_{r}\right\} $
+
+
+\end_inset
+ חלוקה של 
+\begin_inset Formula
+$\left[a,b\right]$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$x_{i-1}<x_{i}$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$P^{*}:=\left\{ t_{1},t_{2},\ldots,t_{r}\right\} $
+
+
+\end_inset
+ בחירת נקודות עבור 
+\begin_inset Formula
+$P$
+
+
+\end_inset
+, ויהי 
+\begin_inset Formula
+$\vec{X}:U\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ שדה וקטורי. נסמן
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כאן סימן הכפל מתייחס למכפלה הפנימית הסטנדרטית - 
+\begin_inset Formula
+$x\cdot y=\sum_{i=1}^{n}x_{i}y_{i}$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\[
+S_{\gamma}\left(\vec{X},P,P^{*}\right)=\sum_{i=1}^{r}\vec{X}\left(\gamma\left(t_{i}\right)\right)\cdot\left(\gamma\left(x_{i}\right)-\gamma\left(x_{i-1}\right)\right)
+\]
+
+
+
+
+\end_inset
+זהו 
+\bar under
+סכום רימן
+\bar default
+ של 
+\begin_inset Formula
+$\vec{X}$
+
+
+\end_inset
+ לאורך 
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ עבור החלוקה 
+\begin_inset Formula
+$P$
+
+
+\end_inset
+ ובחירת הנקודות 
+\begin_inset Formula
+$P^{*}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ מסילה חלקה ויהי 
+\begin_inset Formula
+$\vec{X}:U\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ שדה וקטורי, 
+\bar under
+האינטגרל הקווי של
+\bar default
+ 
+\begin_inset Formula
+$\vec{X}$
+
+
+\end_inset
+ 
+\bar under
+לאורך
+\bar default
+ 
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+בוויקיפדיה אינטגרל זה נקרא "
+\begin_inset CommandInset href
+LatexCommand href
+name "אינטגרל קווי מסוג שני"
+target https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%A0%D7%98%D7%92%D7%A8%D7%9C_%D7%A7%D7%95%D7%95%D7%99#%D7%90%D7%99%D7%A0%D7%98%D7%92%D7%A8%D7%9C_%D7%A7%D7%95%D7%95%D7%99_%D7%9E%D7%A1%D7%95%D7%92_%D7%A9%D7%A0%D7%99
+literal false
+\end_inset
+".
+\end_layout
+
+\end_inset
+ הוא:
+\begin_inset Formula
+\[
+\intop_{\gamma}\vec{X}\cdot d\vec{\ell}:=\intop_{\gamma}\vec{X}\cdot d\gamma:=\lim_{\lambda\left(P\right)\rightarrow0}S_{\gamma}\left(f,P,P^{*}\right)
+\]
+
+
+
+
+\end_inset
+בהנחה שגבול זה אכן קיים.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ כאן השדה 
+\begin_inset Formula
+$\vec{X}$
+
+
+\end_inset
+ "מספר לנו" מהו הכוח שהופעל על הגוף בכל נקודה לאורך מסלול תנועתו, וההפרש בין ערכי המסילה מקרב את התנועה של הגוף באותה נקודה, לפיכך המכפלה הפנימית שלהם מקרבת את העבודה שבוצעה באותה נקודה וכשניקח גבול על סכומי רימן הנ"ל נקבל את העבודה שבוצעה על הגוף לאורך כל מסלול תנועתו.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ ההמחשה הכי טובה (שאני מכיר) למה שקורה כאן היא העבודה שמבצע 
+\begin_inset CommandInset href
+LatexCommand href
+name "שדה חשמלי"
+target https://he.wikipedia.org/wiki/%D7%A9%D7%93%D7%94_%D7%97%D7%A9%D7%9E%D7%9C%D7%99
+literal false
+\end_inset
+ על גוף בעל 
+\begin_inset CommandInset href
+LatexCommand href
+name "מטען חשמלי"
+target https://he.wikipedia.org/wiki/%D7%9E%D7%98%D7%A2%D7%9F_%D7%97%D7%A9%D7%9E%D7%9C%D7%99
+literal false
+\end_inset
+ הנע במרחב שבו חל השדה החשמלי.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+תהא 
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ מסילה חלקה בעלת אורך, ויהי 
+\begin_inset Formula
+$\vec{X}:U\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ שדה וקטורי. האינטגרל 
+\begin_inset Formula
+$\intop_{\gamma}\vec{X}\cdot d\vec{\ell}$
+
+
+\end_inset
+ קיים, ומתקיים:
+\begin_inset Formula
+\[
+\intop_{\gamma}\vec{X}\cdot d\vec{\ell}=\intop_{a}^{b}\vec{X}\left(\gamma\left(t\right)\right)\cdot\gamma'\left(t\right)dt
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ אם 
+\begin_inset Formula
+$\gamma$
+
+
+\end_inset
+ היא מסילה רגולרית וחח"ע, נוכל להגדיר פונקציה 
+\begin_inset Formula
+$\vec{T}:\gamma^{*}\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$t\in\left[a,b\right]$
+
+
+\end_inset
+ יתקיים 
+\begin_inset Formula
+$\vec{T}\left(\gamma\left(t\right)\right)=\frac{\gamma'\left(t\right)}{\left\Vert \gamma\left(t\right)\right\Vert }$
+
+
+\end_inset
+, ואם נצליח להגדיר גם פונקציה רציפה 
+\begin_inset Formula
+$h:\MKreal^{n}\rightarrow\MKreal$
+
+
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$p\in\gamma^{*}$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$h\left(p\right)=\vec{X}\left(p\right)\cdot\vec{T}\left(p\right)$
+
+
+\end_inset
+, אז נקבל:
+\begin_inset Formula
+\[
+\intop_{\gamma}\vec{X}\cdot d\vec{\ell}=\intop_{a}^{b}\vec{X}\left(\gamma\left(t\right)\right)\cdot\gamma'\left(t\right)dt=\intop_{a}^{b}\vec{X}\left(\gamma\left(t\right)\right)\cdot\frac{\gamma'\left(t\right)}{\left\Vert \gamma'\left(t\right)\right\Vert }\cdot\left\Vert \gamma'\left(t\right)\right\Vert dt=\intop_{a}^{b}h\left(\gamma\left(t\right)\right)\cdot\left\Vert \gamma'\left(t\right)\right\Vert dt=\intop_{\gamma}h\ ds
+\]
+
+
+
+
+\end_inset
+ולהפך: אם נתונה פונקציה רציפה 
+\begin_inset Formula
+$f:\MKreal^{n}\rightarrow\MKreal$
+
+
+\end_inset
+ נוכל לנסות להגדיר שדה וקטורי 
+\begin_inset Formula
+$\vec{F}:\MKreal^{n}\rightarrow\MKreal^{n}$
+
+
+\end_inset
+כך שלכל 
+\begin_inset Formula
+$p\in\gamma^{*}$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\vec{F}\left(p\right)\cdot\vec{T}\left(p\right)=f\left(p\right)$
+
+
+\end_inset
+, ואז נקבל:
+\begin_inset Formula
+\[
+\intop_{\gamma}f\ ds=\intop_{a}^{b}f\left(\gamma\left(t\right)\right)\cdot\left\Vert \gamma'\left(t\right)\right\Vert dt=\intop_{a}^{b}\vec{F}\left(\gamma\left(t\right)\right)\cdot\frac{\gamma'\left(t\right)}{\left\Vert \gamma'\left(t\right)\right\Vert }\cdot\left\Vert \gamma'\left(t\right)\right\Vert dt=\intop_{a}^{b}\vec{F}\left(\gamma\left(t\right)\right)\cdot\gamma'\left(t\right)dt=\intop_{\gamma}\vec{F}\cdot d\vec{\ell}
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+תהיינה 
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\mu:\left[c,d\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ מסילות חלקות המתקבלות זו מזו ע"י רה-פרמטריזציה, לכל שדה וקטורי 
+\begin_inset Formula
+$\vec{X}:U\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\intop_{\gamma}\vec{X}\cdot d\vec{\ell}=\intop_{\mu}\vec{X}\cdot d\vec{\ell}
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ כלומר הפרמטריזציה אינה משפיע על האינטגרל של פונקציה לאורך עקומה, וכן אינה משפיע על אורך העקומה; א"כ מושגים אלו הוגדרו באופן הרצוי.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+שדות משמרים
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+שדה וקטורי 
+\begin_inset Formula
+$\vec{F}:U\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ ייקרא 
+\bar under
+משמר
+\bar default
+ אם לכל שתי מסילות חלקות 
+\begin_inset Formula
+$\gamma_{1},\gamma_{2}:\left[a,b\right]\rightarrow U$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\intop_{\gamma_{1}}\vec{F}\cdot d\vec{\ell}=\intop_{\gamma_{2}}\vec{F}\cdot d\vec{\ell}
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ כלומר שדה משמר הוא שדה וקטורי שהאינטגרל הקווי שלו תלוי אך ורק בנקודות הקצה של העקומה ולא בעקומה המסוימת שמחברת בין נקודות אלו.
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$U\subseteq\MKreal^{n}$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+\series bold
+\size normal
+\color red
+האם יש צורך ש-
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ תהיה פתוחה?
+\color inherit
+
+\size default
+
+\series default
+
+\end_layout
+
+\end_inset
+, תהיינה 
+\begin_inset Formula
+$\gamma_{0},\gamma_{1}:\left[a,b\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ שתי מסילות חלקות בעלות נקודות קצה זהות, כלומר 
+\begin_inset Formula
+$\gamma_{0}\left(a\right)=\gamma_{1}\left(a\right)$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\gamma_{0}\left(b\right)=\gamma_{1}\left(b\right)$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נאמר ש-
+\begin_inset Formula
+$\gamma_{0}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\gamma_{1}$
+
+
+\end_inset
+ 
+\bar under
+הומוטופיות ב-
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ ביחס לנקודות קצה
+\bar default
+ אם קיימת פונקציה חלקה 
+\begin_inset Formula
+$H:\left[a,b\right]\times\left[0,1\right]\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$t\in\left[a,b\right]$
+
+
+\end_inset
+ ולכל 
+\begin_inset Formula
+$s\in\left[0,1\right]$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+H\left(t,0\right) & =\gamma_{0}\left(t\right) & H\left(a,s\right) & =\gamma_{0}\left(a\right)=\gamma_{1}\left(a\right)\\
+H\left(t,1\right) & =\gamma_{1}\left(t\right) & H\left(b,s\right) & =\gamma_{0}\left(b\right)=\gamma_{1}\left(b\right)
+\end{align*}
+
+
+
+
+\end_inset
+
+\begin_inset Formula
+$H$
+
+
+\end_inset
+ כנ"ל תיקרא 
+\bar under
+הומוטופיה
+\bar default
+ בין 
+\begin_inset Formula
+$\gamma_{0}$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$\gamma_{1}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ כלומר לכל 
+\begin_inset Formula
+$s\in\left[0,1\right]$
+
+
+\end_inset
+ הפונקציה 
+\begin_inset Formula
+$t\mapsto H\left(t,s\right)$
+
+
+\end_inset
+ היא מסילה חלקה בעלת נקודות קצה זהות לאלה של 
+\begin_inset Formula
+$\gamma_{0}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\gamma_{1}$
+
+
+\end_inset
+, ובנוסף הפונקציה 
+\begin_inset Formula
+$t\mapsto H\left(t,0\right)$
+
+
+\end_inset
+ היא 
+\begin_inset Formula
+$\gamma_{0}$
+
+
+\end_inset
+ והפונקציה 
+\begin_inset Formula
+$t\mapsto H\left(t,1\right)$
+
+
+\end_inset
+ היא 
+\begin_inset Formula
+$\gamma_{1}$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+א"כ ניתן "לעוות" את 
+\begin_inset Formula
+$\gamma_{0}$
+
+
+\end_inset
+ באופן רציף ומבלי "לחתוך" אותה עד לקבלת 
+\begin_inset Formula
+$\gamma_{1}$
+
+
+\end_inset
+, וזאת אך ורק תוך מעבר ב-
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ (ראו 
+\begin_inset CommandInset href
+LatexCommand href
+name "כאן"
+target https://commons.wikimedia.org/wiki/File:HomotopySmall.gif
+literal false
+\end_inset
+ המחשה).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ הומוטופיה בתוך קבוצה נתונה היא יחס שקילות.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ הדוגמה הקלאסית של הומוטופיה היא הפונקציה 
+\begin_inset Formula
+$\left(t,s\right)\mapsto\gamma_{0}\left(t\right)\cdot\left(1-s\right)+\gamma_{1}\left(t\right)\cdot s$
+
+
+\end_inset
+, זהו 
+\series bold
+הצירוף הקמור
+\series default
+ של 
+\begin_inset Formula
+$\gamma_{0}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\gamma_{1}$
+
+
+\end_inset
+ ושם זה ניתן לו מפני שכדי שהומוטופיה כזו תעבוד בהכרח על הקבוצה 
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ להיות קמורה.
+\end_layout
+
+\begin_layout Definition
+נאמר שקבוצה קשירה מסילתית 
+\begin_inset Formula
+$U\subseteq\MKreal^{n}$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+\series bold
+\size normal
+\color red
+האם יש צורך ש-
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ תהיה פתוחה?
+\color inherit
+
+\size default
+
+\series default
+
+\end_layout
+
+\end_inset
+ היא 
+\bar under
+פשוטת קשר
+\bar default
+ אם לכל שתי מסילות 
+\begin_inset Formula
+$\gamma_{0},\gamma_{2}:\left[a,b\right]\rightarrow U$
+
+
+\end_inset
+ בעלות נקודות קצה זהות - 
+\begin_inset Formula
+$\gamma_{0}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\gamma_{1}$
+
+
+\end_inset
+ הומוטופיות זו לזו ביחס לנקודות קצה.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ הרעיון הוא שאין ב-
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ "חורים" - לו היו כאלה היינו יכולים לחבר בין שתי נקודות הנמצאות בצדדים מנוגדים של אחד החורים ע"י שתי מסילות, כאשר כל אחת מהן מקיפה את החור מכיוון אחר ולכן הן לא היו הומוטופיות זו לזו.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ כל קבוצה קמורה, ובפרט כל כדור פתוח, היא קבוצה פשוטת קשר.
+\end_layout
+
+\begin_layout Corollary
+קבוצה קשירה מסילתית 
+\begin_inset Formula
+$U\subseteq\MKreal^{n}$
+
+
+\end_inset
+ היא פשוטת קשר אם"ם כל מסילה סגורה 
+\begin_inset Formula
+$\gamma:\left[a,b\right]\rightarrow U$
+
+
+\end_inset
+ הומוטופית (ביחס לנקודות קצה) למסילה קבועה בתוך 
+\begin_inset Formula
+$U$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+שדה וקטורי 
+\begin_inset Formula
+$\vec{F}:U\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ ייקרא 
+\bar under
+משמר מקומית
+\bar default
+ אם מתקיים (לכל 
+\begin_inset Formula
+$n\geq i,j\in\MKnatural$
+
+
+\end_inset
+):
+\begin_inset Formula
+\[
+\frac{\partial F_{i}}{\partial x_{j}}=\frac{\partial F_{j}}{\partial x_{i}}
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+כמובן שהייתי שמח להגדיר שדה משמר מקומית ככזה שעבורו לכל נקודה 
+\begin_inset Formula
+$p\in U$
+
+
+\end_inset
+ קיימת סביבה 
+\begin_inset Formula
+$W\subseteq U$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\vec{F}\mid_{W}$
+
+
+\end_inset
+ הוא שדה משמר, אלא שכך הגדיר אור בשיעור (כמובן שאלו הגדרות שקולות).
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+יהי 
+\begin_inset Formula
+$\vec{F}:U\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ שדה וקטורי, 
+\begin_inset Formula
+$\vec{F}$
+
+
+\end_inset
+ הוא שדה וקטורי משמר אם"ם קיימת פונקציה חלקה 
+\begin_inset Formula
+$\phi:U\rightarrow\MKreal$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\vec{F}=\nabla\phi$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר 
+\begin_inset Formula
+$\vec{F}\left(x\right)=\nabla\phi\left(x\right)$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$x\in U$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ 
+\begin_inset Formula
+$\phi$
+
+
+\end_inset
+ כנ"ל נקראת 
+\bar under
+פוטנציאל
+\bar default
+ של 
+\begin_inset Formula
+$\vec{F}$
+
+
+\end_inset
+, כמובן שאין ל-
+\begin_inset Formula
+$\vec{F}$
+
+
+\end_inset
+ פוטנציאל יחיד - כל הוספת קבוע ל-
+\begin_inset Formula
+$\phi$
+
+
+\end_inset
+ תיתן פוטנציאל נוסף (בהמשך נראה שאלו כל הפוטנציאלים של 
+\begin_inset Formula
+$\vec{F}$
+
+
+\end_inset
+).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ במובן מסוים פוטנציאל של שדה משמר הוא 
+\series bold
+פונקציה קדומה
+\series default
+ שלו.
+\end_layout
+
+\begin_layout Description
+תזכורת: בהינתן פונקציה 
+\begin_inset Formula
+$f:\MKreal^{k}\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ הגדרנו את הפונקציות 
+\begin_inset Formula
+$f_{1},f_{2},\ldots,f_{n}$
+
+
+\end_inset
+ מ-
+\begin_inset Formula
+$\MKreal^{k}$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$\MKreal$
+
+
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$x\in\MKreal^{k}$
+
+
+\end_inset
+ יתקיים:
+\begin_inset Formula
+\[
+f\left(x\right)=\begin{bmatrix}f_{1}\left(x\right)\\
+f_{2}\left(x\right)\\
+\vdots\\
+f_{n}\left(x\right)
+\end{bmatrix}
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula
+$\vec{F}:U\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ שדה וקטורי משמר, לכל 
+\begin_inset Formula
+$n\geq i,j\in\MKnatural$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\frac{\partial F_{i}}{\partial x_{j}}=\frac{\partial F_{j}}{\partial x_{i}}
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+יהי 
+\begin_inset Formula
+$\vec{F}:U\rightarrow\MKreal$
+
+
+\end_inset
+ שדה וקטורי המקיים (לכל 
+\begin_inset Formula
+$n\geq i,j\in\MKnatural$
+
+
+\end_inset
+):
+\begin_inset Formula
+\[
+\frac{\partial F_{i}}{\partial x_{j}}=\frac{\partial F_{j}}{\partial x_{i}}
+\]
+
+
+
+
+\end_inset
+ותהיינה 
+\begin_inset Formula
+$\gamma_{0},\gamma_{1}:\left[a,b\right]\rightarrow U$
+
+
+\end_inset
+ מסילות הומוטופיות ב-
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ ביחס לנקודות קצה. מתקיים:
+\begin_inset Formula
+\[
+\intop_{\gamma_{0}}\vec{F}\cdot d\vec{\ell}=\intop_{\gamma_{1}}\vec{F}\cdot d\vec{\ell}
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula
+$\vec{F}:U\rightarrow\MKreal$
+
+
+\end_inset
+ שדה וקטורי המקיים (לכל 
+\begin_inset Formula
+$n\geq i,j\in\MKnatural$
+
+
+\end_inset
+):
+\begin_inset Formula
+\[
+\frac{\partial F_{i}}{\partial x_{j}}=\frac{\partial F_{j}}{\partial x_{i}}
+\]
+
+
+
+
+\end_inset
+אם 
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ היא קבוצה פשוטת קשר אז 
+\begin_inset Formula
+$\vec{F}$
+
+
+\end_inset
+ הוא שדה משמר, בפרט לכל נקודה 
+\begin_inset Formula
+$p\in U$
+
+
+\end_inset
+ קיימת סביבה 
+\begin_inset Formula
+$W\subseteq U$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$p$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\vec{F}\mid_{W}$
+
+
+\end_inset
+ הוא שדה משמר.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ החלק האחרון של המסקנה הוא הסיבה לכך ששדה וקטורי כנ"ל נקרא 
+\series bold
+משמר מקומית
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+הקוהומולגיה הראשונה
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+יש לכתוב פרק זה (תרגול
+\family roman
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+ 
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\family default
+
+\numeric on
+3
+\numeric off
+).
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+יש לכתוב פרק זה (תרגול
+\family roman
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+ 
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\family default
+
+\numeric on
+3
+\numeric off
+).
+\color inherit
+
+\series default
+
+\end_layout
+
+\end_body
+
+\end_document
+

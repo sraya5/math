@@ -1,0 +1,6094 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The head's design for summuries,make the layout more similar to a book:
+\AtBeginDocument{
+\renewcommand\headrule{%
+  \kern -7pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+  \kern 10pt
+}}
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Correct the reversed parentheses in labels:
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\newfontfamily{\hebrewfont}{David}
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+
+\end_preamble
+
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+customHeadersFooters
+\end_modules
+
+\maintain_unincluded_children no
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+End
+Style Solution
+	LabelString           ".פתרון \thetheorem "
+End
+Style Theorem
+	LabelString           ".משפט \thetheorem "
+End
+
+\end_local_layout
+
+\language hebrew
+
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\float_alignment class
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\boxbgcolor #cccccc
+\branch proofs
+\selected 1
+\filename_suffix 0
+\color #00ffff #000000
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+
+\tocdepth 3
+
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style plain
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename C:\Users\sraya\AppData\Roaming\LyX2.4\macros\MKmacros.lyx
+literal true
+\end_inset
+
+\end_layout
+
+\begin_layout Right Header
+\begin_inset Argument 1
+status open
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+\begin_layout Plain Layout
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\begin_inset ERT
+status open
+\begin_layout Plain Layout
+\backslash
+leftmark
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Left Header
+\begin_inset Argument 1
+status open
+\begin_layout Plain Layout
+גאומטריה אוקלידית - טענות
+\end_layout
+
+\end_inset
+
+\begin_inset ERT
+status open
+\begin_layout Plain Layout
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Center Footer
+\end_layout
+
+\begin_layout Title
+\paragraph_spacing double
+\series bold
+\size huge
+גאומטריה אוקלידית במישור - טענות
+\size default
+
+\series default
+
+\end_layout
+
+\begin_layout Standard
+\align center
+נכתב ע"י שריה אנסבכר
+
+\end_layout
+
+\begin_layout Standard
+\align center
+סמסטר ב' תשפ"ד, האוניברסיטה העברית
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset VSpace vfill
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\align center
+סביר להניח שהסיכומים שלי מכילים טעויות רבות - אני מוצא כאלה כל יום (
+\begin_inset CommandInset href
+LatexCommand href
+name "רשימת טעויות נפוצות"
+target https://drive.google.com/file/d/1ZX_KNQe6_sGYisMaS6ShnBv7T0rPf3D_/view?usp=drive_link
+literal false
+\end_inset
+),
+\begin_inset Newline newline
+\end_inset
+אני מפציר בכם לעדכן אותי בכל טעות שאתם מוצאים (ממש כל טעות ללא יוצא מן הכלל);
+\begin_inset Newline newline
+\end_inset
+אתם מוזמנים להגיב על גבי המסמכים ב-
+\lang english
+Google Drive
+\lang default
+
+\lang hebrew
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "לשלוח לי דוא\"
+target sraya.ansbacher@mail.huji.ac.il
+literal false
+\end_inset
+ או 
+\begin_inset CommandInset href
+LatexCommand href
+name "למלא פנייה באתר"
+target https://srayaa.wixsite.com/math#contact-body
+literal false
+\end_inset
+.
+\lang default
+
+\end_layout
+
+\begin_layout Standard
+\align center
+לסיכומים נוספים היכנסו לאתר:
+\begin_inset Newline newline
+\end_inset
+אקסיומת השלמות - סיכומי הרצאות במתמטיקה
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset CommandInset href
+LatexCommand href
+name "https://srayaa.wixsite.com/math"
+target https://srayaa.wixsite.com/math
+literal false
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+פונקציית זווית וגאומטריה
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$\left(\MKclg,\left|\cdot\right|,\measuredangle\right)$
+\end_inset
+ גאומטריה כך שיש ב-
+\begin_inset Formula
+$\MKclg$
+\end_inset
+ שלוש נקודות שונות, ותהיינה 
+\begin_inset Formula
+$A,B,C,D,O\in\MKclg$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A,B,C$
+\end_inset
+ שונות מ-
+\begin_inset Formula
+$O$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "inverse pyramid inequality"
+\end_inset
+
+\begin_inset Argument 1
+status open
+\begin_layout Plain Layout
+\series bold
+אי-שוויון הפירמידה ההפוך
+\series default
+
+\end_layout
+
+\end_inset
+
+\begin_inset space \space{}
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+מתקיים 
+\begin_inset Formula
+$\left|\measuredangle AOB-\measuredangle BOC\right|\leq\measuredangle AOC$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+ע"פ א"ש הפירמידה מתקיים:
+\begin_inset Formula
+\begin{align*}
+\measuredangle AOB & \leq\measuredangle AOC+\measuredangle COB\\
+\measuredangle BOC & \leq\measuredangle BOA+\measuredangle AOC
+\end{align*}
+
+
+\end_inset
+ולכן גם:
+\begin_inset Formula
+\begin{align*}
+\measuredangle AOB-\measuredangle COB & \leq\measuredangle AOC\\
+\measuredangle BOC-\measuredangle BOA & \leq\measuredangle AOC
+\end{align*}
+
+
+\end_inset
+כעת, מהסימטריה של פונקציית הזווית נובע כי:
+\begin_inset Formula
+\begin{align*}
+\measuredangle AOB-\measuredangle BOC & \leq\measuredangle AOC\\
+\measuredangle BOC-\measuredangle AOB & \leq\measuredangle AOC
+\end{align*}
+
+
+\end_inset
+ומכיוון שבהכרח מתקיים 
+\begin_inset Formula
+$\left|\measuredangle AOB-\measuredangle BOC\right|=\measuredangle AOB-\measuredangle BOC$
+\end_inset
+ ו/או 
+\begin_inset Formula
+$\left|\measuredangle AOB-\measuredangle BOC\right|=\measuredangle BOC-\measuredangle AOB$
+\end_inset
+ נדע ש-
+\begin_inset Formula
+$\left|\measuredangle AOB-\measuredangle BOC\right|\leq\measuredangle AOC$
+\end_inset
+.
+\end_layout
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 1.2"
+\end_inset
+
+\begin_inset Formula
+$\measuredangle AOB$
+\end_inset
+ היא זווית שטוחה אם"ם 
+\begin_inset Formula
+$\measuredangle ABO$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle OAB$
+\end_inset
+ הן זוויות מנוונות.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\Leftarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$\measuredangle AOB$
+\end_inset
+ היא זווית שטוחה (כלומר 
+\begin_inset Formula
+$\measuredangle AOB=\frac{1}{2}$
+\end_inset
+), ע"פ שוויונות המשולש המנוון מתקיים 
+\begin_inset Formula
+$\left|AB\right|=\left|AO\right|+\left|OB\right|$
+\end_inset
+, ומכאן שגם:
+\begin_inset Formula
+\begin{align*}
+\left|AO\right| & =\left|\left|AO\right|\right|=\left|\left|AB\right|-\left|OB\right|\right|=\left|\left|AB\right|-\left|BO\right|\right|\\
+\left|OB\right| & =\left|\left|OB\right|\right|=\left|\left|AB\right|-\left|AO\right|\right|=\left|\left|AB\right|-\left|BO\right|\right|
+\end{align*}
+
+
+\end_inset
+כעת, משוויונות המשולש המנוון נקבל ש-
+\begin_inset Formula
+$\measuredangle ABO=\measuredangle OAB=0$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$\measuredangle ABO$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle OAB$
+\end_inset
+ הן זוויות מנוונות.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\Rightarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$\measuredangle ABO$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle OAB$
+\end_inset
+ הן זוויות מנוונות (כלומר 
+\begin_inset Formula
+$\measuredangle ABO=\measuredangle OAB=0$
+\end_inset
+), ולכן ע"פ שוויונות המשולש המנוון מתקיים:
+\begin_inset Formula
+\begin{align*}
+\left|AO\right|= & \left|\left|BO\right|-\left|BA\right|\right|=\left|\left|AB\right|-\left|OB\right|\right|\\
+\left|OB\right|= & \left|\left|AB\right|-\left|AO\right|\right|
+\end{align*}
+
+
+\end_inset
+נשים לב לכך שאם 
+\begin_inset Formula
+$\left|AB\right|\geq\left|OB\right|$
+\end_inset
+ ו/או 
+\begin_inset Formula
+$\left|AB\right|\geq\left|AO\right|$
+\end_inset
+ אז ע"י העברת אגף נקבל ש-
+\begin_inset Formula
+$\left|AB\right|=\left|AO\right|+\left|OB\right|$
+\end_inset
+, ומכאן ש-
+\begin_inset Formula
+$\measuredangle AOB$
+\end_inset
+ היא זווית שטוחה (שוויונות המשולש המנוון).
+\begin_inset Newline newline
+\end_inset
+א"כ נניח בשלילה ש-
+\begin_inset Formula
+$\left|AB\right|<\left|OB\right|$
+\end_inset
+ וגם 
+\begin_inset Formula
+$\left|AB\right|<\left|AO\right|$
+\end_inset
+ אז מתקיים:
+\begin_inset Formula
+\begin{align*}
+\left|AO\right|= & \left|OB\right|-\left|AB\right|\\
+\left|OB\right|= & \left|AO\right|-\left|AB\right|
+\end{align*}
+
+
+\end_inset
+כלומר:
+\begin_inset Formula
+\begin{align*}
+\left|OA\right|+\left|AB\right| & =\left|AB\right|+\left|AO\right|=\left|OB\right|=\left|BO\right|\\
+\left|AB\right|+\left|OB\right| & =\left|AB\right|+\left|OB\right|=\left|AO\right|
+\end{align*}
+
+
+\end_inset
+ולכן ע"פ שוויונות המשולש המנוון, הזוויות 
+\begin_inset Formula
+$\measuredangle OAB$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle ABO$
+\end_inset
+ הן זוויות שטוחות - בסתירה להנחה שהן מנוונות.
+\begin_inset Newline newline
+\end_inset
+מכאן ש-
+\begin_inset Formula
+$\left|AB\right|\geq\left|OB\right|$
+\end_inset
+ ו/או 
+\begin_inset Formula
+$\left|AB\right|\geq\left|AO\right|$
+\end_inset
+ וכפי שהראינו לעיל נובע מזה ש-
+\begin_inset Formula
+$\measuredangle AOB$
+\end_inset
+ היא זווית שטוחה.
+\end_layout
+
+\end_deeper
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 1.3"
+\end_inset
+אם 
+\begin_inset Formula
+$\measuredangle AOB$
+\end_inset
+ היא זווית מנוונת ו-
+\begin_inset Formula
+$A\neq B$
+\end_inset
+ אז בדיוק אחת מבין שתי הזוויות 
+\begin_inset Formula
+$\measuredangle ABO$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle OAB$
+\end_inset
+ היא זווית שטוחה.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+ע"פ שוויונות המשולש המנוון מתקיים 
+\begin_inset Formula
+$\left|AB\right|=\left|\left|OB\right|-\left|OA\right|\right|$
+\end_inset
+, ומכאן שמתקיימת לפחות אחת משתי האפשרויות הבאות:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$\left|AB\right|=\left|OB\right|-\left|OA\right|$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$\left|OA\right|+\left|AB\right|=\left|OB\right|$
+\end_inset
+, ושוב ע"פ שוויונות המשולש המנוון מתקיים 
+\begin_inset Formula
+$\measuredangle OAB=\frac{1}{2}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\left|AB\right|=\left|OA\right|-\left|OB\right|$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$\left|AB\right|+\left|BO\right|=\left|AB\right|+\left|OB\right|=\left|OA\right|$
+\end_inset
+, ושוב ע"פ הקשר בין מרחק לזווית מתקיים 
+\begin_inset Formula
+$\measuredangle ABO=\frac{1}{2}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Proof
+לא ייתכן ששתי הזוויות שטוחות משום שהדבר יהווה סתירה לטענה הקודמת (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.2"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+).
+\end_layout
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "ray's points equivalence"
+\end_inset
+
+\begin_inset Argument 1
+status open
+\begin_layout Plain Layout
+\series bold
+שקילות הנקודות על הקרן
+\series default
+
+\end_layout
+
+\end_inset
+
+\begin_inset space \space{}
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+אם 
+\begin_inset Formula
+$B$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$C$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+ או ש-
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$O$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+, אז 
+\begin_inset Formula
+$\measuredangle AOB=\measuredangle AOC$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+נניח בהג"כ ש-
+\begin_inset Formula
+$B$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$O$
+\end_inset
+ ל-
+\begin_inset Formula
+$C$
+\end_inset
+ (כלומר 
+\begin_inset Formula
+$\measuredangle OBC=\frac{1}{2}$
+\end_inset
+), מכאן ש-
+\begin_inset Formula
+$\measuredangle BOC=0$
+\end_inset
+ (טענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.2"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+).
+\begin_inset Newline newline
+\end_inset
+ע"פ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "inverse pyramid inequality"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|\measuredangle BOA-\measuredangle AOC\right|\leq\measuredangle BOC$
+\end_inset
+, ולכן מהשורה הקודמת נובע ש-
+\begin_inset Formula
+$\measuredangle AOB=\measuredangle AOC$
+\end_inset
+.
+\end_layout
+
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary 1.5"
+\end_inset
+אם 
+\begin_inset Formula
+$B$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$C$
+\end_inset
+ ו-
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$B$
+\end_inset
+ ל-
+\begin_inset Formula
+$D$
+\end_inset
+, אז 
+\begin_inset Formula
+$B$
+\end_inset
+ ו-
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאות בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$D$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+נניח ש-
+\begin_inset Formula
+$B$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$C$
+\end_inset
+ ו-
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$B$
+\end_inset
+ ל-
+\begin_inset Formula
+$D$
+\end_inset
+, ע"פ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "ray's points equivalence"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\measuredangle ABO=\measuredangle ABC$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle ACD=\measuredangle BCD$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$\measuredangle ABD=\measuredangle ACD=\frac{1}{2}$
+\end_inset
+ ומהגדרה 
+\begin_inset Formula
+$B$
+\end_inset
+ ו-
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאות בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+.
+\end_layout
+
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary 1.6"
+\end_inset
+אם 
+\begin_inset Formula
+$B$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$D$
+\end_inset
+ ו-
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$B$
+\end_inset
+ ל-
+\begin_inset Formula
+$D$
+\end_inset
+, אז 
+\begin_inset Formula
+$B$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$C$
+\end_inset
+ ו-
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$D$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+נניח ש-
+\begin_inset Formula
+$B$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$D$
+\end_inset
+ ו-
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$B$
+\end_inset
+ ל-
+\begin_inset Formula
+$D$
+\end_inset
+, ע"פ המשפט (
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "ray's points equivalence"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+) מתקיים 
+\begin_inset Formula
+$\measuredangle ABC=\measuredangle ABD=\frac{1}{2}$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$B$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$C$
+\end_inset
+. מהמסקנה הקודמת (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 1.5"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+) נקבל ש-
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$D$
+\end_inset
+.
+\end_layout
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 1.7"
+\end_inset
+אם 
+\begin_inset Formula
+$O$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+, אז מתקיימת לכל היותר אחת משתי האפשרויות הבאות:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$B$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+נניח בשלילה ש-
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+ ובין 
+\begin_inset Formula
+$B$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+ (כלומר 
+\begin_inset Formula
+$\measuredangle ACO=\measuredangle BCO=\frac{1}{2}$
+\end_inset
+), א"כ ע"פ שוויונות המשולש המנוון מתקיים:
+\begin_inset Formula
+\begin{align*}
+\left|AO\right| & =\left|AC\right|+\left|CO\right|\\
+\left|BO\right| & =\left|BC\right|+\left|CO\right|
+\end{align*}
+
+
+\end_inset
+ מהנתון נובע כי 
+\begin_inset Formula
+$\left|AB\right|=\left|AO\right|+\left|OB\right|$
+\end_inset
+ (שוב ע"פ שוויונות המשולש המנוון), א"כ קיבלנו:
+\begin_inset Formula
+\[
+{\color{blue}\left|AB\right|=}\left|AO\right|+\left|OB\right|{\color{blue}=\left|AC\right|+{\color{red}2\cdot\left|CO\right|}+\left|CB\right|}
+\]
+
+
+\end_inset
+מהנחת השלילה (
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$B$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+) ומ
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "ray's points equivalence"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ נובע כי 
+\begin_inset Formula
+$\measuredangle ACB=\measuredangle ACO=\frac{1}{2}$
+\end_inset
+, ולכן משוויונות המשולש המנוון נקבל ש-
+\begin_inset Formula
+${\color{blue}\left|AB\right|=\left|AC\right|+\left|CB\right|}$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מכאן ש-
+\begin_inset Formula
+$\left|CO\right|=0$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$C=O$
+\end_inset
+, אך זה עומד בסתירה לכך ש-
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+א"כ הנחת השלילה אינה נכונה - שתי האפשרויות אינן יכולות להתקיים יחד.
+\end_layout
+
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary 1.8"
+\end_inset
+אם 
+\begin_inset Formula
+$B$
+\end_inset
+ ו-
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאות בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$D$
+\end_inset
+ אז מתקיימת בדיוק אחת משלוש האפשרויות הבאות:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$B=C$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$B$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$C$
+\end_inset
+ ו-
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$B$
+\end_inset
+ ל-
+\begin_inset Formula
+$D$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$B$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$C$
+\end_inset
+ ל-
+\begin_inset Formula
+$D$
+\end_inset
+ ו-
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+נניח ש-
+\begin_inset Formula
+$B$
+\end_inset
+ ו-
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאות בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$D$
+\end_inset
+ וש-
+\begin_inset Formula
+$B\neq C$
+\end_inset
+. ע"פ טענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.2"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\measuredangle BAD=0$
+\end_inset
+, ולכן ע"פ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "ray's points equivalence"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ גם 
+\begin_inset Formula
+$\measuredangle BAC=0$
+\end_inset
+. מכאן שע"פ טענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.3"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ בדיוק אחת משתי הזוויות 
+\begin_inset Formula
+$\measuredangle ABC$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle ACB$
+\end_inset
+ היא זווית שטוחה, ובאותו אופן נוכיח שבדיוק אחת משתי הזוויות 
+\begin_inset Formula
+$\measuredangle BCD$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle CBD$
+\end_inset
+ שטוחה.
+\begin_inset Newline newline
+\end_inset
+ע"פ הטענה הקודמת (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.7"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+) לא ייתכן ש-
+\begin_inset Formula
+$\measuredangle ABC$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle CBD$
+\end_inset
+ שטוחות גם יחד, ולכן שתי האפשרויות היחידות הן:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$B$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$C$
+\end_inset
+ ו-
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$B$
+\end_inset
+ ל-
+\begin_inset Formula
+$D$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$B$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$C$
+\end_inset
+ ל-
+\begin_inset Formula
+$D$
+\end_inset
+ ו-
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "theorem 1.9"
+\end_inset
+
+\begin_inset Formula
+$O$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+ אם"ם הקרן 
+\begin_inset Formula
+$OC$
+\end_inset
+ נמצאת בין הקרנות 
+\begin_inset Formula
+$OA$
+\end_inset
+ ו-
+\begin_inset Formula
+$OB$
+\end_inset
+ וגם הקרנות 
+\begin_inset Formula
+$OA,OB,OC$
+\end_inset
+ מחלקות זווית שלמה.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+נניח ש-
+\begin_inset Formula
+$O$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+ (כלומר 
+\begin_inset Formula
+$\measuredangle AOB=\frac{1}{2}$
+\end_inset
+), ע"פ א"ש הפירמידה מתקיים:
+\begin_inset Formula
+\[
+\frac{1}{2}=\measuredangle AOB\leq\measuredangle AOC+\measuredangle COB\leq1-\measuredangle AOB=1-\frac{1}{2}=\frac{1}{2}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow\measuredangle AOB=\measuredangle AOC+\measuredangle COB=1-\measuredangle AOB
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow\measuredangle AOC+\measuredangle COB+\measuredangle BOA=1
+\]
+
+
+\end_inset
+
+\end_layout
+
+\end_layout
+
+\begin_layout Corollary
+אם 
+\begin_inset Formula
+$B$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$C$
+\end_inset
+ אז הקרן 
+\begin_inset Formula
+$OB$
+\end_inset
+ נמצאת בין הקרנות 
+\begin_inset Formula
+$OA$
+\end_inset
+ ו-
+\begin_inset Formula
+$OC$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+קבוצות קוויות וישרים
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$\left(\MKclg,\left|\cdot\right|,\measuredangle\right)$
+\end_inset
+ גאומטריה.
+\end_layout
+
+\begin_layout Subsection
+קבוצות קוויות
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lemma 2.1"
+\end_inset
+תהא 
+\begin_inset Formula
+$S\subseteq\MKclg$
+\end_inset
+ תת-קבוצה, 
+\begin_inset Formula
+$S$
+\end_inset
+ קווית אם"ם לכל שלוש נקודות 
+\begin_inset Formula
+$A,B,O\in S$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A$
+\end_inset
+ ו-
+\begin_inset Formula
+$B$
+\end_inset
+ שונות מ-
+\begin_inset Formula
+$O$
+\end_inset
+, 
+\begin_inset Formula
+$\measuredangle AOB$
+\end_inset
+ היא זווית שטוחה או מנוונת.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+נובע ישירות מטענות 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.2"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ ו-
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.3"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+.
+\end_layout
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "theorem 2.2"
+\end_inset
+לכל שתי קבוצות קוויות 
+\begin_inset Formula
+$S,T\subseteq\MKclg$
+\end_inset
+, אם יש ב-
+\begin_inset Formula
+$S\cap T$
+\end_inset
+ שתי נקודות שונות אז 
+\begin_inset Formula
+$S\cup T$
+\end_inset
+ היא קבוצה קווית.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ אם יש ב-
+\begin_inset Formula
+$\MKclg$
+\end_inset
+ ישר המכיל את אחת הקבוצות, המשפט נובע ישירות ממשפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 2.7"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ ומהעובדה שתת-קבוצה של קבוצה קווית גם היא קבוצה קווית; החידוש הוא שזה נכון אפילו אם אין ישרים כאלה.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+תהיינה 
+\begin_inset Formula
+$S,T\subseteq\MKclg$
+\end_inset
+ קבוצות קוויות כך שיש ב-
+\begin_inset Formula
+$S\cap T$
+\end_inset
+ שתי נקודות שונות, ותהיינה 
+\begin_inset Formula
+$A,B\in S\cap T$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A\neq B$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+כעת תהיינה 
+\begin_inset Formula
+$C,D,E\in S\cup T$
+\end_inset
+, אם שלושתן נמצאות באותה קבוצה (
+\begin_inset Formula
+$S$
+\end_inset
+ או 
+\begin_inset Formula
+$T$
+\end_inset
+) אז אין צורך להוכיח לגביהן דבר, אחרת אחת מהן נמצאת בקבוצה אחת ושתי האחרות בקבוצה האחרת.
+\begin_inset Newline newline
+\end_inset
+א"כ נניח בהג"כ ש-
+\begin_inset Formula
+$C\in S$
+\end_inset
+ ו-
+\begin_inset Formula
+$D,E\in T$
+\end_inset
+, מהגדרה אחת משלוש הנקודות 
+\begin_inset Formula
+$A,B,C$
+\end_inset
+ נמצאת בין שתי האחרות, ומכאן ש-
+\begin_inset Formula
+$\measuredangle BAD=\measuredangle CAD$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle BAE=\measuredangle CAE$
+\end_inset
+ (
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "ray's points equivalence"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+), כלומר 
+\begin_inset Formula
+$\measuredangle CAD$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle CAE$
+\end_inset
+ הן זוויות שטוחות או מנוונות (לאו דווקא ביחד).
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$\measuredangle CAD$
+\end_inset
+ שטוחה (כלומר 
+\begin_inset Formula
+$A$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$C$
+\end_inset
+ ל-
+\begin_inset Formula
+$D$
+\end_inset
+), אז נקבל שוב (
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "ray's points equivalence"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+) ש-
+\begin_inset Formula
+$\measuredangle DCE=\measuredangle CDA$
+\end_inset
+. ע"פ טענות 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.2"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ ו-
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.3"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+, מהיות 
+\begin_inset Formula
+$\measuredangle CAD$
+\end_inset
+ שטוחה/מנוונת נובע ש-
+\begin_inset Formula
+$\measuredangle DCE=\measuredangle CDA$
+\end_inset
+ מנוונת/שטוחה.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$\measuredangle CAD$
+\end_inset
+ מנוונת אז אחת מבין שתי הזוויות 
+\begin_inset Formula
+$\measuredangle ACD$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle ADC$
+\end_inset
+ שטוחה (טענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.3"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+), ולכן 
+\begin_inset Formula
+$\measuredangle CDE=\measuredangle ADE$
+\end_inset
+ או ש-
+\begin_inset Formula
+$\measuredangle DCE=\measuredangle ACE$
+\end_inset
+, ושוב נקבל באופן דומה מטענות 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.2"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ ו-
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.3"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ ש-
+\begin_inset Formula
+$\measuredangle DCE=\measuredangle ACE$
+\end_inset
+ מנוונת/שטוחה.
+\end_layout
+
+\begin_layout Standard
+מהלמה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 2.1"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ נקבל שגם 
+\begin_inset Formula
+$S\cup T$
+\end_inset
+ קווית.
+\end_layout
+
+\end_deeper
+
+\end_layout
+
+\begin_layout Corollary
+לכל שתי נקודות שונות 
+\begin_inset Formula
+$A,B\in\MKclg$
+\end_inset
+ קיימת קבוצה קווית מרבית יחידה 
+\begin_inset Formula
+$S\subseteq\MKclg$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A,B\in S$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 2.4"
+\end_inset
+תהא 
+\begin_inset Formula
+$S\subseteq\MKclg$
+\end_inset
+ קבוצה קווית, ותהיינה 
+\begin_inset Formula
+$A,B,O\in S$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A$
+\end_inset
+ ו-
+\begin_inset Formula
+$B$
+\end_inset
+ שונות מ-
+\begin_inset Formula
+$O$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$O\neq C\in\MKclg$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\measuredangle BOC=\measuredangle AOC$
+\end_inset
+ ו/או 
+\begin_inset Formula
+$\measuredangle COB=\frac{1}{2}-\measuredangle COA$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+ע"פ הלמה (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 2.1"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+) 
+\begin_inset Formula
+$\measuredangle AOB$
+\end_inset
+ היא זווית שטוחה או זווית מנוונת.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$\measuredangle AOB$
+\end_inset
+ היא זווית שטוחה אז לכל נקודה 
+\begin_inset Formula
+$O\neq C\in\MKclg$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\measuredangle AOC+\measuredangle COB=\measuredangle AOB=\frac{1}{2}$
+\end_inset
+ (משפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 1.9"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+), וממילא 
+\begin_inset Formula
+$\measuredangle COB=\frac{1}{2}-\measuredangle COA$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+ע"פ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "inverse pyramid inequality"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|\measuredangle AOC-\measuredangle BOC\right|\leq\measuredangle AOB$
+\end_inset
+, מכאן שאם 
+\begin_inset Formula
+$\measuredangle AOB$
+\end_inset
+ היא זווית מנוונת אז 
+\begin_inset Formula
+$\measuredangle BOC=\measuredangle AOC$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 2.5"
+\end_inset
+תהא 
+\begin_inset Formula
+$S$
+\end_inset
+ קבוצה קווית, ותהיינה 
+\begin_inset Formula
+$A,B,O\in S$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$O$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+. לכל 
+\begin_inset Formula
+$O\neq C\in S$
+\end_inset
+ מתקיימת אחת מארבע האפשרויות הבאות:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$A$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$C$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$B$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$B$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$C$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+נניח בשלילה שאף אחת מארבע האפשרויות אינה מתקיימת.
+\begin_inset Newline newline
+\end_inset
+מהעובדה שאפשרויות
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+ו-
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+אינן מתקיימות, ומהיות 
+\begin_inset Formula
+$S$
+\end_inset
+ קווית, נובע ש-
+\begin_inset Formula
+$O$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$C$
+\end_inset
+. באותו אופן נקבל מהעובדה שאפשרויות
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+ו-
+\numeric on
+4
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+אינן מתקיימות ש-
+\begin_inset Formula
+$O$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$B$
+\end_inset
+ ל-
+\begin_inset Formula
+$C$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מכאן ש-
+\begin_inset Formula
+$C$
+\end_inset
+ אינה נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+ (טענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.7"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+), א"כ מהגדרה מתקיימת בדיוק אחת משתי האפשרויות הבאות: 
+\begin_inset Formula
+$A$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$B$
+\end_inset
+ ל-
+\begin_inset Formula
+$C$
+\end_inset
+ או ש-
+\begin_inset Formula
+$B$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$C$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נתון ש-
+\begin_inset Formula
+$O$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+, ומכאן ש-
+\begin_inset Formula
+$\measuredangle CAO=\measuredangle CAB$
+\end_inset
+ (
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "ray's points equivalence"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+). ראינו לעיל ש-
+\begin_inset Formula
+$O$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$C$
+\end_inset
+, ולכן ע"פ טענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.2"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ 
+\begin_inset Formula
+$\measuredangle CAO=\measuredangle CAB$
+\end_inset
+ היא זווית מנוונת. כעת נקבל מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.3"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ ש-
+\begin_inset Formula
+$\measuredangle ABC$
+\end_inset
+ שטוחה או ש-
+\begin_inset Formula
+$\measuredangle ACB$
+\end_inset
+ שטוחה, אך כבר ראינו ש-
+\begin_inset Formula
+$C$
+\end_inset
+ אינה נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+ ולכן בהכרח 
+\begin_inset Formula
+$\measuredangle ABC$
+\end_inset
+ שטוחה.
+\begin_inset Newline newline
+\end_inset
+בהנחות הטענה אין הבדל בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+, ולכן נובע מכאן שגם 
+\begin_inset Formula
+$\measuredangle BAC$
+\end_inset
+ שטוחה בסתירה לטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.2"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+.
+\end_layout
+
+\end_layout
+
+\begin_layout Subsection
+ישרים
+\end_layout
+
+\begin_layout Standard
+נניח שיש ב-
+\begin_inset Formula
+$\MKclg$
+\end_inset
+ ישרים.
+\end_layout
+
+\begin_layout Claim
+כל ישר הוא קבוצה אין-סופית.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "theorem 2.7"
+\end_inset
+תהא 
+\begin_inset Formula
+$S\subseteq\MKclg$
+\end_inset
+ קבוצה קווית שיש בה שתי נקודות שונות.
+\begin_inset Newline newline
+\end_inset
+לכל שתי נקודות שונות 
+\begin_inset Formula
+$A,B\in S$
+\end_inset
+ ולכל ישר 
+\begin_inset Formula
+$L\subseteq\MKclg$
+\end_inset
+, אם 
+\begin_inset Formula
+$A,B\in L$
+\end_inset
+ אז 
+\begin_inset Formula
+$S\subseteq L$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+תהיינה 
+\begin_inset Formula
+$A,B\in S$
+\end_inset
+ שתי נקודות שונות, יהי 
+\begin_inset Formula
+$L\subseteq\MKclg$
+\end_inset
+ ישר המקיים 
+\begin_inset Formula
+$A,B\in L$
+\end_inset
+, ותהא 
+\begin_inset Formula
+$C\in S$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מהיות 
+\begin_inset Formula
+$S$
+\end_inset
+ קווית נובע ש-
+\begin_inset Formula
+$\left|AB\right|=\left|\left|AC\right|\pm\left|CB\right|\right|$
+\end_inset
+, ולכן מהיות 
+\begin_inset Formula
+$L$
+\end_inset
+ ישר נובע שקיימת נקודה 
+\begin_inset Formula
+$D\in L$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left|AD\right|=\left|AC\right|$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left|BD\right|=\left|BC\right|$
+\end_inset
+, תהא 
+\begin_inset Formula
+$D$
+\end_inset
+ כנ"ל.
+\begin_inset Newline newline
+\end_inset
+מהיות 
+\begin_inset Formula
+$S$
+\end_inset
+ קווית נובע שוב ש-
+\begin_inset Formula
+$\left|CD\right|=\left|\left|CA\right|\pm\left|AD\right|\right|$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left|CD\right|=\left|\left|CB\right|\pm\left|BD\right|\right|$
+\end_inset
+. אם 
+\begin_inset Formula
+$\left|CD\right|=\left|\left|CA\right|-\left|AD\right|\right|$
+\end_inset
+ ו/או 
+\begin_inset Formula
+$\left|CD\right|=\left|\left|CB\right|-\left|BD\right|\right|$
+\end_inset
+ אז ע"פ הגדרת 
+\begin_inset Formula
+$D$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|CD\right|=0$
+\end_inset
+, וממילא 
+\begin_inset Formula
+$C=D$
+\end_inset
+ ו-
+\begin_inset Formula
+$C\in L$
+\end_inset
+. זוהי האפשרות היחידה משום שאחרת 
+\begin_inset Formula
+$A$
+\end_inset
+ ו-
+\begin_inset Formula
+$B$
+\end_inset
+ נמצאות בין 
+\begin_inset Formula
+$C$
+\end_inset
+ ל-
+\begin_inset Formula
+$D$
+\end_inset
+ (שוויונות המשולש המנוון), ומהגדרת 
+\begin_inset Formula
+$D$
+\end_inset
+ נקבל שמתקיים:
+\begin_inset Formula
+\[
+\left|BD\right|=\left|BC\right|=\left|AD\right|=\left|AC\right|=\frac{\left|CD\right|}{2}
+\]
+
+
+\end_inset
+אבל ע"פ מסקנה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 1.8"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ מתקיימת אחת משלוש האפשרויות הבאות:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$A=B$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\left|CD\right|=\left|CA\right|+\left|AB\right|+\left|BD\right|$
+\end_inset
+ - מכאן ש-
+\begin_inset Formula
+$\left|AB\right|=0$
+\end_inset
+ ו-
+\begin_inset Formula
+$A=B$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\left|CD\right|=\left|CB\right|+\left|BA\right|+\left|AD\right|$
+\end_inset
+ - מכאן ש-
+\begin_inset Formula
+$\left|AB\right|=0$
+\end_inset
+ ו-
+\begin_inset Formula
+$A=B$
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+כלומר בכל מקרה 
+\begin_inset Formula
+$A=B$
+\end_inset
+ בסתירה להנחה ש-
+\begin_inset Formula
+$A$
+\end_inset
+ ו-
+\begin_inset Formula
+$B$
+\end_inset
+ שונות.
+\end_layout
+
+\end_deeper
+
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary 2.8"
+\end_inset
+לכל שני ישרים שונים יש לכל היותר נקודת חיתוך אחת.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ או במילים אחרות: "דרך שתי נקודות עובר ישר אחד לכל היותר".
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מכאן ואילך נוכל לומר "נקודת החיתוך" (בה"א הידיעה) עבור שני ישרים שונים שאינם זרים.
+\end_layout
+
+\begin_layout Corollary
+כל ישר הוא קבוצה קווית מרבית.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "theorem 2.10"
+\end_inset
+כל שתי זוויות קודקודיות שוות זו לזו.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+יהיו 
+\begin_inset Formula
+$L_{1},L_{2}\subseteq\MKclg$
+\end_inset
+ ישרים שאינם זרים, תהא 
+\begin_inset Formula
+$O\in L_{1}\cap L_{2}$
+\end_inset
+ נקודת חיתוך שלהם, ויהיו 
+\begin_inset Formula
+$A,B\in L_{1}$
+\end_inset
+ ו-
+\begin_inset Formula
+$C,D\in L_{2}$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$O$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+ ובין 
+\begin_inset Formula
+$C$
+\end_inset
+ ל-
+\begin_inset Formula
+$D$
+\end_inset
+. נוכיח ש
+\numeric on
+-
+\numeric off
+
+\begin_inset Formula
+$\measuredangle AOC=\measuredangle BOD$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle AOD=\measuredangle BOC$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+ע"פ משפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 1.9"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\measuredangle AOC+\measuredangle COB=\frac{1}{2}=\measuredangle COB+\measuredangle BOD$
+\end_inset
+, ומכאן ש-
+\begin_inset Formula
+$\measuredangle AOC=\measuredangle BOD$
+\end_inset
+; באותו אופן נוכיח שגם 
+\begin_inset Formula
+$\measuredangle AOD=\measuredangle BOC$
+\end_inset
+.
+\end_layout
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "theorem 2.11"
+\end_inset
+זוויות צמודות משלימות זו את זו ל-
+\begin_inset Formula
+$\frac{1}{2}$
+\end_inset
+, כלומר הסכום של כל שתי זוויות צמודות הוא 
+\begin_inset Formula
+$\frac{1}{2}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+יהיו 
+\begin_inset Formula
+$L_{1},L_{2}\subseteq\MKclg$
+\end_inset
+ ישרים שאינם זרים, תהא 
+\begin_inset Formula
+$O$
+\end_inset
+ נקודת חיתוך שלהם, ויהיו 
+\begin_inset Formula
+$A,B\in L_{1}$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$O$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+ע"פ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "ray's points equivalence"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\measuredangle AOD=\measuredangle AOC$
+\end_inset
+, ולכן ממשפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 1.9"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ נובע כי:
+\begin_inset Formula
+\begin{align*}
+\measuredangle AOC+\measuredangle DOB & =\measuredangle AOD+\measuredangle DOB=\frac{1}{2}\\
+\measuredangle AOD+\measuredangle COB & =\measuredangle AOC+\measuredangle COB=\frac{1}{2}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\end_layout
+
+\begin_layout Corollary
+יהיו 
+\begin_inset Formula
+$L_{1},L_{2}\subseteq\MKclg$
+\end_inset
+ ישרים שונים שאינם זרים, ותהא 
+\begin_inset Formula
+$O\in L_{1}\cap L_{2}$
+\end_inset
+ נקודת החיתוך שלהם.
+\begin_inset Newline newline
+\end_inset
+קיימות זוויות 
+\begin_inset Formula
+$\alpha,\beta$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$O\neq A\in L_{1}$
+\end_inset
+, ו-
+\begin_inset Formula
+$O\neq B\in L_{2}$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\measuredangle AOB=\alpha$
+\end_inset
+ ו/או 
+\begin_inset Formula
+$\measuredangle AOB=\beta$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מסקנה זו מאפשרת לנו לדבר על שתי הזוויות שבין זוג ישרים הנחתכים בנקודה.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+יהיו 
+\begin_inset Formula
+$O\neq C\in L_{1}$
+\end_inset
+ ו-
+\begin_inset Formula
+$O\neq D\in L_{2}$
+\end_inset
+, ונסמן 
+\begin_inset Formula
+$\alpha:=\measuredangle COD$
+\end_inset
+ ו-
+\begin_inset Formula
+$\beta:=\frac{1}{2}-\measuredangle COD$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$O\neq A\in L_{1}$
+\end_inset
+ ו-
+\begin_inset Formula
+$O\neq B\in L_{2}$
+\end_inset
+ ונחלק למקרים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ע"פ מסקנה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 2.5"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ אלו אכן כל המקרים.
+\end_layout
+
+\end_inset
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$O$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$C$
+\end_inset
+ ובין 
+\begin_inset Formula
+$B$
+\end_inset
+ ל-
+\begin_inset Formula
+$D$
+\end_inset
+, אז 
+\begin_inset Formula
+$\measuredangle AOB$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle COD$
+\end_inset
+ הן זוויות קודקודיות, ולכן ע"פ משפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 2.10"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\measuredangle AOB=\measuredangle COD=\alpha$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$O$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$C$
+\end_inset
+ ובנוסף 
+\begin_inset Formula
+$B$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$D$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+ או ש-
+\begin_inset Formula
+$D$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$B$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+, אז 
+\begin_inset Formula
+$\measuredangle AOB$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle COD$
+\end_inset
+ הן זוויות צמודות, ולכן ע"פ משפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 2.11"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\measuredangle AOB=\frac{1}{2}-\measuredangle COD=\beta$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$O$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$B$
+\end_inset
+ ל-
+\begin_inset Formula
+$D$
+\end_inset
+ ובנוסף 
+\begin_inset Formula
+$A$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$C$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+ או ש-
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+, אז 
+\begin_inset Formula
+$\measuredangle AOB$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle COD$
+\end_inset
+ הן זוויות צמודות, ולכן ע"פ משפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 2.11"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\measuredangle AOB=\frac{1}{2}-\measuredangle COD=\beta$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$A$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$C$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+ או ש-
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+ ובנוסף 
+\begin_inset Formula
+$B$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$D$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+ או ש-
+\begin_inset Formula
+$D$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$B$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+, אז ע"פ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "ray's points equivalence"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\measuredangle AOB=\measuredangle AOD=\measuredangle COD=\alpha$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\end_layout
+
+\begin_layout Claim
+קבוצה קווית 
+\begin_inset Formula
+$S\subseteq\MKclg$
+\end_inset
+ היא ישר אם"ם קיימות שתי נקודות שונות 
+\begin_inset Formula
+$A,B\in S$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$0\leq r_{1},r_{2}\in\MKreal$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left|r_{1}\pm r_{2}\right|=\left|AB\right|$
+\end_inset
+, קיימת נקודה 
+\begin_inset Formula
+$C\in L$
+\end_inset
+ המקיימת 
+\begin_inset Formula
+$\left|AC\right|=r_{1}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left|BC\right|=r_{2}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status open
+\begin_layout Proof
+הגרירה מימין לשמאל טריוויאלית, א"כ נוכיח רק את הגרירה השנייה.
+\begin_inset Newline newline
+\end_inset
+נניח שקיימות
+\begin_inset Formula
+$A,B\in S$
+\end_inset
+ כנ"ל, 
+\begin_inset Formula
+$S$
+\end_inset
+ קווית ע"פ הגדרה ומהקיום של 
+\begin_inset Formula
+$A$
+\end_inset
+ ו-
+\begin_inset Formula
+$B$
+\end_inset
+ נובע שיש בה שתי נקודות שונות, לכן נותר להוכיח רק את התנאי השלישי בהגדרה. א"כ תהיינה 
+\begin_inset Formula
+$C,D\in S$
+\end_inset
+ שתי נקודות שונות, ויהיו 
+\begin_inset Formula
+$0\leq r_{1},r_{2}\in\MKreal$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left|r_{1}\pm r_{2}\right|=\left|CD\right|$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula
+\begin{align*}
+r_{1} & =\left|CE\right|\\
+r_{2} & =\left|DE\right|
+\end{align*}
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\left|AE\right|=\left|\left|AC\right|\pm r_{1}\right|=\left|\left|AD\right|\pm r_{2}\right|
+\]
+
+
+\end_inset
+
+\end_layout
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+תהא 
+\begin_inset Formula
+$S\subseteq\MKclg$
+\end_inset
+ קבוצה קווית, 
+\begin_inset Formula
+$S$
+\end_inset
+ היא ישר אם"ם קיימת נקודה 
+\begin_inset Formula
+$O\in S$
+\end_inset
+ המקיימת שלכל 
+\begin_inset Formula
+$0<r\in\MKreal$
+\end_inset
+, קיימות שתי נקודות 
+\begin_inset Formula
+$A,B\in L$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$O$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left|AO\right|=\left|BO\right|=r$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status open
+\begin_layout Proof
+הגרירה מימין לשמאל טריוויאלית, א"כ נוכיח רק את הגרירה השנייה.
+\begin_inset Newline newline
+\end_inset
+נניח שקיימת נקודה 
+\begin_inset Formula
+$O\in S$
+\end_inset
+ כנ"ל, 
+\begin_inset Formula
+$S$
+\end_inset
+ קווית ע"פ הגדרה ומהקיום של 
+\begin_inset Formula
+$O$
+\end_inset
+ נובע שהיא אינה ריקה, לכן נותר להוכיח רק את התנאי השלישי בהגדרה.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+יהיו 
+\begin_inset Formula
+$O\neq O'\in S$
+\end_inset
+ ו-
+\begin_inset Formula
+$0<r\in\MKreal$
+\end_inset
+, מהגדרת 
+\begin_inset Formula
+$O$
+\end_inset
+ נובע שקיימות שתי נקודות 
+\begin_inset Formula
+$A,B\in S$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$O$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+ ו-
+\begin_inset Formula
+${\color{red}\left|AO\right|=\left|BO\right|=\left|OO'\right|+r}$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$A$
+\end_inset
+ ו-
+\begin_inset Formula
+$B$
+\end_inset
+ כנ"ל, ע"פ טענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 2.5"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ מתקיימת אחת מארבע האפשרויות הבאות:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$A$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$O'$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+ - ע"פ שוויונות המשולש המנוון מתקיים 
+\begin_inset Formula
+$\left|OO'\right|=\left|OA\right|+\left|AO'\right|$
+\end_inset
+, ולכן מהנ"ל נובע כי:
+\begin_inset Formula
+\[
+\left|AO'\right|=\left|OO'\right|-{\color{red}\left|OA\right|}=\left|OO'\right|-\left({\color{red}\left|OO'\right|+r}\right)=-r
+\]
+
+
+\end_inset
+בסתירה לכך ש-
+\begin_inset Formula
+$r>0$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left|AO'\right|\geq0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$O'$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+ - ע"פ שוויונות המשולש המנוון מתקיים 
+\begin_inset Formula
+$\left|AO\right|=\left|AO'\right|+\left|O'O\right|$
+\end_inset
+, ולכן מהנ"ל נובע כי:
+\begin_inset Formula
+\[
+\left|AO'\right|={\color{red}\left|OA\right|}-\left|OO'\right|={\color{red}\left|OO'\right|+r}-\left|OO'\right|=r
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$O'$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$B$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+ - מאותו נימוק שבמקרה הקודם נקבל ש-
+\begin_inset Formula
+$\left|BO'\right|=r$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$B$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$O'$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+ - מאותו נימוק שבמקרה הראשון נובע שמקרה זה אינו אפשרי.
+\end_layout
+
+\begin_layout Standard
+א"כ מצאנו נקודה אחת שמרחקה מ-
+\begin_inset Formula
+$O'$
+\end_inset
+ הוא 
+\begin_inset Formula
+$r$
+\end_inset
+, נסמן נקודה זו ב-
+\begin_inset Formula
+$X$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+אם ידוע גם ש-
+\begin_inset Formula
+$\left|OO'\right|=r$
+\end_inset
+ הרי שנמצאה גם הנקודה השנייה, וע"פ החלוקה למקרים 
+\begin_inset Formula
+$O'$
+\end_inset
+ אכן נמצאת בין הנקודה הראשונה לבין 
+\begin_inset Formula
+$O$
+\end_inset
+. לפיכך נוכל להניח ש-
+\begin_inset Formula
+$\left|OO'\right|\neq r$
+\end_inset
+, וממילא 
+\begin_inset Formula
+$\left|\left|OO"\right|-r\right|>0$
+\end_inset
+; ושוב - מהגדרת 
+\begin_inset Formula
+$O$
+\end_inset
+ נובע שקיימות שתי נקודות 
+\begin_inset Formula
+$C,D\in S$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$O$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$C$
+\end_inset
+ ל-
+\begin_inset Formula
+$D$
+\end_inset
+ ו-
+\begin_inset Formula
+${\color{blue}\left|CO\right|=\left|DO\right|=\left|\left|OO'\right|-r\right|}$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$C$
+\end_inset
+ ו-
+\begin_inset Formula
+$D$
+\end_inset
+ כנ"ל, ופעם נוספת - ע"פ הטענה הקודמת (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 2.5"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+) מתקיימת אחת מארבע האפשרויות הבאות:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$O'$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+ - ע"פ מסקנה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 1.5"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ 
+\begin_inset Formula
+$O$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$D$
+\end_inset
+ ל-
+\begin_inset Formula
+$O'$
+\end_inset
+, ולכן ע"פ שוויונות המשולש המנוון מתקיים:
+\begin_inset Formula
+\begin{align*}
+\left|OO'\right| & =\left|OC\right|+\left|CO'\right|\\
+\left|DO'\right| & =\left|DO\right|+\left|OO'\right|
+\end{align*}
+
+
+\end_inset
+ ומממילא אם 
+\begin_inset Formula
+$\left|OO'\right|>r$
+\end_inset
+ אז:
+\begin_inset Formula
+\[
+\left|CO'\right|=\left|OO'\right|-{\color{blue}\left|CO\right|}=\left|OO'\right|-\left({\color{blue}\left|OO'\right|-r}\right)=r
+\]
+
+
+\end_inset
+ואם 
+\begin_inset Formula
+$\left|OO'\right|<r$
+\end_inset
+ אז:
+\begin_inset Formula
+\[
+\left|DO'\right|={\color{blue}\left|DO\right|}+\left|OO'\right|={\color{blue}r-\left|OO'\right|}+\left|OO'\right|=r
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$O'$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$C$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+ - ע"פ שוויונות המשולש המנוון מתקיים 
+\begin_inset Formula
+$\left|CO\right|=\left|CO'\right|+\left|O'O\right|$
+\end_inset
+, מכאן ש-
+\begin_inset Formula
+$\left|OO'\right|<r$
+\end_inset
+ (אחרת נקבל ש-
+\begin_inset Formula
+$\left|CO'\right|=-r$
+\end_inset
+ בסתירה לכך ש-
+\begin_inset Formula
+$r>0$
+\end_inset
+); כעת, ממסקנה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 1.6"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ נקבל ש-
+\begin_inset Formula
+$O$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$D$
+\end_inset
+ ל-
+\begin_inset Formula
+$O'$
+\end_inset
+, ולכן ע"פ שוויונות המשולש המנוון מתקיים: 
+\begin_inset Formula
+\[
+\left|DO'\right|=\left|DO\right|+\left|OO'\right|={\color{blue}r-\left|OO'\right|}+\left|OO'\right|=r
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$O'$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$D$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+ - מאותו נימוק שבמקרה הקודם נקבל ש-
+\begin_inset Formula
+$\left|CO'\right|=r$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$D$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$O'$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+ - מאותו נימוק שבמקרה הראשון נובע שאם 
+\begin_inset Formula
+$\left|OO'\right|>r$
+\end_inset
+ אז 
+\begin_inset Formula
+$\left|DO'\right|=r$
+\end_inset
+, ואם 
+\begin_inset Formula
+$\left|OO'\right|<r$
+\end_inset
+ אז 
+\begin_inset Formula
+$\left|CO'\right|=r$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+א"כ מצאנו נקודה נוספת שמרחקה מ-
+\begin_inset Formula
+$O'$
+\end_inset
+ הוא 
+\begin_inset Formula
+$r$
+\end_inset
+, נסמן נקודה זו ב-
+\begin_inset Formula
+$Y$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+נשים לב לכך ש-
+\begin_inset Formula
+$X\neq Y$
+\end_inset
+ שכן 
+\begin_inset Formula
+$\left|XO'\right|=\left|OO'\right|+r$
+\end_inset
+ ואילו 
+\begin_inset Formula
+$\left|YO'\right|=\left|\left|OO'\right|-r\right|$
+\end_inset
+, אם היה מתקיים 
+\begin_inset Formula
+$\left|XO'\right|=\left|YO'\right|$
+\end_inset
+ היינו מקבלים ש-
+\begin_inset Formula
+$r=0$
+\end_inset
+ ו/או 
+\begin_inset Formula
+$\left|OO'\right|=0$
+\end_inset
+ בסתירה לכך ש-
+\begin_inset Formula
+$r>0$
+\end_inset
+ ו-
+\begin_inset Formula
+$O\neq O'$
+\end_inset
+. בנוסף נובע מכאן ש-
+\begin_inset Formula
+$\left|XY\right|=\left|\left|O'Y\right|-\left|O'X\right|\right|\neq0$
+\end_inset
+, ולכן ע"פ שוויונות המשולש המנוון 
+\begin_inset Formula
+$\measuredangle XO'Y\neq0$
+\end_inset
+, ומהיות 
+\begin_inset Formula
+$S$
+\end_inset
+ קווית נדע ש-
+\begin_inset Formula
+$\measuredangle XO'Y$
+\end_inset
+ - כלומר 
+\begin_inset Formula
+$O'$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$X$
+\end_inset
+ ל-
+\begin_inset Formula
+$Y$
+\end_inset
+ ובזאת נשלמה ההוכחה.
+\end_layout
+
+\end_deeper
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+קבוצות מישוריות ומישורים
+\end_layout
+
+\begin_layout Subsection
+קבוצות מישוריות
+\end_layout
+
+\begin_layout Theorem
+לכל שתי קבוצות מישוריות 
+\begin_inset Formula
+$S,T\subseteq\MKclg$
+\end_inset
+, אם יש ב-
+\begin_inset Formula
+$S\cap T$
+\end_inset
+ שלוש נקודות שאינן קוויות אז 
+\begin_inset Formula
+$S\cup T$
+\end_inset
+ גם היא מישורית.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ אם יש ב-
+\begin_inset Formula
+$\MKclg$
+\end_inset
+ מישור המכיל את אחת הקבוצות, המשפט נובע ישירות ממשפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 3.3"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ ומהעובדה שתת-קבוצה של קבוצה מישורית גם היא קבוצה מישורית; החידוש הוא שזה נכון אפילו אם אין מישורים כאלה.
+\end_layout
+
+\begin_layout Subsection
+מישורים
+\end_layout
+
+\begin_layout Claim
+כל מישור הוא קבוצה אין-סופית.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+בכל מישור מוכלים אין-סוף ישרים.
+\end_layout
+
+\begin_layout Corollary
+אם יש ב-
+\begin_inset Formula
+$\MKclg$
+\end_inset
+ מישורים אז יש בה גם ישרים.
+\end_layout
+
+\begin_layout Standard
+נניח שיש ב-
+\begin_inset Formula
+$\MKclg$
+\end_inset
+ מישורים.
+\end_layout
+
+\begin_layout Theorem
+תהא 
+\begin_inset Formula
+$S\subseteq\MKclg$
+\end_inset
+ קבוצה קווית שיש בה שתי נקודות שונות, ותהיינה 
+\begin_inset Formula
+$A,B\in S$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A\neq B$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+לכל מישור 
+\begin_inset Formula
+$M\subseteq\MKclg$
+\end_inset
+ המקיים 
+\begin_inset Formula
+$A,B\in M$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$S\subseteq M$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$M\subseteq\MKclg$
+\end_inset
+ מישור המקיים 
+\begin_inset Formula
+$A,B\in M$
+\end_inset
+, תהא 
+\begin_inset Formula
+$C\in S$
+\end_inset
+, ונחלק למקרים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$C=A$
+\end_inset
+ או ש-
+\begin_inset Formula
+$C=B$
+\end_inset
+ אז מהגדרה 
+\begin_inset Formula
+$C\in L$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+נניח ש-
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+ או ש-
+\begin_inset Formula
+$B$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$C$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מהיות 
+\begin_inset Formula
+$M$
+\end_inset
+ מישור נובע שקיימת נקודה 
+\begin_inset Formula
+$D\in M$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left|AD\right|=\left|AC\right|$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle BAD=0$
+\end_inset
+, מכאן שגם 
+\begin_inset Formula
+$\measuredangle CAD=0$
+\end_inset
+ (
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "ray's points equivalence"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+), ולכן ע"פ שוויונות המשולש המנוון מתקיים:
+\begin_inset Formula
+\[
+\left|CD\right|=\left|\left|AC\right|-\left|AD\right|\right|=\left|\left|AC\right|-\left|AC\right|\right|=0
+\]
+
+
+\end_inset
+כלומר 
+\begin_inset Formula
+$C=D\in L$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+המקרה שבו 
+\begin_inset Formula
+$A$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$B$
+\end_inset
+ ל-
+\begin_inset Formula
+$C$
+\end_inset
+ שקול למקרה שבו 
+\begin_inset Formula
+$B$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$C$
+\end_inset
+ (אין שום הבדל בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula
+$C$
+\end_inset
+ הנ"ל היה שרירותי ולכן נובע מכאן ש-
+\begin_inset Formula
+$S\subseteq M$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\end_layout
+
+\begin_layout Corollary
+לכל מישור וישר שאינו מוכל בו יש לכל היותר נקודת חיתוך אחת.
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+כדאי להכליל את המסקנה גם לקבוצות מישוריות
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "theorem 2.18"
+\end_inset
+
+\series bold
+דרך כל שתי נקודות במישור ניתן להעביר ישר יחיד המוכל במישור
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$M\subseteq\MKclg$
+\end_inset
+ מישור, לכל 
+\begin_inset Formula
+$A,B\in M$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A\neq B$
+\end_inset
+ קיים ישר יחיד 
+\begin_inset Formula
+$L\subseteq\MKclg$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A,B\in L$
+\end_inset
+ ו-
+\begin_inset Formula
+$L\subseteq M$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+תהיינה 
+\begin_inset Formula
+$A,B\in M$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A\neq B$
+\end_inset
+, היחידות של ישר כנ"ל נובעת ישירות ממסקנה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 2.8"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ ולכן נעסוק כאן רק בקיום.
+\begin_inset Newline newline
+\end_inset
+מהיות 
+\begin_inset Formula
+$M$
+\end_inset
+ מישור נובע שלכל 
+\begin_inset Formula
+$0<r\in\MKreal$
+\end_inset
+ קיימות שתי נקודות 
+\begin_inset Formula
+$C,D\in M$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left|BC\right|=\left|BD\right|=r$
+\end_inset
+, 
+\begin_inset Formula
+$\measuredangle ABC=0$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle ABD=\frac{1}{2}$
+\end_inset
+, תהיינה 
+\begin_inset Formula
+$C$
+\end_inset
+ ו-
+\begin_inset Formula
+$D$
+\end_inset
+ כנ"ל.
+\begin_inset Newline newline
+\end_inset
+מהיות 
+\begin_inset Formula
+$M$
+\end_inset
+ קבוצה מישורית נובע שלכל שתי נקודות כאלה מתקיימת אחת מארבע האפשרויות הבאות:
+\begin_inset Formula
+\begin{align*}
+\frac{1}{2}=\measuredangle ABD & =\measuredangle ABC+\measuredangle CBD=0+\measuredangle CBD=\measuredangle CBD\\
+0=\measuredangle ABC & =\measuredangle ABD+\measuredangle DBC=\frac{1}{2}+\measuredangle CBD>0\\
+\measuredangle CBD & =\measuredangle CBA+\measuredangle ABD=0+\frac{1}{2}=\frac{1}{2}\\
+1 & =\measuredangle ABC+\measuredangle CBD+\measuredangle DBA=0+\measuredangle CBD+0=\measuredangle CBD
+\end{align*}
+
+
+\end_inset
+כלומר האפשרויות השנייה והרביעית אינן אפשריות ולכן 
+\begin_inset Formula
+$\measuredangle CBD=\frac{1}{2}$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$B$
+\end_inset
+ נמצאת בין שתי הנקודות הללו; מכאן שקיים ישר יחיד 
+\begin_inset Formula
+$L\subseteq\MKclg$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A,B\in L$
+\end_inset
+ ו-
+\begin_inset Formula
+$L\subseteq M$
+\end_inset
+.
+\end_layout
+
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lemma 2.19"
+\end_inset
+תהיינה 
+\begin_inset Formula
+$A,B,C,O\in\MKclg$
+\end_inset
+ ארבע נקודות כך ש-
+\begin_inset Formula
+$A,B,C$
+\end_inset
+ שונות מ-
+\begin_inset Formula
+$O$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle AOB+\measuredangle BOC+\measuredangle COA=1$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+אם 
+\begin_inset Formula
+$A,B,C$
+\end_inset
+ קוויות
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר 
+\begin_inset Formula
+$\left\{ A,B,C\right\} $
+\end_inset
+ קווית.
+\end_layout
+
+\end_inset
+ אז גם 
+\begin_inset Formula
+$A,B,C,O$
+\end_inset
+ קוויות.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+נניח ש-
+\begin_inset Formula
+$A,B,C$
+\end_inset
+ קוויות, ונחלק למקרים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם שלושתן שונות זו מזו אז ע"פ הגדרה אחת מהן נמצאת בין שתי האחרות, נניח בהג"כ כי זוהי 
+\begin_inset Formula
+$B$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+ממסקנה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 1.5"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ נובע כי 
+\begin_inset Formula
+$\measuredangle AOB=\measuredangle BOC+\measuredangle COA$
+\end_inset
+, ולכן ע"פ הנתון 
+\begin_inset Formula
+$\measuredangle AOB+\measuredangle BOC+\measuredangle COA=1$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\measuredangle AOB=\frac{1}{2}$
+\end_inset
+ ומכאן שע"פ טענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.2"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ 
+\begin_inset Formula
+$A,B,O$
+\end_inset
+ קוויות.
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$\left\{ A,B,C\right\} $
+\end_inset
+ ו-
+\begin_inset Formula
+$\left\{ A,B,O\right\} $
+\end_inset
+ הן שתי קבוצות קוויות שהחיתוך שלהן מכיל שתי נקודות שונות (זו ההנחה במקרה זה), ולכן ע"פ משפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 2.2"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ גם 
+\begin_inset Formula
+$\left\{ A,B,C,O\right\} $
+\end_inset
+ היא קבוצה קווית.
+\end_layout
+
+\begin_layout Itemize
+אם אלו לא שלוש נקודות שונות, אז אחת משלוש הזוויות 
+\begin_inset Formula
+$\measuredangle AOB,\measuredangle BOC,\measuredangle COA$
+\end_inset
+ היא זווית מנוונת, ולכן מהנתון 
+\begin_inset Formula
+$\measuredangle AOB+\measuredangle BOC+\measuredangle COA=1$
+\end_inset
+ נקבל שכל אחת משתי האחרות היא זווית שטוחה. ושוב קיבלנו ש-
+\begin_inset Formula
+$\left\{ A,B,C,O\right\} $
+\end_inset
+ היא איחוד של שתי קבוצות קוויות שהחיתוך שלהן מכיל שתי נקודות שונות, ולכן ע"פ משפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 2.2"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ גם 
+\begin_inset Formula
+$\left\{ A,B,C,O\right\} $
+\end_inset
+ היא קבוצה קווית.
+\end_layout
+
+\end_deeper
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 2.20"
+\end_inset
+תהיינה 
+\begin_inset Formula
+$A,B,C,D,O\in\MKclg$
+\end_inset
+ חמש נקודות כך ש-
+\begin_inset Formula
+$A,B,C,D$
+\end_inset
+ שונות מ-
+\begin_inset Formula
+$O$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle AOB+\measuredangle BOC+\measuredangle COA=1$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+לפחות אחת מארבע האפשרויות הבאות אינה מתקיימת:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אין ב-
+\begin_inset Formula
+$\left\{ A,B,C,O\right\} $
+\end_inset
+ שלוש נקודות קוויות
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\measuredangle AOB=\measuredangle AOD+\measuredangle DOB$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\measuredangle BOC=\measuredangle BOD+\measuredangle DOC$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\measuredangle COA=\measuredangle COD+\measuredangle DOA$
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+בנוסף:
+\end_layout
+
+\begin_layout Itemize
+אם יש ב-
+\begin_inset Formula
+$\left\{ A,B,C,O\right\} $
+\end_inset
+ שלוש נקודות קוויות, אז שתיים מבין שלוש הזוויות 
+\begin_inset Formula
+$\measuredangle AOB,\measuredangle BOC,\measuredangle COA$
+\end_inset
+ הן זוויות שטוחות והשלישית מנוונת.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$\measuredangle AOB=\measuredangle AOD+\measuredangle DOB$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle BOC=\measuredangle BOD+\measuredangle DOC$
+\end_inset
+ (כלומר מתקיימות אפשרויות
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+ו-
+\numeric on
+3
+\numeric off
+), אז 
+\begin_inset Formula
+$\measuredangle BOD=0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$\measuredangle BOC=\measuredangle BOD+\measuredangle DOC$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle COA=\measuredangle COD+\measuredangle DOA$
+\end_inset
+ (כלומר מתקיימות אפשרויות
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+ו-
+\numeric on
+4
+\numeric off
+), אז 
+\begin_inset Formula
+$\measuredangle COD=0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$\measuredangle COA=\measuredangle COD+\measuredangle DOA$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle AOB=\measuredangle AOD+\measuredangle DOB$
+\end_inset
+ (כלומר מתקיימות אפשרויות
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+4
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+ו-
+\numeric on
+2
+\numeric off
+), אז 
+\begin_inset Formula
+$\measuredangle AOD=0$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+נניח בהג"כ כי 
+\begin_inset Formula
+$\measuredangle AOB=\measuredangle AOD+\measuredangle DOB$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle BOC=\measuredangle BOD+\measuredangle DOC$
+\end_inset
+.
+\begin_inset Formula
+\[
+\Rightarrow1=\measuredangle AOB+\measuredangle BOC+\measuredangle COA=\left(\measuredangle AOD+\measuredangle DOB\right)+\left(\measuredangle BOD+\measuredangle DOC\right)+\measuredangle COA
+\]
+
+
+\end_inset
+מצד שני, ע"פ א"ש הפירמידה מתקיים 
+\begin_inset Formula
+$1\geq\measuredangle AOD+\measuredangle DOC+\measuredangle COA$
+\end_inset
+, ולכן נובע מהשורה הקודמת ש-
+\begin_inset Formula
+$\measuredangle BOD=\measuredangle DOB=0$
+\end_inset
+.
+\begin_inset Formula
+\[
+\Rightarrow1=\measuredangle AOD+\measuredangle DOC+\measuredangle COA
+\]
+
+
+\end_inset
+כעת נחלק למקרים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם אין ב-
+\begin_inset Formula
+$\left\{ A,B,C,O\right\} $
+\end_inset
+ שלוש נקודות קוויות אז 
+\begin_inset Formula
+$\measuredangle COA$
+\end_inset
+ אינה זווית שטוחה (כלומר 
+\begin_inset Formula
+$\measuredangle COA\neq\frac{1}{2}$
+\end_inset
+), ולפיכך מהשורה הקודמת נובע ש-
+\begin_inset Formula
+$\measuredangle COA\neq\measuredangle AOD+\measuredangle DOC$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם יש ב-
+\begin_inset Formula
+$\left\{ A,B,C,O\right\} $
+\end_inset
+ שלוש נקודות קוויות אז ע"פ הלמה (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 2.19"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+) ארבעתן קוויות, ולכן מהשוויון 
+\begin_inset Formula
+$1=\measuredangle AOD+\measuredangle DOC+\measuredangle COA$
+\end_inset
+ נובע ששתיים מבין שלוש הזוויות הללו שטוחות והשלישית מנוונת.
+\end_layout
+
+\end_deeper
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+טיוטה
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+תהא 
+\begin_inset Formula
+$S\subseteq\MKclg$
+\end_inset
+ קבוצה מישורית שיש בה שלוש נקודות שאינן קוויות, ותהיינה 
+\begin_inset Formula
+$A,B,O\in S$
+\end_inset
+ כנ"ל.
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$C,D\in S$
+\end_inset
+, אם 
+\begin_inset Formula
+$\measuredangle AOC=\measuredangle AOD$
+\end_inset
+ וגם 
+\begin_inset Formula
+$\measuredangle BOC=\measuredangle BOD$
+\end_inset
+, אז 
+\begin_inset Formula
+$\measuredangle COD=0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status open
+\begin_layout Proof
+תהיינה 
+\begin_inset Formula
+$C,D\in\MKclg$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\alpha:=\measuredangle AOC=\measuredangle AOD$
+\end_inset
+ ו-
+\begin_inset Formula
+$\beta:=\measuredangle BOC=\measuredangle BOD$
+\end_inset
+ , ונניח בשלילה ש-
+\begin_inset Formula
+$\measuredangle COD\neq0$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+מהעובדה ש-
+\begin_inset Formula
+$A,B,O$
+\end_inset
+ אינן קוויות נובע ש-
+\begin_inset Formula
+$\measuredangle AOB\neq0$
+\end_inset
+ וממילא:
+\begin_inset Formula
+\begin{align*}
+\measuredangle AOC & <{\color{red}\measuredangle AOB}+\measuredangle AOC=\measuredangle AOB+\measuredangle BOC\\
+\measuredangle BOC & <{\color{red}\measuredangle BOA}+\measuredangle BOC=\measuredangle BOA+\measuredangle AOC
+\end{align*}
+
+
+\end_inset
+ולכן מהיות 
+\begin_inset Formula
+$S$
+\end_inset
+ מישורית ומהעובדה ש-
+\begin_inset Formula
+$\measuredangle AOB\neq\frac{1}{2}$
+\end_inset
+ נובע שמתקיימת אחת משתי האפשרויות הבאות:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$\frac{1}{2}>\measuredangle AOB=\measuredangle AOC+\measuredangle COB=\alpha+\beta$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\measuredangle AOB=1-\measuredangle AOC+\measuredangle COB=1-\left(\alpha+\beta\right)$
+\end_inset
+, ומכאן ש-
+\begin_inset Formula
+$\alpha+\beta>\frac{1}{2}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+מההנחה בשלילה נובע כי:
+\begin_inset Formula
+\begin{align*}
+\measuredangle AOC & <\measuredangle AOC+{\color{red}\measuredangle DOC}=\measuredangle AOD+\measuredangle DOC & \measuredangle BOC & <\measuredangle BOC+{\color{red}\measuredangle DOC}=\measuredangle BOD+\measuredangle DOC\\
+\measuredangle AOD & <\measuredangle AOD+{\color{red}\measuredangle COD}=\measuredangle AOC+\measuredangle COD & \measuredangle BOD & <\measuredangle BOD+{\color{red}\measuredangle COD}=\measuredangle BOC+\measuredangle COD
+\end{align*}
+
+
+\end_inset
+ולכן מהיות 
+\begin_inset Formula
+$S$
+\end_inset
+ מישורית נובע שמתקיימת אחת משתי האפשרויות בכל עמודה:
+\begin_inset Formula
+\begin{align*}
+\measuredangle COD= & \measuredangle COA+\measuredangle AOD=2\alpha & \measuredangle COD= & \measuredangle COB+\measuredangle BOD=2\beta\\
+\measuredangle COD= & 1-\left(\measuredangle COA+\measuredangle AOD\right)=1-2\alpha & \measuredangle COD= & 1-\left(\measuredangle COB+\measuredangle BOD\right)=1-2\beta
+\end{align*}
+
+
+\end_inset
+כלומר מתקיימת אחת מארבע האפשרויות הבאות:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$\measuredangle COD=2\alpha=2\beta=\alpha+\beta$
+\end_inset
+, ומכאן שגם 
+\begin_inset Formula
+$\alpha=\beta\leq\frac{1}{4}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\measuredangle COD=1-2\alpha=1-2\beta$
+\end_inset
+, ומכאן שגם 
+\begin_inset Formula
+$\alpha=\beta\geq\frac{1}{4}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle COD=1-\left(\alpha+\beta\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\measuredangle COD=2\alpha=1-2\beta$
+\end_inset
+, ומכאן שגם 
+\begin_inset Formula
+$\alpha+\beta=\frac{1}{2}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\alpha\leq\frac{1}{4}\leq\beta$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\measuredangle COD=2\beta=1-2\alpha$
+\end_inset
+, ומכאן שגם 
+\begin_inset Formula
+$\alpha+\beta=\frac{1}{2}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\beta\leq\frac{1}{4}\leq\alpha$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+אפשרויות
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+ו-
+\numeric on
+4
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\nospellcheck default
+אינן מסתדרות עם השלב הקודם (ראינו שם ש-
+\begin_inset Formula
+$\alpha+\beta\neq\frac{1}{2}$
+\end_inset
+), ואילו שתי האפשרויות הראשונות תואמות במדויק את שתי האפשרויות שבשלב הקודם (באותו סדר); בכל מקרה מתקיים 
+\begin_inset Formula
+$\measuredangle AOB=\measuredangle COD$
+\end_inset
+ ו-
+\begin_inset Formula
+$\alpha=\beta$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+מהיות 
+\begin_inset Formula
+$S$
+\end_inset
+ מישורית
+\end_layout
+
+\end_deeper
+
+\begin_layout Proof
+\begin_inset Formula
+\[
+\begin{cases}
+\measuredangle COD=\measuredangle COA+\measuredangle AOD\\
+\measuredangle COD=\measuredangle COB+\measuredangle BOD
+\end{cases}\Rightarrow\measuredangle COD=\measuredangle COA+\measuredangle BOD\pm\measuredangle AOB
+\]
+
+
+\end_inset
+
+\end_layout
+
+\end_layout
+
+\begin_layout Theorem
+כל מישור הוא קבוצה מישורית מרבית.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status open
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$M\subseteq\MKclg$
+\end_inset
+ מישור, ותהא 
+\begin_inset Formula
+$S\subseteq\MKclg$
+\end_inset
+ קבוצה מישורית כך ש-
+\begin_inset Formula
+$M\subseteq S$
+\end_inset
+; תהא 
+\begin_inset Formula
+$P\in S$
+\end_inset
+, ותהיינה 
+\begin_inset Formula
+$P\neq A,O\in M$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A\neq O$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$\measuredangle AOP=0$
+\end_inset
+ או ש-
+\begin_inset Formula
+$\measuredangle AOP=\frac{1}{2}$
+\end_inset
+ אז הקבוצה 
+\begin_inset Formula
+$\left\{ A,O,P\right\} $
+\end_inset
+ היא קבוצה קווית (נובע מטענות 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.2"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ ו-
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.3"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+), ולכן ע"פ משפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 2.7"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ היא מוכלת בכל ישר ש-
+\begin_inset Formula
+$A$
+\end_inset
+ ו-
+\begin_inset Formula
+$O$
+\end_inset
+ שייכות אליו. ע"פ המשפט הקודם (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 2.18"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+) קיים ישר 
+\begin_inset Formula
+$L\subseteq\MKclg$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A,O\in L$
+\end_inset
+ ו-
+\begin_inset Formula
+$L\subseteq M$
+\end_inset
+, ולפיכך 
+\begin_inset Formula
+$\left\{ A,O,P\right\} \subseteq M$
+\end_inset
+ ובפרט 
+\begin_inset Formula
+$P\in M$
+\end_inset
+. א"כ נוכל להניח מעתה ש-
+\begin_inset Formula
+$0<\measuredangle AOP<\frac{1}{2}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+לפיכך מהיות 
+\begin_inset Formula
+$M$
+\end_inset
+ מישור נובע שקיימות שתי נקודות 
+\series bold
+שונות
+\series default
+ 
+\begin_inset Formula
+$B,C\in M$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left|BO\right|=\left|CO\right|=\left|OP\right|$
+\end_inset
+ ו-
+\begin_inset Formula
+$\alpha:=\measuredangle AOB=\measuredangle AOC=\measuredangle AOP$
+\end_inset
+, תהיינה 
+\begin_inset Formula
+$B$
+\end_inset
+ ו-
+\begin_inset Formula
+$C$
+\end_inset
+ כנ"ל.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+מהיות 
+\begin_inset Formula
+$S$
+\end_inset
+ מישורית נובע שמתקיימת אחת מארבע האפשרויות הבאות:
+\begin_inset Formula
+\begin{align*}
+\alpha=\measuredangle AOB & =\measuredangle AOC+\measuredangle COB=\alpha+\measuredangle COB\\
+\measuredangle AOC & =\measuredangle AOB+\measuredangle BOC=\alpha+\measuredangle BOC\\
+\measuredangle BOC & =\measuredangle BOA+\measuredangle AOC=2\alpha\\
+1 & =\measuredangle AOB+\measuredangle BOC+\measuredangle COA=2\alpha+\measuredangle BOC
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+משתי האפשרויות הראשונות נובע ש-
+\begin_inset Formula
+$\measuredangle BOC=0$
+\end_inset
+ (כי 
+\begin_inset Formula
+$\measuredangle AOB=\measuredangle AOC$
+\end_inset
+), וע"פ שוויונות המשולש המנוון יתקיים 
+\begin_inset Formula
+$\left|BC\right|=\left|\left|BO\right|-\left|CO\right|\right|=0$
+\end_inset
+ בסתירה לכך ש-
+\begin_inset Formula
+$B\neq C$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+מהאפשרות השלישית נובע ש-
+\begin_inset Formula
+$\alpha\leq\frac{1}{4}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+מהאפשרות הרביעית נובע ש-
+\begin_inset Formula
+$\alpha\geq\frac{1}{4}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+מהיות 
+\begin_inset Formula
+$S$
+\end_inset
+ מישורית נובע שמתקיימת אחת מארבע האפשרויות הבאות:
+\begin_inset Formula
+\begin{align*}
+\alpha=\measuredangle AOB & =\measuredangle AOP+\measuredangle POB=\alpha+\measuredangle POB\\
+\alpha=\measuredangle AOP & =\measuredangle AOB+\measuredangle BOP=\alpha+\measuredangle BOP\\
+\measuredangle BOP & =\measuredangle BOA+\measuredangle AOP=2\alpha\\
+1 & =\measuredangle AOB+\measuredangle BOP+\measuredangle POA=2\alpha+\measuredangle BOP
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+משתי האפשרויות הראשונות נובע ש-
+\begin_inset Formula
+$\measuredangle BOP=0$
+\end_inset
+, ולכן ע"פ שוויונות המשולש המנוון מתקיים 
+\begin_inset Formula
+$\left|BP\right|=\left|\left|OP\right|-\left|OB\right|\right|=0$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$P=B\in M$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+מהאפשרות השלישית נובע ש-
+\begin_inset Formula
+$\alpha\leq\frac{1}{4}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+מהאפשרות הרביעית נובע ש-
+\begin_inset Formula
+$\alpha\geq\frac{1}{4}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+מהיות 
+\begin_inset Formula
+$S$
+\end_inset
+ מישורית נובע שמתקיימת אחת מארבע האפשרויות הבאות:
+\begin_inset Formula
+\begin{align*}
+\alpha=\measuredangle AOC & =\measuredangle AOP+\measuredangle POC=\alpha+\measuredangle POC\\
+\alpha=\measuredangle AOP & =\measuredangle AOC+\measuredangle COP=\alpha+\measuredangle COP\\
+\measuredangle COP & =\measuredangle COA+\measuredangle AOP=2\alpha\\
+1 & =\measuredangle AOC+\measuredangle COP+\measuredangle POA=2\alpha+\measuredangle COP
+\end{align*}
+
+
+\end_inset
+כפי שראינו לעיל:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+משתי האפשרויות הראשונות נובע ש-
+\begin_inset Formula
+$P=C\in M$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+מהאפשרות השלישית נובע ש-
+\begin_inset Formula
+$\alpha\leq\frac{1}{4}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+מהאפשרות הרביעית נובע ש-
+\begin_inset Formula
+$\alpha\geq\frac{1}{4}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\end_deeper
+
+\begin_layout Itemize
+א"כ נחלק למקרים באופן הבא:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$\alpha<\frac{1}{4}$
+\end_inset
+ אז 
+\begin_inset Formula
+$\measuredangle BOC=\measuredangle BOP=\measuredangle COP=2\alpha$
+\end_inset
+, ולפיכך הסכום של כל שתיים מהן גדול מן השלישית (כי 
+\begin_inset Formula
+$\alpha>0$
+\end_inset
+), ומהיות 
+\begin_inset Formula
+$S$
+\end_inset
+ מישורית נקבל ש-
+\begin_inset Formula
+$6\alpha=\measuredangle BOC+\measuredangle BOP+\measuredangle COP=1$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$\alpha=\frac{1}{6}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$\alpha>\frac{1}{4}$
+\end_inset
+ אז 
+\begin_inset Formula
+$\measuredangle BOC=\measuredangle BOP=\measuredangle COP=1-2\alpha$
+\end_inset
+ , ולפיכך הסכום של כל שתיים מהן גדול מן השלישית (כי 
+\begin_inset Formula
+$\alpha<\frac{1}{2}$
+\end_inset
+), ומהיות 
+\begin_inset Formula
+$S$
+\end_inset
+ מישורית נקבל ש-
+\begin_inset Formula
+$3-6\alpha=\measuredangle BOC+\measuredangle BOP+\measuredangle COP=1$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$\alpha=\frac{1}{3}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$\alpha=\frac{1}{4}$
+\end_inset
+ אז 
+\begin_inset Formula
+$2\alpha=\frac{1}{2}=1-2\alpha$
+\end_inset
+ ושוב קיבלנו 
+\begin_inset Formula
+$\measuredangle BOC=\measuredangle BOP=\measuredangle COP=2\alpha=1-2\alpha=\frac{1}{2}$
+\end_inset
+ , ולפיכך הסכום של כל שתיים מהן גדול מן השלישית (כי 
+\begin_inset Formula
+$0<\alpha<\frac{1}{2}$
+\end_inset
+), ומהיות 
+\begin_inset Formula
+$S$
+\end_inset
+ מישורית נקבל ש-
+\begin_inset Formula
+$1\frac{1}{2}=\measuredangle BOC+\measuredangle BOP+\measuredangle COP=1$
+\end_inset
+, וזו סתירה.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+מכאן ש-
+\begin_inset Formula
+$P\in M$
+\end_inset
+, ומכיוון ש-
+\begin_inset Formula
+$P$
+\end_inset
+ הייתה שרירותית נדע ש-
+\begin_inset Formula
+$S\subseteq M$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula
+\begin{align*}
+\measuredangle BOC & ={\color{red}\measuredangle BOA}+{\color{blue}\measuredangle AOC}=2\alpha\\
+\measuredangle BOP & ={\color{red}\measuredangle BOA}+{\color{green}\measuredangle AOP}=2\alpha\\
+\measuredangle COP & ={\color{blue}\measuredangle COA}+{\color{green}\measuredangle AOP}=2\alpha
+\end{align*}
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+1 & >\measuredangle AOB+\measuredangle BOC+\measuredangle COA=2\alpha+\measuredangle BOC\\
+1 & >\measuredangle AOB+\measuredangle BOP+\measuredangle POA=2\alpha+\measuredangle BOP\\
+1 & >\measuredangle AOC+\measuredangle COP+\measuredangle POA=2\alpha+\measuredangle COP
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "theorem 3.3"
+\end_inset
+תהא 
+\begin_inset Formula
+$S\subseteq\MKclg$
+\end_inset
+ קבוצה מישורית שיש בה שלוש נקודות שאינן קוויות
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר קיימות 
+\begin_inset Formula
+$A,B,C\in S$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left\{ A,B,C\right\} $
+\end_inset
+ אינה קווית.
+\end_layout
+
+\end_inset
+, ותהיינה 
+\begin_inset Formula
+$A,B,C\in S$
+\end_inset
+ שלוש נקודות כאלה.
+\begin_inset Newline newline
+\end_inset
+לכל מישור 
+\begin_inset Formula
+$M\subseteq\MKclg$
+\end_inset
+ המקיים 
+\begin_inset Formula
+$A,B,C\in M$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$S\subseteq M$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status open
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$M\subseteq\MKclg$
+\end_inset
+ ישר המקיים 
+\begin_inset Formula
+$A,B,C\in M$
+\end_inset
+, ותהא 
+\begin_inset Formula
+$D\in S$
+\end_inset
+. מהיות 
+\begin_inset Formula
+$S$
+\end_inset
+ מישורית נובע שמתקיימת אחת מארבע האפשרויות הבאות
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כל קבוצה בת שני איברים היא קווית ולכן בהכרח 
+\begin_inset Formula
+$A,B,C$
+\end_inset
+ שונות זו מזו.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\begin{align*}
+\measuredangle ABC & =\measuredangle CBD+\measuredangle DBA\\
+\measuredangle ABD & =\measuredangle ABC+\measuredangle CBD\\
+\measuredangle CBD & =\measuredangle CBA+\measuredangle ABD\\
+1 & =\measuredangle ABC+\measuredangle CBD+\measuredangle DBA
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\end_layout
+
+\end_body
+
+\end_document
+

@@ -1,0 +1,2906 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The head's design for summuries,make the layout more similar to a book:
+\AtBeginDocument{
+\renewcommand\headrule{%
+  \kern -7pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+  \kern 10pt
+}}
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Correct the reversed parentheses in labels:
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\newfontfamily{\hebrewfont}{David}
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+
+
+
+\end_preamble
+
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+customHeadersFooters
+\end_modules
+
+\maintain_unincluded_children false
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+
+
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size      Larger
+	  Series     Bold
+	EndFont
+End
+
+
+Style Solution
+
+	LabelString           "פתרון: "End
+
+
+Style Notation
+
+	LabelString           "סימון  \thetheorem: "End
+
+Style Theorem
+
+	LabelString           "משפט \thetheorem: "End
+
+Style Property
+
+	LabelString           "תזכורת: "End
+
+
+
+\end_local_layout
+
+\language hebrew
+
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\boxbgcolor #cccccc
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+
+\tocdepth 3
+
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename C:\Users\sraya\AppData\Roaming\LyX2.4\macros\MKmacros.lyx
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+אינטגרביליות על מלבן
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+\series bold
+מלבן:
+\series default
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\bar under
+מלבן
+\bar default
+ ב-
+\begin_inset Formula
+$\MKreal^{2}$
+
+
+\end_inset
+ הוא קבוצה מהצורה 
+\begin_inset Formula
+$\left[a,b\right]\times\left[c,d\right]$
+
+
+\end_inset
+ כאשר 
+\begin_inset Formula
+$a,b,c,d\in\MKreal$
+
+
+\end_inset
+; הצגה ברורה יותר של הקבוצה היא:
+\begin_inset Formula
+\[
+R:=\left[a,b\right]\times\left[c,d\right]=\left\{ \begin{array}{c|c}
+\begin{pmatrix}x\\
+y
+\end{pmatrix}\in\MKreal^{2} & a\leq x\leq b,\ c\leq y\leq d\end{array}\right\} 
+\]
+
+
+
+
+\end_inset
+את השטח של המלבן (שהוא 
+\begin_inset Formula
+$\left(b-a\right)\left(c-d\right)$
+
+
+\end_inset
+) נסמן ב-
+\begin_inset Formula
+$A\left(R\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+שריג
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$R\subseteq\MKreal^{2}$
+
+
+\end_inset
+ מלבן, 
+\bar under
+שריג
+\bar default
+ על 
+\begin_inset Formula
+$R$
+
+
+\end_inset
+ הוא זוג סדור 
+\begin_inset Formula
+$P:=\left(P_{1},P_{2}\right)$
+
+
+\end_inset
+ כאשר 
+\begin_inset Formula
+$P_{1}$
+
+
+\end_inset
+ היא חלוקה של 
+\begin_inset Formula
+$\left[a,b\right]$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$P_{2}$
+
+
+\end_inset
+ היא חלוקה של 
+\begin_inset Formula
+$\left[c,d\right]$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ שריג הוא המושג המקביל של חלוקה מאינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\numeric off
+.
+\end_layout
+
+\begin_layout Definition
+\series bold
+עידון של שריג
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$R$
+
+
+\end_inset
+ מלבן, עידון של 
+\bar under
+שריג
+\bar default
+ 
+\begin_inset Formula
+$P:=\left(P_{1},P_{2}\right)$
+
+
+\end_inset
+ הוא כל שריג 
+\begin_inset Formula
+$Q:=\left(Q_{1},Q_{2}\right)$
+
+
+\end_inset
+ על 
+\begin_inset Formula
+$R$
+
+
+\end_inset
+ המקיים 
+\begin_inset Formula
+$Q_{1}\subseteq P_{1}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$Q_{2}\subseteq P_{2}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$R\subseteq\MKreal^{2}$
+
+
+\end_inset
+ מלבן, יהי 
+\begin_inset Formula
+$P$
+
+
+\end_inset
+ שריג על 
+\begin_inset Formula
+$R$
+
+
+\end_inset
+, יהיו 
+\begin_inset Formula
+$R_{1},R_{2},\ldots,R_{n}\subseteq R$
+
+
+\end_inset
+ כל תתי המלבנים שמגדירה 
+\begin_inset Formula
+$P$
+
+
+\end_inset
+ ותהא 
+\begin_inset Formula
+$f:R\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה חסומה.
+\end_layout
+
+\begin_layout Definition
+\series bold
+סכומי דארבו
+\series default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה: 
+\begin_inset CommandInset href
+LatexCommand href
+name "גסטון ז'אן דארבו"
+target https://he.wikipedia.org/wiki/%D7%96%27%D7%90%D7%9F_%D7%92%D7%A1%D7%98%D7%95%D7%9F_%D7%93%D7%90%D7%A8%D7%91%D7%95
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נסמן (לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+
+
+\end_inset
+):
+\begin_inset Formula
+\[
+M_{i}:=\sup\left\{ f\left(x\right)\mid x\in R_{i}\right\} ,\ m_{i}:=\inf\left\{ f\left(x\right)\mid x\in R_{i}\right\} 
+\]
+
+
+
+
+\end_inset
+ונגדיר:
+\begin_inset Formula
+\[
+U\left(f,P\right):=\sum_{i=1}^{n}M_{i}\cdot A\left(R_{i}\right),\ L\left(f,P\right):=\sum_{i=1}^{n}m_{i}\cdot A\left(R_{i}\right)
+\]
+
+
+
+
+\end_inset
+ל-
+\begin_inset Formula
+$U\left(f,P\right)$
+
+
+\end_inset
+ נקרא 
+\bar under
+סכום דארבו העליון
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ עבור 
+\begin_inset Formula
+$P$
+
+
+\end_inset
+ ול-
+\begin_inset Formula
+$L\left(f,P\right)$
+
+
+\end_inset
+ נקרא 
+\bar under
+סכום דארבו התחתון
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ עבור 
+\begin_inset Formula
+$P$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$Q$
+
+
+\end_inset
+ עידון של 
+\begin_inset Formula
+$P$
+
+
+\end_inset
+, מתקיים:
+\begin_inset Formula
+\[
+L\left(f,P\right)\leq L\left(f,Q\right)\leq U\left(f,Q\right)\leq U\left(f,P\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+יהיו 
+\begin_inset Formula
+$m,M\in\MKreal$
+
+
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$y\in\MKim f$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$m\leq y\leq M$
+
+
+\end_inset
+, לכל שני שריגים 
+\begin_inset Formula
+$Q$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\tilde{Q}$
+
+
+\end_inset
+ על 
+\begin_inset Formula
+$R$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+m\cdot A\left(R\right)\leq L\left(f,Q\right)\leq U\left(f,\tilde{Q}\right)\leq M\cdot A\left(R\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+נסמן ב-
+\begin_inset Formula
+$\mathcal{L}$
+
+
+\end_inset
+ את קבוצת סכומי דרבו התחתונים של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ עבור כל השריגים על 
+\begin_inset Formula
+$R$
+
+
+\end_inset
+ וב-
+\begin_inset Formula
+$\mathcal{U}$
+
+
+\end_inset
+ את קבוצת סכומי דרבו העליונים של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ עבור כל השריגים על 
+\begin_inset Formula
+$R$
+
+
+\end_inset
+, כפי שראינו לעיל אלו קבוצות חסומות.
+\end_layout
+
+\begin_layout Definition
+\series bold
+אינטגרל עליון ואינטגרל תחתון
+\series default
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\bar under
+האינטגרל העליון
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$R$
+
+
+\end_inset
+ הוא:
+\begin_inset Formula
+\[
+\overline{\iintop_{R}}f\ dA:=\inf\left(\mathcal{U}\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+\bar under
+האינטגרל התחתון
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$R$
+
+
+\end_inset
+ הוא:
+\begin_inset Formula
+\[
+\underline{\iintop_{R}}f\ dA:=\sup\left(\mathcal{L}\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Corollary
+מתקיים:
+\begin_inset Formula
+\[
+\underline{\iintop_{R}}f\ dA\leq\overline{\iintop_{R}}f\ dA
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+אינטגרביליות
+\series default
+
+\begin_inset Newline newline
+\end_inset
+נאמר ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ 
+\bar under
+אינטגרבילית
+\bar default
+ ב-
+\begin_inset Formula
+$R$
+
+
+\end_inset
+ אם מתקיים:
+\begin_inset Formula
+\[
+\underline{\iintop_{R}}f\ dA=\overline{\iintop_{R}}f\ dA
+\]
+
+
+
+
+\end_inset
+ואז נסמן את הערך המשותף ב-
+\begin_inset Formula
+$\begin{alignedat}{1}\iintop_{R}f\ dA\end{alignedat}
+$
+
+
+
+\end_inset
+ונקרא לו 
+\bar under
+האינטגרל
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$R$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ למת החתכים נותנת תנאים שקולים לקיום השוויון.
+\end_layout
+
+\begin_layout Definition
+\series bold
+נפח
+\series default
+
+\begin_inset Newline newline
+\end_inset
+אם 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ אי-שלילית נאמר ש-
+\begin_inset Formula
+$\begin{alignedat}{1}\iintop_{R}f\ dA\end{alignedat}
+$
+
+
+
+\end_inset
+ הוא 
+\bar under
+הנפח
+\bar default
+ של הקבוצה:
+\begin_inset Formula
+\[
+\left\{ \begin{array}{c|c}
+\begin{pmatrix}x\\
+y\\
+z
+\end{pmatrix}\in\MKreal^{3} & \begin{pmatrix}x\\
+y
+\end{pmatrix}\in R,\ 0\leq z\leq f\begin{pmatrix}x\\
+y
+\end{pmatrix}\end{array}\right\} 
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsection 1.1"
+\end_inset
+תכונות בסיסיות של אינטגרביליות
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$R:=\left[a,b\right]\times\left[c,d\right]\subseteq\MKreal^{2}$
+
+
+\end_inset
+ מלבן ותהיינה 
+\begin_inset Formula
+$f,g:R\rightarrow\MKreal$
+
+
+\end_inset
+ שתי פונקציות אינטגרביליות ב-
+\begin_inset Formula
+$R$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+תכונות בסיסיות של אינטגרביליות
+\series default
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ אי-שלילית אז גם 
+\begin_inset Formula
+$\begin{alignedat}{1}0\leq\iintop_{R}f\ dA\end{alignedat}
+$
+
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$f\left(x\right)\geq g\left(x\right)$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$x\in R$
+
+
+\end_inset
+ אז גם 
+\begin_inset Formula
+$\begin{alignedat}{1}\iintop_{R}f\ dA\geq\iintop_{R}g\ dA\end{alignedat}
+$
+
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+הפונקציות 
+\begin_inset Formula
+$f\pm g$
+
+
+\end_inset
+ אינטגרביליות ב-
+\begin_inset Formula
+$R$
+
+
+\end_inset
+ ומתקיים:
+\begin_inset Formula
+\[
+\iintop_{R}f\pm g\ dA=\iintop_{R}f\ dA\pm\iintop_{R}g\ dA
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$\lambda\in\MKreal$
+
+
+\end_inset
+ הפונקציה 
+\begin_inset Formula
+$\lambda\cdot f$
+
+
+\end_inset
+ אינטגרבילית ב-
+\begin_inset Formula
+$R$
+
+
+\end_inset
+ ומתקיים:
+\begin_inset Formula
+\[
+\iintop_{R}\lambda\cdot f\ dA=\lambda\cdot\iintop_{R}f\ dA
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Theorem
+הפונקציה 
+\begin_inset Formula
+$f\cdot g$
+
+
+\end_inset
+ אינטגרבילית ב-
+\begin_inset Formula
+$R$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+אם קיים 
+\begin_inset Formula
+$0<m\in\MKreal$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$m\leq\left|g\left(x\right)\right|$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$x\in R$
+
+
+\end_inset
+ אז הפונקציה 
+\begin_inset Formula
+$\frac{1}{g}$
+
+
+\end_inset
+ אינטגרבילית ב-
+\begin_inset Formula
+$R$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+אם קיים 
+\begin_inset Formula
+$0<m\in\MKreal$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$m\leq\left|g\left(x\right)\right|$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$x\in R$
+
+
+\end_inset
+ אז הפונקציה 
+\begin_inset Formula
+$\frac{f}{g}$
+
+
+\end_inset
+ אינטגרבילית ב-
+\begin_inset Formula
+$R$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+אם 
+\begin_inset Formula
+$f\left(x\right)\equiv1$
+
+
+\end_inset
+ אז 
+\begin_inset Formula
+$\begin{alignedat}{1}\iintop_{R}f\ dA=A\left(R\right)\end{alignedat}
+$
+
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+הפונקציה 
+\begin_inset Formula
+$\left|f\right|$
+
+
+\end_inset
+ אינטגרבילית ב-
+\begin_inset Formula
+$R$
+
+
+\end_inset
+ ומתקיים:
+\begin_inset Formula
+\[
+\left|\iintop_{R}f\ dA\right|\leq\iintop_{R}\left|f\right|dA
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ נשים לב לדמיון לא“ש המשולש, גם כאן הערך המוחלט של ה“סכום“ קטן או שווה לסכום של הערכים המוחלטים ומבחינה אינטואיטיבית זה קורה מאותה סיבה.
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$R'\subseteq R$
+
+
+\end_inset
+ מלבן, 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ אינטגרבילית ב-
+\begin_inset Formula
+$R'$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 1.7"
+\end_inset
+יהי 
+\begin_inset Formula
+$\gamma\in\left(a,b\right)$
+
+
+\end_inset
+, נסמן 
+\begin_inset Formula
+$R_{1}:=\left[a,\gamma\right]\times\left[c,d\right]$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$R_{2}:=\left[\gamma,b\right]\times\left[c,d\right]$
+
+
+\end_inset
+ ותהא 
+\begin_inset Formula
+$h$
+
+
+\end_inset
+ פונקציה אינטגרבילית על 
+\begin_inset Formula
+$R_{1}$
+
+
+\end_inset
+ ועל 
+\begin_inset Formula
+$R_{2}$
+
+
+\end_inset
+, 
+\begin_inset Formula
+$h$
+
+
+\end_inset
+ אינטגרבילית על 
+\begin_inset Formula
+$R=R_{1}\cup R_{2}$
+
+
+\end_inset
+ ומתקיים:
+\begin_inset Formula
+\[
+\iintop_{R}h\ dA=\iintop_{R_{1}}h\ dA+\iintop_{R_{2}}h\ dA
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+משפט פוביני ופונקציות רציפות
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$R:=\left[a,b\right]\times\left[c,d\right]\subseteq\MKreal^{2}$
+
+
+\end_inset
+ מלבן ותהא 
+\begin_inset Formula
+$f:R\rightarrow\MKreal$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+אם 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ רציפה אז 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ אינטגרבילית ב-
+\begin_inset Formula
+$R$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+משפט פוביני
+\series default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה: 
+\begin_inset CommandInset href
+LatexCommand href
+name "גווידו פוביני"
+target https://he.wikipedia.org/wiki/%D7%92%D7%95%D7%95%D7%99%D7%93%D7%95_%D7%A4%D7%95%D7%91%D7%99%D7%A0%D7%99
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ אינטגרבילית ב-
+\begin_inset Formula
+$R$
+
+
+\end_inset
+ ולכל 
+\begin_inset Formula
+$y\in\left[c,d\right]$
+
+
+\end_inset
+ קיים האינטגרל 
+\begin_inset Formula
+$\intop_{a}^{b}f\left(x,y\right)dx$
+
+
+\end_inset
+ אז קיים האינטגרל הנשנה 
+\begin_inset Formula
+$\intop_{c}^{d}\left(\intop_{a}^{b}f\left(x,y\right)dx\right)dy$
+
+
+\end_inset
+ ומתקיים:
+\begin_inset Formula
+\[
+\intop_{c}^{d}\left(\intop_{a}^{b}f\begin{pmatrix}x\\
+y
+\end{pmatrix}dx\right)dy=\iintop_{R}fdA
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ אינטגרבילית ב-
+\begin_inset Formula
+$R$
+
+
+\end_inset
+ ואם לכל 
+\begin_inset Formula
+$x\in\left[a,b\right]$
+
+
+\end_inset
+ קיים האינטגרל 
+\begin_inset Formula
+$\intop_{c}^{d}f\left(x,y\right)dx$
+
+
+\end_inset
+ אז קיים האינטגרל הנשנה 
+\begin_inset Formula
+$\intop_{a}^{b}\left(\intop_{c}^{d}f\left(x,y\right)dx\right)dy$
+
+
+\end_inset
+ ומתקיים:
+\begin_inset Formula
+\[
+\intop_{a}^{b}\left(\intop_{c}^{d}f\left(x,y\right)dx\right)dy=\iintop_{R}fdA
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ הרעיון הוא שאנחנו "פורסים" את הנפח המבוקש לפרוסות דקות וסוכמים אותן.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ 
+\series bold
+\color red
+לכתוב על הקשר בין משפט פוביני למשפט שוורץ (הנוסחה היסודית).
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Corollary
+אם 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ אינטגרבילית ב-
+\begin_inset Formula
+$R$
+
+
+\end_inset
+ ובנוסף לכל 
+\begin_inset Formula
+$y\in\left[c,d\right]$
+
+
+\end_inset
+ קיים האינטגרל 
+\begin_inset Formula
+$\intop_{a}^{b}f\left(x,y\right)dx$
+
+
+\end_inset
+ ולכל 
+\begin_inset Formula
+$x\in\left[a,b\right]$
+
+
+\end_inset
+ קיים האינטגרל 
+\begin_inset Formula
+$\intop_{c}^{d}f\left(x,y\right)dx$
+
+
+\end_inset
+ אז מתקיים:
+\begin_inset Formula
+\[
+\intop_{c}^{d}\left(\intop_{a}^{b}f\begin{pmatrix}x\\
+y
+\end{pmatrix}dx\right)dy=\iintop_{R}fdA=\intop_{a}^{b}\left(\intop_{c}^{d}f\left(x,y\right)dx\right)dy
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ זה דומה מאד לעובדה שמתקיים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+שהרי לא משנה באיזה סדר סוכמים איברים בטבלה.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\[
+\sum_{i=1}^{n}\sum_{j=1}^{m}x_{i,j}=\sum_{j=1}^{m}\sum_{i=1}^{n}x_{i,j}
+\]
+
+
+
+
+\end_inset
+רק שכאן הסכימה רציפה ולא בדידה.
+\end_layout
+
+\begin_layout Claim
+אם 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ רציפה אז לכל 
+\begin_inset Formula
+$y$
+
+
+\end_inset
+ הפונקציה 
+\begin_inset Formula
+$g:\left[a,b\right]\rightarrow\MKreal$
+
+
+\end_inset
+ המוגדרת ע"י 
+\begin_inset Formula
+$g\left(x\right):=f{x \choose y}$
+
+
+\end_inset
+ רציפה וכמו כן גם הפונקציה 
+\begin_inset Formula
+$h:\left[a,b\right]\rightarrow\MKreal$
+
+
+\end_inset
+ המוגדרת ע"י 
+\begin_inset Formula
+$h\left(x\right):=f{x \choose y}$
+
+
+\end_inset
+ רציפה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+אם 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ רציפה אז מתקיים:
+\begin_inset Formula
+\[
+\intop_{c}^{d}\left(\intop_{a}^{b}f\begin{pmatrix}x\\
+y
+\end{pmatrix}dx\right)dy=\iintop_{R}fdA=\intop_{a}^{b}\left(\intop_{c}^{d}f\left(x,y\right)dx\right)dy
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+אינטגרביליות על קבוצה כללית
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+\series bold
+אינטגרביליות על קבוצה שאינה מלבן
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$D\subseteq\MKreal^{2}$
+
+
+\end_inset
+ קבוצה חסומה ו-
+\begin_inset Formula
+$f:D\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה חסומה ויהי 
+\begin_inset Formula
+$R\subseteq\MKreal^{2}$
+
+
+\end_inset
+ מלבן כך ש-
+\begin_inset Formula
+$D\subseteq R$
+
+
+\end_inset
+, נאמר ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ 
+\bar under
+אינטגרבילית
+\bar default
+ על 
+\begin_inset Formula
+$D$
+
+
+\end_inset
+ אם הפונקציה המוגדרת ע"י (לכל 
+\begin_inset Formula
+$\left(x,y\right)\in R$
+
+
+\end_inset
+):
+\begin_inset Formula
+\[
+g\begin{pmatrix}x\\
+y
+\end{pmatrix}:=\begin{cases}
+f\left(x,y\right) & \left(x,y\right)\in D\\
+0 & \left(x,y\right)\notin D
+\end{cases}
+\]
+
+
+
+
+\end_inset
+אינטגרבילית ב-
+\begin_inset Formula
+$R$
+
+
+\end_inset
+ ובמקרה כזה נאמר שהאינטגרל של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$D$
+
+
+\end_inset
+ הוא:
+\begin_inset Formula
+\[
+\iintop_{D}f\ dA=\iintop_{R}g\ dA
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ נשים לב שלכל מלבן המקיים 
+\begin_inset Formula
+$D\subseteq R$
+
+
+\end_inset
+ נקבל את אותו אינטגרל ולכן האינטגרל מוגדר היטב.
+\end_layout
+
+\begin_layout Definition
+\series bold
+קבוצה בעלת שטח
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$D\subseteq\MKreal^{2}$
+
+
+\end_inset
+ קבוצה חסומה, נאמר ש-
+\begin_inset Formula
+$D$
+
+
+\end_inset
+ 
+\bar under
+בעלת שטח
+\bar default
+ אם 
+\begin_inset Formula
+$\chi_{D}$
+
+
+\end_inset
+ (הפונקציה המציינת של 
+\begin_inset Formula
+$D$
+
+
+\end_inset
+) אינטגרבילית ב-
+\begin_inset Formula
+$D$
+
+
+\end_inset
+ ואז נגדיר את ה
+\bar under
+שטח
+\bar default
+ של 
+\begin_inset Formula
+$D$
+
+
+\end_inset
+ ע"י:
+\begin_inset Formula
+\[
+A\left(D\right):=\iintop_{D}\chi_{D}dA
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+קבוצה נורמלית
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$D\subseteq\MKreal^{2}$
+
+
+\end_inset
+ קבוצה.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נאמר ש-
+\begin_inset Formula
+$D$
+
+
+\end_inset
+ 
+\bar under
+נורמלית ביחס לציר ה-
+\begin_inset Formula
+$x$
+
+
+\end_inset
+
+\bar default
+ אם קיים קטע סגור 
+\begin_inset Formula
+$I\subseteq\MKreal$
+
+
+\end_inset
+ וקיימות שתי פונקציות 
+\begin_inset Formula
+$g_{1},g_{2}:I\rightarrow\MKreal$
+
+
+\end_inset
+ כך שמתקיים
+\begin_inset Formula
+\[
+D=\left\{ \left(x,y\right)\in\MKreal^{2}\mid x\in I,\ g_{1}\left(x\right)\leq y\leq g_{2}\left(x\right)\right\} 
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+נאמר ש-
+\begin_inset Formula
+$D$
+
+
+\end_inset
+ 
+\bar under
+נורמלית ביחס לציר ה-
+\begin_inset Formula
+$y$
+
+
+\end_inset
+
+\bar default
+ אם קיים קטע סגור 
+\begin_inset Formula
+$I\subseteq\MKreal$
+
+
+\end_inset
+ וקיימות שתי פונקציות 
+\begin_inset Formula
+$g_{1},g_{2}:I\rightarrow\MKreal$
+
+
+\end_inset
+ כך שמתקיים
+\begin_inset Formula
+\[
+D=\left\{ \left(x,y\right)\in\MKreal^{2}\mid y\in I,\ g_{1}\left(x\right)\leq x\leq g_{2}\left(x\right)\right\} 
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+נאמר ש-
+\begin_inset Formula
+$D$
+
+
+\end_inset
+ 
+\bar under
+נורמלית בהצגה קוטבית
+\bar default
+ אם קיים קטע סגור 
+\begin_inset Formula
+$I\subseteq\left[0,2\pi\right]$
+
+
+\end_inset
+ וקיימות שתי פונקציות 
+\begin_inset Formula
+$g_{1},g_{2}:I\rightarrow\MKreal$
+
+
+\end_inset
+ כך שמתקיים
+\begin_inset Formula
+\[
+D=\left\{ \left(r\cos\theta,r\sin\theta\right)\in\MKreal^{2}\mid\theta\in I,\ 0\leq g_{1}\left(x\right)\leq r\leq g_{2}\left(x\right)\right\} 
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ הרעיון מאחורי ההגדרה של קבוצה נורמלית הוא שקבוצות נורמליות הן "כמעט" מלבנים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+בהצגה קוטבית המלבנים הם קבוצות מהצורה 
+\begin_inset Formula
+$\left\{ \left(r\cos\theta,r\sin\theta\right)\in\MKreal^{2}\mid a\leq r\leq b,\ c\leq\theta\leq d\right\} $
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+כל קבוצה נורמלית היא קבוצה בעלת שטח.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+כל הטענות והמשפטים שראינו בסעיף 
+\color blue
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsection 1.1"
+plural false
+caps false
+noprefix false
+\end_inset
+
+\color inherit
+ לגבי אינטגרביליות על מלבן נכונות גם עבור קבוצות בעלות שטח
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר בכל אחת מהטענות הללו ניתן להחליף את המלבן 
+\begin_inset Formula
+$R$
+
+
+\end_inset
+ בקבוצה בעלת שטח 
+\begin_inset Formula
+$D$
+
+
+\end_inset
+ והטענה תישאר נכונה.
+\end_layout
+
+\end_inset
+ מלבד טענה 
+\numeric on
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.7"
+plural false
+caps false
+noprefix false
+\end_inset
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+שדורשת ניסוח שונה מעט:
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$D_{1},D_{2}\subseteq\MKreal^{2}$
+
+
+\end_inset
+ קבוצות בעלות שטח כך ש-
+\begin_inset Formula
+$D_{1}\cap D_{2}$
+
+
+\end_inset
+ 
+\bar under
+בעלת שטח 
+\begin_inset Formula
+$0$
+
+
+\end_inset
+
+\bar default
+, נסמן 
+\begin_inset Formula
+$D:=D_{1}\cup D_{2}$
+
+
+\end_inset
+ ותהא 
+\begin_inset Formula
+$f:D\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה אינטגרבילית על 
+\begin_inset Formula
+$D_{1}$
+
+
+\end_inset
+ ועל 
+\begin_inset Formula
+$D_{2}$
+
+
+\end_inset
+; 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ אינטגרבילית על 
+\begin_inset Formula
+$D$
+
+
+\end_inset
+ ומתקיים:
+\begin_inset Formula
+\[
+\iintop_{D}f\ dA=\iintop_{D_{1}}f\ dA+\iintop_{D_{2}}f\ dA
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+קבוצה חסומה 
+\begin_inset Formula
+$D\subseteq\MKreal^{2}$
+
+
+\end_inset
+ היא בעלת שטח אם"ם 
+\begin_inset Formula
+$\partial D$
+
+
+\end_inset
+ (קבוצת נקודות השפה של 
+\begin_inset Formula
+$D$
+
+
+\end_inset
+) היא בעלת שטח 
+\begin_inset Formula
+$0$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+תהא 
+\begin_inset Formula
+$D\subseteq\MKreal^{2}$
+
+
+\end_inset
+ ותהא 
+\begin_inset Formula
+$f:D\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה רציפה
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+\series bold
+\color red
+האם לא מספיק שלכל 
+\begin_inset Formula
+$x\in\left[a,b\right]$
+
+
+\end_inset
+ קיים האינטגרל
+\begin_inset Formula
+\[
+\intop_{g_{1}\left(x\right)}^{g_{2}\left(x\right)}f\begin{pmatrix}x\\
+y
+\end{pmatrix}dy
+\]
+
+
+
+
+\end_inset
+???
+\color inherit
+
+\series default
+
+\end_layout
+
+\end_inset
+ ב-
+\begin_inset Formula
+$D$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נניח ש-
+\begin_inset Formula
+$D$
+
+
+\end_inset
+ קבוצה נורמלית לפי 
+\begin_inset Formula
+$x$
+
+
+\end_inset
+, יהי 
+\begin_inset Formula
+$\left[a,b\right]\subseteq\MKreal$
+
+
+\end_inset
+ קטע סגור ותהיינה 
+\begin_inset Formula
+$g_{1},g_{2}:\left[a,b\right]\rightarrow\MKreal$
+
+
+\end_inset
+ שתי פונקציות כך שמתקיים
+\begin_inset Formula
+\[
+D=\left\{ \left(x,y\right)\in\MKreal^{2}\mid x\in\left[a,b\right],\ g_{1}\left(x\right)\leq y\leq g_{2}\left(x\right)\right\} 
+\]
+
+
+
+
+\end_inset
+מתקיים גם:
+\begin_inset Formula
+\[
+\iintop_{D}f\ dA=\intop_{a}^{b}\left(\intop_{g_{1}\left(x\right)}^{g_{2}\left(x\right)}f\begin{pmatrix}x\\
+y
+\end{pmatrix}dy\right)dx
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+נניח ש-
+\begin_inset Formula
+$D$
+
+
+\end_inset
+ קבוצה נורמלית לפי 
+\begin_inset Formula
+$y$
+
+
+\end_inset
+, יהי 
+\begin_inset Formula
+$\left[c,d\right]\subseteq\MKreal$
+
+
+\end_inset
+ קטע סגור ותהיינה 
+\begin_inset Formula
+$h_{1},h_{2}:\left[c,d\right]\rightarrow\MKreal$
+
+
+\end_inset
+ שתי פונקציות כך שמתקיים
+\begin_inset Formula
+\[
+D=\left\{ \left(x,y\right)\in\MKreal^{2}\mid y\in\left[c,d\right],\ h_{1}\left(x\right)\leq y\leq h_{2}\left(x\right)\right\} 
+\]
+
+
+
+
+\end_inset
+מתקיים גם:
+\begin_inset Formula
+\[
+\iintop_{D}f\ dA=\intop_{c}^{d}\left(\intop_{h_{1}\left(y\right)}^{h_{2}\left(y\right)}f\begin{pmatrix}x\\
+y
+\end{pmatrix}dx\right)dy
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+החלפת משתנים
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+להוסיף כאן אינטואיציה להצבה במשתנה אחד - העיוות של הישר הממשי/המרחב ע"י הפונקציה והתיקון הנדרש.
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$D\subseteq\MKreal^{2}$
+
+
+\end_inset
+ קבוצה חסומה, תהיינה 
+\begin_inset Formula
+$x,y:D\rightarrow\MKreal$
+
+
+\end_inset
+ ותהא 
+\begin_inset Formula
+$f:D\rightarrow\MKreal^{2}$
+
+
+\end_inset
+ המוגדרת ע"י (לכל 
+\begin_inset Formula
+$\left(s,t\right)\in D$
+
+
+\end_inset
+):
+\begin_inset Formula
+\[
+f\begin{pmatrix}s\\
+t
+\end{pmatrix}:=\begin{bmatrix}x\left(s,t\right)\\
+y\left(s,t\right)
+\end{bmatrix}
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ 
+\bar under
+מטריצת יעקובי
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ בנקודה פנימית 
+\begin_inset Formula
+$P\in D$
+
+
+\end_inset
+ היא המטריצה הבאה:
+\begin_inset Formula
+\[
+J_{f}\left(P\right):=\left[\begin{array}{cc}
+x_{s}'\left(P\right) & x_{t}'\left(P\right)\\
+y_{s}'\left(P\right) & y_{t}'\left(P\right)
+\end{array}\right]
+\]
+
+
+
+
+\end_inset
+אם כל הנגזרות החלקיות המופיעות במטריצה רציפות ב-
+\begin_inset Formula
+$P$
+
+
+\end_inset
+ אז כפי שלמדנו הדבר גורר ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ דיפרנציאבילית ב-
+\begin_inset Formula
+$P$
+
+
+\end_inset
+ ויתרה מזאת מטריצת יעקובי היא המטריצה המייצגת (בבסיס הסטנרדטי) של ההעתקה הליניארית המהווה את הדיפרנציאל של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$P$
+
+
+\end_inset
+, הדטרמיננטה של מטריצה יעקובי בנקודה 
+\begin_inset Formula
+$P$
+
+
+\end_inset
+ נקראת 
+\bar under
+היעקוביאן
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$P$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+הצבה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$g:R\rightarrow\MKreal$
+
+
+\end_inset
+ (
+\begin_inset Formula
+$R\subseteq\MKreal^{2}$
+
+
+\end_inset
+ קבוצה חסומה שאינה בהכרח מלבן), תהא 
+\begin_inset Formula
+$D\subseteq\MKreal^{2}$
+
+
+\end_inset
+ קבוצה חסומה, תהיינה 
+\begin_inset Formula
+$x,y:D\rightarrow\MKreal$
+
+
+\end_inset
+ ותהא 
+\begin_inset Formula
+$f:D\rightarrow\MKreal^{2}$
+
+
+\end_inset
+ המוגדרת ע"י (לכל 
+\begin_inset Formula
+$\left(s,t\right)\in D$
+
+
+\end_inset
+):
+\begin_inset Formula
+\[
+f\begin{pmatrix}s\\
+t
+\end{pmatrix}:=\begin{bmatrix}x\left(s,t\right)\\
+y\left(s,t\right)
+\end{bmatrix}
+\]
+
+
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKim\left(f\right)=R$
+
+
+\end_inset
+. מתקיים:
+\begin_inset Formula
+\[
+\iintop_{R}g\ dA=\iintop_{D}\left(g\circ f\right)\cdot\left|J_{f}\right|\ dA
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ הרעיון הוא בדיוק כמו במשפט ההצבה של האינטגרל המסוים באינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\numeric off
+: אנחנו מציבים בתוך הפונקציה שעליה מתבצעת האינטגרציה פונקציה פנימית אבל מכיוון שהאחרונה מעוותת את המרחב עלינו לבצע תיקון, וזה מתבצע ע"י כפל בדטרמיננטה של ההעתקה הליניארית המהווה את הדיפרנציאל של הפונקציה הפנימית בכל נקודה
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר 
+\begin_inset Formula
+$\left|J_{f}\right|$
+
+
+\end_inset
+ היא בעצמה פונקציה המוגדרת ע"י הדטרמיננטה של 
+\begin_inset Formula
+$J_{f}$
+
+
+\end_inset
+ בנקודה.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ לא הבאנו כאן את התנאים למשפט מפני שלא למדנו אותם בכיתה, בספר שנועה המליצה עליו (היא קראה לו "הספר של אנטון") נכתב שהתנאים הם ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ חח"ע, 
+\begin_inset Formula
+$g$
+
+
+\end_inset
+ רציפה, הנגזרות החלקיות של 
+\begin_inset Formula
+$x$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$y$
+
+
+\end_inset
+ בכל נקודה ב-
+\begin_inset Formula
+$D$
+
+
+\end_inset
+ רציפות בנקודה זו (כלומר 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ דיפרנציאבילית ב-
+\begin_inset Formula
+$D$
+
+
+\end_inset
+) ו-"התחומים 
+\begin_inset Formula
+$R$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$D$
+
+
+\end_inset
+ אינם מסובכים מדי".
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$h:\left[0,\infty\right)\times\left[0,2\pi\right)\rightarrow\MKreal^{2}$
+
+
+\end_inset
+ הפונקציה המעבירה מהצגה קוטבית להצגה קרטזית
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+למעשה יש להגביל את התחום ל-
+\begin_inset Formula
+$\left(0,\infty\right)\times\left[0,2\pi\right)$
+
+
+\end_inset
+ איחוד עם 
+\begin_inset Formula
+$\left\{ \left(0,0\right)\right\} $
+
+
+\end_inset
+ כדי ש-
+\begin_inset Formula
+$h$
+
+
+\end_inset
+ תהיה חח"ע.
+\end_layout
+
+\end_inset
+, כלומר לכל 
+\begin_inset Formula
+$\left(r,\theta\right)\in\left[0,\infty\right)\times\left[0,2\pi\right)$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+h\begin{pmatrix}r\\
+\theta
+\end{pmatrix}=\begin{bmatrix}r\cos\theta\\
+r\sin\theta
+\end{bmatrix}
+\]
+
+
+
+
+\end_inset
+מהגדרה לכל 
+\begin_inset Formula
+$\left(r,\theta\right)\in\left[0,\infty\right)\times\left[0,2\pi\right)$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+J_{h}\begin{pmatrix}r\\
+\theta
+\end{pmatrix}=\left[\begin{array}{cc}
+\cos\theta & -r\sin\theta\\
+\sin\theta & r\cos\theta
+\end{array}\right]
+\]
+
+
+
+
+\end_inset
+ולכן גם:
+\begin_inset Formula
+\[
+\left|J_{h}\left(r,\theta\right)\right|=r\cos^{2}\theta-\left(-r\sin^{2}\theta\right)=r\cdot\left(\cos^{2}\theta+\sin^{2}\theta\right)=r
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+\series bold
+מעבר להצגה קוטבית
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$D\subseteq\MKreal^{2}$
+
+
+\end_inset
+ קבוצה נורמלית בהצגה קוטבית, יהי 
+\begin_inset Formula
+$\left[\theta_{1},\theta_{2}\right]\subseteq\left[0,2\pi\right]$
+
+
+\end_inset
+ קטע סגור ותהיינה 
+\begin_inset Formula
+$s_{1},s_{2}:\left[\theta_{1},\theta_{2}\right]\rightarrow\MKreal$
+
+
+\end_inset
+ שתי פונקציות כך שמתקיים:
+\begin_inset Formula
+\[
+D=\left\{ \left(r\cos\theta,r\sin\theta\right)\in\MKreal^{2}\mid\theta\in\left[\theta_{1},\theta_{2}\right],\ 0\leq s_{1}\left(\theta\right)\leq r\leq s_{2}\left(\theta\right)\right\} 
+\]
+
+
+
+
+\end_inset
+תהא 
+\begin_inset Formula
+$f:D\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה רציפה, מתקיים:
+\begin_inset Formula
+\[
+\iintop_{D}f\ dA=\intop_{\theta_{1}}^{\theta_{2}}\left(\intop_{s_{1}\left(\theta\right)}^{s_{2}\left(\theta\right)}f\begin{pmatrix}r\cos\theta\\
+r\sin\theta
+\end{pmatrix}\cdot r\ dr\right)d\theta
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\end_body
+
+\end_document
+

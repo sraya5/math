@@ -1,0 +1,1947 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The head's design for summuries,make the layout more similar to a book:
+\AtBeginDocument{
+\renewcommand\headrule{%
+  \kern -7pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+  \kern 10pt
+}}
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Correct the reversed parentheses in labels:
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\newfontfamily{\hebrewfont}{David}
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+
+\end_preamble
+
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+customHeadersFooters
+\end_modules
+
+\maintain_unincluded_children no
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size      Larger
+	  Series     Bold
+	EndFont
+End
+Style Solution
+	LabelString           "פתרון: "End
+Style Notation
+	LabelString           "סימון  \thetheorem: "End
+Style Theorem
+	LabelString           "משפט \thetheorem: "End
+Style Property
+	LabelString           "תזכורת: "End
+
+\end_local_layout
+
+\language hebrew
+
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\boxbgcolor #cccccc
+\branch proofs
+\selected 0
+\filename_suffix 0
+\color background background
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+
+\tocdepth 3
+
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename C:\Users\sraya\AppData\Roaming\LyX2.4\macros\MKmacros.lyx
+literal true
+\end_inset
+
+\end_layout
+
+\begin_layout Right Header
+\begin_inset Argument 1
+status open
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+\begin_layout Plain Layout
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\begin_inset ERT
+status open
+\begin_layout Plain Layout
+\backslash
+leftmark
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Left Header
+\begin_inset Argument 1
+status open
+\begin_layout Plain Layout
+גאומטריה אוקלידית - הגדרות
+\end_layout
+
+\end_inset
+
+\begin_inset ERT
+status open
+\begin_layout Plain Layout
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Center Footer
+\end_layout
+
+\begin_layout Title
+\paragraph_spacing double
+\series bold
+\size huge
+גאומטריה אוקלידית במישור - הגדרות
+\size default
+
+\series default
+
+\end_layout
+
+\begin_layout Standard
+\align center
+נכתב ע"י שריה אנסבכר
+
+\end_layout
+
+\begin_layout Standard
+\align center
+סמסטר ב' תשפ"ד, האוניברסיטה העברית
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset VSpace vfill
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\align center
+סביר להניח שהסיכומים שלי מכילים טעויות רבות - אני מוצא כאלה כל יום (
+\begin_inset CommandInset href
+LatexCommand href
+name "רשימת טעויות נפוצות"
+target https://drive.google.com/file/d/1ZX_KNQe6_sGYisMaS6ShnBv7T0rPf3D_/view?usp=drive_link
+literal false
+\end_inset
+),
+\begin_inset Newline newline
+\end_inset
+אני מפציר בכם לעדכן אותי בכל טעות שאתם מוצאים (ממש כל טעות ללא יוצא מן הכלל);
+\begin_inset Newline newline
+\end_inset
+אתם מוזמנים להגיב על המסמכים ב-
+\lang english
+Google Drive
+\lang default
+
+\lang hebrew
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "לשלוח לי דוא\"
+target sraya.ansbacher@mail.huji.ac.il
+type mailto:
+literal false
+\end_inset
+ או 
+\begin_inset CommandInset href
+LatexCommand href
+name "למלא פנייה באתר"
+target https://srayaa.wixsite.com/math#contact-body
+literal false
+\end_inset
+.
+\lang default
+
+\end_layout
+
+\begin_layout Standard
+\align center
+לסיכומים נוספים היכנסו לאתר:
+\begin_inset Newline newline
+\end_inset
+אקסיומת השלמות - סיכומי הרצאות במתמטיקה
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset CommandInset href
+LatexCommand href
+name "https://srayaa.wixsite.com/math"
+target https://srayaa.wixsite.com/math
+literal false
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+פונקציית זווית וגאומטריה
+\end_layout
+
+\begin_layout Definition
+יהי 
+\begin_inset Formula
+$\left(\MKclg,\left|\cdot\right|\right)$
+\end_inset
+ מרחב מטרי
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+בהינתן שתי נקודות 
+\begin_inset Formula
+$A,B\in\MKclg$
+\end_inset
+, המרחק ביניהן יסומן ב-
+\begin_inset Formula
+$\left|AB\right|$
+\end_inset
+.
+\end_layout
+
+\end_inset
+, נסמן 
+\begin_inset Formula
+$D_{\MKclg}:=\left\{ \left(A,O,B\right)\in\MKclg^{3}\mid O\text{שונות מ-}\ B\text{ו-}\ A\right\} $
+\end_inset
+, ותהא 
+\begin_inset Formula
+$\measuredangle:D_{\MKclg}\rightarrow\MKreal$
+\end_inset
+ פונקציה.
+\begin_inset Newline newline
+\end_inset
+נאמר ש-
+\begin_inset Formula
+$\measuredangle$
+\end_inset
+ היא 
+\bar under
+פונקציית זווית
+\bar default
+ על 
+\begin_inset Formula
+$\left(\MKclg,\left|\cdot\right|\right)$
+\end_inset
+, אם לכל ארבע נקודות 
+\begin_inset Formula
+$A,B,C,O\in\MKclg$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A,B,C$
+\end_inset
+ שונות מ-
+\begin_inset Formula
+$O$
+\end_inset
+, מתקיימות חמש התכונות הבאות:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אי-שליליות ויחידת מידה -
+\begin_inset Formula
+\[
+0\leq\measuredangle AOB\leq\frac{1}{2}
+\]
+
+
+\end_inset
+לכל מספר 
+\begin_inset Formula
+$\theta\in\left[0,\frac{1}{2}\right]$
+\end_inset
+ נקרא 
+\bar under
+זווית
+\bar default
+.
+\end_layout
+
+\begin_layout Enumerate
+סימטריה -
+\begin_inset Formula
+\[
+\measuredangle AOB=\measuredangle BOA
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+שוויונות המשולש המנוון -
+\begin_inset Formula
+\begin{align*}
+\measuredangle AOB=\frac{1}{2} & \Longleftrightarrow\left|AB\right|=\left|AO\right|+\left|OB\right|\\
+\measuredangle AOB=0 & \Longleftrightarrow\left|AB\right|=\left|\left|AO\right|-\left|BO\right|\right|
+\end{align*}
+
+
+\end_inset
+אם 
+\begin_inset Formula
+$\measuredangle AOB=\frac{1}{2}$
+\end_inset
+ נאמר ש-
+\begin_inset Formula
+$\measuredangle AOB$
+\end_inset
+ היא 
+\bar under
+זווית שטוחה
+\bar default
+, ואם 
+\begin_inset Formula
+$\measuredangle AOB=0$
+\end_inset
+ נאמר שהיא 
+\bar under
+זווית מנוונת
+\bar default
+; במקרה הראשון
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כאשר 
+\begin_inset Formula
+$\measuredangle AOB=\frac{1}{2}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left|AB\right|=\left|AO\right|+\left|OB\right|$
+\end_inset
+.
+\end_layout
+
+\end_inset
+ נאמר גם ש-
+\begin_inset Formula
+$O$
+\end_inset
+ 
+\bar under
+נמצאת בין
+\bar default
+ 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אי-שוויונות הפירמידה -
+\begin_inset Formula
+\begin{align*}
+ & \measuredangle AOC\leq\measuredangle AOB+\measuredangle BOC\\
+ & \measuredangle AOB+\measuredangle BOC+\measuredangle COA\leq1
+\end{align*}
+
+
+\end_inset
+אם 
+\begin_inset Formula
+$\measuredangle AOC=\measuredangle AOB+\measuredangle BOC$
+\end_inset
+, נאמר ש
+\bar under
+הקרן
+\bar default
+ 
+\begin_inset Formula
+$OB$
+\end_inset
+ 
+\bar under
+נמצאת בין הקרנות
+\bar default
+ 
+\begin_inset Formula
+$OA$
+\end_inset
+ ו-
+\begin_inset Formula
+$OC$
+\end_inset
+, או ש
+\bar under
+הקרן
+\bar default
+ 
+\begin_inset Formula
+$OB$
+\end_inset
+ 
+\bar under
+מחלקת את הזווית שבין הקרנות
+\bar default
+ 
+\begin_inset Formula
+$OA$
+\end_inset
+ ו-
+\begin_inset Formula
+$OC$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+נגדיר בהמשך מהי "קרן", ובינתיים נתייחס לניסוח זה כהגדרה פורמלית בלבד.
+\end_layout
+
+\end_inset
+. כמו כן, אם 
+\begin_inset Formula
+$\measuredangle AOB+\measuredangle BOC+\measuredangle COA=1$
+\end_inset
+ נאמר ש
+\bar under
+הקרנות
+\bar default
+ 
+\begin_inset Formula
+$OA,OB,OC$
+\end_inset
+ 
+\bar under
+מחלקות זווית שלמה
+\bar default
+.
+\end_layout
+
+\begin_layout Enumerate
+שוויונות הפירמידה המנוונת -
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם הקרן 
+\begin_inset Formula
+$AO$
+\end_inset
+ נמצאת בין הקרנות 
+\begin_inset Formula
+$AB$
+\end_inset
+ ו-
+\begin_inset Formula
+$AC$
+\end_inset
+ אז מתקיימת לפחות אחת משתי האפשרויות הבאות:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+הקרן 
+\begin_inset Formula
+$OA$
+\end_inset
+ נמצאת בין הקרנות 
+\begin_inset Formula
+$OB$
+\end_inset
+ ו-
+\begin_inset Formula
+$OC$
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+הקרנות 
+\begin_inset Formula
+$OA,OB,OC$
+\end_inset
+ מחלקות זווית שלמה
+\end_layout
+
+\end_deeper
+
+\begin_layout Enumerate
+כל שניים מארבעת הפסוקים הבאים גוררים את שני האחרים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+הקרן 
+\begin_inset Formula
+$AO$
+\end_inset
+ נמצאת בין הקרנות 
+\begin_inset Formula
+$AB$
+\end_inset
+ ו-
+\begin_inset Formula
+$AC$
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+הקרן 
+\begin_inset Formula
+$OA$
+\end_inset
+ נמצאת בין הקרנות 
+\begin_inset Formula
+$OB$
+\end_inset
+ ו-
+\begin_inset Formula
+$OC$
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+הקרן 
+\begin_inset Formula
+$BC$
+\end_inset
+ נמצאת בין הקרנות 
+\begin_inset Formula
+$BA$
+\end_inset
+ ו-
+\begin_inset Formula
+$BO$
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+הקרן 
+\begin_inset Formula
+$CB$
+\end_inset
+ נמצאת בין הקרנות 
+\begin_inset Formula
+$CA$
+\end_inset
+ ו-
+\begin_inset Formula
+$CO$
+\end_inset
+
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Enumerate
+אם הקרנות 
+\begin_inset Formula
+$OA,OB,OC$
+\end_inset
+ מחלקות זווית שלמה, אז מתקיימים שלושת הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+הקרן 
+\begin_inset Formula
+$AO$
+\end_inset
+ נמצאת בין הקרנות 
+\begin_inset Formula
+$AB$
+\end_inset
+ ו-
+\begin_inset Formula
+$AC$
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+הקרן 
+\begin_inset Formula
+$BO$
+\end_inset
+ נמצאת בין הקרנות 
+\begin_inset Formula
+$BA$
+\end_inset
+ ו-
+\begin_inset Formula
+$BC$
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+הקרן 
+\begin_inset Formula
+$CO$
+\end_inset
+ נמצאת בין הקרנות 
+\begin_inset Formula
+$CA$
+\end_inset
+ ו-
+\begin_inset Formula
+$CB$
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+ואם לפחות שניים מהם מתקיימים, אז הקרנות 
+\begin_inset Formula
+$OA,OB,OC$
+\end_inset
+ מחלקות זווית שלמה
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+וממילא גם השלישי מתקיים.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Enumerate
+נניח ש-
+\begin_inset Formula
+$\measuredangle AOB$
+\end_inset
+ אינה זווית שטוחה. לכל נקודה 
+\begin_inset Formula
+$O\neq D\in\MKclg$
+\end_inset
+ כך שהקרן 
+\begin_inset Formula
+$OD$
+\end_inset
+ נמצאת בין הקרנות 
+\begin_inset Formula
+$OA$
+\end_inset
+ ו-
+\begin_inset Formula
+$OB$
+\end_inset
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם הקרן 
+\begin_inset Formula
+$OC$
+\end_inset
+ נמצאת בין הקרנות 
+\begin_inset Formula
+$OA$
+\end_inset
+ ו-
+\begin_inset Formula
+$OB$
+\end_inset
+, אז הקרן 
+\begin_inset Formula
+$OD$
+\end_inset
+ נמצאת בין הקרנות 
+\begin_inset Formula
+$OA$
+\end_inset
+ ו-
+\begin_inset Formula
+$OC$
+\end_inset
+ ו/או שהקרן 
+\begin_inset Formula
+$OD$
+\end_inset
+ נמצאת בין הקרנות 
+\begin_inset Formula
+$OB$
+\end_inset
+ ו-
+\begin_inset Formula
+$OC$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם הקרנות 
+\begin_inset Formula
+$OA,OB,OC$
+\end_inset
+ מחלקות זווית שלמה, אז הקרנות 
+\begin_inset Formula
+$OD,OB,OC$
+\end_inset
+ מחלקות זווית שלמה ו/או שהקרנות 
+\begin_inset Formula
+$OA,OD,OC$
+\end_inset
+ מחלקות זווית שלמה.
+\end_layout
+
+\end_deeper
+
+\end_deeper
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הערות (לפי מספרי הסעיפים):
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אנחנו לוקחים תמיד את הזווית הקטנה מבין השתיים שמגדירות הקרניים. ניתן להחליף את המספר 
+\begin_inset Formula
+$1$
+\end_inset
+ בכל מספר חיובי אחר, הסיבה לכך שלא בחרתי במקומו את 
+\begin_inset Formula
+$360$
+\end_inset
+ (מעלות) היא שזהו מספר שרירותי, ומאידך לא בחרתי ב-
+\begin_inset Formula
+$2\pi$
+\end_inset
+ (רדיאנים) משום שהגדרת 
+\begin_inset Formula
+$\pi$
+\end_inset
+ דורשת דברים שנלמד בהמשך.
+\end_layout
+
+\begin_layout Enumerate
+הזווית תלויה אך ורק בקרניים התוחמות אותה ולא בסדר הנקודות או סדר הקרניים.
+\end_layout
+
+\begin_layout Enumerate
+זהו הסעיף שמספר לנו מה הקשר בין פונקציית הזווית למבנה המרחב המטרי.
+\end_layout
+
+\begin_layout Enumerate
+כל ארבע נקודות במרחב מגדירות פירמידה שבסיסה משולש. אם הפירמידה אינה מנוונת (כלומר אינה מוכלת במישור), אז לכל שלוש זוויות בעלות קודקוד משותף - הסכום של כל שתיים מהן גדול מהשלישית. בנוסף, הסכום של שלוש זוויות בעלות קודקוד משותף אינו יכול להיות ממעגל שלם (
+\begin_inset Formula
+$360\textdegree$
+\end_inset
+)
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+זה לא נכון עבור ארבע זוויות.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+בסעיף זה שלושת תתי-הסעיפים הראשונים נותנים סימנים מתי ארבע נקודות נמצאות על מישור אחד, ומחייבים שאם זה המצב התכונות המאפיינות ארבע נקודות על מישור אחד תתקיימנה גם בשאר הזוויות האפשריות בין ארבע הנקודות. תת-הסעיף האחרון אומר שאם בין שתי קרניים נמצאת קרן שלישית (כשלכולן קצה משותף), אז לכל פירמידה מנוונת שנוצרת מאותן שתי הקרניים - ניתן להחליף אחת מהן בקרן השלישית ולקבל פירמידה מנוונת.
+\end_layout
+
+\end_deeper
+
+\begin_layout Corollary
+לכל 
+\begin_inset Formula
+$A,B,O\in\MKclg$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A,B$
+\end_inset
+ שונות מ-
+\begin_inset Formula
+$O$
+\end_inset
+, אם 
+\begin_inset Formula
+$O$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+, אז 
+\begin_inset Formula
+$A\neq B$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+נניח ש-
+\begin_inset Formula
+$O$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+, ומכאן שע"פ שוויונות המשולש המנוון מתקיים 
+\begin_inset Formula
+$\left|AB\right|=\left|AO\right|+\left|OB\right|$
+\end_inset
+. מהעובדה ש-
+\begin_inset Formula
+$A$
+\end_inset
+ ו-
+\begin_inset Formula
+$B$
+\end_inset
+ שונות מ-
+\begin_inset Formula
+$O$
+\end_inset
+ נובע ש-
+\begin_inset Formula
+$\left|AO\right|>0$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left|OB\right|>0$
+\end_inset
+, וממילא 
+\begin_inset Formula
+$\left|AB\right|=\left|AO\right|+\left|OB\right|>0$
+\end_inset
+ ו-
+\begin_inset Formula
+$A\neq B$
+\end_inset
+.
+\end_layout
+
+\end_layout
+
+\begin_layout Corollary
+לכל 
+\begin_inset Formula
+$A,O\in\MKclg$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A\neq O$
+\end_inset
+, 
+\begin_inset Formula
+$\measuredangle AOA$
+\end_inset
+ היא זווית מנוונת.
+\end_layout
+
+\begin_layout Standard
+\inset Branch proofs
+inverted 0status collapsed
+\begin_layout Proof
+מתקיים 
+\begin_inset Formula
+$\left|AA\right|=0=\left|\left|OA\right|-\left|OA\right|\right|$
+\end_inset
+, ולכן משוויונות המשולש המנוון נובע ש-
+\begin_inset Formula
+$\measuredangle AOA=0$
+\end_inset
+.
+\end_layout
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מכאן שבהינתן נקודה 
+\begin_inset Formula
+$O\in\MKclg$
+\end_inset
+, הפונקציה 
+\begin_inset Formula
+$\left(A,B\right)\mapsto\measuredangle AOB$
+\end_inset
+ היא 
+\begin_inset CommandInset href
+LatexCommand href
+name "פסאודו-מטריקה"
+target https://en.wikipedia.org/wiki/Pseudometric_space
+literal false
+\end_inset
+. אנחנו נראה בהמשך שיש דמיון רב בין זווית למרחק, הרבה יותר משניתן היה לחשוב במבט ראשון.
+\end_layout
+
+\begin_layout Definition
+שלשה 
+\begin_inset Formula
+$\left(\MKclg,\left|\cdot\right|,\measuredangle\right)$
+\end_inset
+ תיקרא 
+\bar under
+גאומטריה
+\bar default
+ אם 
+\begin_inset Formula
+$\left(\MKclg,\left|\cdot\right|\right)$
+\end_inset
+ הוא מרחב מטרי ו-
+\begin_inset Formula
+$\measuredangle$
+\end_inset
+ היא פונקציית זווית על 
+\begin_inset Formula
+$\left(\MKclg,\left|\cdot\right|\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+קבוצות קוויות וישרים
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$\left(\MKclg,\left|\cdot\right|,\measuredangle\right)$
+\end_inset
+ גאומטריה.
+\end_layout
+
+\begin_layout Subsection
+קבוצות קוויות
+\end_layout
+
+\begin_layout Definition
+תת-קבוצה 
+\begin_inset Formula
+$S\subseteq\MKclg$
+\end_inset
+ תיקרא 
+\bar under
+קווית
+\bar default
+ אם לכל שלוש נקודות שונות ב-
+\begin_inset Formula
+$S$
+\end_inset
+, אחת משלוש הנקודות נמצאת בין שתי האחרות.
+\end_layout
+
+\begin_layout Corollary
+תת-קבוצה של קבוצה קווית גם היא קווית.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+כל קבוצה בת שני איברים לכל היותר, היא קבוצה קווית.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+תת-קבוצה 
+\begin_inset Formula
+$S\subseteq\MKclg$
+\end_inset
+ היא קווית אם"ם לכל שלוש נקודות 
+\begin_inset Formula
+$A,B,C\in S$
+\end_inset
+ מתקיימת לפחות אחת משלוש האפשרויות הבאות:
+\begin_inset Formula
+\begin{align*}
+\left|AB\right| & =\left|AC\right|+\left|CB\right|\\
+\left|AC\right| & =\left|AB\right|+\left|BC\right|\\
+\left|BC\right| & =\left|BA\right|+\left|AC\right|
+\end{align*}
+
+
+\end_inset
+ובאופן שקול: מתקיים 
+\begin_inset Formula
+$\left|AB\right|=\left|\left|AC\right|\pm\left|CB\right|\right|$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+נאמר שקבוצה קווית 
+\begin_inset Formula
+$S\subseteq\MKclg$
+\end_inset
+ היא 
+\bar under
+קבוצה קווית מרבית
+\bar default
+ (או 
+\bar under
+קבוצה קווית מקסימלית
+\bar default
+), אם לכל קבוצה קווית 
+\begin_inset Formula
+$S'\subseteq\MKclg$
+\end_inset
+ המקיימת 
+\begin_inset Formula
+$S\subseteq S'$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$S=S'$
+\end_inset
+.
+\end_layout
+
+\begin_layout Subsection
+ישרים
+\end_layout
+
+\begin_layout Definition
+קבוצה 
+\begin_inset Formula
+$L\subseteq\MKclg$
+\end_inset
+ תיקרא 
+\bar under
+ישר
+\bar default
+ אם היא מקיימת את שלושת התנאים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$L$
+\end_inset
+ קווית.
+\end_layout
+
+\begin_layout Enumerate
+יש ב-
+\begin_inset Formula
+$L$
+\end_inset
+ שתי נקודות שונות.
+\end_layout
+
+\begin_layout Enumerate
+לכל שתי נקודות שונות 
+\begin_inset Formula
+$A,B\in L$
+\end_inset
+, ולכל 
+\begin_inset Formula
+$0\leq r_{1},r_{2}\in\MKreal$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left|r_{1}\pm r_{2}\right|=\left|AB\right|$
+\end_inset
+, קיימת נקודה 
+\begin_inset Formula
+$C\in L$
+\end_inset
+ המקיימת 
+\begin_inset Formula
+$\left|AC\right|=r_{1}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left|BC\right|=r_{2}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כלומר ישר הוא קבוצה קווית שאין בה "חורים".
+\end_layout
+
+\begin_layout Definition
+נאמר ש-
+\begin_inset Formula
+$\left(\MKclg,\left|\cdot\right|,\measuredangle\right)$
+\end_inset
+ היא 
+\bar under
+גאומטריה קווית
+\bar default
+ אם 
+\begin_inset Formula
+$\MKclg$
+\end_inset
+ היא ישר.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+נניח שיש ב-
+\begin_inset Formula
+$\MKclg$
+\end_inset
+ ישרים, יהיו 
+\begin_inset Formula
+$L_{1},L_{2}\subseteq\MKclg$
+\end_inset
+ ישרים שאינם זרים, ותהא 
+\begin_inset Formula
+$O$
+\end_inset
+ נקודת חיתוך שלהם
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+נקודה 
+\begin_inset Formula
+$O\in\MKclg$
+\end_inset
+ תיקרא 
+\bar under
+נקודת חיתוך
+\bar default
+ של תתי-קבוצות 
+\begin_inset Formula
+$S,T\subseteq\MKclg$
+\end_inset
+ אם 
+\begin_inset Formula
+$O\in S\cap T$
+\end_inset
+.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+לכל 
+\begin_inset Formula
+$A,B\in L_{1}$
+\end_inset
+, כך ש-
+\begin_inset Formula
+$O$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$C,D\in L_{2}$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$O$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$C$
+\end_inset
+ ל-
+\begin_inset Formula
+$D$
+\end_inset
+, הזוויות 
+\begin_inset Formula
+$\measuredangle AOC$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle BOD$
+\end_inset
+ תיקראנה זוויות 
+\bar under
+קודקודיות
+\bar default
+ (וכמותן גם 
+\begin_inset Formula
+$\measuredangle AOD$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle BOC$
+\end_inset
+).
+\end_layout
+
+\begin_layout Itemize
+לכל 
+\begin_inset Formula
+$A,B\in L_{1}$
+\end_inset
+, כך ש-
+\begin_inset Formula
+$O$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$C,D\in L_{2}$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$C$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$D$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+ או ש-
+\begin_inset Formula
+$D$
+\end_inset
+ נמצאת בין 
+\begin_inset Formula
+$C$
+\end_inset
+ ל-
+\begin_inset Formula
+$O$
+\end_inset
+, הזוויות 
+\begin_inset Formula
+$\measuredangle AOC$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle DOB$
+\end_inset
+ תיקראנה 
+\bar under
+צמודות
+\bar default
+ זו לזו (וכמותן גם 
+\begin_inset Formula
+$\measuredangle AOD$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle COB$
+\end_inset
+).
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ההגדרה האחרונה מגדירה יחסים בין זוויות.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+קבוצות מישוריות ומישורים
+\end_layout
+
+\begin_layout Subsection
+קבוצות מישוריות
+\end_layout
+
+\begin_layout Definition
+תת-קבוצה 
+\begin_inset Formula
+$S\subseteq\MKclg$
+\end_inset
+ תיקרא 
+\bar under
+מישורית
+\bar default
+ אם לכל ארבע נקודות 
+\begin_inset Formula
+$A,B,C,O\in S$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A,B,C$
+\end_inset
+ שונות מ-
+\begin_inset Formula
+$O$
+\end_inset
+, אחת משלוש הקרנות 
+\begin_inset Formula
+$OA,OB,OC$
+\end_inset
+ נמצאת בין שתי האחרות או שהקרנות 
+\begin_inset Formula
+$OA,OB,OC$
+\end_inset
+ מחלקות זווית שלמה.
+\end_layout
+
+\begin_layout Corollary
+תת-קבוצה 
+\begin_inset Formula
+$S$
+\end_inset
+ היא מישורית אם"ם לכל ארבע נקודות 
+\begin_inset Formula
+$A,B,C,O\in S$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A,B,C$
+\end_inset
+ שונות מ-
+\begin_inset Formula
+$O$
+\end_inset
+, מתקיימת לפחות אחת מארבע האפשרויות הבאות:
+\begin_inset Formula
+\begin{align*}
+\measuredangle AOB & =\measuredangle AOC+\measuredangle COB\\
+\measuredangle AOC & =\measuredangle AOB+\measuredangle BOC\\
+\measuredangle BOC & =\measuredangle BOA+\measuredangle AOC\\
+1 & =\measuredangle AOB+\measuredangle BOC+\measuredangle COA
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ שימו לב להקבלה בין מטריקה לזווית ובין קוויות למישוריות: קבוצה היא קווית אם"ם אחד מאי-שוויונות המשולש הופך בה לשוויון, והיא מישורית אם"ם אחד מאי-שוויונות הפירמידה הוא שוויון.
+\end_layout
+
+\begin_layout Corollary
+תת-קבוצה של קבוצה מישורית גם היא מישורית.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+כל קבוצה בת שלושה איברים לכל היותר, היא קבוצה מישורית.
+\end_layout
+
+\begin_layout Subsection
+מישורים
+\end_layout
+
+\begin_layout Definition
+תת-קבוצה 
+\begin_inset Formula
+$M\subseteq\MKclg$
+\end_inset
+ תיקרא 
+\bar under
+מישור
+\bar default
+ אם היא מקיימת את שלושת התנאים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$M$
+\end_inset
+ מישורית.
+\end_layout
+
+\begin_layout Enumerate
+קיימות שתי נקודות 
+\begin_inset Formula
+$A,B,O\in M$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A,B$
+\end_inset
+ שונות מ-
+\begin_inset Formula
+$O$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$A,B,O\in M$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A,B$
+\end_inset
+ שונות מ-
+\begin_inset Formula
+$O$
+\end_inset
+, לכל 
+\begin_inset Formula
+$0<r\in\MKreal$
+\end_inset
+, ולכל 
+\begin_inset Formula
+$\theta_{1},\theta_{2}\in\left[0,\frac{1}{2}\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left|\theta_{1}\pm\theta_{2}\right|=\measuredangle AOB$
+\end_inset
+ קיימת נקודה 
+\begin_inset Formula
+$C\in M$
+\end_inset
+ המקיימת 
+\begin_inset Formula
+$\measuredangle AOC=\theta_{1}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\measuredangle BOC=\theta_{2}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כלומר מישור הוא קבוצה מישורית שאין בה "חורים".
+\end_layout
+
+\begin_layout Definition
+נאמר שקבוצה מישורית 
+\begin_inset Formula
+$S\subseteq\MKclg$
+\end_inset
+ היא 
+\bar under
+קבוצה מישורית מרבית
+\bar default
+ (או 
+\bar under
+קבוצה מישורית מקסימלית
+\bar default
+), אם לכל קבוצה מישורית 
+\begin_inset Formula
+$S'\subseteq\MKclg$
+\end_inset
+ המקיימת 
+\begin_inset Formula
+$S\subseteq S'$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$S=S'$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+נאמר ש-
+\begin_inset Formula
+$\left(\MKclg,\left|\cdot\right|,\measuredangle\right)$
+\end_inset
+ היא 
+\bar under
+גאומטריה מישורית
+\bar default
+ אם 
+\begin_inset Formula
+$\MKclg$
+\end_inset
+ היא מישור.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+אקסיומת המקבילים
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$\left(\MKclg,\left|\cdot\right|,\measuredangle\right)$
+\end_inset
+ גאומטריה.
+\end_layout
+
+\begin_layout Definition
+תהיינה 
+\begin_inset Formula
+$A,B,O\in\MKclg$
+\end_inset
+ שלוש נקודות כך ש-
+\begin_inset Formula
+$A$
+\end_inset
+ ו-
+\begin_inset Formula
+$B$
+\end_inset
+ שונות מ-
+\begin_inset Formula
+$O$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נאמר ש-
+\begin_inset Formula
+$\measuredangle AOB$
+\end_inset
+ היא 
+\bar under
+זווית חדה
+\bar default
+ אם 
+\begin_inset Formula
+$0<\measuredangle AOB<\frac{1}{4}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+נאמר ש-
+\begin_inset Formula
+$\measuredangle AOB$
+\end_inset
+ היא 
+\bar under
+זווית ישרה
+\bar default
+ אם 
+\begin_inset Formula
+$\measuredangle AOB=\frac{1}{4}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+נאמר ש-
+\begin_inset Formula
+$\measuredangle AOB$
+\end_inset
+ היא 
+\bar under
+זווית קהה
+\bar default
+ אם 
+\begin_inset Formula
+$\frac{1}{4}<\measuredangle AOB<\frac{1}{2}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+מקטעים ומצולעים
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$\left(\MKclg,\left|\cdot\right|,\measuredangle\right)$
+\end_inset
+ גאומטריה.
+\end_layout
+
+\begin_layout Definition
+תת-קבוצה קווית 
+\begin_inset Formula
+$I\subseteq\MKclg$
+\end_inset
+ תיקרא 
+\bar under
+מקטע
+\bar default
+, אם לכל 
+\begin_inset Formula
+$A,B\in I$
+\end_inset
+, ולכל נקודה 
+\begin_inset Formula
+$C\in\MKclg$
+\end_inset
+ הנמצאת בין 
+\begin_inset Formula
+$A$
+\end_inset
+ ל-
+\begin_inset Formula
+$B$
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$C\in I$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+כל ישר 
+\begin_inset Formula
+$L\subseteq\MKclg$
+\end_inset
+ הוא מקטע.
+\end_layout
+
+\begin_layout Definition
+\bar under
+קטע
+\bar default
+ הוא מקטע חסום שקוטרו חיובי.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\bar under
+קרן
+\bar default
+ היא מקטע שאינו חסום אך אינו ישר.
+\end_layout
+
+\end_body
+
+\end_document
+

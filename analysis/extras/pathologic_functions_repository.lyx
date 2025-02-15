@@ -1,0 +1,2904 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The head's design for summuries,make the layout more similar to a book:
+\AtBeginDocument{
+\renewcommand\headrule{%
+  \kern -7pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+  \kern 10pt
+}}
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Correct the reversed parentheses in labels:
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\newfontfamily{\hebrewfont}{David}
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+
+\end_preamble
+
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+customHeadersFooters
+\end_modules
+
+\maintain_unincluded_children false
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+
+
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size      Larger
+	  Series     Bold
+	EndFont
+End
+
+
+Style Solution
+
+	LabelString           "פתרון: "End
+
+
+Style Notation
+
+	LabelString           "סימון  \thetheorem: "End
+
+Style Theorem
+
+	LabelString           "משפט \thetheorem: "End
+
+Style Property
+
+	LabelString           "תזכורת: "End
+
+\end_local_layout
+
+\language hebrew
+
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\boxbgcolor #cccccc
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+
+\tocdepth 3
+
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename C:\Users\sraya\AppData\Roaming\LyX2.4\macros\MKmacros.lyx
+\end_inset
+
+\end_layout
+
+\begin_layout Right Header
+\begin_inset Argument 1
+status open
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+\begin_layout Plain Layout
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\begin_inset ERT
+status open
+\begin_layout Plain Layout
+\backslash
+leftmark
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Left Header
+\begin_inset Argument 1
+status open
+\begin_layout Plain Layout
+מאגר פונקציות פתולוגיות
+\end_layout
+
+\end_inset
+
+\begin_inset ERT
+status open
+\begin_layout Plain Layout
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Center Footer
+\end_layout
+
+\begin_layout Title
+\series bold
+\size huge
+מאגר פונקציות פתולוגיות
+\size default
+
+\series default
+
+\end_layout
+
+\begin_layout Standard
+\align center
+חשבון אינפיניטסימלי (
+\numeric on
+1
+\numeric off
+) -
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+80131
+\numeric off
+ 
+
+\end_layout
+
+\begin_layout Standard
+\align center
+מרצה: רז קופרמן
+
+\end_layout
+
+\begin_layout Standard
+\align center
+מתרגלים: אור יער ודניאל רוזנבלט
+
+\end_layout
+
+\begin_layout Standard
+\align center
+סמסטר ב' תשפ"ב, האונ' העברית
+
+\end_layout
+
+\begin_layout Standard
+\align center
+-
+
+\end_layout
+
+\begin_layout Standard
+\align center
+חשבון אינפיניטסימלי (
+\numeric on
+2
+\numeric off
+) -
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+80132
+\numeric off
+ 
+
+\end_layout
+
+\begin_layout Standard
+\align center
+מרצה: יורם לסט
+
+\end_layout
+
+\begin_layout Standard
+\align center
+מתרגלים: דניאל אופנר ומתן בן-אשר
+
+\end_layout
+
+\begin_layout Standard
+\align center
+סמסטר א' תשפ"ג, האונ' העברית
+
+\end_layout
+
+\begin_layout Standard
+\align center
+-
+
+\end_layout
+
+\begin_layout Standard
+\align center
+נכתב ע"י: שריה אנסבכר
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset VSpace vfill
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\align center
+אשמח לקבל הערות והארות על הסיכומים על מנת לשפרם בעתיד,
+\begin_inset Newline newline
+\end_inset
+כל הערה ולו הפעוטה ביותר (אפילו פסיק שאינו במקום או רווח מיותר) תתקבל בברכה;
+\begin_inset Newline newline
+\end_inset
+אתם מוזמנים לכתוב לי לתיבת הדוא"ל: 
+\begin_inset CommandInset href
+LatexCommand href
+name "sraya.ansbacher@mail.huji.ac.il"
+target sraya.ansbacher@mail.huji.ac.il
+type mailto:
+literal false
+\end_inset
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+.
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\end_layout
+
+\begin_layout Standard
+\align center
+לסיכומים נוספים היכנסו לאתר:
+\begin_inset Newline newline
+\end_inset
+אקסיומת השלמות - סיכומי הרצאות במתמטיקה
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset CommandInset href
+LatexCommand href
+name "https://srayaa.wixsite.com/math"
+target https://srayaa.wixsite.com/math
+literal false
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula
+\[
+***
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\series bold
+\color red
+המאגר עדיין בתהליכי בנייה, אשמח אם תעזרו לי לאסוף פונקציות פתולוגיות, סדרות פתולוגיות וטורים פתולוגיים; בעתיד בכוונתי להוסיף גם הסברים וגרפים עבור כל פונקציה.
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Part
+רציפות וגזירות
+\end_layout
+
+\begin_layout Section
+דיריכלה ובנותיה
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$D:\MKreal\rightarrow\MKreal$
+\end_inset
+ 
+\bar under
+פונקציית דיריכלה
+\bar default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה: 
+\begin_inset CommandInset href
+LatexCommand href
+name "יוהאן פטר גוסטב לז'ן דיריכלה"
+target https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%94%D7%90%D7%9F_%D7%A4%D7%98%D7%A8_%D7%92%D7%95%D7%A1%D7%98%D7%91_%D7%9C%D7%96%27%D7%9F_%D7%93%D7%99%D7%A8%D7%99%D7%9B%D7%9C%D7%94
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+ המוגדרת ע"י (לכל 
+\begin_inset Formula
+$x\in\MKreal$
+\end_inset
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula
+\[
+D\left(x\right):=\begin{cases}
+1 & x\in\MKrational\\
+0 & x\notin\MKrational
+\end{cases}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ זוהי בעצם הפונקציה המציינת של 
+\begin_inset Formula
+$\MKrational$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\series bold
+תכונות פתולוגיות
+\series default
+
+\end_layout
+
+\begin_layout Itemize
+\bar under
+רציפות:
+\bar default
+ פונקציית דיריכלה אינה רציפה ולו בנקודה אחת (אי-רציפות מסדר שני).
+\end_layout
+
+\begin_layout Itemize
+\bar under
+גזירות:
+\bar default
+ מאי-הרציפות נובע שפונקציית דיריכלה אינה גזירה ולו בנקודה אחת.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+אינטגרביליות:
+\bar default
+ פונקציית דיריכלה אינה אינטגרבילית רימן על אף קטע סגור.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ פונקציית דיריכלה (והדומות לה) היא הפונקציה החסומה היחידה שאני מכיר שגם אינה אינטגרבילית רימן.
+\end_layout
+
+\begin_layout Subsection
+הכפלה ב-
+\begin_inset Formula
+$x$
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$D_{1}:\MKreal\rightarrow\MKreal$
+\end_inset
+ פונקציה המוגדרת ע"י (לכל 
+\begin_inset Formula
+$x\in\MKreal$
+\end_inset
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula
+\[
+D_{1}\left(x\right):=x\cdot D\left(x\right)=\begin{cases}
+x & x\in\MKrational\\
+0 & x\notin\MKrational
+\end{cases}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+תכונות פתולוגיות
+\series default
+
+\end_layout
+
+\begin_layout Itemize
+\bar under
+רציפות:
+\bar default
+ הנקודה היחידה שבה 
+\begin_inset Formula
+$D_{1}$
+\end_inset
+ רציפה היא 
+\begin_inset Formula
+$0$
+\end_inset
+, כל נקודה אחרת היא נקודת אי
+\numeric on
+-
+\numeric off
+רציפות מסדר שני.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+גזירות:
+\bar default
+ 
+\begin_inset Formula
+$D_{1}$
+\end_inset
+ אינה גזירה בשום נקודה.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+אינטגרביליות:
+\bar default
+ 
+\begin_inset Formula
+$D_{1}$
+\end_inset
+ אינה אינטגרבילית רימן על אף קטע סגור.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+הכפלה ב-
+\begin_inset Formula
+$x^{2}$
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$D_{2}:\MKreal\rightarrow\MKreal$
+\end_inset
+ פונקציה המוגדרת ע"י (לכל 
+\begin_inset Formula
+$x\in\MKreal$
+\end_inset
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula
+\[
+D_{2}\left(x\right):=x^{2}\cdot D\left(x\right)=\begin{cases}
+x^{2} & x\in\MKrational\\
+0 & x\notin\MKrational
+\end{cases}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+תכונות פתולוגיות
+\series default
+
+\end_layout
+
+\begin_layout Itemize
+\bar under
+רציפות:
+\bar default
+ הנקודה היחידה שבה 
+\begin_inset Formula
+$D_{2}$
+\end_inset
+ רציפה היא 
+\begin_inset Formula
+$0$
+\end_inset
+, כל נקודה אחרת היא נקודת אי
+\numeric on
+-
+\numeric off
+רציפות מסדר שני.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+גזירות:
+\bar default
+ הנקודה היחידה שבה 
+\begin_inset Formula
+$D_{2}$
+\end_inset
+ גזירה היא 
+\begin_inset Formula
+$0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+אינטגרביליות:
+\bar default
+ 
+\begin_inset Formula
+$D_{2}$
+\end_inset
+ אינה אינטגרבילית רימן על אף קטע סגור.
+\end_layout
+
+\begin_layout Subsection
+הכללה של הסעיף הקודם
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$a\in\MKreal$
+\end_inset
+ ותהא 
+\begin_inset Formula
+$D_{3}:\MKreal\rightarrow\MKreal$
+\end_inset
+ פונקציה המוגדרת ע"י (לכל 
+\begin_inset Formula
+$x\in\MKreal$
+\end_inset
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula
+\[
+D_{3}\left(x\right):=\begin{cases}
+x^{2} & x\in\MKrational\\
+2a\cdot\left(x-a\right)+a^{2} & x\notin\MKrational
+\end{cases}=\begin{cases}
+x^{2} & x\in\MKrational\\
+2a\cdot x-a^{2} & x\notin\MKrational
+\end{cases}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+תכונות פתולוגיות
+\series default
+
+\end_layout
+
+\begin_layout Itemize
+\bar under
+רציפות:
+\bar default
+ הנקודה היחידה שבה 
+\begin_inset Formula
+$D_{2}$
+\end_inset
+ רציפה היא 
+\begin_inset Formula
+$a$
+\end_inset
+, כל נקודה אחרת היא נקודת אי
+\numeric on
+-
+\numeric off
+רציפות מסדר שני.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+גזירות:
+\bar default
+ הנקודה היחידה שבה 
+\begin_inset Formula
+$D_{2}$
+\end_inset
+ גזירה היא 
+\begin_inset Formula
+$a$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+אינטגרביליות:
+\bar default
+ 
+\begin_inset Formula
+$D_{2}$
+\end_inset
+ אינה אינטגרבילית רימן על אף קטע סגור.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מה שקרה כאן הוא ששילבנו בין הפרבולה 
+\begin_inset Formula
+$x^{2}$
+\end_inset
+ לישר המשיק לה בנקודה 
+\begin_inset Formula
+$a$
+\end_inset
+ ע"י פונקציית דיריכלה: ברציונליים קיבלנו את 
+\begin_inset Formula
+$x^{2}$
+\end_inset
+ ובאי-רציונליים קיבלנו את הישר המשיק, את הטריק הזה ניתן לעשות עם כל שתי פונקציות וכך לדאוג שהפונקציה החדשה תירש את תכונה של אחת מהפונקציות המקוריות אם"ם התכונה שייכת גם לפונקציה האחרת.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+סינוס "משוגעת" ובנותיה
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$S:\MKreal\rightarrow\MKreal$
+\end_inset
+ פונקציה המוגדרת ע"י (לכל 
+\begin_inset Formula
+$x\in\MKreal$
+\end_inset
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula
+\[
+S\left(x\right)=\begin{cases}
+\sin\left(\frac{1}{x}\right) & x\neq0\\
+0 & x=0
+\end{cases}
+\]
+
+
+\end_inset
+מכאן שלכל 
+\begin_inset Formula
+$0\neq x\in\MKreal$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+S'\left(x\right) & =-\frac{1}{x^{2}}\cdot\sin\left(\frac{1}{x}\right)\\
+S''\left(x\right) & =\frac{2}{x^{3}}\cdot\sin\left(\frac{1}{x}\right)-\frac{1}{x^{2}}\cdot\cos\left(\frac{1}{x}\right)\cdot\left(-\frac{1}{x^{2}}\right)\\
+ & =\frac{2}{x^{3}}\cdot\sin\left(\frac{1}{x}\right)+\frac{1}{x^{4}}\cdot\cos\left(\frac{1}{x}\right)
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+תכונות פתולוגיות
+\series default
+
+\end_layout
+
+\begin_layout Itemize
+\bar under
+רציפות:
+\bar default
+ 
+\begin_inset Formula
+$S$
+\end_inset
+ אינה רציפה ב-
+\begin_inset Formula
+$0$
+\end_inset
+ (אי-רציפות מסדר שני), אך היא רציפה בכל נקודה אחרת.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+גזירות:
+\bar default
+ 
+\begin_inset Formula
+$S$
+\end_inset
+ אינה גזירה ב-
+\begin_inset Formula
+$0$
+\end_inset
+, אך היא גזירה בכל נקודה אחרת.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+אינטגרביליות:
+\bar default
+ 
+\begin_inset Formula
+$S$
+\end_inset
+ אינטגרבילית על כל קטע סגור.
+\end_layout
+
+\begin_layout Claim
+\begin_inset Formula
+$S$
+\end_inset
+ אינה קעורה וגם אינה קמורה בכל מקטע הכולל את 
+\begin_inset Formula
+$0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula
+$m\in\MKreal$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$0<\delta\in\MKreal$
+\end_inset
+ קיים 
+\begin_inset Formula
+$x\in B_{\delta}\left(0\right)$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$S'\left(x\right)=m$
+\end_inset
+, בפרט 
+\begin_inset Formula
+$0$
+\end_inset
+ היא נקודת אי-רציפות מסדר שני של 
+\begin_inset Formula
+$S'$
+\end_inset
+.
+\end_layout
+
+\begin_layout Subsection
+הכפלה ב-
+\begin_inset Formula
+$x$
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$S_{1}:\MKreal\rightarrow\MKreal$
+\end_inset
+ פונקציה המוגדרת ע"י (לכל 
+\begin_inset Formula
+$x\in\MKreal$
+\end_inset
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula
+\[
+S_{1}\left(x\right):=x\cdot S\left(x\right)=\begin{cases}
+x\cdot\sin\left(\frac{1}{x}\right) & x\neq0\\
+0 & x=0
+\end{cases}
+\]
+
+
+\end_inset
+מכאן שלכל 
+\begin_inset Formula
+$0\neq x\in\MKreal$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+S_{1}'\left(x\right) & =1\cdot\sin\left(\frac{1}{x}\right)+x\cdot\cos\left(\frac{1}{x}\right)\cdot\left(-\frac{1}{x^{2}}\right)=\sin\left(\frac{1}{x}\right)-\frac{1}{x}\cdot\cos\left(\frac{1}{x}\right)\\
+S_{1}''\left(x\right) & ={\color{red}\left(-\frac{1}{x^{2}}\right)\cdot\cos\left(\frac{1}{x}\right)}-\left({\color{red}\left(-\frac{1}{x^{2}}\right)\cdot\cos\left(\frac{1}{x}\right)}+\frac{1}{x}\cdot\left(-\sin\left(\frac{1}{x}\right)\right)\cdot\left(-\frac{1}{x^{2}}\right)\right)=-\frac{1}{x^{3}}\cdot\sin\left(\frac{1}{x}\right)
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+תכונות פתולוגיות
+\series default
+
+\end_layout
+
+\begin_layout Itemize
+\bar under
+רציפות:
+\bar default
+ 
+\begin_inset Formula
+$S_{1}$
+\end_inset
+ רציפה.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+גזירות:
+\bar default
+ 
+\begin_inset Formula
+$S_{1}$
+\end_inset
+ אינה גזירה ב-
+\begin_inset Formula
+$0$
+\end_inset
+, אך היא גזירה בכל נקודה אחרת.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+אינטגרביליות:
+\bar default
+ מהרציפות נובע ש-
+\begin_inset Formula
+$S_{1}$
+\end_inset
+ אינטגרבילית רימן על כל קטע סגור.
+\end_layout
+
+\begin_layout Claim
+\begin_inset Formula
+$S_{1}$
+\end_inset
+ אינה קעורה וגם אינה קמורה בכל מקטע הכולל את 
+\begin_inset Formula
+$0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula
+$m\in\MKreal$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$0<\delta\in\MKreal$
+\end_inset
+ קיים 
+\begin_inset Formula
+$x\in B_{\delta}\left(0\right)$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$S_{1}'\left(x\right)=m$
+\end_inset
+, בפרט 
+\begin_inset Formula
+$0$
+\end_inset
+ היא נקודת אי-רציפות מסדר שני של 
+\begin_inset Formula
+$S_{1}'$
+\end_inset
+.
+\end_layout
+
+\begin_layout Subsection
+הכפלה ב-
+\begin_inset Formula
+$x^{2}$
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$S_{2}:\MKreal\rightarrow\MKreal$
+\end_inset
+ פונקציה המוגדרת ע"י (לכל 
+\begin_inset Formula
+$x\in\MKreal$
+\end_inset
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula
+\[
+S_{2}\left(x\right)=\begin{cases}
+x^{2}\cdot\sin\left(\frac{1}{x}\right) & x\neq0\\
+0 & x=0
+\end{cases}
+\]
+
+
+\end_inset
+מכאן שלכל 
+\begin_inset Formula
+$0\neq x\in\MKreal$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+S_{2}'\left(x\right) & =2x\cdot\sin\left(\frac{1}{x}\right)+x^{2}\cdot\cos\left(\frac{1}{x}\right)\cdot\left(-\frac{1}{x^{2}}\right)\\
+ & =2x\cdot\sin\left(\frac{1}{x}\right)-\cos\left(\frac{1}{x}\right)\\
+S_{2}''\left(x\right) & =2\cdot S_{1}'\left(x\right)-\left(-\frac{1}{x^{2}}\right)\cdot\left(-\sin\left(\frac{1}{x}\right)\right)\\
+ & =\left(-\frac{2}{x^{3}}-\frac{1}{x^{2}}\right)\cdot\sin\left(\frac{1}{x}\right)
+\end{align*}
+
+
+\end_inset
+בנוסף מתקיים:
+\begin_inset Formula
+\begin{align*}
+S_{2}'\left(0\right) & =\lim_{x\rightarrow0}\frac{S_{2}\left(x\right)-S_{2}\left(0\right)}{x-0}=\lim_{x\rightarrow0}\frac{x^{2}\cdot\sin\left(\frac{1}{x}\right)}{x}\\
+ & =\lim_{x\rightarrow0}x\cdot\sin\left(\frac{1}{x}\right)=0
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+תכונות פתולוגיות
+\series default
+
+\end_layout
+
+\begin_layout Itemize
+\bar under
+רציפות:
+\bar default
+ 
+\begin_inset Formula
+$S_{2}$
+\end_inset
+ רציפה.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+גזירות:
+\bar default
+ 
+\begin_inset Formula
+$S_{2}$
+\end_inset
+ גזירה.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+אינטגרביליות:
+\bar default
+ מהרציפות נובע ש-
+\begin_inset Formula
+$S_{1}$
+\end_inset
+ אינטגרבילית רימן על כל קטע סגור.
+\end_layout
+
+\begin_layout Claim
+\begin_inset Formula
+$S_{2}$
+\end_inset
+ אינה קעורה וגם אינה קמורה בכל מקטע הכולל את 
+\begin_inset Formula
+$0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+הנגזרת של 
+\begin_inset Formula
+$S_{2}$
+\end_inset
+ מוגדרת ב-
+\begin_inset Formula
+$0$
+\end_inset
+ אך אינה רציפה ב-
+\begin_inset Formula
+$0$
+\end_inset
+ (אי-רציפות מסדר שני).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ 
+\begin_inset Formula
+$S_{2}'$
+\end_inset
+ היא הפונקציה היחידה שאני מכיר
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+עדי כדי הזזה, כיווץ/מתיחה ושיקוף.
+\end_layout
+
+\end_inset
+ שיש לה קדומה אך היא אינה רציפה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+"נדנוד" של פונקציה
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$S_{3}:\MKreal\setminus\left\{ 0\right\} \rightarrow\MKreal$
+\end_inset
+ פונקציה המוגדרת ע"י (לכל 
+\begin_inset Formula
+$0\neq x\in\MKreal$
+\end_inset
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula
+\[
+S_{3}\left(x\right):=\frac{1}{x}+\sin\left(\frac{1}{x}\right)
+\]
+
+
+\end_inset
+מכאן שלכל 
+\begin_inset Formula
+$0\neq x\in\MKreal$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+S_{3}'\left(x\right) & =-\frac{1}{x^{2}}\cdot\left(1+\cos\left(\frac{1}{x}\right)\right)\\
+S_{3}''\left(x\right) & =\frac{2}{x^{3}}\cdot\left(1+\cos\left(\frac{1}{x}\right)\right)-\frac{1}{x^{2}}\cdot\left(\frac{1}{x^{2}}\cdot\sin\left(\frac{1}{x}\right)\right)\\
+ & =\frac{2}{x^{3}}\cdot\left(1+\cos\left(\frac{1}{x}\right)\right)-\frac{1}{x^{4}}\cdot\sin\left(\frac{1}{x}\right)
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+תכונות פתולוגיות
+\series default
+
+\end_layout
+
+\begin_layout Itemize
+\bar under
+רציפות:
+\bar default
+ 
+\begin_inset Formula
+$S_{3}$
+\end_inset
+ רציפה בכל תחום הגדרתה (היא אינה מוגדרת ב-
+\begin_inset Formula
+$0$
+\end_inset
+).
+\end_layout
+
+\begin_layout Itemize
+\bar under
+גזירות:
+\bar default
+ 
+\begin_inset Formula
+$S_{3}$
+\end_inset
+ גזירה בכל תחום הגדרתה (היא אינה מוגדרת ב-
+\begin_inset Formula
+$0$
+\end_inset
+).
+\end_layout
+
+\begin_layout Itemize
+\bar under
+אינטגרביליות:
+\bar default
+ מהרציפות נובע ש-
+\begin_inset Formula
+$S_{3}$
+\end_inset
+ אינטגרבילית רימן על כל קטע סגור שאינו כולל את 
+\begin_inset Formula
+$0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+\begin_inset Formula
+$S_{3}$
+\end_inset
+ אינה קעורה וגם אינה קמורה בכל מקטע הכולל את 
+\begin_inset Formula
+$0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula
+$m\in\MKreal$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$0<\delta\in\MKreal$
+\end_inset
+ קיים 
+\begin_inset Formula
+$x\in B_{\delta}\left(0\right)$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$S_{3}'\left(x\right)=m$
+\end_inset
+, בפרט 
+\begin_inset Formula
+$0$
+\end_inset
+ היא נקודת אי-רציפות מסדר שני של 
+\begin_inset Formula
+$S_{3}'$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+פונקציית ויירשטראס
+\end_layout
+
+\begin_layout Standard
+יהיו 
+\begin_inset Formula
+$1<a\in\MKreal$
+\end_inset
+ ו-
+\begin_inset Formula
+$b\in\MKodd$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\frac{b}{a}>1+\frac{3\pi}{2}$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$W:\MKreal\rightarrow\MKreal$
+\end_inset
+ פונקציית ויירשטראס המוגדרת ע"י (לכל 
+\begin_inset Formula
+$x\in\MKreal$
+\end_inset
+):
+\begin_inset Formula
+\[
+W\left(x\right):=\sum_{n=0}^{\infty}\frac{\cos\left(b^{n}\pi x\right)}{a^{n}}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+תכונות פתולוגיות
+\series default
+
+\end_layout
+
+\begin_layout Itemize
+\bar under
+רציפות:
+\bar default
+ 
+\begin_inset Formula
+$W$
+\end_inset
+ רציפה.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+גזירות:
+\bar default
+ 
+\begin_inset Formula
+$W$
+\end_inset
+ אינה גזירה באף נקודה.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+אינטגרביליות:
+\bar default
+ מהרציפות נובע ש-
+\begin_inset Formula
+$W$
+\end_inset
+ אינטגרבילית רימן על כל קטע סגור.
+\end_layout
+
+\begin_layout Claim
+\begin_inset Formula
+$W$
+\end_inset
+ רציפה.
+\end_layout
+
+\begin_layout Proof
+נשים לב לכך שלכל 
+\begin_inset Formula
+$x\in\MKreal$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left|\frac{\cos\left(b^{n}\pi x\right)}{a^{n}}\right|\leq\frac{1}{a^{n}}
+\]
+
+
+\end_inset
+מכאן שע"פ מבחן ה-
+\lang english
+M
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\lang default
+
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+של ויירשטראס טור הפונקציות הנ"ל מתכנס במ"ש ל-
+\begin_inset Formula
+$W$
+\end_inset
+ על כל 
+\begin_inset Formula
+$\MKreal$
+\end_inset
+, ומכיוון שזהו טור פונקציות רציפות נובע מכאן ש-
+\begin_inset Formula
+$W$
+\end_inset
+ היא פונקציה רציפה.
+\lang default
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset Formula
+$W$
+\end_inset
+ אינה גזירה באף נקודה.
+\end_layout
+
+\begin_layout Proof
+\series bold
+\color red
+צריך להוסיף הוכחה.
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Part
+אינטגרביליות
+\end_layout
+
+\begin_layout Section
+פונקציית רימן
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$R:\MKreal\rightarrow\MKreal$
+\end_inset
+ 
+\bar under
+פונקציית רימן
+\bar default
+ המוגדרת ע"י (לכל 
+\begin_inset Formula
+$x\in\MKreal$
+\end_inset
+):
+\begin_inset Formula
+\[
+R\left(x\right):=\begin{cases}
+0 & x\notin\MKrational\\
+\frac{1}{q} & x=\frac{p}{q}\in\MKrational,\ q>0,\ \gcd\left(p,q\right)=1
+\end{cases}
+\]
+
+
+\end_inset
+כלומר הערך שהפונקציה מקבלת ברציונליים הוא ההופכי של המכנה בהצגה המצומצמת.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+תכונות פתולוגיות
+\series default
+
+\end_layout
+
+\begin_layout Itemize
+\bar under
+רציפות:
+\bar default
+ פונקציית רימן רציפה אך ורק בנקודות אי-רציונליות.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+גזירות:
+\bar default
+ פונקציית רימן אינה גזירה בשום נקודה.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+אינטגרביליות:
+\bar default
+ פונקציית רימן אינטגרבילית רימן על כל קטע סגור (האינטגרל הוא 
+\begin_inset Formula
+$0$
+\end_inset
+).
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula
+$a\in\MKreal$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\lim_{x\rightarrow a}R\left(x\right)=0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$a\in\MKreal$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\eta:=\frac{1}{N}<\varepsilon$
+\end_inset
+, מכאן שלכל 
+\begin_inset Formula
+$N\geq q\in\MKnatural$
+\end_inset
+ קיים לכל היותר 
+\begin_inset Formula
+$p\in\MKinteger$
+\end_inset
+ אחד ויחיד כך שמתקיים 
+\begin_inset Formula
+$\frac{p}{q}\in B_{\eta}^{\circ}\left(a\right)$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+א"כ קיימת 
+\begin_inset Formula
+$0<\delta\in\MKreal$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N\geq q\in\MKnatural$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$p\in\MKinteger$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\frac{p}{q}\notin B_{\delta}^{\circ}\left(a\right)$
+\end_inset
+, תהא 
+\begin_inset Formula
+$\delta$
+\end_inset
+ כנ"ל.
+\begin_inset Newline newline
+\end_inset
+מכאן שלכל 
+\begin_inset Formula
+$x\in B_{\delta}^{\circ}\left(a\right)$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$-\varepsilon<0\leq R\left(x\right)\leq\frac{1}{N}<\varepsilon$
+\end_inset
+.
+\begin_inset Formula
+\[
+\Rightarrow\lim_{x\rightarrow a}R\left(x\right)=0
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+פונקציית רימן רציפה בכל הנקודות האי-רציונליות ואינה רציפה בכל הנקודות הרציונליות.
+\end_layout
+
+\begin_layout Claim
+פונקציית רימן אינה גזירה בשום נקודה.
+\end_layout
+
+\begin_layout Proof
+ראינו שהיא אינה רציפה בכל נקודה רציונלית ומכאן שהיא גם אינה גזירה בנקודות אלו.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$x\in\MKreal\setminus\MKrational$
+\end_inset
+, כשהתחלנו ללמוד על קירובים דיופנטיים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+בקורס "תורת המספרים האלמנטרית".
+\end_layout
+
+\end_inset
+ ראינו שקיימות סדרת טבעיים עולה ממש 
+\begin_inset Formula
+$\left(q_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ וסדרת שלמים 
+\begin_inset Formula
+$\left(p_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left|x-\frac{p_{n}}{q_{n}}\right|<\frac{1}{\left(q_{n}\right)^{2}}
+\]
+
+
+\end_inset
+ובפרט 
+\begin_inset Formula
+$\lim_{n\rightarrow\infty}\frac{p_{n}}{q_{n}}=x$
+\end_inset
+; מכאן שאם הנגזרת 
+\begin_inset Formula
+$R'\left(x\right)$
+\end_inset
+ קיימת אז גם הגבול:
+\begin_inset Formula
+\[
+\lim_{n\rightarrow\infty}\frac{R\left(\frac{p_{n}}{q_{n}}\right)-R\left(x\right)}{\frac{p_{n}}{q_{n}}-x}
+\]
+
+
+\end_inset
+קיים ושווה לה. אבל לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$R\left(\frac{p_{n}}{q_{n}}\right)=\frac{\gcd\left(p_{n},q_{n}\right)}{q_{n}}\geq\frac{1}{q_{n}}$
+\end_inset
+ ולכן גם:
+\begin_inset Formula
+\[
+\left|\frac{R\left(\frac{p_{n}}{q_{n}}\right)-R\left(x\right)}{\frac{p_{n}}{q_{n}}-x}\right|\geq\frac{\left|\frac{1}{q_{n}}-0\right|}{\left|\frac{p_{n}}{q_{n}}-x\right|}>\frac{\frac{1}{q_{n}}}{\frac{1}{\left(q_{n}\right)^{2}}}=q_{n}\xrightarrow[n\rightarrow\infty]{}\infty
+\]
+
+
+\end_inset
+מכאן שהנגזרת שפונקציית רימן אינה גזירה ב-
+\begin_inset Formula
+$x$
+\end_inset
+ ומכיוון שהוא היה שרירותי הרי שהיא אינה גזירה בשום נקודה אי-רציונלית.
+\end_layout
+
+\begin_layout Claim
+פונקציית רימן אינטגרבילית רימן על 
+\begin_inset Formula
+$\left[0,1\right]$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+לכל חלוקה 
+\begin_inset Formula
+$P$
+\end_inset
+ של 
+\begin_inset Formula
+$\left[0,1\right]$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$L\left(R,P\right)=0$
+\end_inset
+ ומכאן שמתקיים 
+\begin_inset Formula
+$\underline{I}\left(R\right)$
+\end_inset
+, כלומר סכום דארבו התחתון של פונקציית רימן עבור חלוקה כלשהי של 
+\begin_inset Formula
+$\left[0,1\right]$
+\end_inset
+ הוא 
+\begin_inset Formula
+$0$
+\end_inset
+ ולכן גם האינטגרל התחתון שלה בקטע זה הוא 
+\begin_inset Formula
+$0$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+, נניח בהג"כ ש-
+\begin_inset Formula
+$\varepsilon<1$
+\end_inset
+ ונסמן 
+\begin_inset Formula
+$N:=\left\lceil \frac{2}{\varepsilon}\right\rceil +1$
+\end_inset
+ (כלומר 
+\begin_inset Formula
+$\frac{1}{N}<\frac{\varepsilon}{2}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\frac{\varepsilon}{4}<\frac{1}{N}$
+\end_inset
+), א"כ קיימות לכל היותר 
+\begin_inset Formula
+$N^{2}$
+\end_inset
+ נקודות רציונליות ב-
+\begin_inset Formula
+$\left[0,1\right]$
+\end_inset
+ שהמכנה המצומצם שלהן גדול או שווה ל-
+\begin_inset Formula
+$N$
+\end_inset
+; תהיינה 
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{n}\in\left[0,1\right]$
+\end_inset
+ כל הנקודות הללו כך שהן מסודרות בסדר עולה (
+\begin_inset Formula
+$a_{i}<a_{i+1}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n>i\in\MKnatural$
+\end_inset
+), א"כ (בהנחה ש-
+\begin_inset Formula
+$\varepsilon<1$
+\end_inset
+) לכל 
+\begin_inset Formula
+$n>i\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a_{i+1}-a_{i}\geq\frac{1}{N}>\frac{\varepsilon}{4}$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$x_{1},x_{2},\ldots,x_{n},x_{n+1},y_{0},y_{1},y_{2},\ldots,y_{n}\in\left(0,1\right)$
+\end_inset
+ נקודות המוגדרות ע"י (לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+):
+\begin_inset Formula
+\begin{align*}
+y_{0} & :=0\\
+x_{i} & :=a_{i}-\frac{\varepsilon}{8n}\\
+y_{i} & :=a_{i}+\frac{\varepsilon}{8n}\\
+x_{n+1} & :=1
+\end{align*}
+
+
+\end_inset
+א"כ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$y_{i}-x_{i}=\frac{\varepsilon}{4n}$
+\end_inset
+ (כלומר 
+\begin_inset Formula
+$y_{i}>x_{i}$
+\end_inset
+) ולכל 
+\begin_inset Formula
+$n>i\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+x_{i+1}-y_{i}=\left(a_{i+1}-\frac{\varepsilon}{8n}\right)-\left(a_{i}+\frac{\varepsilon}{8n}\right)>0
+\]
+
+
+\end_inset
+כמו כן מתקיים: 
+\begin_inset Formula
+\begin{align*}
+x_{1}-y_{0} & =a_{1}-\frac{\varepsilon}{8}=\frac{1}{N}-\frac{\varepsilon}{8}>0\\
+x_{n+1}-y_{n} & =1-\left(a_{n}+\frac{\varepsilon}{8n}\right)=1-\left(\frac{N-1}{N}+\frac{\varepsilon}{8}\right)=\frac{1}{N}-\frac{\varepsilon}{8}>0
+\end{align*}
+
+
+\end_inset
+מכאן שלכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left(y_{i}-x_{i}\right)\cdot\sup\left\{ R\left(x\right):x\in\left[x_{i},y_{i}\right]\right\} \leq\left(y_{i}-x_{i}\right)\cdot1=y_{i}-x_{i}
+\]
+
+
+\end_inset
+ולכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural_{0}$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left(x_{i+1}-y_{i}\right)\cdot\sup\left\{ R\left(x\right):x\in\left[y_{i},x_{i+1}\right]\right\} <\left(x_{i+1}-y_{i}\right)\cdot\frac{1}{N}<\left(x_{i+1}-y_{i}\right)\cdot\frac{\varepsilon}{2}
+\]
+
+
+\end_inset
+הקבוצה 
+\begin_inset Formula
+$P:=\left\{ y_{0},x_{1},y_{1},x_{2},y_{2},\ldots,x_{n},y_{n},x_{n+1}\right\} $
+\end_inset
+ היא חלוקה של 
+\begin_inset Formula
+$\left[0,1\right]$
+\end_inset
+ המקיימת:
+\begin_inset Formula
+\[
+U\left(R,P\right)<\sum_{i=1}^{n}\left(y_{i}-x_{i}\right)+\sum_{i=0}^{n}\left(x_{i+1}-y_{i}\right)\cdot\frac{\varepsilon}{2}<\frac{\varepsilon}{4n}\cdot n+\left(1-0\right)\cdot\frac{\varepsilon}{2}<\varepsilon
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+$\varepsilon$
+\end_inset
+ הנ"ל היה שרירותי ולכן 
+\begin_inset Formula
+$\overline{I}\left(R\right)=0$
+\end_inset
+.
+\begin_inset Formula
+\[
+\Rightarrow\intop_{0}^{1}R\left(x\right)dx=0
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+פונקציית רימן היא פונקציה מחזורית ו-
+\begin_inset Formula
+$1$
+\end_inset
+ הוא מחזור שלה.
+\end_layout
+
+\begin_layout Proof
+לכל 
+\begin_inset Formula
+$x\in\MKreal$
+\end_inset
+, אם 
+\begin_inset Formula
+$x\notin\MKrational$
+\end_inset
+ אז גם 
+\begin_inset Formula
+$x+1\notin\MKrational$
+\end_inset
+ ולכן 
+\begin_inset Formula
+$R\left(x\right)=0=R\left(x+1\right)$
+\end_inset
+, ואם 
+\begin_inset Formula
+$x\in\MKrational$
+\end_inset
+ כאשר 
+\begin_inset Formula
+$\frac{p}{q}$
+\end_inset
+ היא ההצגה המצומצמת שלו אז 
+\begin_inset Formula
+$\frac{p+q}{q}$
+\end_inset
+ היא ההצגה המצומצמת של 
+\begin_inset Formula
+$x+1$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+מהעובדה שמתקיים 
+\begin_inset Formula
+$\gcd\left(p,q\right)=1$
+\end_inset
+ נובע שמתקיים 
+\begin_inset Formula
+$\gcd\left(p,q+q\right)=1$
+\end_inset
+.
+\end_layout
+
+\end_inset
+ ולכן 
+\begin_inset Formula
+$R\left(x\right)=\frac{1}{q}=R\left(x+1\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+פונקציית רימן אינטגרבילית על כל קטע סגור.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ אם נגדיר 
+\begin_inset Formula
+$g:\MKreal\rightarrow\MKreal$
+\end_inset
+ ע"י:
+\begin_inset Formula
+\[
+g\left(x\right)=\begin{cases}
+0 & x=0\\
+1 & x\neq0
+\end{cases}
+\]
+
+
+\end_inset
+נקבל:
+\begin_inset Formula
+\[
+\left(g\circ f\right)\left(x\right)=\begin{cases}
+0 & x\notin\MKrational\\
+1 & x\in\MKrational
+\end{cases}=D\left(x\right)
+\]
+
+
+\end_inset
+וזאת למרות שגם 
+\begin_inset Formula
+$g$
+\end_inset
+ אינטגרבילית, כלומר הרכבה של אינטגרביליות אינה בהכרח אינטגרבילית.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+פונקציות משולשים
+\end_layout
+
+\begin_layout Standard
+תהיינה 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(h_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ שתי סדרות כך ש-
+\begin_inset Formula
+$0<a_{n}\leq\frac{1}{2}$
+\end_inset
+ ו-
+\begin_inset Formula
+$h_{n}\geq0$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$f:\left[1,\infty\right)\rightarrow\left[0,\infty\right)$
+\end_inset
+ פונקציה המוגדרת ע"י (לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$x\in\left[n,n+1\right]$
+\end_inset
+):
+\begin_inset Formula
+\begin{align*}
+f\left(x\right) & :=\begin{cases}
+\frac{h_{n}}{a_{n}}\cdot\left(x-n\right) & x\in\left[n,n+a_{n}\right]\\
+-\frac{h_{n}}{a_{n}}\cdot\left(x-\left(n+2a_{n}\right)\right) & x\in\left[n+a_{n},n+2a_{n}\right]\\
+0 & x\in\left[n+a_{n},n+1\right]
+\end{cases}\\
+ & =\begin{cases}
+\frac{h_{n}}{a_{n}}\cdot\left(x-n\right) & x\in\left[n,n+a_{n}\right]\\
+-\frac{h_{n}}{a_{n}}\cdot\left(x-n\right)+2h_{n} & x\in\left[n+a_{n},n+2a_{n}\right]\\
+0 & x\in\left[n+a_{n},n+1\right]
+\end{cases}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הרעיון הוא שבכל קטע 
+\begin_inset Formula
+$\left[n,n+1\right]$
+\end_inset
+ הקטע 
+\begin_inset Formula
+$\left[n,n+2a_{n}\right]$
+\end_inset
+ הוא הבסיס של משולש שווה שוקיים שקודקודו בנקודה 
+\begin_inset Formula
+$\left(n+a_{n},h_{n}\right)$
+\end_inset
+ ועל כן שטחו הוא בדיוק:
+\begin_inset Formula
+\[
+\frac{2a_{n}\cdot h_{n}}{2}=a_{n}\cdot h_{n}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+תכונות פתולוגיות
+\series default
+
+\end_layout
+
+\begin_layout Itemize
+\bar under
+רציפות:
+\bar default
+ 
+\begin_inset Formula
+$f$
+\end_inset
+ רציפה.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+גזירות:
+\bar default
+ 
+\begin_inset Formula
+$f$
+\end_inset
+ אינה גזירה בכל נקודה מהצורה 
+\begin_inset Formula
+$n$
+\end_inset
+, 
+\begin_inset Formula
+$n+a_{n}$
+\end_inset
+ או 
+\begin_inset Formula
+$n+2a_{n}$
+\end_inset
+ (לכל 
+\begin_inset Formula
+$n\in\MKnatural_{0}$
+\end_inset
+), אך היא גזירה בכל נקודה אחרת.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+אינטגרביליות:
+\bar default
+ 
+\begin_inset Formula
+$f$
+\end_inset
+ אינטגרבילית רימן על כל תת-קטע סגור של 
+\begin_inset Formula
+$\left[0,\infty\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+מתקיים (מדובר בשוויון פורמלי בלבד):
+\begin_inset Formula
+\[
+\sum_{n=1}^{\infty}a_{n}\cdot h_{n}=\intop_{1}^{\infty}f\left(x\right)dx
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ע"פ השוויון הזה והידע שלנו על טורים נוכל לבנות פונקציות רציפות חסומות/לא חסומות שעבורן האינטגרל הנ"ל מתכנס/מתבדר כרצוננו, כל מה שצריך לעשות הוא לבחור את הסדרות המתאימות (דוגמאות בהמשך).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+מהנוסחה היסודית נובע שלכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+\intop_{n}^{n+a_{n}}f\left(x\right)dx & =\intop_{n}^{n+a_{n}}\frac{h_{n}}{a_{n}}\cdot\left(x-n\right)dx=\frac{h_{n}}{a_{n}}\cdot\intop_{n}^{n+a_{n}}x-n\ dx\\
+ & =\frac{h_{n}}{a_{n}}\cdot\left(\frac{\left(n+a_{n}\right)^{2}}{2}-n\cdot\left(n+a_{n}\right)\right)-\frac{h_{n}}{a_{n}}\cdot\left(\frac{n^{2}}{2}-n\cdot n\right)\\
+ & =\frac{h_{n}}{a_{n}}\cdot\left(\frac{{\color{red}n^{2}}+2{\color{blue}n\cdot a_{n}}+\left(a_{n}\right)^{2}}{2}{\color{red}-n^{2}}{\color{blue}-n\cdot a_{n}}\right)+\frac{h_{n}}{a_{n}}\cdot{\color{red}\frac{n^{2}}{2}}\\
+ & =\frac{h_{n}}{a_{n}}\cdot\frac{\left(a_{n}\right)^{2}}{2}=\frac{a_{n}\cdot h_{n}}{2}\\
+\intop_{n+a_{n}}^{n+2a_{n}}f\left(x\right)dx & =\intop_{n+a_{n}}^{n+2a_{n}}-\frac{h_{n}}{a_{n}}\cdot\left(x-n\right)+2h_{n}\ dx=-\intop_{n+a_{n}}^{n+2a_{n}}\frac{h_{n}}{a_{n}}\cdot\left(x-n\right)dx+{\color{green}\intop_{n+a_{n}}^{n+2a_{n}}2h_{n}\ dx}\\
+ & =-\frac{h_{n}}{a_{n}}\cdot\left({\color{red}\frac{\left(n+2a_{n}\right)^{2}}{2}}{\color{blue}-n\cdot\left(n+2a_{n}\right)}\right)+\frac{h_{n}}{a_{n}}\cdot\left({\color{red}\frac{\left(n+a_{n}\right)^{2}}{2}}{\color{blue}-n\cdot\left(n+a_{n}\right)}\right)+{\color{green}2h_{n}\cdot a_{n}}\\
+ & =-\frac{h_{n}}{a_{n}}\cdot\left({\color{red}\frac{2n\cdot a_{n}+3\left(a_{n}\right)^{2}}{2}}{\color{blue}-n\cdot a_{n}}\right)+{\color{green}2h_{n}\cdot a_{n}}=\frac{4h_{n}\cdot a_{n}}{2}-\frac{h_{n}\cdot3\left(a_{n}\right)^{2}}{2a_{n}}\\
+ & =\frac{a_{n}\cdot h_{n}}{2}\\
+\intop_{n+2a_{n}}^{n+1}f\left(x\right)dx & =\intop_{n+2a_{n}}^{n+1}0\ dx=0
+\end{align*}
+
+
+\end_inset
+ועל כן גם:
+\begin_inset Formula
+\[
+\intop_{n}^{n+1}f\left(x\right)dx=a_{n}\cdot h_{n}
+\]
+
+
+\end_inset
+וממילא:
+\begin_inset Formula
+\begin{align*}
+\intop_{1}^{\infty}f\left(x\right)dx & =\lim_{b\rightarrow\infty}\intop_{1}^{b}f\left(x\right)dx=\lim_{N\rightarrow\infty}\intop_{1}^{N+1}f\left(x\right)dx=\lim_{N\rightarrow\infty}\sum_{n=1}^{N}\left(\intop_{n}^{n+1}f\left(x\right)dx\right)\\
+ & =\lim_{N\rightarrow\infty}\sum_{n=1}^{N}\left(a_{n}\cdot h_{n}\right)=\sum_{n=0}^{\infty}\left(a_{n}\cdot h_{n}\right)
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+דוגמאות
+\end_layout
+
+\begin_layout Example
+אם נבחר 
+\begin_inset Formula
+$a_{n}=\frac{1}{2\sqrt{n}}$
+\end_inset
+ ו-
+\begin_inset Formula
+$h_{n}=\frac{2}{\sqrt{n}}$
+\end_inset
+ נקבל:
+\begin_inset Formula
+\[
+\intop_{1}^{\infty}f\left(x\right)dx=\sum_{n=1}^{\infty}\frac{1}{n}=\infty
+\]
+
+
+\end_inset
+כלומר האינטגרל מתבדר למרות ש-
+\begin_inset Formula
+$\lim_{x\rightarrow\infty}f\left(x\right)=0$
+\end_inset
+ ו-
+\begin_inset Formula
+$f$
+\end_inset
+ אי-שלילית.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Example
+אם נבחר 
+\begin_inset Formula
+$a_{n}=\frac{1}{2n}$
+\end_inset
+ ו-
+\begin_inset Formula
+$h_{n}=\frac{2}{n}$
+\end_inset
+ נקבל
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+להסבר מדוע הטור מתכנס ל-
+\begin_inset Formula
+$\frac{\pi^{2}}{6}$
+\end_inset
+ לחצו 
+\begin_inset CommandInset href
+LatexCommand href
+name "כאן"
+target https://he.wikipedia.org/wiki/%D7%98%D7%95%D7%A8_(%D7%9E%D7%AA%D7%9E%D7%98%D7%99%D7%A7%D7%94)#%D7%97%D7%99%D7%A9%D7%95%D7%91_%D7%A1%D7%9B%D7%95%D7%9D_%D7%A9%D7%9C_%D7%98%D7%95%D7%A8_%D7%A4%D7%95%D7%A8%D7%99%D7%99%D7%94
+literal false
+\end_inset
+, אין זה מענייננו כעת, כל מה שרציתי לומר הוא שהטור מתכנס.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\[
+\intop_{1}^{\infty}f\left(x\right)dx=\sum_{n=1}^{\infty}\frac{1}{n^{2}}=\frac{\pi^{2}}{6}
+\]
+
+
+\end_inset
+כלומר האינטגרל מתכנס.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Example
+אם נבחר 
+\begin_inset Formula
+$a_{n}=\frac{1}{2n^{3}}$
+\end_inset
+ ו-
+\begin_inset Formula
+$h_{n}=2n$
+\end_inset
+ נקבל:
+\begin_inset Formula
+\[
+\intop_{1}^{\infty}f\left(x\right)dx=\sum_{n=1}^{\infty}\frac{1}{n^{2}}=\frac{\pi^{2}}{6}
+\]
+
+
+\end_inset
+כלומר האינטגרל מתכנס למרות ש-
+\begin_inset Formula
+$f$
+\end_inset
+ אי-שלילית ואינה חסומה מלעיל.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Part
+שונות
+\end_layout
+
+\begin_layout Section
+טורים וסדרות
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+צריך לכתוב את הפרק הזה.
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Section
+"הלחמה" של פונקציות
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בסעיף זה נראה כיצד ניתן לשלב בין שתי פונקציות על מנת לקבל את התכונות של שתיהן.
+\end_layout
+
+\begin_layout Standard
+נניח שנתבקשנו למצוא פונקציה 
+\begin_inset Formula
+$f:\MKreal\rightarrow\MKreal$
+\end_inset
+ כך שיתקיים:
+\begin_inset Formula
+\[
+\lim_{x\rightarrow\infty}\intop_{-x}^{2x}f\left(t\right)dt=c
+\]
+
+
+\end_inset
+עבור 
+\begin_inset Formula
+$0\neq c\in\MKreal$
+\end_inset
+ כלשהו
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+זה לא באמת משנה באיזה 
+\begin_inset Formula
+$c$
+\end_inset
+ מדובר כי תמיד יהיה ניתן להכפיל את 
+\begin_inset Formula
+$f$
+\end_inset
+ בקבוע ולקבל את הנדרש עבור 
+\begin_inset Formula
+$c$
+\end_inset
+ אחר.
+\end_layout
+
+\end_inset
+. הדבר הראשון שעולה לי בראש הוא שמהנוסחה היסודית נובע שלכל 
+\begin_inset Formula
+$0<x\in\MKreal$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\intop_{x}^{2x}\frac{1}{t}\ dt=\ln\left(2x\right)-\ln\left(x\right)=\ln\left(\frac{2x}{x}\right)=\ln\left(2\right)
+\]
+
+
+\end_inset
+הבעיה היא כמובן שנתבקשתי שהאינטגרל יהיה מ-
+\begin_inset Formula
+$-x$
+\end_inset
+ ל-
+\begin_inset Formula
+$2x$
+\end_inset
+ ולא מ-
+\begin_inset Formula
+$x$
+\end_inset
+ ל-
+\begin_inset Formula
+$2x$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+כדי לתקן זאת אני רוצה למצוא פונקציה שתחזיר 
+\begin_inset Formula
+$\ln\left(-x\right)$
+\end_inset
+ לכל 
+\begin_inset Formula
+$x$
+\end_inset
+ שלילי קטן מספיק ו-
+\begin_inset Formula
+$\ln\left(x\right)$
+\end_inset
+ לכל 
+\begin_inset Formula
+$x$
+\end_inset
+ חיובי גדול מספיק; הבעיה היא שאני זקוק לפונקציה שהיא לא רק רציפה, אלא גם גזירה בכל נקודה כדי שהיא תהווה קדומה של פונקציה אחרת ואז אוכל להשתמש בנוסחה היסודית.
+\begin_inset Newline newline
+\end_inset
+הפתרון הוא כזה: תהא 
+\begin_inset Formula
+$F:\MKreal\rightarrow\MKreal$
+\end_inset
+ פונקציה המוגדרת ע"י (לכל 
+\begin_inset Formula
+$x\in\MKreal$
+\end_inset
+):
+\begin_inset Formula
+\[
+F\left(x\right):=\begin{cases}
+\ln\left(x\right) & x\geq1\\
+\frac{x^{2}-1}{2} & -1\leq x\leq1\\
+\ln\left(-x\right) & x\leq-1
+\end{cases}
+\]
+
+
+\end_inset
+כיצד הפונקציה הזו פותרת את הבעיה? הרעיון הוא כזה בתחילה רצינו שהפונקציה תוגדר כך:
+\begin_inset Formula
+\[
+F_{0}\left(x\right):=\begin{cases}
+\ln\left(x\right) & x>0\\
+\ln\left(-x\right) & x<0
+\end{cases}
+\]
+
+
+\end_inset
+אבל לפונקציה הזו יש אי-רציפות מסדר שני ב-
+\begin_inset Formula
+$0$
+\end_inset
+, זו בעיה שא"א לתקן בקלות, א"כ נרצה לבטל את כלל ההתאמה של 
+\begin_inset Formula
+$F_{0}$
+\end_inset
+ בקטע 
+\begin_inset Formula
+$\left(-1,1\right)$
+\end_inset
+ ולהכניס בקטע זה פונקציה גזירה 
+\begin_inset Formula
+$F_{1}$
+\end_inset
+ שתתלכד עם 
+\begin_inset Formula
+$F_{0}$
+\end_inset
+ בנקודות הקצה ולא זו אף זו גם הנגזרות שלהן תתלכדנה בנקודות הקצה של 
+\begin_inset Formula
+$\left(-1,1\right)$
+\end_inset
+; לשיטה הזו אני קורא "הלחמה" של פונקציות.
+\begin_inset Newline newline
+\end_inset
+בד"כ הדרך הכי פשוטה לבצע "הלחמה" היא באמצעות פולינום, ואכן הפולינום 
+\begin_inset Formula
+$F_{1}\left(x\right):=\frac{x^{2}-1}{2}$
+\end_inset
+ מקיים את המבוקש, שכן מתקיים:
+\begin_inset Formula
+\begin{align*}
+F_{1}\left(\pm1\right) & =\frac{\left(\pm1\right)^{2}-1}{2}=0=\ln\left(1\right)=F_{0}\left(\pm1\right)\\
+F_{1}'\left(\pm1\right) & =\pm1=\left(\pm1\right)\cdot\frac{1}{1}=\left(\pm1\right)\cdot\ln'\left(1\right)=F_{0}'\left(\pm1\right)\\
+\intop_{-1}^{0}F_{1}\left(x\right)dx & =\intop_{-1}^{0}\frac{x^{2}-1}{2}dx=\frac{1}{2}\cdot\left(\frac{0^{3}}{3}-0\right)-\frac{1}{2}\cdot\left(\frac{\left(-1\right)^{3}}{3}-\left(-1\right)\right)\\
+ & =\frac{1}{2}\cdot\left(\frac{1^{3}}{3}-1\right)-\frac{1}{2}\cdot\left(\frac{0^{3}}{3}-0\right)=\intop_{0}^{1}F_{1}\left(x\right)dx
+\end{align*}
+
+
+\end_inset
+כעת לאחר שאנו מבינים את הרעיון נעבור להוכחה הפורמלית.
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$\pm1\neq x\in\MKreal$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+F'\left(x\right)=\begin{cases}
+\frac{1}{x} & x>1\\
+x & -1<x<1\\
+\frac{1}{x} & x<-1
+\end{cases}
+\]
+
+
+\end_inset
+וכמו כן מתקיים 
+\begin_inset Formula
+$F'\left(1^{+}\right)=\frac{1}{1}=1=F'\left(1^{-}\right)$
+\end_inset
+ ו-
+\begin_inset Formula
+$F'\left(-1^{+}\right)=\frac{1}{-1}=-1=F'\left(-1^{-}\right)$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$F'\left(\pm1\right)=\pm1$
+\end_inset
+, כלומר לכל 
+\begin_inset Formula
+$x\in\MKreal$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+F'\left(x\right)=\begin{cases}
+\frac{1}{x} & x\geq1\\
+x & -1\leq x\leq1\\
+\frac{1}{x} & x\leq-1
+\end{cases}
+\]
+
+
+\end_inset
+נסמן 
+\begin_inset Formula
+$f:=F'$
+\end_inset
+, מכאן שע"פ הנוסחה היסודית מתקיים לכל 
+\begin_inset Formula
+$1<x\in\MKreal$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\intop_{x}^{2x}f\left(t\right)dt=F\left(2x\right)-F\left(x\right)=\ln\left(2x\right)-\ln\left(x\right)=\ln\left(2\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\end_body
+
+\end_document
+

@@ -1,0 +1,10596 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The head's design for summuries,make the layout more similar to a book:
+\AtBeginDocument{
+\renewcommand\headrule{%
+  \kern -7pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+  \kern 10pt
+}}
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Correct the reversed parentheses in labels:
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\newfontfamily{\hebrewfont}{David}
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+
+
+
+\end_preamble
+
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+customHeadersFooters
+\end_modules
+
+\maintain_unincluded_children no
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size      Larger
+	  Series     Bold
+	EndFont
+End
+Style Solution
+	LabelString           "פתרון: "End
+Style Notation
+	LabelString           "סימון  \thetheorem: "End
+Style Theorem
+	LabelString           "משפט \thetheorem: "End
+Style Property
+	LabelString           "תזכורת: "End
+
+
+
+\end_local_layout
+
+\language hebrew
+
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\boxbgcolor #cccccc
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+
+\tocdepth 3
+
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename C:\Users\sraya\AppData\Roaming\LyX2.4\macros\MKmacros.lyx
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+התחלה
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ בסיכומים של נושא זה נעבוד אך ורק עם הנורמה והמטריקה האוקלידיות על 
+\begin_inset Formula
+$\MKreal^{n}$
+
+
+\end_inset
+ ועם הנורמה האופרטורית ב-
+\begin_inset Formula
+$\MKhom\left(\MKreal^{k},\MKreal^{m}\right)$
+
+
+\end_inset
+, כמו כן כמעט כל הפונקציות שנעבוד איתן תהיינה מהצורה 
+\begin_inset Formula
+$f:\MKreal^{k}\rightarrow\MKreal^{m}$
+
+
+\end_inset
+ (יהיו 
+\begin_inset Formula
+$k,m\in\MKreal$
+
+
+\end_inset
+) ולא נזכיר את כל אלו בכל פעם מחדש.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ נרצה להגדיר גזירות של פונקציה מהצורה 
+\begin_inset Formula
+$f:\MKreal^{n}\rightarrow\MKreal^{m}$
+
+
+\end_inset
+ בנקודה 
+\begin_inset Formula
+$a\in\MKreal^{n}$
+
+
+\end_inset
+, הבעיה היא שאי אפשר לחלק וקטור אחד באחר ולכן ביטוי מהצורה 
+\begin_inset Formula
+${\displaystyle \frac{f\left(x\right)-f\left(a\right)}{a-a}}$
+
+
+\end_inset
+ אינו מוגדר ובוודאי שאי אפשר לקחת עליו גבול.
+\begin_inset Newline newline
+\end_inset
+למעשה זו לא בעיה כל כך קשה, הרעיון בהגדרת הנגזרת של אינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+הוא למדוד את השינוי בערכי 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ עבור תזוזות קטנות מהנקודה, לכן נוכל להחליף את הביטוי הנ"ל בביטוי הבא:
+\begin_inset Formula
+\[
+{\displaystyle \frac{f\left(x\right)-f\left(a\right)}{\left\Vert x-a\right\Vert }}
+\]
+
+
+
+
+\end_inset
+זה כבר ביטוי מוגדר
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+חילוק של וקטור בסקלר הוגדר להיות הכפלתו בהופכי של אותו סקלר.
+\end_layout
+
+\end_inset
+ אלא שכעת יש לנו בעיה נוספת: הביטוי הזה הוא איבר ב-
+\begin_inset Formula
+$\MKreal^{m}$
+
+
+\end_inset
+ ולכן גם הגבול שלו כזה (אם הוא קיים), לפיכך פונקציה גזירה לפי הרעיון הזה תצטרך להיראות חד-ממדית בסביבה קטנה מספיק של 
+\begin_inset Formula
+$x$
+
+
+\end_inset
+ שכן ההפרשים בין התמונות של הפונקציה באותה סביבה לבין 
+\begin_inset Formula
+$f\left(x\right)$
+
+
+\end_inset
+ יצטרכו להיות כמעט בכיוון של וקטור הנגזרת
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+למעשה יש מקרה שבו הטיעון הזה אינו תקף: כאשר וקטור הנגזרת הוא וקטור האפס.
+\end_layout
+
+\end_inset
+. אם 
+\begin_inset Formula
+$n=1$
+
+
+\end_inset
+ ו/או ש-
+\begin_inset Formula
+$m=1$
+
+
+\end_inset
+ זה לא כל כך יפריע לנו מפני שהפונקציה אכן תהיה חד-ממדית
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+אנחנו נראה בהמשך שגזירות במקרים אלו אכן תתאים לרעיון זה.
+\end_layout
+
+\end_inset
+, אבל כאשר 
+\begin_inset Formula
+$n$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$m$
+
+
+\end_inset
+ גדולים מ-
+\begin_inset Formula
+$1$
+
+
+\end_inset
+ הרעיון הזה יוביל לכך שפונקציות מעטות מאוד תהיינה גזירות. מסיבה זו נצטרך למצוא רעיון חדש להגדיר את הגזירות בממדים גבוהים, אבל אנחנו נראה בהמשך שהרעיון הזה קשור בקשר הדוק לגזירות כזו.
+\begin_inset Newline newline
+\end_inset
+לגזירות של פונקציה בנקודה הייתה אינטואיציה נוספת - הישר המשיק, באינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+ראינו את המשפט הבא:
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem*
+תהא 
+\begin_inset Formula
+$g:\MKreal\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה המוגדרת בסביבה של נקודה 
+\begin_inset Formula
+$a\in\MKreal$
+
+
+\end_inset
+. 
+\begin_inset Formula
+$g$
+
+
+\end_inset
+ גזירה ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ אם"ם קיים 
+\begin_inset Formula
+$m\in\MKreal$
+
+
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+\lim_{h\rightarrow0}\frac{g\left(a+h\right)-\left(m\cdot h+g\left(a\right)\right)}{h}=0
+\]
+
+
+
+
+\end_inset
+ובמקרה כזה מתקיים 
+\begin_inset Formula
+$m=g'\left(a\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+כאשר 
+\begin_inset Formula
+$g$
+
+
+\end_inset
+ גזירה ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ הישר 
+\begin_inset Formula
+$g'\left(a\right)\cdot\left(x-a\right)+\left(g\left(a\right)-g'\left(a\right)\cdot a\right)$
+
+
+\end_inset
+ הוא הישר המשיק לגרף הפונקציה בנקודה 
+\begin_inset Formula
+$\left(a,g\left(a\right)\right)\in\MKreal^{2}$
+
+
+\end_inset
+, אבל מהו המשיק לגרף של פונקציה מ-
+\begin_inset Formula
+$\MKreal^{n}$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$\MKreal^{m}$
+
+
+\end_inset
+?
+\begin_inset Newline newline
+\end_inset
+ב-
+\begin_inset Formula
+$\MKreal^{3}$
+
+
+\end_inset
+ אנחנו מכירים את הרעיון של מישור המשיק לצורה גאומטרית כלשהי (למשל כדור), לכן נצפה שאם 
+\begin_inset Formula
+$n=2$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$m=1$
+
+
+\end_inset
+ אז הגזירות של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ תייצג את המישור המשיק לגרף; מישור ב-
+\begin_inset Formula
+$\MKreal^{3}$
+
+
+\end_inset
+ הוא אובייקט שכבר נתקלנו בו בליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+- ישריות שמרחב הכיוונים שלהם הוא בעל ממד 
+\begin_inset Formula
+$2$
+
+
+\end_inset
+ הן מישורים, כעת אנחנו יכולים לצפות שגם עבור 
+\begin_inset Formula
+$n$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$m$
+
+
+\end_inset
+ כלליים הגזירות של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ תייצג את הישריה המשיקה לגרף הפונקציה.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\series bold
+\color red
+האם באמת אין שום קשר למהירות רגעית?
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+גזירות (דיפרנציאביליות) של פונקציה בנקודה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$f:A\rightarrow\MKreal^{m}$
+
+
+\end_inset
+, נאמר ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ 
+\bar under
+גזירה
+\bar default
+ (או 
+\bar under
+דיפרנציאבילית
+\bar default
+) בנקודה פנימית 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ אם קיימת העתקה ליניארית 
+\begin_inset Formula
+$T:\MKreal^{k}\rightarrow\MKreal^{m}$
+
+
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+\lim_{x\rightarrow0}\frac{f\left(a+x\right)-\left(T\left(x\right)+f\left(a\right)\right)}{\left\Vert x\right\Vert }=0
+\]
+
+
+
+
+\end_inset
+אנחנו נראה בקובץ הטענות שאם קיימת העתקה ליניארית כזו אז היא יחידה ולכן נסמן אותה ב-
+\begin_inset Formula
+$Df_{a}$
+
+
+\end_inset
+ ונקרא לה 
+\bar under
+הנגזרת
+\bar default
+ (או 
+\bar under
+הדיפרנציאל
+\bar default
+) של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ בנקודה 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+, אם 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ היא מסילה אז נסמן את הנגזרת גם ב-
+\begin_inset Formula
+$f'\left(a\right)$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נאמר ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ 
+\bar under
+גזירה/דיפרנציאבילית בקבוצה פתוחה
+\bar default
+ 
+\begin_inset Formula
+$U\subseteq A$
+
+
+\end_inset
+ אם היא גזירה בכל נקודה ב-
+\begin_inset Formula
+$U$
+
+
+\end_inset
+, כמו כן נאמר ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ 
+\bar under
+גזירה/דיפרנציאבילית
+\bar default
+ אם היא גזירה בכל תחום הגדרתה.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ הגרף של 
+\begin_inset Formula
+$T$
+
+
+\end_inset
+ הוא תמ"ו של 
+\begin_inset Formula
+$\MKreal^{n}\times\MKreal^{m}$
+
+
+\end_inset
+, לכן הגרף של הפונקציה 
+\begin_inset Formula
+$T\left(v\right)+f\left(a\right)$
+
+
+\end_inset
+ הוא ישריה שעוברת בנקודה 
+\begin_inset Formula
+$\left(a,f\left(a\right)\right)$
+
+
+\end_inset
+ ומשיקה לגרף של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ בנקודה זו
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+את האינטואיציה לכך שהיא אכן משיקה ולא סתם עוברת בנקודה אנחנו נראה בהמשך.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ בסופו של דבר הרעיון שיהיה תקף עבור כל מצב שבו הפונקציה גזירה הוא שהפונקציה ניתנת לקירוב ע"י פונקציה ליניארית בצורה כל כך טובה עד שאפילו אם מחלקים את גודל השגיאה במרחק מנקודת הדיפרנציאביליות, אפילו אז הערכים שואפים ל-
+\begin_inset Formula
+$0$
+
+
+\end_inset
+ כשמתקרבים לנקודה. לקירוב כזה קוראים בפיזיקה 
+\bar under
+קירוב מסדר ראשון
+\bar default
+ ואנחנו נראה שכמו באינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+הוא מאפשר לנו לחקור פונקציות מסובכות ע"י קירובן לפונקציות פשוטות יותר - ההעתקות הליניאריות.
+\end_layout
+
+\begin_layout Description
+סימון: בהינתן פונקציה 
+\begin_inset Formula
+$f:A\rightarrow\MKreal^{m}$
+
+
+\end_inset
+ נסמן ב-
+\begin_inset Formula
+$f_{1},f_{2},\ldots,f_{m}$
+
+
+\end_inset
+ את הפונקציות מ-
+\begin_inset Formula
+$A$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$\MKreal$
+
+
+\end_inset
+ המקיימות (לכל 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+):
+\begin_inset Formula
+\[
+f\left(a\right)=\begin{bmatrix}f_{1}\left(a\right)\\
+f_{2}\left(a\right)\\
+\vdots\\
+f_{m}\left(a\right)
+\end{bmatrix}
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה, 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ גזירה בנקודה 
+\begin_inset Formula
+$a\in\MKreal^{k}$
+
+
+\end_inset
+ אם"ם לכל 
+\begin_inset Formula
+$m\geq i\in\MKnatural$
+
+
+\end_inset
+ הפונקציה 
+\begin_inset Formula
+$f_{i}$
+
+
+\end_inset
+ גזירה ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+\series bold
+נגזרות כיווניות ונגזרות חלקיות
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$f:A\rightarrow\MKreal^{m}$
+
+
+\end_inset
+ ויהי 
+\begin_inset Formula
+$v\in\MKreal^{k}$
+
+
+\end_inset
+, נאמר של-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ יש 
+\bar under
+נגזרת כיוונית
+\bar default
+ בנקודה פנימית 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ 
+\bar under
+בכיוון
+\bar default
+ 
+\begin_inset Formula
+$v$
+
+
+\end_inset
+ אם קיים הגבול:
+\begin_inset Formula
+\[
+\lim_{t\rightarrow0}\frac{f\left(a+t\cdot v\right)-f\left(a\right)}{t}
+\]
+
+
+
+
+\end_inset
+ובמקרה כזה נסמן את הגבול הנ"ל ב-
+\begin_inset Formula
+$\partial_{v}f\left(a\right)$
+
+
+\end_inset
+ ונקרא לו 
+\bar under
+הנגזרת הכיוונית
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ 
+\bar under
+בכיוון
+\bar default
+ 
+\begin_inset Formula
+$v$
+
+
+\end_inset
+ בנקודה 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+עבור איברי הבסיס הסטנדרטי הנגזרות הכיווניות נקראות גם 
+\bar under
+נגזרות חלקיות
+\bar default
+ ומסומנות ע"י 
+\begin_inset Formula
+$\partial_{i}f\left(a\right):=\partial_{e_{i}}f\left(a\right)$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$k\geq i\in\MKnatural$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+מגדירים נגזרת כיוונית עבור וקטור האפס?
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ יש המגדירים את הנגזרת החלקית ע"י (לכל 
+\begin_inset Formula
+$0\neq v\in\MKreal^{k}$
+
+
+\end_inset
+):
+\begin_inset Formula
+\[
+\partial_{v}f\left(a\right):=\lim_{t\rightarrow0}\frac{f\left(a+t\cdot v\right)-f\left(a\right)}{\left\Vert t\cdot v\right\Vert }
+\]
+
+
+
+
+\end_inset
+בצורה זו הנגזרת הכיוונית קבועה לכל הווקטורים שכיוונם זהה גם אם גודלם שונה - לפיכך נקרא שמה 
+\series bold
+הנגזרת הכיוונית
+\series default
+, אנחנו נראה בהמשך באיזה מובן יש עדיפות להגדרה שהבאנו לעיל על פני הגדרה זו.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ 
+\series default
+במקומות אחרים מסמנים את הנגזרות הכיווניות והחלקיות בסימונים אחרים:
+\begin_inset Formula
+\begin{align*}
+\frac{\partial f}{\partial v}\left(a\right):=D_{v}f\left(a\right) & :=\partial_{v}f\left(a\right)\\
+\frac{\partial f}{\partial x_{i}}\left(a\right):=D_{i}f\left(a\right) & :=\partial_{i}f\left(a\right)\\
+f_{x}\left(a\right):=\partial_{x}f\left(a\right):=\frac{\partial f}{\partial x}\left(a\right):=D_{1}f\left(a\right) & :=\partial_{1}f\left(a\right)\\
+f_{y}\left(a\right):=\partial_{y}f\left(a\right):=\frac{\partial f}{\partial y}\left(a\right):=D_{2}f\left(a\right) & :=\partial_{2}f\left(a\right)\\
+f_{z}\left(a\right):=\partial_{z}f\left(a\right):=\frac{\partial f}{\partial z}\left(a\right):=D_{3}f\left(a\right) & :=\partial_{3}f\left(a\right)
+\end{align*}
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+הגרדיאנט
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$f:A\rightarrow\MKreal$
+
+
+\end_inset
+, 
+\bar under
+הגרדיאנט
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ בנקודה פנימית 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ הוא הווקטור:
+\begin_inset Formula
+\[
+\nabla f\left(a\right):=\begin{bmatrix}\partial_{1}f\left(a\right)\\
+\partial_{2}f\left(a\right)\\
+\vdots\\
+\partial_{k}f\left(a\right)
+\end{bmatrix}
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ כפי שנראה בקובץ הטענות הנגזרת של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ניתן לייצוג באמצעות מטריצת שורה, הגרדיאנט הוא אותה מטריצה לאחר שחלוף.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה גזירה בקבוצה פתוחה 
+\begin_inset Formula
+$U\subseteq\MKreal^{k}$
+
+
+\end_inset
+, 
+\bar under
+פונקציית הנגזרת
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ היא הפונקציה 
+\begin_inset Formula
+$Df:U\rightarrow\MKhom\left(\MKreal^{k},\MKreal^{m}\right)$
+
+
+\end_inset
+ המוגדרת ע"י (לכל 
+\begin_inset Formula
+$a\in U$
+
+
+\end_inset
+ ולכל 
+\begin_inset Formula
+$x\in\MKreal^{k}$
+
+
+\end_inset
+):
+\begin_inset Formula
+\[
+Df\left(a\right)x:=Df_{a}\left(x\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה גזירה, נאמר ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ 
+\bar under
+גזירה ברציפות
+\bar default
+ בקבוצה פתוחה 
+\begin_inset Formula
+$U\subseteq\MKreal^{k}$
+
+
+\end_inset
+ אם 
+\begin_inset Formula
+$Df$
+
+
+\end_inset
+ רציפה
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+הרציפות של 
+\begin_inset Formula
+$Df$
+
+
+\end_inset
+ נקבעת ע"פ הנורמה ב-
+\begin_inset Formula
+$\MKhom\left(\MKreal^{k},\MKreal^{m}\right)$
+
+
+\end_inset
+ כלומר ע"פ הנורמה האופרטורית.
+\end_layout
+
+\end_inset
+ ב-
+\begin_inset Formula
+$U$
+
+
+\end_inset
+; כמו כן נאמר ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ 
+\bar under
+גזירה ברציפות
+\bar default
+ אם היא גזירה ברציפות בכל תחום הגדרתה.
+\end_layout
+
+\begin_layout Description
+סימון: תהא 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ קבוצה פתוחה, ונסמן ב-
+\begin_inset Formula
+$C^{1}\left(A,\MKreal^{m}\right)$
+
+
+\end_inset
+ את קבוצת הפונקציות הגזירות ברציפות שתחום ההגדרה שלהן הוא 
+\begin_inset Formula
+$A$
+
+
+\end_inset
+ והטווח שלהן הוא 
+\begin_inset Formula
+$\MKreal^{m}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ באופן כללי 
+\begin_inset Formula
+$C^{n}\left(A,\MKreal^{m}\right)$
+
+
+\end_inset
+ מסמן את קבוצת הפונקציות הגזירות ברציפות 
+\begin_inset Formula
+$n$
+
+
+\end_inset
+ פעמים, כאשר 
+\begin_inset Formula
+$n=0$
+
+
+\end_inset
+ מדובר בקבוצת הפונקציות הרציפות וכאשר 
+\begin_inset Formula
+$n=\infty$
+
+
+\end_inset
+ זוהי קבוצת הפונקציות החלקות - אלו שגזירות מכל סדר.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ בסיכומים של נושא זה נעבוד אך ורק עם הנורמה והמטריקה האוקלידיות על 
+\begin_inset Formula
+$\MKreal^{n}$
+
+
+\end_inset
+ ועם הנורמה האופרטורית ב-
+\begin_inset Formula
+$\MKhom\left(\MKreal^{k},\MKreal^{m}\right)$
+
+
+\end_inset
+, כמו כן כמעט כל הפונקציות שנעבוד איתן תהיינה מהצורה 
+\begin_inset Formula
+$f:\MKreal^{k}\rightarrow\MKreal^{m}$
+
+
+\end_inset
+ (יהיו 
+\begin_inset Formula
+$k,m\in\MKreal$
+
+
+\end_inset
+) ולא נזכיר את כל אלו בכל פעם מחדש.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+גזירות גוררת רציפות
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה גזירה בנקודה 
+\begin_inset Formula
+$a\in\MKreal^{k}$
+
+
+\end_inset
+, 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ גם רציפה ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+יחידות הנגזרת
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה גזירה בנקודה 
+\begin_inset Formula
+$a\in\MKreal^{k}$
+
+
+\end_inset
+ ותהיינה 
+\begin_inset Formula
+$T_{1},T_{2}\in\MKhom\left(\MKreal^{k},\MKreal^{m}\right)$
+
+
+\end_inset
+ כך שמתקיים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר 
+\begin_inset Formula
+$T_{1}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$T_{2}$
+
+
+\end_inset
+ מקיימות את הנדרש כדי ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ תהיה גזירה ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\[
+\lim_{x\rightarrow0}\frac{f\left(a+x\right)-\left(T_{1}\left(x\right)+f\left(a\right)\right)}{\left\Vert x\right\Vert }=\lim_{x\rightarrow0}\frac{f\left(a+x\right)-\left(T_{2}\left(x\right)+f\left(a\right)\right)}{\left\Vert x\right\Vert }=0
+\]
+
+
+
+
+\end_inset
+מתקיים 
+\begin_inset Formula
+$T_{1}=T_{2}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+תהא 
+\begin_inset Formula
+$T:\MKreal^{k}\rightarrow\MKreal^{m}$
+
+
+\end_inset
+ העתקה ליניארית, יהי 
+\begin_inset Formula
+$b\in\MKreal^{m}$
+
+
+\end_inset
+ ותהא 
+\begin_inset Formula
+$f:\MKreal^{k}\rightarrow\MKreal^{m}$
+
+
+\end_inset
+ פונקציה המוגדרת ע"י (לכל 
+\begin_inset Formula
+$v\in\MKreal^{k}$
+
+
+\end_inset
+):
+\begin_inset Formula
+\[
+f\left(v\right):=T\left(v\right)+b
+\]
+
+
+
+
+\end_inset
+
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ גזירה בכל נקודה ולכל 
+\begin_inset Formula
+$a\in\MKreal^{k}$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$Df_{a}=T$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ בפרט הנגזרת של פונקציה קבועה היא העתקת האפס, והנגזרת של כל העתקה ליניארית היא אותה העתקה ליניארית.
+\end_layout
+
+\begin_layout Theorem
+תהא 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה גזירה בנקודה 
+\begin_inset Formula
+$a\in\MKreal^{k}$
+
+
+\end_inset
+, לכל 
+\begin_inset Formula
+$v\in\MKreal^{k}$
+
+
+\end_inset
+ הנגזרת הכיוונית 
+\begin_inset Formula
+$D_{v}f\left(a\right)$
+
+
+\end_inset
+ קיימת ומתקיים 
+\begin_inset Formula
+$\partial_{v}f\left(a\right)=Df_{a}\left(v\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ כלומר הנגזרת מעתיקה כל וקטור אל הנגזרת הכיוונית שלו
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+\series bold
+\size normal
+\color red
+אם לא מגדירים נגזרת כיוונית עבור וקטור האפס אז יש לסייג ולומר ש-
+\begin_inset Formula
+$v\neq0$
+
+
+\end_inset
+.
+\color inherit
+
+\size default
+
+\series default
+
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ משפט זה מראה לנו שהגרף של 
+\begin_inset Formula
+$Df_{a}+f\left(a\right)$
+
+
+\end_inset
+ הוא הישריה המשיקה לגרף של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ בנקודה 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ שכן בכל כיוון שנבחר נראה שהישר המוכל בגרף של 
+\begin_inset Formula
+$Df_{a}+f\left(a\right)$
+
+
+\end_inset
+ בכיוון זה משיק לגרף של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ אם היינו מגדירים את הנגזרת הכיוונית כך שתהיה קבועה לכל הווקטורים שכיוונם זהה גם אם גודלם שונה, אז היינו צריכים לשנות את ניסוח המשפט ולכתוב:
+\begin_inset Formula
+\[
+\partial_{v}f\left(a\right)=\frac{Df_{a}\left(v\right)}{\left\Vert v\right\Vert }
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary 1.5"
+\end_inset
+תהא 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה גזירה בנקודה 
+\begin_inset Formula
+$a\in\MKreal^{k}$
+
+
+\end_inset
+, העמודה ה-
+\begin_inset Formula
+$j$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$Df_{a}$
+
+
+\end_inset
+ היא הנגזרת החלקית 
+\begin_inset Formula
+$\partial_{j}f\left(a\right)$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$k\geq j\in\MKnatural$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ 
+\begin_inset Formula
+$Df_{a}$
+
+
+\end_inset
+ היא העתקה ליניארית ולא מטריצה, כשאנו אומרים "העמודה ה-
+\begin_inset Formula
+$j$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$Df_{a}$
+
+
+\end_inset
+" כוונתנו לעמודה ה-
+\begin_inset Formula
+$j$
+
+
+\end_inset
+ של המטריצה המייצגת של 
+\begin_inset Formula
+$Df_{a}$
+
+
+\end_inset
+ בבסיס הסטנדרטי.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ כפי שכבר ראינו בליניארית אין שום דבר מיוחד בבסיס הסטנדרטי, באותה מידה ניתן לייצג את 
+\begin_inset Formula
+$Df_{a}$
+
+
+\end_inset
+ באמצעות כל בסיס 
+\begin_inset Formula
+$\MKclb:=\left(v_{1},v_{2},\ldots,v_{k}\right)$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$\MKreal^{k}$
+
+
+\end_inset
+ (התחום) ובסיס 
+\begin_inset Formula
+$\MKclc$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$\MKreal^{m}$
+
+
+\end_inset
+ (הטווח), ואז העמודה ה-
+\begin_inset Formula
+$j$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$\left[Df_{a}\right]_{\MKclc}^{\MKclb}$
+
+
+\end_inset
+ תהיה 
+\begin_inset Formula
+$\left[\partial_{v_{j}}f\left(a\right)\right]_{\MKclc}$
+
+
+\end_inset
+. הנקודה הזו תהיה שימושית במיוחד בהמשך כשנרצה ללכסן את הנגזרת השנייה של הפונקציה, אז נמצא בסיס מלכסן ונייצג אותה באמצעותו והעמודות של המטריצה המייצגת תוגדרנה לפי הבסיס המלכסן שאינו בהכרח הבסיס הסטנדרטי.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ כפי שראינו ניתן "לפרק" את 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$m$
+
+
+\end_inset
+ פונקציות 
+\begin_inset Formula
+$f_{1},f_{2},\ldots,f_{m}:\MKreal^{k}\rightarrow\MKreal$
+
+
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+f\left(x\right)=\begin{bmatrix}f_{1}\left(x\right)\\
+f_{2}\left(x\right)\\
+\vdots\\
+f_{m}\left(x\right)
+\end{bmatrix}
+\]
+
+
+
+
+\end_inset
+ואז 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ גזירה בנקודה 
+\begin_inset Formula
+$a\in\MKreal^{k}$
+
+
+\end_inset
+ אם"ם כל אחת מהפונקציות הללו גזירה ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+. כעת, מכיוון שהטווח שלהן הוא 
+\begin_inset Formula
+$\MKreal$
+
+
+\end_inset
+ הרי שהנגזרת של כל אחת מהן היא מטריצת שורה, והנגזרת של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ היא מטריצה בגודל 
+\begin_inset Formula
+$m\times k$
+
+
+\end_inset
+ שהשורה ה-
+\begin_inset Formula
+$i$
+
+
+\end_inset
+ שלה היא הנגזרת של 
+\begin_inset Formula
+$f_{i}$
+
+
+\end_inset
+. א"כ הקואורדינטה ה-
+\begin_inset Formula
+$ij$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$Df_{a}$
+
+
+\end_inset
+ היא הנגזרת החלקית ה-
+\begin_inset Formula
+$j$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$f_{i}$
+
+
+\end_inset
+, כלומר לכל 
+\begin_inset Formula
+$m\geq i\in\MKnatural$
+
+
+\end_inset
+ ולכל 
+\begin_inset Formula
+$k\geq j\in\MKnatural$
+
+
+\end_inset
+ מתקיים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+בכל הסימונים הללו ה-
+\begin_inset Formula
+$j$
+
+
+\end_inset
+ מסמן את הנגזרת החלקית ה-
+\begin_inset Formula
+$j$
+
+
+\end_inset
+ וה-
+\begin_inset Formula
+$i$
+
+
+\end_inset
+ מסמן את הקואורדינטה ה-
+\begin_inset Formula
+$i$
+
+
+\end_inset
+ (של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ בסימון 
+\begin_inset Formula
+$f_{i}$
+
+
+\end_inset
+ ושל הנגזרת החלקית בסימון 
+\begin_inset Formula
+$\left(D_{j}f\left(a\right)\right)_{i}$
+
+
+\end_inset
+).
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\[
+\left[Df_{a}\right]_{ij}=\left(\partial_{j}f\left(a\right)\right)_{i}=\partial_{j}f_{i}\left(a\right)=\frac{\partial f_{i}}{\partial x_{j}}\left(a\right)
+\]
+
+
+
+
+\end_inset
+כלומר:
+\begin_inset Formula
+\[
+Df_{a}=\left[\begin{array}{cccc}
+\mid & \mid &  & \mid\\
+\partial_{1}f\left(a\right) & \partial_{2}f\left(a\right) & \cdots & \partial_{k}f\left(a\right)\\
+\mid & \mid &  & \mid
+\end{array}\right]=\left[\begin{array}{cccc}
+\frac{\partial f_{1}}{\partial x_{1}}\left(a\right) & \frac{\partial f_{1}}{\partial x_{2}}\left(a\right) & \cdots & \frac{\partial f_{1}}{\partial x_{k}}\left(a\right)\\
+\frac{\partial f_{2}}{\partial x_{1}}\left(a\right) & \frac{\partial f_{2}}{\partial x_{2}}\left(a\right) & \cdots & \frac{\partial f_{2}}{\partial x_{k}}\left(a\right)\\
+\vdots & \vdots & \ddots & \vdots\\
+\frac{\partial f_{m}}{\partial x_{1}}\left(a\right) & \frac{\partial f_{m}}{\partial x_{2}}\left(a\right) & \cdots & \frac{\partial f_{m}}{\partial x_{k}}\left(a\right)
+\end{array}\right]
+\]
+
+
+
+
+\end_inset
+התוצאה הזו אינה מקרית: הרי הנגזרת מנסה "לחקות" את 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ באמצעות מטריצה (העתקה ליניארית) והעמודה ה-
+\begin_inset Formula
+$j$
+
+
+\end_inset
+ היא זו שקולטת את המשתנה ה-
+\begin_inset Formula
+$j$
+
+
+\end_inset
+, כלומר העמודה ה-
+\begin_inset Formula
+$j$
+
+
+\end_inset
+ בנגזרת היא בדיוק אותו חלק שמנה "לחקות" את אופן הפעולה של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ לפי המשתנה ה-
+\begin_inset Formula
+$j$
+
+
+\end_inset
+; ובצורה דומה השורה ה-
+\begin_inset Formula
+$i$
+
+
+\end_inset
+ של מטריצה היא בדיוק זו שקובעת את הקואורדינטה ה-
+\begin_inset Formula
+$i$
+
+
+\end_inset
+ של תוצאת הכפל של מטריצה בווקטור, כלומר השורה ה-
+\begin_inset Formula
+$i$
+
+
+\end_inset
+ של הנגזרת היא בדיוק אותו חלק בנגזרת שמנסה "לחקות" את 
+\begin_inset Formula
+$f_{i}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ המסקנה הזו מאפשרת לנו לבדוק בקלות יחסית אם פונקציה גזירה בנקודה, איננו צריכים לבדוק את כל ההעתקות הליניאריות - אם הפונקציה גזירה אז המטריצה המייצגת של הנגזרת חייבת להיות זו שנקבעת ע"פ הנגזרות החלקיות.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+תהיינה 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$f:A\rightarrow\MKreal$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ גזירה בנקודה פנימית 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+, לכל 
+\begin_inset Formula
+$v\in\MKreal^{k}$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\partial_{v}f\left(a\right)=Df_{a}\left(v\right)=\left\langle \nabla f\left(a\right)\mid v\right\rangle 
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ מהגדרה נובע שהנגזרת הכיוונית בכיוון מאונך לגרדיאנט היא 
+\begin_inset Formula
+$0$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+תהיינה 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$f:A\rightarrow\MKreal$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ גזירה בנקודה פנימית 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+, לכל וקטור יחידה 
+\begin_inset Formula
+$u\in\MKreal^{k}$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|Df_{a}\left(u\right)\right|\leq\left\Vert \nabla f\left(a\right)\right\Vert $
+
+
+\end_inset
+, ואם בנוסף 
+\begin_inset Formula
+$\nabla f\left(a\right)\neq0$
+
+
+\end_inset
+ אז:
+\begin_inset Formula
+\[
+Df_{a}\left(\pm\frac{\nabla f\left(a\right)}{\left\Vert \nabla f\left(a\right)\right\Vert }\right)=\pm\left\Vert \nabla f\left(a\right)\right\Vert 
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ כלומר הגרדיאנט "מצביע" על הכיוון שבו הפונקציה תלולה יותר מבכל כיוון אחר, בכיוון הגרדיאנט נמצאת העלייה התלולה ובכיוון הנגדי הירידה.
+\end_layout
+
+\begin_layout Theorem
+תהא 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה, אם כל הנגזרות החלקיות של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ בנקודה 
+\begin_inset Formula
+$a\in\MKreal^{k}$
+
+
+\end_inset
+, קיימות בסביבה של 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ ורציפות ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+, אז 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ גזירה ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ראשית נשים לב לכך שניתן להניח בהג"כ שהטווח של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ הוא 
+\begin_inset Formula
+$\MKreal$
+
+
+\end_inset
+: נפרק את 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ לרכיבים - אם היא הנגזרות החלקיות שלה רציפות ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ אז הדבר נכון לכל רכיב הנפרד, ואם כל רכיב בנפרד גזיר אז גם 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ גזירה.
+\begin_inset Newline newline
+\end_inset
+א"כ נניח שהטווח של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ הוא 
+\begin_inset Formula
+$\MKreal$
+
+
+\end_inset
+, מכאן שאם 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ גזירה אז הנגזרת שלה היא מטריצת השורה (מסקנה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 1.5"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+):
+\begin_inset Formula
+\[
+\left[\begin{array}{cccc}
+\partial_{1}f\left(a\right) & \partial f_{2}\left(a\right) & \ldots & \partial f_{k}\left(a\right)\end{array}\right]
+\]
+
+
+
+
+\end_inset
+א"כ אנחנו רוצים להוכיח כי:
+\begin_inset Formula
+\[
+\lim_{x\rightarrow0}\frac{f\left(x\right)-f\left(a\right)-\sum_{j=1}^{k}\partial_{j}f\left(a\right)\cdot\left(x_{j}-a_{j}\right)}{\left\Vert x-a\right\Vert }=0
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+יהי 
+\begin_inset Formula
+$y\in\MKreal^{k}$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$y$
+
+
+\end_inset
+ מוכל בסביבה של 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+; לכל 
+\begin_inset Formula
+$k\geq j\in\MKnatural$
+
+
+\end_inset
+ נסמן ב-
+\begin_inset Formula
+$I_{j}$
+
+
+\end_inset
+ את הקטע 
+\begin_inset Formula
+$\left[a_{j},y_{j}\right]$
+
+
+\end_inset
+ (אם 
+\begin_inset Formula
+$y_{j}\geq a_{j}$
+
+
+\end_inset
+) או את הקטע 
+\begin_inset Formula
+$\left[y_{j},a_{j}\right]$
+
+
+\end_inset
+ (אם 
+\begin_inset Formula
+$y_{j}\leq a_{j}$
+
+
+\end_inset
+)
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+אם 
+\begin_inset Formula
+$y_{j}=a_{j}$
+
+
+\end_inset
+ אז מהגדרה 
+\begin_inset Formula
+$I_{j}=\left\{ y_{j}\right\} =\left\{ a_{j}\right\} $
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+, ונגדיר פונקציה 
+\begin_inset Formula
+$g_{j}:I_{j}\rightarrow\MKreal$
+
+
+\end_inset
+ ע"י (לכל 
+\begin_inset Formula
+$t\in I_{j}$
+
+
+\end_inset
+):
+\begin_inset Formula
+\[
+g_{j}\left(t\right):=f\left(a+t\cdot e_{j}+\sum_{i=1}^{j-1}\left(y_{i}-a_{j}\right)\cdot e_{i}\right)
+\]
+
+
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+\Rightarrow f\left(y\right)-f\left(a\right) & =f\left(\sum_{j=1}^{k}y_{j}\cdot e_{j}\right)-f\left(a\right)=f\left(a+\sum_{j=1}^{k}\left(y_{j}-a_{j}\right)\cdot e_{j}\right)-f\left(a\right)\\
+ & =\sum_{j=1}^{k}\left(f\left(a+\sum_{i=1}^{j}\left(y_{i}-a_{j}\right)\cdot e_{i}\right)-f\left(a+\sum_{i=1}^{j-1}\left(y_{i}-a_{j}\right)\cdot e_{i}\right)\right)\\
+ & =\sum_{j=1}^{k}\left(g_{j}\left(y_{j}\right)-g_{j}\left(a_{j}\right)\right)
+\end{align*}
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ מה שעשינו בעצם הוא לפרק את הווקטור 
+\begin_inset Formula
+$y-a$
+
+
+\end_inset
+ לרכיבים ולמדוד את השינוי של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ בכל רכיב, כמובן שסכום השינויים הוא השינוי הכללי. נוכל כעת להציג את הביטוי שאנו רוצים לחשב את גבולו באופן הבא
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כפי שנראה בהמשך לא תהיה בעיה אם המקרה שבו 
+\begin_inset Formula
+$x_{j}=a_{j}$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\[
+\frac{f\left(x\right)-f\left(a\right)-\sum_{j=1}^{k}\partial_{j}f\left(a\right)\cdot\left(x_{j}-a_{j}\right)}{\left\Vert x-a\right\Vert }=\sum_{j=1}^{k}\left(\frac{g_{j}\left(x_{j}\right)-g_{j}\left(a_{j}\right)}{x_{j}-a_{j}}-\partial_{j}f\left(a\right)\right)\cdot\frac{x_{j}-a_{j}}{\left\Vert x-a\right\Vert }=0
+\]
+
+
+
+
+\end_inset
+בשלב הבא נראה ש-
+\begin_inset Formula
+$g_{j}$
+
+
+\end_inset
+ רציפה על הקטע הסגור וגזירה על פנים הקטע, ולכן ממשפט לגראנז' נקבל שהביטוי 
+\begin_inset Formula
+$\frac{g_{j}\left(x_{j}\right)-g_{j}\left(a_{j}\right)}{x_{j}-a_{j}}$
+
+
+\end_inset
+ שווה לנגזרת של 
+\begin_inset Formula
+$g$
+
+
+\end_inset
+ בנקודה שבין 
+\begin_inset Formula
+$x_{j}$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$a_{j}$
+
+
+\end_inset
+, ואז מהרציפות של הנגזרות החלקיות נקבל:
+\begin_inset Formula
+\[
+\lim_{x\rightarrow a}\sum_{j=1}^{k}\left(\frac{g_{j}\left(x_{j}\right)-g_{j}\left(a_{j}\right)}{x_{j}-a_{j}}-\partial_{j}f\left(a\right)\right)=0
+\]
+
+
+
+
+\end_inset
+וכל מה שנותר לנו הוא לשים לב לכך ש-
+\begin_inset Formula
+$\frac{x_{j}-a_{j}}{\left\Vert x-a\right\Vert }$
+
+
+\end_inset
+ הוא גודל חסום.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+מהגדרה לכל 
+\begin_inset Formula
+$k\geq j\in\MKnatural$
+
+
+\end_inset
+ ולכל 
+\begin_inset Formula
+$t\in I_{j}^{\circ}$
+
+
+\end_inset
+ מתקיים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+אם קיים 
+\begin_inset Formula
+$k\geq j\in\MKnatural$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$y_{j}=a_{j}$
+
+
+\end_inset
+ אז 
+\begin_inset Formula
+$I_{j}^{\circ}=\emptyset$
+
+
+\end_inset
+ וטענה זו מתקיימת באופן ריק, אנחנו נראה בהמשך שלא נזדקק לכך ש-
+\begin_inset Formula
+$I_{j}^{\circ}\neq\emptyset$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$k\geq j\in\MKnatural$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\begin{align*}
+g_{j}'\left(t\right) & =\lim_{h\rightarrow0}\frac{g_{j}\left(t+h\right)-g_{j}\left(t\right)}{h}\\
+ & =\lim_{h\rightarrow0}\frac{f\left(h\cdot e_{j}+a+t\cdot e_{j}+\sum_{i=1}^{j-1}\left(y_{i}-a_{j}\right)\cdot e_{i}\right)-f\left(a+t\cdot e_{j}+\sum_{i=1}^{j-1}\left(y_{i}-a_{j}\right)\cdot e_{i}\right)}{h}\\
+ & =\partial_{j}f\left(a+t\cdot e_{j}+\sum_{i=1}^{j-1}y_{i}\cdot e_{i}\right)
+\end{align*}
+
+
+
+
+\end_inset
+כלומר 
+\begin_inset Formula
+$g_{j}$
+
+
+\end_inset
+ גזירה בפנים הקטע 
+\begin_inset Formula
+$I_{j}$
+
+
+\end_inset
+ והנגזרת שלה היא הנגזרת החלקית ה-
+\begin_inset Formula
+$j$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+. מכאן שע"פ משפט הערך הממוצע (אינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\numeric off
+), לכל 
+\begin_inset Formula
+$k\geq j\in\MKnatural$
+
+
+\end_inset
+ קיים 
+\begin_inset Formula
+$c_{j}\in\left(0,1\right)$
+
+
+\end_inset
+ כך שמתקיים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+שוויון זה הוא טריוויאלי במקרה שבו 
+\begin_inset Formula
+$y_{j}=a_{j}$
+
+
+\end_inset
+ ולכן אין צורך בכך ש-
+\begin_inset Formula
+$I_{j}^{\circ}\neq\emptyset$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\[
+g_{j}\left(y_{j}\right)-g_{j}\left(a_{j}\right)=g'\left(c_{j}\cdot\left(y_{j}-a_{j}\right)\right)\cdot\left(y_{j}-a_{j}\right)
+\]
+
+
+
+
+\end_inset
+ולפיכך קיימים 
+\begin_inset Formula
+$c_{1},c_{2},\ldots,c_{k}\in\left(0,1\right)$
+
+
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+f\left(y\right)-f\left(a\right)=\sum_{j=1}^{k}\left(g_{j}\left(y_{j}\right)-g_{j}\left(a_{j}\right)\right)=\sum_{j=1}^{k}\partial_{j}f\left(a+c_{j}\cdot\left(y_{j}-a_{j}\right)\cdot e_{j}+\sum_{i=1}^{j-1}y_{i}\cdot e_{i}\right)\cdot\left(y_{j}-a_{j}\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+א"כ יהי 
+\begin_inset Formula
+$0<r\in\MKreal$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$B_{r}\left(a\right)$
+
+
+\end_inset
+ מוכל בתחום ההגדרה של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+, ולכל 
+\begin_inset Formula
+$k\geq j\in\MKnatural$
+
+
+\end_inset
+ תהא 
+\begin_inset Formula
+$c_{j}:B_{r}\left(a\right)\rightarrow\left(0,1\right)$
+
+
+\end_inset
+ פונקציה כך שלכל 
+\begin_inset Formula
+$x\in B_{r}\left(a\right)$
+
+
+\end_inset
+ יתקיים:
+\begin_inset Formula
+\[
+f\left(x\right)-f\left(a\right)=\sum_{j=1}^{k}\partial_{j}f\left(a+c_{j}\left(x\right)\cdot\left(x_{j}-a_{j}\right)\cdot e_{j}+\sum_{i=1}^{j-1}x_{i}\cdot e_{i}\right)\cdot\left(x_{j}-a_{j}\right)
+\]
+
+
+
+
+\end_inset
+מכאן שלכל 
+\begin_inset Formula
+$a\neq x\in B_{r}\left(a\right)$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\frac{f\left(x\right)-f\left(a\right)-\sum_{j=1}^{k}\partial_{j}f\left(a\right)\cdot\left(x_{j}-a_{j}\right)}{\left\Vert x-a\right\Vert }=\sum_{j=1}^{k}\left(\partial_{j}f\left(a+c_{j}\cdot\left(x_{j}-a_{j}\right)\cdot e_{j}+\sum_{i=1}^{j-1}x_{i}\cdot e_{i}\right)-\partial_{j}f\left(a\right)\right)\cdot\frac{x_{j}-a_{j}}{\left\Vert x-a\right\Vert }
+\]
+
+
+
+
+\end_inset
+כמו כן לכל 
+\begin_inset Formula
+$a\neq x\in B_{r}\left(a\right)$
+
+
+\end_inset
+ ולכל 
+\begin_inset Formula
+$k\geq j\in\MKnatural$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+ & \lim_{x\rightarrow a}\left(\partial_{j}f\left(a+c_{j}\cdot\left(x_{j}-a_{j}\right)\cdot e_{j}+\sum_{i=1}^{j-1}x_{i}\cdot e_{i}\right)-\partial_{j}f\left(a\right)\right)=0 & \left|\frac{x_{j}-a_{j}}{\left\Vert x-a\right\Vert }\right|\leq1
+\end{align*}
+
+
+
+
+\end_inset
+קיום הגבול הנ"ל וערכו נובעים מהרציפות של הנגזרות החלקיות ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+, והא"ש שבצד ימין נובע ישירות מהגדרת הנורמה.
+\begin_inset Formula
+\[
+\Rightarrow\lim_{x\rightarrow a}\frac{f\left(x\right)-f\left(a\right)-\sum_{j=1}^{k}\partial_{j}f\left(a\right)\cdot\left(x_{j}-a_{j}\right)}{\left\Vert x-a\right\Vert }=0
+\]
+
+
+
+
+\end_inset
+כלומר 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ גזירה ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Claim
+תהא 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה, 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ גזירה ברציפות בקבוצה פתוחה 
+\begin_inset Formula
+$U\subseteq\MKreal^{k}$
+
+
+\end_inset
+ אם"ם הנגזרות החלקיות שלה רציפות בכל נקודה ב-
+\begin_inset Formula
+$U$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+כללי גזירה
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+אין הגדרות בפרק זה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+גזירה היא פעולה ליניארית
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$g$
+
+
+\end_inset
+ פונקציות דיפרנציאביליות בנקודה 
+\begin_inset Formula
+$x\in\MKreal^{k}$
+
+
+\end_inset
+ ויהיו 
+\begin_inset Formula
+$\alpha,\beta\in\MKreal$
+
+
+\end_inset
+, מתקיים:
+\begin_inset Formula
+\[
+D_{\alpha\cdot f+\beta\cdot g}\left(x\right)=\alpha\cdot D_{f}\left(x\right)+\beta\cdot D_{g}\left(x\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+כלל השרשרת
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$B\subseteq\MKreal^{m}$
+
+
+\end_inset
+ קבוצות פתוחות, ותהיינה 
+\begin_inset Formula
+$f:A\rightarrow B$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$g:B\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ פונקציות כך ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ גזירה בנקודה 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$g$
+
+
+\end_inset
+ גזירה ב-
+\begin_inset Formula
+$f\left(a\right)$
+
+
+\end_inset
+. הפונקציה 
+\begin_inset Formula
+$g\circ f$
+
+
+\end_inset
+ גזירה ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ ומתקיים:
+\begin_inset Formula
+\[
+D\left(g\circ f\right)_{a}=Dg_{f\left(a\right)}\circ Df_{a}
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ אם מניחים את עניין הדיפרנציאביליות של 
+\begin_inset Formula
+$g\circ f$
+
+
+\end_inset
+ כלל השרשרת אינטואיטיבי למדי: אנחנו מקרבים את 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$g$
+
+
+\end_inset
+ באמצעות העתקות ליניאריות, היה זה מפתיע מאד אם הקירוב הליניארי של 
+\begin_inset Formula
+$g\circ f$
+
+
+\end_inset
+ לא היה הרכבת הקירובים של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$g$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+תהיינה 
+\begin_inset Formula
+$r:A\rightarrow B$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$s:B\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ שתי פונקציות המוגדרות ע"י (לכל 
+\begin_inset Formula
+$x\in A$
+
+
+\end_inset
+ ולכל 
+\begin_inset Formula
+$y\in B$
+
+
+\end_inset
+):
+\begin_inset Formula
+\begin{align*}
+{\color{blue}r\left(x\right)} & {\color{blue}:=f\left(x\right)-f\left(a\right)-Df_{a}\left(x-a\right)}\\
+{\color{green}s\left(y\right)} & {\color{green}:=g\left(y\right)-g\left(f\left(a\right)\right)-Dg_{f\left(a\right)}\left(y-f\left(a\right)\right)}
+\end{align*}
+
+
+
+
+\end_inset
+מהגדרת 
+\begin_inset Formula
+$r$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$s$
+
+
+\end_inset
+ נובע שלכל 
+\begin_inset Formula
+$x\in A$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+g\left(f\left(x\right)\right)-g\left(f\left(a\right)\right)-Dg_{f\left(a\right)}\left({\color{blue}Df_{a}\left(x-a\right)}\right) & =g\left(f\left(x\right)\right)-g\left(f\left(a\right)\right)-Dg_{f\left(a\right)}\left({\color{blue}f\left(x\right)-f\left(a\right)-r\left(x\right)}\right)\\
+ & ={\color{green}g\left(f\left(x\right)\right)-g\left(f\left(a\right)\right)-Dg_{f\left(a\right)}\left(f\left(x\right)-f\left(a\right)\right)}+Dg_{f\left(a\right)}\left(r\left(x\right)\right)\\
+ & ={\color{green}s\left(f\left(x\right)\right)}+Dg_{f\left(a\right)}\left(r\left(x\right)\right)
+\end{align*}
+
+
+
+
+\end_inset
+ומכאן שגם:
+\begin_inset Formula
+\begin{align*}
+\frac{\left\Vert g\left(f\left(x\right)\right)-g\left(f\left(a\right)\right)-Dg_{f\left(a\right)}\left(Df_{a}\left(x-a\right)\right)\right\Vert }{\left\Vert x-a\right\Vert } & \leq\frac{\left\Vert s\left(f\left(x\right)\right)\right\Vert +\left\Vert Dg_{f\left(a\right)}\left(r\left(x\right)\right)\right\Vert }{\left\Vert x-a\right\Vert }\\
+ & =\frac{\left\Vert s\left(f\left(x\right)\right)\right\Vert }{\left\Vert x-a\right\Vert }+\frac{\left\Vert Dg_{f\left(a\right)}\left(r\left(x\right)\right)\right\Vert }{\left\Vert x-a\right\Vert }\\
+ & =\frac{\left\Vert s\left(f\left(x\right)\right)\right\Vert }{\left\Vert x-a\right\Vert }+{\color{red}\left\Vert Dg_{f\left(a\right)}\left(\frac{r\left(x\right)}{\left\Vert x-a\right\Vert }\right)\right\Vert }
+\end{align*}
+
+
+
+
+\end_inset
+מהיות 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$g$
+
+
+\end_inset
+ גזירות ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ וב-
+\begin_inset Formula
+$f\left(a\right)$
+
+
+\end_inset
+ (בהתאמה) נובע כי:
+\begin_inset Formula
+\[
+\lim_{x\rightarrow a}\frac{\left\Vert r\left(x\right)\right\Vert }{\left\Vert x-a\right\Vert }=\lim_{y\rightarrow f\left(a\right)}\frac{\left\Vert s\left(y\right)\right\Vert }{\left\Vert y-f\left(a\right)\right\Vert }=0
+\]
+
+
+
+
+\end_inset
+מכאן שהמחובר הימני באגף שימין של השוויון הקודם (מודגש באדום) שואף ל-
+\begin_inset Formula
+$0$
+
+
+\end_inset
+ כש-
+\begin_inset Formula
+$x$
+
+
+\end_inset
+ שואף ל-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ (
+\begin_inset Formula
+$Dg_{f\left(a\right)}$
+
+
+\end_inset
+ רציפה ב-
+\begin_inset Formula
+$0$
+
+
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+ו-
+\begin_inset Formula
+$Dg_{f\left(a\right)}\left(0\right)=0$
+
+
+\end_inset
+), א"כ נותר לנו להוכיח רק שמתקיים:
+\begin_inset Formula
+\[
+\lim_{x\rightarrow a}\frac{\left\Vert s\left(f\left(x\right)\right)\right\Vert }{\left\Vert x-a\right\Vert }=0
+\]
+
+
+
+
+\end_inset
+תהא 
+\begin_inset Formula
+$\psi:B\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה המוגדרת ע"י (לכל 
+\begin_inset Formula
+$y\in B$
+
+
+\end_inset
+):
+\begin_inset Formula
+\[
+\psi\left(y\right):=\begin{cases}
+\frac{\left\Vert s\left(y\right)\right\Vert }{\left\Vert y-f\left(a\right)\right\Vert } & y\neq f\left(a\right)\\
+0 & y=f\left(a\right)
+\end{cases}
+\]
+
+
+
+
+\end_inset
+נשים לב לכך ש-
+\begin_inset Formula
+$s\left(f\left(a\right)\right)=0$
+
+
+\end_inset
+ ולכן לכל 
+\begin_inset Formula
+$x\in A$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\psi\left(f\left(x\right)\right)\cdot\frac{\left\Vert f\left(x\right)-f\left(a\right)\right\Vert }{\left\Vert x-a\right\Vert }=\frac{\left\Vert s\left(f\left(x\right)\right)\right\Vert }{\left\Vert x-a\right\Vert }
+\]
+
+
+
+
+\end_inset
+מאריתמטיקה של גבולות, מרציפות של 
+\begin_inset Formula
+$\psi$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$f\left(a\right)$
+
+
+\end_inset
+, וממשפט ההצבה בגבולות, נובע כי:
+\begin_inset Formula
+\[
+\lim_{x\rightarrow a}\frac{\left\Vert s\left(f\left(x\right)\right)\right\Vert }{\left\Vert x-a\right\Vert }=\lim_{x\rightarrow a}\psi\left(f\left(x\right)\right)\cdot\lim_{x\rightarrow a}\frac{\left\Vert f\left(x\right)-f\left(a\right)\right\Vert }{\left\Vert x-a\right\Vert }=\psi\left(f\left(a\right)\right)\cdot\left\Vert Df_{a}\right\Vert _{\MKop}=0
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה גזירה בנקודה 
+\begin_inset Formula
+$a\in\MKreal^{k}$
+
+
+\end_inset
+ ותהא 
+\begin_inset Formula
+$g$
+
+
+\end_inset
+ פונקציה גזירה ב-
+\begin_inset Formula
+$f\left(a\right)$
+
+
+\end_inset
+, מתקיים:
+\begin_inset Formula
+\[
+\left\Vert D\left(g\circ f\right)_{a}\right\Vert _{op}\leq\left\Vert Dg_{f\left(a\right)}\right\Vert _{op}\cdot\left\Vert Df_{a}\right\Vert _{op}
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Lemma
+תהיינה 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$f:A\rightarrow\MKreal^{k}$
+
+
+\end_inset
+ פונקציה הפיכה, אם 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ גזירה בנקודה פנימית 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$f^{-1}$
+
+
+\end_inset
+ גזירה ב-
+\begin_inset Formula
+$f\left(a\right)$
+
+
+\end_inset
+ אז מכלל השרשרת נובע כי:
+\begin_inset Formula
+\[
+\MKid\left(a\right)=\MKid'\left(a\right)=\left(Df^{-1}\right)_{f\left(a\right)}\circ Df\left(a\right)
+\]
+
+
+
+
+\end_inset
+ומכאן ש-
+\begin_inset Formula
+$\left(Df^{-1}\right)_{f\left(a\right)}=\left(Df\left(a\right)\right)^{-1}$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+בגלל שמדובר בהעתקות ליניאריות על אותו מרחב מספיק להראות הפיכות בכיוון אחד בלבד.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+תהיינה 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$f:A\rightarrow\MKreal^{k}$
+
+
+\end_inset
+ פונקציה הפיכה וגזירה בנקודה פנימית 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+, אם 
+\begin_inset Formula
+$Df_{a}$
+
+
+\end_inset
+ אינה הפיכה אז 
+\begin_inset Formula
+$f^{-1}$
+
+
+\end_inset
+ אינה גזירה ב-
+\begin_inset Formula
+$f\left(a\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ 
+\series bold
+\color red
+האם המשפט עבור גזירה של פונקציה הופכית מאינפי'
+\family roman
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+ 
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\family default
+
+\numeric on
+1
+\family roman
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+ 
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+נכון גם בממדים גבוהים? כנראה שלא. הנה התרגום שלו לממדים גבוהים:
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_deeper
+\begin_layout Theorem*
+\series bold
+גזירת פונקציה הופכית
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$A,B\subseteq\MKreal^{k}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$f:A\rightarrow B$
+
+
+\end_inset
+ פונקציה הפיכה, לכל 
+\begin_inset Formula
+$b\in B$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ גזירה ב-
+\begin_inset Formula
+$f^{-1}\left(b\right)$
+
+
+\end_inset
+ וגם 
+\begin_inset Formula
+$Df_{f^{-1}\left(b\right)}$
+
+
+\end_inset
+ הפיכה מתקיים:
+\begin_inset Formula
+\[
+\left(Df^{-1}\right)_{b}=\left(Df_{f^{-1}\left(b\right)}\right)^{-1}
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+אנחנו נוכיח בפרק הבא את משפט הפונקציה ההפוכה שנותן את אותה תוצאה אבל דורש ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ תהיה 
+\series bold
+גזירה ברציפות בסביבה
+\series default
+ של 
+\begin_inset Formula
+$f^{-1}\left(b\right)$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מצד שני משפט הפונקציה ההפוכה אינו דורש ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ תהיה הפיכה, אלא מוכיח שאם 
+\begin_inset Formula
+$Df_{f^{-1}\left(b\right)}$
+
+
+\end_inset
+ הפיכה אז קיימת סביבה של 
+\begin_inset Formula
+$f^{-1}\left(b\right)$
+
+
+\end_inset
+ שבה 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ הפיכה.
+\end_layout
+
+\end_deeper
+
+\begin_layout Lemma
+תהא 
+\begin_inset Formula
+$p:\MKreal^{n}\times\MKreal^{n}\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציית המכפלה הפנימית המוגדרת ע"י 
+\begin_inset Formula
+$p\left(x,y\right):=\left\langle x\mid y\right\rangle $
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$\left(x,y\right)\in\MKreal^{n}\times\MKreal^{n}$
+
+
+\end_inset
+, 
+\begin_inset Formula
+$p$
+
+
+\end_inset
+ גזירה בכל נקודה ולכל 
+\begin_inset Formula
+$\left(x,y\right)\in\MKreal^{n}\times\MKreal^{n}$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+Dp_{\left(x,y\right)}=\left[\begin{array}{cccc|cccc}
+y_{1} & y_{2} & \cdots & y_{n} & x_{1} & x_{2} & \cdots & x_{n}\end{array}\right]
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+כלל לייבניץ
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$f:\MKreal^{k}\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ גזירה בנקודה פנימית 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+, ויהיו 
+\begin_inset Formula
+$B\subseteq\MKreal^{m}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$g:\MKreal^{m}\rightarrow\MKreal^{n}$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$g$
+
+
+\end_inset
+ גזירה בנקודה פנימית 
+\begin_inset Formula
+$b\in B$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$h:\MKreal^{k}\times\MKreal^{m}\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה המוגדרת ע"י 
+\begin_inset Formula
+$h\left(x,y\right):=\left\langle f\left(x\right)\mid g\left(y\right)\right\rangle $
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$\left(x,y\right)\in\MKreal^{k}\times\MKreal^{m}$
+
+
+\end_inset
+, 
+\begin_inset Formula
+$h$
+
+
+\end_inset
+ גזירה ב-
+\begin_inset Formula
+$\left(a,b\right)$
+
+
+\end_inset
+ ולכל 
+\begin_inset Formula
+$\left(x,y\right)\in\MKreal^{k}\times\MKreal^{m}$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+Dh_{\left(a,b\right)}\left(x,y\right)=\left\langle g\left(b\right)\mid Df_{a}\left(x\right)\right\rangle +\left\langle f\left(a\right)\mid Dg_{b}\left(y\right)\right\rangle 
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+יחסי הגומלין בין פונקציה לנגזרתה
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ להלן שתי נקודות מבט על נגזרות גבוהות:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ראינו שהנגזרת של פונקציה 
+\begin_inset Formula
+$f:\MKreal^{k}\rightarrow\MKreal^{m}$
+
+
+\end_inset
+ היא פונקציה 
+\begin_inset Formula
+$Df:\MKreal^{k}\rightarrow\MKhom\left(\MKreal^{k},\MKreal^{m}\right)$
+
+
+\end_inset
+, בליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+ראינו ש-
+\begin_inset Formula
+$\MKhom\left(\MKreal^{k},\MKreal^{m}\right)$
+
+
+\end_inset
+ איזומורפי ל-
+\begin_inset Formula
+$M_{k\times m}\left(\MKreal\right)$
+
+
+\end_inset
+ שאיזומורפי ל-
+\begin_inset Formula
+$\MKreal^{k\cdot m}$
+
+
+\end_inset
+, לכן נוכל להסתכל פונקציית הנגזרת כהעתקה מ-
+\begin_inset Formula
+$\MKreal^{k}$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$\MKreal^{k\cdot m}$
+
+
+\end_inset
+ ולגזור אותה כרגיל. התהליך הזה לא נעצר כאן: הנגזרת השנייה היא פונקציה מ-
+\begin_inset Formula
+$\MKreal^{k}$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$\MKhom\left(\MKreal^{k},\MKreal^{k\cdot m}\right)$
+
+
+\end_inset
+ ולכן ניתן לגזור גם אותה ע"י אותו איזומורפיזם שהוזכר לעיל וחוזר חלילה.
+\end_layout
+
+\begin_layout Itemize
+בהגדרת הנגזרת לא היה שום צורך להניח שהתחום של הפונקציה הוא תת-קבוצה של 
+\begin_inset Formula
+$\MKreal^{k}$
+
+
+\end_inset
+ והטווח שלה הוא 
+\begin_inset Formula
+$\MKreal^{m}$
+
+
+\end_inset
+, ניתן היה לקחת כל פונקציה בין שני מרחבים נוצרים סופית (מעל 
+\begin_inset Formula
+$\MKreal$
+
+
+\end_inset
+) - אנחנו יודעים שכל הנורמות על מרחבים נורמיים נוצרים סופית שקולות זו לזו ולכן זה לא משנה לפי אלו נורמות נחשב את הגבול שמופיע בהגדרת הנגזרת. לכן ניתן לקחת את פונקציית הנגזרת 
+\begin_inset Formula
+$Df:\MKreal^{k}\rightarrow\MKhom\left(\MKreal^{k},\MKreal^{m}\right)$
+
+
+\end_inset
+ שהיא פונקציה בין שני מרחבים נורמיים נוצרים סופית ולגזור אותה ע"פ הגדרה; אנחנו נקבל פונקציה 
+\begin_inset Formula
+$D^{2}f:\MKreal^{k}\rightarrow\MKhom\left(\MKreal^{k},\MKhom\left(\MKreal^{k},\MKreal^{m}\right)\right)$
+
+
+\end_inset
+ שהיא הנגזרת השנייה, וגם היא פונקציה בין שני מרחבים נורמיים נוצרים סופית שניתן לגזור באמצעות אותה הגדרה ולקבל פונקציה 
+\begin_inset Formula
+$D^{3}f:\MKreal^{k}\rightarrow\MKhom\left(\MKreal^{k},\MKhom\left(\MKreal^{k},\MKhom\left(\MKreal^{k},\MKreal^{m}\right)\right)\right)$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+א"כ הנגזרת ה-
+\begin_inset Formula
+$n$
+
+
+\end_inset
+-ית היא פונקציה שמקבלת נקודה ב-
+\begin_inset Formula
+$\MKreal^{k}$
+
+
+\end_inset
+ ומחזירה העתקה ליניארית, ההעתקה הליניארית הזו מקבלת גם היא וקטור ב-
+\begin_inset Formula
+$\MKreal^{k}$
+
+
+\end_inset
+ ומחזירה העתקה ליניארית - כך 
+\begin_inset Formula
+$n-1$
+
+
+\end_inset
+ פעמים עד שכאשר פועלת ההעתקה הליניארית ה-
+\begin_inset Formula
+$n$
+
+
+\end_inset
+ על וקטור ב-
+\begin_inset Formula
+$\MKreal^{k}$
+
+
+\end_inset
+ היא מחזירה וקטור ב-
+\begin_inset Formula
+$\MKreal^{m}$
+
+
+\end_inset
+. מי שתכנת מעט והגיע לפונקציות שמחזירות פונקציות אינו מופתע לראות את הסימון 
+\begin_inset Formula
+$T\left(v\right)\left(w\right)$
+
+
+\end_inset
+ - 
+\begin_inset Formula
+$T$
+
+
+\end_inset
+ מקבלת קלט 
+\begin_inset Formula
+$v$
+
+
+\end_inset
+ ומחזירה פונקציה 
+\begin_inset Formula
+$T\left(v\right)$
+
+
+\end_inset
+ שמקבלת קלט 
+\begin_inset Formula
+$w$
+
+
+\end_inset
+ ומחזירה פלט 
+\begin_inset Formula
+$T\left(v\right)\left(w\right)$
+
+
+\end_inset
+, באותה אופן 
+\begin_inset Formula
+$D^{n}f_{a}\left(v_{1}\right)\left(v_{2}\right)\ldots\left(v_{n-1}\right)$
+
+
+\end_inset
+ היא העתקה ליניארית מ-
+\begin_inset Formula
+$\MKreal^{k}$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$\MKreal^{m}$
+
+
+\end_inset
+ ואילו 
+\begin_inset Formula
+$D^{n}f_{a}\left(v_{1}\right)\left(v_{2}\right)\ldots\left(v_{n}\right)$
+
+
+\end_inset
+ הוא וקטור ב-
+\begin_inset Formula
+$\MKreal^{m}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+בסופו של דבר שתי נקודות המבט הללו איזומורפיות ולכן נוכל להשתמש באיזו מהן שנרצה לפי העניין, בכיתה ראינו את נקודת המבט הראשונה אך באופן אישי אני מעדיף את נקודת המבט השנייה והיא זו שתשלוט בסיכומים אלו ללא עוררין.
+\end_layout
+
+\end_deeper
+
+\begin_layout Definition
+\series bold
+גזירות (דיפרנציאביליות) של פונקציה בנקודה במרחב וקטורי כללי
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$V$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$W$
+
+
+\end_inset
+ מרחבים נורמיים נוצרים סופית מעל 
+\begin_inset Formula
+$\MKreal$
+
+
+\end_inset
+, תהא 
+\begin_inset Formula
+$A\subseteq V$
+
+
+\end_inset
+ ותהא 
+\begin_inset Formula
+$f:A\rightarrow V$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נאמר ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ 
+\bar under
+גזירה
+\bar default
+ (או 
+\bar under
+דיפרנציאבילית
+\bar default
+) בנקודה פנימית 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ אם קיימת העתקה ליניארית 
+\begin_inset Formula
+$T:V\rightarrow W$
+
+
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+\lim_{v\rightarrow0}\frac{f\left(a+v\right)-\left(T\left(v\right)+f\left(a\right)\right)}{\left\Vert v\right\Vert }=0
+\]
+
+
+
+
+\end_inset
+אנחנו נראה בקובץ הטענות שאם קיימת העתקה ליניארית כזו אז היא יחידה ולכן נסמן אותה ב-
+\begin_inset Formula
+$Df_{a}$
+
+
+\end_inset
+ ונקרא לה 
+\bar under
+הנגזרת
+\bar default
+ (או 
+\bar under
+הדיפרנציאל
+\bar default
+) של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ בנקודה 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+, אם 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ היא מסילה אז נסמן את הנגזרת גם ב-
+\begin_inset Formula
+$f'\left(a\right)$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נאמר ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ 
+\bar under
+גזירה/דיפרנציאבילית בקבוצה פתוחה
+\bar default
+ 
+\begin_inset Formula
+$U\subseteq A$
+
+
+\end_inset
+ אם היא גזירה בכל נקודה ב-
+\begin_inset Formula
+$U$
+
+
+\end_inset
+, כמו כן נאמר ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ 
+\bar under
+גזירה/דיפרנציאבילית
+\bar default
+ אם היא גזירה בכל תחום הגדרתה.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ 
+\series bold
+\color red
+לא ראינו את ההגדרה הזו בכיתה אבל אני צריך אותה כדי לעבוד עם נקודת המבט השנייה.
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ אם פונקציה 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ גזירה על קבוצה פתוחה 
+\begin_inset Formula
+$U\subseteq A$
+
+
+\end_inset
+ ניתן לדבר על פונקציית הנגזרת שלה באותה קבוצה שהיא פונקציה 
+\begin_inset Formula
+$Df:U\rightarrow\MKhom\left(V,W\right)$
+
+
+\end_inset
+(, 
+\begin_inset Formula
+$\MKhom\left(V,W\right)$
+
+
+\end_inset
+ שגם הוא מרחב נורמי נוצר סופית ולכן ניתן לגזור גם את 
+\begin_inset Formula
+$Df$
+
+
+\end_inset
+ ע"פ אותה הגדרה ולדבר על 
+\bar under
+הנגזרת השנייה
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ 
+\bar under
+בנקודה
+\bar default
+ 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ שהיא הנגזרת של 
+\begin_inset Formula
+$Df$
+
+
+\end_inset
+ בנקודה 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+, וכך לגבי נגזרת שלישית וכן הלאה; הנגזרת ה-
+\begin_inset Formula
+$n$
+
+
+\end_inset
+-ית של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ בנקודה 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ מסומנת ב-
+\begin_inset Formula
+$D^{n}f\left(a\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Description
+סימון: תהא 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה גזירה 
+\begin_inset Formula
+$n$
+
+
+\end_inset
+ פעמים בנקודה 
+\begin_inset Formula
+$a\in\MKreal^{k}$
+
+
+\end_inset
+, לכל 
+\begin_inset Formula
+$v_{1},v_{2},\ldots,v_{n}\in\MKreal^{k}$
+
+
+\end_inset
+ נסמן:
+\begin_inset Formula
+\[
+D^{n}f_{a}\left(v_{1},v_{2},\ldots,v_{n}\right):=D^{n}f_{a}\left(v_{1}\right)\left(v_{2}\right)\ldots\left(v_{n}\right)
+\]
+
+
+
+
+\end_inset
+כלומר אנו מתייחסים לנגזרת ה-
+\begin_inset Formula
+$n$
+
+
+\end_inset
+-ית כפונקציה מ-
+\begin_inset Formula
+$\overset{\text{פעמים}\ n}{\overbrace{\MKreal^{k}\times\MKreal^{k}\ldots\times\MKreal^{k}}}$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$\MKreal^{m}$
+
+
+\end_inset
+. 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ עבור נגזרות חלקיות וכיווניות מסדר גבוה אין שום צורך בהגדרה נוספת - הנגזרת החלקית 
+\begin_inset Formula
+$D_{v}f$
+
+
+\end_inset
+ היא פונקציה מ-
+\begin_inset Formula
+$\MKreal^{k}$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$\MKreal^{m}$
+
+
+\end_inset
+ ולכן ניתן לדבר על הנגזרת הכיוונית שלה בכל כיוון שהוא.
+\end_layout
+
+\begin_layout Description
+סימון: תהיינה 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה ו-
+\begin_inset Formula
+$a\in\MKreal^{k}$
+
+
+\end_inset
+ נקודה כך שהנגזרת הכיוונית 
+\begin_inset Formula
+$D_{v}f$
+
+
+\end_inset
+ מוגדרת בסביבה של 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ )עבור 
+\begin_inset Formula
+$v\in\MKreal^{k}$
+
+
+\end_inset
+ כלשהו(, לכל 
+\begin_inset Formula
+$u\in\MKreal^{k}$
+
+
+\end_inset
+ נסמן
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כמובן שהגבול אינו קיים בהכרח, אם הוא קיים אז נסמן אותו ב-
+\begin_inset Formula
+$\partial_{vu}f\left(a\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\[
+\partial_{vu}f\left(a\right):=\partial_{u}\partial_{v}f\left(a\right)=\lim_{t\rightarrow0}\frac{\partial_{v}f\left(a+t\cdot u\right)-\partial_{v}f\left(a\right)}{t}
+\]
+
+
+
+
+\end_inset
+
+\begin_inset Formula
+$D_{vu}f$
+
+
+\end_inset
+ תיקרא 
+\bar under
+נגזרת כיוונית מסדר שני
+\bar default
+, עבור איברי הבסיס הסטנדרטי הנגזרות הכיווניות מסדר שני נקראות גם 
+\bar under
+נגזרות חלקיות מסדר שני
+\bar default
+ או 
+\bar under
+נגזרות מעורבות
+\bar default
+, ומסומנות ע"י )לכל 
+\begin_inset Formula
+$k\geq i,j\in\MKnatural$
+
+
+\end_inset
+(
+\begin_inset Formula
+\[
+\partial_{ij}f\left(a\right):=\partial_{e_{i}e_{j}}f\left(a\right):=\left(\partial_{e_{j}}\partial_{e_{i}}f\right)\left(a\right)=\partial_{j}\partial_{i}f\left(a\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+כן, אני יודע שזה הפוך מאיך שסימנתי את הנגזרות החלקיות באנליזה אלמנטרית, לא מצאתי שום מקור שתומך בסימון מאנליזה ולעומת זאת בוויקיפדיה האנגלית מופיע סימון שתומך יותר בכיוון זה, ראו 
+\begin_inset CommandInset href
+LatexCommand href
+name "כאן"
+target https://en.wikipedia.org/wiki/Partial_derivative#Higher_order_partial_derivatives
+literal false
+\end_inset
+.
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ סימונים נוספים שניתקל בהם:
+\begin_inset Formula
+\begin{align*}
+\frac{\partial^{2}f}{\partial v^{2}}\left(a\right):=D_{vv}f\left(a\right) & :=\partial_{vv}f\left(a\right) & \frac{\partial^{2}f}{\partial u\partial v}\left(a\right):=\frac{\partial_{v}f}{\partial u}\left(a\right):=D_{vu}f\left(a\right) & :=\partial_{vu}f\left(a\right)\\
+\frac{\partial^{2}f}{\partial x_{i}{}^{2}}\left(a\right):=D_{ii}f\left(a\right) & :=\partial_{ii}f\left(a\right) & \frac{\partial^{2}f}{\partial x_{j}\partial x_{i}}\left(a\right):=\frac{\partial_{i}f}{\partial x_{j}}\left(a\right):=D_{ij}f\left(a\right) & :=\partial_{ij}f\left(a\right)\\
+f_{xx}\left(a\right):=\partial_{xx}f\left(a\right):=\frac{\partial^{2}f}{\partial x^{2}}\left(a\right):=D_{11}f\left(a\right) & :=\partial_{11}f\left(a\right) & f_{xy}\left(a\right):=\partial_{xy}f\left(a\right):=\frac{\partial^{2}f}{\partial y\partial x}\left(a\right):=\frac{\partial f_{x}}{\partial y}\left(a\right):=D_{12}f\left(a\right) & :=\partial_{12}f\left(a\right)\\
+f_{yy}\left(a\right):=\partial_{yy}f\left(a\right):=\frac{\partial^{2}f}{\partial y^{2}}\left(a\right):=D_{22}f\left(a\right) & :=\partial_{22}f\left(a\right) & f_{yx}\left(a\right):=\partial_{yx}f\left(a\right):=\frac{\partial^{2}f}{\partial x\partial y}\left(a\right):=\frac{\partial f_{y}}{\partial x}\left(a\right):=D_{21}f\left(a\right) & :=\partial_{21}f\left(a\right)\\
+f_{zz}\left(a\right):=\partial_{zz}f\left(a\right):=\frac{\partial^{2}f}{\partial z^{2}}\left(a\right):=D_{33}f\left(a\right) & :=\partial_{33}f\left(a\right) & f_{xz}\left(a\right):=\partial_{xz}f\left(a\right):=\frac{\partial^{2}f}{\partial z\partial x}\left(a\right):=\frac{\partial f_{x}}{\partial z}\left(a\right):=D_{13}f\left(a\right) & :=\partial_{13}f\left(a\right)\\
+ &  & f_{zx}\left(a\right):=\partial_{zx}f\left(a\right):=\frac{\partial^{2}f}{\partial x\partial z}\left(a\right):=\frac{\partial f_{z}}{\partial x}\left(a\right):=D_{31}f\left(a\right) & :=\partial_{31}f\left(a\right)\\
+ &  & f_{yz}\left(a\right):=\partial_{yz}f\left(a\right):=\frac{\partial^{2}f}{\partial z\partial y}\left(a\right):=\frac{\partial f_{y}}{\partial z}\left(a\right):=D_{23}f\left(a\right) & :=\partial_{23}f\left(a\right)\\
+ &  & f_{zy}\left(a\right):=\partial_{zy}f\left(a\right):=\frac{\partial^{2}f}{\partial y\partial z}\left(a\right):=\frac{\partial f_{z}}{\partial y}\left(a\right):=D_{32}f\left(a\right) & :=\partial_{32}f\left(a\right)
+\end{align*}
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+מטריצת הסיאן
+\series default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+נקראת על שמו של לודוויג אוטו הסה, ערך בוויקיפדיה האנגלית: 
+\begin_inset CommandInset href
+LatexCommand href
+name "Otto Hesse"
+target https://en.wikipedia.org/wiki/Otto_Hesse
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ ותהא 
+\begin_inset Formula
+$f:A\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה כך שכל הנגזרות החלקיות מסדר שני של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ קיימות, 
+\bar under
+מטריצת ההסיאן
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ בנקודה 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ היא מטריצה 
+\begin_inset Formula
+$H\left(f\right)\in M_{k}\left(\MKreal\right)$
+
+
+\end_inset
+ המוגדרת ע"י:
+\begin_inset Formula
+\[
+\left[H\left(f\right)\right]_{ij}:=\partial_{ji}f\left(a\right)=\partial_{i}\partial_{j}f\left(a\right)
+\]
+
+
+
+
+\end_inset
+כלומר:
+\begin_inset Formula
+\[
+H\left(f\right):=\left[\begin{array}{cccc}
+\partial_{11}f\left(a\right) & \partial_{21}f\left(a\right) & \cdots & \partial_{k1}f\left(a\right)\\
+\partial_{21}f\left(a\right) & \partial_{22}f\left(a\right) & \cdots & \partial_{k2}f\left(a\right)\\
+\vdots & \vdots & \ddots & \vdots\\
+\partial_{k1}f\left(a\right) & \partial_{k2}f\left(a\right) & \cdots & \partial_{kk}f\left(a\right)
+\end{array}\right]=\left[\begin{array}{cccc}
+\partial_{1}\partial_{1}f\left(a\right) & \partial_{1}\partial_{2}f\left(a\right) & \cdots & \partial_{1}\partial_{k}f\left(a\right)\\
+\partial_{2}\partial_{1}f\left(a\right) & \partial_{2}\partial_{2}f\left(a\right) & \cdots & \partial_{2}\partial_{k}f\left(a\right)\\
+\vdots & \vdots & \ddots & \vdots\\
+\partial_{k}\partial_{1}f\left(a\right) & \partial_{k}\partial_{2}f\left(a\right) & \cdots & \partial_{k}\partial_{k}f\left(a\right)
+\end{array}\right]
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+נקודות קיצון כלליות
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ קבוצה ותהא 
+\begin_inset Formula
+$f:A\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נאמר שנקודה 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ היא 
+\bar under
+נקודת מקסימום
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ אם לכל 
+\begin_inset Formula
+$x\in A$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$f\left(x\right)\leq f\left(a\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+נאמר שנקודה 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ היא 
+\bar under
+נקודת מינימום
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ אם לכל 
+\begin_inset Formula
+$x\in A$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$f\left(x\right)\leq f\left(a\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+נקודות קיצון מקומיות
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ קבוצה ותהא 
+\begin_inset Formula
+$f:A\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נאמר שנקודה פנימית 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ היא 
+\bar under
+נקודת מקסימום מקומית
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ אם קיימת 
+\begin_inset Formula
+$0<\delta\in\MKreal$
+
+
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$x\in B_{\delta}\left(a\right)$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$f\left(a\right)\geq f\left(x\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+נאמר שנקודה פנימית 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ היא 
+\bar under
+נקודת מינימום מקומית
+\bar default
+ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ אם קיימת 
+\begin_inset Formula
+$0<\delta\in\MKreal$
+
+
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$x\in B_{\delta}\left(a\right)$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$f\left(a\right)\leq f\left(x\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+נקודות קריטיות
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ ותהא 
+\begin_inset Formula
+$f:A\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה, נאמר שנקודה פנימית 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ היא 
+\bar under
+נקודה קריטית
+\bar default
+ אם 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ גזירה ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$Df_{a}=0$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+נקודת אוכף
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ ותהא 
+\begin_inset Formula
+$f:A\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה, נאמר שנקודה פנימית 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ היא 
+\bar under
+נקודת אוכף
+\bar default
+ אם 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ גזירה ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$Df_{a}=0$
+
+
+\end_inset
+ אך 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ אינה נקודת קיצון, כלומר נקודת אוכף היא נקודה קריטית שאינה נקודת קיצון.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+פולינום טיילור
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה: 
+\begin_inset CommandInset href
+LatexCommand href
+name "טיילור ברוק"
+target https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%95%D7%A7_%D7%98%D7%99%D7%99%D7%9C%D7%95%D7%A8
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+ מסדר 
+\begin_inset Formula
+$n$
+
+
+\end_inset
+ של פונקציה בנקודה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ ותהא 
+\begin_inset Formula
+$f:A\rightarrow\MKreal^{m}$
+
+
+\end_inset
+ פונקציה גזירה 
+\begin_inset Formula
+$n$
+
+
+\end_inset
+ פעמים בנקודה פנימית 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+. 
+\bar under
+פולינום טיילור מסדר
+\bar default
+ 
+\begin_inset Formula
+$n$
+
+
+\end_inset
+ 
+\bar under
+של
+\bar default
+ 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ 
+\bar under
+בנקודה
+\bar default
+ 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ הוא הפונקציה 
+\begin_inset Formula
+$P_{n,f,a}:\MKreal^{k}\rightarrow\MKreal^{m}$
+
+
+\end_inset
+ המוגדרת ע"י )לכל 
+\begin_inset Formula
+$x\in\MKreal^{k}$
+
+
+\end_inset
+(:
+\begin_inset Formula
+\[
+P_{n,f,a}\left(x\right)=\sum_{k=0}^{n}\frac{1}{k!}\cdot D^{k}f_{a}\left(\overset{\text{פעמים}\ k}{\overbrace{x,x,\ldots,x}}\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Subsection
+התחלה
+\end_layout
+
+\begin_layout Description
+סימון: לכל 
+\begin_inset Formula
+$a,b\in\MKreal^{k}$
+
+
+\end_inset
+ נסמן 
+\begin_inset Formula
+$\left[a,b\right]:=\left\{ a+t\cdot\left(b-a\right)\mid t\in\left[0,1\right]\right\} $
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ מהגדרה 
+\begin_inset Formula
+$\left[a,b\right]=\left[b,a\right]$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+משפט הערך הממוצע
+\series default
+
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$A$
+
+
+\end_inset
+ היא קבוצה פתוחה, תהיינה 
+\begin_inset Formula
+$a,b\in A$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left[a,b\right]\subseteq A$
+
+
+\end_inset
+ ותהא 
+\begin_inset Formula
+$f:A\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה גזירה.
+\begin_inset Newline newline
+\end_inset
+קיים 
+\begin_inset Formula
+$t\in\left(0,1\right)$
+
+
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+f\left(b\right)-f\left(a\right)=Df_{a+t\cdot\left(b-a\right)}\left(b-a\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ זוהי הכללה של משפט הערך הממוצע של לגראנז' מאינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\numeric off
+ - אם 
+\begin_inset Formula
+$k=1$
+
+
+\end_inset
+ אז 
+\begin_inset Formula
+$Df_{a+t\cdot\left(b-a\right)}\left(b-a\right)=f'\left(a+t\cdot\left(b-a\right)\right)\cdot\left(b-a\right)$
+
+
+\end_inset
+, כלומר:
+\begin_inset Formula
+\[
+\frac{f\left(b\right)-f\left(a\right)}{b-a}=f'\left(a+t\cdot\left(b-a\right)\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lemma 3.2"
+\end_inset
+תהא 
+\begin_inset Formula
+$\gamma:\left[0,1\right]\rightarrow\MKreal^{m}$
+
+
+\end_inset
+ מסילה גזירה ב-
+\begin_inset Formula
+$\left(0,1\right)$
+
+
+\end_inset
+ ורציפה ב-
+\begin_inset Formula
+$\left[0,1\right]$
+
+
+\end_inset
+ כך שהקבוצה 
+\begin_inset Formula
+$\left\{ \left\Vert D\gamma_{t}\right\Vert _{\MKop}:t\in\left(0,1\right)\right\} $
+
+
+\end_inset
+ חסומה ונסמן ב-
+\begin_inset Formula
+$M$
+
+
+\end_inset
+ את החסם העליון שלה, מתקיים:
+\begin_inset Formula
+\[
+\left\Vert \gamma\left(1\right)-\gamma\left(0\right)\right\Vert \leq M
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+תהיינה 
+\begin_inset Formula
+$f:\left[0,1\right]\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציות המוגדרות ע"י )לכל 
+\begin_inset Formula
+$t\in\left[0,1\right]$
+
+
+\end_inset
+(:
+\begin_inset Formula
+\begin{align*}
+f\left(t\right) & :=\left\Vert \gamma\left(t\right)-\gamma\left(0\right)\right\Vert =\sqrt{\left\langle \gamma\left(t\right)-\gamma\left(0\right)\mid\gamma\left(t\right)-\gamma\left(0\right)\right\rangle }\\
+g\left(t\right) & :=f^{2}\left(t\right)=\left\langle \gamma\left(t\right)-\gamma\left(0\right)\mid\gamma\left(t\right)-\gamma\left(0\right)\right\rangle 
+\end{align*}
+
+
+
+
+\end_inset
+נסמן 
+\begin_inset Formula
+$x:=\sup\left\{ t\in\left[0,1\right]:f\left(t\right)=0\right\} $
+
+
+\end_inset
+; 
+\begin_inset Formula
+$x$
+
+
+\end_inset
+ אכן מוגדר היטב מפני שהקבוצה הנ"ל חסומה מלעיל ע"פ הגדרתה, ואינה ריקה משום ש-
+\begin_inset Formula
+$0$
+
+
+\end_inset
+ שייך אליה.
+\begin_inset Newline newline
+\end_inset
+נשים לב לכך שמהיות 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ רציפה נובע ש-
+\begin_inset Formula
+$f\left(x\right)=0$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+מהאפיון השני של החסם העליון נובע שלכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+
+
+\end_inset
+ קיים 
+\begin_inset Formula
+$t\in\left(x-\varepsilon,x\right)$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f\left(t\right)=0$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+, כלומר 
+\begin_inset Formula
+$x=\max\left\{ t\in\left[0,1\right]:f\left(t\right)=0\right\} $
+
+
+\end_inset
+. מכאן שאם 
+\begin_inset Formula
+$x=1$
+
+
+\end_inset
+ אז קיבלנו את המבוקש:
+\begin_inset Formula
+\[
+\left\Vert \gamma\left(1\right)-\gamma\left(0\right)\right\Vert =f\left(1\right)=f\left(x\right)=0\leq M
+\]
+
+
+
+
+\end_inset
+לכן נניח בהג"כ ש-
+\begin_inset Formula
+$x<1$
+
+
+\end_inset
+. מכלל לייבניץ נובע כי )לכל 
+\begin_inset Formula
+$t\in\left(0,1\right)$
+
+
+\end_inset
+(:
+\begin_inset Formula
+\[
+g'\left(t\right)=2\cdot\left\langle \gamma\left(t\right)-\gamma\left(0\right)\mid\gamma'\left(t\right)\right\rangle 
+\]
+
+
+
+
+\end_inset
+ומכלל השרשרת נובע כי )לכל 
+\begin_inset Formula
+$t\in\left(0,1\right)$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f\left(t\right)\neq0$
+
+
+\end_inset
+(:
+\begin_inset Formula
+\[
+f'\left(t\right)=\frac{g'\left(t\right)}{2\cdot\sqrt{\left\langle \gamma\left(t\right)-\gamma\left(0\right)\mid\gamma\left(t\right)-\gamma\left(0\right)\right\rangle }}=\frac{g'\left(t\right)}{2\cdot f\left(t\right)}
+\]
+
+
+
+
+\end_inset
+מכאן שע"פ א"ש קושי-שוורץ מתקיים )לכל 
+\begin_inset Formula
+$t\in\left(0,1\right)$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f\left(t\right)\neq0$
+
+
+\end_inset
+(:
+\begin_inset Formula
+\[
+{\color{red}2\cdot f\left(t\right)}\cdot f'\left(t\right)=g'\left(t\right)\leq2\cdot\left\Vert \gamma\left(t\right)-\gamma\left(0\right)\right\Vert \cdot\left\Vert \gamma'\left(t\right)\right\Vert ={\color{red}2\cdot f\left(t\right)}\cdot\left\Vert \gamma'\left(t\right)\right\Vert 
+\]
+
+
+
+
+\end_inset
+וממילא גם:
+\begin_inset Formula
+\[
+f'\left(t\right)\leq\left\Vert \gamma'\left(t\right)\right\Vert \leq M
+\]
+
+
+
+
+\end_inset
+מהגדרה לכל 
+\begin_inset Formula
+$t\in\left(x,0\right)$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$f\left(t\right)\neq0$
+
+
+\end_inset
+ ולכן ממשפט לגראנז' )אינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\numeric off
+( נובע שמתקיים )עבור 
+\begin_inset Formula
+$t\in\left(x,1\right)$
+
+
+\end_inset
+ כלשהו(:
+\begin_inset Formula
+\[
+\left\Vert \gamma\left(1\right)-\gamma\left(0\right)\right\Vert <\frac{\left\Vert \gamma\left(1\right)-\gamma\left(0\right)\right\Vert }{1-x}=\frac{\left\Vert \gamma\left(1\right)-\gamma\left(0\right)\right\Vert -0}{1-x}=\frac{f\left(1\right)-f\left(x\right)}{1-x}=f'\left(t\right)\leq\left\Vert \gamma'\left(t\right)\right\Vert \leq M
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "theorem 3.3"
+\end_inset
+נניח ש-
+\begin_inset Formula
+$A$
+
+
+\end_inset
+ היא קבוצה פתוחה תהיינה 
+\begin_inset Formula
+$a,b\in A$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left[a,b\right]\subseteq A$
+
+
+\end_inset
+ ותהא 
+\begin_inset Formula
+$f:A\rightarrow\MKreal^{m}$
+
+
+\end_inset
+ פונקציה גזירה.
+\begin_inset Newline newline
+\end_inset
+נניח שהקבוצה 
+\begin_inset Formula
+$\left\{ \left\Vert Df_{c}\right\Vert _{\MKop}:c\in\left[a,b\right]\right\} $
+
+
+\end_inset
+ חסומה ונסמן ב-
+\begin_inset Formula
+$M$
+
+
+\end_inset
+ את החסם העליון שלה, מתקיים:
+\begin_inset Formula
+\[
+\left\Vert f\left(b\right)-f\left(a\right)\right\Vert \leq M\cdot\left\Vert b-a\right\Vert 
+\]
+
+
+
+
+\end_inset
+כלומר אם הנגזרת של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ חסומה אז 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ רציפה לפי ליפשיץ והחסם העליון על קבוצת הנורמות האופרטוריות של הנגזרות הוא קבוע ליפשיץ של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+תהא 
+\begin_inset Formula
+$\gamma:\left[0,1\right]\rightarrow A$
+
+
+\end_inset
+ המסילה המוגדרת ע"י 
+\begin_inset Formula
+$\gamma\left(t\right):=a+t\cdot\left(b-a\right)$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$t\in\left[0,1\right]$
+
+
+\end_inset
+, מהגדרה לכל 
+\begin_inset Formula
+$t\in\left(0,1\right)$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left\Vert D\gamma_{t}\right\Vert _{\MKop}=\left\Vert b-a\right\Vert $
+
+
+\end_inset
+ ולכן לכל 
+\begin_inset Formula
+$t\in\left(0,1\right)$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left\Vert D\left(f\circ\gamma\right)_{t}\right\Vert _{\MKop}\leq\left\Vert Df_{\gamma\left(t\right)}\right\Vert _{\MKop}\cdot\left\Vert D\gamma_{t}\right\Vert _{\MKop}=M\cdot\left\Vert b-a\right\Vert 
+\]
+
+
+
+
+\end_inset
+מהלמה )
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 3.2"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+( נובע כי:
+\begin_inset Formula
+\[
+\left\Vert f\left(b\right)-f\left(a\right)\right\Vert =\left\Vert \left(f\circ\gamma\right)\left(1\right)-\left(f\circ\gamma\right)\left(0\right)\right\Vert \leq M\cdot\left\Vert b-a\right\Vert 
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+נגזרות גבוהות
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 3.4"
+\end_inset
+יהיו 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$f:A\rightarrow\MKreal^{m}$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ גזירה פעמיים בנקודה פנימית 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$D^{2}f_{a}$
+
+
+\end_inset
+ היא פונקציה ביליניארית, כלומר לכל 
+\begin_inset Formula
+$v,w,u\in\MKreal^{k}$
+
+
+\end_inset
+ ולכל 
+\begin_inset Formula
+$\alpha,\beta\in\MKreal$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+D^{2}f_{a}\left(v\right)\left(\alpha\cdot w+\beta\cdot u\right) & =\alpha\cdot D^{2}f_{a}\left(v\right)\left(w\right)+\beta\cdot D^{2}f_{a}\left(v\right)\left(u\right)\\
+D^{2}f_{a}\left(\alpha\cdot v+\beta\cdot u\right)\left(w\right) & =\alpha\cdot D^{2}f_{a}\left(v\right)\left(w\right)+\beta\cdot D^{2}f_{a}\left(u\right)\left(w\right)
+\end{align*}
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ למעשה הטענה נכונה גם עבור נגזרות מסדר גבוה יותר - נגזרת בנקודה, מכל סדר שהוא, היא פונקציה 
+\begin_inset CommandInset href
+LatexCommand href
+name "מולטי-ליניארית"
+target https://en.wikipedia.org/wiki/Multilinear_map
+literal false
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+השוויון הראשון נובע מהעובדה ש-
+\begin_inset Formula
+$D^{2}f_{a}$
+
+
+\end_inset
+ היא העתקה ליניארית מ-
+\begin_inset Formula
+$\MKreal^{k}$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$\MKhom\left(\MKreal^{k},\MKreal^{m}\right)$
+
+
+\end_inset
+, ולכן 
+\begin_inset Formula
+$D^{2}f_{a}\left(v\right)$
+
+
+\end_inset
+ היא העתקה ליניארית. השוויון השני גם הוא נובע מהעובדה ש-
+\begin_inset Formula
+$D^{2}f_{a}$
+
+
+\end_inset
+ היא העתקה ליניארית מ-
+\begin_inset Formula
+$\MKreal^{k}$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$\MKhom\left(\MKreal^{k},\MKreal^{m}\right)$
+
+
+\end_inset
+, כלומר 
+\begin_inset Formula
+$D^{2}f_{a}\left(\alpha\cdot v+\beta\cdot u\right)=\alpha\cdot D^{2}f_{a}\left(v\right)+\beta\cdot D^{2}f_{a}\left(u\right)$
+
+
+\end_inset
+ ולכן גם:
+\begin_inset Formula
+\[
+D^{2}f_{a}\left(\alpha\cdot v+\beta\cdot u\right)\left(w\right)=\left(\alpha\cdot D^{2}f_{a}\left(v\right)+\beta\cdot D^{2}f_{a}\left(u\right)\right)\left(w\right)=\alpha\cdot D^{2}f_{a}\left(v\right)\left(w\right)+\beta\cdot D^{2}f_{a}\left(u\right)\left(w\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary 3.5"
+\end_inset
+תהא 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה גזירה פעמיים בנקודה 
+\begin_inset Formula
+$a\in\MKreal^{k}$
+
+
+\end_inset
+, כל הנגזרות החלקיות מסדר שני של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ קיימות ולכל 
+\begin_inset Formula
+$k\geq i,j\in\MKnatural$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+D^{2}f_{a}\left(e_{i},e_{j}\right)=\frac{\partial^{2}f}{\partial x_{i}\partial x_{j}}\left(a\right)=\frac{\partial_{j}f}{\partial x_{i}}\left(a\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה גזירה פעמיים בנקודה 
+\begin_inset Formula
+$a\in\MKreal^{k}$
+
+
+\end_inset
+, כל הנגזרות החלקיות מסדר שני של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ קיימות ולכל 
+\begin_inset Formula
+$x,y\in\MKreal^{k}$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+D^{2}f_{a}\left(x,y\right)=\sum_{i=1}^{k}\sum_{j=1}^{k}x_{i}\cdot y_{j}\cdot\frac{\partial^{2}f}{\partial x_{i}\partial x_{j}}\left(a\right)=\sum_{i=1}^{k}\sum_{j=1}^{k}x_{i}\cdot y_{j}\cdot\frac{\partial_{j}f}{\partial x_{i}}\left(a\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+יהיו 
+\begin_inset Formula
+$x,y\in\MKreal^{k}$
+
+
+\end_inset
+ מהמסקנה הקודמת )
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 3.5"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+( ומטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 3.4"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ נובע כי:
+\begin_inset Formula
+\begin{align*}
+D^{2}f_{a}\left({\color{red}x},{\color{blue}y}\right) & =D^{2}f_{a}\left({\color{red}\sum_{i=1}^{k}x_{i}\cdot e_{i}},{\color{blue}y}\right)={\color{red}\sum_{i=1}^{k}x_{i}}\cdot D^{2}f_{a}\left({\color{red}e_{i}},{\color{blue}y}\right)={\color{red}\sum_{i=1}^{k}x_{i}}\cdot D^{2}f_{a}\left({\color{red}e_{i}},{\color{blue}\sum_{j=1}^{k}y_{j}\cdot e_{j}}\right)\\
+ & ={\color{red}\sum_{i=1}^{k}x_{i}}\cdot\left({\color{blue}\sum_{j=1}^{k}y_{j}}\cdot D^{2}f_{a}\left({\color{red}e_{i}},{\color{blue}e_{j}}\right)\right)={\color{red}\sum_{i=1}^{k}}{\color{blue}\sum_{j=1}^{k}}{\color{red}x_{i}}\cdot{\color{blue}y_{j}}\cdot D^{2}f_{a}\left({\color{red}e_{i}},{\color{blue}e_{j}}\right)={\color{red}\sum_{i=1}^{k}}{\color{blue}\sum_{j=1}^{k}}{\color{red}x_{i}}\cdot{\color{blue}y_{j}}\cdot\frac{\partial^{2}f}{\partial{\color{red}x_{i}}\partial{\color{blue}x_{j}}}\left(a\right)
+\end{align*}
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula
+$f:A\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה גזירה פעמיים בנקודה פנימית 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+, לכל 
+\begin_inset Formula
+$x,y\in\MKreal^{k}$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+D^{2}f_{a}\left(x,y\right)=y^{t}\cdot H\left(f\right)\cdot x=\left\langle y\mid H\left(f\right)\cdot x\right\rangle 
+\]
+
+
+
+
+\end_inset
+כאשר 
+\begin_inset Formula
+$H\left(f\right)$
+
+
+\end_inset
+ היא מטריצת ההסיאן של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+תהא 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה, אם כל הנגזרות החלקיות מסדר שני של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ בנקודה 
+\begin_inset Formula
+$a\in\MKreal^{k}$
+
+
+\end_inset
+ קיימות בסביבה של 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ ורציפות ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+, אז 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ גזירה פעמיים ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+משפט שוורץ
+\series default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה 
+\begin_inset CommandInset href
+LatexCommand href
+name "הרמן שוורץ"
+target https://he.wikipedia.org/wiki/%D7%94%D7%A8%D7%9E%D7%9F_%D7%A9%D7%95%D7%95%D7%A8%D7%A5
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+ )או 
+\series bold
+משפט קלרו
+\series default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה: 
+\begin_inset CommandInset href
+LatexCommand href
+name "אלכסיס קלרו"
+target https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%9B%D7%A1%D7%99%D7%A1_%D7%A7%D7%9C%D7%A8%D7%95
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+
+\series bold
+ על שוויון פונקציות מעורבות
+\series default
+(
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה גזירה פעמיים בסביבה של נקודה 
+\begin_inset Formula
+$a\in\MKreal^{k}$
+
+
+\end_inset
+, אם 
+\begin_inset Formula
+$D^{2}f$
+
+
+\end_inset
+ רציפה ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ אז לכל 
+\begin_inset Formula
+$k\geq i,j\in\MKnatural$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\frac{\partial^{2}f}{\partial x_{i}\partial x_{j}}\left(a\right)=\frac{\partial^{2}f}{\partial x_{j}\partial x_{i}}\left(a\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ נשים לב לכך שמתקיים:
+\begin_inset Formula
+\begin{align*}
+\frac{\partial^{2}f}{\partial x_{i}\partial x_{j}}\left(a\right) & =\lim_{t\rightarrow0}\frac{\partial_{j}f\left(a+t\cdot e_{i}\right)-\partial_{j}f\left(a\right)}{t}=\lim_{t\rightarrow0}\frac{\lim_{s\rightarrow0}\frac{f\left(a+t\cdot e_{i}+s\cdot e_{j}\right)-f\left(a+t\cdot e_{i}\right)}{s}-\lim_{s\rightarrow0}\frac{f\left(a+s\cdot e_{j}\right)-f\left(a\right)}{s}}{t}\\
+ & =\lim_{t\rightarrow0}\frac{\lim_{s\rightarrow0}\frac{\left(f\left(a+t\cdot e_{i}+s\cdot e_{j}\right)-f\left(a+t\cdot e_{i}\right)\right)-\left(f\left(a+s\cdot e_{j}\right)-f\left(a\right)\right)}{s}}{t}\\
+ & =\lim_{t\rightarrow0}\left(\lim_{s\rightarrow0}\frac{\left(f\left(a+t\cdot e_{i}+s\cdot e_{j}\right)-f\left(a+t\cdot e_{i}\right)\right)-\left(f\left(a+s\cdot e_{j}\right)-f\left(a\right)\right)}{s\cdot t}\right)\\
+ & =\lim_{t\rightarrow0}\left(\lim_{s\rightarrow0}\frac{\left(f\left(a+t\cdot e_{i}+s\cdot e_{j}\right)-f\left(a+s\cdot e_{j}\right)\right)-\left(f\left(a+t\cdot e_{i}\right)-f\left(a\right)\right)}{s\cdot t}\right)
+\end{align*}
+
+
+
+
+\end_inset
+ובאותו אופן גם:
+\begin_inset Formula
+\[
+\frac{\partial^{2}f}{\partial x_{j}\partial x_{i}}\left(a\right)=\lim_{s\rightarrow0}\left(\lim_{t\rightarrow0}\frac{\left(f\left(a+t\cdot e_{i}+s\cdot e_{j}\right)-f\left(a+s\cdot e_{j}\right)\right)-\left(f\left(a+t\cdot e_{i}\right)-f\left(a\right)\right)}{s\cdot t}\right)
+\]
+
+
+
+
+\end_inset
+כלומר כל שעלינו לעשות הוא "להפוך" את סדר הגבולות.
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$0<r\in\MKreal$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ גזירה ב-
+\begin_inset Formula
+$B_{r}\left(a\right)$
+
+
+\end_inset
+, נניח ש-
+\begin_inset Formula
+$D^{2}f$
+
+
+\end_inset
+ רציפה ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+, ויהיו 
+\begin_inset Formula
+$k\geq i,j\in\MKnatural$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ניתן להוכיח את המשפט עבור כל קואורדינטה בנפרד, א"כ נניח בהג"כ שהטווח של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ הוא 
+\begin_inset Formula
+$\MKreal$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$g,h:\left(-r,r\right)^{2}\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציות המוגדרות ע"י )לכל 
+\begin_inset Formula
+$s,t\in\left(-r,r\right)$
+
+
+\end_inset
+(:
+\begin_inset Formula
+\begin{align*}
+g\left(s,t\right) & :=f\left(a+s\cdot e_{i}+t\cdot e_{j}\right)-f\left(a+s\cdot e_{i}\right)\\
+h\left(s,t\right) & :=f\left(a+s\cdot e_{i}+t\cdot e_{j}\right)-f\left(a+t\cdot e_{j}\right)
+\end{align*}
+
+
+
+
+\end_inset
+מכאן שלכל 
+\begin_inset Formula
+$s,t\in\left(-r,r\right)$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+g\left(s,t\right)-g\left(0,t\right) & =\left(f\left(a+s\cdot e_{i}+t\cdot e_{j}\right)-f\left(a+s\cdot e_{i}\right)\right)-\left(f\left(a+t\cdot e_{j}\right)-f\left(a\right)\right)\\
+ & =\left(f\left(a+s\cdot e_{i}+t\cdot e_{j}\right)-f\left(a+t\cdot e_{j}\right)\right)-\left(f\left(a+s\cdot e_{i}\right)-f\left(a\right)\right)=h\left(s,t\right)-h\left(s,0\right)
+\end{align*}
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+מהגזירות של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פעם ראשונה נובע שכאשר מקבעים את אחד הרכיבים של 
+\begin_inset Formula
+$g$
+
+
+\end_inset
+ מקבלים פונקציה רציפה וגזירה על 
+\begin_inset Formula
+$\left(-r,r\right)$
+
+
+\end_inset
+, מכאן שע"פ משפט הערך הממוצע )אינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\numeric off
+( לכל 
+\begin_inset Formula
+$s\in\left(-r,r\right)$
+
+
+\end_inset
+ קיים 
+\begin_inset Formula
+$\lambda_{s}\in\left(0,1\right)$
+
+
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+g\left(s,t\right)-g\left(0,t\right)=s\cdot\partial_{1}g\left(\lambda_{s}\cdot s,t\right)=s\cdot\left(\partial_{i}f\left(a+\lambda_{s}\cdot s\cdot e_{i}+t\cdot e_{j}\right)-\partial_{i}f\left(a+\lambda_{s}\cdot s\cdot e_{i}\right)\right)
+\]
+
+
+
+
+\end_inset
+ובאותו אופן מהגזירות של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פעם שנייה נובע שלכל 
+\begin_inset Formula
+$s,t\in\left(-r,r\right)$
+
+
+\end_inset
+ קיימים 
+\begin_inset Formula
+$\lambda_{s},\lambda_{t}\in\left(0,1\right)$
+
+
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\begin{align*}
+g\left(s,t\right)-g\left(0,t\right) & =s\cdot\left(\partial_{i}f\left(a+\lambda_{s}\cdot s\cdot e_{i}+t\cdot e_{j}\right)-\partial_{i}f\left(a+\lambda_{s}\cdot s\cdot e_{i}\right)\right)\\
+ & =s\cdot t\cdot\partial_{j}\partial_{i}f\left(a+\lambda_{s}\cdot s\cdot e_{i}+\lambda_{t}\cdot t\cdot e_{j}\right)
+\end{align*}
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+מהרציפות של 
+\begin_inset Formula
+$\partial_{j}\partial_{i}f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ נקבל שמתקיים:
+\begin_inset Formula
+\[
+\lim_{\left(s,t\right)\rightarrow\left(0,0\right)}\frac{g\left(s,t\right)-g\left(0,t\right)}{s\cdot t}=\lim_{x\rightarrow a}\partial_{j}\partial_{i}f\left(x\right)=\frac{\partial f}{\partial x_{j}\partial x_{i}}\left(a\right)
+\]
+
+
+
+
+\end_inset
+מצד שני באותה צורה נקבל שמתקיים:
+\begin_inset Formula
+\[
+\lim_{\left(s,t\right)\rightarrow\left(0,0\right)}\frac{h\left(s,t\right)-h\left(s,0\right)}{s\cdot t}=\lim_{x\rightarrow a}\partial_{i}\partial_{j}f\left(x\right)=\frac{\partial f}{\partial x_{i}\partial x_{j}}\left(a\right)
+\]
+
+
+
+
+\end_inset
+והרי כפי שהזכרנו לכל 
+\begin_inset Formula
+$s,t\in\left(-r,r\right)$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$g\left(s,t\right)-g\left(0,t\right)=h\left(s,t\right)-h\left(s,0\right)$
+
+
+\end_inset
+, כלומר מתקיים:
+\begin_inset Formula
+\[
+\frac{\partial f}{\partial x_{i}\partial x_{j}}\left(a\right)=\lim_{\left(s,t\right)\rightarrow\left(0,0\right)}\frac{h\left(s,t\right)-h\left(s,0\right)}{s\cdot t}=\lim_{\left(s,t\right)\rightarrow\left(0,0\right)}\frac{g\left(s,t\right)-g\left(0,t\right)}{s\cdot t}=\frac{\partial f}{\partial x_{j}\partial x_{i}}\left(a\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה גזירה פעמיים בסביבה של נקודה 
+\begin_inset Formula
+$a\in\MKreal^{k}$
+
+
+\end_inset
+, אם 
+\begin_inset Formula
+$D^{2}f$
+
+
+\end_inset
+ רציפה ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ אז מטריצת ההסיאן של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ היא מטריצה סימטרית ולכן גם לכסינה.
+\end_layout
+
+\begin_layout Subsection
+נקודות קיצון
+\end_layout
+
+\begin_layout Theorem
+\series bold
+משפט פרמה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$f:A\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה גזירה בנקודה פנימית 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+, אם 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ היא נקודת קיצון מקומית של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ אז 
+\begin_inset Formula
+$Df_{a}=0$
+
+
+\end_inset
+, כלומר 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ היא נקודה קריטית.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+משפט טיילור
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה: 
+\begin_inset CommandInset href
+LatexCommand href
+name "ברוק טיילור"
+target https://he.wikipedia.org/wiki/%D7%91%D7%A8%D7%95%D7%A7_%D7%98%D7%99%D7%99%D7%9C%D7%95%D7%A8
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ פונקציה גזירה 
+\begin_inset Formula
+$n$
+
+
+\end_inset
+ פעמים בנקודה 
+\begin_inset Formula
+$a\in\MKreal^{k}$
+
+
+\end_inset
+, מתקיים:
+\begin_inset Formula
+\[
+\lim_{x\rightarrow a}\frac{f\left(x\right)-P_{f,n,a}\left(x\right)}{\left\Vert x-a\right\Vert }=0
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+משפט טיילור אינו בחומר למבחן ולכן עוד לא כתבתי לו הוכחה.
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Description
+תזכורת: יהי 
+\begin_inset Formula
+$V$
+
+
+\end_inset
+ מ"ו מעל 
+\begin_inset Formula
+$\MKreal$
+
+
+\end_inset
+ ותהא 
+\begin_inset Formula
+$B:V\times V\rightarrow\MKreal$
+
+
+\end_inset
+ תבנית ביליניארית.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$B$
+
+
+\end_inset
+ תיקרא 
+\bar under
+חיובית בהחלט
+\bar default
+ אם לכל 
+\begin_inset Formula
+$0_{V}\neq v\in V$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$B\left(v,v\right)>0$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$B$
+
+
+\end_inset
+ תיקרא 
+\bar under
+חיובית למחצה
+\bar default
+ אם לכל 
+\begin_inset Formula
+$0_{V}\neq v\in V$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$B\left(v,v\right)\geq0$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$B$
+
+
+\end_inset
+ תיקרא 
+\bar under
+שלילית בהחלט
+\bar default
+ אם לכל 
+\begin_inset Formula
+$0_{V}\neq v\in V$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$B\left(v,v\right)<0$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$B$
+
+
+\end_inset
+ תיקרא 
+\bar under
+שלילית למחצה
+\bar default
+ אם לכל 
+\begin_inset Formula
+$0_{V}\neq v\in V$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$B\left(v,v\right)\leq0$
+
+
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula
+$f:A\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה גזירה פעמיים בנקודה פנימית 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$Df_{a}=0$
+
+
+\end_inset
+ )כלומר 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ היא נקודה קריטית(, מתקיימים כל הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$D^{2}f$
+
+
+\end_inset
+ חיובית בהחלט אז 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ היא נקודת מינימום מקומית של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$D^{2}f$
+
+
+\end_inset
+ שלילית בהחלט אז 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ היא נקודת מקסימום מקומית של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ היא נקודת מינימום מקומית של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ אז 
+\begin_inset Formula
+$D^{2}f$
+
+
+\end_inset
+ חיובית למחצה.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ היא נקודת מקסימום מקומית של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ אז 
+\begin_inset Formula
+$D^{2}f$
+
+
+\end_inset
+ שלילית למחצה.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula
+$f:A\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה גזירה פעמיים בסביבה של נקודה פנימית 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$Df_{a}=0$
+
+
+\end_inset
+ )כלומר 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ היא נקודה קריטית( ו-
+\begin_inset Formula
+$D^{2}f$
+
+
+\end_inset
+ רציפה ב-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ )כלומר ההסיאן סימטרית(, מתקיימים כל הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם כל הערכים העצמיים של 
+\begin_inset Formula
+$H\left(f\right)$
+
+
+\end_inset
+ חיוביים אז 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ היא נקודת מינימום מקומית של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם כל הערכים העצמיים של 
+\begin_inset Formula
+$H\left(f\right)$
+
+
+\end_inset
+ שליליים אז 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ היא נקודת מקסימום מקומית של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ היא נקודת מינימום מקומית של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ אז כל הערכים העצמיים של 
+\begin_inset Formula
+$H\left(f\right)$
+
+
+\end_inset
+ אי-שליליים.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ היא נקודת מקסימום מקומית של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ אז כל הערכים העצמיים של 
+\begin_inset Formula
+$H\left(f\right)$
+
+
+\end_inset
+ אי-חיוביים.
+\end_layout
+
+\end_deeper
+
+\begin_layout Corollary
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+משפט הפונקציה ההפוכה ומסקנותיו
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+\series bold
+נקודות קיצון כלליות בקבוצה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ קבוצה ותהא 
+\begin_inset Formula
+$f:A\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נאמר שנקודה 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ היא 
+\bar under
+נקודת מקסימום של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$A$
+
+
+\end_inset
+
+\bar default
+ אם לכל 
+\begin_inset Formula
+$x\in A$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$f\left(x\right)\leq f\left(a\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+נאמר שנקודה 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ היא 
+\bar under
+נקודת מינימום של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$A$
+
+
+\end_inset
+ 
+\bar default
+אם לכל 
+\begin_inset Formula
+$x\in A$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$f\left(x\right)\geq f\left(a\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+נקודות קיצון מקומיות שאינן פנימיות
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$U\subseteq\MKreal^{k}$
+
+
+\end_inset
+ קבוצה פתוחה ו-
+\begin_inset Formula
+$f:U\rightarrow\MKreal$
+
+
+\end_inset
+ פונקציה, ותהא 
+\begin_inset Formula
+$A\subseteq U$
+
+
+\end_inset
+ קבוצה כלשהי )לאו דווקא פתוחה(.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נאמר שנקודה 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ היא 
+\bar under
+נקודת מקסימום מקומית של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$A$
+
+
+\end_inset
+
+\bar default
+ אם קיימת 
+\begin_inset Formula
+$0<\delta\in\MKreal$
+
+
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$x\in B_{\delta}\left(a\right)\cap A$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$f\left(x\right)\leq f\left(a\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+נאמר שנקודה 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ היא 
+\bar under
+נקודת מינימום מקומית של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$A$
+
+
+\end_inset
+
+\bar default
+ אם קיימת 
+\begin_inset Formula
+$0<\delta\in\MKreal$
+
+
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$x\in B_{\delta}\left(a\right)\cap A$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$f\left(x\right)\geq f\left(a\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Subsection
+משפט הפונקציה ההפוכה
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lemma 4.1"
+\end_inset
+הדטרמיננטה היא פונקציה רציפה.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ כוונתנו כאן היא שהפונקציה 
+\begin_inset Formula
+$\det:\MKhom\left(\MKreal^{k},\MKreal^{k}\right)\rightarrow\MKreal$
+
+
+\end_inset
+ היא פונקציה רציפה, כזכור הגדרנו את הדטרמיננטה של העתקה ליניארית ע"י הדטרמיננטה של מטריצה מייצגת שלה.
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary 4.2"
+\end_inset
+לכל 
+\begin_inset Formula
+$T\in\MKhom\left(\MKreal^{k},\MKreal^{k}\right)$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$T$
+
+
+\end_inset
+ הפיכה קיים 
+\begin_inset Formula
+$0<r\in\MKreal$
+
+
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$S\in B_{r}\left(T\right)$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+נזכיר ש-
+\begin_inset Formula
+$B_{r}\left(T\right)$
+
+
+\end_inset
+ הוא כדור פתוח ב-
+\begin_inset Formula
+$\MKhom\left(\MKreal^{k},\MKreal^{k}\right)$
+
+
+\end_inset
+ סביב 
+\begin_inset Formula
+$T$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+ גם 
+\begin_inset Formula
+$S$
+
+
+\end_inset
+ הפיכה.
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lemma 4.3"
+\end_inset
+תהא 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+קבוצה פתוחה, תהא 
+\begin_inset Formula
+$f:A\rightarrow\MKreal^{m}$
+
+
+\end_inset
+ פונקציה גזירה ברציפות, ויהיו 
+\begin_inset Formula
+$a,b,c\in A$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left[b,c\right]\subseteq A$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+הדרישה שהנגזרת תהיה רציפה באה להבטיח שהיא חסומה על 
+\begin_inset Formula
+$\left[b,c\right]$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+; מתקיים:
+\begin_inset Formula
+\[
+\left\Vert f\left(c\right)-f\left(b\right)-Df_{a}\left(c-b\right)\right\Vert \leq\left\Vert c-b\right\Vert \cdot\max_{x\in\left[b,c\right]}\left\Vert Df_{x}-Df_{a}\right\Vert _{\MKop}
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+תהא 
+\begin_inset Formula
+$g:A\rightarrow\MKreal^{m}$
+
+
+\end_inset
+ פונקציה המוגדרת ע"י 
+\begin_inset Formula
+$g\left(x\right):=f\left(x\right)-Df_{a}\left(x\right)$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$x\in A$
+
+
+\end_inset
+, מכאן שלכל 
+\begin_inset Formula
+$x\in A$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left\Vert Dg_{x}\right\Vert _{\MKop}=\left\Vert Df_{x}-Df_{a}\right\Vert _{\MKop}
+\]
+
+
+
+
+\end_inset
+ממשפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 3.3"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ נובע כי:
+\begin_inset Formula
+\begin{align*}
+\left\Vert f\left(c\right)-f\left(b\right)-Df_{a}\left(c-b\right)\right\Vert  & =\left\Vert \left(f\left(c\right)-Df_{a}\left(c\right)\right)-\left(f\left(b\right)-Df_{a}\left(b\right)\right)\right\Vert =\left\Vert g\left(c\right)-g\left(b\right)\right\Vert \\
+ & \leq\left\Vert c-b\right\Vert \cdot\sup_{x\in\left[b,c\right]}\left\Vert Dg_{x}\right\Vert _{\MKop}=\left\Vert c-b\right\Vert \cdot\sup_{x\in\left[b,c\right]}\left\Vert Df_{x}-Df_{a}\right\Vert _{\MKop}
+\end{align*}
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lemma 4.4"
+\end_inset
+תהא 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ קבוצה פתוחה ותהא 
+\begin_inset Formula
+$g:A\rightarrow\MKreal^{k}$
+
+
+\end_inset
+ פונקציה גזירה, אם קיים 
+\begin_inset Formula
+$\varepsilon\in\left(0,1\right)$
+
+
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$x\in A$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left\Vert Dg_{x}-\MKid\right\Vert _{\MKop}\leq\varepsilon
+\]
+
+
+
+
+\end_inset
+אז לכל 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ ולכל 
+\begin_inset Formula
+$0<r\in\MKreal$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$B_{r}\left(a\right)\subseteq A$
+
+
+\end_inset
+ מתקיים )עבור אותו 
+\begin_inset Formula
+$\varepsilon$
+
+
+\end_inset
+(:
+\begin_inset Formula
+\[
+B_{\left(1-\varepsilon\right)r}\left(g\left(a\right)\right)\subseteq g\left(B_{r}\left(a\right)\right)\subseteq B_{\left(1+\varepsilon\right)r}\left(g\left(a\right)\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+נניח שקיים 
+\begin_inset Formula
+$\varepsilon\in\left(0,1\right)$
+
+
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left\Vert Dg_{a}-\MKid\right\Vert _{\MKop}\leq\varepsilon$
+
+
+\end_inset
+, ויהי 
+\begin_inset Formula
+$\varepsilon$
+
+
+\end_inset
+ כנ"ל.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+יהיו 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$0<r\in\MKreal$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$B_{r}\left(a\right)\subseteq A$
+
+
+\end_inset
+, מא"ש המשולש ההפוך נובע כי:
+\begin_inset Formula
+\[
+\left|\left\Vert Dg_{a}\right\Vert _{\MKop}-1\right|=\left|\left\Vert Dg_{a}\right\Vert _{\MKop}-\left\Vert \MKid\right\Vert _{\MKop}\right|\leq\left\Vert Dg_{a}-\MKid\right\Vert _{\MKop}\leq\varepsilon
+\]
+
+
+
+
+\end_inset
+כלומר 
+\begin_inset Formula
+$\left\Vert Dg_{a}\right\Vert _{\MKop}\leq1+\varepsilon$
+
+
+\end_inset
+, ולכן ע"פ משפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 3.3"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ לכל 
+\begin_inset Formula
+$x\in B_{r}\left(a\right)$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left\Vert g\left(x\right)-g\left(a\right)\right\Vert \leq\left(1+\varepsilon\right)\cdot\left\Vert x-a\right\Vert <\left(1+\varepsilon\right)\cdot r
+\]
+
+
+
+
+\end_inset
+כלומר 
+\begin_inset Formula
+$g\left(B_{r}\left(a\right)\right)\subseteq B_{\left(1+\varepsilon\right)r}\left(g\left(a\right)\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+כעת יהי 
+\begin_inset Formula
+$y\in B_{\left(1-\varepsilon\right)r}\left(g\left(a\right)\right)$
+
+
+\end_inset
+, ותהא 
+\begin_inset Formula
+$h:A\rightarrow\MKreal^{k}$
+
+
+\end_inset
+ פונקציה המוגדרת ע"י:
+\begin_inset Formula
+\[
+h\left(x\right):=-g\left(x\right)+x+y
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+מהגדרה לכל 
+\begin_inset Formula
+$x\in A$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$Dh_{x}=-Dg_{x}+\MKid$
+
+
+\end_inset
+, ולכן גם:
+\begin_inset Formula
+\[
+\left\Vert Dh_{x}\right\Vert _{\MKop}=\left\Vert -Dg_{x}+\MKid\right\Vert _{\MKop}=\left\Vert Dg_{x}-\MKid\right\Vert _{\MKop}\leq\varepsilon
+\]
+
+
+
+
+\end_inset
+ומכאן שע"פ משפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 3.3"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ לכל 
+\begin_inset Formula
+$x_{1},x_{2}\in A$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left\Vert h\left(x_{1}\right)-h\left(x_{2}\right)\right\Vert \leq\varepsilon\cdot\left\Vert x_{1}-x_{2}\right\Vert 
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+יהי 
+\begin_inset Formula
+$0<s\in\MKreal$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$s<r$
+
+
+\end_inset
+ ומתקיים 
+\begin_inset Formula
+$y\in\hat{B_{\left(1-\varepsilon\right)s}}\left(g\left(a\right)\right)$
+
+
+\end_inset
+, מכאן שלכל 
+\begin_inset Formula
+$x\in\hat{B_{s}}\left(a\right)$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+\left\Vert h\left(x\right)-a\right\Vert  & =\left\Vert \left(h\left(x\right)-h\left(a\right)\right)+\left(h\left(a\right)-a\right)\right\Vert \leq\left\Vert h\left(x\right)-h\left(a\right)\right\Vert +\left\Vert h\left(a\right)-a\right\Vert \\
+ & \leq\varepsilon\cdot s+\left\Vert \left(-g\left(a\right)+a+y\right)-a\right\Vert =\varepsilon\cdot s+\left\Vert y-g\left(a\right)\right\Vert <\varepsilon\cdot s+\left(1-\varepsilon\right)\cdot s=x
+\end{align*}
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+מכל אלו יחד נובע שהצמצום של 
+\begin_inset Formula
+$h$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$\hat{B_{s}}\left(a\right)$
+
+
+\end_inset
+ הוא העתקה מכווצת על מרחב שלם, ולכן ע"פ משפט ההעתקה המכווצת יש לו נקודת שבת, כלומר קיים 
+\begin_inset Formula
+$x\in\hat{B_{s}\left(x\right)}$
+
+
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+0=\left\Vert h\left(x\right)-x\right\Vert =\left\Vert y-g\left(x\right)\right\Vert 
+\]
+
+
+
+
+\end_inset
+מהגדרה 
+\begin_inset Formula
+$s<r$
+
+
+\end_inset
+ ולכן זה אומר שקיים 
+\begin_inset Formula
+$x\in B_{r}\left(a\right)$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$g\left(x\right)=y$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$y$
+
+
+\end_inset
+ הנ"ל היה שרירותי ולכן לכל 
+\begin_inset Formula
+$y\in B_{\left(1-\varepsilon\right)r}\left(a\right)$
+
+
+\end_inset
+ קיים 
+\begin_inset Formula
+$x\in A$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$g\left(x\right)=y$
+
+
+\end_inset
+, כלומר 
+\begin_inset Formula
+$B_{\left(1-\varepsilon\right)r}\left(a\right)\subseteq g\left(B_{r}\left(a\right)\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\end_deeper
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lemma 4.5"
+\end_inset
+תהיינה 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ קבוצה פתוחה ו-
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+, ותהא 
+\begin_inset Formula
+$f:A\rightarrow\MKreal^{k}$
+
+
+\end_inset
+ פונקציה חח"ע וגזירה ברציפות כך ש-
+\begin_inset Formula
+$Df_{a}$
+
+
+\end_inset
+ הפיכה. אם קיים 
+\begin_inset Formula
+$\varepsilon\in\left(0,1\right)$
+
+
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$x\in A$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left\Vert \left(Df_{a}\right)^{-1}\circ Df_{x}-\MKid\right\Vert _{\MKop}\leq\varepsilon
+\]
+
+
+
+
+\end_inset
+אז לכל 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ ולכל 
+\begin_inset Formula
+$0<r\in\MKreal$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$B_{r}\left(a\right)\subseteq A$
+
+
+\end_inset
+ מתקיים )עבור אותו 
+\begin_inset Formula
+$\varepsilon$
+
+
+\end_inset
+(:
+\begin_inset Formula
+\[
+Df_{a}\left(B_{\left(1-\varepsilon\right)r}\left(\left(Df_{a}\right)^{-1}\left(f\left(a\right)\right)\right)\right)\subseteq f\left(B_{r}\left(a\right)\right)\subseteq Df_{a}\left(B_{\left(1+\varepsilon\right)r}\left(\left(Df_{a}\right)^{-1}\left(f\left(a\right)\right)\right)\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+נניח שקיים 
+\begin_inset Formula
+$\varepsilon\in\left(0,\frac{1}{2}\right)$
+
+
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left\Vert \left(Df_{a}\right)^{-1}\circ Df_{x}-\MKid\right\Vert _{\MKop}\leq\varepsilon$
+
+
+\end_inset
+, ויהי 
+\begin_inset Formula
+$\varepsilon$
+
+
+\end_inset
+ כנ"ל.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$0<r\in\MKreal$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$B_{r}\left(a\right)\subseteq A$
+
+
+\end_inset
+, ונסמן 
+\begin_inset Formula
+$g:=\left(Df_{a}\right)^{-1}\circ f$
+
+
+\end_inset
+; מכלל השרשרת נובע כי )לכל 
+\begin_inset Formula
+$x\in A$
+
+
+\end_inset
+(:
+\begin_inset Formula
+\[
+Dg_{x}=\left(Df_{a}\right)^{-1}\circ Df_{x}
+\]
+
+
+
+
+\end_inset
+ולכן לפי ההנחה מתקיים )לכל 
+\begin_inset Formula
+$x\in A$
+
+
+\end_inset
+(:
+\begin_inset Formula
+\[
+\left\Vert Dg_{x}-\MKid\right\Vert _{\MKop}\leq\varepsilon
+\]
+
+
+
+
+\end_inset
+ומהלמה הקודמת )
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 4.4"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+( נובע כי:
+\begin_inset Formula
+\[
+B_{\left(1-\varepsilon\right)r}\left(g\left(a\right)\right)\subseteq g\left(B_{r}\left(a\right)\right)\subseteq B_{\left(1+\varepsilon\right)r}\left(g\left(a\right)\right)
+\]
+
+
+
+
+\end_inset
+ע"פ הגדרת 
+\begin_inset Formula
+$g$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+f\left(B_{r}\left(a\right)\right)=Df_{a}\left(g\left(B_{r}\left(a\right)\right)\right)
+\]
+
+
+
+
+\end_inset
+ומכאן נובע כי:
+\begin_inset Formula
+\begin{align*}
+Df_{a}\left(B_{\left(1-\varepsilon\right)r}\left(\left(Df_{a}\right)^{-1}\left(f\left(a\right)\right)\right)\right) & =Df_{a}\left(B_{\left(1-\varepsilon\right)r}\left(g\left(a\right)\right)\right)\subseteq f\left(B_{r}\left(a\right)\right)\\
+ & \subseteq Df_{a}\left(B_{\left(1+\varepsilon\right)r}\left(g\left(a\right)\right)\right)=Df_{a}\left(B_{\left(1+\varepsilon\right)r}\left(\left(Df_{a}\right)^{-1}\left(f\left(a\right)\right)\right)\right)
+\end{align*}
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+משפט הפונקציה ההפוכה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ קבוצה פתוחה, ותהא 
+\begin_inset Formula
+$f:A\rightarrow\MKreal^{k}$
+
+
+\end_inset
+ פונקציה גזירה ברציפות ב-
+\begin_inset Formula
+$A$
+
+
+\end_inset
+ , ויהי 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+אם 
+\begin_inset Formula
+$Df_{a}$
+
+
+\end_inset
+ הפיכה אז קיימת סביבה 
+\begin_inset Formula
+$U\subseteq A$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f\mid_{U}$
+
+
+\end_inset
+ חח"ע ו-
+\begin_inset Formula
+$f\left(U\right)$
+
+
+\end_inset
+ פתוחה, ובנוסף 
+\begin_inset Formula
+$f^{-1}$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+למעשה 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ אינה בהכרח הפיכה ומדובר בהופכית של 
+\begin_inset Formula
+$f\mid_{U}$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+ גזירה ברציפות ב-
+\begin_inset Formula
+$f\left(U\right)$
+
+
+\end_inset
+ ולכל 
+\begin_inset Formula
+$y\in f\left(U\right)$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left(Df^{-1}\right)_{y}=\left(Df_{f^{-1}\left(y\right)}\right)^{-1}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+נניח ש-
+\begin_inset Formula
+$Df_{a}$
+
+
+\end_inset
+ הפיכה, נסמן 
+\begin_inset Formula
+$M:=2\cdot\left\Vert \left(Df_{a}\right)^{-1}\right\Vert _{\MKop}$
+
+
+\end_inset
+, ויהי 
+\begin_inset Formula
+$0<r\in\MKreal$
+
+
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$x\in B_{r}\left(a\right)$
+
+
+\end_inset
+ הנגזרת 
+\begin_inset Formula
+$Df_{x}$
+
+
+\end_inset
+ תהיה הפיכה ובנוסף:
+\begin_inset Formula
+\[
+\left\Vert Df_{x}-Df_{a}\right\Vert _{\MKop}\leq\frac{1}{2\cdot\left\Vert \left(Df_{a}\right)^{-1}\right\Vert _{\MKop}}=\frac{1}{M}
+\]
+
+
+
+
+\end_inset
+מהיות 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ גזירה ברציפות, וממסקנה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 4.2"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ נובע שאכן קיים 
+\begin_inset Formula
+$r$
+
+
+\end_inset
+ כזה.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נוכיח שהצמצום של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$B_{r}\left(a\right)$
+
+
+\end_inset
+ הוא חח"ע.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$x_{1},x_{2}\in B_{r}\left(a\right)$
+
+
+\end_inset
+, ע"פ למה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 4.3"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left\Vert f\left(x_{1}\right)-f\left(x_{2}\right)-Df_{a}\left(x_{1}-x_{2}\right)\right\Vert \leq\left\Vert x_{1}-x_{2}\right\Vert \cdot\max_{x\in\left[x_{1},x_{2}\right]}\left\Vert Df_{x}-Df_{a}\right\Vert _{\MKop}\leq\frac{\left\Vert x_{1}-x_{2}\right\Vert }{2\cdot\left\Vert \left(Df_{a}\right)^{-1}\right\Vert _{\MKop}}
+\]
+
+
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+\Rightarrow\left\Vert f\left(x_{1}\right)-f\left(x_{2}\right)\right\Vert  & \geq\left\Vert Df_{a}\left(x_{1}-x_{2}\right)\right\Vert -\frac{\left\Vert x_{1}-x_{2}\right\Vert }{2\cdot\left\Vert \left(Df_{a}\right)^{-1}\right\Vert _{\MKop}}\\
+ & =\frac{1}{\left\Vert \left(Df_{a}\right)^{-1}\right\Vert _{\MKop}}\cdot\left(\left\Vert \left(Df_{a}\right)^{-1}\right\Vert _{\MKop}\cdot\left\Vert Df_{a}\left(x_{1}-x_{2}\right)\right\Vert -\frac{1}{2}\cdot\left\Vert x_{1}-x_{2}\right\Vert \right)\\
+ & \geq\frac{2}{M}\cdot\left(\left\Vert \left(Df_{a}\right)^{-1}\left(Df_{a}\left(x_{1}-x_{2}\right)\right)\right\Vert -\frac{1}{2}\cdot\left\Vert x_{1}-x_{2}\right\Vert \right)\\
+ & \frac{2}{M}\cdot\left(\left\Vert x_{1}-x_{2}\right\Vert -\frac{1}{2}\cdot\left\Vert x_{1}-x_{2}\right\Vert \right)=\frac{\left\Vert x_{1}-x_{2}\right\Vert }{M}
+\end{align*}
+
+
+
+
+\end_inset
+מכאן ש-
+\begin_inset Formula
+$f\left(x_{1}\right)=f\left(x_{2}\right)\Longleftrightarrow x_{1}=x_{2}$
+
+
+\end_inset
+, כלומר הצמצום של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$B_{r}\left(a\right)$
+
+
+\end_inset
+ הוא חח"ע.
+\begin_inset Newline newline
+\end_inset
+בנוסף נובע מכאן ש-
+\begin_inset Formula
+$f^{-1}$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ההופכית של הצמצום של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ל-
+\begin_inset Formula
+$B_{r}\left(a\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+ רציפה לפי ליפשיץ ובפרט רציפה - לכל 
+\begin_inset Formula
+$y_{1},y_{2}\in f\left(B_{r}\left(a\right)\right)$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left\Vert f\left(f^{-1}\left(y_{1}\right)\right)-f\left(f^{-1}\left(y_{2}\right)\right)\right\Vert \geq\frac{\left\Vert f^{-1}\left(y_{1}\right)-f^{-1}\left(y_{2}\right)\right\Vert }{M}
+\]
+
+
+
+
+\end_inset
+וממילא גם:
+\begin_inset Formula
+\[
+\left\Vert f^{-1}\left(y_{1}\right)-f^{-1}\left(y_{2}\right)\right\Vert \leq M\cdot\left\Vert f\left(f^{-1}\left(y_{1}\right)\right)-f\left(f^{-1}\left(y_{2}\right)\right)\right\Vert =M\cdot\left\Vert y_{1}-y_{2}\right\Vert 
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+נשים לב שאי אפשר לקחת את 
+\begin_inset Formula
+$B_{r}\left(a\right)$
+
+
+\end_inset
+ בתור הסביבה 
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ שמבטיח המשפט מפני שאולי 
+\begin_inset Formula
+$f\left(B_{r}\left(a\right)\right)$
+
+
+\end_inset
+ אינה פתוחה.
+\begin_inset Newline newline
+\end_inset
+ע"פ למה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 4.5"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+V:=Df_{a}\left(B_{\frac{r}{2}}\left(\left(Df_{a}\right)^{-1}\left(f\left(a\right)\right)\right)\right)\subseteq f\left(B_{r}\left(a\right)\right)
+\]
+
+
+
+
+\end_inset
+
+\begin_inset Formula
+$V$
+
+
+\end_inset
+ היא קבוצה פתוחה מפני ש-
+\begin_inset Formula
+$Df_{a}$
+
+
+\end_inset
+ היא הומיאומורפיזם, ולכן אם נסמן 
+\begin_inset Formula
+$U:=f^{-1}\left(V\right)\cap B_{r}\left(a\right)$
+
+
+\end_inset
+ נקבל סביבה של 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+מהגדרה 
+\begin_inset Formula
+$a=Df_{a}\left(\left(Df_{a}\right)^{-1}\left(f\left(a\right)\right)\right)\in Df_{a}\left(B_{\frac{r}{2}}\left(\left(Df_{a}\right)^{-1}\left(f\left(a\right)\right)\right)\right)=V$
+
+
+\end_inset
+ ולכן 
+\begin_inset Formula
+$a\in f^{-1}\left(V\right)\cap B_{r}\left(a\right)=U$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f\left(U\right)=V$
+
+
+\end_inset
+ פתוחה; בנוסף 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ חח"ע ב-
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ מפני ש-
+\begin_inset Formula
+$U\subseteq B_{r}\left(a\right)$
+
+
+\end_inset
+ ולכן יש ל-
+\begin_inset Formula
+$f\mid_{U}$
+
+
+\end_inset
+ הופכית.
+\end_layout
+
+\begin_layout Itemize
+יהי 
+\begin_inset Formula
+$b\in V$
+
+
+\end_inset
+ ונסמן 
+\begin_inset Formula
+$c:=f^{-1}\left(b\right)$
+
+
+\end_inset
+, לכל 
+\begin_inset Formula
+$y\in V$
+
+
+\end_inset
+ קיים 
+\begin_inset Formula
+$x\in U$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f\left(x\right)=y$
+
+
+\end_inset
+ ולכן גם:
+\begin_inset Formula
+\begin{align*}
+f^{-1}\left(y\right)-f^{-1}\left(b\right)-\left(Df_{f^{-1}\left(b\right)}\right)^{-1}\left(y-b\right) & =x-c-\left(Df_{c}\right)^{-1}\left(f\left(x\right)-f\left(c\right)\right)\\
+ & =-\left(Df_{c}\right)^{-1}\left(f\left(x\right)-f\left(c\right)-Df_{c}\left(x-c\right)\right)
+\end{align*}
+
+
+
+
+\end_inset
+וממילא )נזכור ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ היא פונקציה רציפה לפי ליפשיץ עם קבוע ליפשיץ 
+\begin_inset Formula
+$M$
+
+
+\end_inset
+(:
+\begin_inset Formula
+\begin{align*}
+\frac{\left\Vert f^{-1}\left(y\right)-f^{-1}\left(b\right)-\left(Df_{f^{-1}\left(b\right)}\right)^{-1}\left(y-b\right)\right\Vert }{\left\Vert y-b\right\Vert } & \leq M\cdot\frac{\left\Vert -\left(Df_{c}\right)^{-1}\left(f\left(x\right)-f\left(c\right)-Df_{c}\left(x-c\right)\right)\right\Vert }{\left\Vert f^{-1}\left(x\right)-f^{-1}\left(c\right)\right\Vert }\\
+ & \leq\left\Vert \left(Df_{c}\right)^{-1}\right\Vert _{\MKop}\cdot M\cdot\frac{\left\Vert f\left(x\right)-f\left(c\right)-Df_{c}\left(x-c\right)\right\Vert }{\left\Vert x-c\right\Vert }\xrightarrow[x\rightarrow c]{}0
+\end{align*}
+
+
+
+
+\end_inset
+מהרציפות של 
+\begin_inset Formula
+$f^{-1}$
+
+
+\end_inset
+ נובע כי:
+\begin_inset Formula
+\[
+\lim_{y\rightarrow b}\frac{\left\Vert f^{-1}\left(y\right)-f^{-1}\left(b\right)-\left(Df_{f^{-1}\left(b\right)}\right)^{-1}\left(y-b\right)\right\Vert }{\left\Vert y-b\right\Vert }=\lim_{x\rightarrow c}\left(\left\Vert \left(Df_{c}\right)^{-1}\right\Vert _{\MKop}\cdot M\cdot\frac{\left\Vert f\left(x\right)-f\left(c\right)-Df_{c}\left(x-c\right)\right\Vert }{\left\Vert x-c\right\Vert }\right)=0
+\]
+
+
+
+
+\end_inset
+מכאן ש-
+\begin_inset Formula
+$f^{-1}$
+
+
+\end_inset
+ גזירה בכל נקודה 
+\begin_inset Formula
+$b\in V$
+
+
+\end_inset
+ והנגזרת היא אכן זו שציפינו לה.
+\begin_inset Newline newline
+\end_inset
+ע"פ המשפט המרכזי של 
+\begin_inset CommandInset href
+LatexCommand href
+name "המטריצה המצורפת"
+target https://he.wikipedia.org/wiki/%D7%9E%D7%98%D7%A8%D7%99%D7%A6%D7%94_%D7%9E%D7%A6%D7%95%D7%A8%D7%A4%D7%AA
+literal false
+\end_inset
+ הפונקציה המעתיקה מטריצה להופכית שלה היא פונקציה רציפה, שכן הדטרמיננטה רציפה )למה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 4.1"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+(, וכמו כן ההעתקות 
+\begin_inset Formula
+$x\mapsto Df_{x}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$y\mapsto f^{-1}\left(y\right)$
+
+
+\end_inset
+ גם הן רציפות; מכאן שההעתקה 
+\begin_inset Formula
+$y\mapsto\left(Df^{-1}\right)_{y}$
+
+
+\end_inset
+ גם היא העתקה רציפה משום שהיא הרכבה של שלוש האחרונות )בסדר הפוך מזה שבו הצגנו אותן(.
+\end_layout
+
+\end_deeper
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ קבוצה פתוחה ותהא 
+\begin_inset Formula
+$f:A\rightarrow\MKreal^{m}$
+
+
+\end_inset
+ פונקציה גזירה ברציפות, אם קיימת נקודה 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$Df_{a}$
+
+
+\end_inset
+ חח"ע אז 
+\begin_inset Formula
+$m\geq k$
+
+
+\end_inset
+ ובנוסף קיימת סביבה 
+\begin_inset Formula
+$U\subseteq A$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f\mid_{U}$
+
+
+\end_inset
+ חח"ע.
+\end_layout
+
+\begin_layout Subsection
+משפט ההעתקה הפתוחה
+\end_layout
+
+\begin_layout Theorem
+\series bold
+משפט ההעתקה הפתוחה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$k,m\in\MKnatural$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$m\leq k$
+
+
+\end_inset
+, תהא 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ קבוצה פתוחה ותהא 
+\begin_inset Formula
+$f:A\rightarrow\MKreal^{m}$
+
+
+\end_inset
+ פונקציה גזירה ברציפות. אם 
+\begin_inset Formula
+$\MKrank\left(Df_{a}\right)=m$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+, אז 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ היא העתקה פתוחה.
+\end_layout
+
+\begin_layout Proof
+תהא 
+\begin_inset Formula
+$U\subseteq A$
+
+
+\end_inset
+ פתוחה, ותהא 
+\begin_inset Formula
+$a\in U$
+
+
+\end_inset
+; נרצה להוכיח ש-
+\begin_inset Formula
+$f\left(a\right)$
+
+
+\end_inset
+ היא נקודה פנימית של 
+\begin_inset Formula
+$f\left(U\right)$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מהעובדה ש-
+\begin_inset Formula
+$\MKrank\left(Df_{a}\right)=m$
+
+
+\end_inset
+ נובע שקיימת העתקה ליניארית 
+\begin_inset Formula
+$T:\MKreal^{m}\rightarrow\MKreal^{k}$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKrank\left(Df_{a}\circ T\right)=m$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+לדוגמה: 
+\begin_inset Formula
+$T$
+
+
+\end_inset
+ תעתיק בסיס של 
+\begin_inset Formula
+$\MKreal^{m}$
+
+
+\end_inset
+ לבסיס של 
+\begin_inset Formula
+$\left(\ker\left(Df_{a}\right)\right)^{\perp}$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+, כלומר 
+\begin_inset Formula
+$Df_{a}\circ T$
+
+
+\end_inset
+ הפיכה.
+\begin_inset Newline newline
+\end_inset
+א"כ תהא 
+\begin_inset Formula
+$T$
+
+
+\end_inset
+ כנ"ל, ותהא 
+\begin_inset Formula
+$g:\MKreal^{m}\rightarrow\MKreal^{k}$
+
+
+\end_inset
+ פונקציה המוגדרת ע"י 
+\begin_inset Formula
+$g\left(x\right):=a+T\left(x\right)$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$x\in\MKreal^{m}$
+
+
+\end_inset
+. ע"פ השרשרת 
+\begin_inset Formula
+$f\circ g$
+
+
+\end_inset
+ גזירה בכל נקודה ונגזרתה בנקודה 
+\begin_inset Formula
+$x\in\MKreal^{m}$
+
+
+\end_inset
+ היא 
+\begin_inset Formula
+$Df_{a+T\left(x\right)}\circ T$
+
+
+\end_inset
+, מכאן ש-
+\begin_inset Formula
+$f\circ g$
+
+
+\end_inset
+ גזירה ברציפות.
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$g$
+
+
+\end_inset
+ רציפה ולכן 
+\begin_inset Formula
+$g^{-1}\left(U\right)$
+
+
+\end_inset
+ היא קבוצה פתוחה, מהגדרה 
+\begin_inset Formula
+$0\in g^{-1}\left(U\right)$
+
+
+\end_inset
+ ולכן ממשפט הפונקציה ההפוכה נובע שקיימת סביבה 
+\begin_inset Formula
+$\tilde{U}\subseteq g^{-1}\left(U\right)$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$0$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f\left(g\left(\tilde{U}\right)\right)$
+
+
+\end_inset
+ פתוחה, תהא 
+\begin_inset Formula
+$\tilde{U}$
+
+
+\end_inset
+ כנ"ל. מהגדרה מתקיים 
+\begin_inset Formula
+$g\left(\tilde{U}\right)\subseteq g\left(g^{-1}\left(U\right)\right)\subseteq U$
+
+
+\end_inset
+, ולכן גם 
+\begin_inset Formula
+$f\left(g\left(\tilde{U}\right)\right)\subseteq f\left(U\right)$
+
+
+\end_inset
+. נשים לב לכך ש-
+\begin_inset Formula
+$f\left(a\right)=f\left(g\left(0\right)\right)$
+
+
+\end_inset
+ ולכן 
+\begin_inset Formula
+$f\left(a\right)\in f\left(g\left(\tilde{U}\right)\right)$
+
+
+\end_inset
+, ומהיות 
+\begin_inset Formula
+$f\left(g\left(\tilde{U}\right)\right)$
+
+
+\end_inset
+ פתוחה ומוכלת ב-
+\begin_inset Formula
+$f\left(U\right)$
+
+
+\end_inset
+ נובע ש-
+\begin_inset Formula
+$f\left(a\right)$
+
+
+\end_inset
+ היא נקודה פנימית של 
+\begin_inset Formula
+$f\left(U\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+משפט הפונקציה הסתומה
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+משפט הפונקציה הסתומה אינו בחומר למבחן ולכן לא כתבתי לו הוכחה.
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ מהו השיפוע של הישר המשיק למעגל היחידה בנקודה 
+\begin_inset Formula
+$\left(\frac{1}{2},\frac{\sqrt{3}}{2}\right)$
+
+
+\end_inset
+?
+\begin_inset Newline newline
+\end_inset
+היינו רוצים לגזור את 
+\begin_inset CommandInset href
+LatexCommand href
+name "המקום הגאומטרי"
+target https://he.wikipedia.org/wiki/%D7%9E%D7%A7%D7%95%D7%9D_%D7%92%D7%90%D7%95%D7%9E%D7%98%D7%A8%D7%99
+literal false
+\end_inset
+ 
+\begin_inset Formula
+$\left\{ \left(x,y\right)\in\MKreal^{2}\mid x^{2}+y^{2}=1\right\} $
+
+
+\end_inset
+ אלא שהוא אינו מהווה גרף של פונקציה, ולכן לא נוכל לגזור אותו.
+\begin_inset Newline newline
+\end_inset
+הפתרון הטבעי כמובן הוא לחלק את המקום הגאומטרי לשני חלקים:
+\begin_inset Formula
+\[
+\left\{ \left(x,y\right)\in\MKreal^{2}\mid x^{2}+y^{2}=1\right\} =\left\{ \left(x,y\right)\in\MKreal^{2}\mid x^{2}+y^{2}=1,\ y>0\right\} \MKcupdot\left\{ \left(x,y\right)\in\MKreal^{2}\mid x^{2}+y^{2}=1,\ y\leq0\right\} 
+\]
+
+
+
+
+\end_inset
+את שתי הקבוצות הללו ניתן להציג כגרפים של פונקציות:
+\begin_inset Formula
+\begin{align*}
+\left\{ \left(x,y\right)\in\MKreal^{2}\mid x^{2}+y^{2}=1,\ y\geq0\right\}  & =\left\{ \begin{array}{c|c}
+\left(x,y\right)\in\MKreal^{2} & y=\sqrt{1-x^{2}}\end{array}\right\} \\
+\left\{ \left(x,y\right)\in\MKreal^{2}\mid x^{2}+y^{2}=1,\ y<0\right\}  & =\left\{ \begin{array}{c|c}
+\left(x,y\right)\in\MKreal^{2} & y=-\sqrt{1-x^{2}}\end{array}\right\} 
+\end{align*}
+
+
+
+
+\end_inset
+ולכן אותן ניתן לגזור. מכללי גזירה נובע שהנגזרת של 
+\begin_inset Formula
+$\sqrt{1-x^{2}}$
+
+
+\end_inset
+ היא 
+\begin_inset Formula
+${\displaystyle \frac{-2x}{2\sqrt{1-x^{2}}}=-\frac{x}{\sqrt{1-x^{2}}}}$
+
+
+\end_inset
+, ולכן השיפוע של המשיק למעגל היחידה בנקודה 
+\begin_inset Formula
+$\left(\frac{1}{2},\frac{\sqrt{3}}{2}\right)$
+
+
+\end_inset
+ הוא 
+\begin_inset Formula
+${\displaystyle -\frac{\frac{1}{2}}{\sqrt{1-\left(\frac{1}{2}\right)^{2}}}=-\frac{1}{\sqrt{3}}}$
+
+
+\end_inset
+, וזה כמובן מתאים לכך שהמשיק למעגל מאונך לרדיוס בנקודה
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+השיפוע של הרדיוס לנקודה 
+\begin_inset Formula
+$\left(\frac{1}{2},\frac{\sqrt{3}}{2}\right)$
+
+
+\end_inset
+ הוא 
+\begin_inset Formula
+$\sqrt{3}$
+
+
+\end_inset
+ ואנחנו יודעים ששני ישרים במישור הם מאונכים אם"ם מכפלת השיפועים שלהם היא 
+\begin_inset Formula
+$-1$
+
+
+\end_inset
+ )למעט עבור ישרים המקבילים לציר ה-
+\begin_inset Formula
+$y$
+
+
+\end_inset
+(.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ המקרה שראינו לעיל הוא מקרה פשוט מאד, מה אם נרצה להשתמש בכלים החזקים שפיתחנו עבור פונקציות כדי לחקור מקומות גאומטריים המוגדרים באמצעות נוסחאות מסובכות יותר?
+\begin_inset Newline newline
+\end_inset
+במישור ניתן להביא כל מקום גאומטרי כזה לצורה 
+\begin_inset Formula
+$\left\{ \left(x,y\right)\in\MKreal^{2}\mid G\left(x,y\right)=0\right\} $
+
+
+\end_inset
+ עבור פונקציה 
+\begin_inset Formula
+$g:\MKreal^{2}\rightarrow\MKreal$
+
+
+\end_inset
+, במקרה הנ"ל 
+\begin_inset Formula
+$G$
+
+
+\end_inset
+ זו תהיה הפונקציה המוגדרת ע"י 
+\begin_inset Formula
+$G\left(x,y\right):=x^{2}+y^{2}-1$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$\left(x,y\right)\in\MKreal^{2}$
+
+
+\end_inset
+. כעת נשים לב לכך שמה שעשינו הוא למצוא סביבה 
+\begin_inset Formula
+$U$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$\left(\frac{1}{2},\frac{\sqrt{3}}{2}\right)$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+\begin_inset Formula
+$\left\{ \left(x,y\right)\in\MKreal^{2}\mid y>0\right\} $
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+ וסביבה 
+\begin_inset Formula
+$V$
+
+
+\end_inset
+ של 
+\begin_inset Formula
+$\frac{1}{2}$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+הקטע 
+\begin_inset Formula
+$\left(-1,1\right)$
+
+
+\end_inset
+, במקרה זה לא היה צורך להצטמצם הרבה בציר ה-
+\begin_inset Formula
+$x$
+
+
+\end_inset
+ אבל אם היה מדובר במקום גאומטרי מסובך יותר ייתכן שהיינו צריכים להצטמצם גם בו.
+\end_layout
+
+\end_inset
+, כך שקיימת פונקציה 
+\begin_inset Formula
+$f:V\rightarrow B$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+\begin_inset Formula
+$f\left(x\right):=\sqrt{1-x^{2}}$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+ המקיימת 
+\begin_inset Formula
+$G\left(x,y\right)=0\Longleftrightarrow y=f\left(x\right)$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$\left(x,y\right)\in U$
+
+
+\end_inset
+; כלומר לקחנו רק חלק מהמקום הגאומטרי כך שאותו חלק הוא אכן גרף של פונקציה.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+משפט הפונקציה הסתומה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$A\subseteq\MKreal^{k}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$B\subseteq\MKreal^{m}$
+
+
+\end_inset
+ קבוצות פתוחות ותהא 
+\begin_inset Formula
+$G:A\times B\rightarrow\MKreal^{m}$
+
+
+\end_inset
+ פונקציה גזירה ברציפות.
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$\left(a,b\right)\in A\times B$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$g\left(a,b\right)=0$
+
+
+\end_inset
+ ונסמן ב-
+\begin_inset Formula
+$M$
+
+
+\end_inset
+ את תת-המטריצה של 
+\begin_inset Formula
+$DG_{\left(a,b\right)}$
+
+
+\end_inset
+ הכוללת את 
+\begin_inset Formula
+$m$
+
+
+\end_inset
+ העמודות הימניות שלה )כלומר העמודה ה-
+\begin_inset Formula
+$j$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$M$
+
+
+\end_inset
+ היא הנגזרת החלקית של 
+\begin_inset Formula
+$G$
+
+
+\end_inset
+ לפי המשתנה ה-
+\begin_inset Formula
+$k+j$
+
+
+\end_inset
+ שהם כל המשתנים ב-
+\begin_inset Formula
+$B$
+
+
+\end_inset
+(:
+\begin_inset Formula
+\[
+M:=\left[\begin{array}{cccc}
+\mid & \mid &  & \mid\\
+\partial_{k+1}G\left(a,b\right) & \partial_{k+2}G\left(a,b\right) & \cdots & \partial_{k+m}G\left(a,b\right)\\
+\mid & \mid &  & \mid
+\end{array}\right]
+\]
+
+
+
+
+\end_inset
+אם 
+\begin_inset Formula
+$M$
+
+
+\end_inset
+ הפיכה אז קיימות: קבוצה פתוחה 
+\begin_inset Formula
+$U\subseteq A\times B$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left(a,b\right)\in U$
+
+
+\end_inset
+, קבוצה פתוחה 
+\begin_inset Formula
+$V\subseteq\MKreal^{k}$
+
+
+\end_inset
+ ופונקציה גזירה ברציפות 
+\begin_inset Formula
+$f:V\rightarrow B$
+
+
+\end_inset
+ כך שמתקיים )לכל 
+\begin_inset Formula
+$\left(x,y\right)\in U$
+
+
+\end_inset
+(:
+\begin_inset Formula
+\[
+G\left(x,y\right)=0\Longleftrightarrow y=f\left(x\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ בד"כ כשנשתמש במשפט הפונקציה הסתומה נצטרך להסיק את 
+\begin_inset Formula
+$G$
+
+
+\end_inset
+ מתוך המקום הגאומטרי הנתון לנו ולהוכיח שהיא אכן מקיימת את התנאים.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ לכאורה לא הרווחנו דבר - אין לנו שום מושג מיהי אותה 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ שקיבלנו מהמשפט
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+לו היינו יודעים מיהי היה זה משום שהיינו יכולים לצמצם בעצמנו את התחום ולהסיק את ההופכית המקומית.
+\end_layout
+
+\end_inset
+!
+\begin_inset Newline newline
+\end_inset
+למרות זאת אנחנו יכולים לחשב את הנגזרת שלה בכל נקודה ע"י כלל השרשרת; לכל 
+\begin_inset Formula
+$x\in V$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$G\left(x,f\left(x\right)\right)=0$
+
+
+\end_inset
+, א"כ תהא 
+\begin_inset Formula
+$g:V\rightarrow\MKreal^{k}\times\MKreal^{m}$
+
+
+\end_inset
+ המוגדרת ע"י 
+\begin_inset Formula
+$g\left(x\right):=\left(x,f\left(x\right)\right)$
+
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$x\in V$
+
+
+\end_inset
+ ומכלל השרשרת נובע כי:
+\begin_inset Formula
+\[
+0=D\left(G\circ g\right)_{a}=DG_{\left(a,f\left(a\right)\right)}\circ Dg_{a}=DG_{\left(a,b\right)}\circ Dg_{a}
+\]
+
+
+
+
+\end_inset
+כלומר:
+\begin_inset Formula
+\begin{align*}
+0 & =\left[\begin{array}{cccc|ccc}
+\mid & \mid &  & \mid\\
+\partial_{1}G\left(a,b\right) & \partial_{2}G\left(a,b\right) & \cdots & \partial_{k}G\left(a,b\right) &  & M\\
+\mid & \mid &  & \mid
+\end{array}\right]\cdot\left[\begin{array}{ccc}
+\\ & I_{k}\\
+\\\hline \\ & Df_{a}\\
+\\\end{array}\right]\\
+ & =\left[\begin{array}{cccc}
+\mid & \mid &  & \mid\\
+\partial_{1}G\left(a,b\right) & \partial_{2}G\left(a,b\right) & \cdots & \partial_{k}G\left(a,b\right)\\
+\mid & \mid &  & \mid
+\end{array}\right]+M\cdot Df_{a}\\
+\Rightarrow & Df_{a}=-M^{-1}\cdot\left[\begin{array}{cccc}
+\mid & \mid &  & \mid\\
+\partial_{1}G\left(a,b\right) & \partial_{2}G\left(a,b\right) & \cdots & \partial_{k}G\left(a,b\right)\\
+\mid & \mid &  & \mid
+\end{array}\right]
+\end{align*}
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ במקרה שהבאנו לעיל )גזירת מעגל היחידה( נקבל )לכל 
+\begin_inset Formula
+$x\in\left(-1,1\right)$
+
+
+\end_inset
+(:
+\begin_inset Formula
+\[
+0=D\left(G\circ g\right)_{x}=DG_{\left(x,f\left(x\right)\right)}\circ Dg_{x}=DG_{\left(x,\sqrt{1-x^{2}}\right)}\circ Dg_{x}=\left[\begin{array}{c}
+2x\end{array}\right]+\left[\begin{array}{c}
+2\cdot\sqrt{1-x^{2}}\end{array}\right]\cdot Df_{x}
+\]
+
+
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow Df_{x}=-\left[\begin{array}{c}
+\frac{1}{2\cdot\sqrt{1-x^{2}}}\end{array}\right]\cdot\left[\begin{array}{c}
+2x\end{array}\right]=\left[\begin{array}{c}
+-\frac{x}{2\cdot\sqrt{1-x^{2}}}\end{array}\right]
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+כופלי לגראנז'
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ בפרק הקודם ראינו שכמו באינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+ניתן למצוא נקודות קיצון מקומיות בקבוצה פתוחה ע"י גזירת הפונקציה והשוואת הנגזרת ל-
+\begin_inset Formula
+$0$
+
+
+\end_inset
+, וכן ראינו שניתן למיין אותן ע"פ הנגזרת השנייה.
+\begin_inset Newline newline
+\end_inset
+באינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+היו לנו לכל היותר שתי נקודות שפה שקל היה לבדוק אם הן מהוות נקודות קיצון, אבל כעת ייתכן שיש לנו קבוצה אין-סופית )ואפילו לא בת-מנייה( של נקודות שפה - ייתכן אפילו שהקבוצה כולה היא נקודות שפה!
+\begin_inset Newline newline
+\end_inset
+כיצד נוכל למצוא את נקודות הקיצון במצב כזה?
+\begin_inset Newline newline
+\end_inset
+הפתרון הוא לחלק את הקבוצה לשני חלקים: את הנקודות החשודות לקיצון בפנים הקבוצה נמצא בדרך הרגילה, ואת הנקודות החשודות לקיצון על השפה נמצא ע"י המשפט הבא; אחרי שמצאנו את כל הנקודות החשודות נצטרך להציב ולבדוק מי מהן היא אכן נקודת קיצון.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+כופלי לגראנז'
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה: 
+\begin_inset CommandInset href
+LatexCommand href
+name "ז'וזף-לואי לגראנז'"
+target https://he.wikipedia.org/wiki/%D7%96%27%D7%95%D7%96%D7%A3-%D7%9C%D7%95%D7%90%D7%99_%D7%9C%D7%92%D7%A8%D7%90%D7%A0%D7%96%27
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$U\subseteq\MKreal^{k}$
+
+
+\end_inset
+ קבוצה פתוחה, יהי 
+\begin_inset Formula
+$k>m\in\MKnatural$
+
+
+\end_inset
+ ותהיינה 
+\begin_inset Formula
+$f,g_{1},g_{2},\ldots,g_{m}\in C^{1}\left(U,\MKreal\right)$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נסמן:
+\begin_inset Formula
+\[
+A:=\left\{ \begin{array}{c|c}
+x\in U & g_{1}\left(x\right)=g_{2}\left(x\right)=\ldots=g_{m}\left(x\right)=0\end{array}\right\} 
+\]
+
+
+
+
+\end_inset
+ותהא 
+\begin_inset Formula
+$F:A\rightarrow\MKreal^{m+1}$
+
+
+\end_inset
+ פונקציה המוגדרת ע"י )לכל 
+\begin_inset Formula
+$x\in U$
+
+
+\end_inset
+(:
+\begin_inset Formula
+\[
+F\left(x\right):=\begin{bmatrix}g_{1}\left(x\right)\\
+g_{2}\left(x\right)\\
+\vdots\\
+g_{m}\left(x\right)\\
+f\left(x\right)
+\end{bmatrix}
+\]
+
+
+
+
+\end_inset
+מהגדרה 
+\begin_inset Formula
+$F$
+
+
+\end_inset
+ היא פונקציה גזירה ברציפות ולכל 
+\begin_inset Formula
+$x\in A$
+
+
+\end_inset
+ מתקיים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+יש לשחלף את הגרדיאנטים כדי לקבל שאלה הן השורות של 
+\begin_inset Formula
+$DF_{x}$
+
+
+\end_inset
+.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\[
+DF_{x}=\left[\begin{array}{c}
+\nabla g_{1}\left(x\right)\\
+\nabla g_{2}\left(x\right)\\
+\vdots\\
+\nabla g_{m}\left(x\right)\\
+\nabla f\left(x\right)
+\end{array}\right]
+\]
+
+
+
+
+\end_inset
+לכל נקודה 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+, כך ש-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ היא נקודת קיצון מקומית של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$A$
+
+
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$\MKrank\left(DF_{a}\right)<m+1$
+
+
+\end_inset
+; כלומר הסדרה
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$\left(\nabla g_{1}\left(a\right),\nabla g_{2}\left(a\right),\ldots,\nabla g_{m}\left(a\right),\nabla f\left(a\right)\right)$
+
+
+\end_inset
+ תלויה ליניארית.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ בד"כ הפונקציות 
+\begin_inset Formula
+$g_{1},g_{2},\ldots,g_{m}$
+
+
+\end_inset
+ אינן נתונות לנו אלא אנו נצטרך להסיק אותן מתוך הקבוצה שבה אנו רוצים למצוא את נקודות הקיצון, מסיבה זו נוכל לדאוג לכך שהסדרה 
+\begin_inset Formula
+$\left(\nabla g_{1}\left(a\right),\nabla g_{2}\left(a\right),\ldots,\nabla g_{n}\left(a\right)\right)$
+
+
+\end_inset
+ לא תהיה תלויה ליניארית )אם היא כן אז נדלל אותה לסדרה בת"ל(, ואז המשפט אומר שאם 
+\begin_inset Formula
+$x\in A$
+
+
+\end_inset
+ היא נקודת קיצון של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$A$
+
+
+\end_inset
+ אז קיימים 
+\begin_inset Formula
+$\lambda_{1},\lambda_{2},\ldots,\lambda_{n}\in\MKreal$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+סקלרים אלה הם הנקראים "כופלי לגראנז'" ועל שמם נקרא המשפט.
+\end_layout
+
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+\nabla f\left(x\right)=\sum_{i=1}^{m}\lambda_{i}\cdot\nabla g_{i}\left(x\right)
+\]
+
+
+
+
+\end_inset
+כלומר קיבלנו מערכת של 
+\begin_inset Formula
+$n+k$
+
+
+\end_inset
+ משוואות ב-
+\begin_inset Formula
+$k+m$
+
+
+\end_inset
+ נעלמים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+\begin_inset Formula
+$k$
+
+
+\end_inset
+ הקואורדינטות של 
+\begin_inset Formula
+$x$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$m$
+
+
+\end_inset
+ ה-
+\begin_inset Formula
+$\lambda$
+
+
+\end_inset
+-ים.
+\end_layout
+
+\end_inset
+, ואם נצליח לפתור את המשוואות
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+שימו לב שאלה אינן בהכרח משוואות ליניאריות, ולכן אין לנו אלגוריתם לפתירתן.
+\end_layout
+
+\end_inset
+ נוכל לקבוע אלו נקודות ב-
+\begin_inset Formula
+$A$
+
+
+\end_inset
+ חשודות בהיותן נקודות קיצון.
+\end_layout
+
+\begin_layout Proof
+תהא 
+\begin_inset Formula
+$a\in A$
+
+
+\end_inset
+ נקודת קיצון מקומית של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$A$
+
+
+\end_inset
+ ונניח בשלילה ש-
+\begin_inset Formula
+$\MKrank\left(DF_{a}\right)\geq m+1$
+
+
+\end_inset
+, כלומר 
+\begin_inset Formula
+$\MKrank\left(DF_{a}\right)=m+1$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מהיות 
+\begin_inset Formula
+$F$
+
+
+\end_inset
+ גזירה ברציפות נובע שקיימת סביבה של 
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ שבה דרגת הנגזרת מלאה בכל נקודה, תהא 
+\begin_inset Formula
+$B$
+
+
+\end_inset
+ סביבה כזו. ממשפט ההעתקה הפתוחה נובע ש-
+\begin_inset Formula
+$F\mid_{B}$
+
+
+\end_inset
+ היא העתקה פתוחה, ובפרט 
+\begin_inset Formula
+$F\left(B\right)$
+
+
+\end_inset
+ היא קבוצה פתוחה. מכאן שקיים 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+
+
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+\begin{bmatrix}0\\
+0\\
+\vdots\\
+0\\
+f\left(a\right)\pm\varepsilon
+\end{bmatrix}=\begin{bmatrix}g_{1}\left(a\right)\\
+g_{2}\left(a\right)\\
+\vdots\\
+g_{m}\left(a\right)\\
+f\left(a\right)\pm\varepsilon
+\end{bmatrix}=F\left(a\right)\pm\begin{bmatrix}0\\
+0\\
+\vdots\\
+0\\
+\varepsilon
+\end{bmatrix}\in F\left(B\right)
+\]
+
+
+
+
+\end_inset
+כלומר קיים 
+\begin_inset Formula
+$x\in B\cap A$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f\left(x\right)=f\left(a\right)\pm\varepsilon$
+
+
+\end_inset
+ בסתירה לכך ש-
+\begin_inset Formula
+$a$
+
+
+\end_inset
+ היא נקודת מקסימום/מינימום מקומית של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$A$
+
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מכאן שהנחת השלילה אינה נכונה ו-
+\begin_inset Formula
+$\MKrank\left(DF_{a}\right)<m+1$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+קיימת הוכחה נוספת המסתמכת על משפט הפונקציה הסתומה.
+\color inherit
+
+\series default
+
+\end_layout
+
+\end_body
+
+\end_document
+

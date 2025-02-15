@@ -1,0 +1,2791 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The head's design for summuries,make the layout more similar to a book:
+\AtBeginDocument{
+\renewcommand\headrule{%
+  \kern -7pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+  \kern 10pt
+}}
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Correct the reversed parentheses in labels:
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\newfontfamily{\hebrewfont}{David}
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+
+
+
+\end_preamble
+
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+customHeadersFooters
+\end_modules
+
+\maintain_unincluded_children no
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+End
+Style Solution
+	LabelString           ".פתרון \thetheorem "End
+Style Theorem
+	LabelString           ".משפט \thetheorem "End
+
+
+
+\end_local_layout
+
+\language hebrew
+
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\float_alignment class
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\boxbgcolor #cccccc
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+
+\tocdepth 3
+
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style plain
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename C:\Users\sraya\AppData\Roaming\LyX2.4\macros\MKmacros.lyx
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+התחלה
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ ראו גם את הקובץ 
+\begin_inset Quotes qld
+\end_inset
+
+\begin_inset CommandInset href
+LatexCommand href
+name "על שדות"
+target https://drive.google.com/file/d/15MbYR0LcpnpSBVtmovoHuSmKhTn3zFA8/view?usp=drive_link
+literal false
+\end_inset
+
+\begin_inset Quotes qrd
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ שדה.
+\end_layout
+
+\begin_layout Definition
+\bar under
+המציין
+\bar default
+ של 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ (נקרא גם 
+\bar under
+המאפיין
+\bar default
+ של 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+) הוא הסדר של 
+\begin_inset Formula
+$1$
+
+
+\end_inset
+ בחבורה החיבורית של 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ כאשר סדר זה סופי, ואם אינו סופי יהיה 
+\bar under
+המציין
+\bar default
+ 
+\begin_inset Formula
+$0$
+
+
+\end_inset
+; בכל מקרה נסמן את המציין ב-
+\begin_inset Formula
+$\MKchar\left(\MKfield\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+למה להגדיר את המציין להיות 
+\begin_inset Formula
+$0$
+
+
+\end_inset
+ ולא 
+\begin_inset Formula
+$\infty$
+
+
+\end_inset
+? כך לא יהיה צורך לחלק למקרים וזה טבעי הרבה יותר.
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Claim*
+\begin_inset Formula
+$\MKchar\left(\MKfield\right)$
+
+
+\end_inset
+ הוא מספר ראשוני או ש-
+\begin_inset Formula
+$\MKchar\left(\MKfield\right)=0$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary*
+\begin_inset Formula
+$\MKfield_{p}$
+
+
+\end_inset
+ ניתן לשיכון בכל שדה ממציין 
+\begin_inset Formula
+$p$
+
+
+\end_inset
+ ראשוני, ו-
+\begin_inset Formula
+$\MKrational$
+
+
+\end_inset
+ ניתן לשיכון בכל שדה ממציין 
+\begin_inset Formula
+$0$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+\bar under
+השדה הראשוני
+\bar default
+ של 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ הוא 
+\begin_inset Formula
+$\MKfield_{p}$
+
+
+\end_inset
+ אם 
+\begin_inset Formula
+$p:=\MKchar\left(\MKfield\right)$
+
+
+\end_inset
+ ראשוני, ואחרת יהיה 
+\begin_inset Formula
+$\MKrational$
+
+
+\end_inset
+ 
+\bar under
+השדה הראשוני
+\bar default
+ של 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ שדה.
+\end_layout
+
+\begin_layout Claim
+אם 
+\begin_inset Formula
+$\MKchar\left(\MKfield\right)\neq0$
+
+
+\end_inset
+ אז 
+\begin_inset Formula
+$\MKchar\left(\MKfield\right)$
+
+
+\end_inset
+ הוא מספר ראשוני.
+\end_layout
+
+\begin_layout Corollary
+\begin_inset Formula
+$\MKfield_{p}$
+
+
+\end_inset
+ ניתן לשיכון בכל שדה ממציין 
+\begin_inset Formula
+$p$
+
+
+\end_inset
+ ראשוני, ו-
+\begin_inset Formula
+$\MKrational$
+
+
+\end_inset
+ ניתן לשיכון בכל שדה ממציין 
+\begin_inset Formula
+$0$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+אם 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ סופי אז 
+\begin_inset Formula
+$\MKchar\left(\MKfield\right)$
+
+
+\end_inset
+ הוא מספר ראשוני.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+תזכורת:
+\series default
+ כל שדה הוא מרחב וקטורי מעל כל תת-שדה שלו.
+\end_layout
+
+\begin_layout Corollary
+אם 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ סופי אז קיים ראשוני 
+\begin_inset Formula
+$p$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$e\in\MKnatural$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left|\MKfield\right|=p^{e}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Lemma
+יהי 
+\begin_inset Formula
+$0\neq f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ פולינום ונסמן 
+\begin_inset Formula
+$n:=\deg f$
+
+
+\end_inset
+, חוג המנה 
+\begin_inset Formula
+$\nicefrac{\MKfield\left[x\right]}{\left(f\right)}$
+
+
+\end_inset
+ הוא מרחב וקטורי מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+,
+\begin_inset Newline newline
+\end_inset
+ו-
+\begin_inset Formula
+$\left(1+\left(f\right),x+\left(f\right),\ldots,x^{n-1}+\left(f\right)\right)$
+
+
+\end_inset
+ הוא בסיס שלו (בפרט 
+\begin_inset Formula
+$\dim\left(\nicefrac{\MKfield\left[x\right]}{\left(f\right)}\right)=n$
+
+
+\end_inset
+).
+\end_layout
+
+\begin_layout Standard
+\series bold
+\color red
+בספר הקורס כתוב ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ נדרש להיות מתוקן, אין לי מושג למה יש בזה צורך.
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Corollary
+נניח ש-
+\begin_inset Formula
+$p:=\MKchar\left(\MKfield\right)\neq0$
+
+
+\end_inset
+, יהי 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ פולינום אי-פריק ונסמן 
+\begin_inset Formula
+$n:=\deg f$
+
+
+\end_inset
+; חוג המנה 
+\begin_inset Formula
+$\nicefrac{\MKfield\left[x\right]}{\left(f\right)}$
+
+
+\end_inset
+ הוא שדה סופי בגודל 
+\begin_inset Formula
+$p^{n-1}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+אם 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ סופי אז החבורה הכפלית 
+\begin_inset Formula
+$\MKfield^{\times}$
+
+
+\end_inset
+ היא חבורה ציקלית.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+תזכורת: 
+\series default
+כל שדה הוא בפרט חוג, הומומורפיזמים של שדות על שלל סוגיהם הם פשוט הומומורפיזמים של חוגים אלא שהתחום והטווח שלהם הם שדות, בפרט נאמר ששני שדות איזומורפיים זה לזה אם קיים איזומורפיזם של חוגים ביניהם.
+\end_layout
+
+\begin_layout Theorem
+אם 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ סופי אז קיימים 
+\begin_inset Formula
+$p$
+
+
+\end_inset
+ ראשוני ופולינום 
+\begin_inset Formula
+$f\in\MKfield_{p}\left[x\right]$
+
+
+\end_inset
+ אי-פריק (ב-
+\begin_inset Formula
+$\MKfield_{p}\left[x\right]$
+
+
+\end_inset
+) כך ש-
+\begin_inset Formula
+$\MKfield\cong\nicefrac{\MKfield_{p}\left[x\right]}{\left(f\right)}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+כל הומומורפיזם 
+\begin_inset Formula
+$\varphi\in\MKaut\left(\MKfield\right)$
+
+
+\end_inset
+ שאינו הומומורפיזם האפס הוא חח"ע.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+הרחבת שדות
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+יהיו 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ שדה ו-
+\begin_inset Formula
+$\MKfield\subseteq\MKbbe$
+
+
+\end_inset
+ תת-שדה, במקרה כזה נאמר ש-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ הוא 
+\bar under
+שדה הרחבה
+\bar default
+ של 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ או ש-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ 
+\bar under
+מרחיב
+\bar default
+ את 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ ונסמן 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+אין שום קשר לחוג מנה, זהו סימון בלבד שאינו קשור בשום צורה שהיא.
+\end_layout
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+שדה 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ ייקרא 
+\bar under
+שדה ביניים
+\bar default
+ של ההרחבה 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ אם 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ הוא תת-שדה של 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ הוא תת-שדה של 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ פעמים רבות נכתוב 
+\begin_inset Quotes qld
+\end_inset
+תהא 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ הרחבת שדות
+\begin_inset Quotes qrd
+\end_inset
+ וכדומה, וכוונתנו תהיה "יהיו 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ שדות כך ש-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ הוא שדה הרחבה של 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+
+\begin_inset Quotes qrd
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ הרחבת שדות.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+סימון:
+\series default
+ אם 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ נוצר סופית כמרחב וקטורי מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ אז נסמן ב-
+\begin_inset Formula
+$\dim_{\MKfield}\MKbbe$
+
+
+\end_inset
+ את הממד של 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ כמ
+\begin_inset Quotes qrd
+\end_inset
+ו מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+אם 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ נוצר סופית כמרחב וקטורי מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+, אז 
+\bar under
+דרגת ההרחבה
+\bar default
+ של 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ היא 
+\begin_inset Formula
+$\left[\MKbbe:\MKfield\right]:=\dim_{\MKfield}\MKbbe$
+
+
+\end_inset
+ ונאמר ש-
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא 
+\bar under
+הרחבה סופית
+\bar default
+, אחרת נכתוב 
+\begin_inset Formula
+$\left[\MKbbe:\MKfield\right]=\infty$
+
+
+\end_inset
+ ונאמר ש-
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה 
+\bar under
+אין-סופית
+\bar default
+.
+\end_layout
+
+\begin_layout Claim*
+תהא 
+\begin_inset Formula
+$X$
+
+
+\end_inset
+ קבוצת תתי-שדות של שדה 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+, החיתוך של כל תתי-השדות ב-
+\begin_inset Formula
+$X$
+
+
+\end_inset
+ הוא תת-שדה של 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+, וזהו השדה הגדול ביותר (ביחס להכלה) שמוכל בכל תתי-השדות ב-
+\begin_inset Formula
+$X$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$S\subseteq\MKbbe$
+
+
+\end_inset
+, נסמן ב-
+\begin_inset Formula
+$\MKfield\left(S\right)$
+
+
+\end_inset
+ את החיתוך של כל תתי-השדות של 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ המכילים את 
+\begin_inset Formula
+$\MKfield\cup S$
+
+
+\end_inset
+, 
+\begin_inset Formula
+$\MKfield\left(S\right)$
+
+
+\end_inset
+ ייקרא 
+\bar under
+תת-השדה
+\bar default
+ של 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ 
+\bar under
+הנוצר
+\bar default
+ ע
+\begin_inset Quotes qrd
+\end_inset
+י 
+\begin_inset Formula
+$S$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula
+$S\subseteq\MKbbe$
+
+
+\end_inset
+ תת-קבוצה, מתקיימים שלושת הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$\MKfield\left(S\right)$
+
+
+\end_inset
+ הוא תת-שדה של 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$S\subseteq\MKfield\left(S\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לכל תת-שדה 
+\begin_inset Formula
+$E\subseteq\MKbbe$
+
+
+\end_inset
+ המכיל את 
+\begin_inset Formula
+$S$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\MKfield\left(S\right)\subseteq E$
+
+
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+סימון:
+\series default
+ עבור קבוצה סופית 
+\begin_inset Formula
+$\left\{ s_{1},s_{2},\ldots,s_{n}\right\} \subseteq\MKbbe$
+
+
+\end_inset
+ נכתוב גם 
+\begin_inset Formula
+$\MKfield\left(s_{1},s_{2},\ldots,s_{n}\right):=\MKfield\left(\left\{ s_{1},s_{2},\ldots,s_{n}\right\} \right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+יהי 
+\begin_inset Formula
+$\MKbbk\subseteq\MKbbe$
+
+
+\end_inset
+ תת-שדה, נאמר שתת-קבוצה 
+\begin_inset Formula
+$S\subseteq\MKbbk$
+
+
+\end_inset
+ היא קבוצת יוצרים של 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ אם 
+\begin_inset Formula
+$\MKbbk=\MKfield\left(S\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ תיקרא 
+\bar under
+הרחבה נוצרת סופית
+\bar default
+ אם קיימת קבוצה סופית 
+\begin_inset Formula
+$S\subseteq\MKbbe$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKbbe=\MKfield\left(S\right)$
+
+
+\end_inset
+, ותיקרא 
+\bar under
+הרחבה פשוטה
+\bar default
+ אם קיים 
+\begin_inset Formula
+$\alpha\in\MKbbe$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKbbe=\MKfield\left(\alpha\right)$
+
+
+\end_inset
+ (
+\begin_inset Formula
+$\alpha$
+
+
+\end_inset
+ כזה ייקרא 
+\bar under
+יוצר פרימיטיבי
+\bar default
+ של 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+).
+\end_layout
+
+\begin_layout Lemma*
+לכל 
+\begin_inset Formula
+$\alpha\in\MKbbe$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\MKfield\left(\alpha\right)=\left\{ \begin{array}{c|c}
+\frac{P\left(\alpha\right)}{Q\left(\alpha\right)} & P,Q\in\MKfield\left[x\right],\ Q\left(\alpha\right)\neq0\end{array}\right\} 
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+איבר 
+\begin_inset Formula
+$\alpha\in\MKbbe$
+
+
+\end_inset
+ ייקרא 
+\bar under
+אלגברי
+\bar default
+ מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ אם קיים 
+\begin_inset Formula
+$0\neq P\in\MKfield\left[x\right]$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P\left(\alpha\right)=0$
+
+
+\end_inset
+, אחרת ייקרא 
+\bar under
+טרנסצנדנטי
+\bar default
+.
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ תיקרא 
+\bar under
+הרחבה אלגברית
+\bar default
+ אם כל איברי 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ אלגבריים מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+, אחרת תיקרא 
+\bar under
+טרנסצנדנטית
+\bar default
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ העובדה שאיבר 
+\begin_inset Formula
+$\alpha\in\MKbbe$
+
+
+\end_inset
+ הוא אלגברי מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ אומרת שלמרות שבלמה האחרונה אין מגבלה על דרגת הפולינומים, בפועל יש כזו מפני שתמיד אפשר לחלק (עם שארית) את הפולינומים בפולינום שמאפס את 
+\begin_inset Formula
+$\alpha$
+
+
+\end_inset
+ ולקחת רק את השארית.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+סימון:
+\series default
+ לכל 
+\begin_inset Formula
+$\alpha\in I$
+
+
+\end_inset
+ נסמן 
+\begin_inset Formula
+$I_{\alpha}:=\left\{ P\in\MKfield\left[x\right]:P\left(\alpha\right)=0\right\} $
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim*
+\begin_inset Formula
+$I_{\alpha}$
+
+
+\end_inset
+ הוא אידיאל של 
+\begin_inset Formula
+$\MKfield\left[x\right]$
+
+
+\end_inset
+, ו-
+\begin_inset Formula
+$\alpha$
+
+
+\end_inset
+ הוא איבר אלגברי מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$I_{\alpha}\neq\left\{ 0\right\} $
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+יהי 
+\begin_inset Formula
+$\alpha\in\MKbbe$
+
+
+\end_inset
+ איבר אלגברי מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+, 
+\bar under
+הפולינום המינימלי
+\bar default
+ של 
+\begin_inset Formula
+$\alpha$
+
+
+\end_inset
+ מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ הוא הפולינום המתוקן היוצר את האידיאל 
+\begin_inset Formula
+$I_{\alpha}$
+
+
+\end_inset
+, פולינום זה יסומן ב-
+\begin_inset Formula
+$m_{\alpha}$
+
+
+\end_inset
+ וכמו כן 
+\bar under
+הדרגה
+\bar default
+ של 
+\begin_inset Formula
+$\alpha$
+
+
+\end_inset
+ מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ תוגדר ע"י 
+\begin_inset Formula
+$\deg_{\MKfield}\left(\alpha\right):=\deg\left(m_{\alpha}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ הרחבת שדות.
+\end_layout
+
+\begin_layout Theorem
+תהא גם 
+\begin_inset Formula
+$\nicefrac{\MKbbk}{\MKbbe}$
+
+
+\end_inset
+ הרחבת שדות (מהגדרה גם 
+\begin_inset Formula
+$\nicefrac{\MKbbk}{\MKfield}$
+
+
+\end_inset
+ היא הרחבת שדות), אם 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ ו/או 
+\begin_inset Formula
+$\nicefrac{\MKbbk}{\MKbbe}$
+
+
+\end_inset
+ הן הרחבות אין-סופיות אז גם 
+\begin_inset Formula
+$\nicefrac{\MKbbk}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה אין-סופית, ואם שתיהן הרחבות סופיות אז גם 
+\begin_inset Formula
+$\nicefrac{\MKbbk}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה סופית ומתקיים:
+\begin_inset Formula
+\[
+\left[\MKbbk:\MKfield\right]=\left[\MKbbk:\MKbbe\right]\cdot\left[\MKbbe:\MKfield\right]
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+תהא 
+\begin_inset Formula
+$X$
+
+
+\end_inset
+ קבוצת תתי-שדות של שדה 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+, החיתוך של כל תתי-השדות ב-
+\begin_inset Formula
+$X$
+
+
+\end_inset
+ הוא תת-שדה של 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+, וזהו השדה הגדול ביותר (ביחס להכלה) שמוכל בכל תתי-השדות ב-
+\begin_inset Formula
+$X$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ נשים לב לכך שיש כאן כמה אפשרויות:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$X$
+
+
+\end_inset
+ יכולה להיות סופית ואז קיימים תתי-שדות 
+\begin_inset Formula
+$F_{1},F_{2},\ldots,F_{r}\subseteq\MKfield$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$X=\left\{ F_{1},F_{2},\ldots,F_{r}\right\} $
+
+
+\end_inset
+, ואז החיתוך של כל תתי-השדות בה הוא הקבוצה:
+\begin_inset Formula
+\[
+\bigcap_{i=1}^{r}F_{i}
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$X$
+
+
+\end_inset
+ יכולה להיות אין-סופית בת-מנייה, כלומר ניתן לסדר את איבריה בסדרה אינסופית: 
+\begin_inset Formula
+$X=\left\{ F_{1},F_{2},\ldots\right\} $
+
+
+\end_inset
+ ואז החיתוך של כל תתי-השדות בה הוא הקבוצה:
+\begin_inset Formula
+\[
+\bigcap_{i=1}^{\infty}F_{i}
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$X$
+
+
+\end_inset
+ יכולה להיות אין-סופית שאינה בת-מנייה, כלומר א"א לסדר את איבריה בסדרה אינסופית, ואז החיתוך של כל תתי-השדות בה הוא הקבוצה:
+\begin_inset Formula
+\[
+\bigcap_{F\in X}F
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+בכל מקרה החיתוך של כל תתי-השדות ב-
+\begin_inset Formula
+$X$
+
+
+\end_inset
+ הוא הקבוצה:
+\begin_inset Formula
+\[
+\left\{ \begin{array}{c|c}
+a\in\MKfield & \forall F\in X:a\in F\end{array}\right\} 
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Lemma
+לכל 
+\begin_inset Formula
+$\alpha\in\MKbbe$
+
+
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\MKfield\left(\alpha\right)=\left\{ \begin{array}{c|c}
+\frac{P\left(\alpha\right)}{Q\left(\alpha\right)} & P,Q\in\MKfield\left[x\right],\ Q\left(\alpha\right)\neq0\end{array}\right\} 
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ עבור 
+\begin_inset Formula
+$\alpha_{1},\alpha_{2},\ldots,\alpha_{n}\in\MKbbe$
+
+
+\end_inset
+ ניתן להכליל את הלמה ע"י:
+\begin_inset Formula
+\[
+\MKfield\left(\alpha_{1},\alpha_{2},\ldots,\alpha_{n}\right)=\left\{ \begin{array}{c|c}
+\frac{P\left(\alpha_{1},\alpha_{2},\ldots,\alpha_{n}\right)}{Q\left(\alpha_{1},\alpha_{2},\ldots,\alpha_{n}\right)} & P,Q\in\MKfield\left[x_{1},x_{2},\ldots,x_{n}\right],\ Q\left(\alpha_{1},\alpha_{2},\ldots,\alpha_{n}\right)\neq0\end{array}\right\} 
+\]
+
+
+
+
+\end_inset
+כאשר 
+\begin_inset Formula
+$\MKfield\left[x_{1},x_{2},\ldots,x_{n}\right]$
+
+
+\end_inset
+ הוא חוג הפולינומים מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$n$
+
+
+\end_inset
+ משתנים, כלומר כל איבר ב-
+\begin_inset Formula
+$\MKfield\left[x_{1},x_{2},\ldots,x_{n}\right]$
+
+
+\end_inset
+ הוא סכום סופי של מכפלות סופיות של 
+\begin_inset Formula
+$n$
+
+
+\end_inset
+ המשתנים הללו זה בזה, ובנוסף החיבור והכפל מוגדרים כמו שהיינו מצפים (כמובן שפורמלית מדובר במחרוזות טקסט כמו בפולינומים רגילים, אבל אתם ממש לא רוצים שאנסה לכתוב כאן את ההגדרה הזו).
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$\alpha\in\MKbbe$
+
+
+\end_inset
+, 
+\begin_inset Formula
+$I_{\alpha}$
+
+
+\end_inset
+ הוא אידיאל של 
+\begin_inset Formula
+$\MKfield\left[x\right]$
+
+
+\end_inset
+, ובנוסף 
+\begin_inset Formula
+$\alpha$
+
+
+\end_inset
+ הוא איבר אלגברי מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$I_{\alpha}\neq\left\{ 0\right\} $
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$\alpha\in\MKbbe$
+
+
+\end_inset
+ איבר אלגברי מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+; 
+\begin_inset Formula
+$m_{\alpha}$
+
+
+\end_inset
+ הוא פולינום אי-פריק ב-
+\begin_inset Formula
+$\MKfield\left[x\right]$
+
+
+\end_inset
+, ולכל 
+\begin_inset Formula
+$P\in\MKfield\left[x\right]$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$P\left(\alpha\right)=0$
+
+
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$m_{\alpha}\mid P$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula
+$\alpha\in\MKbbe$
+
+
+\end_inset
+ איבר אלגברי מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ ויהי 
+\begin_inset Formula
+$P\in\MKfield\left[x\right]$
+
+
+\end_inset
+ פולינום מתוקן ואי-פריק, אם 
+\begin_inset Formula
+$P\left(\alpha\right)=0$
+
+
+\end_inset
+ אז 
+\begin_inset Formula
+$P=m_{\alpha}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$\alpha\in\MKbbe$
+
+
+\end_inset
+ איבר אלגברי מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$\MKfield\left(\alpha\right)\cong\nicefrac{\MKfield\left[x\right]}{\left(m_{\alpha}\right)}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\left[\MKfield\left(\alpha\right):\MKfield\right]=\deg_{\MKfield}\left(m_{\alpha}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+יהיו 
+\begin_inset Formula
+$\alpha,\beta\in\MKbbe$
+
+
+\end_inset
+ איברים אלגבריים מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$m_{\alpha}=m_{\beta}$
+
+
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$\MKfield\left(\alpha\right)\cong\MKfield\left(\beta\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula
+$\alpha\in\MKbbe$
+
+
+\end_inset
+ איבר אלגברי מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ ונסמן 
+\begin_inset Formula
+$n:=\deg_{\MKfield}\left(m_{\alpha}\right)$
+
+
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$\MKfield\left(\alpha\right)=\left\{ P\left(\alpha\right)\mid P\in\MKfield\left[x\right],\ \deg P<n\right\} $
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+לכל 
+\begin_inset Formula
+$\alpha\in\MKbbe$
+
+
+\end_inset
+, 
+\begin_inset Formula
+$\alpha$
+
+
+\end_inset
+ הוא איבר אלגברי מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ אם"ם ההרחבה 
+\begin_inset Formula
+$\MKfield\left(\alpha\right)/\MKfield$
+
+
+\end_inset
+ סופית.
+\end_layout
+
+\begin_layout Claim
+התנאים הבאים שקולים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה סופית.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה אלגברית נוצרת סופית.
+\end_layout
+
+\begin_layout Itemize
+קיימים 
+\begin_inset Formula
+$\alpha_{1},\alpha_{2},\ldots,\alpha_{n}\in\MKbbe$
+
+
+\end_inset
+ אלגבריים מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKbbe=\MKfield\left(\alpha_{1},\alpha_{2},\ldots,\alpha_{n}\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Corollary
+הקבוצה 
+\begin_inset Formula
+$\left\{ \alpha\in\MKbbe\mid\MKfield\ \text{אלגברי מעל}\ \alpha\right\} $
+
+
+\end_inset
+ היא תת-שדה של 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+תהא גם 
+\begin_inset Formula
+$\nicefrac{\MKbbk}{\MKbbe}$
+
+
+\end_inset
+ הרחבת שדות, אם 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\nicefrac{\MKbbk}{\MKfield}$
+
+
+\end_inset
+ הן הרחבות אלגבריות אז גם 
+\begin_inset Formula
+$\nicefrac{\MKbbk}{\MKbbe}$
+
+
+\end_inset
+ היא הרחבה אלגברית.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+סימון:
+\series default
+ לכל שדה 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ נסמן ב-
+\begin_inset Formula
+$\MKfield\left(t\right)$
+
+
+\end_inset
+ את שדה הפונקציות הרציונליות מעל 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+, כלומר:
+\begin_inset Formula
+\[
+\MKfield\left(t\right):=\left\{ \begin{array}{c|c}
+{\displaystyle \frac{P\left(t\right)}{Q\left(t\right)}} & P,Q\in\MKfield\left[x\right],\ Q\neq0\end{array}\right\} 
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset Formula
+$\nicefrac{\MKfield\left(t\right)}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה פשוטה שאינה אלגברית.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+שדות פיצול
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ הרחבת שדות.
+\end_layout
+
+\begin_layout Definition
+נאמר שפולינום 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ 
+\bar under
+מתפצל
+\bar default
+ בשדה הרחבה 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ אם ניתן להציגו כמכפלה של גורמים ליניאריים ב-
+\begin_inset Formula
+$\MKbbe\left[x\right]$
+
+
+\end_inset
+, כלומר אם קיימים 
+\begin_inset Formula
+$\MKseq a,{\deg f},c\in\MKbbe$
+
+
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+f\left(x\right)=c\cdot\prod_{i=1}^{\deg f}\left(x-\alpha_{i}\right)
+\]
+
+
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+נאמר ששדה הרחבה 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ הוא 
+\bar under
+שדה פיצול
+\bar default
+ של פולינום 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+, אם 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ מתפצל ב-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+, ובנוסף 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ הוא שדה הביניים היחיד של 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ שבו 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ מתפצל.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ אנחנו נראה בהמשך שלכל פולינום יש שדה פיצול, ובהמשך נראה גם ששדה פיצול הוא יחיד עד כדי איזומורפיזם, א"כ מוצדק לדבר עליו בה
+\begin_inset Quotes qrd
+\end_inset
+א הידיעה.
+\end_layout
+
+\begin_layout Definition
+נאמר ש-
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ הוא 
+\bar under
+שדה סגור אלגברית
+\bar default
+ אם לכל פולינום 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\deg f\geq1$
+
+
+\end_inset
+ יש שורש ב-
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+נאמר ששדה הרחבה 
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ הוא 
+\bar under
+סגור אלגברי
+\bar default
+ של 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ אם 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ היא הרחבה אלגברית ו-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ סגור אלגברית.
+\end_layout
+
+\begin_layout Theorem*
+קיימת הרחבת שדות 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ סגור אלגברית.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ מכאן שלכל שדה יש סגור אלגברי.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ לא הוכחנו זאת, אך לכל שדה יש שדה סגור אלגברית מינימלי (
+\series bold
+\color red
+ביחס לשיכון?
+\color inherit
+
+\series default
+) יחיד (עד כדי איזומורפיזם).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+סימון:
+\series default
+ לכל שדה 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ נסמן את אותו שדה סגור אלגברית מינימלי ב-
+\begin_inset Formula
+$\overline{\MKfield}$
+
+
+\end_inset
+ ונקרא לו 
+\bar under
+הסגור האלגברי
+\bar default
+ של 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ הרחבת שדות.
+\end_layout
+
+\begin_layout Theorem
+יהי 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ פולינום אי-פריק, א"כ 
+\begin_inset Formula
+$\nicefrac{\MKfield\left[x\right]}{\left(f\right)}$
+
+
+\end_inset
+ הוא שדה הרחבה של 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ ו-
+\begin_inset Formula
+$x+\left(f\right)$
+
+
+\end_inset
+ הוא שורש של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ כפולינום מעל 
+\begin_inset Formula
+$\nicefrac{\MKfield\left[x\right]}{\left(f\right)}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+לכל פולינום 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ יש שדה פיצול, בפרט לכל פולינום 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ קיים שדה 
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ המרחיב את 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f$
+
+
+\end_inset
+ מתפצל ב-
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+יהיו 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ פולינום ו-
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ שדה פיצול של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+, ויהיו 
+\begin_inset Formula
+$\MKseq{\alpha},n\in\MKbbk$
+
+
+\end_inset
+ כל השורשים של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+; מתקיים 
+\begin_inset Formula
+$\MKbbk=\MKfield\left(\MKseq{\alpha},n\right)$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+לכל 
+\begin_inset Formula
+$\MKseq f,n\in\MKfield\left[x\right]$
+
+
+\end_inset
+, קיימת הרחבת שדות סופית 
+\begin_inset Formula
+$\nicefrac{\MKbbk}{\MKfield}$
+
+
+\end_inset
+ כך שכל הפולינומים הנ
+\begin_inset Quotes qrd
+\end_inset
+ל מתפצלים ב-
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+יהיו 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ פולינום ו-
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ שדה פיצול של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+,ויהיו 
+\begin_inset Formula
+$\MKseq{\alpha},n\in\MKbbk$
+
+
+\end_inset
+ כל השורשים של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+, ונסמן 
+\begin_inset Formula
+$X:=\left\{ \MKseq{\alpha},n\right\} $
+
+
+\end_inset
+; קיים שיכון של 
+\begin_inset Formula
+$\MKgal\left(\nicefrac{\MKbbk}{\MKfield}\right)$
+
+
+\end_inset
+ ב-
+\begin_inset Formula
+$S_{X}$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+יהיו 
+\begin_inset Formula
+$f\in\MKfield\left[x\right]$
+
+
+\end_inset
+ פולינום ו-
+\begin_inset Formula
+$\MKbbk$
+
+
+\end_inset
+ שדה פיצול של 
+\begin_inset Formula
+$f$
+
+
+\end_inset
+, דרגת ההרחבה 
+\begin_inset Formula
+$\left[\MKbbk:\MKfield\right]$
+
+
+\end_inset
+ מחלקת את 
+\begin_inset Formula
+$\left(\deg f\right)!$
+
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+קיימת הרחבת שדות 
+\begin_inset Formula
+$\nicefrac{\MKbbe}{\MKfield}$
+
+
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKbbe$
+
+
+\end_inset
+ סגור אלגברית.
+\end_layout
+
+\begin_layout Corollary
+יש ל-
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ סגור אלגברי.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+
+
+\end_inset
+ לא הוכחנו זאת, אך לכל שדה יש שדה סגור אלגברית מינימלי יחיד ( מינימלי ביחס לשיכון ויחיד עד כדי איזומורפיזם).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+סימון:
+\series default
+ לכל שדה 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+ נסמן את אותו שדה סגור אלגברית מינימלי ב-
+\begin_inset Formula
+$\overline{\MKfield}$
+
+
+\end_inset
+ ונקרא לו 
+\bar under
+הסגור האלגברי
+\bar default
+ של 
+\begin_inset Formula
+$\MKfield$
+
+
+\end_inset
+.
+\end_layout
+
+\end_body
+
+\end_document
+
