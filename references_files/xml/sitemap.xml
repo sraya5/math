@@ -6,6 +6,7 @@
       <topic en_name="common_mistakes" he_name="טעויות נפוצות" />
       <topic en_name="a_mathematician's_apology" he_name="התנצלותו של המתמטיקאי" />
       <topic en_name="introduction_for_university_mathematics" he_name="הקדמה למתמטיקה אוניברסיטאית" />
+      <figures />
     </course>
     <course en_name="basic_subjects" he_name="נושאים בסיסיים">
       <topic en_name="naive_set_theory" he_name="תורת הקבוצות הנאיבית" />
@@ -16,6 +17,7 @@
         <topic en_name="the_complex_numbers" he_name="המספרים המרוכבים" />
       </title>
       <topic en_name="about_polynomials" he_name="על פולינומים" />
+      <figures />
     </course>
   </branch>
   <branch en_name="analysis" he_name="אנליזה" divider="3">
@@ -29,6 +31,7 @@
       <topic en_name="sequences" he_name="סדרות" />
       <topic en_name="functions" he_name="פונקציות" />
       <topic en_name="derivatives" he_name="נגזרות" />
+      <figures />
     </course>
     <course en_name="calculus_2" course_number="80132" lecturer="יורם לסט" tutor="דניאל אופנר ומתן בן-אשר" semester="א' תשפ&quot;ג" he_name="חשבון אינפיניטסימלי (2)">
       <title en_name="series" he_name="טורים">
@@ -43,12 +46,14 @@
         <appendix en_name="calculate_integrals_examples" he_name="דוגמאות לחישובי אינטגרלים" />
       </title>
       <topic en_name="sequences_and_series_of_functions" he_name="סדרות וטורים של פונקציות" />
+      <figures />
     </course>
     <course en_name="elementary_multivariate_analysis" course_number="80116" lecturer="נועה ניצן" semester="ב' תשפ&quot;ג" he_name="אנליזה אלמנטרית רב-ממדית">
       <topic en_name="the_space" he_name="המרחב" />
       <topic en_name="sequences_and_functions" he_name="סדרות ופונקציות" />
       <topic en_name="differentiability" he_name="דיפרנציאביליות" />
       <topic en_name="multivariate_integrals" he_name="אינטגרלים רב-ממדיים" />
+      <figures />
     </course>
     <course en_name="calculus_3" course_number="80415" lecturer="תמר (תמי) ציגלר" semester="א' תשפ&quot;ד" he_name="חשבון אינפיניטסימלי (3)">
       <topic en_name="metric_spaces" he_name="מרחבים מטריים" />
@@ -62,6 +67,7 @@
       </title>
       <topic en_name="introduction_for_complex_analysis" he_name="מבוא לאנליזה מרוכבת" />
       <topic en_name="analytic_functions" he_name="פונקציות אנליטיות" />
+      <figures />
     </course>
     <course en_name="analysis_on_manifolds" course_number="80416" lecturer="אור הרשקוביץ" tutor="אור קדר" semester="ב' תשפ&quot;ד" he_name="אנליזה על יריעות">
       <topic en_name="integrals_along_curves" he_name="אינטגרלים לאורך מסילות" />
@@ -87,6 +93,7 @@
       <topic en_name="matrices_and_coordinates_spaces" he_name="מטריצות ומרחבי קואורדינטות" />
       <topic en_name="linear_transformations" he_name="העתקות לינאריות" />
       <topic en_name="volume_forms" he_name="פונקציות נפח" />
+      <figures />
     </course>
     <course en_name="linear_algebra_2" course_number="80135" lecturer="איתמר צביק" tutor="גיל לבנה ויואב כהן" semester="א' תשפ&quot;ג" he_name="אלגברה לינארית (2)">
       <title en_name="the_complex_numbers" he_name="המספרים המרוכבים">
@@ -99,6 +106,7 @@
         <introduction en_name="introduction-length,_angle_and_the_dot_product" he_name="הקדמה - אורך, זווית והמכפלה הסקלרית" />
         <topic en_name="inner_product_space" he_name="מרחבי מכפלה פנימית" />
       </title>
+      <figures />
     </course>
     <course en_name="algebraic_structures_1" course_number="80445" lecturer="אורי פרזנצ'בסקי" tutor="ליאור נייהויזר" semester="א' תשפ&quot;ד" he_name="מבנים אלגבריים (1)">
       <topic en_name="group_theory" he_name="תורת החבורות" />
@@ -128,6 +136,7 @@
     </course>
     <course en_name="probability" course_number="80420" lecturer="אורי גוראל-גורביץ" tutor="אמיר בכר" semester="א' תשפ&quot;ה" he_name="תורת ההסתברות (1)">
       <topic en_name="discrete_probability" he_name="הסתברות בדידה" />
+      <figures />
     </course>
     <course en_name="Euclidean_geometry" he_name="גאוטמטריה אוקלידית">
       <topic en_name="first_file" he_name="קובץ ראשון" />
