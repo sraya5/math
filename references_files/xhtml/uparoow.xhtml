@@ -10,16 +10,19 @@
             right: 0.7em; /* Distance from the right */
             height: 1.5em;
             width: 1.5em;
-            font-size: xx-large;
-            font-weight: bolder;
-            color: white;
             cursor: pointer;
             background-color: #084149;
             opacity: 80%;
         }
+        #scrollImage {
+            height: 1.5em;
+            width: 1.5em;
+            opacity: 80%;
+        }
     </style>
+    <img src="https://math.srayaa.com/references_files/png/uparrow.png" />
     <button id="scrollButton" onclick="scrollToTop()">
-        <img src="https://math.srayaa.com/references_files/png/uparrow.png" />
+        <img id="scrollImage" src="https://math.srayaa.com/references_files/png/uparrow.png" />
     </button>
     <script>
     function scrollToTop() {
