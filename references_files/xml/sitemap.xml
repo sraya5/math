@@ -128,7 +128,7 @@
       <topic en_name="divisibility" he_name="התחלקות" />
       <title en_name="modular_arithmetic" he_name="חשבון מודולרי">
         <topic en_name="modular_arithmetic" he_name="חשבון מודולרי" />
-        <appendix en_name="appendices_for_modular_arithmetics-definitions_and_theorems" he_name="נספחים לחשבון מודולרי" />
+        <appendix en_name="appendices_for_modular_arithmetic" he_name="נספחים לחשבון מודולרי" />
       </title>
       <topic en_name="diophantine_approximations" he_name="קירובים דיופנטיים" />
     </course>
