@@ -126,15 +126,16 @@
     </course>
     <course en_name="number_theory" course_number="80115" lecturer="אהוד (אודי) דה-שליט" tutor="גיא ספיר" semester="ב' תשפ&quot;ג" he_name="תורת המספרים">
       <topic en_name="divisibility" he_name="התחלקות" />
-      <topic en_name="modular_arithmetic" he_name="חשבון מודולרי">
+      <title en_name="modular_arithmetic" he_name="חשבון מודולרי">
+        <topic en_name="modular_arithmetic" he_name="חשבון מודולרי" />
         <appendix en_name="appendices_for_modular_arithmetics-definitions_and_theorems" he_name="נספחים לחשבון מודולרי" />
-      </topic>
+      </title>
       <topic en_name="diophantine_approximations" he_name="קירובים דיופנטיים" />
     </course>
     <course en_name="set_theory" course_number="80200" lecturer="עומר בן-נריה" tutor="דניאל יוסוב" semester="ב' תשפ&quot;ד" he_name="תורת הקבוצות">
       <none en_name="none" he_name="הסיכומים עדיין לא נכתבו" />
     </course>
-    <course en_name="probability" course_number="80420" lecturer="אורי גוראל-גורביץ" tutor="אמיר בכר" semester="א' תשפ&quot;ה" he_name="תורת ההסתברות (1)">
+    <course en_name="probability_theory_1" course_number="80420" lecturer="אורי גוראל-גורביץ" tutor="אמיר בכר" semester="א' תשפ&quot;ה" he_name="תורת ההסתברות (1)">
       <topic en_name="discrete_probability" he_name="הסתברות בדידה" />
       <figures />
     </course>
