@@ -1,0 +1,898 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The head's design for summuries,make the layout more similar to a book:
+\AtBeginDocument{
+\renewcommand\headrule{%
+  \kern -7pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+  \kern 10pt
+}}
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Correct the reversed parentheses in labels:
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\newfontfamily{\hebrewfont}{David}
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+
+\end_preamble
+
+\use_default_options true
+\begin_modules
+theorems-starred
+customHeadersFooters
+\end_modules
+
+\maintain_unincluded_children false
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+
+
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size      Larger
+	  Series     Bold
+	EndFont
+End
+
+
+Style Solution
+
+	LabelString           "פתרון: "End
+
+
+Style Notation
+
+	LabelString           "סימון  \thetheorem: "End
+
+Style Theorem
+
+	LabelString           "משפט \thetheorem: "End
+
+Style Property
+
+	LabelString           "תזכורת: "End
+
+\end_local_layout
+
+\language hebrew
+
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\boxbgcolor #cccccc
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+
+\tocdepth 3
+
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename C:\Users\sraya\AppData\Roaming\LyX2.4\macros\MKmacros.lyx
+\end_inset
+
+\end_layout
+
+\begin_layout Right Header
+\begin_inset Argument 1
+status open
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+\begin_layout Plain Layout
+\backslash
+Roman{page}
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\begin_inset ERT
+status open
+\begin_layout Plain Layout
+\backslash
+leftmark
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Left Header
+\begin_inset Argument 1
+status open
+\begin_layout Plain Layout
+דוגמאות לחישובי אינטגרלים
+\end_layout
+
+\end_inset
+
+\begin_inset ERT
+status open
+\begin_layout Plain Layout
+\backslash
+Roman{page}
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Center Footer
+\end_layout
+
+\begin_layout Title
+\paragraph_spacing double
+\series bold
+\size huge
+דוגמאות לחישובי אינטגרלים
+\size default
+
+\series default
+
+\end_layout
+
+\begin_layout Standard
+\align center
+חשבון אינפיניטסימלי (
+\numeric on
+2
+\numeric off
+) -
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+80132
+\numeric off
+ 
+
+\end_layout
+
+\begin_layout Standard
+\align center
+מרצה: יורם לסט
+
+\end_layout
+
+\begin_layout Standard
+\align center
+מתרגלים: דניאל אופנר ומתן בן-אשר
+
+\end_layout
+
+\begin_layout Standard
+\align center
+סוכם ע"י: שריה אנסבכר
+
+\end_layout
+
+\begin_layout Standard
+\align center
+סמסטר ב' תשפ"ג, האונ' העברית
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\align center
+אשמח לקבל הערות והארות על הסיכומים על מנת לשפרם בעתיד,
+\begin_inset Newline newline
+\end_inset
+כל הערה ולו הפעוטה ביותר (אפילו פסיק שאינו במקום או רווח מיותר) תתקבל בברכה;
+\begin_inset Newline newline
+\end_inset
+אתם מוזמנים לכתוב לי לתיבת הדוא"ל: 
+\begin_inset CommandInset href
+LatexCommand href
+name "sraya.ansbacher@mail.huji.ac.il"
+target sraya.ansbacher@mail.huji.ac.il
+type mailto:
+literal false
+\end_inset
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+.
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\end_layout
+
+\begin_layout Standard
+\align center
+לסיכומים נוספים היכנסו לאתר:
+\begin_inset Newline newline
+\end_inset
+אקסיומת השלמות - סיכומי הרצאות במתמטיקה
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset CommandInset href
+LatexCommand href
+name "https://srayaa.wixsite.com/math"
+target https://srayaa.wixsite.com/math
+literal false
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Example
+יהיו 
+\begin_inset Formula
+$\alpha\in\MKreal$
+\end_inset
+ ו-
+\begin_inset Formula
+$0<\beta\in\MKreal$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+האינטגרל (הלא אמיתי) 
+\begin_inset Formula
+$\intop_{1}^{\infty}x^{\alpha}\cdot\sin\left(x^{\beta}\right)dx$
+\end_inset
+ מתכנס אם"ם 
+\begin_inset Formula
+$\alpha<\beta-1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset space \space{}
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נסמן 
+\begin_inset Formula
+$u:=x^{\beta}$
+\end_inset
+.
+\begin_inset Formula
+\[
+\frac{dx}{du}=\frac{1}{\beta}\cdot u^{\frac{1}{\beta}-1}\Rightarrow dx=\frac{1}{\beta}\cdot u^{\frac{1-\beta}{\beta}}\ du
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+\Rightarrow\intop_{1}^{\infty}x^{\alpha}\cdot\sin\left(x^{\beta}\right)dx & =\intop_{1}^{\infty}u^{\frac{\alpha}{\beta}}\cdot\sin\left(u\right)\cdot\frac{1}{\beta}\cdot u^{\frac{1-\beta}{\beta}}du\\
+ & =\frac{1}{\beta}\cdot\intop_{1}^{\infty}u^{\frac{\alpha+1-\beta}{\beta}}\cdot\sin\left(u\right)du
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\Leftarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$\alpha\geq\beta-1$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$\alpha+1-\beta\geq0$
+\end_inset
+ ולכן גם 
+\begin_inset Formula
+$\frac{\alpha+1-\beta}{\beta}\geq0$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+אם 
+\begin_inset Formula
+$\frac{\alpha+1-\beta}{\beta}=0$
+\end_inset
+ אז:
+\begin_inset Formula
+\[
+\frac{1}{\beta}\cdot\intop_{1}^{\infty}u^{\frac{\alpha+1-\beta}{\beta}}\cdot\sin\left(u\right)du=\frac{1}{\beta}\cdot\intop_{1}^{\infty}\sin\left(u\right)du
+\]
+
+
+\end_inset
+וכבר ראינו שהאינטגרל הלא אמיתי 
+\begin_inset Formula
+$\intop_{1}^{\infty}\sin\left(u\right)du$
+\end_inset
+ אינו מתכנס ולכן גם 
+\begin_inset Formula
+$\frac{1}{\beta}\cdot\intop_{1}^{\infty}\sin\left(u\right)du$
+\end_inset
+ אינו מתכנס.
+\begin_inset Newline newline
+\end_inset
+א"כ נתמקד במקרה שבו 
+\begin_inset Formula
+$P:=\frac{\alpha+1-\beta}{\beta}>0$
+\end_inset
+ַ, לכל 
+\begin_inset Formula
+$1<u\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$u^{P}>1$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+ע"פ נוסחת לייבניץ-ניוטון (
+\begin_inset Formula
+$\sin$
+\end_inset
+ היא פונקציה רציפה בכל 
+\begin_inset Formula
+$\MKreal$
+\end_inset
+) לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+\left|\intop_{2\pi n}^{2\pi n+\frac{\pi}{2}}u^{\frac{\alpha+1-\beta}{\beta}}\cdot\sin\left(u\right)du\right| & \geq\intop_{2\pi n}^{2\pi n+\frac{\pi}{2}}u^{\frac{\alpha+1-\beta}{\beta}}\cdot\sin\left(u\right)\ du\geq\intop_{2\pi n}^{2\pi n+\frac{\pi}{2}}\sin\left(u\right)\ du\\
+ & =-\cos\left(2\pi n+\frac{\pi}{2}\right)-\left[-\cos\left(2\pi n\right)\right]\\
+ & =-\left(-1\right)-\left(-1\right)=2
+\end{align*}
+
+
+\end_inset
+א"כ נבחר 
+\begin_inset Formula
+$\varepsilon:=2$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$B\in\MKreal$
+\end_inset
+ קיים 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\frac{B}{2\pi}<n$
+\end_inset
+ (ולכן גם 
+\begin_inset Formula
+$B<2\pi n<2\pi n+\frac{\pi}{2}$
+\end_inset
+) המקיים:
+\begin_inset Formula
+\[
+\left|\intop_{2\pi n}^{2\pi n+\frac{\pi}{2}}u^{\frac{\alpha+1-\beta}{\beta}}\cdot\sin\left(u\right)\ du\right|\geq2=\varepsilon
+\]
+
+
+\end_inset
+מתנאי קושי להתכנסות של אינטגרל לא אמיתי נובע ש-
+\begin_inset Formula
+$\frac{1}{\beta}\cdot\intop_{1}^{\infty}u^{\frac{\alpha+1-\beta}{\beta}}\cdot\sin\left(u\right)du$
+\end_inset
+ מתבדר ולכן גם 
+\begin_inset Formula
+$\intop_{1}^{\infty}x^{\alpha}\cdot\sin\left(x^{\beta}\right)dx$
+\end_inset
+ מתבדר.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\Rightarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח כי 
+\begin_inset Formula
+$\alpha<\beta-1$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$\alpha+1-\beta<0$
+\end_inset
+ ולכן גם 
+\begin_inset Formula
+$P:=\frac{\alpha+1-\beta}{\beta}<0$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$\sin$
+\end_inset
+ היא פונקציה שהצוברת שלה (
+\begin_inset Formula
+$\cos$
+\end_inset
+) חסומה ו-
+\begin_inset Formula
+$u^{P}$
+\end_inset
+ היא פונקציה מונוטונית יורדת כך ש-
+\begin_inset Formula
+$\lim_{u\rightarrow\infty}u^{P}=0$
+\end_inset
+ והנגזרת שלה אינטגרבילית על כל תת-קטע סגור של 
+\begin_inset Formula
+$\left[1,\infty\right)$
+\end_inset
+, ממבחן דיריכלה להתכנסות אינטגרלים לא אמיתיים נובע ש-
+\begin_inset Formula
+$\frac{1}{\beta}\cdot\intop_{1}^{\infty}u^{\frac{\alpha+1-\beta}{\beta}}\cdot\sin\left(u\right)du$
+\end_inset
+ מתכנס ולכן גם 
+\begin_inset Formula
+$\intop_{1}^{\infty}x^{\alpha}\cdot\sin\left(x^{\beta}\right)dx$
+\end_inset
+ מתכנס.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ למעשה, מבחינה פורמלית מה שעשינו בשלב הראשון של ההוכחה היה התהליך המפרך המפורט להלן, ודאי תבינו מדוע לא הבאתי אותו ראשון...
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$f:\left[1,\infty\right)\rightarrow\MKreal$
+\end_inset
+ המוגדרת ע"י:
+\begin_inset Formula
+\[
+f\left(x\right)=x^{\frac{\alpha+\beta-1}{\beta}}\cdot\sin\left(x\right)
+\]
+
+
+\end_inset
+תהא 
+\begin_inset Formula
+$\varphi:\left[1,\infty\right)\rightarrow\left[1,\infty\right)$
+\end_inset
+ המוגדרת ע"י 
+\begin_inset Formula
+$\varphi\left(x\right)=x^{\beta}$
+\end_inset
+ (לכל 
+\begin_inset Formula
+$x\in\left[1,\infty\right)$
+\end_inset
+), א"כ ילכל 
+\begin_inset Formula
+$x\in\left[1,\infty\right)$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\varphi'\left(x\right)=\beta\cdot x^{\beta-1}$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נשים לב לכך ש-
+\begin_inset Formula
+$f$
+\end_inset
+ רציפה וש-
+\begin_inset Formula
+$\varphi'$
+\end_inset
+ אינטגרבילית רימן על כל תת-קטע סגור של 
+\begin_inset Formula
+$\left[1,\infty\right)$
+\end_inset
+ ולכן ניתן להשתמש במשפט ההצבה.
+\begin_inset Formula
+\begin{align*}
+\intop_{1}^{\infty}x^{\alpha}\cdot\sin\left(x^{\beta}\right)dx & =\lim_{b\rightarrow\infty}\intop_{1}^{b}\left(x^{\beta}\right)^{\frac{\alpha}{\beta}}\cdot\sin\left(x^{\beta}\right)\cdot\frac{1}{\beta}\cdot\left(x^{\beta}\right)^{\frac{1-\beta}{\beta}}\cdot\beta\cdot\left(x^{\beta}\right)^{\frac{\beta-1}{\beta}}dx\\
+ & =\frac{1}{\beta}\cdot\lim_{b\rightarrow\infty}\intop_{1}^{b}\left(x^{\beta}\right)^{\frac{\alpha+1-\beta}{\beta}}\cdot\sin\left(x^{\beta}\right)\cdot\beta\cdot\left(x^{\beta}\right)^{\frac{\beta-1}{\beta}}dx\\
+ & =\frac{1}{\beta}\cdot\lim_{b\rightarrow\infty}\intop_{1}^{b}\left(\varphi\left(x\right)\right)^{\frac{\alpha+1-\beta}{\beta}}\cdot\sin\left(\varphi\left(x\right)\right)\cdot\varphi'\left(x\right)dx\\
+ & =\frac{1}{\beta}\cdot\lim_{b\rightarrow\infty}\intop_{1}^{b}f\left(\varphi\left(x\right)\right)\cdot\varphi'\left(x\right)dx=\frac{1}{\beta}\cdot\lim_{b\rightarrow\infty}\intop_{\varphi\left(1\right)}^{\varphi\left(b\right)}f\left(t\right)dt\\
+ & =\frac{1}{\beta}\cdot\lim_{b\rightarrow\infty}\intop_{1}^{b^{\beta}}f\left(t\right)dt=\frac{1}{\beta}\cdot\lim_{c\rightarrow\infty}\intop_{1}^{c}t^{\frac{\alpha+\beta-1}{\beta}}\cdot\sin\left(t\right)dt
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ אז איך נמנעים מהסיבוך המיותר הזה? התשובה היא שעלינו להראות שהתנאים למשפט ההצבה מתקיימים ואז לבצע את ההצבה כפי שהיינו עושים עבור אינטגרל לא מסוים ולבסוף עלינו לבחור את הקצוות לפי הערך ש-
+\begin_inset Formula
+$\varphi$
+\end_inset
+ מקבלת עבורם, במקרה הזה כש-
+\begin_inset Formula
+$x$
+\end_inset
+ נע בין 
+\begin_inset Formula
+$1$
+\end_inset
+ ל-
+\begin_inset Formula
+$b$
+\end_inset
+ 
+\begin_inset Formula
+$\varphi\left(x\right)=u$
+\end_inset
+ נע בין 
+\begin_inset Formula
+$1^{\beta}$
+\end_inset
+ ל-
+\begin_inset Formula
+$b^{\beta}$
+\end_inset
+ ומכיוון שהצוברת רציפה ו-
+\begin_inset Formula
+$\lim_{b\rightarrow\infty}b^{\beta}=\infty=\lim_{c\rightarrow\infty}c$
+\end_inset
+ יכולנו להחליף את 
+\begin_inset Formula
+$b^{\beta}$
+\end_inset
+ ב-
+\begin_inset Formula
+$c$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Example
+יהיו 
+\begin_inset Formula
+$n,m\in\MKnatural$
+\end_inset
+ כך שלפחות אחד מהם אי-זוגי, מתקיים:
+\begin_inset Formula
+\[
+\intop\sin^{n}\theta\cdot\cos^{m}\theta\ d\theta
+\]
+
+
+\end_inset
+כאשר לפחות אחד מ-
+\begin_inset Formula
+$n$
+\end_inset
+ ו-
+\begin_inset Formula
+$m$
+\end_inset
+ אי-זוגי.
+\end_layout
+
+\begin_layout Standard
+נניח בהג"כ ש-
+\begin_inset Formula
+$m$
+\end_inset
+ אי-זוגי, נציב 
+\begin_inset Formula
+$u=\sin\theta$
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow\frac{du}{d\theta}=\cos\theta\Rightarrow du=\cos\theta\ d\theta
+\]
+
+
+\end_inset
+א"כ נקבל:
+\begin_inset Formula
+\begin{align*}
+\intop\sin^{n}\theta\cdot\cos^{m}\theta d\theta & =\intop\sin^{n}\theta\cdot\left(\cos^{2}\theta\right)^{\frac{m-1}{2}}\cdot\cos\left(\theta\right)d\theta\\
+ & =\intop\sin^{n}\theta\cdot\left(1-\sin^{2}\theta\right)^{\frac{m-1}{2}}\cdot\cos\left(\theta\right)d\theta\\
+ & =\intop u^{n}\cdot\left(1-u^{2}\right)^{\frac{m-1}{2}}du
+\end{align*}
+
+
+\end_inset
+וזהו כבר אינטגרל של פולינום (נפתח סוגריים).
+\end_layout
+
+\begin_layout Example
+\series bold
+חישוב גבולות באמצעות אינטגרלי רימן
+\series default
+
+\begin_inset Newline newline
+\end_inset
+מתקיים:
+\begin_inset Formula
+\[
+\lim_{n\rightarrow\infty}\sum_{k=1}^{n}\frac{1}{k}\cdot\sin\left(\frac{1}{k}\right)=\lim_{\delta\rightarrow0^{+}}\intop_{\delta}^{1}\sin\left(x\right)dx=\intop_{0}^{1}\sin\left(x\right)dx=\left(-\cos\left(1\right)\right)-\left(-\cos\left(0\right)\right)=1-\cos\left(1\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\end_body
+
+\end_document
+

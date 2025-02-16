@@ -1,0 +1,9982 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The head's design for summuries,make the layout more similar to abook:
+\AtBeginDocument{
+\renewcommand\headrule{%
+  \kern -7pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+  \kern 10pt
+}}
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Correct the reversed parentheses in labels:
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\newfontfamily{\hebrewfont}{David}
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+
+\end_preamble
+
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+customHeadersFooters
+\end_modules
+
+\maintain_unincluded_children no
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size      Larger
+	  Series     Bold
+	EndFont
+End
+Style Solution
+	LabelString           "פתרון: "End
+Style Notation
+	LabelString           "סימון  \thetheorem: "End
+Style Theorem
+	LabelString           "משפט \thetheorem: "End
+Style Property
+	LabelString           "תזכורת: "End
+
+\end_local_layout
+
+\language hebrew
+
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\boxbgcolor #cccccc
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+
+\tocdepth 3
+
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "C:/Users/sraya/AppData/Roaming/LyX2.4/macros/MKmacros.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Right Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+leftmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Left Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+חשבון מודולרי
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Center Footer
+
+\end_layout
+
+\begin_layout Title
+
+\series bold
+\size huge
+חשבון מודולרי
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+התחלה
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ אודי קרא לנושא הזה לזה גם "חשבון בקונגרואנציות"...
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$1<N\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+נאמר ששני מספרים 
+\begin_inset Formula
+$x,y\in\MKinteger$
+\end_inset
+ הם 
+\bar under
+קונגרואנטיים/שקולים
+\bar default
+ מודולו 
+\begin_inset Formula
+$N$
+\end_inset
+ אם 
+\begin_inset Formula
+$N\mid\left(x-y\right)$
+\end_inset
+ ואז נסמן 
+\begin_inset Formula
+$x\equiv y\mod N$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כמובן שזהו יחס שקילות.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הרעיון הוא ששאריות החלוקה של 
+\begin_inset Formula
+$x$
+\end_inset
+ ו-
+\begin_inset Formula
+$y$
+\end_inset
+ ב-
+\begin_inset Formula
+$N$
+\end_inset
+ שוות.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ 
+\begin_inset Formula
+$N$
+\end_inset
+ הנ"ל נקרא 
+\bar under
+המודולוס
+\bar default
+.
+\end_layout
+
+\begin_layout Description
+סימון: לכל 
+\begin_inset Formula
+$x\in\MKinteger$
+\end_inset
+ נסמן ב-
+\begin_inset Formula
+$\overline{x}$
+\end_inset
+ את מחלקת השקילות של 
+\begin_inset Formula
+$x$
+\end_inset
+ ביחס הנ"ל, כלומר 
+\begin_inset Formula
+$\overline{x}:=\left\{ y\in\MKinteger\mid x\equiv y\mod N\right\} $
+\end_inset
+, מסמנים את קבוצת מחלקות השקילות ב-
+\begin_inset Formula
+$\MKinteger/N\MKinteger$
+\end_inset
+, כאשר אנו עובדים עם יותר ממודולוס אחד נסמן את מחלקות השקילות ע"י 
+\begin_inset Formula
+$\left[x\right]_{N}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ למה לסמן 
+\begin_inset Formula
+$\MKinteger/N\MKinteger$
+\end_inset
+ ולא פשוט 
+\begin_inset Formula
+$\MKinteger/N$
+\end_inset
+?
+\begin_inset Newline newline
+\end_inset
+הסימון 
+\begin_inset Formula
+$N\MKinteger$
+\end_inset
+ הוא בעצם האידיאל 
+\begin_inset Formula
+$N\cdot\MKinteger=\left\{ N\cdot a\mid a\in\MKinteger\right\} $
+\end_inset
+ והסימון 
+\begin_inset Formula
+$R/I$
+\end_inset
+ כאשר 
+\begin_inset Formula
+$R$
+\end_inset
+ הוא חוג ו-
+\begin_inset Formula
+$I$
+\end_inset
+ הוא אידיאל בחוג משמש לסימון ל
+\begin_inset CommandInset href
+LatexCommand href
+name "חוג המנה"
+target https://he.wikipedia.org/wiki/%D7%97%D7%95%D7%92_%D7%9E%D7%A0%D7%94
+literal false
+\end_inset
+ המושרה על 
+\begin_inset Formula
+$R$
+\end_inset
+ ע"י 
+\begin_inset Formula
+$I$
+\end_inset
+, חוג המנה הוא קבוצת מנה (כלומר קבוצת מחלקות שקילות) המושרית ע"י הגדרת מחלקת השקילות של איבר 
+\begin_inset Formula
+$a$
+\end_inset
+ בחוג בצורה הבאה: 
+\begin_inset Formula
+$\left[a\right]:=\left\{ a+r\mid r\in I\right\} $
+\end_inset
+, כלומר מבחינה אינטואיטיבית אנחנו "מאפסים" את כל איברי האידיאל (הם שקולים ל-
+\begin_inset Formula
+$0$
+\end_inset
+) וכל שני איברים בחוג שקולים זה לזה אם ההפרש ביניהם שייך לאידיאל (כלומר שאריות החלוקה שלהם
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+אם ניתן לבצע חילוק עם שארית בחוג.
+\end_layout
+
+\end_inset
+ ביוצר של החוג שוות). רעיון דומה מופיע במרחבי מנה שעליהם למדנו בליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\numeric off
+: גם שם לקחנו תמ"ו 
+\begin_inset Formula
+$W$
+\end_inset
+ של מ"ו 
+\begin_inset Formula
+$V$
+\end_inset
+ והגדרנו את מחלקת השקילות של וקטור 
+\begin_inset Formula
+$v\in V$
+\end_inset
+ ע"י 
+\begin_inset Formula
+$\left[v\right]:=\left\{ v+w\mid w\in W\right\} $
+\end_inset
+ וכמו שכאן קבוצת מחלקות השקילות היא חוג שם קבוצת מחלקות השקילות היא מרחב וקטורי.
+\begin_inset Newline newline
+\end_inset
+מה שאני רוצה לומר בהערה הזו הוא שפעמים רבות לסימונים מתמטיים יש משמעות כללית שאינה נובעת מההקשר המסוים שבו אנו עוסקים, כך למשל הסימון 
+\begin_inset Formula
+$\MKfield\left[x\right]$
+\end_inset
+ לחוג הפולינומים מעל שדה הוא בסך הכל דוגמה לסימון 
+\begin_inset Formula
+$A\left[x\right]$
+\end_inset
+ כאשר 
+\begin_inset Formula
+$A$
+\end_inset
+ היא קבוצה שעליה מוגדרות פעולות חיבור וכפל ו-
+\begin_inset Formula
+$x$
+\end_inset
+ הוא משתנה פורמלי המאפשר לנו לדבר על פולינום מהצורה 
+\begin_inset Formula
+$ax^{2}+bx+c$
+\end_inset
+ וכדומה.
+\end_layout
+
+\begin_layout Definition
+נאמר שקבוצה 
+\begin_inset Formula
+$\left\{ r_{1},r_{2},\ldots,r_{N}\right\} $
+\end_inset
+ היא 
+\bar under
+מערכת נציגים שלמה
+\bar default
+ אם לכל 
+\begin_inset Formula
+$N\geq i,j\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$i\neq j$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\overline{r_{i}}\neq\overline{r_{j}}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Lemma
+לכל 
+\begin_inset Formula
+$a,b\in\MKinteger$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$x\in\overline{a}$
+\end_inset
+ ו-
+\begin_inset Formula
+$y\in\overline{b}$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\overline{a\pm b}=\overline{x\pm y}$
+\end_inset
+ וגם 
+\begin_inset Formula
+$\overline{a\cdot b}=\overline{x\cdot y}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+נגדיר פעולות חיבור, חיסור וכפל על 
+\begin_inset Formula
+$\MKinteger/N\MKinteger$
+\end_inset
+: לכל 
+\begin_inset Formula
+$\overline{a},\overline{b}\in\MKinteger/N\MKinteger$
+\end_inset
+ נגדיר את פעולות החיבור והחיסור ע"י 
+\begin_inset Formula
+$\overline{a}\pm\overline{b}:=\overline{a\pm b}$
+\end_inset
+ ואת פעולת הכפל ע"י 
+\begin_inset Formula
+$\overline{a}\cdot\overline{b}:=\overline{a\cdot b}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Lemma
+לכל 
+\begin_inset Formula
+$x\in\MKinteger$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\overline{x}=\left\{ x+k\cdot N\mid k\in\MKinteger\right\} $
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ לכן קיימות 
+\begin_inset Formula
+$N$
+\end_inset
+ מחלקות שקילות שנציגיהן הם: 
+\begin_inset Formula
+$0,1,2,\ldots,N-1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Lemma
+מהשוויון 
+\begin_inset Formula
+$\overline{x}=\left\{ x+k\cdot N\mid k\in\MKinteger\right\} $
+\end_inset
+ נובע גם שלכל 
+\begin_inset Formula
+$a,b\in\MKinteger$
+\end_inset
+, אם 
+\begin_inset Formula
+$a\equiv b\mod N$
+\end_inset
+ אז 
+\begin_inset Formula
+$\gcd\left(a,N\right)=\gcd\left(b,N\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+לכל 
+\begin_inset Formula
+$\overline{a}\in\MKinteger/N\MKinteger$
+\end_inset
+ נגדיר את 
+\bar under
+המחלק המשותף המקסימלי
+\bar default
+ של 
+\begin_inset Formula
+$\overline{a}$
+\end_inset
+ ו-
+\begin_inset Formula
+$N$
+\end_inset
+ להיות 
+\begin_inset Formula
+$\gcd\left(a,N\right)$
+\end_inset
+ ונסמן אותו ב-
+\begin_inset Formula
+$\gcd\left(\overline{a},N\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Description
+סימון: נסמן 
+\begin_inset Formula
+$\left(\MKinteger/N\MKinteger\right)^{*}:=\left\{ \overline{a}\mid\exists\overline{b}\in\MKinteger/N\MKinteger:\overline{a}\cdot\overline{b}=1\right\} $
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ה-"
+\begin_inset Formula
+$*$
+\end_inset
+" היא סימון כללי לקבוצת האיברים ההפיכים בחוג מסוים יש המסמנים אאותה ע"י "
+\begin_inset Formula
+$\times$
+\end_inset
+" במקום "
+\begin_inset Formula
+$*$
+\end_inset
+", אבל כמו שהברווז 
+\begin_inset CommandInset href
+LatexCommand href
+name "מוחתם"
+target https://he.wikipedia.org/wiki/%D7%94%D7%97%D7%AA%D7%9E%D7%94
+literal false
+\end_inset
+ בלידתו גם אני "נדבק" לסימונים הראשונים שאני רואה ולכן אשתמש רק ב-"
+\begin_inset Formula
+$*$
+\end_inset
+".
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+הקבוצה 
+\begin_inset Formula
+$\MKinteger/N\MKinteger$
+\end_inset
+ היא חוג חילופי, כלומר היא מקיימת את כל אקסיומות השדה (ביחס לפעולות החיבור והכפל שהגדרנו) מלבד קיום הופכי לכל איבר שונה מ-
+\begin_inset Formula
+$0$
+\end_inset
+, כאשר 
+\begin_inset Formula
+$\overline{0}$
+\end_inset
+ הוא האיבר האדיש לחיבור ו-
+\begin_inset Formula
+$\overline{1}$
+\end_inset
+ הוא האיבר האדיש לכפל.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כאשר 
+\begin_inset Formula
+$N$
+\end_inset
+ ראשוני הקבוצה 
+\begin_inset Formula
+$\MKinteger/N\MKinteger$
+\end_inset
+ היא גם שדה (נהוג לסמנו ב-
+\begin_inset Formula
+$\MKfield_{N}$
+\end_inset
+), ראינו זאת בליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\numeric off
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כל הטענות שאנחנו מכירים על שדות ואינן משתמשות באקסיומת ההופכי נכונות גם עבור חוג חילופי, כך למשל 
+\series bold
+אם
+\series default
+ יש לאיבר הופכי אז הוא יחיד ולכן יש משמעות לסימון 
+\begin_inset Formula
+$\overline{a}^{-1}$
+\end_inset
+ (וכמובן גם -
+\begin_inset Formula
+$-\overline{a}$
+\end_inset
+).
+\end_layout
+
+\begin_layout Lemma
+יהי 
+\begin_inset Formula
+$\overline{a}\in\MKinteger/N\MKinteger$
+\end_inset
+, 
+\begin_inset Formula
+$\overline{a}\in\left(\MKinteger/N\MKinteger\right)^{*}$
+\end_inset
+ (כלומר 
+\begin_inset Formula
+$\overline{a}$
+\end_inset
+ הפיך מודולו 
+\begin_inset Formula
+$N$
+\end_inset
+) אם"ם 
+\begin_inset Formula
+$\gcd\left(a,N\right)=1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+\begin_inset CommandInset label
+LatexCommand label
+name "definition 1.10"
+\end_inset
+
+\series bold
+פונקציית אוילר
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$\phi:\MKnatural\rightarrow\MKnatural$
+\end_inset
+ המוגדרת ע"י 
+\begin_inset Formula
+$\phi\left(n\right):=\left|\left\{ n\geq m\in\MKnatural:\gcd\left(n,m\right)=1\right\} \right|$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+יש המסמנים את פונקציית אוילר ב-
+\begin_inset Formula
+$\varphi$
+\end_inset
+ אך מכיוון שאודי השתמש ב-
+\begin_inset Formula
+$\phi$
+\end_inset
+ גם אני אעשה זאת כאן (שוב ההחתמה).
+\end_layout
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$\phi$
+\end_inset
+ מחזירה את מספר המספרים הקטנים או שווים ל-
+\begin_inset Formula
+$n$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ה
+\begin_inset CommandInset href
+LatexCommand href
+name "נפקא מינה"
+target https://he.wikipedia.org/wiki/%D7%A0%D7%A4%D7%A7%D7%90_%D7%9E%D7%99%D7%A0%D7%94
+literal false
+\end_inset
+ היחידה של הא"ש החלש היא ש-
+\begin_inset Formula
+$\phi\left(1\right)=1$
+\end_inset
+.
+\end_layout
+
+\end_inset
+ שגם זרים ל-
+\begin_inset Formula
+$n$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ אם 
+\begin_inset Formula
+$n\neq1$
+\end_inset
+ אז 
+\begin_inset Formula
+$\phi\left(n\right)=\left|\left(\MKinteger/n\MKinteger\right)^{*}\right|$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ לכל 
+\begin_inset Formula
+$p\in\MKnatural$
+\end_inset
+ ראשוני מתקיים 
+\begin_inset Formula
+$\phi\left(p\right)=p-1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+אם 
+\begin_inset Formula
+$N$
+\end_inset
+ הוא ראשוני אז לכל איבר שונה מאפס יש הופכי ו-
+\begin_inset Formula
+$\MKinteger/N\MKinteger$
+\end_inset
+ הוא שדה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ אודי קרא לנושא הזה לזה גם "חשבון בקונגרואנציות"...
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$1<N\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\begin_layout Subsection
+משפטים בסיסיים
+\end_layout
+
+\begin_layout Lemma
+יהי 
+\begin_inset Formula
+$f\in\MKinteger\left[x\right]$
+\end_inset
+, לכל 
+\begin_inset Formula
+$x,y\in\MKinteger$
+\end_inset
+ המקיימים 
+\begin_inset Formula
+$x\equiv y\mod N$
+\end_inset
+ מתקיים
+\begin_inset Formula
+$f\left(x\right)\equiv f\left(y\right)\mod N$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$f\in\MKinteger\left[x\right]$
+\end_inset
+ אם קיים 
+\begin_inset Formula
+$x\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f\left(x\right)=0$
+\end_inset
+ אז אותו 
+\begin_inset Formula
+$x$
+\end_inset
+ מקיים 
+\begin_inset Formula
+$\overline{f\left(x\right)}=\overline{0}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ השימוש המרכזי של טענה זו הוא הוכחה שלפולינום נתון אין שורשים בכך שנראה שאין לו שורשים מודולו 
+\begin_inset Formula
+$N$
+\end_inset
+ (כאשר את 
+\begin_inset Formula
+$N$
+\end_inset
+ נוכל לבחור בעצמנו).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ למעשה ניתן להרחיב את הטענה: לכל משוואה שיש לה פתרון בשלמים יש לה גם פתרון בכל חוג שלמים מודולו 
+\begin_inset Formula
+$N$
+\end_inset
+, לכן אם ברצוננו להראות שלמשוואה מסוימת בשלמים אין פתרון נוכל לבחור מודולוס כאוות נפשנו (כמובן שיש לבחור אותו בצורה אסטרטגית וזה החלק הכי מסובך בעניין) ולהראות שבחוג המודולרי שלו אין פתרון למשוואה.
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 1.3"
+\end_inset
+לכל 
+\begin_inset Formula
+$x,y\in\MKinteger$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$n\in\MKinteger$
+\end_inset
+, אם 
+\begin_inset Formula
+$x\equiv y\mod N$
+\end_inset
+ וגם 
+\begin_inset Formula
+$n\mid N$
+\end_inset
+ אז 
+\begin_inset Formula
+$x\equiv y\mod n$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 1.4"
+\end_inset
+לכל 
+\begin_inset Formula
+$x,y\in\MKinteger$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$0\neq a\in\MKinteger$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+ax\equiv ay\mod N\Longleftrightarrow x\equiv y\mod{\frac{N}{\gcd\left(a,N\right)}}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+\series bold
+כלל הצמצום
+\series default
+
+\end_layout
+
+\begin_layout Corollary
+לכל 
+\begin_inset Formula
+$x,y\in\MKinteger$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$0\neq a\in\MKinteger$
+\end_inset
+ הזר ל-
+\begin_inset Formula
+$N$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+ax\equiv ay\mod N\Longleftrightarrow x\equiv y\mod N
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "theorem 1.6"
+\end_inset
+למשוואה מהצורה 
+\begin_inset Formula
+$ax\equiv b\mod N$
+\end_inset
+ יש פתרון אם"ם 
+\begin_inset Formula
+$\gcd\left(a,N\right)\mid b$
+\end_inset
+, במקרה כזה ניתן להמיר אותה (ע"פ טענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.4"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+) למשוואה (נגדיר 
+\begin_inset Formula
+$d:=\gcd\left(a,N\right)$
+\end_inset
+):
+\begin_inset Formula
+\[
+\frac{a}{d}\cdot x\equiv\frac{b}{d}\mod{\frac{N}{d}}
+\]
+
+
+\end_inset
+ואז 
+\begin_inset Formula
+$\frac{a}{d}$
+\end_inset
+ זר ל-
+\begin_inset Formula
+$\frac{N}{d}$
+\end_inset
+ ולכן יש לו הופכי מודולרי והפתרונות מוכרחים לקיים:
+\begin_inset Formula
+\[
+x\equiv\left(\frac{a}{d}\right)^{-1}\cdot\frac{b}{d}\mod{\frac{N}{d}}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ נשים לב לכך שקיום פתרון יחיד מודולו 
+\begin_inset Formula
+$\frac{N}{d}$
+\end_inset
+ אומר שישנם 
+\begin_inset Formula
+$d$
+\end_inset
+ פתרונות מודולו 
+\begin_inset Formula
+$N$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ניתן למצוא ההופכי המודולרי ע"י אלגוריתם אוקלידס המורחב: יהיו 
+\begin_inset Formula
+$s,t\in\MKinteger$
+\end_inset
+ מספרים זרים, האלגוריתם נותן לנו 
+\begin_inset Formula
+$n,m\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$1=n\cdot s+m\cdot t$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$n\cdot s\equiv1\mod t$
+\end_inset
+ ו-
+\begin_inset Formula
+$m\cdot t\equiv1\mod s$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$n$
+\end_inset
+ הוא ההופכי של 
+\begin_inset Formula
+$s$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$t$
+\end_inset
+ ו-
+\begin_inset Formula
+$m$
+\end_inset
+ הוא ההופכי של 
+\begin_inset Formula
+$t$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$s$
+\end_inset
+ (היחידות היא עד כדי שקילות מודולרית כמובן).
+\end_layout
+
+\begin_layout Claim
+הקבוצה 
+\begin_inset Formula
+$\left(\MKinteger/N\MKinteger\right)^{*}$
+\end_inset
+ סגורה תחת כפל, כלומר לכל 
+\begin_inset Formula
+$\overline{a},\overline{b}\in\left(\MKinteger/N\MKinteger\right)^{*}$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\overline{a}\cdot\overline{b}\in\left(\MKinteger/N\MKinteger\right)^{*}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Subsection
+המשפט הקטן של פרמה, פונקציית אוילר ומשפט השאריות הסיני
+\end_layout
+
+\begin_layout Theorem
+\series bold
+המשפט הקטן של פרמה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$p\in\MKnatural$
+\end_inset
+ מספר ראשוני, לכל 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a\not\equiv0\mod p$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a^{p-1}\equiv1\mod p$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+נוכיח את המשפט הקטן של פרמה שנוכיח את משפט אוילר (משפט
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 1.12"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+
+\numeric off
+).
+\end_layout
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula
+$p\in\MKnatural$
+\end_inset
+ ראשוני, לכל 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a\not\equiv0\mod p$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$i,j\in\MKnatural$
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$a^{i}\equiv a^{j}\mod N$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$i\equiv j\mod p-1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ המסקנה מראה לנו שמהמשפט הקטן של פרמה נובע שכדי לחשב חזקות בחשבון מודולו 
+\begin_inset Formula
+$p$
+\end_inset
+ ניתן לבצע חשבון מודולו 
+\begin_inset Formula
+$p-1$
+\end_inset
+ על המעריך.
+\end_layout
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula
+$p\in\MKnatural$
+\end_inset
+ מספר ראשוני, לכל 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a^{p}\equiv a\mod p$
+\end_inset
+.
+\end_layout
+
+\begin_layout Lemma
+יהי 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ זר ל-
+\begin_inset Formula
+$N$
+\end_inset
+ ויהיו 
+\begin_inset Formula
+$r_{1},r_{2},\ldots,r_{\phi\left(N\right)}\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left\{ \overline{r_{1}},\overline{r_{2}},\ldots,\overline{r_{\phi\left(N\right)}}\right\} =\left(\MKinteger/N\MKinteger\right)^{*}$
+\end_inset
+, מתקיים
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$\left\{ \overline{a\cdot r_{1}},\overline{a\cdot r_{2}},\ldots,\overline{a\cdot r_{\phi\left(N\right)}}\right\} =\left(\MKinteger/N\MKinteger\right)^{*}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "theorem 1.12"
+\end_inset
+
+\series bold
+משפט אוילר
+\series default
+
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a$
+\end_inset
+ זר ל-
+\begin_inset Formula
+$N$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a^{\phi\left(N\right)}\equiv1\mod N$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+נשתמש בסימונים של הלמה האחרונה ונשים לב לכך שנובע ממנה כי:
+\begin_inset Formula
+\[
+a^{\phi\left(N\right)}\cdot\prod_{i=1}^{\phi\left(N\right)}r_{i}=\prod_{i=1}^{\phi\left(N\right)}\left(a\cdot r_{i}\right)\equiv\prod_{i=1}^{\phi\left(N\right)}r_{i}\mod N
+\]
+
+
+\end_inset
+כעת נזכר שכל האיברים במכפלה שבאגף ימין הפיכים ולכן גם המכפלה עצמה הפיכה וניתן לצמצם בה את שני האגפים, כלומר 
+\begin_inset Formula
+$a^{\phi\left(N\right)}\equiv1\mod N$
+\end_inset
+ כנדרש.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ משפט אוילר הוא הכללה של המשפט הקטן של פרמה.
+\end_layout
+
+\begin_layout Corollary
+לכל 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ זר ל-
+\begin_inset Formula
+$N$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$i,j\in\MKnatural$
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$a^{i}\equiv a^{j}\mod N$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$i\equiv j\mod{\phi}\left(N\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ המסקנה מראה לנו שממשפט אוילר נובע שכדי לחשב חזקות בחשבון מודולו 
+\begin_inset Formula
+$N$
+\end_inset
+ ניתן לבצע חשבון מודולו 
+\begin_inset Formula
+$\phi\left(N\right)$
+\end_inset
+ על המעריך וזאת בתנאי שהבסיס זר ל-
+\begin_inset Formula
+$N$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+משפט השאריות הסיני (
+\lang english
+CRT - Chinese Remainder Theorem
+\lang default
+
+\lang hebrew
+)
+\lang default
+
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$1<m_{1},m_{2},\ldots,m_{k}\in\MKnatural$
+\end_inset
+ זרים זה לזה בזוגות ונסמן 
+\begin_inset Formula
+$\begin{alignedat}{1}m:=\begin{alignedat}{1}\prod_{i=1}^{k}m_{i}\end{alignedat}
+\end{alignedat}
+$
+
+\end_inset
+, לכל 
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{k}\in\MKinteger$
+\end_inset
+ קיים 
+\begin_inset Formula
+$m>x\in\MKnatural_{0}$
+\end_inset
+ יחיד המקיים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר קיים פתרון יחיד מודולו 
+\begin_inset Formula
+$m$
+\end_inset
+, או אם תרצו: כל שני פתרונות שקולים מודולו 
+\begin_inset Formula
+$m$
+\end_inset
+.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\begin{align*}
+x & \equiv a_{1}\mod m_{1}\\
+x & \equiv a_{2}\mod m_{2}\\
+ & \vdots\\
+x & \equiv a_{k}\mod m_{k}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ממשפט השאריות הסיני נובע שכדי שנוכל לפתור קונגרואנציה כלשהי ב-
+\begin_inset Formula
+$\MKinteger/N\MKinteger$
+\end_inset
+ די שנדע לפתור אותה מודולו 
+\begin_inset Formula
+$p^{\MKord_{p}\left(N\right)}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$p$
+\end_inset
+ ראשוני המחלק את 
+\begin_inset Formula
+$N$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כדי לקבל אינטואיציה למשפט השאריות הסיני נדמיין שני גלגלי שיניים המשתלבים זה בזה כך שמספר השיניים בגלגל אחד זר למספר השיניים בגלגל האחר, ברור לנו מבחינה אינטואיטיבית שבגלל שאין להם מחלק משותף (
+\begin_inset Formula
+$1$
+\end_inset
+ לא נחשב) נוכל להגיע להשתלבות של כל שן בגלגל האחד עם כל שן בגלגל האחר
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+הפירמול של אינטואיציה זו הוא הידיעה שניתן להציג את 
+\begin_inset Formula
+$1$
+\end_inset
+ כצר"ל של שני המספרים ואם אנחנו מסוגלים לקבל את 
+\begin_inset Formula
+$1$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$n$
+\end_inset
+ ע"י כפולות של 
+\begin_inset Formula
+$m$
+\end_inset
+ אנחנו יכולים לקבל כל שארית מודולרית מודולו 
+\begin_inset Formula
+$n$
+\end_inset
+ ע"י כפולות של 
+\begin_inset Formula
+$m$
+\end_inset
+.
+\end_layout
+
+\end_inset
+; עבור מספר גדול יותר של גלגלי שיניים נשתמש באינדוקציה. כמובן שאפשר ממש לפרמל את האינטואיציה הזו לכדי הוכחה מתמטית, ראו את ה
+\begin_inset CommandInset ref
+LatexCommand labelonly
+reference "השלישית הוכחה"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ של המשפט.
+\end_layout
+
+\begin_layout Standard
+נביא שלוש הוכחות שהן בעצם שתיים.
+\end_layout
+
+\begin_layout Proof
+\begin_inset CommandInset label
+LatexCommand label
+name "הראשונה הוכחה"
+\end_inset
+
+\bar under
+הוכחה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+- לא קונסטרוקטיבית
+\bar default
+
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$1<m_{1},m_{2},\ldots,m_{k}\in\MKnatural$
+\end_inset
+ זרים זה לזה בזוגות ונסמן 
+\begin_inset Formula
+$\begin{alignedat}{1}m:=\begin{alignedat}{1}\prod_{i=1}^{k}m_{i}\end{alignedat}
+\end{alignedat}
+$
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$f:\MKinteger/m\MKinteger\rightarrow\MKinteger/m_{1}\MKinteger\times\MKinteger/m_{2}\MKinteger\times\ldots\times\MKinteger/m_{k}\MKinteger$
+\end_inset
+ המוגדרת ע"י (לכל 
+\begin_inset Formula
+$\left[x\right]_{m}\in\MKinteger/m\MKinteger$
+\end_inset
+):
+\begin_inset Formula
+\[
+f\left(\left[x\right]_{m}\right):=\left(\left[x\right]_{m_{1}},\left[x\right]_{m_{2}},\ldots,\left[x\right]_{m_{k}}\right)
+\]
+
+
+\end_inset
+מטענה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.3"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+נובע ש-
+\begin_inset Formula
+$f$
+\end_inset
+ אינה תלויה בבחירת הנציג ולכן מוגדרת היטב.
+\begin_inset Newline newline
+\end_inset
+נוכיח ש-
+\begin_inset Formula
+$f$
+\end_inset
+ חח"ע ומכאן שהיא גם על שהרי התחום והטווח שלה הן קבוצות סופיות שגודלן זהה.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$x,y\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$x\equiv y\mod m_{i}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$k\geq i\in\MKnatural$
+\end_inset
+, א"כ מתקיים 
+\begin_inset Formula
+$m_{i}\mid x-y$
+\end_inset
+ לכל 
+\begin_inset Formula
+$k\geq i\in\MKnatural$
+\end_inset
+ ומכאן שגם 
+\begin_inset Formula
+$\MKlcm\left(m_{1},m_{2},\ldots,m_{k}\right)\mid x-y$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+כעת נשים לב לכך שמכיוון ש-
+\begin_inset Formula
+$m_{1},m_{2},\ldots,m_{k}$
+\end_inset
+ זרים זה לזה מתקיים בהכרח:
+\begin_inset Formula
+\[
+\MKlcm\left(m_{1},m_{2},\ldots,m_{r}\right)=\prod_{i=1}^{k}m_{i}=m
+\]
+
+
+\end_inset
+ומכאן ש-
+\begin_inset Formula
+$x\equiv y\mod m$
+\end_inset
+ ומהגדרה 
+\begin_inset Formula
+$f$
+\end_inset
+ חח"ע.
+\begin_inset Newline newline
+\end_inset
+התחום והטווח של 
+\begin_inset Formula
+$f$
+\end_inset
+ הן קבוצות סופיות בגודל זהה ולכן עובדת היותה של 
+\begin_inset Formula
+$f$
+\end_inset
+ חח"ע אומרת ש-
+\begin_inset Formula
+$f$
+\end_inset
+ גם על ולכן הפיכה, כלומר לכל 
+\begin_inset Formula
+$\left(a_{1},a_{2},\ldots,a_{k}\right)\in\MKinteger/m_{1}\MKinteger\times\MKinteger/m_{2}\MKinteger\times\ldots\times\MKinteger/m_{k}\MKinteger$
+\end_inset
+ קיימת 
+\begin_inset Formula
+$x\in\MKinteger/m\MKinteger$
+\end_inset
+ יחידה כך שמתקיים:
+\begin_inset Formula
+\[
+f\left(x\right)=\left(a_{1},a_{2},\ldots,a_{k}\right)
+\]
+
+
+\end_inset
+ומכאן שלכל 
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{k}\in\MKinteger$
+\end_inset
+ קיים 
+\begin_inset Formula
+$m>x\in\MKnatural_{0}$
+\end_inset
+ יחיד כך שמתקיים:
+\begin_inset Formula
+\begin{align*}
+x & \equiv a_{1}\mod m_{1}\\
+x & \equiv a_{2}\mod m_{2}\\
+ & \vdots\\
+x & \equiv a_{k}\mod m_{k}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ניתן היה גם להוכיח ש-
+\begin_inset Formula
+$f$
+\end_inset
+ על ולכן מהשוויון בין הגדלים של התחום והטווח נובע שהיא חח"ע, ראו הדגמה לכך בהוכחה הראשונה של טענה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.17"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+.
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+\bar under
+הוכחה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+- קונסטרוקטיבית
+\bar default
+
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$1<m_{1},m_{2},\ldots,m_{k}\in\MKnatural$
+\end_inset
+ זרים זה לזה בזוגות ונסמן 
+\begin_inset Formula
+$\begin{alignedat}{1}m:=\begin{alignedat}{1}\prod_{i=1}^{k}m_{i}\end{alignedat}
+\end{alignedat}
+$
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$k\geq i\in\MKnatural$
+\end_inset
+ נסמן 
+\begin_inset Formula
+$n_{i}:=\frac{m}{m_{i}}$
+\end_inset
+, א"כ 
+\begin_inset Formula
+$\gcd\left(n_{i},m_{i}\right)=1$
+\end_inset
+ לכל 
+\begin_inset Formula
+$k\geq i\in\MKnatural$
+\end_inset
+ ולכן לכל 
+\begin_inset Formula
+$k\geq i\in\MKnatural$
+\end_inset
+ קיימים 
+\begin_inset Formula
+$r_{i},s_{i}\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$r_{i}\cdot m_{i}+s_{i}\cdot n_{i}=1$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+א"כ יהיו 
+\begin_inset Formula
+$r_{i},s_{i}$
+\end_inset
+ כנ"ל ונסמן 
+\begin_inset Formula
+$x_{i}:=s_{i}\cdot n_{i}$
+\end_inset
+ (כל זה לכל 
+\begin_inset Formula
+$k\geq i\in\MKnatural$
+\end_inset
+ בנפרד), כעת נשים לב לכך שלכל 
+\begin_inset Formula
+$k\geq i,j\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$x_{i}\equiv\delta_{ij}\mod m_{j}$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+\begin_inset Formula
+$\delta_{ij}$
+\end_inset
+ (
+\begin_inset CommandInset href
+LatexCommand href
+name "הדלתא של קרונקר"
+target https://he.wikipedia.org/wiki/%D7%94%D7%93%D7%9C%D7%AA%D7%90_%D7%A9%D7%9C_%D7%A7%D7%A8%D7%95%D7%A0%D7%A7%D7%A8
+literal false
+\end_inset
+) מוגדרת ע"י:
+\begin_inset Formula
+\[
+\delta_{ij}:=\begin{cases}
+1 & i=j\\
+0 & i\neq j
+\end{cases}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\end_inset
+ ולכן אם נסמן:
+\begin_inset Formula
+\[
+x:=\sum_{i=1}^{k}a_{i}\cdot x_{i}
+\]
+
+
+\end_inset
+נקבל שמתקיים 
+\begin_inset Formula
+$x\equiv a_{i}\mod m_{i}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$k\geq i\in\MKnatural$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+כפי שראינו בהוכחה הקודמת לכל 
+\begin_inset Formula
+$y\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$x\equiv y\mod m$
+\end_inset
+ מתקיים גם כן 
+\begin_inset Formula
+$y\equiv a_{i}\mod m_{i}$
+\end_inset
+ ולכן בהכרח קיים 
+\begin_inset Formula
+$m>x\in\MKnatural_{0}$
+\end_inset
+ המקיים זאת, היחידות נובעת מעקרון שובך היונים.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset CommandInset label
+LatexCommand label
+name "השלישית הוכחה"
+\end_inset
+
+\bar under
+הוכחה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+- הוכחה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+רק באינדוקציה
+\bar default
+
+\begin_inset Newline newline
+\end_inset
+נוכיח את המשפט באינדוקציה על 
+\begin_inset Formula
+$k$
+\end_inset
+, עבור 
+\begin_inset Formula
+$k=1$
+\end_inset
+ המשפט טריוויאלי ולכן נעבור לצעד האינדוקציה.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$k\in\MKnatural$
+\end_inset
+, יהיו 
+\begin_inset Formula
+$1<m_{1},m_{2},\ldots,m_{k}\in\MKnatural$
+\end_inset
+ זרים זה לזה בזוגות ו-
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{k}\in\MKinteger$
+\end_inset
+; נניח שקיים 
+\begin_inset Formula
+$x\in\MKinteger$
+\end_inset
+ כך שמתקיים (הנחת האינדוקציה):
+\begin_inset Formula
+\begin{align*}
+x & \equiv a_{1}\mod m_{1}\\
+x & \equiv a_{2}\mod m_{2}\\
+ & \vdots\\
+x & \equiv a_{k}\mod m_{k}
+\end{align*}
+
+
+\end_inset
+ויהי 
+\begin_inset Formula
+$x$
+\end_inset
+ כנ"ל.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$1<m_{k+1}\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\gcd\left(m_{k+1},m_{i}\right)=1$
+\end_inset
+ לכל 
+\begin_inset Formula
+$k\geq i\in\MKnatural$
+\end_inset
+ ויהא 
+\begin_inset Formula
+$a_{k+1}\in\MKinteger$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נסמן 
+\begin_inset Formula
+$\begin{alignedat}{1}m:=\begin{alignedat}{1}\prod_{i=1}^{k}m_{i}\end{alignedat}
+\end{alignedat}
+$
+
+\end_inset
+, מהגדרה מתקיים 
+\begin_inset Formula
+$\gcd\left(m_{k+1},m\right)=1$
+\end_inset
+ ולכן קיימים 
+\begin_inset Formula
+$r,s\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$r\cdot m_{k+1}+s\cdot m=1$
+\end_inset
+, יהיו 
+\begin_inset Formula
+$r,s$
+\end_inset
+ כנ"ל.
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow a_{k+1}-x=\left(a_{k+1}-x\right)\cdot r\cdot m_{k+1}+\left(a_{k+1}-x\right)\cdot s\cdot m\\
+ & \Rightarrow a_{k+1}-x\equiv\left(a_{k+1}-x\right)\cdot s\cdot m\mod m_{k+1}\\
+ & \Rightarrow a_{k+1}\equiv x+\left(a_{k+1}-x\right)\cdot s\cdot m\mod m_{k+1}
+\end{align*}
+
+
+\end_inset
+כמובן שמתקיים 
+\begin_inset Formula
+$x+\left(a_{k+1}-x\right)\cdot s\cdot m\equiv x\mod m$
+\end_inset
+ ולכן 
+\begin_inset Formula
+$x+\left(a_{k+1}-x\right)\cdot s\cdot m\equiv a_{i}\mod m_{i}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$k\geq i\in\MKnatural$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+א"כ הוכחנו את הקיום של הפתרון, היחידות נובעת כרגיל מעקרון שובך היונים.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ אני רוצה להביא כאן המחשה קטנה לחשיבות האינטואיטיבית של העובדה שעבור מספרים זרים ניתן להציג את 
+\begin_inset Formula
+$1$
+\end_inset
+ כצר"ל שלהם:
+\begin_inset Formula
+\begin{align*}
+x & \equiv{\color{red}1}\mod 3\\
+x & \equiv{\color{blue}2}\mod 5\\
+x & \equiv{\color{green}2}\mod 7
+\end{align*}
+
+
+\end_inset
+אמנם ניתן לפתור זאת ע"פ ההוכחה השנייה שלמדנו אולם ישנה דרך דומה אבל קצרה הרבה יותר כשמדובר במספרים קטנים:
+\begin_inset Formula
+\begin{align*}
+ & 3\cdot2\equiv{\color{violet}6}\equiv1\mod 5\\
+ & {\color{blue}2}-{\color{red}1}=1\equiv1\mod 5\\
+\Rightarrow & {\color{orange}7}={\color{violet}6}\cdot\left({\color{blue}2}-{\color{red}1}\right)+{\color{red}1}\equiv0+1\equiv{\color{red}1}\equiv x\mod 3\\
+\Rightarrow & {\color{orange}7}={\color{violet}6}\cdot\left({\color{blue}2}-{\color{red}1}\right)+{\color{red}1}\equiv1+1\equiv{\color{blue}2}\equiv x\mod 5\\
+ & \left(3\cdot5\right)\equiv{\color{purple}15}\equiv1\mod 7\\
+ & {\color{orange}7}\equiv0\mod 7\\
+\Rightarrow & {\color{green}2}-{\color{orange}7}\equiv{\color{green}2}\mod 7\\
+\Rightarrow & 37={\color{purple}15}\cdot{\color{green}2}+{\color{orange}7}\equiv{\color{purple}15}\cdot\left({\color{green}2}-{\color{orange}7}\right)+{\color{orange}7}\equiv{\color{orange}7}\equiv{\color{violet}6}\cdot\left({\color{blue}2}-{\color{red}1}\right)+{\color{red}1}\equiv{\color{red}1}\equiv x\mod 3\\
+\Rightarrow & 37={\color{purple}15}\cdot{\color{green}2}+{\color{orange}7}\equiv{\color{purple}15}\cdot\left({\color{green}2}-{\color{orange}7}\right)+{\color{orange}7}\equiv{\color{orange}7}\equiv{\color{violet}6}\cdot\left({\color{blue}2}-{\color{red}1}\right)+{\color{red}1}\equiv{\color{blue}2}\equiv x\mod 5\\
+\Rightarrow & 37={\color{purple}15}\cdot{\color{green}2}+{\color{orange}7}\equiv{\color{purple}15}\cdot\left({\color{green}2}-{\color{orange}7}\right)+{\color{orange}7}\equiv{\color{green}2}\equiv x\mod 7
+\end{align*}
+
+
+\end_inset
+כלומר אני מסובב את גלגל השעון של 
+\begin_inset Formula
+$3$
+\end_inset
+ כדי לקבל 
+\begin_inset Formula
+$1$
+\end_inset
+ בשעון של 
+\begin_inset Formula
+$5$
+\end_inset
+ (קיבלנו 
+\begin_inset Formula
+$6$
+\end_inset
+), כעת אני בודק כמה אני צריך להוסיף ל-
+\begin_inset Formula
+${\color{red}1}$
+\end_inset
+ כדי לקבל את 
+\begin_inset Formula
+${\color{blue}2}$
+\end_inset
+ (בשעון של 
+\begin_inset Formula
+$5$
+\end_inset
+) ומוסיף ל-
+\begin_inset Formula
+${\color{red}1}$
+\end_inset
+ (בשעון של 
+\begin_inset Formula
+$5$
+\end_inset
+) את 
+\begin_inset Formula
+$6$
+\end_inset
+ כפול ההפרש (קיבלנו 
+\begin_inset Formula
+${\color{orange}7}$
+\end_inset
+); לאחר מכן אני מסובב את גלגל השעון של 
+\begin_inset Formula
+$3\cdot5$
+\end_inset
+ כדי לקבל 
+\begin_inset Formula
+$1$
+\end_inset
+ בשעון של 
+\begin_inset Formula
+$7$
+\end_inset
+ (קיבלנו 
+\begin_inset Formula
+$15$
+\end_inset
+), כעת אני בודק כמה אני צריך להוסיף ל-
+\begin_inset Formula
+${\color{orange}7}$
+\end_inset
+ כדי לקבל את 
+\begin_inset Formula
+${\color{green}2}$
+\end_inset
+ (בשעון של 
+\begin_inset Formula
+$7$
+\end_inset
+) ומוסיף ל-
+\begin_inset Formula
+${\color{orange}7}$
+\end_inset
+ (בשעון של 
+\begin_inset Formula
+$7$
+\end_inset
+ שזה 
+\begin_inset Formula
+$0$
+\end_inset
+!) את 
+\begin_inset Formula
+${\color{purple}15}$
+\end_inset
+ כפול ההפרש
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ניתן היה גם להתייחס ל-
+\begin_inset Formula
+${\color{green}2}-{\color{orange}7}$
+\end_inset
+ כ-
+\begin_inset Formula
+$-5$
+\end_inset
+ ואז היינו מקבלים 
+\begin_inset Formula
+$-68={\color{purple}15}\cdot\left(-5\right)+{\color{orange}7}\equiv37\mod 105$
+\end_inset
+ (והרי 
+\begin_inset Formula
+$105=3\cdot5\cdot7$
+\end_inset
+).
+\end_layout
+
+\end_inset
+. בכל שלב מובטח שהכול יהיה תקין מפני שאני מוסיף כפולות של כל המספרים שכבר עברתי, כך שאצלם אני לא משנה דבר, ובמספר שאני עובד עליו עכשיו אני מוסיף אחדות ולכן אוכל להגיע לאן שארצה.
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary 1.15"
+\end_inset
+יהיו 
+\begin_inset Formula
+$1<m_{1},m_{2},\ldots,m_{r}\in\MKnatural$
+\end_inset
+ זרים זה לזה בזוגות, יהיו 
+\begin_inset Formula
+$f_{1},f_{2},\ldots,f_{r}\in\MKinteger\left[x\right]$
+\end_inset
+ ויהיו 
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{r}\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f\left(a_{i}\right)\equiv0\mod m_{i}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+\end_inset
+; קיים 
+\begin_inset Formula
+$n\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f\left(n\right)\equiv0\mod m_{i}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$p\in\MKnatural$
+\end_inset
+ מספר ראשוני, לכל 
+\begin_inset Formula
+$s\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\phi\left(p^{s}\right)=p^{s}-p^{s-1}=p^{s-1}\cdot\left(p-1\right)=p^{s}\cdot\left(1-\frac{1}{p}\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 1.17"
+\end_inset
+פונקציית אוילר כפלית עבור מספרים זרים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+בהמשך, כשנלמד על פונקציות אריתמטיות, נקרא לפונקציה אריתמטית כזו כפלית סתם למרות שזו אינה ההגדרה הרגילה של פונקציה כפלית.
+\end_layout
+
+\end_inset
+, כלומר לכל 
+\begin_inset Formula
+$n,m\in\MKnatural$
+\end_inset
+ הזרים זה לזה מתקיים 
+\begin_inset Formula
+$\phi\left(n\cdot m\right)=\phi\left(n\right)\cdot\phi\left(m\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+\bar under
+הוכחה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+- באמצעות הפונקציה שבהוכחה הראשונה של משפט השאריות הסיני
+\bar default
+
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$n,m\in\MKnatural$
+\end_inset
+ מספרים זרים זה לזה ותהא 
+\begin_inset Formula
+$f:\left(\MKinteger/nm\MKinteger\right)^{*}\rightarrow\left(\MKinteger/n\MKinteger\right)^{*}\times\left(\MKinteger/m\MKinteger\right)^{*}$
+\end_inset
+ פונקציה המוגדרת ע"י (לכל 
+\begin_inset Formula
+$\left[x\right]_{nm}\in\MKinteger/nm\MKinteger$
+\end_inset
+)
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+הפונקציה מוגדרת היטב מפני שכל מספר זר ל-
+\begin_inset Formula
+$nm$
+\end_inset
+ זר גם ל-
+\begin_inset Formula
+$n$
+\end_inset
+ ו-
+\begin_inset Formula
+$m$
+\end_inset
+ בנפרד.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\[
+f\left(\left[x\right]_{nm}\right):=\left(\left[x\right]_{n},\left[x\right]_{m}\right)
+\]
+
+
+\end_inset
+ראינו ב
+\begin_inset CommandInset ref
+LatexCommand labelonly
+reference "הראשונה הוכחה"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ של משפט השאריות הסיני שזוהי פונקציה חח"ע
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+\begin_inset Formula
+$f$
+\end_inset
+ בהוכחה שלנו היא צמצום של 
+\begin_inset Formula
+$f$
+\end_inset
+ בהוכחה הנ"ל לתת-הקבוצה 
+\begin_inset Formula
+$\left(\MKinteger/nm\MKinteger\right)^{*}\subseteq\MKinteger/nm\MKinteger$
+\end_inset
+ ולכן היא "יורשת" את תכונת החד-חד-ערכיות.
+\end_layout
+
+\end_inset
+, מצד שני זוהי גם פונקציה על מפני שלכל 
+\begin_inset Formula
+$\left(a,b\right)\in\left(\MKinteger/n\MKinteger\right)^{*}\times\left(\MKinteger/m\MKinteger\right)^{*}$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+f\left(bx\cdot n+ay\cdot m\right)=\left(ay\cdot m,bx\cdot n\right)=\left(a,b\right)
+\]
+
+
+\end_inset
+כאשר 
+\begin_inset Formula
+$x,y$
+\end_inset
+ הם שלמים המקיימים 
+\begin_inset Formula
+$1=x\cdot n+y\cdot m$
+\end_inset
+ ולכן גם 
+\begin_inset Formula
+$x\cdot n\equiv1\mod m$
+\end_inset
+ ו-
+\begin_inset Formula
+$y\cdot m\equiv1\mod n$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מכאן שהתחום והטווח של 
+\begin_inset Formula
+$f$
+\end_inset
+ הן קבוצות באותו הגודל (שתיהן סופיות) וממילא:
+\begin_inset Formula
+\begin{align*}
+\phi\left(n\cdot m\right) & =\left|\left(\MKinteger/nm\MKinteger\right)^{*}\right|=\left|\left(\MKinteger/n\MKinteger\right)^{*}\times\left(\MKinteger/m\MKinteger\right)^{*}\right|\\
+ & =\left|\left(\MKinteger/n\MKinteger\right)^{*}\right|\cdot\left|\left(\MKinteger/m\MKinteger\right)^{*}\right|=\phi\left(n\right)\cdot\phi\left(m\right)
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+\bar under
+הוכחה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\numeric off
+ - הכלה והדחה
+\bar default
+
+\begin_inset Newline newline
+\end_inset
+נוכיח את הטענה עבור מכפלת חזקות של שני ראשוניים שונים ואז מאינדוקציה תנבע המסקנה כולה.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$p,q\in\MKnatural$
+\end_inset
+ שני ראשוניים שונים, מעיקרון ההכלה וההדחה
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+\begin_inset Formula
+$p^{s-1}\cdot q^{t}$
+\end_inset
+ הוא מספר הכפולות של 
+\begin_inset Formula
+$p$
+\end_inset
+ הקטנות או שוות ל-
+\begin_inset Formula
+$p^{s}\cdot q^{t}$
+\end_inset
+, כמו כן 
+\begin_inset Formula
+$q^{t-1}\cdot p^{s}$
+\end_inset
+ הוא מספר הכפולות של 
+\begin_inset Formula
+$q$
+\end_inset
+ בטווח זה ואילו 
+\begin_inset Formula
+$p^{s-1}\cdot q^{t-1}$
+\end_inset
+ הוא כמות המספרים שהם כפולות של שניהם שהרי 
+\begin_inset Formula
+$p$
+\end_inset
+ ו-
+\begin_inset Formula
+$q$
+\end_inset
+ זרים זה לזה ולכן כל כפולה של שניהם היא כפולה של 
+\begin_inset Formula
+$p\cdot q$
+\end_inset
+.
+\end_layout
+
+\end_inset
+ נובע שלכל 
+\begin_inset Formula
+$s,t\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\phi\left(p^{s}\cdot q^{t}\right)=p^{s}\cdot q^{t}-p^{s-1}\cdot q^{t}-q^{t-1}\cdot p^{s}+p^{s-1}\cdot q^{t-1}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+\Rightarrow\phi\left(p^{s}\cdot q^{t}\right) & =p^{s-1}\cdot q^{t-1}\cdot\left(p\cdot q-q-p+1\right)\\
+ & =p^{s-1}\cdot q^{t-1}\cdot\left(p-1\right)\cdot\left(q-1\right)\\
+ & =p^{s-1}\cdot\left(p-1\right)\cdot q^{t-1}\cdot\left(q-1\right)\\
+ & =\phi\left(p^{s}\right)\cdot\phi\left(q^{t}\right)
+\end{align*}
+
+
+\end_inset
+כעת נקבל מאינדוקציה שהטענה נכונה לכל מספר של ראשוניים שונים ומהקיבוץ של הכפל נקבל את הטענה עבור מספרים זרים באשר הם
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ראינו שניתן להציג כל מספר שלם כמכפלת חזקות של ראשוניים, וכמדובר בשני מספרים זרים הם אינם חולקים ראשוני משותף בפירוק.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ ויהיו 
+\begin_inset Formula
+$p_{1},p_{2},\ldots,p_{r}\in\MKnatural$
+\end_inset
+ כל הראשוניים המחלקים את 
+\begin_inset Formula
+$n$
+\end_inset
+ ללא חזרות
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר לכל 
+\begin_inset Formula
+$r\geq i,j\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$i=j\Longleftrightarrow p_{i}=p_{j}$
+\end_inset
+.
+\end_layout
+
+\end_inset
+, מתקיים:
+\begin_inset Formula
+\[
+\phi\left(n\right)=\prod_{i=1}^{r}\left(\left(p_{i}\right)^{\MKord_{p_{i}}\left(n\right)-1}\right)\cdot\prod_{i=1}^{r}\left(p_{i}-1\right)=n\cdot\prod_{i=1}^{r}\left(1-\frac{1}{p_{i}}\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כדי להוכיח את נכונות המסקנה נשים לב לכך שדי להראות שהיא נכונה עבור חזקות של ראשוני כלשהו ואז מהכפליות של הפונקציה עבור מספרים זרים נקבל את הטענה עבור כל מספר, דרך זו תקפה לכל פונקציה כפלית עבור מספרים זרים.
+\end_layout
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+, קיים 
+\begin_inset Formula
+$k\in\MKnatural_{0}$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\phi\left(n\right)=2^{k}$
+\end_inset
+ אם"ם כל הראשוניים האי-זוגיים בפירוק של 
+\begin_inset Formula
+$n$
+\end_inset
+ הם ראשוני פרמה והריבוי שלהם הוא 
+\begin_inset Formula
+$1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Subsection
+משפטים נוספים
+\end_layout
+
+\begin_layout Theorem
+\series bold
+משפט וילסון
+\family roman
+\shape italic
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\family default
+(
+\lang english
+Wilson
+\lang default
+
+\series default
+
+\lang hebrew
+)
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה האנגלית: 
+\begin_inset CommandInset href
+LatexCommand href
+name "John Wilson"
+target https://en.wikipedia.org/wiki/John_Wilson_)mathematician_and_judge(
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$p\in\MKnatural$
+\end_inset
+ מספר ראשוני, מתקיים:
+\begin_inset Formula
+\[
+\left(p-1\right)!\equiv-1\mod p
+\]
+
+
+\end_inset
+עבור 
+\begin_inset Formula
+$p=2$
+\end_inset
+ המשפט טריוויאלי, נראה כעת שתי הוכחות עבור 
+\begin_inset Formula
+$p\neq2$
+\end_inset
+.
+\lang default
+
+\end_layout
+
+\begin_layout Proof
+\bar under
+הוכחה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+- שימוש בתכונות השדה
+\bar default
+
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$\MKinteger/p\MKinteger$
+\end_inset
+ הוא שדה ולכן מחלקות השקילות היחידות שהן ההופכיות של עצמן הן 
+\begin_inset Formula
+$\overline{1}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\overline{-1}=\overline{p-1}$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+הוכחה: יהי 
+\begin_inset Formula
+$p>a\in\MKnatural$
+\end_inset
+ ונניח ש-
+\begin_inset Formula
+$a^{2}\equiv1\mod p$
+\end_inset
+, מכאן שמתקיים 
+\begin_inset Formula
+$\left(a+1\right)\left(a-1\right)\equiv a^{2}-1\equiv0\mod p$
+\end_inset
+ ולכן בהכרח מתקיים 
+\begin_inset Formula
+$a\equiv1\mod p$
+\end_inset
+ ו/או ש-
+\begin_inset Formula
+$a\equiv-1\mod p$
+\end_inset
+.
+\end_layout
+
+\end_inset
+, א"כ לכל 
+\begin_inset Formula
+$i\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$1<i<p-1$
+\end_inset
+ קיים 
+\begin_inset Formula
+$i\neq j\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$1<j<p-1$
+\end_inset
+ ובנוסף 
+\begin_inset Formula
+$i\cdot j\equiv1\mod p$
+\end_inset
+.
+\begin_inset Formula
+\begin{align*}
+\Rightarrow\left(p-1\right)! & \equiv\left(p-1\right)\cdot1\mod p\\
+\Rightarrow\left(p-1\right)! & \equiv p-1\equiv-1\mod p
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+\bar under
+הוכחה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+- שימוש בפירוק של פולינומים
+\bar default
+
+\begin_inset Newline newline
+\end_inset
+נתבונן בפולינום 
+\begin_inset Formula
+$f\left(x\right):=x^{p-1}-1$
+\end_inset
+ מעל ל-
+\begin_inset Formula
+$\MKinteger/p\MKinteger$
+\end_inset
+, מהמשפט הקטן של פרמה נובע שלכל 
+\begin_inset Formula
+$p>x\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$x^{p-1}-1\equiv0\mod p$
+\end_inset
+, כלומר ל-
+\begin_inset Formula
+$f$
+\end_inset
+ יש 
+\begin_inset Formula
+$p-1$
+\end_inset
+ שורשים שונים ומכיוון שגם דרגתו היא 
+\begin_inset Formula
+$p-1$
+\end_inset
+ הרי שהוא מתפרק למכפלת גורמים ליניאריים שונים:
+\begin_inset Formula
+\[
+f\left(x\right)=x^{p-1}-1=\prod_{i=1}^{p-1}\left(x-i\right)
+\]
+
+
+\end_inset
+ומכאן שמתקיים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+המקדם החופשי של פולינום המתפרק לגורמים ליניאריים הוא מכפלת הנגדיים של השורשים.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\[
+\left(p-1\right)!\equiv\prod_{i=1}^{p-1}i\equiv\left(-1\right)^{p-1}\cdot\prod_{i=1}^{p-1}\left(-i\right)\equiv-1\mod p
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$1<n\in\MKnatural$
+\end_inset
+, 
+\begin_inset Formula
+$n$
+\end_inset
+ הוא מספר ראשוני אם"ם 
+\begin_inset Formula
+$\left(n-1\right)!\equiv-1\mod n$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+נוכיח את הכיוון ההפוך למשפט וילסון: נניח ש-
+\begin_inset Formula
+$\left(n-1\right)!\equiv-1\mod n$
+\end_inset
+ ונניח בשלילה ש-
+\begin_inset Formula
+$n$
+\end_inset
+ אינו ראשוני.
+\begin_inset Newline newline
+\end_inset
+מכאן שקיים 
+\begin_inset Formula
+$a\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$1<a<n$
+\end_inset
+ ו-
+\begin_inset Formula
+$a\mid n$
+\end_inset
+, מהגדרה אותו 
+\begin_inset Formula
+$a$
+\end_inset
+ מקיים 
+\begin_inset Formula
+$a\mid\left(n-1\right)!$
+\end_inset
+ בסתירה לכך שע"פ טענה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand labelonly
+reference "claim 1.3"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left(n-1\right)!\equiv-1\mod a$
+\end_inset
+, מכאן שהנחת השלילה אינה נכונה ו-
+\begin_inset Formula
+$n$
+\end_inset
+ ראשוני.
+\end_layout
+
+\begin_layout Theorem
+יהי 
+\begin_inset Formula
+$2<p\in\MKnatural$
+\end_inset
+ מספר ראשוני, קיים 
+\begin_inset Formula
+$x\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$x^{2}\equiv-1\mod p$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$p\equiv1\mod 4$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\Leftarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח שקיים 
+\begin_inset Formula
+$x\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$x^{2}\equiv-1\mod p$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$x$
+\end_inset
+ כנ"ל.
+\begin_inset Newline newline
+\end_inset
+מהמשפט הקטן של פרמה נובע שמתקיים:
+\begin_inset Formula
+\[
+1\equiv x^{p-1}\equiv\left(x^{2}\right)^{\frac{p-1}{2}}\equiv\left(-1\right)^{\frac{p-1}{2}}\mod p
+\]
+
+
+\end_inset
+אבל:
+\begin_inset Formula
+\[
+\left(-1\right)^{\frac{p-1}{2}}=\begin{cases}
+1 & \frac{p-1}{2}\in\MKeven\\
+-1 & \frac{p-1}{2}\in\MKodd
+\end{cases}=\begin{cases}
+1 & p\equiv1\mod 4\\
+-1 & p\equiv3\mod 4
+\end{cases}
+\]
+
+
+\end_inset
+ומכיוון ש-
+\begin_inset Formula
+$p\neq2$
+\end_inset
+ נדע ש-
+\begin_inset Formula
+$1\not\equiv-1\mod p$
+\end_inset
+ ולכן בהכרח מתקיים 
+\begin_inset Formula
+$p\equiv1\mod 4$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\Rightarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$p\equiv1\mod 4$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$p-1\equiv0\mod 4$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$\frac{p-1}{2}\equiv0\mod 2$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$\frac{p-1}{2}\in\MKeven$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(-1\right)^{\frac{p-1}{2}}=1$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+ממשפט וילסון נובע שמתקיים:
+\begin_inset Formula
+\begin{align*}
+-1 & \equiv\left(p-1\right)!\equiv\prod_{i=1}^{p-1}i\equiv\left(\prod_{i=\frac{p-1}{2}+1}^{p-1}i\right)\cdot\left(\prod_{i=1}^{\frac{p-1}{2}}i\right)\equiv\left(\prod_{i=1}^{\frac{p-1}{2}}-i\right)\cdot\left(\prod_{i=1}^{\frac{p-1}{2}}i\right)\\
+ & \equiv\left(-1\right)^{\frac{p-1}{2}}\cdot\left(\prod_{i=1}^{\frac{p-1}{2}}i\right)\cdot\left(\prod_{i=1}^{\frac{p-1}{2}}i\right)\equiv\left(\prod_{i=1}^{\frac{p-1}{2}}i\right)^{2}\mod p
+\end{align*}
+
+
+\end_inset
+כלומר קיים 
+\begin_inset Formula
+$x\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$x^{2}\equiv-1\mod p$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Claim
+קיימים אינסוף ראשוניים השקולים ל-
+\begin_inset Formula
+$1$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$4$
+\end_inset
+, כלומר הקבוצה 
+\begin_inset Formula
+$\left\{ p\in\MKprime\mid p\equiv1\mod 4\right\} $
+\end_inset
+ היא קבוצה אינסופית.
+\end_layout
+
+\begin_layout Proof
+נניח בשלילה מספר הראשוניים השקולים ל-
+\begin_inset Formula
+$1$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$4$
+\end_inset
+ הוא סופי ויהיו 
+\begin_inset Formula
+$p_{1},p_{2},\ldots,p_{r}\in\MKnatural$
+\end_inset
+ כל הראשוניים הללו, נסמן:
+\begin_inset Formula
+\[
+m:=\prod_{i=1}^{r}\left(p_{i}\right)^{2},\ n:=4m+1
+\]
+
+
+\end_inset
+יהי 
+\begin_inset Formula
+$p\in\MKnatural$
+\end_inset
+ ראשוני המחלק את 
+\begin_inset Formula
+$n$
+\end_inset
+, מהגדרה מתקיים 
+\begin_inset Formula
+$4m\equiv-1\mod p$
+\end_inset
+; נשים לב לכך שמתקיים:
+\begin_inset Formula
+\[
+4m=\left(2\cdot\prod_{i=1}^{r}p_{i}\right)^{2}
+\]
+
+
+\end_inset
+ולכן קיים 
+\begin_inset Formula
+$x\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$x^{2}\equiv-1\mod p$
+\end_inset
+ ומכאן שע"פ המשפט האחרון מתקיים 
+\begin_inset Formula
+$p\equiv1\mod 4$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+אבל מהגדרה 
+\begin_inset Formula
+$p$
+\end_inset
+ אינו אחד מן הראשוניים הנ"ל (שהרי 
+\begin_inset Formula
+$p_{i}$
+\end_inset
+ אינו מחלק את 
+\begin_inset Formula
+$n$
+\end_inset
+ לכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+\end_inset
+) וזאת בסתירה לכך שאלו כל הראשוניים השקולים ל-
+\begin_inset Formula
+$1$
+\end_inset
+ מודולו
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\begin_inset Formula
+$4$
+\end_inset
+, מכאן שהנחת השלילה אינה נכונה וקיימים אינסוף ראשוניים השקולים ל-
+\begin_inset Formula
+$1$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$4$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+קיימים אינסוף ראשוניים השקולים ל-
+\begin_inset Formula
+$3$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$4$
+\end_inset
+, כלומר הקבוצה 
+\begin_inset Formula
+$\left\{ p\in\MKprime\mid p\equiv3\mod 4\right\} $
+\end_inset
+ היא קבוצה אינסופית.
+\end_layout
+
+\begin_layout Proof
+נניח בשלילה מספר הראשוניים השקולים ל-
+\begin_inset Formula
+$1$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$4$
+\end_inset
+ הוא סופי ויהיו 
+\begin_inset Formula
+$p_{1},p_{2},\ldots,p_{r}\in\MKnatural$
+\end_inset
+ כל הראשוניים הללו, נסמן:
+\begin_inset Formula
+\[
+m:=\prod_{i=1}^{r}p_{i},\ n:=4m-1
+\]
+
+
+\end_inset
+נשים לב לכך ש-
+\begin_inset Formula
+$n\equiv3\mod 4$
+\end_inset
+ ולכן בהכרח קיים ראשוני השקול ל-
+\begin_inset Formula
+$3$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$4$
+\end_inset
+ המחלק את 
+\begin_inset Formula
+$n$
+\end_inset
+, שהרי 
+\begin_inset Formula
+$n$
+\end_inset
+ אי-זוגי ומכפלה של ראשוניים השקולה ל-
+\begin_inset Formula
+$1$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$4$
+\end_inset
+ תהיה גם היא שקולה ל-
+\begin_inset Formula
+$1$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$4$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+א"כ יהי 
+\begin_inset Formula
+$p\in\MKnatural$
+\end_inset
+ ראשוני המחלק 
+\begin_inset Formula
+$n$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$p\equiv3\mod 4$
+\end_inset
+, מהגדרה 
+\begin_inset Formula
+$p$
+\end_inset
+ אינו אחד מן הראשוניים הנ"ל (שהרי 
+\begin_inset Formula
+$p_{i}$
+\end_inset
+ אינו מחלק את 
+\begin_inset Formula
+$n$
+\end_inset
+ לכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+\end_inset
+) וזאת בסתירה לכך שאלו כל הראשוניים השקולים ל-
+\begin_inset Formula
+$3$
+\end_inset
+ מודולו
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\begin_inset Formula
+$4$
+\end_inset
+, מכאן שהנחת השלילה אינה נכונה וקיימים אינסוף ראשוניים השקולים ל-
+\begin_inset Formula
+$3$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$4$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הטענות בעצם אומרות שבסדרות 
+\begin_inset Formula
+$\left(4n+1\right)_{n=0}^{\infty}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(4n+3\right)_{n=0}^{\infty}$
+\end_inset
+ יש אינסוף ראשוניים ובכך הן מקרה פרטי של משפט דיריכלה שראינו בנושא הקודם: לכל 
+\begin_inset Formula
+$a,d\in\MKnatural$
+\end_inset
+ הזרים זה לזה קיימים אינסוף איברים ראשונים שהם איברים בסדרה החשבונית 
+\begin_inset Formula
+$\left(a+dn\right)_{n=0}^{\infty}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+יהיו 
+\begin_inset Formula
+$A\in M_{n}\left(\MKinteger/N\MKinteger\right)$
+\end_inset
+ ו-
+\begin_inset Formula
+$b\in\left(\MKinteger/N\MKinteger\right)^{n}$
+\end_inset
+, למערכת המשוואות הליניאריות 
+\begin_inset Formula
+$A\cdot x\equiv b\mod N$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+הכוונה היא שהווקטורים בשני האגפים מחושבים מעל 
+\begin_inset Formula
+$\MKinteger$
+\end_inset
+ ומתקיימת שקילות מודולו 
+\begin_inset Formula
+$N$
+\end_inset
+ בכל קואורדינטה.
+\end_layout
+
+\end_inset
+ יש פתרון יחיד אם"ם 
+\begin_inset Formula
+$\overline{\det A}\in\left(\MKinteger/N\MKinteger\right)^{*}$
+\end_inset
+, כלומר אם"ם הדטרמיננטה של 
+\begin_inset Formula
+$A$
+\end_inset
+ היא מספר זר ל-
+\begin_inset Formula
+$N$
+\end_inset
+, אחרת ייתכן שאין פתרונות כלל או שיש יותר מפתרון אחד.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ נזכיר שכדי לפתור מערכות משוואות ליניאריות (ממ"ל) מעל שדה ראינו בליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\numeric off
+ את אלגוריתם הדירוג (דירוג מטריצות) המשתמש בשלוש פעולות שורה אלמנטריות (פש"א): החלפת שורות, כפל שורה בסקלר מהשדה והוספת כפולה של שורה אחת לשורה אחרת; כשמבצעים את האלגוריתם מעל חוג שלמים מודולרי 
+\begin_inset Formula
+$\MKinteger/N\MKinteger$
+\end_inset
+ יש להיזהר בשתי הפעולות האחרונות: לא לכל סקלר בחוג יש הופכי, זה הורס את האלגוריתם וכבר א"א לבצעו בצורה מכנית
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+אולי ניתן לתקן אותו אך כפי שלמדנו אותו הוא כבר לא עובד משום שהוא השתמש בכפל בהופכי ע"מ לייצר אחדות מובילים.
+\end_layout
+
+\end_inset
+ ויש לחשוב במהלך הדירוג.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ההוכחה של המשפט משתמשת ב
+\begin_inset CommandInset href
+LatexCommand href
+name "כלל קרמר"
+target https://he.wikipedia.org/wiki/%D7%A0%D7%95%D7%A1%D7%97%D7%AA_%D7%A7%D7%A8%D7%9E%D7%A8
+literal false
+\end_inset
+ ובלמה שקדמה לו (ראו בקובץ "
+\begin_inset CommandInset href
+LatexCommand href
+name "פונקציות נפח - טענות בלבד"
+target https://drive.google.com/file/d/1FImFMlJ-SYzjIpYLabR35sV22puNnS2g/view?usp=drive_link
+literal false
+\end_inset
+"), זוכרים שחשבנו שהוא מיותר לחלוטין מפני שאלגוריתם הדירוג הרבה יותר יעיל? אז הנה שימוש שלו.
+\end_layout
+
+\begin_layout Proof
+בליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+ראינו את הלמה הבאה:
+\end_layout
+
+\begin_deeper
+\begin_layout Lemma*
+תהא 
+\begin_inset Formula
+$M\in M_{n}\left(\MKfield\right)$
+\end_inset
+ מטריצה (
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ הוא שדה), יהי 
+\begin_inset Formula
+$v\in\MKfield^{n}$
+\end_inset
+ ונסמן ב-
+\begin_inset Formula
+$M^{\left(i\right)}$
+\end_inset
+ את המטריצה המתקבלת מ-
+\begin_inset Formula
+$M$
+\end_inset
+ ע"י החלפת העמודה ה-
+\begin_inset Formula
+$i$
+\end_inset
+ ב-
+\begin_inset Formula
+$v$
+\end_inset
+ (לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+).
+\begin_inset Newline newline
+\end_inset
+אם קיים 
+\begin_inset Formula
+$x\in\MKfield^{n}$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$M\cdot x=v$
+\end_inset
+ אז עבור אותו 
+\begin_inset Formula
+$x$
+\end_inset
+ מתקיים (לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+):
+\begin_inset Formula
+\[
+\det M^{\left(i\right)}=\left(\det M\right)\cdot x_{i}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Lemma*
+נניח שקיים 
+\begin_inset Formula
+$x\in\MKinteger^{n}$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A\cdot x\equiv b\mod N$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$x$
+\end_inset
+ כנ"ל. נסתכל על 
+\begin_inset Formula
+$A$
+\end_inset
+ כמטריצה ב-
+\begin_inset Formula
+$M_{n}\left(\MKrational\right)$
+\end_inset
+, א"כ גם 
+\begin_inset Formula
+$A$
+\end_inset
+ מקיימת 
+\begin_inset Formula
+$\det A^{\left(i\right)}=\left(\det A\right)\cdot x_{i}$
+\end_inset
+ (לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+)
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+נסמן ב-
+\begin_inset Formula
+$A^{\left(i\right)}$
+\end_inset
+ את המטריצה המתקבלת מ-
+\begin_inset Formula
+$A$
+\end_inset
+ ע"י החלפת העמודה ה-
+\begin_inset Formula
+$i$
+\end_inset
+ ב-
+\begin_inset Formula
+$b$
+\end_inset
+ (לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+).
+\end_layout
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+כעת נשים לב לכך שכל הרכיבים ב-
+\begin_inset Formula
+$A$
+\end_inset
+ וב-
+\begin_inset Formula
+$A^{\left(i\right)}$
+\end_inset
+ הם מספרים שלמים, ולכן מהנוסחה המפורשת של הדטרמיננטה נובע שגם 
+\begin_inset Formula
+$\det A$
+\end_inset
+ ו-
+\begin_inset Formula
+$\det A^{\left(i\right)}$
+\end_inset
+ הם מספרים שלמים; מכאן שלכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\det A^{\left(i\right)}\equiv\left(\det A\right)\cdot x_{i}\mod N
+\]
+
+
+\end_inset
+בהערה על משפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 1.6"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ ראינו שאם 
+\begin_inset Formula
+$\det A$
+\end_inset
+ אינו זר ל-
+\begin_inset Formula
+$N$
+\end_inset
+ וגם יש פתרונות מודולו 
+\begin_inset Formula
+$N$
+\end_inset
+, אז יש יותר מפתרון אחד (כי 
+\begin_inset Formula
+$\gcd\left(\det A,N\right)>1$
+\end_inset
+); א"כ הוכחנו שאם קיים פתרון יחיד אז 
+\begin_inset Formula
+$\overline{\det A}\in\left(\MKinteger/N\MKinteger\right)^{*}$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+בנוסף, ניתן לראות כבר כעת שאם 
+\begin_inset Formula
+$\overline{\det A}\in\left(\MKinteger/N\MKinteger\right)^{*}$
+\end_inset
+ וגם יש פתרון מודולו 
+\begin_inset Formula
+$N$
+\end_inset
+ אז הפתרון יחיד, א"כ נשאר לנו להוכיח שאם 
+\begin_inset Formula
+$\overline{\det A}\in\left(\MKinteger/N\MKinteger\right)^{*}$
+\end_inset
+ אז קיים פתרון.
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$\overline{\det A}\in\left(\MKinteger/N\MKinteger\right)^{*}$
+\end_inset
+, בפרט 
+\begin_inset Formula
+$\det A\neq0$
+\end_inset
+ ולכן מכלל קרמר נובע שלכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ מתקיים (מעל 
+\begin_inset Formula
+$\MKrational$
+\end_inset
+):
+\begin_inset Formula
+\[
+\frac{1}{\det A}\cdot\sum_{k=1}^{n}\left[A\right]_{ik}\cdot\det A^{\left(k\right)}=b_{k}
+\]
+
+
+\end_inset
+כלומר:
+\begin_inset Formula
+\[
+\sum_{k=1}^{n}\left[A\right]_{ik}\cdot\det A^{\left(k\right)}=\left(\det A\right)\cdot b_{k}
+\]
+
+
+\end_inset
+וזהו כבר שוויון ב-
+\begin_inset Formula
+$\MKinteger$
+\end_inset
+ ולכן נקבל:
+\begin_inset Formula
+\[
+A\cdot\begin{bmatrix}\det A^{\left(1\right)}\\
+\det A^{\left(2\right)}\\
+\vdots\\
+\det A^{\left(n\right)}
+\end{bmatrix}\equiv\left(\det A\right)\cdot b\mod N
+\]
+
+
+\end_inset
+מההנחה ש-
+\begin_inset Formula
+$\overline{\det A}\in\left(\MKinteger/N\MKinteger\right)^{*}$
+\end_inset
+ נובע שיש ל-
+\begin_inset Formula
+$\det A$
+\end_inset
+ הופכי מודולו 
+\begin_inset Formula
+$N$
+\end_inset
+ ועבורו מתקיים:
+\begin_inset Formula
+\[
+A\cdot\begin{bmatrix}\left(\det A\right)^{-1}\cdot\det A^{\left(1\right)}\\
+\left(\det A\right)^{-1}\cdot\det A^{\left(2\right)}\\
+\vdots\\
+\left(\det A\right)^{-1}\cdot\det A^{\left(n\right)}
+\end{bmatrix}\equiv b\mod N
+\]
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Theorem
+יהיו 
+\begin_inset Formula
+$a,b,c\in\MKinteger$
+\end_inset
+, לקונגרואנציה 
+\begin_inset Formula
+$ax^{2}+bx+c\equiv0\mod N$
+\end_inset
+ יש פתרון אם"ם 
+\begin_inset Formula
+$2a\in\left(\MKinteger/N\MKinteger\right)^{*}$
+\end_inset
+ ו-
+\begin_inset Formula
+$b^{2}-4ac$
+\end_inset
+ הוא שארית ריבועית מודולו 
+\begin_inset Formula
+$N$
+\end_inset
+ ובמקרה כזה כל 
+\begin_inset Formula
+$d\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$d^{2}\equiv b^{2}-4ac\mod N$
+\end_inset
+ נותן פתרון שהוא:
+\begin_inset Formula
+\[
+x\equiv\left(-b+d\right)\cdot\left(2a\right)^{-1}\mod N
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ נשים לב לכך שמדובר בנוסחת השורשים שהרי 
+\begin_inset Formula
+$d$
+\end_inset
+ הוא 
+\begin_inset Formula
+$\sqrt{b^{2}-4ac}$
+\end_inset
+ ואז 
+\begin_inset Formula
+$\left(-b+d\right)\cdot\left(2a\right)^{-1}$
+\end_inset
+ הוא בעצם:
+\begin_inset Formula
+\[
+\frac{-b+\sqrt{b^{2}-4ac}}{2a}
+\]
+
+
+\end_inset
+שימו לב שההערה הזו ממש לא פורמלית, הביטוי 
+\begin_inset Formula
+$\sqrt{b^{2}-4ac}$
+\end_inset
+ אינו מוגדר שהרי ייתכן שלשארית ריבועית יש יותר משורש אחד.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הדמיון לנוסחת השורשים אינו מקרי כמובן, ההוכחה של נוסחת השורשים תעבוד גם כאן אלא שעלינו לשים לב לכך שאנו מוציאים שורש של 
+\begin_inset Formula
+$b^{2}-4ac$
+\end_inset
+ ומחלקים ב-
+\begin_inset Formula
+$2a$
+\end_inset
+, כלומר הפעולות הללו צריכות להיות מוגדרות כדי שיהיה פתרון ומכאן נובעים התנאים הנ"ל.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+הלמה של הנזל
+\series default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה: 
+\begin_inset CommandInset href
+LatexCommand href
+name "קורט הנזל"
+target https://he.wikipedia.org/wiki/%D7%A7%D7%95%D7%A8%D7%98_%D7%94%D7%A0%D7%96%D7%9C
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$f\in\MKinteger\left[x\right]$
+\end_inset
+ פולינום ויהיו 
+\begin_inset Formula
+$p,e\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$p$
+\end_inset
+ ראשוני, אם קיים 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f\left(a\right)\equiv0\mod p^{e}$
+\end_inset
+ ו-
+\begin_inset Formula
+$f'\left(a\right)\not\equiv0\mod p$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+פולינום הנגזרת של פולינום בעל מקדמים שלמים שייך גם הוא לחוג הפולינומים מעל השלמים.
+\end_layout
+
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+אז קיים 
+\begin_inset Formula
+$b\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$b\equiv a\mod p^{e}$
+\end_inset
+ וגם 
+\begin_inset Formula
+$f\left(b\right)\equiv0\mod p^{e+1}$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+נשים לב לכך שמכיוון ש-
+\begin_inset Formula
+$a\equiv b\mod p$
+\end_inset
+ נקבל גם 
+\begin_inset Formula
+$f'\left(b\right)\equiv f'\left(a\right)\not\equiv0\mod p$
+\end_inset
+ ולכן ניתן להמשיך ו"להעלות" פתרונות עד לחזקה הרצויה.
+\end_layout
+
+\end_inset
+; בנוסף, אותו 
+\begin_inset Formula
+$b$
+\end_inset
+ הוא יחיד מודולו 
+\begin_inset Formula
+$p^{e+1}$
+\end_inset
+,
+\begin_inset Newline newline
+\end_inset
+כלומר לכל 
+\begin_inset Formula
+$c\in\MKinteger$
+\end_inset
+ המקיים 
+\begin_inset Formula
+$c\equiv a\mod p^{e}$
+\end_inset
+ וגם 
+\begin_inset Formula
+$f\left(c\right)\equiv0\mod p^{e+1}$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$c\equiv b\mod p^{e+1}$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+הפתרון שמביאה הוכחת המשפט הוא (לכל 
+\begin_inset Formula
+$t\in\MKinteger$
+\end_inset
+ המקיים את השקילות שלהלן):
+\begin_inset Formula
+\[
+b=a+t\cdot p^{e},\ t\equiv-f'\left(a\right)^{-1}\cdot\frac{f\left(a\right)}{p^{e}}\mod p
+\]
+
+
+\end_inset
+ומכאן הדרישה שיתקיים 
+\begin_inset Formula
+$f'\left(a\right)\not\equiv0\mod p$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+נסמן 
+\begin_inset Formula
+$n:=\deg f$
+\end_inset
+, ראינו באינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+בפרק על פולינומי טיילור שלכל 
+\begin_inset Formula
+$a\in\MKreal$
+\end_inset
+ מתקיים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+פולינום טיילור של פולינום, מסדר שווה לדרגת הפולינום, שווה לו עצמו בכל נקודה.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\[
+P_{n,f,a}\left(x\right)=f\left(x\right)
+\]
+
+
+\end_inset
+בפרט הדבר נכון עבור 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ המקיים 
+\begin_inset Formula
+$f\left(a\right)\equiv0\mod p^{e}$
+\end_inset
+, נניח שאכן יש ל-
+\begin_inset Formula
+$f$
+\end_inset
+ שורש מודולו 
+\begin_inset Formula
+$p^{e}$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ שורש כזה. כעת נשים לבל לכך שלכל 
+\begin_inset Formula
+$t\in\MKinteger$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+f\left(a+t\cdot p^{e}\right)=P_{n,f,a}\left(a+t\cdot p^{e}\right)=\sum_{k=0}^{n}\frac{f^{\left(k\right)}\left(a\right)}{k!}\cdot\left(a+t\cdot p^{e}-a\right)^{k}=\sum_{k=0}^{n}\frac{f^{\left(k\right)}\left(a\right)}{k!}\cdot\left(t\cdot p^{e}\right)^{k}
+\]
+
+
+\end_inset
+אך לכל 
+\begin_inset Formula
+$2\leq k\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left(t\cdot p^{e}\right)^{k}\equiv t^{k}\cdot p^{e\cdot k}\equiv0\mod p^{e+1}$
+\end_inset
+ ומכאן נובע כי לכל 
+\begin_inset Formula
+$t\in\MKinteger$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+f\left(a+t\cdot p^{e}\right)=\sum_{k=0}^{n}\frac{f^{\left(k\right)}}{k!}\cdot\left(t\cdot p^{e}\right)^{k}\equiv f\left(a\right)+f'\left(a\right)\cdot t\cdot p^{e}\mod p^{e+1}
+\]
+
+
+\end_inset
+מהגדרה 
+\begin_inset Formula
+$f\left(a\right)\equiv0\mod p^{e}$
+\end_inset
+, א"כ קיים 
+\begin_inset Formula
+$k\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f\left(a\right)=k\cdot p^{e}$
+\end_inset
+, יהי 
+\begin_inset Formula
+$k$
+\end_inset
+ כנ"ל (
+\begin_inset Formula
+$k:=\frac{f\left(a\right)}{p^{e}}$
+\end_inset
+) ומכאן שמתקיים:
+\begin_inset Formula
+\[
+f\left(a+t\cdot p^{e}\right)\equiv p^{e}\cdot\left(k+f'\left(a\right)\cdot t\right)\mod p^{e+1}
+\]
+
+
+\end_inset
+כעת, אם 
+\begin_inset Formula
+$f'\left(a\right)\not\equiv0\mod p$
+\end_inset
+ אז יש ל-
+\begin_inset Formula
+$f'\left(a\right)$
+\end_inset
+ הופכי מודולו 
+\begin_inset Formula
+$p$
+\end_inset
+ ואותו הופכי מקיים:
+\begin_inset Formula
+\begin{align*}
+f\left(a+t\cdot p^{e}\right)\equiv0\mod p^{e+1} & \Longleftrightarrow k+f'\left(a\right)\cdot t\equiv0\mod p\\
+ & \Longleftrightarrow t\equiv-f'\left(a\right)^{-1}\cdot k\equiv-f'\left(a\right)^{-1}\cdot\frac{f\left(a\right)}{p^{e}}\mod p
+\end{align*}
+
+
+\end_inset
+אנחנו יודעים שלכל שורש 
+\begin_inset Formula
+$b\in\MKinteger$
+\end_inset
+ של 
+\begin_inset Formula
+$f$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$p^{e+1}$
+\end_inset
+ קיים 
+\begin_inset Formula
+$t\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$b\equiv a+t\cdot p^{e}\mod p^{e+1}$
+\end_inset
+ ולכן השורה הקודמת מראה הן את הקיום של 
+\begin_inset Formula
+$t$
+\end_inset
+ כזה והן את יחידותו מודולו 
+\begin_inset Formula
+$p$
+\end_inset
+, יחידות זו נותנת גם את היחידות של מודולו 
+\begin_inset Formula
+$p^{e+1}$
+\end_inset
+ מפני שלכל 
+\begin_inset Formula
+$t_{1},t_{2}\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$t_{1}\equiv t_{2}\mod p$
+\end_inset
+ (כלומר 
+\begin_inset Formula
+$p\mid t_{1}-t_{2}$
+\end_inset
+) מתקיים גם 
+\begin_inset Formula
+$t_{1}\cdot p^{e}\equiv t_{2}\cdot p^{e}$
+\end_inset
+ (כלומר 
+\begin_inset Formula
+$p^{e+1}\mid\left(t_{1}-t_{2}\right)\cdot p^{e}$
+\end_inset
+).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הלמה של הנזל, יחד עם משפט השאריות הסיני, נותנים לנו דרך מצוא שורשים של פולינומים בכל מודולוס ובתנאי שאנחנו יודעים את השורשים של הפולינום עבור כל אחד מהראשוניים המופיעים בפירוק של המודולוס.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ב
+\begin_inset CommandInset href
+LatexCommand href
+name "וויקיפדיה"
+target https://he.wikipedia.org/wiki/%D7%9C%D7%9E%D7%AA_%D7%94%D7%A0%D7%96%D7%9C
+literal false
+\end_inset
+ מופיעה הרחבה ללמה של הנזל העוסקת במקרה שבו 
+\begin_inset Formula
+$f'\left(a\right)\equiv0\mod p$
+\end_inset
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$f'\left(a\right)\equiv0\mod p$
+\end_inset
+ וגם 
+\begin_inset Formula
+$f\left(a\right)\equiv0\mod p^{e+1}$
+\end_inset
+ אז 
+\begin_inset Formula
+$f\left(a+t\cdot p^{e}\right)\equiv0\mod p^{e+1}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$t\in\MKinteger$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$f'\left(a\right)\equiv0\mod p$
+\end_inset
+ וגם 
+\begin_inset Formula
+$f\left(a\right)\not\equiv0\mod p^{e+1}$
+\end_inset
+ אז לא קיים 
+\begin_inset Formula
+$t\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f\left(a+t\cdot p^{e}\right)\equiv0\mod p^{e+1}$
+\end_inset
+, כלומר אין ל-
+\begin_inset Formula
+$f$
+\end_inset
+ שורשים מודולו 
+\begin_inset Formula
+$p^{e+1}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ 
+\begin_inset Formula
+$a$
+\end_inset
+ כנ"ל נקרא "שורש פשוט" של הפולינום, כלומר שורש פשוט הוא מספר שהצבתו בפולינום נותנת 
+\begin_inset Formula
+$0$
+\end_inset
+ אבל הצבתו בפולינום הנגזרת שונה מ-
+\begin_inset Formula
+$0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+פונקציות אריתמטיות
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+נסמן 
+\begin_inset Formula
+$\MKclf:=\left\{ f:\MKnatural\rightarrow A\mid A\subseteq\MKcomplex\right\} $
+\end_inset
+ (כלומר קבוצת הסדרות ב-
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ניתן היה להחליף את 
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+ בכל שדה או בכל קבוצה שמוגדרות עליה פעולות חיבור וכפל.
+\end_layout
+
+\end_inset
+) ונקרא ל-
+\begin_inset Formula
+$\MKclf$
+\end_inset
+ 
+\bar under
+קבוצת הפונקציות האריתמטיות
+\bar default
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ נתעניין בפונקציות 
+\begin_inset Formula
+$f\in\MKclf$
+\end_inset
+ המקיימות ש-
+\begin_inset Formula
+$f\left(n\right)$
+\end_inset
+ תלוי בתכונות 
+\shape italic
+אריתמטיות
+\shape default
+ של 
+\begin_inset Formula
+$n$
+\end_inset
+ (זו כמובן הסיבה לשם של 
+\begin_inset Formula
+$\MKclf$
+\end_inset
+), קצת קשה להגדיר זאת...
+\end_layout
+
+\begin_layout Definition
+נאמר על פונקציה אריתמטית 
+\begin_inset Formula
+$f$
+\end_inset
+ שהיא 
+\bar under
+כפלית
+\bar default
+ אם לכל 
+\begin_inset Formula
+$n,m\in\MKnatural$
+\end_inset
+ הזרים זה לזה מתקיים 
+\begin_inset Formula
+$f\left(n\cdot m\right)=f\left(n\right)\cdot f\left(m\right)$
+\end_inset
+, נסמן את 
+\bar under
+קבוצת הפונקציות הכפליות
+\bar default
+ ב-
+\begin_inset Formula
+$\MKclm$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ זה שונה מאד מהמובן הרגיל של כפליות.
+\end_layout
+
+\begin_layout Definition
+תהיינה 
+\begin_inset Formula
+$f,g\in\MKclf$
+\end_inset
+, נגדיר את 
+\bar under
+הקונבולוציה
+\bar default
+ 
+\begin_inset Formula
+$f*g:\MKnatural\rightarrow\MKcomplex$
+\end_inset
+ (נקראת גם 
+\bar under
+קונבולוציית דיריכלה
+\bar default
+) ע"י (לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+):
+\begin_inset Formula
+\[
+\left(f*g\right)\left(n\right):=\sum_{0<d\mid n}f\left(d\right)\cdot g\left(\frac{n}{d}\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ למרות שממבט ראשון הגדרת הקונבולוציה אינה סימטרית למעשה היא דווקא כן כזו מפני שאם נסמן
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$D:=\left\{ \left(a,b\right)\in\MKinteger^{2}\mid a\cdot b=n\right\} $
+\end_inset
+ נקבל:
+\begin_inset Formula
+\[
+\left(f*g\right)\left(n\right)=\sum_{\left(a,b\right)\in D}f\left(a\right)\cdot g\left(b\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Example
+תהא 
+\begin_inset Formula
+$\delta:\MKnatural\rightarrow\left\{ 0,1\right\} $
+\end_inset
+ המוגדרת ע"י (לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+):
+\begin_inset Formula
+\[
+\delta\left(n\right):=\begin{cases}
+1 & n=1\\
+0 & n\neq1
+\end{cases}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Example
+לכל 
+\begin_inset Formula
+$k\in\MKnatural_{0}$
+\end_inset
+ נגדיר את הפונקציה 
+\begin_inset Formula
+$I_{k}:\MKnatural\rightarrow\MKnatural_{0}$
+\end_inset
+ ע"י (לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+):
+\begin_inset Formula
+\[
+I_{k}\left(n\right):=n^{k}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כן, זה נראה קצת מגוחך ואולי זה באמת כך, כמובן שעבור 
+\begin_inset Formula
+$k=0$
+\end_inset
+ נקבל 
+\begin_inset Formula
+$I_{0}\equiv1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Example
+לכל 
+\begin_inset Formula
+$k\in\MKnatural_{0}$
+\end_inset
+ נגדיר את 
+\begin_inset Formula
+$\sigma_{k}:\MKnatural\rightarrow\MKnatural_{0}$
+\end_inset
+ ע"י (לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+):
+\begin_inset Formula
+\[
+\sigma_{k}\left(n\right):=\sum_{0<d\mid n}d^{k}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מהגדרה 
+\begin_inset Formula
+$\sigma_{0}\left(n\right)$
+\end_inset
+ הוא מספר המחלקים הטבעיים של 
+\begin_inset Formula
+$n$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "מספר משוכלל"
+target https://he.wikipedia.org/wiki/%D7%9E%D7%A1%D7%A4%D7%A8_%D7%9E%D7%A9%D7%95%D7%9B%D7%9C%D7%9C
+literal false
+\end_inset
+ הוא כזה המקיים 
+\begin_inset Formula
+$n=\sigma_{1}\left(n\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Example
+פונקציית אוילר (הגדרה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "definition 1.10"
+plural false
+caps false
+noprefix false
+\end_inset
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Example
+תהא 
+\begin_inset Formula
+$\mu:\MKnatural\rightarrow\left\{ -1,0,1\right\} $
+\end_inset
+ 
+\bar under
+פונקציית מביוס
+\bar default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה: 
+\begin_inset CommandInset href
+LatexCommand href
+name "אוגוסט פרדיננד מביוס"
+target https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%92%D7%95%D7%A1%D7%98_%D7%A4%D7%A8%D7%93%D7%99%D7%A0%D7%A0%D7%93_%D7%9E%D7%91%D7%99%D7%95%D7%A1
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+ המוגדרת ע"י (לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+): 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$n$
+\end_inset
+ אינו חופשי מריבועים אז 
+\begin_inset Formula
+$\mu\left(n\right):=0$
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$n$
+\end_inset
+ חופשי מריבועים אז 
+\begin_inset Formula
+$\mu\left(n\right):=\left(-1\right)^{k}$
+\end_inset
+ כאשר 
+\begin_inset Formula
+$k$
+\end_inset
+ הוא מספר הראשוניים המחלקים את 
+\begin_inset Formula
+$n$
+\end_inset
+ (שמהגדרה שונים זה מזה)
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כלומר אם 
+\begin_inset Formula
+$n$
+\end_inset
+ חופשי מריבועים אז 
+\begin_inset Formula
+$\mu\left(n\right)$
+\end_inset
+ הוא 
+\begin_inset Formula
+$-1$
+\end_inset
+ אם מספר הראשוניים המחלקים את 
+\begin_inset Formula
+$n$
+\end_inset
+ אי-זוגי ו-
+\begin_inset Formula
+$1$
+\end_inset
+ אם הוא זוגי (בפרט 
+\begin_inset Formula
+$\mu\left(1\right)=1$
+\end_inset
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Example
+תהא 
+\begin_inset Formula
+$S:\MKnatural\rightarrow\MKnatural_{0}$
+\end_inset
+ פונקציה המוגדרת ע"י 
+\begin_inset Formula
+$S\left(n\right):=\left|\left\{ x^{2}\mid x\in\MKinteger/n\MKinteger\right\} \right|$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$S\left(n\right)$
+\end_inset
+ הוא מספר השאריות הריבועיות מודולו 
+\begin_inset Formula
+$n$
+\end_inset
+ (כולל 
+\begin_inset Formula
+$0$
+\end_inset
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+מתקיים 
+\begin_inset Formula
+$\delta,I_{k},\sigma_{k}\phi,\mu,S\in\MKclm$
+\end_inset
+ (לכל 
+\begin_inset Formula
+$k\in\MKnatural_{0}$
+\end_inset
+), כלומר כל הפונקציות שראינו הן פונקציות כפליות.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מכיוון שכבר ראינו ש-
+\begin_inset Formula
+$S\left(p\right)=\frac{p+1}{2}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$2<p\in\MKnatural$
+\end_inset
+ ראשוני (ו-
+\begin_inset Formula
+$S_{2}=2$
+\end_inset
+) נוכל לחשב את הערך של 
+\begin_inset Formula
+$S\left(n\right)$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n$
+\end_inset
+ חופשי מריבועים.
+\end_layout
+
+\begin_layout Theorem
+לכל 
+\begin_inset Formula
+$f,g,h\in\MKclf$
+\end_inset
+ מתקיימים כל הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$f*g=g*f$
+\end_inset
+ - הקונבולציה קומוטטיבית.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$f*\left(g*h\right)=\left(f*g\right)*h$
+\end_inset
+ - הקונבולוציה אסוציאטיבית.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$f*\left(g+h\right)=f*g+f*h$
+\end_inset
+ - הקונבולוציה דיסטריבוטיבית ביחס לחיבור.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$f*\delta=f$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$f$
+\end_inset
+ ו-
+\begin_inset Formula
+$g$
+\end_inset
+ כפליות אז גם 
+\begin_inset Formula
+$f*g$
+\end_inset
+ כפלית.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\mu*I_{0}=\delta$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+נוסחת ההיפוך של מביוס: אם 
+\begin_inset Formula
+$\begin{alignedat}{1}g\left(n\right)=\sum_{0<d\mid n}f\left(d\right)\end{alignedat}
+$
+
+\end_inset
+ (לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+) אז 
+\begin_inset Formula
+$\begin{alignedat}{1}f\left(n\right)=\sum_{0<d\mid n}g\left(d\right)\cdot\mu\left(\frac{n}{d}\right)\end{alignedat}
+$
+
+\end_inset
+ (לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+), ניתן לראות זאת גם כך: אם 
+\begin_inset Formula
+$g=f*I_{0}$
+\end_inset
+ אז 
+\begin_inset Formula
+$f=g*\mu$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 2.3"
+\end_inset
+מתקיים 
+\begin_inset Formula
+$\phi*I_{0}=I_{1}$
+\end_inset
+, כלומר לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\sum_{0<d\mid n}\phi\left(d\right)=\sum_{0<d\mid n}\phi\left(d\right)\cdot I_{0}\left(\frac{n}{d}\right)=\left(\phi*I_{0}\right)\left(n\right)=I_{1}\left(n\right)=n
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+נוכיח (באינדוקציה) שהטענה נכונה עבור חזקות של ראשוניים ומהכפליות של הקונבולוציה 
+\begin_inset Formula
+$\phi*I_{0}$
+\end_inset
+ ינבע שהטענה נכונה לכל מספר.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$p\in\MKnatural$
+\end_inset
+ ראשוני, מהגדרה מתקיים:
+\begin_inset Formula
+\[
+\sum_{0<d\mid p}\phi\left(d\right)=\phi\left(1\right)+\phi\left(p\right)=1+\left(p-1\right)=p
+\]
+
+
+\end_inset
+נניח באינדוקציה שהטענה נכונה עבור 
+\begin_inset Formula
+$p^{e}$
+\end_inset
+ ונוכיח עבור 
+\begin_inset Formula
+$p^{e+1}$
+\end_inset
+, המחלקים של 
+\begin_inset Formula
+$p^{e+1}$
+\end_inset
+ הם המחלקים של 
+\begin_inset Formula
+$p^{e}$
+\end_inset
+ יחד עם 
+\begin_inset Formula
+$p^{e+1}$
+\end_inset
+ עצמו.
+\begin_inset Formula
+\[
+\Rightarrow\sum_{0<d\mid p^{e+1}}\phi\left(d\right)=\phi\left(p^{e+1}\right)-\sum_{0<d\mid p^{e}}\phi\left(d\right)=\left(p^{e+1}-p^{e}\right)+p^{e}=p^{e+1}
+\]
+
+
+\end_inset
+
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary 2.4"
+\end_inset
+מתקיים 
+\begin_inset Formula
+$\phi=I_{1}*\mu$
+\end_inset
+, כלומר לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\phi\left(n\right)=\sum_{0<d\mid n}I_{1}\left(d\right)\cdot\mu\left(\frac{n}{d}\right)=\sum_{0<d\mid n}d\cdot\mu\left(\frac{n}{d}\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 2.5"
+\end_inset
+שקילויות נוספות, מתקיים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$\sigma_{0}=I_{0}*I_{0}$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\sigma_{1}=I_{1}*I_{0}$
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Corollary
+מתקיים 
+\begin_inset Formula
+$\sigma_{1}=\phi*\sigma_{0}$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+שימו לב לדמיון בין 
+\begin_inset Formula
+$\phi*I_{0}=I_{1}$
+\end_inset
+ ל-
+\begin_inset Formula
+$\phi*\sigma_{0}=\sigma_{1}$
+\end_inset
+.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+ממסקנה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 2.4"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ ומטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 2.5"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+נובע שמתקיים:
+\begin_inset Formula
+\[
+\sigma_{1}=I_{1}*I_{0}=I_{1}*\delta*I_{0}=\left(I_{1}*\mu\right)*\left(I_{0}*I_{0}\right)=\phi*\sigma_{0}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+שורשים פרימיטיביים
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$1<N\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+לכל 
+\begin_inset Formula
+$\overline{a}\in\left(\MKinteger/N\MKinteger\right)^{*}$
+\end_inset
+ נסמן 
+\begin_inset Formula
+$e_{N}\left(a\right):=\min\left\{ k\in\MKnatural\mid a^{k}\equiv1\mod N\right\} $
+\end_inset
+ ונקרא ל-
+\begin_inset Formula
+$e_{N}\left(a\right)$
+\end_inset
+ 
+\bar under
+המעריך
+\bar default
+ של 
+\begin_inset Formula
+$a$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$N$
+\end_inset
+ (יש הקוראים לו גם 
+\bar under
+האקספוננט
+\bar default
+ או 
+\bar under
+הסדר
+\bar default
+ של 
+\begin_inset Formula
+$a$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$N$
+\end_inset
+).
+\end_layout
+
+\begin_layout Claim*
+לכל 
+\begin_inset Formula
+$\overline{a}\in\left(\MKinteger/N\MKinteger\right)^{*}$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$e_{N}\left(a\right)\mid\phi\left(N\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+יהי 
+\begin_inset Formula
+$\overline{a}\in\left(\MKinteger/N\MKinteger\right)^{*}$
+\end_inset
+, נאמר ש-
+\begin_inset Formula
+$a$
+\end_inset
+ הוא 
+\bar under
+שורש פרימיטיבי
+\bar default
+ של 
+\begin_inset Formula
+$N$
+\end_inset
+ אם 
+\begin_inset Formula
+$e_{N}\left(a\right)=\phi\left(N\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$1<N\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 3.1"
+\end_inset
+לכל 
+\begin_inset Formula
+$\overline{a}\in\left(\MKinteger/N\MKinteger\right)^{*}$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$e_{N}\left(a\right)\mid\phi\left(N\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 3.2"
+\end_inset
+לכל 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ זר ל-
+\begin_inset Formula
+$N$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$i,j\in\MKnatural$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+למעשה ניתן היה לכתוב "לכל 
+\begin_inset Formula
+$i,j\in\MKinteger$
+\end_inset
+" וכן במסקנות מהמשפט הקטן של פרמה וממשפט אוילר אבל לא התעסקנו בחזקות שאינן טבעיות בקורס.
+\end_layout
+
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$a^{i}\equiv a^{j}\mod N$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$i\equiv j\mod e_{N}\left(a\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הטענה מראה לנו שמההגדרה נובע שכדי לחשב חזקות בחשבון מודולו 
+\begin_inset Formula
+$N$
+\end_inset
+ ניתן לבצע חשבון מודולו 
+\begin_inset Formula
+$e_{N}\left(a\right)$
+\end_inset
+ על המעריך וזאת בתנאי שהבסיס זר ל-
+\begin_inset Formula
+$N$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בפרט לכל שורש פרימיטיבי 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ של 
+\begin_inset Formula
+$N$
+\end_inset
+ מתקיים (לכל 
+\begin_inset Formula
+$i\in\MKnatural$
+\end_inset
+) 
+\begin_inset Formula
+$a^{i}\equiv1\mod N$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$i\equiv0\mod{\phi}\left(N\right)$
+\end_inset
+, כלומר אם"ם 
+\begin_inset Formula
+$\phi\left(N\right)\mid i$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+לכל שורש פרימיטיבי 
+\begin_inset Formula
+$a$
+\end_inset
+ של 
+\begin_inset Formula
+$N$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left\{ a^{k}\mid k\in\MKnatural\right\} =\left(\MKinteger/N\MKinteger\right)^{*}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lemma 3.4"
+\end_inset
+יהי 
+\begin_inset Formula
+$p\in\MKnatural$
+\end_inset
+ ראשוני, ויהי 
+\begin_inset Formula
+$p-1\geq d\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$d\mid p-1$
+\end_inset
+, לפולינום 
+\begin_inset Formula
+$x^{d}-1$
+\end_inset
+ (מעל 
+\begin_inset Formula
+$\MKinteger/p\MKinteger$
+\end_inset
+) יש 
+\begin_inset Formula
+$d$
+\end_inset
+ שורשים.
+\end_layout
+
+\begin_layout Proof
+נסמן 
+\begin_inset Formula
+$q:=\frac{p-1}{d}$
+\end_inset
+ ונשים לב לכך שמתקיים:
+\begin_inset Formula
+\[
+x^{p-1}-1=\left(x^{d}\right)^{q}-1=\left(x^{d}-1\right)\cdot\sum_{k=0}^{q-1}\left(x^{d}\right)^{q-1-k}
+\]
+
+
+\end_inset
+כעת, מכיוון של-
+\begin_inset Formula
+$x^{p-1}-1$
+\end_inset
+ יש 
+\begin_inset Formula
+$p-1$
+\end_inset
+ שורשים (המשפט הקטן של פרמה) נדע של-
+\begin_inset Formula
+$x^{d}-1$
+\end_inset
+ יש 
+\begin_inset Formula
+$d$
+\end_inset
+ שורשים שהרי דרגת הפולינום הימני במכפלה היא 
+\begin_inset Formula
+$\left(q-1\right)\cdot d=q\cdot d-d=p-1-d$
+\end_inset
+ ולכן יש לו לכל היותר 
+\begin_inset Formula
+$p-1-d$
+\end_inset
+ שורשים.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lemma 3.5"
+\end_inset
+יהי 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+, נסמן ב-
+\begin_inset Formula
+$D$
+\end_inset
+ את קבוצת המחלקים הטבעיים של 
+\begin_inset Formula
+$n$
+\end_inset
+ ותהיינה 
+\begin_inset Formula
+$f,g:D\rightarrow\MKcomplex$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+נשים לב ש-
+\begin_inset Formula
+$f$
+\end_inset
+ ו-
+\begin_inset Formula
+$g$
+\end_inset
+ אינן מוגדרות על כל הטבעיים ולכן א"א להשתמש בנוסחת ההיפוך של מביוס.
+\end_layout
+
+\end_inset
+, אם לכל 
+\begin_inset Formula
+$d\in D$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\begin{alignedat}{1}\sum_{0<e\mid d}f\left(e\right)=\sum_{0<e\mid d}g\left(e\right)\end{alignedat}
+$
+
+\end_inset
+ אז 
+\begin_inset Formula
+$f=g$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+נניח בשלילה שקיים 
+\begin_inset Formula
+$d\in D$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$f\left(d\right)\neq g\left(d\right)$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$d$
+\end_inset
+ האיבר המינימלי המקיים זאת, א"כ לכל מחלק 
+\begin_inset Formula
+$d>e\in\MKnatural$
+\end_inset
+ של 
+\begin_inset Formula
+$n$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$f\left(e\right)=g\left(e\right)$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נתון כי 
+\begin_inset Formula
+$\begin{alignedat}{1}\sum_{0<e\mid d}f\left(d\right)=\sum_{0<e\mid d}g\left(d\right)\end{alignedat}
+$
+
+\end_inset
+ ומכאן שע"פ השורה הקודמת מתקיים 
+\begin_inset Formula
+$f\left(d\right)=g\left(d\right)$
+\end_inset
+ בסתירה להגדרת 
+\begin_inset Formula
+$d$
+\end_inset
+, א"כ הנחת השלילה אינה נכונה ולכל 
+\begin_inset Formula
+$d\in D$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$f\left(d\right)=g\left(d\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+יהי 
+\begin_inset Formula
+$p\in\MKnatural$
+\end_inset
+ ראשוני, לכל 
+\begin_inset Formula
+$p>d\in\MKnatural$
+\end_inset
+ המחלק את 
+\begin_inset Formula
+$p-1$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\phi\left(d\right)=\left|\left\{ \overline{a}\in\MKinteger/p\MKinteger\mid e_{p}\left(a\right)=d\right\} \right|$
+\end_inset
+, כלומר לכל 
+\begin_inset Formula
+$d\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$d\mid p-1$
+\end_inset
+ קיימים 
+\begin_inset Formula
+$\phi\left(d\right)$
+\end_inset
+ איברים בשדה 
+\begin_inset Formula
+$\MKfield_{p}$
+\end_inset
+ שהמעריך שלהם הוא 
+\begin_inset Formula
+$d$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+נסמן ב-
+\begin_inset Formula
+$D$
+\end_inset
+ את קבוצת המחלקים הטבעיים של 
+\begin_inset Formula
+$p-1$
+\end_inset
+ ותהא 
+\begin_inset Formula
+$\omega:D\rightarrow\MKnatural_{0}$
+\end_inset
+ פונקציה המוגדרת ע"י (לכל 
+\begin_inset Formula
+$d\in D$
+\end_inset
+):
+\begin_inset Formula
+\[
+\omega\left(d\right):=\left|\left\{ \overline{a}\in\MKinteger/p\MKinteger:e_{p}\left(a\right)=d\right\} \right|
+\]
+
+
+\end_inset
+ראינו בלמה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 3.4"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ שלפולינום 
+\begin_inset Formula
+$x^{d}-1$
+\end_inset
+ יש בדיוק 
+\begin_inset Formula
+$d$
+\end_inset
+ שורשים לכל 
+\begin_inset Formula
+$d\in D$
+\end_inset
+, בנוסף אנחנו יודעים שלכל 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a^{d}-1\equiv0\mod p$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$e_{p}\left(a\right)\mid d$
+\end_inset
+; מכאן שלכל 
+\begin_inset Formula
+$d\in D$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+d=\sum_{0<e\mid d}\omega\left(e\right)
+\]
+
+
+\end_inset
+ולכן ע"פ למה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 3.5"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ וטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 2.3"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\phi\left(d\right)=\omega\left(d\right)=\left|\left\{ \overline{a}\in\MKinteger/p\MKinteger:e_{p}\left(a\right)=d\right\} \right|$
+\end_inset
+ לכל 
+\begin_inset Formula
+$d\in D$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+למעשה למה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 3.5"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ אומרת ש-
+\begin_inset Formula
+$\phi\mid_{D}$
+\end_inset
+ (הצמצום של 
+\begin_inset Formula
+$\phi$
+\end_inset
+ ל-
+\begin_inset Formula
+$D$
+\end_inset
+) שווה ל-
+\begin_inset Formula
+$\omega$
+\end_inset
+.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בפרט, לכל 
+\begin_inset Formula
+$p\in\MKnatural$
+\end_inset
+ ראשוני קיימים 
+\begin_inset Formula
+$\phi\left(p-1\right)$
+\end_inset
+ שורשים פרימיטיביים.
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lemma 3.7"
+\end_inset
+יהיו 
+\begin_inset Formula
+$2<p\in\MKnatural$
+\end_inset
+ ראשוני ו-
+\begin_inset Formula
+$,t\in\MKnatural$
+\end_inset
+ ויהיו 
+\begin_inset Formula
+$a,b\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a$
+\end_inset
+ ו-
+\begin_inset Formula
+$b$
+\end_inset
+ אינם מתחלקים ב-
+\begin_inset Formula
+$p$
+\end_inset
+, אם 
+\begin_inset Formula
+$a\not\equiv b\mod p^{t}$
+\end_inset
+ אז 
+\begin_inset Formula
+$a^{p}\not\equiv b^{p}\mod p^{t+1}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+נניח ש-
+\begin_inset Formula
+$a\not\equiv b\mod p^{t}$
+\end_inset
+ ונסמן 
+\begin_inset Formula
+$s:=\max\left\{ i\in\MKnatural_{0}:p^{s}\mid a-b\right\} $
+\end_inset
+, אם 
+\begin_inset Formula
+$s=0$
+\end_inset
+ אז 
+\begin_inset Formula
+$a\not\equiv b\mod p$
+\end_inset
+ ולכן מהמשפט הקטן של פרמה נובע שגם 
+\begin_inset Formula
+$a^{p}\not\equiv b^{p}\mod p$
+\end_inset
+ וממילא גם 
+\begin_inset Formula
+$a^{p}\not\equiv b^{p}\mod p^{t+1}$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+אחרת 
+\begin_inset Formula
+$s\geq1$
+\end_inset
+ וקיים 
+\begin_inset Formula
+$k\in\MKinteger$
+\end_inset
+ שאינו מתחלק ב-
+\begin_inset Formula
+$p$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a=b+k\cdot p^{s}$
+\end_inset
+, יהי 
+\begin_inset Formula
+$k$
+\end_inset
+ כנ"ל.
+\begin_inset Formula
+\begin{align*}
+\Rightarrow a^{p} & =\sum_{i=0}^{p}\begin{pmatrix}p\\
+i
+\end{pmatrix}\cdot b^{p-i}\cdot\left(k\cdot p^{s}\right)^{i}\\
+ & =b^{p}+p\cdot b^{p-1}\cdot k\cdot p^{s}+\begin{pmatrix}p\\
+2
+\end{pmatrix}\cdot b^{p-2}\cdot k^{2}\cdot p^{2s}+\sum_{i=2}^{p}\begin{pmatrix}p\\
+i
+\end{pmatrix}\cdot b^{p-i}\cdot k^{i}\cdot p^{s\cdot i}\\
+ & \equiv b^{p}+p\cdot b^{p-1}\cdot k\cdot p^{s}+\begin{pmatrix}p\\
+2
+\end{pmatrix}\cdot b^{p-2}\cdot k^{2}\cdot p^{2s}\mod p^{s+2}
+\end{align*}
+
+
+\end_inset
+נשים לב לכך שמתקיים 
+\begin_inset Formula
+$p\mid\frac{p\cdot\left(p-1\right)}{2}=\begin{pmatrix}p\\
+2
+\end{pmatrix}$
+
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+נזכור ש-
+\begin_inset Formula
+$p>2$
+\end_inset
+.
+\end_layout
+
+\end_inset
+ ומכאן שגם 
+\begin_inset Formula
+$p^{s+2}\mid\begin{pmatrix}p\\
+2
+\end{pmatrix}\cdot b^{p-2}\cdot k^{2}\cdot p^{2s}$
+
+\end_inset
+.
+\begin_inset Formula
+\[
+\Rightarrow a^{p}\equiv b^{p}+p\cdot b^{p-1}\cdot k\cdot p^{s}\mod p^{s+2}
+\]
+
+
+\end_inset
+נזכור ש-
+\begin_inset Formula
+$p$
+\end_inset
+ אינו מחלק את 
+\begin_inset Formula
+$b$
+\end_inset
+ ואת 
+\begin_inset Formula
+$k$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$p\cdot b^{p-1}\cdot k\cdot p^{s}\not\equiv0\mod p^{s+2}$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$a^{p}\not\equiv b^{p}\mod p^{s+2}$
+\end_inset
+. מהגדרה 
+\begin_inset Formula
+$t\geq s+1$
+\end_inset
+ ולכן 
+\begin_inset Formula
+$t+1\geq s+2$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$a^{p}\not\equiv b^{p}\mod p^{t+1}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+יהיו 
+\begin_inset Formula
+$2<p\in\MKnatural$
+\end_inset
+ ראשוני ו-
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ שורש פרימיטיבי של 
+\begin_inset Formula
+$p$
+\end_inset
+, אם 
+\begin_inset Formula
+$a^{p-1}\not\equiv1\mod p^{2}$
+\end_inset
+ אז 
+\begin_inset Formula
+$a$
+\end_inset
+ הוא שורש פרימיטיבי של 
+\begin_inset Formula
+$p^{e}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$e\in\MKnatural$
+\end_inset
+, ואם 
+\begin_inset Formula
+$a^{p-1}\equiv1\mod p^{2}$
+\end_inset
+ אז 
+\begin_inset Formula
+$a+p$
+\end_inset
+ הוא שורש פרימיטיבי של 
+\begin_inset Formula
+$p^{e}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$e\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+נסמן 
+\begin_inset Formula
+$x:=e_{p^{2}}\left(a\right)$
+\end_inset
+, א"כ 
+\begin_inset Formula
+$a^{x}\equiv1\mod p^{2}$
+\end_inset
+ וממילא גם 
+\begin_inset Formula
+$a^{x}\equiv1\mod p$
+\end_inset
+ ולכן מהיות 
+\begin_inset Formula
+$a$
+\end_inset
+ שורש פרימיטיבי של 
+\begin_inset Formula
+$p$
+\end_inset
+ נובע ש-
+\begin_inset Formula
+$p-1\mid x$
+\end_inset
+ (טענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 3.2"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+), מצד שני מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 3.1"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ נדע שמתקיים 
+\begin_inset Formula
+$x\mid\phi\left(p^{e}\right)=p^{e-1}\cdot\left(p-1\right)$
+\end_inset
+ ולכן:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$a^{p-1}\not\equiv1\mod p^{2}$
+\end_inset
+ אז 
+\begin_inset Formula
+$x\neq p-1$
+\end_inset
+ ולכן (בגלל ש-
+\begin_inset Formula
+$e\mid p\cdot\left(p-1\right)$
+\end_inset
+ וגם 
+\begin_inset Formula
+$p-1\mid e$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+הנימוק הזה הוא שאינו עובד במקרה שבו 
+\begin_inset Formula
+$p=2$
+\end_inset
+: זה 
+\begin_inset Formula
+$e\mid2$
+\end_inset
+ וגם 
+\begin_inset Formula
+$1\mid e$
+\end_inset
+ לא אומר ש-
+\begin_inset Formula
+$e=2$
+\end_inset
+, ייתכן ש-
+\begin_inset Formula
+$e=1$
+\end_inset
+.
+\end_layout
+
+\end_inset
+) מתקיים בהכרח 
+\begin_inset Formula
+$e=p\cdot\left(p-1\right)=\phi\left(p^{2}\right)$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$a$
+\end_inset
+ הוא שורש פרימיטיבי של 
+\begin_inset Formula
+$p^{2}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$a^{p-1}\equiv1\mod p^{2}$
+\end_inset
+ אז מכיוון שמתקיים:
+\begin_inset Formula
+\begin{align*}
+\left(a+p\right)^{p-1} & =\sum_{i=0}^{p-1}\begin{pmatrix}p-1\\
+i
+\end{pmatrix}\cdot a^{p-1-i}\cdot p^{i}=a^{p-1}+\left(p-1\right)\cdot a^{p-2}\cdot p+\sum_{i=2}^{p-1}\begin{pmatrix}p-1\\
+i
+\end{pmatrix}\cdot a^{p-1-i}\cdot p^{i}\\
+ & \equiv a^{p-1}+\left(p-1\right)\cdot a^{p-2}\cdot p\equiv a^{p-1}-a^{p-2}\cdot p\not\equiv1\mod p^{2}
+\end{align*}
+
+
+\end_inset
+ובנוסף 
+\begin_inset Formula
+$e_{p}\left(a+p\right)=e_{p}\left(a\right)=p-1$
+\end_inset
+ נדע ש-
+\begin_inset Formula
+$p-1\mid e_{p^{2}}\left(a+p\right)$
+\end_inset
+ ולכן מאותן סיבות שבסעיף הקודם מתקיים בהכרח 
+\begin_inset Formula
+$e_{p^{2}}\left(a+p\right)=p\cdot\left(p-1\right)$
+\end_inset
+ ו-
+\begin_inset Formula
+$a+p$
+\end_inset
+ הוא שורש פרימיטיבי של 
+\begin_inset Formula
+$p^{2}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Proof
+כעת נוכיח באינדוקציה שכל שורש פרימיטיבי מודולו 
+\begin_inset Formula
+$p^{2}$
+\end_inset
+ הוא גם שורש פרימיטיבי של 
+\begin_inset Formula
+$p^{e}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$2<e\in\MKnatural$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$2\leq e\in\MKnatural$
+\end_inset
+, יהי 
+\begin_inset Formula
+$b\in\MKinteger$
+\end_inset
+ שורש פרימיטיבי של 
+\begin_inset Formula
+$p^{e}$
+\end_inset
+, א"כ מתקיים 
+\begin_inset Formula
+$b^{p^{e-2}\cdot\left(p-1\right)}\not\equiv1\mod p^{e}$
+\end_inset
+, ולכן ע"פ למה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 3.7"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$b^{p^{e-1}\cdot\left(p-1\right)}\not\equiv1\mod p^{e+1}$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מצד שני מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 3.2"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ נובע שמתקיים 
+\begin_inset Formula
+$p-1\mid e_{p^{e+1}}\left(b\right)$
+\end_inset
+ ומטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 3.1"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$e_{p^{e+1}}\left(b\right)\mid\phi\left(p^{e+1}\right)=p^{e}\cdot\left(p-1\right)$
+\end_inset
+ ועל כן בהכרח:
+\begin_inset Formula
+\[
+e_{p^{e+1}}\left(b\right)=p^{e}\cdot\left(p-1\right)
+\]
+
+
+\end_inset
+כלומר 
+\begin_inset Formula
+$b$
+\end_inset
+ הוא שורש פרימיטיבי מודולו 
+\begin_inset Formula
+$p^{e+1}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+יהיו 
+\begin_inset Formula
+$2<p\in\MKnatural$
+\end_inset
+ ראשוני, 
+\begin_inset Formula
+$k\in\MKnatural$
+\end_inset
+ ו-
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ שורש פרימיטיבי של 
+\begin_inset Formula
+$p^{k}$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+מהטענה הקודמת נובע שאכן קיים 
+\begin_inset Formula
+$a$
+\end_inset
+ כזה.
+\end_layout
+
+\end_inset
+, המספר האי-זוגי מבין 
+\begin_inset Formula
+$a$
+\end_inset
+ ו-
+\begin_inset Formula
+$a+p^{k}$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+בהכרח אחד מהם זוגי והאחר אי-זוגי ושניהם שורשים פרימיטיביים של 
+\begin_inset Formula
+$p^{k}$
+\end_inset
+ שהרי הם שקולים מודולו 
+\begin_inset Formula
+$p^{k}$
+\end_inset
+.
+\end_layout
+
+\end_inset
+ הוא שורש פרימיטיבי של 
+\begin_inset Formula
+$2p^{k}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+ראשית נבחין שהדרישה לאי-זוגיות נובעת מהצורך הבסיסי שהשורש יהיה זר ל-
+\begin_inset Formula
+$2p^{k}$
+\end_inset
+ ובפרט זר ל-
+\begin_inset Formula
+$2$
+\end_inset
+, נסמן את האי-זוגי מבין 
+\begin_inset Formula
+$a$
+\end_inset
+ ו-
+\begin_inset Formula
+$a+p^{k}$
+\end_inset
+ ב-
+\begin_inset Formula
+$b$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 3.2"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ נובע שמתקיים:
+\begin_inset Formula
+\[
+e_{p^{k}}\left(b\right)\mid e_{2p^{k}}\left(b\right),\ e_{2p^{k}}\left(b\right)\mid\phi\left(2p^{k}\right)
+\]
+
+
+\end_inset
+אבל לכל 
+\begin_inset Formula
+$m\in\MKodd$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\phi\left(2m\right)=\phi\left(m\right)$
+\end_inset
+ ובפרט 
+\begin_inset Formula
+$\phi\left(2p^{k}\right)=\phi\left(p^{k}\right)$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+כעת נזכור ש-
+\begin_inset Formula
+$b$
+\end_inset
+ הוא שורש פרימיטיבי מודולו 
+\begin_inset Formula
+$p^{k}$
+\end_inset
+ ועל כן 
+\begin_inset Formula
+$e_{p^{k}}\left(b\right)=\phi\left(p^{k}\right)=\phi\left(2p^{k}\right)$
+\end_inset
+ ומכאן שמתקיים:
+\begin_inset Formula
+\[
+\phi\left(2p^{k}\right)\mid e_{2p^{k}}\left(b\right)
+\]
+
+
+\end_inset
+ולכן בהכרח:
+\begin_inset Formula
+\[
+e_{2p^{k}}\left(b\right)=\phi\left(2p^{k}\right)
+\]
+
+
+\end_inset
+כלומר 
+\begin_inset Formula
+$b$
+\end_inset
+ הוא שורש פרימיטיבי מודולו 
+\begin_inset Formula
+$2p^{k}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+אם 
+\begin_inset Formula
+$N$
+\end_inset
+ מתחלק בשני ראשוניים אי-זוגיים שונים אז אין ל-
+\begin_inset Formula
+$N$
+\end_inset
+ שורש פרימיטיבי.
+\end_layout
+
+\begin_layout Proof
+נניח ש-
+\begin_inset Formula
+$N$
+\end_inset
+ מתחלק בשני ראשוניים אי-זוגיים שונים ויהיו 
+\begin_inset Formula
+$n,m\in\MKnatural$
+\end_inset
+ זרים זה לזה כך ש-
+\begin_inset Formula
+$n\cdot m=N$
+\end_inset
+ ולשניהם יש מחלק ראשוני אי-זוגי.
+\begin_inset Newline newline
+\end_inset
+נסמן 
+\begin_inset Formula
+$l:=\MKlcm\left(\phi\left(n\right),\phi\left(m\right)\right)$
+\end_inset
+, מהגדרה מתקיים 
+\begin_inset Formula
+$\phi\left(n\right)\mid l$
+\end_inset
+ וגם 
+\begin_inset Formula
+$\phi\left(m\right)\mid l$
+\end_inset
+ ולכן ממשפט אוילר נובע שלכל 
+\begin_inset Formula
+$\overline{a}\in\left(\MKinteger/N\MKinteger\right)^{*}$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+a^{l} & \equiv1\mod n\\
+a^{l} & \equiv1\mod m
+\end{align*}
+
+
+\end_inset
+ומכאן שע"פ משפט השאריות הסיני מתקיים גם 
+\begin_inset Formula
+$a^{l}\equiv1\mod N$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+קיימת רק שארית אחת מודולו 
+\begin_inset Formula
+$N$
+\end_inset
+ ששקולה ל-
+\begin_inset Formula
+$1$
+\end_inset
+ בשני המודולוסים הזרים 
+\begin_inset Formula
+$n$
+\end_inset
+ ו-
+\begin_inset Formula
+$m$
+\end_inset
+ והיא 
+\begin_inset Formula
+$1$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$N$
+\end_inset
+.
+\end_layout
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+כעת נשים לב לכך ש-
+\begin_inset Formula
+$\phi\left(n\right),\phi\left(m\right)\in\MKeven$
+\end_inset
+ ולכן בהכרח 
+\begin_inset Formula
+$l<\phi\left(n\right)\cdot\phi\left(m\right)=\phi\left(N\right)$
+\end_inset
+ ומכאן שלכל 
+\begin_inset Formula
+$\overline{a}\in\left(\MKinteger/N\MKinteger\right)^{*}$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$e_{N}\left(a\right)\leq l<\phi\left(N\right)$
+\end_inset
+ ואין ל-
+\begin_inset Formula
+$N$
+\end_inset
+ שורש פרימיטיבי.
+\end_layout
+
+\begin_layout Claim
+אם 
+\begin_inset Formula
+$N$
+\end_inset
+ מתחלק ב-
+\begin_inset Formula
+$4$
+\end_inset
+ ובראשוני אי-זוגי אז אין ל-
+\begin_inset Formula
+$N$
+\end_inset
+ שורשים פרימיטיביים.
+\end_layout
+
+\begin_layout Proof
+נניח ש-
+\begin_inset Formula
+$N$
+\end_inset
+ מתחלק ב-
+\begin_inset Formula
+$4$
+\end_inset
+ ובראשוני אי-זוגי ויהיו 
+\begin_inset Formula
+$k,m\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$2^{k}\cdot m=N$
+\end_inset
+ ו-
+\begin_inset Formula
+$m\in\MKodd$
+\end_inset
+, מהנתון נובע ש-
+\begin_inset Formula
+$2\leq k$
+\end_inset
+, 
+\begin_inset Formula
+$3\leq m$
+\end_inset
+ ו-
+\begin_inset Formula
+$\gcd\left(2^{k},m\right)=1$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נסמן 
+\begin_inset Formula
+$l:=\MKlcm\left(\phi\left(2^{k}\right),\phi\left(m\right)\right)$
+\end_inset
+, מהגדרה מתקיים 
+\begin_inset Formula
+$\phi\left(2^{k}\right)\mid l$
+\end_inset
+ וגם 
+\begin_inset Formula
+$\phi\left(m\right)\mid l$
+\end_inset
+ ולכן ממשפט אוילר נובע שלכל 
+\begin_inset Formula
+$\overline{a}\in\left(\MKinteger/N\MKinteger\right)^{*}$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+a^{l} & \equiv1\mod 2^{k}\\
+a^{l} & \equiv1\mod m
+\end{align*}
+
+
+\end_inset
+ומכאן שע"פ משפט השאריות הסיני מתקיים גם 
+\begin_inset Formula
+$a^{l}\equiv1\mod N$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+כעת נשים לב לכך ש-
+\begin_inset Formula
+$\phi\left(2^{k}\right),\phi\left(m\right)\in\MKeven$
+\end_inset
+ ולכן בהכרח 
+\begin_inset Formula
+$l<\phi\left(2^{k}\right)\cdot\phi\left(m\right)=\phi\left(N\right)$
+\end_inset
+ ומכאן שלכל 
+\begin_inset Formula
+$\overline{a}\in\left(\MKinteger/N\MKinteger\right)^{*}$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$e_{N}\left(a\right)\leq l<\phi\left(N\right)$
+\end_inset
+ ואין ל-
+\begin_inset Formula
+$N$
+\end_inset
+ שורש פרימיטיבי.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+אם קיים 
+\begin_inset Formula
+$2<k\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$N=2^{k}$
+\end_inset
+ אז אין ל-
+\begin_inset Formula
+$N$
+\end_inset
+ שורש פרימיטיבי.
+\end_layout
+
+\begin_layout Proof
+נניח שקיים 
+\begin_inset Formula
+$k$
+\end_inset
+ כנ"ל ונוכיח את הטענה באינדוקציה על 
+\begin_inset Formula
+$k$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+עבור 
+\begin_inset Formula
+$k=3$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$2^{k}=8$
+\end_inset
+ ול-
+\begin_inset Formula
+$8$
+\end_inset
+ אכן אין שורשים פרימיטיביים:
+\begin_inset Formula
+\begin{align*}
+1^{1} & \equiv1\mod 8 & 5^{2} & \equiv1\mod 8\\
+3^{2} & \equiv1\mod 8 & 7^{2} & \equiv1\mod 8
+\end{align*}
+
+
+\end_inset
+כעת נניח באינדוקציה שהטענה נכונה עבור 
+\begin_inset Formula
+$3\leq k\in\MKnatural$
+\end_inset
+ כלשהו ונוכיח עבור 
+\begin_inset Formula
+$k+1$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נסמן 
+\begin_inset Formula
+$n:=2^{k}$
+\end_inset
+, ויהי 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ זר ל-
+\begin_inset Formula
+$2^{k+1}$
+\end_inset
+ (כלומר 
+\begin_inset Formula
+$a\in\MKodd$
+\end_inset
+).
+\begin_inset Newline newline
+\end_inset
+מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 3.1"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ נקבל ש-
+\begin_inset Formula
+$e_{n}\left(a\right)\mid\phi\left(n\right)=2^{k-1}$
+\end_inset
+ ומהנחת האינדוקציה נובע ש-
+\begin_inset Formula
+$e_{n}\left(a\right)<\phi\left(n\right)=2^{k-1}$
+\end_inset
+ וממילא מתקיים:
+\begin_inset Formula
+\[
+a^{\left(2^{k-2}\right)}\equiv1\mod 2^{k}
+\]
+
+
+\end_inset
+א"כ יהי 
+\begin_inset Formula
+$q\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a^{\left(2^{k-2}\right)}=1+2^{k}\cdot q$
+\end_inset
+.
+\begin_inset Formula
+\[
+\Rightarrow a^{\left(2^{k-1}\right)}=\left(1+2^{k}\cdot q\right)^{2}=1+2\cdot2^{k}\cdot q+2^{2k}\cdot q^{2}\equiv1\mod 2^{k+1}
+\]
+
+
+\end_inset
+אבל 
+\begin_inset Formula
+$2^{k-1}<2^{k}=\phi\left(2^{k+1}\right)$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$a$
+\end_inset
+ אינו שורש פרימיטיבי מודולו 
+\begin_inset Formula
+$2^{k+1}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+יש ל-
+\begin_inset Formula
+$N$
+\end_inset
+ שורש פרימיטיבי אם"ם קיים 
+\begin_inset Formula
+$2<p\in\MKnatural$
+\end_inset
+ ראשוני כך ש-
+\begin_inset Formula
+$N\in\left\{ 2,4\right\} \cup\left\{ p^{k}\mid k\in\MKnatural\right\} \cup\left\{ 2p^{k}\mid k\in\MKnatural\right\} $
+\end_inset
+, כלומר אם"ם 
+\begin_inset Formula
+$N$
+\end_inset
+ הוא 
+\begin_inset Formula
+$2$
+\end_inset
+, 
+\begin_inset Formula
+$4$
+\end_inset
+, חזקה של ראשוני אי-זוגי או 
+\begin_inset Formula
+$2$
+\end_inset
+ כפול חזקה של ראשוני אי-זוגי.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ השערת ארטין: בהינתן 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ שאינו ריבוע, האם קיימים אינסוף ראשוניים ש-
+\begin_inset Formula
+$a$
+\end_inset
+ הוא שורש פרימיטיבי שלהם? ההשערה רוצה לומר שכן אך זו עדיין בעיה פתוחה במתמטיקה ולא קיים אפילו 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ אחד שאינו ריבוע שעבורו נפתרה הבעיה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+שאריות ריבועיות וחוק ההדדיות הריבועית
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+נאמר ש-
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ (או 
+\begin_inset Formula
+$\overline{a}\in\MKinteger/N\MKinteger$
+\end_inset
+) הוא 
+\bar under
+שארית ריבועית
+\bar default
+ מודולו 
+\begin_inset Formula
+$N$
+\end_inset
+ אם קיים 
+\begin_inset Formula
+$b\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$b^{2}\equiv a\mod N$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+סמל לז'נדר
+\series default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה:
+\begin_inset CommandInset href
+LatexCommand href
+name "אדריאן-מארי לז'נדר"
+target https://he.wikipedia.org/wiki/%D7%90%D7%93%D7%A8%D7%99%D7%90%D7%9F-%D7%9E%D7%90%D7%A8%D7%99_%D7%9C%D7%96%27%D7%A0%D7%93%D7%A8
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נסמן 
+\begin_inset Formula
+$P:=\MKprime\setminus\left\{ 2\right\} $
+\end_inset
+, 
+\bar under
+הסמל של לז'נדר
+\bar default
+ (נקרא גם 
+\bar under
+סימן לז'נדר
+\bar default
+) הוא הפונקציה 
+\begin_inset Formula
+$\left(\begin{array}{c}
+\cdot\\
+\hline \cdot
+\end{array}\right):\MKinteger\times P\rightarrow\left\{ 1,-1,0\right\} $
+
+\end_inset
+ המוגדרת ע"י (לכל 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ ו-
+\begin_inset Formula
+$2<p\in\MKprime$
+\end_inset
+):
+\begin_inset Formula
+\[
+\left(\begin{array}{c}
+a\\
+\hline p
+\end{array}\right):=\begin{cases}
+0 & a\equiv0\mod p\\
+1 & a\not\equiv0\mod p,\ \exists x\in\MKinteger:x^{2}\equiv a\mod p\\
+-1 & a\not\equiv0\mod p,\ \nexists x\in\MKinteger:x^{2}\equiv a\mod p
+\end{cases}
+\]
+
+
+\end_inset
+או בעברית: סימן לז'נדר של 
+\begin_inset Formula
+$a$
+\end_inset
+ הוא 
+\begin_inset Formula
+$0$
+\end_inset
+ אם 
+\begin_inset Formula
+$a$
+\end_inset
+ הוא 
+\begin_inset Formula
+$0$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$p$
+\end_inset
+, 
+\begin_inset Formula
+$1$
+\end_inset
+ אם הוא שארית ריבועית שונה מאפס מודולו 
+\begin_inset Formula
+$p$
+\end_inset
+ ו-
+\begin_inset Formula
+$-1$
+\end_inset
+ אחרת.
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula
+$2<p\in\MKnatural$
+\end_inset
+ ראשוני ולכל 
+\begin_inset Formula
+$a,b\in\MKinteger$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left(\begin{array}{c}
+a\\
+\hline p
+\end{array}\right)=\left(\begin{array}{c}
+b\\
+\hline p
+\end{array}\right)\Longleftrightarrow a\equiv b\mod p
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הסמל של לז'נדר הוא דוגמה ל
+\begin_inset CommandInset href
+LatexCommand href
+name "קרקטר דיריכלה"
+target https://he.wikipedia.org/wiki/%D7%9E%D7%A9%D7%A4%D7%98_%D7%93%D7%99%D7%A8%D7%99%D7%9B%D7%9C%D7%94#%D7%A7%D7%A8%D7%A7%D7%98%D7%A8_%D7%93%D7%99%D7%A8%D7%99%D7%9B%D7%9C%D7%94
+literal false
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+\series bold
+שארית מינימלית
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$2<p\in\MKnatural$
+\end_inset
+ ראשוני ו-
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+, ישנן שתי הגדרות לשארית מינימלית שמאחוריהן עומד אותו רעיון:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\bar under
+השארית המינימלית
+\bar default
+ של 
+\begin_inset Formula
+$a$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$p$
+\end_inset
+ היא האיבר היחיד בקטע 
+\begin_inset Formula
+$\left(-\frac{p-1}{2},\frac{p-1}{2}\right)$
+\end_inset
+ השקול ל-
+\begin_inset Formula
+$a$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$p$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\bar under
+השארית המינימלית
+\bar default
+ של 
+\begin_inset Formula
+$a$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$p$
+\end_inset
+ היא האיבר היחיד בקטע 
+\begin_inset Formula
+$\left[0,p\right)$
+\end_inset
+ השקול ל-
+\begin_inset Formula
+$a$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$p$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+נסמן את השארית המינימלית של 
+\begin_inset Formula
+$a$
+\end_inset
+ מודולו ע"י 
+\begin_inset Formula
+$\left\{ a\right\} _{p}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$2<p\in\MKnatural$
+\end_inset
+ מספר ראשוני, מתקיים:
+\begin_inset Formula
+\[
+\left|\left\{ x^{2}:0\neq x\in\MKfield_{p}\right\} \right|=\frac{p-1}{2}
+\]
+
+
+\end_inset
+כלומר מספר השאריות הריבועיות השונות מ-
+\begin_inset Formula
+$0$
+\end_inset
+ בשדה 
+\begin_inset Formula
+$\MKinteger/p\MKinteger$
+\end_inset
+ (או מספר השאריות הריבועיות השונות מאפס מודולו 
+\begin_inset Formula
+$p$
+\end_inset
+) הוא 
+\begin_inset Formula
+$\frac{p-1}{2}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הריבועים הם כל הריבועים של 
+\begin_inset Formula
+$\frac{p-1}{2}$
+\end_inset
+ האיברים ה"ראשונים" בשדה מפני שהשאר הם הנגדיים שלהם.
+\end_layout
+
+\begin_layout Proof
+כל מה שצריך להוכיח הוא שלכל 
+\begin_inset Formula
+$a,b\in\MKinteger$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a^{2}\equiv b^{2}\mod p\Longleftrightarrow a\equiv\pm b\mod p$
+\end_inset
+ וזה קורה מכיוון ש-
+\begin_inset Formula
+$a^{2}-b^{2}\equiv\left(a+b\right)\left(a-b\right)\mod p$
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKinteger/p\MKinteger$
+\end_inset
+ הוא שדה.
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 4.2"
+\end_inset
+יהיו 
+\begin_inset Formula
+$2<p\in\MKnatural$
+\end_inset
+ ראשוני 
+\begin_inset Formula
+$g\in\MKinteger$
+\end_inset
+ שורש פרימיטיבי של 
+\begin_inset Formula
+$p$
+\end_inset
+ ו-
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a\not\equiv0\mod p$
+\end_inset
+, מהגדרה קיים 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$g^{n}\equiv a\mod p$
+\end_inset
+, יהי 
+\begin_inset Formula
+$n$
+\end_inset
+ כנ"ל; הפסוקים הבאים שקולים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$a$
+\end_inset
+ הוא שארית ריבועית מודולו 
+\begin_inset Formula
+$p$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$n$
+\end_inset
+ זוגי
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+הזוגיות של 
+\begin_inset Formula
+$n$
+\end_inset
+ מוגדרת היטב מפני ש-
+\begin_inset Formula
+$p-1$
+\end_inset
+ זוגי ולכן מהמשפט הקטן של פרמה לכל 
+\begin_inset Formula
+$m\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$g^{m}\equiv a\mod p$
+\end_inset
+ 
+\begin_inset Formula
+$m$
+\end_inset
+ זוגי.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$2e_{p}\left(a\right)\mid p-1$
+\end_inset
+ או אם תרצו 
+\begin_inset Formula
+$e_{p}\left(a\right)\mid\frac{p-1}{2}$
+\end_inset
+ או 
+\begin_inset Formula
+$2\mid\frac{p-1}{e_{p}\left(a\right)}$
+\end_inset
+, בקיצור 
+\begin_inset Formula
+$\frac{p-1}{2e_{p}\left(a\right)}\in\MKinteger$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Proof
+נוכיח תחילה ששני הסעיפים הראשונים שקולים זה לזה:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\Leftarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$a$
+\end_inset
+ הוא שארית ריבועית מודולו 
+\begin_inset Formula
+$p$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$s\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$s^{2}\equiv a\mod p$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$m\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$g^{m}\equiv s\mod p$
+\end_inset
+, א"כ מתקיים 
+\begin_inset Formula
+$g^{2m}\equiv s^{2}\equiv a\equiv g^{n}\mod p$
+\end_inset
+ ולכן מהמשפט הקטן של פרמה נובע ש-
+\begin_inset Formula
+$2m\equiv n\mod p-1$
+\end_inset
+ וממילא גם 
+\begin_inset Formula
+$2m\equiv n\mod 2$
+\end_inset
+ ו-
+\begin_inset Formula
+$n\in\MKeven$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\Rightarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$n$
+\end_inset
+ זוגי ונסמן 
+\begin_inset Formula
+$s:=g^{\frac{n}{2}}\in\MKinteger$
+\end_inset
+, מכאן שמתקיים 
+\begin_inset Formula
+$s^{2}\equiv g^{n}\equiv a\mod p$
+\end_inset
+ ו-
+\begin_inset Formula
+$a$
+\end_inset
+ הוא שארית ריבועית מודולו 
+\begin_inset Formula
+$p$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Proof
+כעת נעבור להוכחת השקילות בין שני הסעיפים האחרונים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\Leftarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$n$
+\end_inset
+ זוגי ויהי 
+\begin_inset Formula
+$m\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$n=2m$
+\end_inset
+,
+\begin_inset Formula
+\begin{align*}
+\Rightarrow a^{\frac{p-1}{2}} & \equiv\left(g^{n}\right)^{\frac{p-1}{2}}\equiv g^{n\cdot\frac{p-1}{2}}\equiv g^{2m\cdot\frac{p-1}{2}}\\
+ & \equiv g^{m\cdot\left(p-1\right)}\equiv\left(g^{p-1}\right)^{m}\equiv1^{m}\equiv1\mod p
+\end{align*}
+
+
+\end_inset
+ולכן מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 3.1"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ נובע ש-
+\begin_inset Formula
+$e_{p}\left(a\right)\mid\frac{p-1}{2}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\Rightarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$e_{p}\left(a\right)\mid\frac{p-1}{2}$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$m\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$m\cdot e_{p}\left(a\right)=\frac{p-1}{2}$
+\end_inset
+.
+\begin_inset Formula
+\[
+\Rightarrow g^{n\cdot\frac{p-1}{2}}\equiv\left(g^{n}\right)^{\frac{p-1}{2}}\equiv a^{\frac{p-1}{2}}\equiv a^{m\cdot e_{p}\left(a\right)}\equiv\left(a^{e_{p}\left(a\right)}\right)^{m}\equiv1^{m}\equiv1\mod p
+\]
+
+
+\end_inset
+מהיות 
+\begin_inset Formula
+$g$
+\end_inset
+ שורש פרימיטיבי ומטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 3.2"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ נובע שמתקיים 
+\begin_inset Formula
+$n\cdot\frac{p-1}{2}\equiv0\mod p-1$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$p-1\mid n\cdot\frac{p-1}{2}$
+\end_inset
+ ולכן 
+\begin_inset Formula
+$n$
+\end_inset
+ מוכרח להיות זוגי.
+\end_layout
+
+\end_deeper
+
+\begin_layout Claim
+הסמל של לז'נדר הוא פונקציה כפלית, לכל 
+\begin_inset Formula
+$2<p\in\MKnatural$
+\end_inset
+ ראשוני ולכל 
+\begin_inset Formula
+$a,b\in\MKinteger$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left(\begin{array}{c}
+ab\\
+\hline p
+\end{array}\right)=\left(\begin{array}{c}
+a\\
+\hline p
+\end{array}\right)\left(\begin{array}{c}
+b\\
+\hline p
+\end{array}\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כרגיל מהכפליות נובע שמספיק לבדוק את הסמל על ראשוניים כדי להכיר אותו כראוי.
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$2<p\in\MKnatural$
+\end_inset
+ ראשוני, יהיו 
+\begin_inset Formula
+$a,b\in\MKinteger$
+\end_inset
+. ונניח תחילה ש-
+\begin_inset Formula
+$a$
+\end_inset
+ ו-
+\begin_inset Formula
+$b$
+\end_inset
+ אינם מתחלקים ב-
+\begin_inset Formula
+$p$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$g$
+\end_inset
+ שורש פרימיטיבי של 
+\begin_inset Formula
+$p$
+\end_inset
+ ויהיו 
+\begin_inset Formula
+$n,m\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$g^{n}\equiv a\mod p$
+\end_inset
+ ו-
+\begin_inset Formula
+$g^{m}\equiv b\mod p$
+\end_inset
+.
+\begin_inset Formula
+\[
+\Rightarrow ab\equiv g^{n+m}\mod p
+\]
+
+
+\end_inset
+נשים לב ש-
+\begin_inset Formula
+$n+m\in\MKeven$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$n,m\in\MKeven$
+\end_inset
+ או ש-
+\begin_inset Formula
+$n,m\in\MKodd$
+\end_inset
+, מהטענה הקודמת (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 4.2"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+) נובע ש-
+\begin_inset Formula
+$g^{n+m}$
+\end_inset
+ הוא שארית ריבועית מודולו 
+\begin_inset Formula
+$p$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$g^{n}$
+\end_inset
+ ו-
+\begin_inset Formula
+$g^{m}$
+\end_inset
+ הם שאריות ריבועיות או ששניהם אינם שאריות ריבועיות, כלומר 
+\begin_inset Formula
+$ab$
+\end_inset
+ הוא שארית ריבועית אם"ם 
+\begin_inset Formula
+$a$
+\end_inset
+ ו-
+\begin_inset Formula
+$b$
+\end_inset
+ הם שאריות ריבועיות או ששניהם אינם שאריות ריבועיות.
+\begin_inset Formula
+\[
+\Rightarrow\left(\begin{array}{c}
+ab\\
+\hline p
+\end{array}\right)=\left(\begin{array}{c}
+a\\
+\hline p
+\end{array}\right)\left(\begin{array}{c}
+b\\
+\hline p
+\end{array}\right)
+\]
+
+
+\end_inset
+אם 
+\begin_inset Formula
+$a$
+\end_inset
+ ו/או 
+\begin_inset Formula
+$b$
+\end_inset
+ מתחלקים ב-
+\begin_inset Formula
+$p$
+\end_inset
+ אז גם 
+\begin_inset Formula
+$ab$
+\end_inset
+ מתחלק ב-
+\begin_inset Formula
+$p$
+\end_inset
+ ולכן סמל לז'נדר שלו הוא 
+\begin_inset Formula
+$0$
+\end_inset
+ ומהגדרה גם אגף שמאל הוא 
+\begin_inset Formula
+$0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+מבחן אוילר
+\series default
+
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$2<p\in\MKnatural$
+\end_inset
+ ראשוני ולכל 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left(\begin{array}{c}
+a\\
+\hline p
+\end{array}\right)\equiv a^{\frac{p-1}{2}}\mod p
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+יהיו 
+\begin_inset Formula
+$2<p\in\MKnatural$
+\end_inset
+ ראשוני ו-
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+, אם 
+\begin_inset Formula
+$a\equiv0\mod p$
+\end_inset
+ אז הטענה טריוויאלית, א"כ נניח ש-
+\begin_inset Formula
+$a\not\equiv0\mod p$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$g$
+\end_inset
+ שורש פרימיטיבי של 
+\begin_inset Formula
+$p$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$g^{n}\equiv a\mod p$
+\end_inset
+; מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 4.2"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ נובע שאם 
+\begin_inset Formula
+$a$
+\end_inset
+ שארית ריבועית אז 
+\begin_inset Formula
+$n\in\MKeven$
+\end_inset
+ ולכן גם:
+\begin_inset Formula
+\[
+a^{\frac{p-1}{2}}\equiv\left(g^{n}\right)^{\frac{p-1}{2}}\equiv\left(g^{p-1}\right)^{\frac{n}{2}}\equiv1^{\frac{n}{2}}\equiv1\equiv\left(\begin{array}{c}
+a\\
+\hline p
+\end{array}\right)\mod p
+\]
+
+
+\end_inset
+ואם 
+\begin_inset Formula
+$a$
+\end_inset
+ אינו שארית ריבועית אז 
+\begin_inset Formula
+$n\in\MKodd$
+\end_inset
+ ולכן גם
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+אנחנו יודעים ש-
+\begin_inset Formula
+$g^{\frac{p-1}{2}}\not\equiv1\mod p$
+\end_inset
+ ושאם נעלה את 
+\begin_inset Formula
+$g^{\frac{p-1}{2}}$
+\end_inset
+ בריבוע נקבל את 
+\begin_inset Formula
+$1$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$p$
+\end_inset
+, בשדה (ו-
+\begin_inset Formula
+$\MKinteger/p\MKinteger$
+\end_inset
+ הוא שדה) יש רק שני שורשים ריבועיים של 
+\begin_inset Formula
+$1$
+\end_inset
+ והם 
+\begin_inset Formula
+$\pm1$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$g^{\frac{p-1}{2}}\equiv-1\mod p$
+\end_inset
+.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\[
+a^{\frac{p-1}{2}}\equiv\left(g^{n}\right)^{\frac{p-1}{2}}\equiv\left(g^{\frac{p-1}{2}}\right)^{n}\equiv\left(-1\right)^{n}\equiv-1\equiv\left(\begin{array}{c}
+a\\
+\hline p
+\end{array}\right)\mod p
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+לכל 
+\begin_inset Formula
+$2<p\in\MKnatural$
+\end_inset
+ ראשוני מתקיים:
+\begin_inset Formula
+\[
+\left(\begin{array}{c}
+-1\\
+\hline p
+\end{array}\right)=\left(-1\right)^{\frac{p-1}{2}}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+הלמה של גאוס
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$2<p\in\MKnatural$
+\end_inset
+ ראשוני ו-
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ זר ל-
+\begin_inset Formula
+$p$
+\end_inset
+ ונסמן ב-
+\begin_inset Formula
+$n$
+\end_inset
+ את מספר השאריות המינימליות השליליות
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+נעבוד ע"פ ההגדרה הראשונה של שאריות מינימליות.
+\end_layout
+
+\end_inset
+ בקבוצה 
+\begin_inset Formula
+$\left\{ \left\{ i\cdot a\right\} _{p}\mid\frac{p-1}{2}\geq i\in\MKnatural\right\} $
+\end_inset
+, מתקיים:
+\begin_inset Formula
+\[
+\left(\begin{array}{c}
+a\\
+\hline p
+\end{array}\right)=\left(-1\right)^{n}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+נסמן 
+\begin_inset Formula
+$S:=\left\{ \left\{ i\cdot a\right\} _{p}\mid\frac{p-1}{2}\geq i\in\MKnatural\right\} $
+\end_inset
+, ותהיינה 
+\begin_inset Formula
+$s_{1},s_{2},\ldots,s_{n}\in S$
+\end_inset
+ כל השאריות השליליות ב-
+\begin_inset Formula
+$S$
+\end_inset
+ ו-
+\begin_inset Formula
+$r_{1},r_{2},\ldots,r_{m}\in S$
+\end_inset
+ יתר השאריות ב-
+\begin_inset Formula
+$S$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נשים לב לכך שלכל 
+\begin_inset Formula
+$\frac{p-1}{2}\geq i,j\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$i\neq j$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$i\cdot a\not\equiv-j\cdot a\mod p$
+\end_inset
+: משום שאחרת יתקיים גם 
+\begin_inset Formula
+$a\cdot\left(i+j\right)\equiv0\mod p$
+\end_inset
+ ומכיוון ש-
+\begin_inset Formula
+$a$
+\end_inset
+ זר ל-
+\begin_inset Formula
+$p$
+\end_inset
+ נדע ש-
+\begin_inset Formula
+$i+j\equiv0\mod p$
+\end_inset
+ בסתירה לכך ש
+\begin_inset Formula
+$i$
+\end_inset
+ ו-
+\begin_inset Formula
+$j$
+\end_inset
+ הם טבעיים שונים הקטנים מ-
+\begin_inset Formula
+$\frac{p-1}{2}$
+\end_inset
+ ולכן סכומם אינו עולה על 
+\begin_inset Formula
+$p-1$
+\end_inset
+; א"כ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$m\geq j\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$-s_{i}\not\equiv r_{j}\mod p$
+\end_inset
+ ומכאן שע"פ עקרון שובך היונים מתקיים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+מהגדרה לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$0<-s_{i}\leq\frac{p-1}{2}$
+\end_inset
+, כמו כן 
+\begin_inset Formula
+$r_{j}\not\equiv0\mod p$
+\end_inset
+ לכל 
+\begin_inset Formula
+$m\geq j\in\MKnatural$
+\end_inset
+ מפני ש-
+\begin_inset Formula
+$a$
+\end_inset
+ זר ל-
+\begin_inset Formula
+$p$
+\end_inset
+.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\[
+\left\{ i\in\MKnatural\mid i\leq\frac{p-1}{2}\right\} =\left\{ -s_{1},-s_{2},\ldots,-s_{n},r_{1},r_{2},\ldots,r_{m}\right\} 
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow\frac{p-1}{2}!=\prod_{i=1}^{n}\left(-s_{i}\right)\cdot\prod_{j=1}^{m}r_{j}=\left(-1\right)^{n}\cdot\prod_{i=1}^{n}s_{i}\cdot\prod_{j=1}^{m}r_{j}
+\]
+
+
+\end_inset
+כעת נזכור שמהגדרה 
+\begin_inset Formula
+$S=\left\{ s_{1},s_{2},\ldots,s_{n},r_{1},r_{2},\ldots,r_{m}\right\} $
+\end_inset
+ ולכן:
+\begin_inset Formula
+\[
+\prod_{i=1}^{n}s_{i}\cdot\prod_{j=1}^{m}r_{j}\equiv\prod_{i=1}^{\frac{p-1}{2}}\left(i\cdot a\right)\equiv\frac{p-1}{2}!\cdot a^{\frac{p-1}{2}}\mod p
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow\frac{p-1}{2}!=\left(-1\right)^{n}\cdot\frac{p-1}{2}!\cdot a^{\frac{p-1}{2}}\mod p
+\]
+
+
+\end_inset
+העצרת המופיעה בשקילות היא מכפלה של מספרים זרים ל-
+\begin_inset Formula
+$p$
+\end_inset
+ ולכן היא שווה למספר זר ל-
+\begin_inset Formula
+$p$
+\end_inset
+ וניתן לחלק בה את שני האגפים.
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow1\equiv\left(-1\right)^{n}\cdot a^{\frac{p-1}{2}}\mod p\\
+ & \Rightarrow\left(-1\right)^{n}\equiv a^{\frac{p-1}{2}}\mod p
+\end{align*}
+
+
+\end_inset
+וממבחן אוילר נקבל את המבוקש.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בתרגילי החזרה למבחן הוכחנו שאם 
+\begin_inset Formula
+$p\equiv3\mod 4$
+\end_inset
+ אז 
+\begin_inset Formula
+$\frac{p-1}{2}!\equiv\pm1\mod p$
+\end_inset
+, הדרך לעשות זאת הייתה להראות שמתקיים
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$\left(\frac{p-1}{2}!\right)^{2}\equiv1\mod p$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary 4.7"
+\end_inset
+לכל 
+\begin_inset Formula
+$2<p\in\MKnatural$
+\end_inset
+ ראשוני מתקיים:
+\begin_inset Formula
+\[
+\left(\begin{array}{c}
+2\\
+\hline p
+\end{array}\right)=\left(-1\right)^{\frac{p^{2}-1}{8}}=\begin{cases}
+1 & p\equiv\pm1\mod 8\\
+-1 & p\equiv\pm3\mod 8
+\end{cases}=\begin{cases}
+1 & p\equiv1\lor p\equiv7\mod 8\\
+-1 & p\equiv3\lor p\equiv5\mod 8
+\end{cases}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+נשים לב לכך שלכל 
+\begin_inset Formula
+$\frac{p-1}{4}\geq i\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left\{ 2i\right\} _{p}>0$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$i\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\frac{p-1}{4}<i\leq\frac{p-1}{2}$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left\{ 2i\right\} _{p}<0$
+\end_inset
+, א"כ מספר השאריות המינימליות השליליות בקבוצה 
+\begin_inset Formula
+$\left\{ \left\{ 2i\right\} _{p}\mid\frac{p-1}{2}\geq i\in\MKnatural\right\} $
+\end_inset
+ הוא 
+\begin_inset Formula
+$n:=\frac{p-1}{2}-\left\lfloor \frac{p-1}{4}\right\rfloor $
+\end_inset
+ ומכאן שע"פ הלמה של גאוס מתקיים:
+\begin_inset Formula
+\[
+\left(\begin{array}{c}
+2\\
+\hline p
+\end{array}\right)=\left(-1\right)^{n}
+\]
+
+
+\end_inset
+יהיו 
+\begin_inset Formula
+$q\in\MKinteger$
+\end_inset
+ ו-
+\begin_inset Formula
+$8>r\in\MKnatural_{0}$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$p=8q+r$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+מהגדרה 
+\begin_inset Formula
+$q\in\MKnatural$
+\end_inset
+ ו-
+\begin_inset Formula
+$r\in\MKodd$
+\end_inset
+.
+\end_layout
+
+\end_inset
+, נבחין כי:
+\begin_inset Formula
+\begin{align*}
+\frac{p-1}{2} & =\begin{cases}
+4q & r=1\\
+4q+1 & r=3\\
+4q+2 & r=5\\
+4q+3 & r=7
+\end{cases} & \left\lfloor \frac{p-1}{4}\right\rfloor  & =\begin{cases}
+2q & r=1\\
+2q & r=3\\
+2q+1 & r=5\\
+2q+1 & r=7
+\end{cases}
+\end{align*}
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow\frac{p-1}{2}-\left\lfloor \frac{p-1}{4}\right\rfloor =\begin{cases}
+6q & r=1\\
+6q+1 & r=3\\
+6q+3 & r=5\\
+6q+4 & r=7
+\end{cases}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow\left(\begin{array}{c}
+2\\
+\hline p
+\end{array}\right)=\left(-1\right)^{n}=\begin{cases}
+1 & p\equiv1\lor p\equiv7\mod 8\\
+-1 & p\equiv3\lor p\equiv5\mod 8
+\end{cases}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lemma 4.8"
+\end_inset
+יהי 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ אי-זוגי זר לראשוני 
+\begin_inset Formula
+$2<p\in\MKnatural$
+\end_inset
+, נסמן:
+\begin_inset Formula
+\[
+t:=\sum_{k=1}^{\frac{p-1}{2}}\left\lfloor \frac{ka}{p}\right\rfloor 
+\]
+
+
+\end_inset
+מתקיים:
+\begin_inset Formula
+\[
+\left(\begin{array}{c}
+a\\
+\hline p
+\end{array}\right)=\left(-1\right)^{t}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+נבחין כי 
+\begin_inset Formula
+$\left\lfloor \frac{ka}{p}\right\rfloor $
+\end_inset
+ היא המנה של חלוקת 
+\begin_inset Formula
+$ka$
+\end_inset
+ ב-
+\begin_inset Formula
+$p$
+\end_inset
+ עם שארית, מכאן (נשתמש בסימוני הוכחת הלמה של גאוס) שמתקיים:
+\begin_inset Formula
+\begin{align*}
+\sum_{k=1}^{\frac{p-1}{2}}ka & =\sum_{k=1}^{\frac{p-1}{2}}p\cdot\left\lfloor \frac{ka}{p}\right\rfloor +\sum_{i=1}^{n}\left(p+s_{i}\right)+\sum_{j=1}^{m}r_{j}\\
+ & =np+\sum_{k=1}^{\frac{p-1}{2}}p\cdot\left\lfloor \frac{ka}{p}\right\rfloor +\sum_{i=1}^{n}s_{i}+\sum_{j=1}^{m}r_{j}\\
+ & =p\cdot\left(n+\sum_{k=1}^{\frac{p-1}{2}}\left\lfloor \frac{ka}{p}\right\rfloor \right)+\sum_{i=1}^{n}s_{i}+\sum_{j=1}^{m}r_{j}
+\end{align*}
+
+
+\end_inset
+וגם:
+\begin_inset Formula
+\[
+\sum_{k=1}^{\frac{p-1}{2}}k=\sum_{i=1}^{n}\left(-s_{i}\right)+\sum_{j=1}^{m}r_{j}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow\left(a-1\right)\cdot\sum_{k=1}^{\frac{p-1}{2}}k=\sum_{k=1}^{\frac{p-1}{2}}ka-\sum_{k=1}^{\frac{p-1}{2}}k=p\cdot\left(n+\sum_{k=1}^{\frac{p-1}{2}}\left\lfloor \frac{ka}{p}\right\rfloor \right)+2\cdot\sum_{i=1}^{n}s_{i}
+\]
+
+
+\end_inset
+אבל:
+\begin_inset Formula
+\[
+\sum_{k=1}^{\frac{p-1}{2}}k=\frac{\left(p-1\right)\left(\frac{p-1}{2}+1\right)}{4}=\frac{\left(p-1\right)\cdot\frac{p+1}{2}}{4}=\frac{p^{2}-1}{8}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow\left(a-1\right)\cdot\frac{p^{2}-1}{8}=p\cdot\left(n+\sum_{k=1}^{\frac{p-1}{2}}\left\lfloor \frac{ka}{p}\right\rfloor \right)+2\cdot\sum_{i=1}^{n}s_{i}
+\]
+
+
+\end_inset
+ומכאן נובע כי (נזכור ש-
+\begin_inset Formula
+$p$
+\end_inset
+ ו-
+\begin_inset Formula
+$a$
+\end_inset
+ אי-זוגיים):
+\begin_inset Formula
+\[
+0\equiv\left(a-1\right)\cdot\frac{p^{2}-1}{8}\equiv p\cdot\left(n+\sum_{k=1}^{\frac{p-1}{2}}\left\lfloor \frac{ka}{p}\right\rfloor \right)\equiv n+\sum_{k=1}^{\frac{p-1}{2}}\left\lfloor \frac{ka}{p}\right\rfloor \mod 2
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow t=\sum_{k=1}^{\frac{p-1}{2}}\left\lfloor \frac{ka}{p}\right\rfloor \equiv n\mod 2\\
+ & \Rightarrow\left(-1\right)^{t}\equiv\left(-1\right)^{n}\mod 2
+\end{align*}
+
+
+\end_inset
+ולכן ע"פ הלמה של גאוס מתקיים:
+\begin_inset Formula
+\[
+\left(-1\right)^{t}=\left(-1\right)^{n}=\left(\begin{array}{c}
+a\\
+\hline p
+\end{array}\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ אם במקום להשתמש בעובדה ש-
+\begin_inset Formula
+$a$
+\end_inset
+ אי-זוגי היינו מניחים ש-
+\begin_inset Formula
+$a=2$
+\end_inset
+ אז היינו מקבלים שמתקיים:
+\begin_inset Formula
+\[
+\frac{p^{2}-1}{8}=\left(a-1\right)\cdot\frac{p^{2}-1}{8}\equiv p\cdot\left(n+\sum_{k=1}^{\frac{p-1}{2}}\left\lfloor \frac{ka}{p}\right\rfloor \right)\equiv n+\sum_{k=1}^{\frac{p-1}{2}}\left\lfloor \frac{ka}{p}\right\rfloor \mod 2
+\]
+
+
+\end_inset
+והיות שלכל 
+\begin_inset Formula
+$\frac{p-1}{2}\geq k\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left\lfloor \frac{2k}{p}\right\rfloor =0$
+\end_inset
+ היה נובע מזה שמתקיים:
+\begin_inset Formula
+\[
+\frac{p^{2}-1}{8}\equiv n\mod 2
+\]
+
+
+\end_inset
+ומממילא 
+\begin_inset Formula
+$\left(-1\right)^{\frac{p^{2}-1}{8}}=\left(-1\right)^{n}$
+\end_inset
+ ולכן גם:
+\begin_inset Formula
+\[
+\left(\begin{array}{c}
+2\\
+\hline p
+\end{array}\right)=\left(-1\right)^{\frac{p^{2}-1}{8}}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+חוק ההדדיות הריבועית
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$2<p,q\in\MKprime$
+\end_inset
+ שונים זה מזה, מתקיים:
+\begin_inset Formula
+\[
+\left(\begin{array}{c}
+q\\
+\hline p
+\end{array}\right)\cdot\left(\begin{array}{c}
+p\\
+\hline q
+\end{array}\right)=\left(-1\right)^{\frac{p-1}{2}\cdot\frac{q-1}{2}}
+\]
+
+
+\end_inset
+או בעברית פשוטה:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$p\equiv1\mod 4$
+\end_inset
+ ו/או 
+\begin_inset Formula
+$q\equiv1\mod 4$
+\end_inset
+ אז 
+\begin_inset Formula
+$p$
+\end_inset
+ הוא שארית ריבועית מודולו 
+\begin_inset Formula
+$q$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$q$
+\end_inset
+ הוא שארית ריבועית מודולו 
+\begin_inset Formula
+$p$
+\end_inset
+ (כלומר סימני לז'נדר שלהם זהים).
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$p\equiv q\equiv3\mod 4$
+\end_inset
+ אז 
+\begin_inset Formula
+$p$
+\end_inset
+ הוא שארית ריבועית מודולו 
+\begin_inset Formula
+$q$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$q$
+\end_inset
+ 
+\shape italic
+אינו
+\shape default
+ שארית ריבועית מודולו 
+\begin_inset Formula
+$p$
+\end_inset
+ (כלומר סימני לז'נדר שלהם מנוגדים).
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ חוק ההדדיות הריבועית, הכפליות של סמל לז'נדר והעובדה שמהגדרה סמל לז'נדר עובד לפי המודולוס
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר אם מספר כלשהו הוא שארית ריבועית אז כל מספר אחר ששקול לו לפי המודולוס גם הוא שארית ריבועית באותו מודולוס.
+\end_layout
+
+\end_inset
+ מאפשרים לנו לבדוק את מספר שלם כלשהו הוא שארית ריבועית במהירות רבה ע"י השלבים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם המספר שנמצא בחלק העליון של הסמל גדול מהתחתון אז כותבים אותו מודולו התחתון.
+\end_layout
+
+\begin_layout Enumerate
+אם הוא אינו ראשוני אז מפרקים אותו לראשוניים וכותבים את סמל לז'נדר כמכפלה של כל אחת מהחזקות בנפרד.
+\end_layout
+
+\begin_layout Enumerate
+מחזקות זוגיות ניתן להתעלם ולחזקות אי-זוגיות ניתן להתייחס כהעלקה בחזקת 
+\begin_inset Formula
+$1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+כעת כל המספרים בסמלים הם ראשוניים וניתן להשתמש במשפט ההדדיות הריבועית - אם אחד מהראשוניים שקול ל-
+\begin_inset Formula
+$1$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$4$
+\end_inset
+ ניתן "להפוך" את הסמל ללא שינוי נוסף, אחרת יש להוסיף סימן מינוס בחוץ.
+\end_layout
+
+\begin_layout Enumerate
+חוזרים על ארבעת השלבים הקודמים עבור כל אחד מהסמלים במכפלה, המספרים הולכים וקטנים במהירות עד שניתן לבדוק ישירות את סמלי לז'נדר הנותרים באופן ישיר, בנוסף התהליך הזה ייעצר רק כאשר בחלק העליון של הסמל יופיע הראשוני 
+\begin_inset Formula
+$2$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+סמל לז'נדר אינו מוגדר עבורו ולכן א"א "להפוך" את הסמל כשמגיעים אליו.
+\end_layout
+
+\end_inset
+ ואז ניתן להשתמש במסקנה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 4.7"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Proof
+נתבונן בשריג
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+דמיינו את הקבוצה כאוסף נקודות במישור הנמצאות בהצטלבויות של קווי האורך והרוחב השלמים.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\[
+L:=\left\{ \left(x,y\right)\in\MKinteger^{2}\mid0<x\leq\frac{q-1}{2},\ 0<y\leq\frac{p-1}{2}\right\} 
+\]
+
+
+\end_inset
+מהגדרה מתקיים 
+\begin_inset Formula
+$\left|L\right|=\frac{q-1}{2}\cdot\frac{p-1}{2}$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נסמן:
+\begin_inset Formula
+\begin{align*}
+L_{1} & :=\left\{ \left(x,y\right)\in L\mid\frac{p}{q}\cdot x\geq y\right\} \\
+L_{2} & :=\left\{ \left(x,y\right)\in L\mid\frac{p}{q}\cdot x\leq y\right\} 
+\end{align*}
+
+
+\end_inset
+מהגדרה מתקיים 
+\begin_inset Formula
+$L=L_{1}\cup L_{2}$
+\end_inset
+, אך יתרה מזאת זהו איחוד זר מפני שלו הייתה קיימת נקודה 
+\begin_inset Formula
+$\left(x,y\right)\in L$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\frac{p}{q}\cdot x=y$
+\end_inset
+ היינו מקבלים ש-
+\begin_inset Formula
+$q\mid x$
+\end_inset
+ בסתירה לכך ש-
+\begin_inset Formula
+$0<x\leq\frac{q-1}{2}$
+\end_inset
+; א"כ מתקיים 
+\begin_inset Formula
+$\left|L\right|=\left|L_{1}\right|+\left|L_{2}\right|$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$\frac{p-1}{2}\geq i\in\MKnatural$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$\frac{q-1}{2}\geq j\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+\left|\left\{ \left(x,y\right)\in L_{1}\mid y=i\right\} \right| & =\left\lfloor \frac{i\cdot q}{p}\right\rfloor \\
+\left|\left\{ \left(x,y\right)\in L_{2}\mid x=j\right\} \right| & =\left\lfloor \frac{j\cdot p}{q}\right\rfloor 
+\end{align*}
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+\Rightarrow t_{2}:=\left|L_{2}\right| & =\sum_{i=1}^{\frac{p-1}{2}}\left\lfloor \frac{i\cdot q}{p}\right\rfloor \\
+\Rightarrow t_{1}:=\left|L_{1}\right| & =\sum_{j=1}^{\frac{q-1}{2}}\left\lfloor \frac{j\cdot p}{q}\right\rfloor 
+\end{align*}
+
+
+\end_inset
+נזכור שע"פ הלמה האחרונה (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 4.8"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+) מתקיים:
+\begin_inset Formula
+\begin{align*}
+\left(\begin{array}{c}
+q\\
+\hline p
+\end{array}\right) & =\left(-1\right)^{t_{2}}\\
+\left(\begin{array}{c}
+p\\
+\hline q
+\end{array}\right) & =\left(-1\right)^{t_{1}}
+\end{align*}
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+\Rightarrow\left(\begin{array}{c}
+q\\
+\hline p
+\end{array}\right)\cdot\left(\begin{array}{c}
+p\\
+\hline q
+\end{array}\right) & =\left(-1\right)^{t_{2}+t_{1}}=\left(-1\right)^{\left|L_{2}\right|+\left|L_{1}\right|}\\
+ & =\left(-1\right)^{\left|L\right|}=\left(-1\right)^{\frac{p-1}{2}\cdot\frac{q-1}{2}}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$2<p\in\MKprime$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ שארית ריבועית שונה מאפס מודולו 
+\begin_inset Formula
+$p$
+\end_inset
+, 
+\begin_inset Formula
+$a$
+\end_inset
+ הוא שארית ריבועית מודולו 
+\begin_inset Formula
+$p^{k}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$k\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כדי להוכיח את הטענה נמיר השאלה אם 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ הוא שארית ריבועית מודולו 
+\begin_inset Formula
+$p^{k}$
+\end_inset
+ כאשר 
+\begin_inset Formula
+$p$
+\end_inset
+ ראשוני בשאלה אם יש לפולינום 
+\begin_inset Formula
+$x^{2}-a$
+\end_inset
+ שורש מודולו 
+\begin_inset Formula
+$p$
+\end_inset
+ ואז נשתמש בלמה של הנזל
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+הנגזרת (
+\begin_inset Formula
+$2x$
+\end_inset
+) לעולם לא תתאפס מפני ש-
+\begin_inset Formula
+$2$
+\end_inset
+ זר ל-
+\begin_inset Formula
+$p^{e}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$e\in\MKnatural$
+\end_inset
+ ואם 
+\begin_inset Formula
+$s^{2}\equiv a\mod p^{e}$
+\end_inset
+ עבור 
+\begin_inset Formula
+$e\in\MKnatural$
+\end_inset
+ כלשהו אז העובדה ש-
+\begin_inset Formula
+$a$
+\end_inset
+ זר ל-
+\begin_inset Formula
+$p^{e}$
+\end_inset
+ מחייבת שגם 
+\begin_inset Formula
+$s$
+\end_inset
+ זר ל-
+\begin_inset Formula
+$p^{e}$
+\end_inset
+.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ממסקנה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 1.15"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ נובע שאם מספר 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ הוא שארית ריבועית מודולו 
+\begin_inset Formula
+$p$
+\end_inset
+ ראשוני לכל ראשוני המופיע בפירוק של מספר 
+\begin_inset Formula
+$1<N\in\MKnatural$
+\end_inset
+ אז הוא גם שארית ריבועית מודולו 
+\begin_inset Formula
+$N$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מה קורה כאשר מדובר במעריך גדול מ-
+\begin_inset Formula
+$2$
+\end_inset
+? בכיתה עסקנו רק במקרים שבהם המעריך הוא ראשוני (בטענה הבאה).
+\end_layout
+
+\begin_layout Claim
+יהיו 
+\begin_inset Formula
+$2<p,q\in\MKprime$
+\end_inset
+ ו-
+\begin_inset Formula
+$a\in\left(\MKinteger/p\MKinteger\right)^{*}$
+\end_inset
+, נתבונן בקונגרואנציה 
+\begin_inset Formula
+$x^{q}\equiv a\mod p$
+\end_inset
+;
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$p=q$
+\end_inset
+ אז ע"פ המשפט הקטן של פרמה יש לקונגרואנציה פתרון יחיד והוא 
+\begin_inset Formula
+$a$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$p\not\equiv1\mod q$
+\end_inset
+ אז 
+\begin_inset Formula
+$q$
+\end_inset
+ זר ל-
+\begin_inset Formula
+$p-1$
+\end_inset
+ ולכן יש לו הופכי מודולו 
+\begin_inset Formula
+$p-1$
+\end_inset
+ ומהמשפט הקטן של פרמה נקבל שקיים פתרון יחיד והוא 
+\begin_inset Formula
+$a^{q^{-1}}$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כאשר 
+\begin_inset Formula
+$q^{-1}$
+\end_inset
+ הוא ההופכי של 
+\begin_inset Formula
+$q$
+\end_inset
+ מודולו 
+\begin_inset Formula
+$p-1$
+\end_inset
+.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$p\equiv1\mod q$
+\end_inset
+ נסמן ב-
+\begin_inset Formula
+$g$
+\end_inset
+ שורש פרימיטיבי של 
+\begin_inset Formula
+$p$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$m\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a\equiv g^{m}\mod p$
+\end_inset
+, כעת יש לקונגרואנציה פתרון אם"ם 
+\begin_inset Formula
+$q\mid m$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+נשים לב שיחס החלוקה הזה מוגדר היטב מפני ש-
+\begin_inset Formula
+$q\mid p-1$
+\end_inset
+.
+\end_layout
+
+\end_inset
+ ואז קבוצת הפתרונות היא:
+\begin_inset Formula
+\[
+\left\{ g^{\frac{m}{q}+k\cdot\frac{p-1}{q}}\mid q>k\in\MKnatural_{0}\right\} 
+\]
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\end_body
+
+\end_document
+

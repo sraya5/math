@@ -1,0 +1,7152 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The head's design for summuries,make the layout more similar to abook:
+\AtBeginDocument{
+\renewcommand\headrule{%
+  \kern -7pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+  \kern 10pt
+}}
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Correct the reversed parentheses in labels:
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\newfontfamily{\hebrewfont}{David}
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+
+\end_preamble
+
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+customHeadersFooters
+\end_modules
+
+\maintain_unincluded_children false
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+
+
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size      Larger
+	  Series     Bold
+	EndFont
+End
+
+
+Style Solution
+
+	LabelString           "פתרון: "End
+
+
+Style Notation
+
+	LabelString           "סימון  \thetheorem: "End
+
+Style Theorem
+
+	LabelString           "משפט \thetheorem: "End
+
+Style Property
+
+	LabelString           "תזכורת: "End
+
+\end_local_layout
+
+\language hebrew
+
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\boxbgcolor #cccccc
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+
+\tocdepth 3
+
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "C:/Users/sraya/AppData/Roaming/LyX2.4/macros/MKmacros.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Right Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+leftmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Left Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+התחלקות
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Center Footer
+
+\end_layout
+
+\begin_layout Title
+
+\series bold
+\size huge
+התחלקות
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+יחס החלוקה
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+יהיו 
+\begin_inset Formula
+$a,b\in\MKinteger$
+\end_inset
+, נאמר ש-
+\begin_inset Formula
+$a$
+\end_inset
+ 
+\bar under
+מחלק
+\bar default
+ את 
+\begin_inset Formula
+$b$
+\end_inset
+ (או ש-
+\begin_inset Formula
+$b$
+\end_inset
+ הוא 
+\bar under
+כפולה
+\bar default
+ של 
+\begin_inset Formula
+$a$
+\end_inset
+) ונסמן 
+\begin_inset Formula
+$a\mid b$
+\end_inset
+ אם קיים 
+\begin_inset Formula
+$q\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$b=a\cdot q$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מהגדרה נובע שאם 
+\begin_inset Formula
+$a\mid b$
+\end_inset
+ אז 
+\begin_inset Formula
+$a\neq0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem*
+יהיו 
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{n}\in\MKinteger$
+\end_inset
+, מתקיימים שני הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם קיים 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a_{i}\neq0$
+\end_inset
+ אז קיים 
+\begin_inset Formula
+$d\in\MKnatural$
+\end_inset
+ יחיד כך ש-
+\begin_inset Formula
+$d\mid a_{i}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ ובנוסף לכל 
+\begin_inset Formula
+$q\in\MKinteger$
+\end_inset
+ המחלק את כולם (
+\begin_inset Formula
+$q\mid a_{i}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+) מתקיים 
+\begin_inset Formula
+$q\mid d$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$a_{i}\neq0$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ אז קיים 
+\begin_inset Formula
+$l\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a_{i}\mid l$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ ובנוסף לכל 
+\begin_inset Formula
+$m\in\MKinteger$
+\end_inset
+ המתחלק בכולם (
+\begin_inset Formula
+$a_{i}\mid m$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+) מתקיים 
+\begin_inset Formula
+$l\mid m$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Definition
+\series bold
+מחלק משותף מקסימלי וכפולה משותפת מינימלית
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{n}\in\MKinteger$
+\end_inset
+,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם קיים 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a_{i}\neq0$
+\end_inset
+ אז נסמן ב-
+\begin_inset Formula
+$\gcd\left(a_{1},a_{2},\ldots,a_{n}\right)$
+\end_inset
+ את אותו 
+\begin_inset Formula
+$d$
+\end_inset
+ יחיד שמקיים את התנאים במשפט שלעיל, ונקרא לו 
+\bar under
+המחלק המשותף המקסימלי
+\bar default
+ של 
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$a_{i}\neq0$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ אז נסמן ב-
+\begin_inset Formula
+$\MKlcm\left(a_{1},a_{2},\ldots,a_{n}\right)$
+\end_inset
+ את אותו 
+\begin_inset Formula
+$m$
+\end_inset
+ יחיד שמקיים את התנאים במשפט שלעיל ונקרא לו 
+\bar under
+הכפולה המשותפת המינימלית
+\bar default
+ של 
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{n}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הגדרות שקולות ל-
+\begin_inset Formula
+$\gcd$
+\end_inset
+ ול-
+\begin_inset Formula
+$\MKlcm$
+\end_inset
+ הן:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+המחלק המשותף המקסימלי הוא הטבעי הגדול ביותר שמחלק את 
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+הכפולה המשותפת המינימלית היא הטבעי הקטן ביותר שמתחלק ב-
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+הסיבה להגדרה דווקא בצורה הנ"ל היא שהגדרה זו תופסת בכל חוג חילופי
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+חוג חילופי (קומוטטיבי) הוא קבוצה שעליה מוגדרות פעולות חיבור וכפל המקיימת את כל אקסיומות השדה מלבד קיום הופכי.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Definition
+יהיו 
+\begin_inset Formula
+$a,b\in\MKinteger$
+\end_inset
+, נאמר ש-
+\begin_inset Formula
+$a$
+\end_inset
+ ו-
+\begin_inset Formula
+$b$
+\end_inset
+ 
+\bar under
+זרים זה לזה
+\bar default
+ אם 
+\begin_inset Formula
+$\gcd\left(a,b\right)=1$
+\end_inset
+ (לפעמים אומרים גם "
+\bar under
+ראשוניים זה ביחס לזה
+\bar default
+", אנחנו לא נעשה זאת בגלל הבלבול עם הראשוניים).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+יהיו 
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{n}\in\MKinteger$
+\end_inset
+, נאמר שהם 
+\bar under
+זרים זה לזה בזוגות
+\bar default
+ אם 
+\begin_inset Formula
+$\gcd\left(a_{i},a_{j}\right)$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i,j\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$i\neq j$
+\end_inset
+.
+\end_layout
+
+\begin_layout Description
+סימון: לכל 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ נסמן 
+\begin_inset Formula
+$\left(a\right):=a\cdot\MKinteger$
+\end_inset
+ (כזכור 
+\begin_inset Formula
+$a\cdot\MKinteger:=\left\{ a\cdot q\mid q\in\MKinteger\right\} $
+\end_inset
+), כלומר 
+\begin_inset Formula
+$\left(a\right)$
+\end_inset
+ היא קבוצת כל הכפולות של 
+\begin_inset Formula
+$a$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+\series bold
+אידיאל
+\series default
+
+\begin_inset Newline newline
+\end_inset
+קבוצה 
+\begin_inset Formula
+$I\subseteq\MKinteger$
+\end_inset
+ תקרא 
+\bar under
+אידיאל
+\bar default
+ אם מתקיימים שלושת התנאים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$0\in I$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$a,b\in I$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a+b\in I$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$a\in I$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$q\in\MKinteger$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$q\cdot a\in I$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ זוהי ההגדרה של אידיאל בכל חוג חילופי, בחוג השלמים ניתן היה להסתפק בסגירות לחיבור ולחיסור מפני שניתן להמיר כל כפל שלמים לחיבור וחיסור
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+לעומת זאת אין שום אפשרות להמרת כפל רציונליים בחיבור וזו הסיבה לכך שנזקקנו לשתי פעולות בשדה.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 1.1"
+\end_inset
+יהיו 
+\begin_inset Formula
+$a,b,c\in\MKinteger$
+\end_inset
+, מתקיימים כל הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$a\mid b$
+\end_inset
+ אז גם 
+\begin_inset Formula
+$-a\mid b$
+\end_inset
+ וגם 
+\begin_inset Formula
+$a\mid-b$
+\end_inset
+ (ולכן גם 
+\begin_inset Formula
+$-a\mid-b$
+\end_inset
+).
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$a\mid b$
+\end_inset
+ ו-
+\begin_inset Formula
+$b\neq0$
+\end_inset
+ אז 
+\begin_inset Formula
+$\left|a\right|\leq\left|b\right|$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$a\mid b$
+\end_inset
+ אז 
+\begin_inset Formula
+$a\mid bq$
+\end_inset
+ לכל 
+\begin_inset Formula
+$q\in\MKinteger$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$a\mid b$
+\end_inset
+ וגם 
+\begin_inset Formula
+$a\mid c$
+\end_inset
+ אז 
+\begin_inset Formula
+$a\mid b+c$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$a\mid b$
+\end_inset
+ וגם 
+\begin_inset Formula
+$a\mid c$
+\end_inset
+ אז 
+\begin_inset Formula
+$a\mid bx+cy$
+\end_inset
+ לכל 
+\begin_inset Formula
+$x,y\in\MKinteger$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+יחס החלוקה הוא טרנזיטיבי, כלומר אם 
+\begin_inset Formula
+$a\mid b$
+\end_inset
+ וגם 
+\begin_inset Formula
+$b\mid c$
+\end_inset
+ אז 
+\begin_inset Formula
+$a\mid c$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+מתקיים 
+\begin_inset Formula
+$a\mid b$
+\end_inset
+ וגם 
+\begin_inset Formula
+$b\mid a$
+\end_inset
+ אם"ם מתקיים 
+\begin_inset Formula
+$a=\pm b$
+\end_inset
+ (או 
+\begin_inset Formula
+$\left|a\right|=\left|b\right|$
+\end_inset
+).
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$0\neq m\in\MKinteger$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a\mid b$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$ma\mid mb$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בגלל סעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+משפטים רבים שננסח עבור הטבעיים יהיו נכונים על השלמים בשינויים הקלים המתבקשים.
+\end_layout
+
+\begin_layout Claim
+יהיו 
+\begin_inset Formula
+$a,b\in\MKinteger$
+\end_inset
+, 
+\begin_inset Formula
+$a$
+\end_inset
+ מחלק את 
+\begin_inset Formula
+$b$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$\left(b\right)\subseteq\left(a\right)$
+\end_inset
+ ומתקיים שוויון בין 
+\begin_inset Formula
+$\left(a\right)$
+\end_inset
+ ל-
+\begin_inset Formula
+$\left(b\right)$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$a=\pm b$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+חילוק עם שארית
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$a,b\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$0<a$
+\end_inset
+ (כלומר 
+\begin_inset Formula
+$a\in\MKnatural$
+\end_inset
+), קיימים ויחידים 
+\begin_inset Formula
+$q,r\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$0\leq r<a$
+\end_inset
+ וגם 
+\begin_inset Formula
+$b=q\cdot a+r$
+\end_inset
+; בנוסף 
+\begin_inset Formula
+$a\mid b$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$r=0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ 
+\begin_inset Formula
+$r$
+\end_inset
+ זה נקרא 
+\bar under
+השארית
+\bar default
+ של חלוקת 
+\begin_inset Formula
+$b$
+\end_inset
+ ב-
+\begin_inset Formula
+$a$
+\end_inset
+ ו-
+\begin_inset Formula
+$q$
+\end_inset
+ נקרא 
+\bar under
+המנה
+\bar default
+ של חלוקה זו.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ יש לשים לב לכך ש-
+\begin_inset Formula
+$r$
+\end_inset
+ אי-שלילי ולכן השארית של חלוקת 
+\begin_inset Formula
+$-8$
+\end_inset
+ ב-
+\begin_inset Formula
+$3$
+\end_inset
+ היא 
+\begin_inset Formula
+$1$
+\end_inset
+ ולא 
+\begin_inset Formula
+$-2$
+\end_inset
+ כפי שניתן היה לחשוב.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ לא בכל חוג קיימת חלוקה עם שארית, זהו הבדל מהותי בין חוג השלמים לחוגים אחרים, כך למשל השקילות בין אי-פריקות לראשוניות (שנגיע אליה בהמשך) נובעת ממשפט זה.
+\end_layout
+
+\begin_layout Proof
+נסמן 
+\begin_inset Formula
+$q:=\max\left\{ i\in\MKinteger\mid i\cdot a\leq b\right\} $
+\end_inset
+ ו-
+\begin_inset Formula
+$r:=b-q\cdot a$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מהגדרה מתקיים 
+\begin_inset Formula
+$q\cdot a+a=\left(q+1\right)\cdot a>b$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$a>b-q\cdot a=r$
+\end_inset
+, כמו כן מהגדרה מתקיים 
+\begin_inset Formula
+$r=b-q\cdot a\geq0$
+\end_inset
+ ולכן 
+\begin_inset Formula
+$r$
+\end_inset
+ עומד בדרישות; כמובן שמתקיים:
+\begin_inset Formula
+\[
+b=q\cdot a+r
+\]
+
+
+\end_inset
+א"כ הוכחנו את הקיום, נוכיח כעת את היחידות.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$q',r'\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$0\leq r'<a$
+\end_inset
+ וגם 
+\begin_inset Formula
+$b=q'\cdot a+r'$
+\end_inset
+,
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow q'\cdot a+r'=q\cdot a+r\\
+ & \Rightarrow\left(q'-q\right)\cdot a+\left(r'-r\right)=0
+\end{align*}
+
+
+\end_inset
+אבל בהכרח מתקיים 
+\begin_inset Formula
+$\left|r'-r\right|<a$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$r'-r=0$
+\end_inset
+ וממילא גם 
+\begin_inset Formula
+$q'-q=0$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$r'=r$
+\end_inset
+ ו-
+\begin_inset Formula
+$q'=q$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+יהיו 
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{n}\in\MKinteger$
+\end_inset
+, מתקיימים שני הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם קיים 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a_{i}\neq0$
+\end_inset
+ אז קיים 
+\begin_inset Formula
+$d\in\MKnatural$
+\end_inset
+ יחיד כך ש-
+\begin_inset Formula
+$d\mid a_{i}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ ובנוסף לכל 
+\begin_inset Formula
+$q\in\MKinteger$
+\end_inset
+ המחלק את כולם (
+\begin_inset Formula
+$q\mid a_{i}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+) מתקיים 
+\begin_inset Formula
+$q\mid d$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$a_{i}\neq0$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ אז קיים 
+\begin_inset Formula
+$l\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a_{i}\mid l$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ ובנוסף לכל 
+\begin_inset Formula
+$m\in\MKinteger$
+\end_inset
+ המתחלק בכולם (
+\begin_inset Formula
+$a_{i}\mid m$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+) מתקיים 
+\begin_inset Formula
+$l\mid m$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$I\subseteq\MKinteger$
+\end_inset
+ אידיאל, קיים 
+\begin_inset Formula
+$a\in\MKnatural_{0}$
+\end_inset
+ יחיד כך ש-
+\begin_inset Formula
+$I=\left(a\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+אם 
+\begin_inset Formula
+$I=\left\{ 0\right\} $
+\end_inset
+ אז ודאי ש-
+\begin_inset Formula
+$I=\left(0\right)$
+\end_inset
+ ולא קיים 
+\begin_inset Formula
+$0\neq a\in\MKnatural_{0}$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left(a\right)=I$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+א"כ נניח ש-
+\begin_inset Formula
+$I\neq\left\{ 0\right\} $
+\end_inset
+ ונסמן 
+\begin_inset Formula
+$a:=\min\left\{ i\in I\mid i>0\right\} $
+\end_inset
+ (מהגדרה 
+\begin_inset Formula
+$\left(a\right)\subseteq I$
+\end_inset
+).
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$b\in I$
+\end_inset
+, נחלק את 
+\begin_inset Formula
+$b$
+\end_inset
+ ב-
+\begin_inset Formula
+$a$
+\end_inset
+ עם שארית: יהיו 
+\begin_inset Formula
+$q,r\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$0\leq r<a$
+\end_inset
+ וגם 
+\begin_inset Formula
+$b=q\cdot a+r$
+\end_inset
+; 
+\begin_inset Formula
+$I$
+\end_inset
+ סגור לכפל בכל שלם ולכן 
+\begin_inset Formula
+$-q\cdot a\in I$
+\end_inset
+, 
+\begin_inset Formula
+$I$
+\end_inset
+ סגור גם לחיבור ולכן 
+\begin_inset Formula
+$r=b-q\cdot a\in I$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מהמינימליות של 
+\begin_inset Formula
+$a$
+\end_inset
+ נובע ש-
+\begin_inset Formula
+$r=0$
+\end_inset
+ (אחרת 
+\begin_inset Formula
+$0<r$
+\end_inset
+ בסתירה לכך ש-
+\begin_inset Formula
+$a$
+\end_inset
+ הוא החיובי הקטן ביותר שנמצא ב-
+\begin_inset Formula
+$I$
+\end_inset
+) ולכן 
+\begin_inset Formula
+$a\mid b$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$b\in\left(a\right)$
+\end_inset
+; 
+\begin_inset Formula
+$b$
+\end_inset
+ הנ"ל היה שרירותי ומכאן ש-
+\begin_inset Formula
+$I\subseteq\left(a\right)$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$\left(a\right)=I$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+היחידות נובעת גם היא מהמינימליות של 
+\begin_inset Formula
+$a$
+\end_inset
+: לכל 
+\begin_inset Formula
+$a<c\in\MKnatural_{0}$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a\notin\left(c\right)$
+\end_inset
+ למרות ש-
+\begin_inset Formula
+$a\in I$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ 
+\begin_inset Formula
+$a$
+\end_inset
+ זה נקרא 
+\bar under
+היוצר
+\bar default
+ של האידיאל והוא החיובי הקטן ביותר ששייך לאידיאל.
+\end_layout
+
+\begin_layout Theorem
+לכל 
+\begin_inset Formula
+$a,b\in\MKinteger$
+\end_inset
+ כך שלפחות אחד מהם שונה מאפס היוצר של האידיאל 
+\begin_inset Formula
+$\left\{ x\cdot a+y\cdot b\mid x,y\in\MKinteger\right\} $
+\end_inset
+ הוא 
+\begin_inset Formula
+$\gcd\left(a,b\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כלומר לכל 
+\begin_inset Formula
+$d\in\MKinteger$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$d=\gcd\left(a,b\right)$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$\left(d\right)=\left\{ x\cdot a+y\cdot b\mid x,y\in\MKinteger\right\} $
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מכאן נובע שניתן להציג את ה-
+\begin_inset Formula
+$\gcd$
+\end_inset
+ כצר"ל של 
+\begin_inset Formula
+$a$
+\end_inset
+ ו-
+\begin_inset Formula
+$b$
+\end_inset
+ ושהוא המספר החיובי הקטן ביותר שניתן להציגו כך.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ לאפשרות להציג את ה-
+\begin_inset Formula
+$\gcd$
+\end_inset
+ כצר"ל של 
+\begin_inset Formula
+$a$
+\end_inset
+ ו-
+\begin_inset Formula
+$b$
+\end_inset
+ ישנה חשיבות רבה בחשבון מודולרי: אם 
+\begin_inset Formula
+$a$
+\end_inset
+ ו-
+\begin_inset Formula
+$b$
+\end_inset
+ זרים אז קיימים 
+\begin_inset Formula
+$x,y\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$1=x\cdot a+y\cdot b$
+\end_inset
+ ומכאן שלכל 
+\begin_inset Formula
+$b>c,d\in\MKnatural_{0}$
+\end_inset
+ קיים 
+\begin_inset Formula
+$x'\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$c\equiv d+x'\cdot a\mod b$
+\end_inset
+ שהרי מתקיים 
+\begin_inset Formula
+$x\cdot a=1-y\cdot b$
+\end_inset
+ ומכאן שגם:
+\begin_inset Formula
+\[
+d+\left(c-d\right)\cdot x\cdot a\equiv d+\left(c-d\right)\cdot\left(1-y\cdot b\right)\equiv d+c-d-\left(c-d\right)\cdot y\cdot b\equiv c\mod b
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 1.7"
+\end_inset
+יהיו 
+\begin_inset Formula
+$a,b\in\MKinteger$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$\gcd\left(a,b\right)=\gcd\left(b,a\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$m\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$m\cdot\gcd\left(a,b\right)=\gcd\left(ma,mb\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם קיים 
+\begin_inset Formula
+$d\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$d\mid a,b$
+\end_inset
+ אז אותו 
+\begin_inset Formula
+$d$
+\end_inset
+ מקיים 
+\begin_inset Formula
+$\gcd\left(\frac{a}{d},\frac{b}{d}\right)=\frac{1}{d}\cdot\gcd\left(a,b\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$x\in\MKinteger$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\gcd\left(a,b\right)=\gcd\left(a,b+ax\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם קיים 
+\begin_inset Formula
+$c\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$c\mid ab$
+\end_inset
+ וגם 
+\begin_inset Formula
+$\gcd\left(b,c\right)=1$
+\end_inset
+ אז 
+\begin_inset Formula
+$c\mid a$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+אלגוריתם אוקלידס
+\end_layout
+
+\begin_layout Standard
+יהיו 
+\begin_inset Formula
+$n,m\in\MKinteger$
+\end_inset
+ כך שלפחות אחד מהם שונה מאפס, נרצה למצוא את 
+\begin_inset Formula
+$\gcd\left(n,m\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+כפי שראינו בטענה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.1"
+plural false
+caps false
+noprefix false
+\end_inset
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+המחלקים של מספר שלם ואלו של הנגדי שלו הם אותם מחלקים ולכן הסימן אינו משנה עבור מציאת ה-
+\begin_inset Formula
+$\gcd$
+\end_inset
+, א"כ נגדיר 
+\begin_inset Formula
+$r_{0}=\left|n\right|$
+\end_inset
+ ו-
+\begin_inset Formula
+$r_{1}=\left|m\right|$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כדאי להגדיר את 
+\begin_inset Formula
+$r_{0}$
+\end_inset
+ להיות בעל הערך המוחלט הגדול מבין השניים משום שבשלב הראשון של האלגוריתם נחלק את 
+\begin_inset Formula
+$r_{0}$
+\end_inset
+ ב-
+\begin_inset Formula
+$r_{1}$
+\end_inset
+ עם שארית.
+\end_layout
+
+\end_inset
+ ונמצא את 
+\begin_inset Formula
+$\gcd\left(r_{0},r_{1}\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+לאלגוריתם ישנן שתי גרסאות: האלגוריתם הבסיסי והאלגוריתם המורחב, להלן הפירוט של שניהם בפסאודו-קוד.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+\begin_layout Plain Layout
+אלגוריתם אוקלידס הבסיסי
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+נגדיר 
+\begin_inset Formula
+$i:=0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Plain Layout
+כל עוד 
+\begin_inset Formula
+$r_{i+1}\neq0$
+\end_inset
+:
+\end_layout
+
+\begin_layout Itemize
+נחלק את 
+\begin_inset Formula
+$r_{i}$
+\end_inset
+ ב-
+\begin_inset Formula
+$r_{i+1}$
+\end_inset
+ עם שארית, נסמן ב-
+\begin_inset Formula
+$q_{i}$
+\end_inset
+ את המנה וב-
+\begin_inset Formula
+$r_{i+2}$
+\end_inset
+ את השארית (כלומר יהיו 
+\begin_inset Formula
+$q_{i},r_{i+2}\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$0\leq r_{i+2}<r_{i+1}$
+\end_inset
+ וגם 
+\begin_inset Formula
+$r_{i}=r_{i+1}\cdot q_{i}+r_{i+2}$
+\end_inset
+).
+\end_layout
+
+\begin_layout Itemize
+נגדיר את 
+\begin_inset Formula
+$i$
+\end_inset
+ להיות 
+\begin_inset Formula
+$i+1$
+\end_inset
+ ונעבור לשלב הבא בלולאה.
+\end_layout
+
+\begin_layout Plain Layout
+כעת מתקיים 
+\begin_inset Formula
+$r_{i+1}=0$
+\end_inset
+, א"כ מתקיים 
+\begin_inset Formula
+$r_{i}=\gcd\left(n,m\right)$
+\end_inset
+ ולכן נחזיר את 
+\begin_inset Formula
+$r_{i}$
+\end_inset
+ ונסיים.
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+\begin_layout Plain Layout
+אלגוריתם אוקלידס המורחב
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+נגדיר 
+\begin_inset Formula
+$i:=0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Plain Layout
+נגדיר 
+\begin_inset Formula
+${\color{red}a_{-1}:=0}$
+\end_inset
+ ו-
+\begin_inset Formula
+${\color{blue}b_{-1}:=1}$
+\end_inset
+ ומכאן שמתקיים:
+\begin_inset Formula
+\[
+r_{1}={\color{red}a_{-1}}\cdot r_{0}+{\color{blue}b_{-1}}\cdot r_{1}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+כל עוד 
+\begin_inset Formula
+$r_{i+1}\neq0$
+\end_inset
+:
+\end_layout
+
+\begin_layout Itemize
+נחלק את 
+\begin_inset Formula
+$r_{i}$
+\end_inset
+ ב-
+\begin_inset Formula
+$r_{i+1}$
+\end_inset
+ עם שארית, נסמן ב-
+\begin_inset Formula
+$q_{i}$
+\end_inset
+ את המנה וב-
+\begin_inset Formula
+$r_{i+2}$
+\end_inset
+ את השארית.
+\end_layout
+
+\begin_layout Itemize
+נחלק למקרים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$i=0$
+\end_inset
+ אז נגדיר 
+\begin_inset Formula
+${\color{red}a_{0}:=1}$
+\end_inset
+ ו-
+\begin_inset Formula
+${\color{blue}b_{0}:=-q_{0}}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אחרת, נגדיר 
+\begin_inset Formula
+${\color{red}a_{i}=a_{i-2}-q_{i}\cdot a_{i-1}}$
+\end_inset
+ ו-
+\begin_inset Formula
+${\color{blue}b_{i}:=b_{i-2}-q_{i}\cdot b_{i-1}}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+נגדיר את 
+\begin_inset Formula
+$i$
+\end_inset
+ להיות 
+\begin_inset Formula
+$i+1$
+\end_inset
+ ונעבור לשלב הבא בלולאה.
+\end_layout
+
+\begin_layout Plain Layout
+כעת מתקיים 
+\begin_inset Formula
+$r_{i+1}=0$
+\end_inset
+ וגם:
+\begin_inset Formula
+\[
+\gcd\left(r_{0},r_{1}\right)=r_{i}=a_{i-2}\cdot n+b_{i-2}\cdot m
+\]
+
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+בעמוד הבא נוכיח את הנכונות של האלגוריתם המורחב וממילא נקבל את הנכונות של האלגוריתם הבסיסי.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+נגדיר 
+\begin_inset Formula
+$i:=0$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נגדיר 
+\begin_inset Formula
+${\color{red}a_{-1}:=0}$
+\end_inset
+ ו-
+\begin_inset Formula
+${\color{blue}b_{-1}:=1}$
+\end_inset
+ ומכאן שמתקיים:
+\begin_inset Formula
+\[
+r_{1}={\color{red}a_{-1}}\cdot r_{0}+{\color{blue}b_{-1}}\cdot r_{1}
+\]
+
+
+\end_inset
+כל עוד 
+\begin_inset Formula
+$r_{i+1}\neq0$
+\end_inset
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נחלק את 
+\begin_inset Formula
+$r_{i}$
+\end_inset
+ ב-
+\begin_inset Formula
+$r_{i+1}$
+\end_inset
+ עם שארית, נסמן ב-
+\begin_inset Formula
+$q_{i}$
+\end_inset
+ את המנה וב-
+\begin_inset Formula
+$r_{i+2}$
+\end_inset
+ את השארית.
+\begin_inset Formula
+\[
+\Rightarrow r_{i+2}=r_{i}-r_{i+1}\cdot q_{i}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+# בכל שלב נובע מסעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+4
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+בטענה האחרונה (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.7"
+plural false
+caps false
+noprefix false
+\end_inset
+) שמתקיים 
+\begin_inset Formula
+$\gcd\left(r_{i+2},r_{i+1}\right)=\gcd\left(r_{i+1},r_{i}\right)=\ldots=\gcd\left(r_{0},r_{1}\right)$
+\end_inset
+,
+\begin_inset Newline newline
+\end_inset
+וגם 
+\begin_inset Formula
+$0\leq r_{i+2}<r_{i+1}$
+\end_inset
+ (לכן האלגוריתם מוכרח להיעצר בשלב כלשהו שהרי מדובר במספרים שלמים).
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+יהיו 
+\begin_inset Formula
+$a_{i},b_{i}\in\MKinteger$
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+r_{i+2}=a_{i}\cdot r_{0}+b_{i}\cdot r_{i+1}
+\]
+
+
+\end_inset
+נסביר כיצד למצוא את אותם 
+\begin_inset Formula
+$n_{i}$
+\end_inset
+ ו-
+\begin_inset Formula
+$m_{i}$
+\end_inset
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$i=0$
+\end_inset
+ אז נגדיר 
+\begin_inset Formula
+${\color{red}a_{0}:=1}$
+\end_inset
+ ו-
+\begin_inset Formula
+${\color{blue}b_{0}:=-q_{0}}$
+\end_inset
+ ואכן מתקיים 
+\begin_inset Formula
+$r_{2}={\color{red}1}\cdot r_{0}{\color{blue}-q_{0}}\cdot r_{1}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אחרת, נזכור ש-
+\begin_inset Formula
+$r_{i+1}=a_{i-1}\cdot r_{0}+b_{i-1}\cdot r_{1}$
+\end_inset
+ וגם 
+\begin_inset Formula
+$r_{i}=a_{i-2}\cdot r_{0}+b_{i-2}\cdot r_{1}$
+\end_inset
+, ומכיוון ש-
+\begin_inset Formula
+$r_{i+2}=r_{i}-q_{i}\cdot r_{i+1}$
+\end_inset
+ ניתן להציג את 
+\begin_inset Formula
+$r_{i+2}$
+\end_inset
+ כך:
+\begin_inset Formula
+\begin{align*}
+r_{i+2} & =r_{i}-r_{i+1}\cdot q_{i}=\left(a_{i-2}\cdot r_{0}+b_{i-2}\cdot r_{1}\right)-\left(a_{i-1}\cdot r_{0}+b_{i-1}\cdot r_{1}\right)\cdot q_{i}\\
+ & ={\color{red}\left(a_{i-2}-q_{i}\cdot a_{i-1}\right)}\cdot r_{0}+{\color{blue}\left(b_{i-2}-q_{i}\cdot b_{i-1}\right)}\cdot r_{1}
+\end{align*}
+
+
+\end_inset
+ולכן נגדיר 
+\begin_inset Formula
+${\color{red}a_{i}=a_{i-2}-q_{i}\cdot a_{i-1}}$
+\end_inset
+ ו-
+\begin_inset Formula
+${\color{blue}b_{i}:=b_{i-2}-q_{i}\cdot b_{i-1}}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+נגדיר את 
+\begin_inset Formula
+$i$
+\end_inset
+ להיות 
+\begin_inset Formula
+$i+1$
+\end_inset
+ ונעבור לשלב הבא בלולאה.
+\end_layout
+
+\end_deeper
+
+\begin_layout Proof
+כעת מתקיים 
+\begin_inset Formula
+$r_{i+1}=0$
+\end_inset
+, כלומר:
+\begin_inset Formula
+\[
+0=r_{i+1}=r_{i-1}-r_{i}\cdot q_{i-1}
+\]
+
+
+\end_inset
+וממילא:
+\begin_inset Formula
+\begin{align*}
+r_{i} & =\gcd\left(r_{i+1},r_{i}\right)=\gcd\left(r_{i},r_{i-1}\right)=\ldots=\gcd\left(r_{0},r_{1}\right)
+\end{align*}
+
+
+\end_inset
+בנוסף מתקיים:
+\begin_inset Formula
+\[
+\gcd\left(r_{0},r_{1}\right)=r_{i}=a_{i-2}\cdot n+b_{i-2}\cdot m
+\]
+
+
+\end_inset
+ולכן נחזיר את 
+\begin_inset Formula
+$r_{i},a_{i-2},b_{i-2}$
+\end_inset
+ ונסיים.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+המספרים הראשוניים
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$0\neq p\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$p\neq\pm1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+נאמר ש-
+\begin_inset Formula
+$p$
+\end_inset
+ הוא מספר 
+\bar under
+אי-פריק
+\bar default
+ אם אין לו מחלקים שונים מ-
+\begin_inset Formula
+$\pm1$
+\end_inset
+ ו-
+\begin_inset Formula
+$\pm p$
+\end_inset
+, כלומר לכל 
+\begin_inset Formula
+$a,b\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$p=ab$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a=\pm p$
+\end_inset
+ (וממילא 
+\begin_inset Formula
+$b=\pm1$
+\end_inset
+) או ש-
+\begin_inset Formula
+$a=\pm1$
+\end_inset
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+(וממילא 
+\begin_inset Formula
+$b=\pm p$
+\end_inset
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+נאמר ש-
+\begin_inset Formula
+$p$
+\end_inset
+ הוא מספר 
+\bar under
+ראשוני
+\bar default
+ אם לכל 
+\begin_inset Formula
+$a,b\in\MKinteger$
+\end_inset
+ המקיימים 
+\begin_inset Formula
+$p\mid ab$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$p\mid a$
+\end_inset
+ או ש-
+\begin_inset Formula
+$p\mid b$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ היה קל יותר לו היינו מגדירים את הראשוניים והאי-פריקים כטבעיים גדולים מ-
+\begin_inset Formula
+$1$
+\end_inset
+ המקיימים את התכונות הנ"ל ביחס לטבעיים.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בחוג השלמים אלו הגדרות שקולות (נראה זאת בהמשך) אך ישנם חוגים אחרים שבהם המצב שונה.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בסיכומי קורס זה אסמן ב-
+\begin_inset Formula
+$\MKprime$
+\end_inset
+ את קבוצת הראשוניים (ב-
+\begin_inset Formula
+$\MKnatural$
+\end_inset
+ או ב-
+\begin_inset Formula
+$\MKinteger$
+\end_inset
+ ע"פ ההקשר).
+\end_layout
+
+\begin_layout Definition
+נאמר ששני מספרים 
+\begin_inset Formula
+$a,b\in\MKinteger$
+\end_inset
+ הם 
+\bar under
+מספרים ידידים
+\bar default
+ אם ניתן להציג את האחד כמכפלה של האחר באיבר הפיך.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בחוג השלמים האיברים ההפיכים היחידים הם 
+\begin_inset Formula
+$\pm1$
+\end_inset
+ אך ישנם חוגים אחרים (למשל חוג הפולינומים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+בליניארית
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\size normal
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\emph off
+\emph default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+הגדרנו פולינום הפיך אם קיים פולינום אחר כך שמכפלתם היא הפולינום 
+\begin_inset Formula
+$1$
+\end_inset
+, לפי זה הפולינומים ההפיכים הם אלו שדרגתם 
+\begin_inset Formula
+$0$
+\end_inset
+.
+\size default
+
+\end_layout
+
+\end_inset
+ וחוג השלמים של גאוס המופיע בהגדרה הבאה) שבהם המצב שונה.
+\end_layout
+
+\begin_layout Definition
+\series bold
+חוג השלמים של גאוס
+\series default
+
+\begin_inset Newline newline
+\end_inset
+נסמן 
+\begin_inset Formula
+$\MKinteger\left[i\right]:=\left\{ a+bi\mid a,b\in\MKinteger\right\} \subseteq\MKcomplex$
+\end_inset
+ ונקרא ל-
+\begin_inset Formula
+$\MKinteger\left[i\right]$
+\end_inset
+ 
+\bar under
+חוג השלמים של גאוס
+\bar default
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הרעיון מאחורי הסימון 
+\begin_inset Formula
+$\MKinteger\left[i\right]$
+\end_inset
+ הוא כמו הסימון 
+\begin_inset Formula
+$\MKfield\left[x\right]$
+\end_inset
+ שסימן את חוג הפולינומים בעלי מקדמים בשדה 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ אלא שכעת המשתנה אינו 
+\begin_inset Formula
+$x$
+\end_inset
+ עלום אלא 
+\begin_inset Formula
+$i$
+\end_inset
+, ואכן כל הצבה של 
+\begin_inset Formula
+$i$
+\end_inset
+ בפולינום עם מקדמים שלמים ניתן להציג בצורה 
+\begin_inset Formula
+$a+bi$
+\end_inset
+; רעיון זה מופיע גם בסימון 
+\begin_inset Formula
+$\MKinteger\left[\sqrt{-5}\right]$
+\end_inset
+ שבאחת ההערות בקובץ הטענות.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ יחס החלוקה, ראשוניות ואי-פריקות מוגדרים בחוג השלמים של גאוס באותה צורה שהוגדרו בשלמים, גם בחוג השלמים של גאוס יש שקילות בין ראשוניות לאי-פריקות ולכן המשפט היסודי של האריתמטיקה תקף גם בו.
+\end_layout
+
+\begin_layout Definition
+ה
+\bar under
+נורמה
+\bar default
+ (בחוג השלמים של גאוס) היא פונקציה 
+\begin_inset Formula
+$N:\MKinteger\left[i\right]\rightarrow\MKnatural_{0}$
+\end_inset
+ המוגדרת ע"י 
+\begin_inset Formula
+$N\left(a+bi\right)=a^{2}+b^{2}$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר הריבוע של הנורמה ב-
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+, הסיבה לשימוש בריבוע היא כדי להישאר בחוג השלמים.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+ה
+\bar under
+ריבוי
+\bar default
+ של מספר ראשוני 
+\begin_inset Formula
+$p\in\MKinteger$
+\end_inset
+ בפירוק של מספר שלם 
+\begin_inset Formula
+$0\neq n\in\MKinteger$
+\end_inset
+ לראשוניים הוא
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+נשים לב שמהגדרה הקבוצה 
+\begin_inset Formula
+$\left\{ e\in\MKnatural_{0}:p^{e}\mid n\right\} $
+\end_inset
+ אינה ריקה שהרי 
+\begin_inset Formula
+$p^{0}=1\mid n$
+\end_inset
+ והיא חסומה מלעיל מפני ש-
+\begin_inset Formula
+$\left|p\right|\geq2$
+\end_inset
+ ולכן קיים 
+\begin_inset Formula
+$e\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left|p^{e}\right|>n$
+\end_inset
+ והרי ערכו המוחלט של המחלק קטן מזה של המחולק.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\[
+\MKord_{p}\left(n\right):=\max\left\{ e\in\MKnatural_{0}:p^{e}\mid n\right\} 
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ניתן להבחין ש-
+\begin_inset Formula
+$\MKord_{p}\left(n\right)$
+\end_inset
+ הוא החזקה שבה הופיע 
+\begin_inset Formula
+$p$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כמובן שהריבוי של 
+\begin_inset Formula
+$-p$
+\end_inset
+ זה לזה של 
+\begin_inset Formula
+$p$
+\end_inset
+, אם הראשוני אינו מופיע אז הריבוי הוא 
+\begin_inset Formula
+$0$
+\end_inset
+.
+\end_layout
+
+\end_inset
+ בהצגה:
+\begin_inset Formula
+\[
+n=\MKsign\left(n\right)\cdot\prod_{i=1}^{r}p_{i}^{e_{i}}
+\]
+
+
+\end_inset
+כאשר 
+\begin_inset Formula
+$p_{1},p_{2},\ldots,p_{r}\in\MKnatural$
+\end_inset
+ הם מספרים ראשוניים המקיימים 
+\begin_inset Formula
+$p_{1}<p_{2}<\ldots<p_{r}$
+\end_inset
+ ו-
+\begin_inset Formula
+$e_{1},e_{2},\ldots,e_{r}\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+מספר שלם 
+\begin_inset Formula
+$n\in\MKinteger$
+\end_inset
+ יקרא 
+\bar under
+מספר ריבועי
+\bar default
+ אם קיים 
+\begin_inset Formula
+$m\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$n=m^{2}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מהגדרה מספר ריבועי הוא אי-שלילי
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ב
+\begin_inset CommandInset href
+LatexCommand href
+name "העברית וויקיפדיה"
+target https://he.wikipedia.org/wiki/%D7%9E%D7%A1%D7%A4%D7%A8_%D7%A8%D7%99%D7%91%D7%95%D7%A2%D7%99
+literal false
+\end_inset
+ הגדירו מספר ריבועי כמספר שלם 
+\series bold
+וחיובי
+\series default
+ המקיים את הנ"ל, בעוד שב
+\begin_inset CommandInset href
+LatexCommand href
+name "וויקיפדיה האנגלית"
+target https://en.wikipedia.org/wiki/Square_number
+literal false
+\end_inset
+ וב-
+\begin_inset CommandInset href
+LatexCommand href
+name "MathWorld"
+target https://mathworld.wolfram.com/SquareNumber.html
+literal false
+\end_inset
+
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+הגדירו כפי שהגדרנו כאן.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+נאמר שמספר שלם 
+\begin_inset Formula
+$n\in\MKinteger$
+\end_inset
+ 
+\bar under
+חופשי מריבועים
+\bar default
+ אם לא קיים מספר ריבועי 
+\begin_inset Formula
+$1\neq m\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$m\mid n$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מה שמייחד מספרים חופשיים מריבועים היא העובדה שכל ראשוני מופיע בפירוק שלהם פעם אחת לכל היותר.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ 
+\begin_inset Formula
+$1$
+\end_inset
+ הוא מספר ריבועי וגם מספר חופשי מריבועים!
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$\left(M_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה המוגדרת ע"י 
+\begin_inset Formula
+$M_{n}=2^{n}-1$
+\end_inset
+, האיברים בסדרה זו נקראים 
+\bar under
+מספרי מרסן
+\bar default
+; אם 
+\begin_inset Formula
+$M_{n}$
+\end_inset
+ הוא מספר ראשוני נאמר שהוא 
+\bar under
+ראשוני מרסן
+\bar default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+תהא 
+\begin_inset Formula
+$\left(F_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה המוגדרת ע"י 
+\begin_inset Formula
+$F_{n}=2^{n}+1$
+\end_inset
+, האיברים בסדרה זו נקראים 
+\bar under
+מספרי פרמה
+\bar default
+; אם 
+\begin_inset Formula
+$F_{n}$
+\end_inset
+ הוא מספר ראשוני נאמר שהוא 
+\bar under
+ראשוני פרמה
+\bar default
+.
+\end_layout
+
+\begin_layout Subsection
+התחלה
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$2\leq n\in\MKnatural$
+\end_inset
+, נרצה למצוא את כל המספרים האי-פריקים הקטנים או שווים ל-
+\begin_inset Formula
+$n$
+\end_inset
+. להלן פירוט של אלגוריתם "הנפה של ארטוסתנס" בפסאודו-קוד, אלגוריתם זה מבצע את המשימה (באופן בלתי יעיל בעליל), לאחר הצגתו נסביר מדוע הוא אכן עושה זאת.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+\begin_layout Plain Layout
+הנפה של ארטוסתנס
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Plain Layout
+נגדיר 
+\begin_inset Formula
+$S:=\left\{ m\in\MKnatural\mid2\leq m\leq n\right\} $
+\end_inset
+ ו-
+\begin_inset Formula
+$P:=\emptyset$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+כל עוד 
+\begin_inset Formula
+$S$
+\end_inset
+ אינה ריקה:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נגדיר 
+\begin_inset Formula
+$a:=\min S$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+נגדיר את 
+\begin_inset Formula
+$S$
+\end_inset
+ להיות 
+\begin_inset Formula
+$S\setminus\left(a\right)$
+\end_inset
+ (כלומר נסיר מ-
+\begin_inset Formula
+$S$
+\end_inset
+ את כל הכפולות של 
+\begin_inset Formula
+$a$
+\end_inset
+ - כולל 
+\begin_inset Formula
+$a$
+\end_inset
+) ואת 
+\begin_inset Formula
+$P$
+\end_inset
+ נגדיר להיות 
+\begin_inset Formula
+$P\cup\left\{ a\right\} $
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Plain Layout
+בסיום ריצת הלולאה הקבוצה 
+\begin_inset Formula
+$P$
+\end_inset
+ תכיל את כל האי-פריקים הקטנים או שווים ל-
+\begin_inset Formula
+$n$
+\end_inset
+.
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הסיבה לכך שהאלגוריתם עובד היא שבסיום הריצה כל האיברים ב-
+\begin_inset Formula
+$P$
+\end_inset
+ הם איברים שהוגדרו להיות 
+\begin_inset Formula
+$a$
+\end_inset
+ באיזשהו שלב ולכן לא קיים טבעי קטן מהם (שונה מ-
+\begin_inset Formula
+$1$
+\end_inset
+) המחלק אותם, מכיוון שערכו המוחלט של המחלק מוכרח להיות קטן מזה של המחולק הדבר גורר שכל האיברים ב-
+\begin_inset Formula
+$P$
+\end_inset
+ הם אי-פריקים; מצד שני לכל אי-פריק הקטן או שווה ל-
+\begin_inset Formula
+$n$
+\end_inset
+ אין מחלקים קטנים ממנו ולכן כל אי-פריק כזה נבחר בשלב כלשהו להיות 
+\begin_inset Formula
+$a$
+\end_inset
+ וממילא הוא שייך ל-
+\begin_inset Formula
+$P$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ קיים 
+\begin_inset Formula
+$m\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$m\mid n$
+\end_inset
+ וגם 
+\begin_inset Formula
+$m\leq\sqrt{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ טענה זו מראה לנו שניתן לעצור את האלגוריתם לאחר שעוברים את 
+\begin_inset Formula
+$\sqrt{n}$
+\end_inset
+ שהרי השורשים של כל המספרים האחרים קטנים מ-
+\begin_inset Formula
+$\sqrt{n}$
+\end_inset
+ ולכן בהכרח אם הם פריקים כבר מחקנו אותם מן הרשימה.
+\end_layout
+
+\begin_layout Subsection
+חוג השלמים של גאוס
+\end_layout
+
+\begin_layout Claim
+הנורמה ב-
+\begin_inset Formula
+$\MKinteger\left[i\right]$
+\end_inset
+ היא כפלית: לכל 
+\begin_inset Formula
+$a,b\in\MKinteger\left[i\right]$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$N\left(ab\right)=N\left(a\right)\cdot N\left(b\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+האיברים ההפיכים היחידים ב-
+\begin_inset Formula
+$\MKinteger\left[i\right]$
+\end_inset
+ הם 
+\begin_inset Formula
+$\pm1$
+\end_inset
+ ו-
+\begin_inset Formula
+$\pm i$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+חילוק עם שארית
+\series default
+
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$a,b\in\MKinteger\left[i\right]$
+\end_inset
+ (כאשר 
+\begin_inset Formula
+$b\neq0$
+\end_inset
+) קיימים 
+\begin_inset Formula
+$q,r\in\MKinteger\left[i\right]$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a=bq+r$
+\end_inset
+ ו-
+\begin_inset Formula
+$N\left(r\right)<N\left(b\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ לא למדנו את ההוכחה בתרגול אך גיא אמר שהשיטה היא לחלק את 
+\begin_inset Formula
+$a$
+\end_inset
+ ב-
+\begin_inset Formula
+$b$
+\end_inset
+ 
+\shape italic
+ללא שארית
+\shape default
+ (כלומר לבצע את החילוק ב-
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+) ואז לבחור בתור 
+\begin_inset Formula
+$q$
+\end_inset
+ את האיבר הכי קרוב לתוצאה ב-
+\begin_inset Formula
+$\MKinteger\left[i\right]$
+\end_inset
+, זו גם הסיבה לכך שאין כאן יחידות: ייתכן ששניים או ארבעה נמצאים באותו מרחק (אך לא יכולים להיות שלושה בלבד באותו מרחק).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+למספר ראשוני 
+\begin_inset Formula
+$p\in\MKnatural$
+\end_inset
+ יש לכל היותר הצגה אחת כסכום של ריבועים עד כדי שינוי סדר ועד כדי שינוי סימן, כלומר אם ישנן שתי הצגות 
+\begin_inset Formula
+$p=a^{2}+b^{2}$
+\end_inset
+ ו-
+\begin_inset Formula
+$p=c^{2}+d^{2}$
+\end_inset
+ (כאשר 
+\begin_inset Formula
+$a,b,c,d\in\MKinteger$
+\end_inset
+) אז מתקיימת אחת משמונה האפשרויות: 
+\begin_inset Formula
+$a=\pm c$
+\end_inset
+ ו-
+\begin_inset Formula
+$b=\pm d$
+\end_inset
+ או ש-
+\begin_inset Formula
+$a=\pm d$
+\end_inset
+ ו-
+\begin_inset Formula
+$b=\pm d$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+מבחינה פורמלית הביטוי "
+\begin_inset Formula
+$a=\pm c$
+\end_inset
+ ו-
+\begin_inset Formula
+$b=\pm d$
+\end_inset
+" אומר פירושו "
+\begin_inset Formula
+$\left(a=c\land b=d\right)\lor\left(a=-c\land b=-d\right)$
+\end_inset
+", למרות זאת כאן הכוונה היא גם לאפשרויות '
+\begin_inset Formula
+$a=c\land b=-d$
+\end_inset
+' ו-'
+\begin_inset Formula
+$a=-c\land b=d$
+\end_inset
+' וכנ"ל לגבי הביטוי "
+\begin_inset Formula
+$b=\pm d$
+\end_inset
+ או ש-
+\begin_inset Formula
+$a=\pm d$
+\end_inset
+".
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$p\in\MKnatural$
+\end_inset
+ ראשוני כך שקיימים 
+\begin_inset Formula
+$a,b\in\MKinteger$
+\end_inset
+ המקיימים 
+\begin_inset Formula
+$a^{2}+b^{2}=p$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$s,t,u,v\in\MKinteger$
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+a=s\cdot u-t\cdot v,\ b=s\cdot v+t\cdot u
+\]
+
+
+\end_inset
+כלומר:
+\begin_inset Formula
+\[
+a+b\cdot i=\left(s+t\cdot i\right)\left(u+v\cdot i\right)
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+\Rightarrow p & =a^{2}+b^{2}=N\left(a+b\cdot i\right)\\
+ & =N\left(\left(s+t\cdot i\right)\left(u+v\cdot i\right)\right)\\
+ & =N\left(s+t\cdot i\right)\cdot N\left(u+v\cdot i\right)\\
+ & =\left(s^{2}+t^{2}\right)\left(u^{2}+v^{2}\right)
+\end{align*}
+
+
+\end_inset
+השוויון 
+\begin_inset Formula
+$p=\left(s^{2}+t^{2}\right)\left(u^{2}+v^{2}\right)$
+\end_inset
+ הוא כבר שוויון בשלמים ולכן מאי-הפריקות של 
+\begin_inset Formula
+$p$
+\end_inset
+ נובע ש-
+\begin_inset Formula
+$s^{2}+t^{2}=\pm p$
+\end_inset
+ (ו-
+\begin_inset Formula
+$u^{2}+v^{2}=\pm1$
+\end_inset
+) או ש-
+\begin_inset Formula
+$s^{2}+t^{2}=\pm1$
+\end_inset
+ (ו-
+\begin_inset Formula
+$u^{2}+v^{2}=\pm1$
+\end_inset
+).
+\begin_inset Newline newline
+\end_inset
+נניח בהג"כ ש-
+\begin_inset Formula
+$s^{2}+t^{2}=\pm p$
+\end_inset
+ ו-
+\begin_inset Formula
+$u^{2}+v^{2}=\pm1$
+\end_inset
+, והרי 
+\begin_inset Formula
+$0\leq u^{2}+v^{2}$
+\end_inset
+ ולכן בהכרח 
+\begin_inset Formula
+$u^{2}+v^{2}=1$
+\end_inset
+; בנוסף ניתן להסיק מכאן ש-
+\begin_inset Formula
+$u=\pm1$
+\end_inset
+ (ו-
+\begin_inset Formula
+$v=0$
+\end_inset
+) או ש-
+\begin_inset Formula
+$u=0$
+\end_inset
+ (ו-
+\begin_inset Formula
+$v=\pm1$
+\end_inset
+).
+\begin_inset Newline newline
+\end_inset
+נניח בהג"כ ש-
+\begin_inset Formula
+$u=\pm1$
+\end_inset
+ ו-
+\begin_inset Formula
+$v=0$
+\end_inset
+, מכאן ש-
+\begin_inset Formula
+$s=\pm a$
+\end_inset
+ ו-
+\begin_inset Formula
+$t=\pm b$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מכאן ש-
+\begin_inset Formula
+$a+b\cdot i$
+\end_inset
+ הוא מספר אי-פריק ב-
+\begin_inset Formula
+$\MKinteger\left[i\right]$
+\end_inset
+ וממילא גם הצמוד שלו אי-פריק, נזכור שב-
+\begin_inset Formula
+$\MKinteger\left[i\right]$
+\end_inset
+ אי-פריקות שקולה לראשוניות ולכן הם גם ראשוניים.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$c,d\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$c^{2}+d^{2}=p$
+\end_inset
+, 
+\begin_inset Formula
+$a$
+\end_inset
+ ו-
+\begin_inset Formula
+$b$
+\end_inset
+ היו שרירותיים ולכן גם 
+\begin_inset Formula
+$c+d\cdot i$
+\end_inset
+ והצמוד שלו הם אי-פריקים וראשוניים, בנוסף מתקיים:
+\begin_inset Formula
+\[
+\left(c+d\cdot i\right)\left(c-d\cdot i\right)=c^{2}+d^{2}=p=a^{2}+b^{2}=\left(a+b\cdot i\right)\left(a-b\cdot i\right)
+\]
+
+
+\end_inset
+מהראשוניות של 
+\begin_inset Formula
+$a+b\cdot i$
+\end_inset
+ נובע ש-
+\begin_inset Formula
+$a+b\cdot i\mid c\pm d\cdot i$
+\end_inset
+ ולכן מאי-הפריקות של 
+\begin_inset Formula
+$c\pm d\cdot i$
+\end_inset
+ נובע ש-
+\begin_inset Formula
+$a+b\cdot i=\pm\left(c+d\cdot i\right)$
+\end_inset
+ או ש-
+\begin_inset Formula
+$a+b\cdot i=\pm\left(c-d\cdot i\right)$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+לא ייתכן ש-
+\begin_inset Formula
+$a+b\cdot i$
+\end_inset
+ הוא איבר הפיך מפני שההפיכים היחידים ב-
+\begin_inset Formula
+$\MKinteger\left[i\right]$
+\end_inset
+ הם 
+\begin_inset Formula
+$\pm1$
+\end_inset
+ ו-
+\begin_inset Formula
+$\pm i$
+\end_inset
+ ולכן שם 
+\begin_inset Formula
+$a+b\cdot i$
+\end_inset
+ היה איבר הפיך היינו מקבלים ש-
+\begin_inset Formula
+$p=1$
+\end_inset
+.
+\end_layout
+
+\end_inset
+;
+\begin_inset Newline newline
+\end_inset
+כלומר מתקיים אחד מהשניים: 
+\begin_inset Formula
+$a=\pm c$
+\end_inset
+ ו-
+\begin_inset Formula
+$b=\pm d$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+המשפט היסודי של האריתמטיקה
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$p\in\MKinteger$
+\end_inset
+ מספר אי-פריק, ויהי 
+\begin_inset Formula
+$I\subseteq\MKinteger$
+\end_inset
+ אידיאל המקיים 
+\begin_inset Formula
+$\left(p\right)\subseteq I$
+\end_inset
+, מתקיימת אחת משתי האפשרויות: 
+\begin_inset Formula
+$I=\MKinteger$
+\end_inset
+ או ש-
+\begin_inset Formula
+$I=\left(p\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+יהי 
+\begin_inset Formula
+$p\in\MKinteger$
+\end_inset
+, 
+\begin_inset Formula
+$p$
+\end_inset
+ אי-פריק אם"ם 
+\begin_inset Formula
+$p$
+\end_inset
+ ראשוני.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ שקילות זו אינה נכונה בכל חוג והיא נובעת מהיכולת לחלק עם שארית בחוג השלמים, נביא דוגמה לחוג שבו השקילות אינה מתקיימת.
+\begin_inset Newline newline
+\end_inset
+נסמן 
+\begin_inset Formula
+$\MKinteger\left[\sqrt{-5}\right]:=\left\{ x+y\cdot\sqrt{-5}\mid x,y\in\MKinteger\right\} \subseteq\MKcomplex$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+לשם העניין נגדיר 
+\begin_inset Formula
+$\sqrt{-5}:=i\cdot\sqrt{5}$
+\end_inset
+ למרות שבניגוד לשורש הממשי במרוכבים אין דרך להפריד בין 
+\begin_inset Formula
+$i\cdot\sqrt{5}$
+\end_inset
+ ל-
+\begin_inset Formula
+$-i\cdot\sqrt{5}$
+\end_inset
+ - הריבוע של שניהם הוא 
+\begin_inset Formula
+$-5$
+\end_inset
+ ואין ביניהם חיובי ושלילי כי 
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+ אינו שדה סדור.
+\end_layout
+
+\end_inset
+, זהו חוג חילופי (הקורא מוזמן לבדוק זאת) ומתקיים בו:
+\begin_inset Formula
+\[
+6=2\cdot3=\left(1+\sqrt{-5}\right)\left(1-\sqrt{-5}\right)
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+$2$
+\end_inset
+ הוא אי-פריק בחוג זה
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+נניח שקיים פירוק 
+\begin_inset Formula
+$2=\left(a+b\cdot\sqrt{-5}\right)\left(c+d\cdot\sqrt{-5}\right)$
+\end_inset
+, א"כ:
+\begin_inset Formula
+\[
+4=\left|2\right|^{2}=2\cdot\overline{2}=\left(a+b\cdot\sqrt{-5}\right)\left(a-b\cdot\sqrt{-5}\right)\left(c+d\cdot\sqrt{-5}\right)\left(c-d\cdot\sqrt{-5}\right)=\left(a^{2}+5b^{2}\right)\left(c^{2}+5d^{2}\right)
+\]
+
+
+\end_inset
+וזה כבר פירוק ב-
+\begin_inset Formula
+$\MKinteger$
+\end_inset
+, אבל אנחנו יודעים שהפירוק היחיד של 
+\begin_inset Formula
+$4$
+\end_inset
+ ב-
+\begin_inset Formula
+$\MKinteger$
+\end_inset
+ ולכן נקבל ש-
+\begin_inset Formula
+$2=a^{2}+5b^{2}$
+\end_inset
+ כעת אם 
+\begin_inset Formula
+$b\neq0$
+\end_inset
+ אז 
+\begin_inset Formula
+$a^{2}+5b^{2}\geq5>2$
+\end_inset
+ ואם 
+\begin_inset Formula
+$b=0$
+\end_inset
+ נקבל שקיים 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a^{2}=2$
+\end_inset
+.
+\end_layout
+
+\end_inset
+ אך כפי שניתן לראות בבירור מהפירוק שלעיל הוא אינו ראשוני מפני שהוא מחלק את המכפלה 
+\begin_inset Formula
+$\left(1+\sqrt{-5}\right)\left(1-\sqrt{-5}\right)$
+\end_inset
+ אך אינו מחלק אף אחד ממרכיביה
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+\begin_inset Formula
+$\frac{1}{2}\pm\frac{\sqrt{-5}}{2}\notin\MKinteger\left[-5\right]$
+\end_inset
+.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בגלל משפט זה נוכל להתייחס לראשוניות ואי-פריקות כתכונה אחת ולכן בכל פעם שנאמר על מספר שהוא ראשוני נתכוון גם לכך שהמספר אי-פריק.
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$p\in\MKinteger$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\Leftarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$p$
+\end_inset
+ אי-פריק ויהיו 
+\begin_inset Formula
+$a,b\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$p\mid ab$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נסמן 
+\begin_inset Formula
+$d:=\gcd\left(a,p\right)$
+\end_inset
+, מהגדרה 
+\begin_inset Formula
+$d\mid p$
+\end_inset
+ ולכן מהעובדה ש-
+\begin_inset Formula
+$p$
+\end_inset
+ אי-פריק נובע ש-
+\begin_inset Formula
+$d=1$
+\end_inset
+ או ש-
+\begin_inset Formula
+$d=\pm p$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+אם 
+\begin_inset Formula
+$d=1$
+\end_inset
+ אז 
+\begin_inset Formula
+$p$
+\end_inset
+ ו-
+\begin_inset Formula
+$a$
+\end_inset
+ זרים ולכן מסעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+5
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+בטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.7"
+plural false
+caps false
+noprefix false
+\end_inset
+ נובע ש-
+\begin_inset Formula
+$p\mid b$
+\end_inset
+, ואם 
+\begin_inset Formula
+$d=\pm p$
+\end_inset
+ אז מהגדרת ה-
+\begin_inset Formula
+$\gcd$
+\end_inset
+ 
+\begin_inset Formula
+$p$
+\end_inset
+ מחלק את 
+\begin_inset Formula
+$a$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\Rightarrow$
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+נניח ש-
+\begin_inset Formula
+$p$
+\end_inset
+ ראשוני ויהי 
+\begin_inset Formula
+$a\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a\mid p$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$q\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$aq=p$
+\end_inset
+, א"כ מתקיים 
+\begin_inset Formula
+$p\mid aq$
+\end_inset
+ ולכן מהראשוניות של 
+\begin_inset Formula
+$p$
+\end_inset
+ נובע ש-
+\begin_inset Formula
+$p\mid a$
+\end_inset
+ או ש-
+\begin_inset Formula
+$p\mid q$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+אם 
+\begin_inset Formula
+$p\mid a$
+\end_inset
+ אז מכיוון שגם 
+\begin_inset Formula
+$a\mid p$
+\end_inset
+ נדע ש-
+\begin_inset Formula
+$a=\pm p$
+\end_inset
+ ואם 
+\begin_inset Formula
+$p\mid q$
+\end_inset
+ אז מאותה סיבה (
+\begin_inset Formula
+$q\mid p$
+\end_inset
+) נדע ש-
+\begin_inset Formula
+$q=\pm p$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$a=\pm1$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Lemma
+יהי 
+\begin_inset Formula
+$p\in\MKinteger$
+\end_inset
+ מספר ראשוני ויהיו 
+\begin_inset Formula
+$a_{1},a_{2},\ldots,a_{n}\in\MKinteger$
+\end_inset
+ כך שמתקיים 
+\begin_inset Formula
+$p\mid a_{1}\cdot a_{2}\cdot\ldots\cdot a_{n}$
+\end_inset
+, קיים 
+\begin_inset Formula
+$n\geq i\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$p\mid a_{i}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+המשפט היסודי של האריתמטיקה (פריקות חד-ערכית)
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$n\in\MKinteger\setminus\left\{ -1,1,0\right\} $
+\end_inset
+, קיימים 
+\begin_inset Formula
+$p_{1},p_{2},\ldots p_{r}\in\MKinteger$
+\end_inset
+ ראשוניים יחידים (עד כדי שינוי סדר ועד כדי שינוי סימן) אך לאו דווקא שונים זה מזה כך שמתקיים:
+\begin_inset Formula
+\[
+n=\prod_{i=1}^{r}p_{i}
+\]
+
+
+\end_inset
+כלומר אם מתקיים גם 
+\begin_inset Formula
+$n=q_{1}\cdot q_{2}\cdot\ldots\cdot q_{s}$
+\end_inset
+ (כאשר 
+\begin_inset Formula
+$q_{1},q_{2},\ldots q_{s}\in\MKinteger$
+\end_inset
+ ראשוניים) אז קיימת פונקציה הפיכה 
+\begin_inset Formula
+$f:\left\{ i\in\MKnatural\mid i\leq r\right\} \rightarrow\left\{ i\in\MKnatural\mid i\leq s\right\} $
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$q_{f\left(i\right)}=\pm p_{i}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ זו אחת הסיבות לכך שאיננו רוצים להגדיר את 
+\begin_inset Formula
+$1$
+\end_inset
+ כראשוני, אחרת לא תהיה לנו פריקות חד-ערכית.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ קל יותר לנסח את המשפט כך: לכל 
+\begin_inset Formula
+$0\neq n\in\MKinteger$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+את 
+\begin_inset Formula
+$1$
+\end_inset
+ ניתן לייצג באמצעות במכפלה הריקה 
+\begin_inset Formula
+$\prod_{i=1}^{0}p_{i}:=1$
+\end_inset
+ ואת 
+\begin_inset Formula
+$-1$
+\end_inset
+ באמצעות הנגדי שלה 
+\begin_inset Formula
+$-\prod_{i=1}^{0}p_{i}=-1$
+\end_inset
+.
+\end_layout
+
+\end_inset
+ קיימת הצגה יחידה בצורה הבאה:
+\begin_inset Formula
+\[
+n=\MKsign\left(n\right)\cdot\prod_{i=1}^{r}p_{i}^{e_{i}}
+\]
+
+
+\end_inset
+כאשר 
+\begin_inset Formula
+$p_{1},p_{2},\ldots,p_{r}\in\MKnatural$
+\end_inset
+ הם מספרים ראשוניים המקיימים 
+\begin_inset Formula
+$p_{1}<p_{2}<\ldots<p_{r}$
+\end_inset
+ ו-
+\begin_inset Formula
+$e_{1},e_{2},\ldots,e_{r}\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$n\in\MKinteger\setminus\left\{ -1,1,0\right\} $
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+ניתן להוכיח באינדוקציה שניתן להציג כל מספר שלם כמכפלה של אי-פריקים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+מפרקים לגורמים עד שכבר א"א לחלק מפני שכל הגורמים אי-פריקים.
+\end_layout
+
+\end_inset
+, א"כ יהיו 
+\begin_inset Formula
+$p_{1},p_{2},\ldots p_{r},q_{1},q_{2},\ldots q_{s}\in\MKprime$
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+\prod_{i=1}^{r}p_{i}=n=\prod_{j=1}^{s}q_{j}
+\]
+
+
+\end_inset
+נגדיר פונקציה 
+\begin_inset Formula
+$f:\left\{ i\in\MKnatural\mid i\leq r\right\} \rightarrow\left\{ i\in\MKnatural\mid i\leq s\right\} $
+\end_inset
+ באופן אינדוקטיבי.
+\begin_inset Newline newline
+\end_inset
+נסמן 
+\begin_inset Formula
+$i:=1$
+\end_inset
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+לכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+\end_inset
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+מהלמה האחרונה נובע שקיים 
+\begin_inset Formula
+$s\geq j\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$q_{j}=\pm p_{i}$
+\end_inset
+, יהי 
+\begin_inset Formula
+$j$
+\end_inset
+ כנ"ל ונסמן 
+\begin_inset Formula
+$f\left(i\right):=j$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+כעת נסיר מהמכפלה באגף שמאל את 
+\begin_inset Formula
+$p_{i}$
+\end_inset
+ ומאגף ימין נסיר את 
+\begin_inset Formula
+$q_{j}$
+\end_inset
+ ושוב נקבל שוויון עד כדי סימן כך ש-
+\begin_inset Formula
+$q_{j}$
+\end_inset
+ כבר אינו מופיע מופיע במכפלה הימנית ומכאן שהפונקציה שנגדיר תהיה חח"ע.
+\end_layout
+
+\begin_layout Itemize
+נעבור לשלב הבא בלולאה.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+כעת אגף שמאל הוא המכפלה הריקה השווה ל-
+\begin_inset Formula
+$1$
+\end_inset
+ ולכן גם אגף ימין שווה ל-
+\begin_inset Formula
+$1$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$s=r$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$f$
+\end_inset
+ על ומכיוון שהיא חח"ע הרי שהיא הפיכה.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ שימו לב: בשלב הראשון של ההוכחה (לפני ההגדרה האינדוקטיבית של 
+\begin_inset Formula
+$f$
+\end_inset
+) השתמשנו בתכונת ה
+\series bold
+אי-פריקות
+\series default
+ ובשלב השני השתמשנו בלמה שמבוססת על תכונת ה
+\series bold
+ראשוניות
+\series default
+, ההוכחה לא הייתה עובדת אלמלא השקילות בין שתי התכונות הללו וכפי שכבר הזכרנו קיימים חוגים שבהם הן אינן שקולות.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Lemma
+יהיו 
+\begin_inset Formula
+$0\neq a,b\in\MKinteger$
+\end_inset
+, נסמן 
+\begin_inset Formula
+$n:=ab$
+\end_inset
+ ויהי 
+\begin_inset Formula
+$p\in\MKinteger$
+\end_inset
+ מספר ראשוני, מתקיים 
+\begin_inset Formula
+$\MKord_{p}\left(a\right)+\MKord_{p}\left(b\right)=\MKord_{p}\left(n\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+יהיו 
+\begin_inset Formula
+$0\neq a,b\in\MKinteger$
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$a\mid b$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$\MKord_{p}\left(a\right)\leq\MKord_{p}\left(b\right)$
+\end_inset
+ לכל 
+\begin_inset Formula
+$p\in\MKinteger$
+\end_inset
+ ראשוני.
+\end_layout
+
+\begin_layout Corollary
+יהיו 
+\begin_inset Formula
+$0\neq a,b\in\MKinteger$
+\end_inset
+ ויהיו 
+\begin_inset Formula
+$p_{1},p_{2},\ldots,p_{r}\in\MKnatural$
+\end_inset
+ מספרים ראשוניים ו-
+\begin_inset Formula
+$e_{1},e_{2},\ldots,e_{r},f_{1},f_{2},\ldots,f_{r}\in\MKnatural_{0}$
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\begin{align*}
+a & =\MKsign\left(a\right)\cdot\prod_{i=1}^{r}p_{i}^{e_{i}}\\
+b & =\MKsign\left(b\right)\cdot\prod_{i=1}^{r}p_{i}^{f_{i}}
+\end{align*}
+
+
+\end_inset
+במקרה כזה מתקיים:
+\begin_inset Formula
+\begin{align*}
+\gcd\left(a,b\right) & =\prod_{i=1}^{r}p_{i}^{\min\left\{ e_{i},f_{i}\right\} }\\
+\MKlcm\left(a,b\right) & =\prod_{i=1}^{r}p_{i}^{\max\left\{ e_{i},f_{i}\right\} }
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מכאן נובע שמתקיים גם:
+\begin_inset Formula
+\[
+\MKlcm\left(a,b\right)=\frac{\left|a\cdot b\right|}{\gcd\left(a,b\right)}
+\]
+
+
+\end_inset
+שהרי לכל 
+\begin_inset Formula
+$r\geq i\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\max\left\{ e_{i},f_{i}\right\} +\min\left\{ e_{i},f_{i}\right\} =e_{i}+f_{i}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+יהיו 
+\begin_inset Formula
+$0\neq a,b\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a$
+\end_inset
+ חופשי מריבועים ו-
+\begin_inset Formula
+$a\mid b^{2}$
+\end_inset
+, מתקיים גם 
+\begin_inset Formula
+$a\mid b$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+לכל 
+\begin_inset Formula
+$1<n\in\MKnatural$
+\end_inset
+ חופשי מריבועים מתקיים 
+\begin_inset Formula
+$\sqrt{n}\notin\MKrational$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$1<n\in\MKnatural$
+\end_inset
+ חופשי מריבועים ונניח בשלילה ש-
+\begin_inset Formula
+$\sqrt{n}\in\MKrational$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$p,q\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\frac{p}{q}$
+\end_inset
+ היא ההצגה המצומצמת של 
+\begin_inset Formula
+$\sqrt{n}$
+\end_inset
+ (כלומר 
+\begin_inset Formula
+$\gcd\left(p,q\right)=1$
+\end_inset
+).
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow\frac{p^{2}}{q^{2}}=\left(\frac{p}{q}\right)^{2}=n\\
+ & \Rightarrow p^{2}=nq^{2}\\
+ & \Rightarrow n\mid p^{2}
+\end{align*}
+
+
+\end_inset
+כעת, מכיוון ש-
+\begin_inset Formula
+$n$
+\end_inset
+ חופשי מריבועים נדע שמתקיים 
+\begin_inset Formula
+$n\mid p$
+\end_inset
+, א"כ קיים 
+\begin_inset Formula
+$k\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$nk=p$
+\end_inset
+, יהי 
+\begin_inset Formula
+$k$
+\end_inset
+ כנ"ל.
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow n^{2}k^{2}=p^{2}=nq^{2}\\
+ & \Rightarrow k^{2}n=q^{2}\\
+ & \Rightarrow n\mid q^{2}
+\end{align*}
+
+
+\end_inset
+ושוב מאותה סיבה נקבל ש-
+\begin_inset Formula
+$n\mid q$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$n$
+\end_inset
+ מחלק הן את 
+\begin_inset Formula
+$p$
+\end_inset
+ והן את 
+\begin_inset Formula
+$q$
+\end_inset
+ בסתירה לכך ש-
+\begin_inset Formula
+$\gcd\left(p,q\right)=1$
+\end_inset
+ ו-
+\begin_inset Formula
+$1<n$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מכאן שהנחת השלילה אינה נכונה ו-
+\begin_inset Formula
+$\sqrt{n}\notin\MKrational$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ שאינו מספר ריבועי מתקיים 
+\begin_inset Formula
+$\sqrt{n}\notin\MKrational$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ שאינו מספר ריבועי ויהיו 
+\begin_inset Formula
+$a,b,s\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$ab=n$
+\end_inset
+, 
+\begin_inset Formula
+$b$
+\end_inset
+ חופשי מריבועים, 
+\begin_inset Formula
+$a$
+\end_inset
+ הוא מספר ריבועי
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ניתן בהכרח לפרק את 
+\begin_inset Formula
+$n$
+\end_inset
+ בצורה זו משום שלכל ראשוני 
+\begin_inset Formula
+$p$
+\end_inset
+ בפירוק של 
+\begin_inset Formula
+$n$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKord_{p}\left(n\right)=1$
+\end_inset
+ "נכניס" ל-
+\begin_inset Formula
+$b$
+\end_inset
+; ועבור כל ראשוני 
+\begin_inset Formula
+$q$
+\end_inset
+ בפירוק של 
+\begin_inset Formula
+$n$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\MKord_{q}\left(n\right)\geq2$
+\end_inset
+ "נכניס" את 
+\begin_inset Formula
+$q$
+\end_inset
+ בחזקת הזוגי הגדול ביותר שקטן או שווה ל-
+\begin_inset Formula
+$\MKord_{q}\left(n\right)$
+\end_inset
+ ל-
+\begin_inset Formula
+$a$
+\end_inset
+ (נגדיר 
+\begin_inset Formula
+$t:=2\cdot\left\lfloor \frac{\MKord_{q}\left(n\right)}{2}\right\rfloor $
+\end_inset
+ ואת 
+\begin_inset Formula
+$q^{t}$
+\end_inset
+ "נכניס" ל-
+\begin_inset Formula
+$a$
+\end_inset
+"), ואת השאר (
+\begin_inset Formula
+$q^{1}$
+\end_inset
+ או 
+\begin_inset Formula
+$q^{0}$
+\end_inset
+) "נכניס" ל-
+\begin_inset Formula
+$b$
+\end_inset
+.
+\end_layout
+
+\end_inset
+ ו-
+\begin_inset Formula
+$\sqrt{a}=s$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נשים לב לכך שמתקיים 
+\begin_inset Formula
+$\sqrt{n}=\sqrt{ab}=\sqrt{a}\cdot\sqrt{b}=s\cdot\sqrt{b}$
+\end_inset
+, אנחנו יודעים ש-
+\begin_inset Formula
+$s\in\MKrational$
+\end_inset
+ ומהמשפט נובע ש-
+\begin_inset Formula
+$\sqrt{b}\notin\MKrational$
+\end_inset
+, מכאן שגם 
+\begin_inset Formula
+$s\cdot\sqrt{b}\notin\MKrational$
+\end_inset
+ שהרי 
+\begin_inset Formula
+$\MKrational$
+\end_inset
+ הוא שדה
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+מהסגירות לחילוק באיבר שונה מאפס נובע שאם 
+\begin_inset Formula
+$s\cdot\sqrt{b}\in\MKrational$
+\end_inset
+ אז גם 
+\begin_inset Formula
+$\sqrt{b}=\frac{s\cdot\sqrt{b}}{s}\in\MKrational$
+\end_inset
+ (
+\begin_inset Formula
+$s\neq0$
+\end_inset
+ שכן 
+\begin_inset Formula
+$s^{2}\cdot b=n\neq0$
+\end_inset
+).
+\end_layout
+
+\end_inset
+. 
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula
+$0\neq a,b\in\MKinteger$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$p\in\MKinteger$
+\end_inset
+ ראשוני מתקיים 
+\begin_inset Formula
+$\MKord_{p}\left(a+b\right)\geq\min\left\{ \MKord_{p}\left(a\right),\MKord_{p}\left(b\right)\right\} $
+\end_inset
+.
+\end_layout
+
+\begin_layout Subsection
+שכיחות המספרים הראשוניים
+\end_layout
+
+\begin_layout Theorem
+קיימים אינסוף ראשוניים, כלומר קבוצת המספרים הראשוניים היא קבוצה אינסופית.
+\end_layout
+
+\begin_layout Standard
+הראשון שהוכיח את המשפט היה אוקלידס, אנחנו נראה שתי הוכחות: הראשונה היא ההוכחה של אוקלידס והיא פשוטה יחסית והאחרת (של אוילר) מערבת כלים כבדים של חשבון אינפיניטסימלי.
+\end_layout
+
+\begin_layout Proof
+\bar under
+הוכחה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+- אוקלידס
+\bar default
+
+\begin_inset Newline newline
+\end_inset
+נניח בשלילה שקבוצת הראשוניים היא קבוצה סופית ויהיו 
+\begin_inset Formula
+$p_{1},p_{2},\ldots,p_{r}\in\MKinteger$
+\end_inset
+ כל הראשוניים הללו.
+\begin_inset Newline newline
+\end_inset
+נתבונן במספר:
+\begin_inset Formula
+\[
+a:=1+\prod_{i=1}^{r}p_{i}
+\]
+
+
+\end_inset
+מהמשפט היסודי של האריתמטיקה יש ל-
+\begin_inset Formula
+$a$
+\end_inset
+ הצגה כמכפלה של ראשוניים ולכן בהכרח קיים ראשוני המחלק אותו, אבל ראשוני כזה אינו יכול להיות אחד מאלו שמופיעים במכפלה שלעיל בסתירה לכך שאלו כל הראשוניים בכלל.
+\begin_inset Newline newline
+\end_inset
+מכאן שהנחת השלילה אינה נכונה וקבוצת הראשוניים היא אינסופית.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+\bar under
+הוכחה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+- אוילר
+\bar default
+
+\begin_inset Newline newline
+\end_inset
+נניח שקבוצת הראשוניים היא קבוצה סופית ויהיו 
+\begin_inset Formula
+$p_{1},p_{2},\ldots,p_{r}\in\MKnatural$
+\end_inset
+ כל הראשוניים הטבעיים בקבוצה.
+\begin_inset Newline newline
+\end_inset
+ע"פ הנוסחה לסכום של סדרה הנדסית מתכנסת מתקיים:
+\begin_inset Formula
+\[
+\prod_{i=1}^{r}\frac{1}{1-\frac{1}{p_{i}}}=\prod_{i=1}^{r}\left(\sum_{n=0}^{\infty}\frac{1}{\left(p_{i}\right)^{n}}\right)
+\]
+
+
+\end_inset
+תהא 
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ סדרה המוגדרת ע"י (לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+):
+\begin_inset Formula
+\[
+a_{n}:=\prod_{i=1}^{r}\left(\sum_{j=0}^{m_{n}}\frac{1}{\left(p_{i}\right)^{j}}\right)
+\]
+
+
+\end_inset
+כאשר 
+\begin_inset Formula
+$\left(m_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ היא סדרה המוגדרת ע"י 
+\begin_inset Formula
+$m_{n}:=\max\left\{ \MKord_{p_{i}}\left(n\right)\mid r\geq i\in\MKnatural\right\} $
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$m_{n}$
+\end_inset
+ הוא החזקה הגדולה ביותר שבה ראשוני כלשהו מחלק את 
+\begin_inset Formula
+$n$
+\end_inset
+.
+\begin_inset Formula
+\[
+\Rightarrow\lim_{n\rightarrow\infty}a_{n}=\prod_{i=1}^{r}\left(\sum_{n=0}^{\infty}\frac{1}{\left(p_{i}\right)^{n}}\right)=\prod_{i=1}^{r}\frac{1}{1-\frac{1}{p_{i}}}
+\]
+
+
+\end_inset
+בנוסף, לכל 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$N\geq n\in\MKnatural$
+\end_inset
+ ,
+\begin_inset Formula
+$\frac{1}{n}$
+\end_inset
+ מופיע במכפלה:
+\begin_inset Formula
+\[
+a_{N}:=\prod_{i=1}^{r}\left(\sum_{j=0}^{m_{N}}\frac{1}{\left(p_{i}\right)^{j}}\right)=\sum_{\forall i\leq r:\ 0\leq e_{i}\leq m_{n}}\prod_{i=1}^{r}\frac{1}{\left(p_{i}\right)^{e_{i}}}
+\]
+
+
+\end_inset
+ומזה נובע שלכל 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ מתקיים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+נזכור שכל האיברים במכפלה חיוביים ושלכל 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$m_{N}\leq N$
+\end_inset
+.
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\[
+a_{N}\geq\sum_{n=1}^{N}\frac{1}{n}
+\]
+
+
+\end_inset
+כעת נזכור ש-
+\begin_inset Formula
+$\left(a_{n}\right)_{n=1}^{\infty}$
+\end_inset
+ היא סדרה מתכנסת ושהטור ההרמוני הוא טור חיובי ולכן אי-השוויון הנ"ל גורר את התכנסות הטור ההרמוני בסתירה לכך שאנו יודעים שאינו מתכנס.
+\begin_inset Newline newline
+\end_inset
+מכאן שהנחת השלילה אינה נכונה וקבוצת הראשוניים היא אינסופית.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ זוהי הגרסה המפורמלת של ההוכחה שכתב אוילר:
+\begin_inset Formula
+\[
+\sum_{n=1}^{\infty}\frac{1}{n}=\prod_{p\in\MKprime}\left(\sum_{n=0}^{\infty}\frac{1}{p^{n}}\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ קיימים שני ראשוניים עוקבים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+לכל ראשוני 
+\begin_inset Formula
+$q$
+\end_inset
+ שונה מהם מתקיים 
+\begin_inset Formula
+$q<p$
+\end_inset
+ או ש-
+\begin_inset Formula
+$p'<q$
+\end_inset
+.
+\end_layout
+
+\end_inset
+ 
+\begin_inset Formula
+$p,p'\in\MKnatural$
+\end_inset
+ (כך ש-
+\begin_inset Formula
+$p<p'$
+\end_inset
+) כך ש-
+\begin_inset Formula
+$p'-p>n$
+\end_inset
+, כלומר קיימים מרווחים גדולים כרצוננו בין שני ראשוניים עוקבים.
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+, נסמן 
+\begin_inset Formula
+$m:=n+1$
+\end_inset
+ ונתבונן בסדרת המספרים העוקבים הבאה:
+\begin_inset Formula
+\[
+\left(m!+2,m!+3,\ldots,m!+m\right)
+\]
+
+
+\end_inset
+זוהי סדרה באורך 
+\begin_inset Formula
+$n$
+\end_inset
+ שכל איבריה פריקים שכן האיבר הראשון מתחלק ב-
+\begin_inset Formula
+$2$
+\end_inset
+, השני ב-
+\begin_inset Formula
+$3$
+\end_inset
+ וכן הלאה עד האיבר האחרון שמחלק ב-
+\begin_inset Formula
+$n+1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ פריק גם 
+\begin_inset Formula
+$M_{n}=2^{n}-1$
+\end_inset
+ (מספר מרסן ה-
+\begin_inset Formula
+$n$
+\end_inset
+-י) הוא מספר פריק.
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ פריק ויהיו 
+\begin_inset Formula
+$1<a,b\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a\cdot b=n$
+\end_inset
+.
+\begin_inset Formula
+\begin{align*}
+\Rightarrow M_{n} & =2^{a\cdot b}-1=\left(2^{a}\right)^{b}-1^{b}\\
+ & =\left(2^{a}-1\right)\cdot\left(2^{0\cdot a}+2^{1\cdot a}+2^{2a}+\ldots+2^{\left(b-1\right)\cdot a}\right)
+\end{align*}
+
+
+\end_inset
+והרי 
+\begin_inset Formula
+$a>1$
+\end_inset
+ ולכן הגורם השמאלי גדול מ-
+\begin_inset Formula
+$1$
+\end_inset
+ ו-
+\begin_inset Formula
+$b-1>0$
+\end_inset
+ ולכן הגורם הימני גדול מ-
+\begin_inset Formula
+$1$
+\end_inset
+, כלומר מצאנו פירוק לא טריוויאלי של 
+\begin_inset Formula
+$M_{n}$
+\end_inset
+ ועל כן 
+\begin_inset Formula
+$M_{n}$
+\end_inset
+ פריק.
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+, אם 
+\begin_inset Formula
+$F_{n}=2^{n}+1$
+\end_inset
+ (מספר פרמה ה-
+\begin_inset Formula
+$n$
+\end_inset
+-י) ראשוני אז קיים 
+\begin_inset Formula
+$m\in\MKnatural_{0}$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$n=2^{m}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+נניח ש-
+\begin_inset Formula
+$F_{n}$
+\end_inset
+ ראשוני, כמו לכל טבעי גם ל-
+\begin_inset Formula
+$n$
+\end_inset
+ קיימים 
+\begin_inset Formula
+$m\in\MKnatural_{0}$
+\end_inset
+ ו-
+\begin_inset Formula
+$k\in\MKodd$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$n=2^{m}\cdot k$
+\end_inset
+, יהיו 
+\begin_inset Formula
+$m$
+\end_inset
+ ו-
+\begin_inset Formula
+$k$
+\end_inset
+ כנ"ל ונסמן 
+\begin_inset Formula
+$u:2^{m}$
+\end_inset
+.
+\begin_inset Formula
+\begin{align*}
+\Rightarrow F_{n} & =2^{u\cdot k}+1=\left(2^{u}\right)^{k}-\left(-1\right)^{k}\\
+ & =\left(2^{u}-\left(-1\right)\right)\cdot\sum_{j=0}^{k-1}\left(2^{u}\right)^{j}\cdot\left(-1\right)^{k-1-j}\\
+ & =\left(2^{u}+1\right)\cdot\sum_{j=0}^{k-1}\left(2^{u}\right)^{j}\cdot\left(-1\right)^{k-1-j}
+\end{align*}
+
+
+\end_inset
+כעת, אם 
+\begin_inset Formula
+$k>1$
+\end_inset
+ אז 
+\begin_inset Formula
+$k-1>1$
+\end_inset
+ (נזכור ש-
+\begin_inset Formula
+$k$
+\end_inset
+ אי-זוגי) ולכן הגורם הימני שונה מ-
+\begin_inset Formula
+$\pm1$
+\end_inset
+ ומכיוון שהגורם השמאלי ודאי שונה מ-
+\begin_inset Formula
+$\pm1$
+\end_inset
+ הרי שמצאנו פירוק לא טריוויאלי של 
+\begin_inset Formula
+$F_{n}$
+\end_inset
+ בסתירה להיות 
+\begin_inset Formula
+$F_{n}$
+\end_inset
+ אי-פריק, א"כ בהכרח מתקיים 
+\begin_inset Formula
+$k=1$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$n=2^{m}\cdot k=2^{m}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+לכל 
+\begin_inset Formula
+$x\in\left[0,\infty\right)$
+\end_inset
+ נסמן ב-
+\begin_inset Formula
+$\pi\left(x\right)$
+\end_inset
+ את כמות המספרים הראשוניים בקטע 
+\begin_inset Formula
+$\left[0,x\right]$
+\end_inset
+ (כלומר הגדרנו פונקציה 
+\begin_inset Formula
+$\pi:\left[0,\infty\right)\rightarrow\MKnatural_{0}$
+\end_inset
+).
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lemma 2.21"
+\end_inset
+לכל 
+\begin_inset Formula
+$m\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+1+\sum_{k=1}^{m}\frac{2^{k}}{\ln\left(2^{k}\right)}\leq3\cdot\frac{2^{m}}{\ln\left(2^{m}\right)}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+נוכיח את הלמה באינדוקציה על 
+\begin_inset Formula
+$m$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+עבור 
+\begin_inset Formula
+$m\in\left\{ 1,2,3\right\} $
+\end_inset
+ נשים לב לכך שמתקיים:
+\begin_inset Formula
+\[
+1<\frac{2}{\ln\left(2\right)}=\frac{2\cdot2}{2\cdot\ln\left(2\right)}=\frac{2^{2}}{\ln\left(2^{2}\right)}
+\]
+
+
+\end_inset
+ולכן גם:
+\begin_inset Formula
+\[
+1+\frac{2}{\ln\left(2\right)}<3\cdot\frac{2}{\ln\left(2\right)}
+\]
+
+
+\end_inset
+וכמו כן גם:
+\begin_inset Formula
+\[
+1+\frac{2}{\ln\left(2\right)}+\frac{2^{2}}{\ln\left(2^{2}\right)}=1+2\cdot\frac{2}{\ln\left(2\right)}<3\cdot\frac{2}{\ln\left(2\right)}=3\cdot\frac{2^{2}}{\ln\left(2^{2}\right)}
+\]
+
+
+\end_inset
+בנוסף מתקיים:
+\begin_inset Formula
+\begin{align*}
+1\leq\frac{4}{3\cdot\ln\left(2\right)} & =\frac{4}{3}\cdot\frac{1}{\ln\left(2\right)}=\frac{1}{2}\cdot\frac{2^{3}}{3\cdot\ln\left(2\right)}\\
+\frac{2}{\ln\left(2\right)}+\frac{2^{2}}{\ln\left(2^{2}\right)} & =2\cdot\frac{2}{\ln\left(2\right)}=\frac{3}{2}\cdot\frac{2^{3}}{3\cdot\ln\left(2\right)}
+\end{align*}
+
+
+\end_inset
+וממילא:
+\begin_inset Formula
+\[
+1+\frac{2}{\ln\left(2\right)}+\frac{2^{2}}{\ln\left(2^{2}\right)}+\frac{2^{3}}{\ln\left(2^{3}\right)}\leq3\cdot\frac{2^{3}}{3\cdot\ln\left(2\right)}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+כעת יהי 
+\begin_inset Formula
+$3\leq m\in\MKnatural$
+\end_inset
+, נניח באינדוקציה שהטענה נכונה עבור 
+\begin_inset Formula
+$m$
+\end_inset
+ ונוכיח עבור 
+\begin_inset Formula
+$m+1$
+\end_inset
+:
+\begin_inset Formula
+\begin{align*}
+1+\sum_{k=1}^{m+1}\frac{2^{k}}{\ln\left(2^{k}\right)} & =\frac{2^{m+1}}{\ln\left(2^{m+1}\right)}+1+\sum_{k=1}^{m}\frac{2^{k}}{\ln\left(2^{k}\right)}\leq\frac{2^{m+1}}{\ln\left(2^{m+1}\right)}+3\cdot\frac{2^{m}}{\ln\left(2^{m}\right)}\\
+ & =2\cdot\frac{2^{m}}{\left(m+1\right)\cdot\ln\left(2\right)}+3\cdot\frac{2^{m}}{m\cdot\ln\left(2\right)}\\
+ & =\frac{2^{m}}{\ln\left(2\right)}\cdot\left(\frac{2}{m+1}+\frac{3}{m}\right)=\frac{2^{m}}{\ln\left(2\right)}\cdot\frac{2m+3m+3}{m\cdot\left(m+1\right)}\\
+ & \leq\frac{2^{m}}{\ln\left(2\right)}\cdot\frac{2m+3m+3}{m\cdot\left(m+1\right)}\leq\frac{2^{m}}{\ln\left(2\right)}\cdot\frac{6m}{m\cdot\left(m+1\right)}\\
+ & \leq\frac{2^{m}}{\ln\left(2\right)}\cdot\frac{6}{m+1}=3\cdot\frac{2^{m+1}}{\left(m+1\right)\cdot\ln\left(2\right)}=3\cdot\frac{2^{m+1}}{\ln\left(2^{m+1}\right)}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lemma 2.22"
+\end_inset
+לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\MKord_{p}\left(n!\right)=\sum_{k=1}^{\infty}\left\lfloor \frac{n}{p^{k}}\right\rfloor 
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ אמנם מבחינה פורמלית זהו סכום אינסופי אך לכל 
+\begin_inset Formula
+$k\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\log_{p}n<k$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left\lfloor \frac{n}{p^{k}}\right\rfloor =0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+משפט צ'בישב
+\series default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה: 
+\begin_inset CommandInset href
+LatexCommand href
+name "פפנוטי צ'בישב"
+target https://he.wikipedia.org/wiki/%D7%A4%D7%A4%D7%A0%D7%95%D7%98%D7%99_%D7%A6%27%D7%91%D7%99%D7%A9%D7%91
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+קיימים 
+\begin_inset Formula
+$A,B\in\MKreal$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$A<B$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$2\leq x\in\MKreal$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+A\cdot\frac{x}{\ln x}\leq\pi\left(x\right)\leq B\cdot\frac{x}{\ln x}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ צ'בישב הראה באמצע המאה ה-
+\numeric on
+19
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+ש-
+\begin_inset Formula
+$A=\frac{7}{8}$
+\end_inset
+ ו-
+\begin_inset Formula
+$B=\frac{9}{8}$
+\end_inset
+ מקיימים את הנדרש, בכיתה הוכחנו את המשפט עבור 
+\begin_inset Formula
+$A=\frac{1}{2}\cdot\ln2$
+\end_inset
+ ו-
+\begin_inset Formula
+$B=6\cdot\ln2$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בנוסף, צ'בישב הוכיח שאם הגבול 
+\begin_inset Formula
+$\begin{alignedat}{1}\lim_{x\rightarrow\infty}\frac{\pi\left(x\right)}{\frac{x}{\ln x}}\end{alignedat}
+$
+
+\end_inset
+ קיים אז הוא שווה ל-
+\begin_inset Formula
+$1$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר שאם מוכנים לוותר על הדרישה שאי-השוויונות יתקיימו לכל 
+\begin_inset Formula
+$1<x\in\MKreal$
+\end_inset
+ ומוכנים להסתפק בדרישה שקיים 
+\begin_inset Formula
+$M\in\MKreal$
+\end_inset
+ כך שאי-השוויונות יתקיימו החל מ-
+\begin_inset Formula
+$M$
+\end_inset
+, אז ניתן להשתמש בכל שני קבועים המקיימים 
+\begin_inset Formula
+$A<1<B$
+\end_inset
+ (כמובן שככל ש-
+\begin_inset Formula
+$A$
+\end_inset
+ ו-
+\begin_inset Formula
+$B$
+\end_inset
+ יהיו קרובים יותר ל-
+\begin_inset Formula
+$1$
+\end_inset
+ נזדקק ל-
+\begin_inset Formula
+$M$
+\end_inset
+ גדול יותר).
+\end_layout
+
+\end_inset
+ אולם ההוכחה של משפט זה,
+\begin_inset Newline newline
+\end_inset
+הלא הוא 
+\begin_inset CommandInset href
+LatexCommand href
+name "משפט המספרים הראשוניים"
+target https://he.wikipedia.org/wiki/%D7%9E%D7%A9%D7%A4%D7%98_%D7%94%D7%9E%D7%A1%D7%A4%D7%A8%D7%99%D7%9D_%D7%94%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%99%D7%99%D7%9D
+literal false
+\end_inset
+, נאלצה לחכות עד לשנת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1896
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+שאז הוכחה בכלים אנליטיים (אני מנחש שזו הסיבה לכך שמקובל להגדיר את הפונקציה 
+\begin_inset Formula
+$\pi$
+\end_inset
+ על 
+\begin_inset Formula
+$\left[0,\infty\right)$
+\end_inset
+ ולא על 
+\begin_inset Formula
+$\MKnatural$
+\end_inset
+).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ החסמים של צ'בישב היו כה טובים עד שאפשרו לו להוכיח לראשונה את נכונותה של 
+\series bold
+השערת ברטראן
+\series default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה: 
+\begin_inset CommandInset href
+LatexCommand href
+name "ז'וזף ברטראן"
+target https://he.wikipedia.org/wiki/%D7%96%27%D7%95%D7%96%D7%A3_%D7%91%D7%A8%D7%98%D7%A8%D7%90%D7%9F
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+
+\series bold
+ (הנקראת מאז גם "משפט ברטראן-צ'בישב):
+\begin_inset Newline newline
+\end_inset
+
+\series default
+לכל 
+\begin_inset Formula
+$3<n\in\MKnatural$
+\end_inset
+ קיים 
+\begin_inset Formula
+$p\in\MKnatural$
+\end_inset
+ ראשוני המקיים 
+\begin_inset Formula
+$n\leq p\leq2n$
+\end_inset
+, ההוכחה מסתמכת על משפט צ'בישב ולמעשה ממשפט המספרים הראשוניים נובעת טענה חזקה יותר האומרת שלכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ קיים 
+\begin_inset Formula
+$N\in\MKnatural$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$N<n\in\MKnatural$
+\end_inset
+ יש לפחות ראשוני אחד בקטע 
+\begin_inset Formula
+$\left(n,n+\varepsilon\cdot n\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+נסמן 
+\begin_inset Formula
+$A:=\frac{1}{2}\cdot\ln2$
+\end_inset
+ ו-
+\begin_inset Formula
+$B:=6\cdot\ln2$
+\end_inset
+ ונוכיח שלכל 
+\begin_inset Formula
+$1<x\in\MKreal$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+A\cdot\frac{x}{\ln x}\leq\pi\left(x\right)\leq B\cdot\frac{x}{\ln x}
+\]
+
+
+\end_inset
+נזכור בכל שלב של ההוכחה שהפונקציה 
+\begin_inset Formula
+$\frac{x}{\ln x}$
+\end_inset
+ עולה ממש בתחום 
+\begin_inset Formula
+$\left[e,\infty\right)$
+\end_inset
+ ויורדת בתחום 
+\begin_inset Formula
+$\left(1,e\right]$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נוכיח תחילה עבור החסם מלעיל (
+\begin_inset Formula
+$B$
+\end_inset
+).
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+, נסמן 
+\begin_inset Formula
+$N:=\begin{pmatrix}2n\\
+n
+\end{pmatrix}$
+
+\end_inset
+.
+\begin_inset Formula
+\[
+\Rightarrow N\leq\sum_{k=0}^{2n}\begin{pmatrix}2n\\
+k
+\end{pmatrix}=\left(1+1\right)^{2n}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow N\leq2^{2n}
+\]
+
+
+\end_inset
+נסמן 
+\begin_inset Formula
+$P:=\left\{ p\in\MKprime\mid n<p\leq2n\right\} $
+\end_inset
+, לכל ראשוני 
+\begin_inset Formula
+$p\in P$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$p\mid N$
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKord_{p}\left(N\right)=1$
+\end_inset
+ וזאת משום ש-
+\begin_inset Formula
+$p$
+\end_inset
+ מחלק את המכפלה 
+\begin_inset Formula
+$\prod_{i=n+1}^{2n}i$
+\end_inset
+ אך 
+\begin_inset Formula
+$p^{2}$
+\end_inset
+ אינו מחלק את המכפלה ובנוסף 
+\begin_inset Formula
+$p$
+\end_inset
+ אינו מחלק אף אחד מהאיברים ב-
+\begin_inset Formula
+$n!$
+\end_inset
+.
+\begin_inset Formula
+\begin{align*}
+\Rightarrow\prod_{p\in P}p & \leq N\leq2^{2n}\\
+\Rightarrow\sum_{p\in P}\ln\left(p\right) & \leq\ln\left(N\right)\leq\ln\left(2^{2n}\right)=2n\cdot\ln\left(2\right)
+\end{align*}
+
+
+\end_inset
+נניח כרגע ש-
+\begin_inset Formula
+$n>1$
+\end_inset
+,
+\begin_inset Formula
+\begin{align*}
+\Rightarrow\ln\left(n\right)\cdot\left(\pi\left(2n\right)-\pi\left(n\right)\right) & =\ln\left(n\right)\cdot\left|P\right|\leq\sum_{p\in P}\ln\left(p\right)\leq2n\cdot\ln\left(2\right)\\
+\Rightarrow\pi\left(2n\right)-\pi\left(n\right) & =\frac{2n\cdot\ln\left(2\right)}{\ln\left(n\right)}=2\cdot\ln\left(2\right)\cdot\frac{n}{\ln n}
+\end{align*}
+
+
+\end_inset
+
+\begin_inset Formula
+$n$
+\end_inset
+ הנ"ל היה שרירותי ולכן הנ"ל נכון לכל 
+\begin_inset Formula
+$1<n\in\MKnatural$
+\end_inset
+, בפרט לכל 
+\begin_inset Formula
+$k\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\pi\left(2^{k+1}\right)-\pi\left(2^{k}\right)=2\cdot\ln\left(2\right)\cdot\frac{2^{k}}{\ln\left(2^{k}\right)}
+\]
+
+
+\end_inset
+ומכאן ע"פ למה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 2.21"
+plural false
+caps false
+noprefix false
+\end_inset
+
+\series bold
+\series default
+
+\numeric off
+
+\color red
+ 
+\color inherit
+שלכל 
+\begin_inset Formula
+$m\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\pi\left(2^{m+1}\right)=\sum_{k=0}^{m}\left(\pi\left(2^{k+1}\right)-\pi\left(2^{k}\right)\right)=2\cdot\ln\left(2\right)\cdot\left(1+\sum_{k=1}^{m}\frac{2^{k}}{\ln\left(2^{k}\right)}\right)\leq6\cdot\ln\left(2\right)\cdot\frac{2^{m}}{\ln\left(2^{m}\right)}
+\]
+
+
+\end_inset
+כעת נשים לב לכך שלכל 
+\begin_inset Formula
+$e\leq x\in\MKreal$
+\end_inset
+ קיים 
+\begin_inset Formula
+$m\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$2^{m}\leq x\leq2^{m+1}$
+\end_inset
+ ולכן עבור אותו 
+\begin_inset Formula
+$m$
+\end_inset
+ יתקיים גם:
+\begin_inset Formula
+\[
+\pi\left(x\right)\leq\pi\left(2^{m+1}\right)\leq6\cdot\ln\left(2\right)\cdot\frac{2^{m}}{\ln\left(2^{m}\right)}\leq6\cdot\ln\left(2\right)\cdot\frac{x}{\ln\left(x\right)}
+\]
+
+
+\end_inset
+ועבור 
+\begin_inset Formula
+$x\in\left(1,e\right)$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\pi\left(x\right)\leq1\leq6\cdot\ln\left(2\right)\cdot e=6\cdot\ln\left(2\right)\cdot\frac{e}{\ln\left(e\right)}\leq6\cdot\ln\left(2\right)\cdot\frac{x}{\ln\left(x\right)}
+\]
+
+
+\end_inset
+כעת נעבור להוכחה עבור החסם מלרע (
+\begin_inset Formula
+$A$
+\end_inset
+) ונעבוד אם 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ כללי שאינו בהכרח גדול ממש מ-
+\begin_inset Formula
+$1$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נזכור שמתקיים 
+\begin_inset Formula
+$\begin{pmatrix}2n\\
+k
+\end{pmatrix}\leq\begin{pmatrix}2n\\
+n
+\end{pmatrix}$
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$2n\geq k\in\MKnatural_{0}$
+\end_inset
+ .
+\begin_inset Formula
+\[
+\Rightarrow\sum_{k=1}^{2n-1}\begin{pmatrix}2n\\
+k
+\end{pmatrix}\leq\begin{pmatrix}2n\\
+n
+\end{pmatrix}\cdot\left(2n-1\right)
+\]
+
+
+\end_inset
+ומכאן שגם:
+\begin_inset Formula
+\[
+\sum_{k=0}^{2n}\begin{pmatrix}2n\\
+k
+\end{pmatrix}=\begin{pmatrix}2n\\
+0
+\end{pmatrix}+\sum_{k=1}^{2n-1}\begin{pmatrix}2n\\
+k
+\end{pmatrix}+\begin{pmatrix}2n\\
+2n
+\end{pmatrix}=1+\sum_{k=1}^{2n-1}\begin{pmatrix}2n\\
+k
+\end{pmatrix}+1\leq\begin{pmatrix}2n\\
+n
+\end{pmatrix}\cdot\left(2n-1\right)+\begin{pmatrix}2n\\
+n
+\end{pmatrix}=2n\cdot\begin{pmatrix}2n\\
+n
+\end{pmatrix}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow\frac{2^{2n}}{2n}=\frac{\left(1+1\right)^{2n}}{2n}=\frac{1}{2n}\cdot\sum_{k=0}^{2n}\begin{pmatrix}2n\\
+k
+\end{pmatrix}\leq\begin{pmatrix}2n\\
+n
+\end{pmatrix}=N=\prod_{2n\geq p\in\MKprime}p^{\MKord_{p}\left(N\right)}\\
+ & \Rightarrow2n\cdot\ln\left(2\right)-\ln\left(2n\right)=\ln\left(\frac{2^{2n}}{2n}\right)\leq\ln\left(\prod_{2n\geq p\in\MKprime}p^{\MKord_{p}\left(N\right)}\right)=\sum_{2n\geq p\in\MKprime}\MKord_{p}\left(N\right)\cdot\ln\left(p\right)
+\end{align*}
+
+
+\end_inset
+נזכור ש-
+\begin_inset Formula
+$N$
+\end_inset
+ הוגדר להיות 
+\begin_inset Formula
+$\begin{pmatrix}2n\\
+n
+\end{pmatrix}=\frac{\left(2n\right)!}{\left(n!\right)^{2}}$
+
+\end_inset
+ ולכן לכל 
+\begin_inset Formula
+$2n\geq p\in\MKprime$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\MKord_{p}\left(N\right)=\MKord_{p}\left(\left(2n\right)!\right)-\MKord\left(\left(n!\right)^{2}\right)=\MKord_{p}\left(\left(2n\right)!\right)-2\cdot\MKord\left(n!\right)
+\]
+
+
+\end_inset
+ולכן מלמה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lemma 2.22"
+plural false
+caps false
+noprefix false
+\end_inset
+ נובע כי (לכל 
+\begin_inset Formula
+$2n\geq p\in\MKprime$
+\end_inset
+):
+\begin_inset Formula
+\[
+\MKord_{p}\left(N\right)=\sum_{k=1}^{\infty}\left\lfloor \frac{2n}{p^{k}}\right\rfloor -2\cdot\sum_{k=1}^{\infty}\left\lfloor \frac{n}{p^{k}}\right\rfloor =\sum_{k=1}^{\infty}\left(\left\lfloor \frac{2n}{p^{k}}\right\rfloor -\left\lfloor 2\cdot\frac{n}{p^{k}}\right\rfloor \right)
+\]
+
+
+\end_inset
+לכל 
+\begin_inset Formula
+$x\in\MKreal$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left\lfloor 2x\right\rfloor -2\cdot\left\lfloor x\right\rfloor \in\left\{ 0,1\right\} $
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+אם 
+\begin_inset Formula
+$0\leq\left\lfloor x\right\rfloor <\frac{1}{2}$
+\end_inset
+ אז 
+\begin_inset Formula
+$\left\lfloor 2x\right\rfloor -2\cdot\left\lfloor x\right\rfloor =0$
+\end_inset
+ ואם 
+\begin_inset Formula
+$\frac{1}{2}\leq\left\lfloor x\right\rfloor <1$
+\end_inset
+ אז 
+\begin_inset Formula
+$\left\lfloor 2x\right\rfloor -2\cdot\left\lfloor x\right\rfloor =1$
+\end_inset
+.
+\end_layout
+
+\end_inset
+, לכן (לכל 
+\begin_inset Formula
+$2n\geq p\in\MKprime$
+\end_inset
+) כל המחוברים בטור הם 
+\begin_inset Formula
+$1$
+\end_inset
+ או 
+\begin_inset Formula
+$0$
+\end_inset
+ ובנוסף יש לכל היותר 
+\begin_inset Formula
+$\left\lfloor \log_{p}\left(2n\right)\right\rfloor =\left\lfloor \frac{\ln\left(2n\right)}{\ln\left(p\right)}\right\rfloor $
+\end_inset
+ מחוברים שונים מאפס, מכאן שלכל 
+\begin_inset Formula
+$2n\geq p\in\MKprime$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\MKord_{p}\left(N\right)\leq\frac{\ln\left(2n\right)}{\ln\left(p\right)}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow2n\cdot\ln\left(2\right)-\ln\left(2n\right)\leq\sum_{2n\geq p\in\MKprime}\frac{\ln\left(2n\right)}{\ln\left(p\right)}\cdot\ln\left(p\right)=\sum_{2n\geq p\in\MKprime}\ln\left(2n\right)=\ln\left(2n\right)\cdot\pi\left(2n\right)
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow\frac{2n}{\ln\left(2n\right)}\cdot\ln\left(2\right)-1\leq\pi\left(2n\right)
+\]
+
+
+\end_inset
+נניח כעת ש-
+\begin_inset Formula
+$n\geq4$
+\end_inset
+ ונשים לב לכך שמתקיים:
+\begin_inset Formula
+\begin{align*}
+ & \left(\frac{2n}{\ln\left(2n\right)}\cdot\ln\left(2\right)-1\right)-\left(\frac{2n+2}{\ln\left(2n+2\right)}\cdot\frac{\ln\left(2\right)}{2}\right)\\
+ & =\left(\frac{2n}{\ln\left(2n\right)}-\frac{n+1}{\ln\left(2n+2\right)}\right)\cdot\ln\left(2\right)-1\\
+ & \geq\left(\frac{2n}{\ln\left(2n\right)}-\frac{n+1}{\ln\left(2n\right)}\right)\cdot\ln\left(2\right)-1\\
+ & \geq\frac{n-1}{\ln\left(2n\right)}\cdot\ln\left(2\right)-1\geq\frac{4-1}{\ln\left(2\cdot4\right)}\cdot\ln\left(2\right)-1\\
+ & =\frac{3}{\ln\left(2^{3}\right)}\cdot\ln\left(2\right)-1=\frac{3}{3\cdot\ln\left(2\right)}\cdot\ln\left(2\right)-1=0
+\end{align*}
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow\frac{2n+2}{\ln\left(2n+2\right)}\cdot\frac{\ln\left(2\right)}{2}\leq\frac{2n}{\ln\left(2n\right)}\cdot\ln\left(2\right)-1\leq\pi\left(2n\right)
+\]
+
+
+\end_inset
+ושוב 
+\begin_inset Formula
+$n$
+\end_inset
+ הנ"ל היה שרירותי ולכן הנ"ל נכון לכל 
+\begin_inset Formula
+$4\leq n\in\MKnatural$
+\end_inset
+. לכל 
+\begin_inset Formula
+$8\leq x\in\MKreal$
+\end_inset
+ קיים 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$2n\leq x\leq2n+2$
+\end_inset
+ ולכן עבור אותו 
+\begin_inset Formula
+$n$
+\end_inset
+ יתקיים גם:
+\begin_inset Formula
+\[
+\frac{x}{\ln\left(x\right)}\cdot\frac{\ln\left(2\right)}{2}\leq\frac{2n+2}{\ln\left(2n+2\right)}\cdot\frac{\ln\left(2\right)}{2}\leq\pi\left(2n\right)\leq\pi\left(x\right)
+\]
+
+
+\end_inset
+בנוסף, מהעובדה ש-
+\begin_inset Formula
+$\frac{x}{\ln x}$
+\end_inset
+ עולה בקרן 
+\begin_inset Formula
+$\left[e,\infty\right)$
+\end_inset
+ נקבל שלכל 
+\begin_inset Formula
+$x\in\left[e,3\right)$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\frac{x}{\ln\left(x\right)}\cdot\frac{\ln\left(2\right)}{2}<\frac{4}{\ln\left(2^{2}\right)}\cdot\frac{\ln\left(2\right)}{2}=\frac{4}{2\cdot\ln\left(2\right)}\cdot\frac{\ln\left(2\right)}{2}=1=\pi\left(x\right)
+\]
+
+
+\end_inset
+ולכל 
+\begin_inset Formula
+$x\in\left[3,8\right)$
+\end_inset
+ נקבל שמתקיים:
+\begin_inset Formula
+\[
+\frac{x}{\ln\left(x\right)}\cdot\frac{\ln\left(2\right)}{2}\leq\frac{8}{\ln\left(8\right)}\cdot\frac{\ln\left(2\right)}{2}=\frac{4}{\ln\left(2^{3}\right)}\cdot\ln\left(2\right)=\frac{4}{3\cdot\ln\left(2\right)}\cdot\ln\left(2\right)<2\leq\pi\left(x\right)
+\]
+
+
+\end_inset
+כמו כן מהעובדה ש-
+\begin_inset Formula
+$\frac{x}{\ln x}$
+\end_inset
+ יורדת בקטע 
+\begin_inset Formula
+$\left[2,e\right]$
+\end_inset
+ נקבל שלכל 
+\begin_inset Formula
+$x\in\left[2,e\right)$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\frac{x}{\ln\left(x\right)}\cdot\frac{\ln\left(2\right)}{2}\leq\frac{2}{\ln\left(2\right)}\cdot\frac{\ln\left(2\right)}{2}=1=\pi\left(2\right)\leq\pi\left(x\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+העשרה: משפטים והשערות אודות המספרים הראשוניים
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ 
+\series bold
+השערת הראשוניים התאומים:
+\series default
+ שני ראשוניים עוקבים יקראו 
+\bar under
+תאומים
+\bar default
+ אם ההפרש שלהם הוא 
+\begin_inset Formula
+$2$
+\end_inset
+, השערת הראשוניים התאומים טוענת שקיימים אינסוף כאלה וזוהי בעיה פתוחה במתמטיקה; עם זאת בעשור האחרון הצליחו המתמטיקאים 
+\begin_inset CommandInset href
+LatexCommand href
+name "Yitang Zhang"
+target https://en.wikipedia.org/wiki/Yitang_Zhang
+literal false
+\end_inset
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "James Maynard"
+target https://en.wikipedia.org/wiki/James_Maynard_(mathematician)
+literal false
+\end_inset
+ ו
+\begin_inset CommandInset href
+LatexCommand href
+name "טרנס טאו"
+target https://he.wikipedia.org/wiki/%D7%98%D7%A8%D7%A0%D7%A1_%D7%98%D7%90%D7%95
+literal false
+\end_inset
+ להוכיח שקיימים אינסוף זוגות ראשוניים שהמרווח ביניהם קטן או שווה ל-
+\begin_inset Formula
+$246$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ז'אנג הוכיח את הטענה עבור 
+\begin_inset Formula
+$70$
+\end_inset
+ מליון ולאחר מכן הורידו שני האחרים את החסם ל-
+\begin_inset Formula
+$246$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+ראו גם: 
+\begin_inset CommandInset href
+LatexCommand href
+name "Twin prime conjecture"
+target https://en.wikipedia.org/wiki/Twin_prime#Twin_prime_conjecture
+literal false
+\end_inset
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "Polymath8"
+target https://en.wikipedia.org/wiki/Polymath_Project#Polymath8
+literal false
+\end_inset
+ (ויקיפדיה האנגלית) ו
+\begin_inset CommandInset href
+LatexCommand href
+name "השערת המספרים הראשוניים התאומים"
+target https://he.wikipedia.org/wiki/%D7%94%D7%A9%D7%A2%D7%A8%D7%AA_%D7%94%D7%9E%D7%A1%D7%A4%D7%A8%D7%99%D7%9D_%D7%94%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%99%D7%99%D7%9D_%D7%94%D7%AA%D7%90%D7%95%D7%9E%D7%99%D7%9D
+literal false
+\end_inset
+ (ויקיפדיה העברית).
+\end_layout
+
+\end_inset
+. ממילא קיים מספר 
+\begin_inset Formula
+$246\geq n\in\MKnatural$
+\end_inset
+ כך שקיימים אינסוף זוגות ראשוניים שזהו ההפרש שלהם (עיקרון שובך היונים).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כמות הראשוניים מהצורה 
+\begin_inset Formula
+$4n+1$
+\end_inset
+ וזו של הראשוניים מהצורה 
+\begin_inset Formula
+$4n+3$
+\end_inset
+ משתוות אסימפטוטית בשאיפה לאינסוף, כלומר אם נסמן ב-
+\begin_inset Formula
+$f\left(x\right)$
+\end_inset
+ את מספר הראשוניים מהצורה 
+\begin_inset Formula
+$4n+1$
+\end_inset
+ שקטנים או שווים ל-
+\begin_inset Formula
+$0\leq x\in\MKreal$
+\end_inset
+ וב-
+\begin_inset Formula
+$g\left(x\right)$
+\end_inset
+ אז כמות הראשוניים מהצורה 
+\begin_inset Formula
+$4n+3$
+\end_inset
+ שקטנים או שווים ל-
+\begin_inset Formula
+$0\leq x\in\MKreal$
+\end_inset
+ נקבל:
+\begin_inset Formula
+\[
+\lim_{x\rightarrow\infty}\frac{f\left(x\right)}{g\left(x\right)}=1
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ 
+\series bold
+משפט דיריכלה
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה: 
+\begin_inset CommandInset href
+LatexCommand href
+name "לז'ן גוסטב פטר יוהאן דיריכלה"
+target https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%94%D7%90%D7%9F_%D7%A4%D7%98%D7%A8_%D7%92%D7%95%D7%A1%D7%98%D7%91_%D7%9C%D7%96%27%D7%9F_%D7%93%D7%99%D7%A8%D7%99%D7%9B%D7%9C%D7%94
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+:
+\series default
+ לכל 
+\begin_inset Formula
+$a,d\in\MKnatural$
+\end_inset
+ הזרים זה לזה קיימים אינסוף איברים ראשונים שהם איברים בסדרה החשבונית 
+\begin_inset Formula
+$\left(a+dn\right)_{n=0}^{\infty}$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+קל מאד להוכיח את הכיוון ההפוך (שאם יש אינסוף ראשוניים בסדרה חשבונית אז הבסיס וההפרש זרים).
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ משפט גרין-טאו
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערכים בוויקיפדיה: ראו בהערה הבאה.
+\end_layout
+
+\end_inset
+:
+\series default
+ לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ קיימת סדרה חשבונית באורך 
+\begin_inset Formula
+$n$
+\end_inset
+ שכל איבריה ראשוניים.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ 
+\series bold
+משפט גרין-טאו-ציגלר
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערכים בוויקיפדיה: 
+\begin_inset CommandInset href
+LatexCommand href
+name "בן גרין"
+target https://he.wikipedia.org/wiki/%D7%91%D7%9F_%D7%92%D7%A8%D7%99%D7%9F
+literal false
+\end_inset
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "טרנס טאו"
+target https://he.wikipedia.org/wiki/%D7%98%D7%A8%D7%A0%D7%A1_%D7%98%D7%90%D7%95
+literal false
+\end_inset
+ ו
+\begin_inset CommandInset href
+LatexCommand href
+name "תמר ציגלר"
+target https://he.wikipedia.org/wiki/%D7%AA%D7%9E%D7%A8_%D7%A6%D7%99%D7%92%D7%9C%D7%A8
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+:
+\series default
+ לכל ממ"ל במקדמים שלמים שאינה תלויה ליניארית שבה מספר הנעלמים עולה על מספר המשוואות ב-
+\begin_inset Formula
+$2$
+\end_inset
+ (לפחות) יש פתרון בו כל הנעלמים מקבלים ערכים ראשוניים.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ 
+\series bold
+משפט טאו-ציגלר
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערכים בוויקיפדיה: ראו בהערה הקודמת.
+\end_layout
+
+\end_inset
+:
+\series default
+ לכל 
+\begin_inset Formula
+$P_{1},P_{2},\ldots,P_{n}\in\MKinteger\left[x\right]$
+\end_inset
+ המקיימים 
+\begin_inset Formula
+$P_{k}\left(0\right)=0$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\geq k\in\MKnatural$
+\end_inset
+ קיימים אינסוף זוגות 
+\begin_inset Formula
+$\left(x,m\right)\in\MKinteger^{2}$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$x+P_{1}\left(m\right),x+P_{2}\left(m\right),\ldots,x+P_{n}\left(m\right)$
+\end_inset
+ כולם ראשוניים.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ 
+\series bold
+השערת גולדבך
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה: 
+\begin_inset CommandInset href
+LatexCommand href
+name "כריסטיאן גולדבך"
+target https://he.wikipedia.org/wiki/%D7%9B%D7%A8%D7%99%D7%A1%D7%98%D7%99%D7%90%D7%9F_%D7%92%D7%95%D7%9C%D7%93%D7%91%D7%9A
+literal false
+\end_inset
+
+\end_layout
+
+\end_inset
+:
+\series default
+ לכל 
+\begin_inset Formula
+$2<n\in\MKeven$
+\end_inset
+ קיימים שני ראשוניים שסכומם הוא 
+\begin_inset Formula
+$n$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ 
+\series bold
+הגרסה החלשה של השערת גולדבך
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+\size normal
+נקראת גם "השערת גולדבך החלשה", "השערת גולדבך האי-זוגית", "השערת גולדבך המשולשת" ו-"בעיית שלושת הראשוניים"; זוהי הגרסה ה"חלשה" משום שהיא נובעת ישירות מהשערת גולדבך עצמה.
+\size default
+
+\end_layout
+
+\end_inset
+:
+\series default
+ לכל 
+\begin_inset Formula
+$5<n\in\MKodd$
+\end_inset
+ קיימים שלושה ראשוניים שסכומם הוא 
+\begin_inset Formula
+$n$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+בשנת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2013
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+הוכחה הגרסה החלשה, כמעט אחרי
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+300
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+שנה מאז שהועלתה בהתכתבות בין כריסטיאן גולדבך ללאונרד אוילר, פירוט ניתן למצוא בערך "
+\begin_inset CommandInset href
+LatexCommand href
+name "השערת גולדבך החלשה"
+target https://he.wikipedia.org/wiki/%D7%94%D7%A9%D7%A2%D7%A8%D7%AA_%D7%92%D7%95%D7%9C%D7%93%D7%91%D7%9A_%D7%94%D7%97%D7%9C%D7%A9%D7%94
+literal false
+\end_inset
+" (ויקיפדיה).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ 
+\series bold
+משפט
+\family roman
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\family default
+
+\lang english
+Chen
+\lang default
+
+\lang hebrew
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה האנגלית: 
+\begin_inset CommandInset href
+LatexCommand href
+name "Chen Jingrun"
+target https://en.wikipedia.org/wiki/Chen_Jingrun
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+:
+\lang default
+
+\series default
+ לכל 
+\begin_inset Formula
+$2<n\in\MKeven$
+\end_inset
+ קיימים 
+\begin_inset Formula
+$p,q,r\in\MKnatural$
+\end_inset
+ ראשוניים כך ש-
+\begin_inset Formula
+$n=p+q$
+\end_inset
+ או ש-
+\begin_inset Formula
+$n=p+qr$
+\end_inset
+.
+\end_layout
+
+\end_body
+
+\end_document
+

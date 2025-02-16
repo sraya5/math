@@ -1,0 +1,3053 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The head's design for summuries,make the layout more similar to a book:
+\AtBeginDocument{
+\renewcommand\headrule{%
+  \kern -7pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+  \kern 10pt
+}}
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Correct the reversed parentheses in labels:
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\newfontfamily{\hebrewfont}{David}
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+
+\end_preamble
+
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+customHeadersFooters
+\end_modules
+
+\maintain_unincluded_children false
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+
+
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size      Larger
+	  Series     Bold
+	EndFont
+End
+
+
+Style Solution
+
+	LabelString           "פתרון: "End
+
+
+Style Notation
+
+	LabelString           "סימון  \thetheorem: "End
+
+Style Theorem
+
+	LabelString           "משפט \thetheorem: "End
+
+Style Property
+
+	LabelString           "תזכורת: "End
+
+\end_local_layout
+
+\language hebrew
+
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\boxbgcolor #cccccc
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+
+\tocdepth 3
+
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "C:/Users/sraya/AppData/Roaming/LyX2.4/macros/MKmacros.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Right Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+leftmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Left Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+המספרים המרוכבים
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Center Footer
+
+\end_layout
+
+\begin_layout Title
+
+\series bold
+\size huge
+המספרים המרוכבים
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+בניית שדה המספרים המרוכבים
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ראינו בהקדמה את המוטיבציה והאינטואיציה שמאחורי המספרים המרוכבים, כעת נבנה את שדה המספרים המרוכבים באופן פורמלי.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כפי שראינו בהקדמה אנחנו עומדים לקבל ש-
+\begin_inset Formula
+$\MKcomplex=\left\{ x+y\cdot i\mid x,y\in\MKreal\right\} $
+\end_inset
+, מבחינה פורמלית אין לביטוי הזה שום משמעות כרגע מפני שעוד לא הגדרנו חיבור וכפל על 
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+ אך מבחינה אינטואיטיבית הוא אומר לנו המון: כל מספר מרוכב ניתן להצגה באופן יחיד ע"י שתי "קואורדינטות" ממשיות ולכן בעצם כל מספר מרוכב ניתן להצגה באופן יחיד כנקודה במישור (כשאנו מדברים עליו בהקשר של המרוכבים נקרא לו 
+\bar under
+המישור המרוכב
+\bar default
+).
+\end_layout
+
+\begin_layout Description
+סימון: נסמן 
+\begin_inset Formula
+$\MKcomplex:=\MKreal^{2}$
+\end_inset
+ ונקרא ל-
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+ 
+\bar under
+קבוצת המספרים המרוכבים
+\bar default
+, לאחר שנגדיר עליה פעולות חיבור וכפל ונוכיח שאכן מדובר בשדה נקרא ל-
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+ 
+\bar under
+שדה המספרים המרוכבים
+\bar default
+.
+\end_layout
+
+\begin_layout Description
+סימון: נסמן 
+\begin_inset Formula
+$0_{\MKcomplex}:=\begin{bmatrix}0\\
+0
+\end{bmatrix}$
+
+\end_inset
+, 
+\begin_inset Formula
+$1_{\MKcomplex}:=\begin{bmatrix}1\\
+0
+\end{bmatrix}$
+
+\end_inset
+ ו-
+\begin_inset Formula
+$i:=\begin{bmatrix}0\\
+1
+\end{bmatrix}$
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ אנחנו רוצים שיתקיים 
+\begin_inset Formula
+$\left(x,y\right)=x\cdot1_{\MKcomplex}+y\cdot i$
+\end_inset
+ וכבר ראינו בהקדמה כיצד עלינו להגדיר את החיבור והכפל של מספרים מרוכבים אם רצוננו ש-
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+ יהיה שדה ושיתקיים 
+\begin_inset Formula
+$i^{2}=-1_{\MKcomplex}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+\series bold
+חיבור וכפל של מספרים מרוכבים
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$+:\MKcomplex\times\MKcomplex\rightarrow\MKcomplex$
+\end_inset
+ 
+\bar under
+פעולת החיבור
+\bar default
+ ו-
+\begin_inset Formula
+$\cdot:\MKcomplex\times\MKcomplex\rightarrow\MKcomplex$
+\end_inset
+ 
+\bar under
+פעולת הכפל
+\bar default
+ של המספרים המרוכבים
+\begin_inset Newline newline
+\end_inset
+המוגדרות ע"י (לכל
+\begin_inset Formula
+$\left(a,b\right),\left(c,d\right)\in\MKcomplex$
+\end_inset
+):
+\begin_inset Formula
+\begin{align*}
+\begin{bmatrix}a\\
+b
+\end{bmatrix}+\begin{bmatrix}c\\
+d
+\end{bmatrix} & :=\begin{bmatrix}a+c\\
+b+d
+\end{bmatrix}=\left(a+c\right)\cdot1_{\MKcomplex}+\left(b+d\right)\cdot i\\
+\begin{bmatrix}a\\
+b
+\end{bmatrix}\cdot\begin{bmatrix}c\\
+d
+\end{bmatrix} & :=\begin{bmatrix}ac-bd\\
+ad+bc
+\end{bmatrix}=\left(ac-bd\right)\cdot1_{\MKcomplex}+\left(ad+bc\right)\cdot i
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ נשים לב לכך שפעולת החיבור היא בעצם פעולת החיבור הווקטורי של 
+\begin_inset Formula
+$\MKreal^{2}$
+\end_inset
+ ושעבור מספר ממשי 
+\begin_inset Formula
+$\left(a,0\right)$
+\end_inset
+ הכפל הוא ממש הכפל בסקלר של 
+\begin_inset Formula
+$\MKreal^{2}$
+\end_inset
+:
+\begin_inset Formula
+\[
+\begin{bmatrix}a\\
+0
+\end{bmatrix}\cdot\begin{bmatrix}c\\
+d
+\end{bmatrix}=\begin{bmatrix}a\cdot c-0\cdot d\\
+a\cdot d+0\cdot c
+\end{bmatrix}=\begin{bmatrix}ac\\
+ad
+\end{bmatrix}=a\cdot\begin{bmatrix}c\\
+d
+\end{bmatrix}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מההערה הקודמת נובע שהחיבור ב-
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+ מקיים את חוקי החילוף והקיבוץ, שיש לו איבר אדיש שהוא 
+\begin_inset Formula
+$0_{\MKcomplex}$
+\end_inset
+ הנ"ל ושלכל איבר ב-
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+ יש איבר נגדי, בנוסף ניתן לראות מההערה הקודמת ש-
+\begin_inset Formula
+$1_{\MKcomplex}$
+\end_inset
+ הנ"ל הוא האיבר האדיש לכפל ב-
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+; א"כ על מנת להוכיח ש-
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+ הוא אכן שדה (עם פעולות החיבור והכפל הללו) עלינו להראות שהכפל שהוגדר לעיל מקיים את חוקי החילוף והקיבוץ, שלכל איבר יש איבר הופכי ושהוא מקיים את חוק הפילוג ביחס לחיבור.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מכיוון ש-
+\begin_inset Formula
+$1_{\MKcomplex}$
+\end_inset
+ הנ"ל הוא האיבר האדיש לכפל נוכל לכתוב מעתה 
+\begin_inset Formula
+$\begin{bmatrix}x\\
+y
+\end{bmatrix}=x+y\cdot i$
+
+\end_inset
+ לכל 
+\begin_inset Formula
+$\begin{bmatrix}x\\
+y
+\end{bmatrix}\in\MKcomplex$
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ניתן לשים לב כבר עכשיו שהגדרה שקולה לכפל ב-
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+ היא:
+\begin_inset Formula
+\[
+\begin{bmatrix}a\\
+b
+\end{bmatrix}\cdot\begin{bmatrix}c\\
+d
+\end{bmatrix}:=\left[\begin{array}{cc}
+a & -b\\
+b & a
+\end{array}\right]\cdot\begin{bmatrix}c\\
+d
+\end{bmatrix}=\begin{bmatrix}a\cdot c+\left(-b\right)\cdot d\\
+b\cdot c+a\cdot d
+\end{bmatrix}=\begin{bmatrix}ac-bd\\
+ad+bc
+\end{bmatrix}
+\]
+
+
+\end_inset
+כלומר הכפל ב-
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+ שקול לכפל במטריצה.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מההערה הקודמת נובע שהכפל ב-
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+ מקיים את חוק הקיבוץ מפני שכפל מטריצות מקיים אותו, ומאותה סיבה נובע שהוא מקיים את חוק הפילוג ביחס לחיבור.
+\begin_inset Newline newline
+\end_inset
+ניתן להסיק מהערה זו הרבה יותר: נשים לב שהמטריצה המתאימה לכפל היא מטריצת סיבוב ומתיחה, מכאן שפעולת הכפל מקיימת את חוק החילוף ולכל איבר שונה מ-
+\begin_inset Formula
+$0_{\MKcomplex}$
+\end_inset
+ יש איבר הופכי
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כי מטריצת סיבוב ומתיחה היא תמיד מטריצה הפיכה אלא אם היא מטריצת האפס.
+\end_layout
+
+\end_inset
+ אך בכך הקדמנו את המאוחר.
+\end_layout
+
+\begin_layout Claim*
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+ הוא שדה עם פעולות החיבור והכפל שהגדרנו.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בקובץ ההוכחות מופיעה הוכחה שהכפל אכן מקיים את כל הדרוש ממנו גם מבלי להסתמך על השקילות שלו לכפל מטריצות.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כעת נוכל להשתמש על 
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+ בכל מה שאנחנו כבר יודעים על שדות (ראו את הקובץ "
+\begin_inset CommandInset href
+LatexCommand href
+name "על שדות"
+target https://drive.google.com/file/d/15MbYR0LcpnpSBVtmovoHuSmKhTn3zFA8/view?usp=share_link
+literal false
+\end_inset
+").
+\end_layout
+
+\begin_layout Definition
+יהי 
+\begin_inset Formula
+$z:=x+yi\in\MKcomplex$
+\end_inset
+, 
+\begin_inset Formula
+$x$
+\end_inset
+ ייקרא 
+\bar under
+החלק הממשי
+\bar default
+ של 
+\begin_inset Formula
+$z$
+\end_inset
+ ויסומן ב-
+\begin_inset Formula
+$\MKre\left(z\right)$
+\end_inset
+ או ב-
+\begin_inset Formula
+$\MKre\left(z\right)$
+\end_inset
+ ו-
+\begin_inset Formula
+$y$
+\end_inset
+ ייקרא 
+\bar under
+החלק המדומה
+\bar default
+ של 
+\begin_inset Formula
+$z$
+\end_inset
+ ויסומן ב-
+\begin_inset Formula
+$\MKim\left(z\right)$
+\end_inset
+ או ב-
+\begin_inset Formula
+$\MKim\left(z\right)$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+אותם 
+\begin_inset Formula
+$x$
+\end_inset
+ ו-
+\begin_inset Formula
+$y$
+\end_inset
+ הם יחידים משום ש-
+\begin_inset Formula
+$1_{\MKcomplex}$
+\end_inset
+ ו-
+\begin_inset Formula
+$i$
+\end_inset
+ מהווים את הבסיס הסטנדרטי של 
+\begin_inset Formula
+$\MKreal^{2}$
+\end_inset
+.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ נשים לב לכך שהחלק המדומה הוא מספר ממשי.
+\end_layout
+
+\begin_layout Definition
+מספר 
+\begin_inset Formula
+$z\in\MKcomplex$
+\end_inset
+ ייקרא 
+\bar under
+מספר מדומה
+\bar default
+ או 
+\bar under
+מספר דמיוני
+\bar default
+ אם החלק הממשי שלו הוא 
+\begin_inset Formula
+$0$
+\end_inset
+, כמו כן מספר 
+\begin_inset Formula
+$z\in\MKcomplex$
+\end_inset
+ יקרא 
+\bar under
+מספר ממשי
+\bar default
+ אם החלק המדומה שלו הוא 
+\begin_inset Formula
+$0$
+\end_inset
+ ואז נזהה אותו עם החלק הממשי שלו
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+רוצה לומר שבגלל האיזומורפיזם הברור בין 
+\begin_inset Formula
+$\MKreal$
+\end_inset
+ ל-
+\begin_inset Formula
+$\left\{ \left(x,y\right)\in\MKreal^{2}\mid y=0\right\} =\left\{ x+y\cdot i\in\MKcomplex\mid y=0\right\} $
+\end_inset
+ נזהה את 
+\begin_inset Formula
+$\MKreal$
+\end_inset
+ עם קבוצה זו )שתיקרא 
+\bar under
+המספרים הממשיים
+\bar default
+(, ונזהה כל איבר בקבוצה זו עם החלק הממשי שלו בגלל איזומורפיזם זה.
+\end_layout
+
+\end_inset
+ (א"כ 
+\begin_inset Formula
+$\MKreal\subseteq\MKcomplex$
+\end_inset
+).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בפרט 
+\begin_inset Formula
+$0_{\MKcomplex}=0_{\MKreal}$
+\end_inset
+ ו-
+\begin_inset Formula
+$1_{\MKcomplex}=1_{\MKreal}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כמו כן נוכל לכתוב "
+\begin_inset Formula
+$x\leq y$
+\end_inset
+" או "
+\begin_inset Formula
+$x<y$
+\end_inset
+" עבור שני מספרים ממשיים למרות שאי אפשר להגדיר על המרוכבים מבנה של שדה סדור, מאותה סיבה לסימון 
+\begin_inset Formula
+$\sqrt{z}$
+\end_inset
+ אין שום משמעות במרוכבים ולמרות זאת נכתוב אותו וניתן לו את משמעותו הרגילה כשמדובר במספר ממשי.
+\end_layout
+
+\begin_layout Definition
+כל מספר 
+\begin_inset Formula
+$z\in\MKcomplex$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+בין אם הוא מספר מדומה, מספר ממשי או לא זה ולא זה.
+\end_layout
+
+\end_inset
+ ייקרא 
+\bar under
+מספר מרוכב
+\bar default
+ וכמו כן 
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+, יחד עם פעולות החיבור והכפל שהוגדרו לעיל, יקרא 
+\bar under
+שדה המספרים המרוכבים
+\bar default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בקובץ ההוכחות נראה שההופכי של מספר 
+\begin_inset Formula
+$0\neq x+yi\in\MKcomplex$
+\end_inset
+ הוא:
+\begin_inset Formula
+\[
+\frac{x-yi}{x^{2}+y^{2}}=\frac{x-yi}{\left(x+yi\right)\left(x-yi\right)}
+\]
+
+
+\end_inset
+עובדה זו נותנת לנו מוטיבציה לתת שם ליחס שבין 
+\begin_inset Formula
+$x+yi$
+\end_inset
+ ל-
+\begin_inset Formula
+$x-yi$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+יהי 
+\begin_inset Formula
+$z:=x+yi\in\MKcomplex$
+\end_inset
+, 
+\bar under
+הצמוד המרוכב
+\bar default
+ של 
+\begin_inset Formula
+$z$
+\end_inset
+ הוא 
+\begin_inset Formula
+$\overline{z}:=x-yi$
+\end_inset
+, כלומר זהו המספר המקיים 
+\begin_inset Formula
+$\MKre\left(\overline{z}\right)=\MKre\left(z\right)$
+\end_inset
+ ו-
+\begin_inset Formula
+$\MKim\left(\overline{z}\right)=-\MKim\left(z\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מבחינה גאומטרית הצמדה היא פשוט שיקוף סביב ציר ה-
+\begin_inset Formula
+$x$
+\end_inset
+ במישור המרוכב.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הצמוד המרוכב הוגדר גם עבור 
+\begin_inset Formula
+$0$
+\end_inset
+: מתקיים 
+\begin_inset Formula
+$\overline{0}=0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+לכל 
+\begin_inset Formula
+$z\in\MKcomplex$
+\end_inset
+ מתקיימים ארבעת הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$\overline{\overline{z}}=z$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$z+\overline{z}=2\cdot\MKre\left(z\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$z-\overline{z}=2i\cdot\MKim\left(z\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$z=\overline{z}$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$z\in\MKreal$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ העובדה ש-
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+ הוא בעצם 
+\begin_inset Formula
+$\MKreal^{2}$
+\end_inset
+ שהוגדרו עליו פעולות חיבור וכפל מאפשרת לנו להשתמש במשפט פיתגורס ולהגדיר את הערך המוחלט של מספר מרוכב ע"י המרחק הגאומטרי שלו מראשית הצירים.
+\end_layout
+
+\begin_layout Definition
+יהי 
+\begin_inset Formula
+$z:=x+yi\in\MKcomplex$
+\end_inset
+, 
+\bar under
+הערך המוחלט
+\bar default
+ של 
+\begin_inset Formula
+$z$
+\end_inset
+ הוא 
+\begin_inset Formula
+$\left|z\right|:=\sqrt{x^{2}+y^{2}}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ נשים לב לכך שהערך המוחלט של מספר מרוכב הוא מספר 
+\series bold
+ממשי
+\series default
+.
+\end_layout
+
+\begin_layout Corollary
+לכל 
+\begin_inset Formula
+$z\in\MKcomplex$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$0\leq\left|z\right|$
+\end_inset
+ (הערך המוחלט אי-שלילי) ובנוסף 
+\begin_inset Formula
+$\left|z\right|=0$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$z=0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+לכל 
+\begin_inset Formula
+$z\in\MKcomplex$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|z\right|=\left|-z\right|=\left|\overline{z}\right|$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+התחלה
+\end_layout
+
+\begin_layout Claim
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+ הוא שדה עם פעולות החיבור והכפל שהגדרנו.
+\end_layout
+
+\begin_layout Proof
+יהיו 
+\begin_inset Formula
+${\color{red}a+bi},{\color{blue}c+di},{\color{green}e+fi}\in\MKcomplex$
+\end_inset
+, נוכיח שהכפל שהוגדר בקובץ ההגדרות מקיים את חוקי החילוף והקיבוץ, שלכל איבר יש איבר הופכי ושהוא מקיים את חוק הפילוג ביחס לחיבור, את הסיבות לכך ש-
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+ מקיים את שאר אקסיומות השדה כבר ראינו בקובץ ההגדרות.
+\begin_inset Newline newline
+\end_inset
+לאורך כל ההוכחה נזכור שהחיבור והכפל של 
+\begin_inset Formula
+$a,b,c,d,e,f$
+\end_inset
+ הם חיבור וכפל ב-
+\begin_inset Formula
+$\MKreal$
+\end_inset
+ ולכן קומוטטיביים, אסוציאטיביים ודיסטריבוטיביים (הכפל דיסטריבוטיבי ביחס לחיבור).
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+מהגדרה מתקיים:
+\begin_inset Formula
+\begin{align*}
+{\color{red}\left(a+bi\right)}\cdot{\color{blue}\left(c+di\right)} & =\left({\color{red}a}{\color{blue}c}-{\color{red}b}{\color{blue}d}\right)+\left({\color{red}a}{\color{blue}d}+{\color{red}b}{\color{blue}c}\right)\cdot i\\
+ & =\left({\color{blue}c}{\color{red}a}-{\color{blue}d}{\color{red}b}\right)+\left({\color{blue}d}{\color{red}a}+{\color{blue}c}{\color{red}b}\right)\cdot i={\color{blue}\left(c+di\right)}\cdot{\color{red}\left(a+bi\right)}
+\end{align*}
+
+
+\end_inset
+ולכן הכפל מקיים את חוק החילוף.
+\end_layout
+
+\begin_layout Itemize
+מהגדרה מתקיים:
+\begin_inset Formula
+\begin{align*}
+\left({\color{red}\left(a+bi\right)}\cdot{\color{blue}\left(c+di\right)}\right)\cdot{\color{green}\left(e+fi\right)} & =\left(\left({\color{red}a}{\color{blue}c}-{\color{red}b}{\color{blue}d}\right)+\left({\color{red}a}{\color{blue}d}+{\color{red}b}{\color{blue}c}\right)\cdot i\right)\cdot{\color{green}\left(e+fi\right)}\\
+ & =\left({\color{purple}\left(ac-bd\right)+\left(ad+bc\right)\cdot i}\right)\cdot{\color{green}\left(e+fi\right)}\\
+ & =\left({\color{purple}\left(ac-bd\right)}\cdot{\color{green}e}-{\color{purple}\left(ad+bc\right)}\cdot{\color{green}f}\right)+\left({\color{purple}\left(ac-bd\right)}\cdot{\color{green}f}+{\color{purple}\left(ad+bc\right)}\cdot{\color{green}e}\right)\cdot i\\
+ & =\left({\color{purple}ac}{\color{green}e}-{\color{purple}bd}{\color{green}e}-{\color{purple}ad}{\color{green}f}+{\color{purple}bc}{\color{green}f}\right)+\left({\color{purple}ac}{\color{green}f}-{\color{purple}bd}{\color{green}f}+{\color{purple}ad}{\color{green}e}+{\color{purple}bc}{\color{green}e}\right)\cdot i\\
+ & =\left({\color{red}a}{\color{teal}ce}-{\color{red}b}{\color{teal}de}-{\color{red}a}{\color{teal}df}+{\color{red}b}{\color{teal}cf}\right)+\left({\color{red}a}{\color{teal}cf}-{\color{red}b}{\color{teal}df}+{\color{red}a}{\color{teal}de}+{\color{red}b}{\color{teal}ce}\right)\cdot i\\
+ & =\left({\color{red}a}\cdot{\color{teal}\left(ce-df\right)}-{\color{red}b}\cdot{\color{teal}\left(cf+de\right)}\right)+\left({\color{red}a}\cdot{\color{teal}\left(cf+de\right)}+{\color{red}b}\cdot{\color{teal}\left(ce-df\right)}\right)\cdot i\\
+ & ={\color{red}\left(a+bi\right)}\cdot\left({\color{teal}\left(ce-df\right)+\left(cf+de\right)\cdot i}\right)\\
+ & ={\color{red}\left(a+bi\right)}\cdot\left(\left({\color{blue}c}{\color{green}e}-{\color{blue}d}{\color{green}f}\right)+\left({\color{blue}c}{\color{green}f}+{\color{blue}d}{\color{green}e}\right)\cdot i\right)\\
+ & ={\color{red}\left(a+bi\right)}\cdot\left({\color{blue}\left(c+di\right)}\cdot{\color{green}\left(e+fi\right)}\right)
+\end{align*}
+
+
+\end_inset
+ולכן הכפל מקיים את חוק הקיבוץ.
+\end_layout
+
+\begin_layout Itemize
+מהגדרה מתקיים:
+\begin_inset Formula
+\begin{align*}
+{\color{red}\left(a+bi\right)}\cdot\left({\color{blue}\left(c+di\right)}+{\color{green}\left(e+fi\right)}\right) & ={\color{red}\left(a+bi\right)}\cdot\left(\left({\color{blue}c}+{\color{green}e}\right)+\left({\color{blue}d}+{\color{green}f}\right)\cdot i\right)\\
+ & ={\color{red}\left(a+bi\right)}\cdot\left({\color{teal}\left(c+e\right)+\left(d+f\right)\cdot i}\right)\\
+ & =\left({\color{red}a}\cdot{\color{teal}\left(c+e\right)}-{\color{red}b}\cdot{\color{teal}\left(d+f\right)}\right)+\left({\color{red}a}\cdot{\color{teal}\left(d+f\right)}+{\color{red}b}\cdot{\color{teal}\left(c+e\right)}\right)\cdot i\\
+ & ={\color{red}a}{\color{teal}c}+{\color{red}a}{\color{teal}e}-{\color{red}b}{\color{teal}d}-{\color{red}b}{\color{teal}f}+{\color{red}a}{\color{teal}d}\cdot i+{\color{red}a}{\color{teal}f}\cdot i+{\color{red}b}{\color{teal}c}\cdot i+{\color{red}b}{\color{teal}e}\cdot i\\
+ & ={\color{purple}ac}+{\color{olive}ae}{\color{purple}-bd}{\color{olive}-bf}+{\color{purple}ad\cdot i}+{\color{olive}af\cdot i}+{\color{purple}bc\cdot i}+{\color{olive}be\cdot i}\\
+ & ={\color{purple}\left(ac-bd\right)}+{\color{olive}\left(ae-bf\right)}+{\color{purple}\left(ad+bc\right)\cdot i}+{\color{olive}\left(af+be\right)\cdot i}\\
+ & ={\color{purple}\left(\left(ac-bd\right)+\left(ad+bc\right)\cdot i\right)}+{\color{olive}\left(\left(ae-bf\right)+\left(af+be\right)\cdot i\right)}\\
+ & =\left(\left({\color{red}a}{\color{blue}c}-{\color{red}b}{\color{blue}d}\right)+\left({\color{red}a}{\color{blue}d}+{\color{red}b}{\color{blue}c}\right)\cdot i\right)+\left(\left({\color{red}a}{\color{green}e}-{\color{red}b}{\color{green}f}\right)+\left({\color{red}a}{\color{green}f}+{\color{red}b}{\color{green}e}\right)\cdot i\right)\\
+ & ={\color{red}\left(a+bi\right)}\cdot{\color{blue}\left(c+di\right)}+{\color{red}\left(a+bi\right)}\cdot{\color{green}\left(e+fi\right)}
+\end{align*}
+
+
+\end_inset
+ולכן הכפל מקיים את חוק הפילוג ביחס לחיבור.
+\end_layout
+
+\begin_layout Itemize
+נניח ש-
+\begin_inset Formula
+$a+bi\neq0$
+\end_inset
+, כלומר ש-
+\begin_inset Formula
+$\left(a,b\right)\neq\left(0,0\right)$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מהגדרה מתקיים:
+\begin_inset Formula
+\begin{align*}
+{\color{red}\left(a+bi\right)}\cdot\left(\frac{a}{a^{2}+b^{2}}+\frac{-b}{a^{2}+b^{2}}\cdot i\right) & =\left(a+bi\right)\cdot\left(\frac{a-bi}{a^{2}+b^{2}}\right)=\frac{\left(a+bi\right)\left(a-bi\right)}{a^{2}+b^{2}}=\frac{a\cdot a+bi\cdot a+a\cdot\left(-bi\right)+bi\cdot\left(-bi\right)}{a^{2}+b^{2}}\\
+ & =\frac{a^{2}+ab\cdot i+a\cdot\left(-1\right)\cdot bi+bi\cdot\left(-1\right)\cdot bi}{a^{2}+b^{2}}=\frac{a^{2}+{\color{orange}ab\cdot i-ab\cdot i}-b^{2}\cdot i^{2}}{a^{2}+b^{2}}\\
+ & =\frac{a^{2}-b^{2}\cdot\left(-1\right)}{a^{2}+b^{2}}=\frac{a^{2}+b^{2}}{a^{2}+b^{2}}=1_{\MKcomplex}
+\end{align*}
+
+
+\end_inset
+ולכן לכל איבר שונה מ-
+\begin_inset Formula
+$0$
+\end_inset
+ יש הופכי.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ איך ידענו שדווקא המספר הנ"ל הוא ההופכי המבוקש? כאן בא לעזרתנו טריק הידוע בשם 
+\bar under
+כפל בצמוד
+\bar default
+, הרעיון הוא כדלהלן.
+\begin_inset Newline newline
+\end_inset
+נחזור לרגע אל הממשיים ונניח שבאמצע הוכחה כלשהי הגענו לביטוי מהצורה (
+\begin_inset Formula
+$c>0$
+\end_inset
+):
+\begin_inset Formula
+\[
+\frac{a}{b+\sqrt{c}}
+\]
+
+
+\end_inset
+אנחנו אומרים לעצמנו "אוי ואבוי, שורש וחיבור לא עובדים טוב ביחד... איך נפשט את הביטוי הזה???
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+הסיבה השכיחה ביותר לכך שנרצה לפשט את הביטוי היא יצירת מכנה משותף עם ביטוי אחר.
+\end_layout
+
+\end_inset
+ הלוואי שזה היה 
+\begin_inset Formula
+$b\cdot\sqrt{c}$
+\end_inset
+!"
+\begin_inset Newline newline
+\end_inset
+כעת מגיע המורה או חבר שכבר מכיר את הטריק, נוטל מאיתנו את העיפרון וכותב:
+\begin_inset Formula
+\[
+\frac{a}{b+\sqrt{c}}=\frac{a}{b+\sqrt{c}}\cdot\frac{b-\sqrt{c}}{b-\sqrt{c}}=\frac{a\cdot\left(b-\sqrt{c}\right)}{\left(b+\sqrt{c}\right)\left(b-\sqrt{c}\right)}=\frac{a\cdot\left(b-\sqrt{c}\right)}{b^{2}-c}
+\]
+
+
+\end_inset
+גם כאן נתבקשנו למצוא את 
+\begin_inset Formula
+$\frac{1}{a+bi}$
+\end_inset
+, והבעיה היא דומה מאד - חיבור של מספר ממשי עם שורש של מספר שלילי הוא ביטוי שקשה לעבוד איתו ואנחנו עדיין לא יודעים לחלק במספר מרוכב.
+\begin_inset Newline newline
+\end_inset
+למזלנו מתקיים 
+\begin_inset Formula
+$i^{2}=-1$
+\end_inset
+ ולכן אנחנו יכולים להפוך את המכנה לממשי:
+\begin_inset Formula
+\[
+\frac{1}{a+bi}=\frac{1}{a+bi}\cdot\frac{a-bi}{a-bi}=\frac{a-bi}{a^{2}-b^{2}i^{2}}=\frac{a-bi}{a^{2}+b^{2}}
+\]
+
+
+\end_inset
+ולחלק במספר ממשי אנחנו כבר יודעים...
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+הצמוד המרוכב והערך המוחלט
+\end_layout
+
+\begin_layout Claim
+הצמדה היא פעולה כפלית וחיבורית, כלומר לכל 
+\begin_inset Formula
+$z,w\in\MKcomplex$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\overline{z\cdot w}=\overline{z}\cdot\overline{w}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\overline{z+w}=\overline{z}+\overline{w}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+יהיו 
+\begin_inset Formula
+$z:=a+bi\in\MKcomplex$
+\end_inset
+ ו-
+\begin_inset Formula
+$w:=c+di$
+\end_inset
+.
+\begin_inset Formula
+\begin{align*}
+\Rightarrow\overline{z+w} & =\overline{\left(a+c\right)+\left(b+d\right)i}\\
+ & =\left(a+c\right)-\left(b+d\right)i\\
+ & =\left(a-bi\right)+\left(c-di\right)\\
+ & =\overline{z}+\overline{w}\\
+\Rightarrow\overline{z\cdot w} & =\overline{\left(ac-bd\right)+\left(ad+bc\right)i}\\
+ & =\left(ac-{\color{red}bd}\right){\color{blue}-}\left(a{\color{blue}d}+{\color{blue}b}c\right)i\\
+ & =\left(ac-{\color{red}\left(-b\right)\left(-d\right)}\right){\color{blue}+}\left(a\cdot{\color{blue}\left(-d\right)}+{\color{blue}\left(-b\right)}\cdot c\right)i\\
+ & =\left(a-bi\right)\left(c-di\right)\\
+ & =\overline{z}\cdot\overline{w}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula
+$z\in\MKcomplex$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|z\right|^{2}=z\cdot\overline{z}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$z:=x+yi\in\MKcomplex$
+\end_inset
+ , מהגדרה נובע ש-
+\begin_inset Formula
+$\overline{z}=x-y\cdot i$
+\end_inset
+.
+\begin_inset Formula
+\[
+\Rightarrow z\cdot\overline{z}=\left(x+y\cdot i\right)\cdot\left(x-y\cdot i\right)=x^{2}-\left(yi\right)^{2}=x^{2}-y^{2}\cdot i^{2}=x^{2}-y^{2}\cdot\left(-1\right)=x^{2}+y^{2}=\left(\sqrt{x^{2}+y^{2}}\right)^{2}=\left|z\right|^{2}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary 1.4"
+\end_inset
+לכל 
+\begin_inset Formula
+$0\neq z\in\MKcomplex$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+z^{-1}=\frac{\overline{z}}{\left|z\right|^{2}}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+הערך המוחלט הוא 
+\begin_inset CommandInset href
+LatexCommand href
+name "נורמה"
+target https://he.wikipedia.org/wiki/%D7%A0%D7%95%D7%A8%D7%9E%D7%94_(%D7%90%D7%A0%D7%9C%D7%99%D7%96%D7%94)
+literal false
+\end_inset
+
+\series default
+
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$z,w\in\MKcomplex$
+\end_inset
+ מתקיימים שלושת הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+חיוביות בהחלט - 
+\begin_inset Formula
+$0\leq z$
+\end_inset
+ ובנוסף 
+\begin_inset Formula
+$\left|z\right|=0$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$z=0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+הומוגניות - 
+\begin_inset Formula
+$\left|z\cdot w\right|=\left|z\right|\cdot\left|w\right|$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אי-שוויון המשולש - 
+\begin_inset Formula
+$\left|z+w\right|\leq\left|z\right|+\left|w\right|$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Proof
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+את הסעיף הראשון ראינו כבר בקובץ ההגדרות מפני שהוא נובע ישירות מן ההגדרה.
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$z,w\in\MKcomplex$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left|z\cdot w\right|^{2}=\left(z\cdot w\right)\cdot\left(\overline{z\cdot w}\right)=z\cdot w\cdot\bar{z}\cdot\bar{w}=z\cdot\bar{z}\cdot w\cdot\bar{w}=\left|z\right|^{2}\cdot\left|w\right|^{2}=\left(\left|z\right|\cdot\left|w\right|\right)^{2}
+\]
+
+
+\end_inset
+וממילא:
+\begin_inset Formula
+\[
+\left|z\cdot w\right|=\sqrt{\left|z\cdot w\right|^{2}}=\sqrt{\left(\left|z\right|\cdot\left|w\right|\right)^{2}}=\left|z\right|\cdot\left|w\right|
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$z,w\in\MKcomplex$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+\left|z+w\right|^{2} & =\left(z+w\right)\cdot\left(\overline{z+w}\right)=\left(z+w\right)\cdot\left(\bar{z}+\bar{w}\right)=z\cdot\bar{z}+z\cdot\bar{w}+\bar{z}\cdot w+w\cdot\bar{w}\\
+ & =\left|z\right|^{2}+z\cdot\bar{w}+\overline{z\cdot\bar{w}}+\left|w\right|^{2}=\left|z\right|^{2}+2\cdot\MKre\left(z\cdot\bar{w}\right)+\left|w\right|^{2}\\
+ & \leq\left|z\right|^{2}+2\cdot\left|z\cdot\bar{w}\right|+\left|w\right|^{2}=\left|z\right|^{2}+2\cdot\left|z\right|\cdot\left|\bar{w}\right|+\left|w\right|^{2}\\
+ & =\left|z\right|^{2}+2\cdot\left|z\right|\cdot\left|w\right|+\left|w\right|^{2}=\left(\left|z\right|+\left|w\right|\right)^{2}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+ההצגה הקוטבית
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ עד כה הצגנו את המספרים המרוכבים (שהם נקודות במישור המרוכב) בהצגה הקרטזית שלהם, אך בקובץ
+\begin_inset Newline newline
+\end_inset
+"על קואורדינטות ומערכות צירים" 
+\series bold
+\color red
+(עוד לא נכתב)
+\color inherit
+
+\series default
+ ראינו שניתן לאפיין נקודות במישור גם ע"י ההצגה הקוטבית שלהן, כלומר ע"י מרחקן מראשית הצירים והזווית שהן יוצרות עם החלק החיובי של ציר ה-
+\begin_inset Formula
+$x$
+\end_inset
+, א"כ ניתן לדבר גם על ההצגה הקוטבית של המספרים המרוכבים ומכיוון שהגדרנו את הערך המוחלט כך שיהיה זהה למושג האוקלידי של מרחק נוכל לבטא את הרדיוס בהצגה הקוטבית כערך המוחלט של מהספר המרוכב.
+\end_layout
+
+\begin_layout Definition
+יהי 
+\begin_inset Formula
+$0\neq z:=x+yi\in\MKcomplex$
+\end_inset
+, 
+\bar under
+הצגה קוטבית
+\bar default
+ (נקראת גם 
+\bar under
+הצגה פולרית
+\bar default
+) של 
+\begin_inset Formula
+$z$
+\end_inset
+ היא ביטוי מהצורה 
+\begin_inset Formula
+$z=r\cdot\left(\cos\theta+i\cdot\sin\theta\right)$
+\end_inset
+ כאשר 
+\begin_inset Formula
+$r:=\left|z\right|=\sqrt{x^{2}+y^{2}}$
+\end_inset
+ ואילו 
+\begin_inset Formula
+$\theta$
+\end_inset
+ מוגדרת ע"י:
+\begin_inset Formula
+\[
+\theta:=\begin{cases}
+\arctan\left(\frac{y}{x}\right)+2\pi k & x>0\\
+\arctan\left(\frac{y}{x}\right)\pm\pi+2\pi k & x<0\\
+\frac{3\pi}{2}+2\pi k & x=0,\ y>0\\
+\frac{\pi}{2}+2\pi k & x=0,\ y<0
+\end{cases}
+\]
+
+
+\end_inset
+עבור 
+\begin_inset Formula
+$k\in\MKinteger$
+\end_inset
+ כלשהו.
+\begin_inset Newline newline
+\end_inset
+ההצגה הקוטבית של 
+\begin_inset Formula
+$0$
+\end_inset
+ בשדה המרוכבים היא 
+\begin_inset Formula
+$0\cdot\left(\cos\theta+i\cdot\sin\theta\right)$
+\end_inset
+ עבור 
+\begin_inset Formula
+$\theta\in\MKreal$
+\end_inset
+ כלשהי.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מהגדרה 
+\begin_inset Formula
+$r\geq0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כזכור אין שום בעיה בכך שיש יותר מהצגה קוטבית אחת למספר נתון משום ש-
+\begin_inset Formula
+$\cos$
+\end_inset
+ ו-
+\begin_inset Formula
+$\sin$
+\end_inset
+ הן פונקציות מחזוריות שאורך המחזור שלהן הוא 
+\begin_inset Formula
+$2\pi$
+\end_inset
+ והן מוגדרות על כל הישר הממשי, וגם אם אותו מספר הוא 
+\begin_inset Formula
+$0$
+\end_inset
+ אין כאן בעיה משום ש-
+\begin_inset Formula
+$0\cdot\left(\cos\theta_{1}+i\cdot\sin\theta_{1}\right)=0=0\cdot\left(\cos\theta_{2}+i\cdot\sin\theta_{2}\right)$
+\end_inset
+ לכל 
+\begin_inset Formula
+$\theta_{1},\theta_{2}\in\MKreal$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כעת ניתן לראות בבירור שהמטריצה המתאימה לכפל במספר מרוכב היא מטריצת מתיחה וסיבוב שכן המטריצה המתאימה ל-
+\begin_inset Formula
+$r\cdot\left(\cos\theta+i\cdot\sin\theta\right)$
+\end_inset
+ היא:
+\begin_inset Formula
+\[
+r\cdot\left[\begin{array}{cc}
+\cos\theta & -\sin\theta\\
+\sin\theta & \cos\theta
+\end{array}\right]=\left[\begin{array}{cc}
+r\cdot\cos\theta & -r\cdot\sin\theta\\
+r\cdot\sin\theta & r\cdot\cos\theta
+\end{array}\right]
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Description
+סימון: תהא 
+\begin_inset Formula
+$\theta\in\MKreal$
+\end_inset
+, נסמן 
+\begin_inset Formula
+$\MKcis\left(\theta\right):=\cos\theta+i\cdot\sin\theta$
+\end_inset
+; א"כ ההצגה הקוטבית של מספר מרוכב ניתנת לכתיבה בקצרה ע"י 
+\begin_inset Formula
+$r\cdot\MKcis\left(\theta\right)$
+\end_inset
+ כאשר 
+\begin_inset Formula
+$r$
+\end_inset
+ הוא הערך המוחלט שלו ו-
+\begin_inset Formula
+$\theta$
+\end_inset
+ מוגדרת כפי שהוגדרה לעיל.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+חזקה במעריך טבעי
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$z\in\MKcomplex$
+\end_inset
+, נגדיר 
+\begin_inset Formula
+$z^{1}:=z$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ נגדיר 
+\begin_inset Formula
+$z^{n+1}:=z^{n}\cdot z$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+חזקה במעריך שלם
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$0\neq z\in\MKcomplex$
+\end_inset
+, לכל 
+\begin_inset Formula
+$m\in\MKinteger$
+\end_inset
+ נגדיר:
+\begin_inset Formula
+\[
+z^{m}:=\begin{cases}
+z^{m} & m>0\\
+1 & m=0\\
+\frac{1}{z^{-m}} & m<0
+\end{cases}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ נשים לב לכך שמהגדרה, ההופכי של מספר מרוכב הוא בדיוק אותו מספר בחזקת 
+\begin_inset Formula
+$-1$
+\end_inset
+ ולכן אין לנו בעיות בסימון (כמובן שזה היה המקור לסימון של הופכי).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ישנה בעייתיות מסוימת בהגדרת השורש ה-
+\begin_inset Formula
+$n$
+\end_inset
+-י של מספר מורכב (
+\begin_inset Formula
+$\sqrt[n]{z}$
+\end_inset
+) משום שיש יותר ממספר אחד המקיים את הדרישה 
+\begin_inset Formula
+$x^{n}=z$
+\end_inset
+, ובניגוד לממשיים 
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+ אינו שדה סדור ולכן איננו יכולים לדבר על השורש ה"חיובי".
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+התחלה
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$z:=r\cdot\MKcis\left(\theta\right)\in\MKcomplex$
+\end_inset
+, מתקיים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$-z=r\cdot\MKcis\left(\theta\pm\pi\right)$
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+$\overline{z}=r\cdot\MKcis\left(-\theta\right)$
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$z\neq0$
+\end_inset
+ אז 
+\begin_inset Formula
+$z^{-1}=r^{-1}\cdot\MKcis\left(-\theta\right)$
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Proof
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נשים לב לכך שמתקיים:
+\begin_inset Formula
+\begin{align*}
+\MKcis\left(\theta\right)+\MKcis\left(\theta\pm\pi\right) & ={\color{red}\cos\theta}+{\color{blue}i\cdot\sin\theta}+{\color{red}\cos\left(\theta\pm\pi\right)}+{\color{blue}i\cdot\sin\left(\theta\pm\pi\right)}\\
+ & ={\color{red}\cos\theta}+{\color{blue}i\cdot\sin\theta}{\color{red}-\cos\theta}+{\color{blue}i\cdot\left(-\sin\theta\right)}=0
+\end{align*}
+
+
+\end_inset
+ולכן גם:
+\begin_inset Formula
+\[
+r\cdot\MKcis\left(\theta\right)+r\cdot\MKcis\left(\theta\pm\pi\right)=r\cdot\left(\MKcis\left(\theta\right)+\MKcis\left(\theta\pm\pi\right)\right)=r\cdot0=0
+\]
+
+
+\end_inset
+וממילא:
+\begin_inset Formula
+\[
+r\cdot\MKcis\left(\theta\pm\pi\right)=-r\cdot\MKcis\left(\theta\right)=-z
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+מהגדרה מתקיים:
+\begin_inset Formula
+\[
+\MKcis\left(-\theta\right)=\cos\left(-\theta\right)+i\cdot\sin\left(-\theta\right)=\cos\theta-i\cdot\sin\theta=\overline{\cos\theta+i\cdot\sin\theta}=\overline{\MKcis\left(\theta\right)}
+\]
+
+
+\end_inset
+ולכן מהכפליות של פעולת ההצמדה נובע שגם:
+\begin_inset Formula
+\[
+r\cdot\MKcis\left(-\theta\right)=\overline{r}\cdot\MKcis\left(-\theta\right)=\overline{r}\cdot\overline{\MKcis\left(\theta\right)}=\overline{r\cdot\MKcis\left(\theta\right)}=\overline{z}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+נניח ש-
+\begin_inset Formula
+$z\neq0$
+\end_inset
+, ממסקנה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "corollary 1.4"
+plural false
+caps false
+noprefix false
+\end_inset
+ ומהסעיף הקודם נובע שמתקיים:
+\begin_inset Formula
+\[
+z^{-1}=\frac{\overline{z}}{\left|z\right|^{2}}=\frac{r\cdot\MKcis\left(-\theta\right)}{r^{2}}=\frac{1}{r}\cdot\MKcis\left(-\theta\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Subsection
+הקשר לכפל ולהעלאה בחזקה
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 2.2"
+\end_inset
+יהיו 
+\begin_inset Formula
+$z:=r_{1}\cdot\MKcis\left(\theta_{1}\right)\in\MKcomplex$
+\end_inset
+ ו-
+\begin_inset Formula
+$w:=r_{2}\cdot\MKcis\left(\theta_{2}\right)$
+\end_inset
+, מתקיים:
+\begin_inset Formula
+\[
+z\cdot w=\left(r_{1}\cdot r_{2}\right)\cdot\MKcis\left(\theta_{1}+\theta_{2}\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כלומר מה שכפל במספר מרוכב 
+\begin_inset Formula
+$r\cdot\MKcis\left(\theta\right)$
+\end_inset
+ עושה הוא לסובב כל מספר מרוכב בזווית 
+\begin_inset Formula
+$\theta$
+\end_inset
+ ולמתוח אותו פי 
+\begin_inset Formula
+$r$
+\end_inset
+, זה לא אמור להפתיע אותנו משתי סיבות: בראש ובראשונה מפני שזו הייתה האינטואיציה שלנו לכפל כבר בהקדמה, ובנוסף מפני שראינו שכפל במספר מרוכב שקול לכפל במטריצת סיבוב ומתיחה.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ההבנה שבהערה הקודמת גורמת לנו לחלק את המספרים המרוכבים לשלוש קבוצות:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+מספרים שהרדיוס שלהם 
+\series bold
+גדול
+\series default
+ ממש מ-
+\begin_inset Formula
+$1$
+\end_inset
+ - בנוסף לסיבוב הם 
+\series bold
+מותחים
+\series default
+ את הרדיוס של המספר המורכב, כלומר 
+\series bold
+מגדילים
+\series default
+ אותו ע"י כפל באותו הרדיוס.
+\begin_inset Newline newline
+\end_inset
+המספרים שבקבוצה זו הם אלו שמחוץ למעגל היחידה במישור המרוכב (לא כולל).
+\end_layout
+
+\begin_layout Enumerate
+מספרים שהרדיוס שלהם 
+\series bold
+קטן
+\series default
+ ממש מ-
+\begin_inset Formula
+$1$
+\end_inset
+ - בנוסף לסיבוב הם 
+\series bold
+מכווצים
+\series default
+ את הרדיוס של המספר המורכב, כלומר 
+\series bold
+מקטינים
+\series default
+ אותו ע"י כפל באותו הרדיוס.
+\begin_inset Newline newline
+\end_inset
+המספרים שבקבוצה זו הם אלו שבתוך מעגל היחידה במישור המרוכב (לא כולל).
+\end_layout
+
+\begin_layout Enumerate
+מספרים שהרדיוס שלהם 
+\series bold
+שווה
+\series default
+ ל-
+\begin_inset Formula
+$1$
+\end_inset
+ - מבצעים סיבוב בלבד, ללא מתיחה/כיווץ של המספר המרוכב.
+\begin_inset Newline newline
+\end_inset
+המספרים שבקבוצה זו הם אלו המהווים את מעגל היחידה במישור המרוכב.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ החלוקה שבהערה הקודמת נותנת לנו עוד קבוצה מיוחדת ב-
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+ מלבד הממשיים והמדומים - הקבוצה החדשה היא מעגל היחידה המרוכב, וכך מבחינה גאומטרית הקבוצות המיוחדות במישור הן הצירים ומעגל היחידה.
+\end_layout
+
+\begin_layout Proof
+מהגדרת הכפל של מספרים מרוכבים ומהזהויות הטריגונומטריות של קוסינוס וסינוס של סכום זוויות
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+לכל 
+\begin_inset Formula
+$\alpha,\beta\in\MKreal$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+\sin\left(\alpha\pm\beta\right) & =\sin\alpha\cdot\cos\beta\pm\cos\alpha\cdot\sin\beta\\
+\cos\left(\alpha\pm\beta\right) & =\cos\alpha\cdot\cos\beta\mp\sin\alpha\cdot\sin\beta
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\end_inset
+ נובע כי:
+\begin_inset Formula
+\begin{align*}
+\MKcis\left(\theta_{1}\right)\cdot\MKcis\left(\theta_{2}\right) & =\left(\cos\theta_{1}+i\cdot\sin\theta_{1}\right)\cdot\left(\cos\theta_{2}+i\cdot\sin\theta_{2}\right)\\
+ & =\left(\cos\theta_{1}\cdot\cos\theta_{2}-\sin\theta_{1}\cdot\sin\theta_{2}\right)+i\cdot\left(\cos\theta_{1}\cdot\sin\theta_{2}+\sin\theta_{1}\cdot\cos\theta_{2}\right)\\
+ & =\cos\left(\theta_{1}+\theta_{2}\right)+i\cdot\sin\left(\theta_{1}+\theta_{2}\right)=\MKcis\left(\theta_{1}+\theta_{2}\right)
+\end{align*}
+
+
+\end_inset
+וממילא:
+\begin_inset Formula
+\[
+z\cdot w=\left(r_{1}\cdot\MKcis\left(\theta_{1}\right)\right)\cdot\left(r_{2}\cdot\MKcis\left(\theta_{2}\right)\right)=\left(r_{1}\cdot r_{2}\right)\cdot\left(\MKcis\left(\theta_{1}\right)\cdot\MKcis\left(\theta_{2}\right)\right)=\left(r_{1}\cdot r_{2}\right)\cdot\MKcis\left(\theta_{1}+\theta_{2}\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+יהיו 
+\begin_inset Formula
+$z:=r_{1}\cdot\MKcis\left(\theta_{1}\right)\in\MKcomplex$
+\end_inset
+ ו-
+\begin_inset Formula
+$0\neq w:=r_{2}\cdot\MKcis\left(\theta_{2}\right)$
+\end_inset
+, מתקיים:
+\begin_inset Formula
+\[
+\frac{z}{w}=\frac{r_{1}}{r_{2}}\cdot\MKcis\left(\theta_{1}-\theta_{2}\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+\series bold
+משפט דה-מואבר
+\series default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה: 
+\begin_inset CommandInset href
+LatexCommand href
+name "אברהם דה-מואבר"
+target https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%A8%D7%94%D7%9D_%D7%93%D7%94_%D7%9E%D7%95%D7%90%D7%91%D7%A8
+literal false
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$0\neq z:=r\cdot\MKcis\left(\theta\right)\in\MKcomplex$
+\end_inset
+, מתקיים (לכל 
+\begin_inset Formula
+$n\in\MKinteger$
+\end_inset
+):
+\begin_inset Formula
+\[
+z^{n}=r^{n}\cdot\MKcis\left(n\cdot\theta\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כמובן שהנוסחה תקפה גם עבור 
+\begin_inset Formula
+$0$
+\end_inset
+ בחזקה טבעית.
+\end_layout
+
+\begin_layout Corollary
+\series bold
+הוצאת שורש מרוכב באמצעות הצגה קוטבית
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$z:=r\cdot\MKcis\left(\theta\right)\in\MKcomplex$
+\end_inset
+ מתקיים (לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+):
+\begin_inset Formula
+\[
+\left\{ x\in\MKcomplex\mid x^{n}=z\right\} =\left\{ \begin{array}{c|c}
+\begin{alignedat}{1}\sqrt[n]{r}\cdot\MKcis\left(\frac{\theta+2\pi k}{n}\right)\end{alignedat}
+ & k\in\MKinteger\end{array}\right\} 
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כלומר קיימים בדיוק 
+\begin_inset Formula
+$n$
+\end_inset
+ מספרים מרוכבים המהווים שורש 
+\begin_inset Formula
+$n$
+\end_inset
+-י של מספר מרוכב נתון שאינו 
+\begin_inset Formula
+$0$
+\end_inset
+, והם נתונים ע"י הנוסחה:
+\begin_inset Formula
+\[
+z_{k}=\sqrt[n]{r}\cdot\MKcis\left(\frac{\theta+2\pi k}{n}\right)
+\]
+
+
+\end_inset
+עבור 
+\begin_inset Formula
+$n>k\in\MKnatural_{0}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מבחינה גאומטרית השורשים מהווים את קודקודיו של מצולע משוכלל בעל 
+\begin_inset Formula
+$n$
+\end_inset
+ צלעות, החסום ע"י מעגל שמרכזו בראשית הצירים ואורך הרדיוס שלו הוא 
+\begin_inset Formula
+$\sqrt[n]{r}$
+\end_inset
+, כאשר אחד מהרדיוסים היוצאים אל הקודקודים יוצר זווית של 
+\begin_inset Formula
+$\frac{\theta}{n}$
+\end_inset
+ רדיאנים עם החלק החיובי של ציר ה-
+\begin_inset Formula
+$x$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+
+\series bold
+\color red
+כדאי להוסיף המחשה.
+\color inherit
+
+\series default
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ א"כ השורשים ה-
+\begin_inset Formula
+$n$
+\end_inset
+-יים של מספר ממשי 
+\begin_inset Formula
+$0\neq a\in\MKreal$
+\end_inset
+ הם (כאשר 
+\begin_inset Formula
+$a>0$
+\end_inset
+):
+\begin_inset Formula
+\[
+\sqrt[n]{a},\sqrt[n]{a}\cdot\MKcis\left(\frac{2\pi}{n}\right),\sqrt[n]{a}\cdot\MKcis\left(\frac{4\pi}{n}\right),\sqrt[n]{a}\cdot\MKcis\left(\frac{6\pi}{n}\right),\ldots,\sqrt[n]{a}\cdot\MKcis\left(\frac{2\left(n-1\right)\pi}{n}\right)
+\]
+
+
+\end_inset
+או (כאשר 
+\begin_inset Formula
+$a<0$
+\end_inset
+):
+\begin_inset Formula
+\[
+\sqrt[n]{\left|a\right|}\cdot\MKcis\left(\frac{\pi}{n}\right),\sqrt[n]{\left|a\right|}\cdot\MKcis\left(\frac{3\pi}{n}\right),\sqrt[n]{\left|a\right|}\cdot\MKcis\left(\frac{5\pi}{n}\right),\sqrt[n]{\left|a\right|}\cdot\MKcis\left(\frac{7\pi}{n}\right),\ldots,\sqrt[n]{\left|a\right|}\cdot\MKcis\left(\frac{\left(2n-1\right)\pi}{n}\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בפרט מעניינים אותנו בהקשר זה המספרים הנקראים 
+\bar under
+שורשי היחידה
+\bar default
+ שהם השורשים ה-
+\begin_inset Formula
+$n$
+\end_inset
+-יים של 
+\begin_inset Formula
+$1$
+\end_inset
+, כלומר:
+\begin_inset Formula
+\[
+\left\{ \begin{array}{c|c}
+\begin{alignedat}{1}\sqrt[n]{1}\cdot\MKcis\left(\frac{2\pi k+0}{n}\right)\end{alignedat}
+ & k\in\MKinteger\end{array}\right\} =\left\{ \begin{array}{c|c}
+\begin{alignedat}{1}\MKcis\left(2\pi\cdot\frac{k}{n}\right)\end{alignedat}
+ & n>k\in\MKnatural_{0}\end{array}\right\} 
+\]
+
+
+\end_inset
+שורשי היחידה יוצרים מצולע משוכלל החסום ע"י מעגל היחידה שאחד מקודקודיו נמצא על החלק החיובי של ציר ה-
+\begin_inset Formula
+$x$
+\end_inset
+ והוא 
+\begin_inset Formula
+$1$
+\end_inset
+ עצמו כמובן.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+העובדה שלכל 
+\begin_inset Formula
+$k\in\MKinteger$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\left(\sqrt[n]{r}\cdot\MKcis\left(\frac{2\pi k+\theta}{n}\right)\right)^{n}=r\cdot\MKcis\left(2\pi k+\theta\right)=r\cdot\MKcis\left(\theta\right)
+\]
+
+
+\end_inset
+נובעת ישירות ממשפט דה-מואבר.
+\begin_inset Newline newline
+\end_inset
+נוכיח שאין ל-
+\begin_inset Formula
+$z$
+\end_inset
+ שורשים נוספים, אם 
+\begin_inset Formula
+$z=0$
+\end_inset
+ אז הטענה טריוויאלית (בכל שדה יש ל-
+\begin_inset Formula
+$0$
+\end_inset
+ שורש 
+\begin_inset Formula
+$n$
+\end_inset
+-י יחיד והוא 
+\begin_inset Formula
+$0$
+\end_inset
+) ולכן נוכל להניח ש-
+\begin_inset Formula
+$z\neq0$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$w:=\tilde{r}\cdot\MKcis\left(\tilde{\theta}\right)\in\MKcomplex$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$w^{n}=z$
+\end_inset
+, ממשפט דה-מואבר נובע שמתקיים:
+\begin_inset Formula
+\[
+\tilde{r}^{n}\cdot\MKcis\left(n\cdot\tilde{\theta}\right)=w^{n}=z=r\cdot\MKcis\left(\theta\right)
+\]
+
+
+\end_inset
+שוויון בין שני מספרים מרוכבים בהצגה קוטבית אומר שהרדיוסים שלהם שווים וגם הזוויות שלהם זהות (עד כדי הוספת כפולה של 
+\begin_inset Formula
+$2\pi$
+\end_inset
+), מכאן שמתקיים 
+\begin_inset Formula
+$\tilde{r}^{n}=r$
+\end_inset
+ ו-
+\begin_inset Formula
+$n\cdot\tilde{\theta}=\theta+2\pi k$
+\end_inset
+ עבור 
+\begin_inset Formula
+$k\in\MKinteger$
+\end_inset
+ כלשהו.
+\begin_inset Newline newline
+\end_inset
+מהגדרה 
+\begin_inset Formula
+$r$
+\end_inset
+ ו-
+\begin_inset Formula
+$\tilde{r}$
+\end_inset
+ הם מספרים ממשיים חיוביים ולכן מהשורה הקודמת נובע ש-
+\begin_inset Formula
+$\tilde{r}=\sqrt[n]{r}$
+\end_inset
+, בנוסף ניתן להסיק מהשורה הקודמת שקיים 
+\begin_inset Formula
+$k\in\MKinteger$
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+\tilde{\theta}=\frac{\theta+2\pi k}{n}
+\]
+
+
+\end_inset
+כלומר 
+\begin_inset Formula
+$w$
+\end_inset
+ אכן שייך לקבוצה הנ"ל ולכן מהיותו שרירותי נובע שהיא כוללת את כל השורשים ה-
+\begin_inset Formula
+$n$
+\end_inset
+-יים של 
+\begin_inset Formula
+$z$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+חוקי חזקות
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$0\neq z,w\in\MKcomplex$
+\end_inset
+ ו-
+\begin_inset Formula
+$n,m\in\MKinteger$
+\end_inset
+, מתקיימים שלושת הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$z^{m}\cdot z^{n}=z^{m+n}$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\left(z^{m}\right)^{n}=z^{m\cdot n}$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\left(z\cdot w\right)^{n}=z^{n}\cdot w^{n}$
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ההוכחה שראינו באינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+עבור חוקי חזקות במעריך שלם הסתמכה אך ורק על
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\begin_inset Formula
+$9$
+\end_inset
+ אקסיומות השדה ולא על 
+\begin_inset Formula
+$4$
+\end_inset
+ האקסיומות הנוספות של שדה סדור ולפיכך היא תקפה גם כאן, מי שזה לא מספיק לו מוזמן להוכיח את חוקי החזקות באמצעות טענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 2.2"
+plural false
+caps false
+noprefix false
+\end_inset
+ ומשפט דה-מואבר.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+דוגמאות לפתרון משוואות מעל המרוכבים
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+אין הגדרות בפרק זה.
+\end_layout
+
+\begin_layout Example
+ניתן להוכיח את 
+\series bold
+הזהויות הטריגונומטריות
+\series default
+ של קוסינוס וסינוס של סכום זוויות
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+לכל 
+\begin_inset Formula
+$\alpha,\beta\in\MKreal$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+\sin\left(\alpha\pm\beta\right) & =\sin\alpha\cdot\cos\beta\pm\cos\alpha\cdot\sin\beta\\
+\cos\left(\alpha\pm\beta\right) & =\cos\alpha\cdot\cos\beta\mp\sin\alpha\cdot\sin\beta
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\end_inset
+ באמצעות התובנה הבאה:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+כפל במספר מרוכב שקול לכפל במטריצת סיבוב ומתיחה, אם המספר המרוכב נמצא על מעגל היחידה אז הכפל בו שקול למטריצת סיבוב בלבד.
+\end_layout
+
+\begin_layout Itemize
+כפל מטריצות מקיים את חוק הקיבוץ, מכאן נובע שהכפלה במספר מרוכב אחד ואחריה הכפלה במספר מרוכב שני שקולה לכפל במספר המרוכב שהמטריצה המתאימה לו היא המטריצה המתאימה לסיבוב בסכום הזוויות ומתיחה במכפלת הרדיוסים (זהו נימוק 
+\series bold
+גאומטרי
+\series default
+); אם שני המספרים נמצאים על מעגל היחידה הכפל של שניהם שקול למטריצת הסיבוב בסכום הזוויות המתאימות להם.
+\end_layout
+
+\begin_layout Itemize
+קיימת העתקה חח"ע ועל בין מספרים מרוכבים למטריצות הסיבוב והמתיחה המתאימות להם, מכאן שלכל 
+\begin_inset Formula
+$\theta_{1},\theta_{2}\in\MKreal$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+\MKcis\left(\theta_{1}+\theta_{2}\right)=\MKcis\left(\theta_{1}\right)\cdot\MKcis\left(\theta_{2}\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+כל שוויון בין שני מספרים מרוכבים מגדיר שני שוויונות בין מספרים ממשיים, וזאת משום שההצגה הקרטזית של מספר מרוכב היא יחידה ולמעשה היא מהווה זוג סדור של מספרים ממשיים; מסיבה זו ניתן לקחת כל משוואה מעל המרוכבים ולהפוך אותה לשתי משוואות מעל הממשיים.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula
+\begin{align*}
+\Rightarrow\cos\left(\theta_{1}+\theta_{2}\right)+i\cdot\sin\left(\theta_{1}+\theta_{2}\right) & =\left(\cos\theta_{1}+i\cdot\sin\theta_{1}\right)\cdot\left(\cos\theta_{2}+i\cdot\sin\theta_{2}\right)\\
+\Rightarrow{\color{red}\cos\left(\theta_{1}+\theta_{2}\right)}+{\color{blue}i\cdot\sin\left(\theta_{1}+\theta_{2}\right)} & ={\color{red}\left(\cos\theta_{1}\cdot\cos\theta_{2}-\sin\theta_{1}\cdot\sin\theta_{2}\right)}+{\color{blue}i\cdot\left(\cos\theta_{1}\cdot\sin\theta_{2}+\sin\theta_{1}\cdot\cos\theta_{2}\right)}
+\end{align*}
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+\Rightarrow{\color{red}\cos\left(\theta_{1}+\theta_{2}\right)} & {\color{red}=\cos\theta_{1}\cdot\cos\theta_{2}-\sin\theta_{1}\cdot\sin\theta_{2}}\\
+\Rightarrow{\color{blue}\sin\left(\theta_{1}+\theta_{2}\right)} & {\color{blue}=\cos\theta_{1}\cdot\sin\theta_{2}+\sin\theta_{1}\cdot\cos\theta_{2}}
+\end{align*}
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+\Rightarrow{\color{red}\cos\left(\theta_{1}\pm\theta_{2}\right)} & {\color{red}=\cos\theta_{1}\cdot\cos\left(\pm\theta_{2}\right)-\sin\theta_{1}\cdot\sin\left(\pm\theta_{2}\right)}\\
+ & {\color{red}=\cos\theta_{1}\cdot\cos\theta_{2}-\sin\theta_{1}\cdot\left(-\sin\theta_{2}\right)}\\
+ & {\color{red}=\cos\theta_{1}\cdot\cos\theta_{2}\mp\sin\theta_{1}\cdot\sin\theta_{2}}\\
+\Rightarrow{\color{blue}\sin\left(\theta_{1}\pm\theta_{2}\right)} & {\color{blue}=\sin\theta_{1}\cdot\cos\left(\pm\theta_{2}\right)+\cos\theta_{1}\cdot\sin\left(\pm\theta_{2}\right)}\\
+ & {\color{blue}=\sin\theta_{1}\cdot\cos\theta_{2}+\cos\theta_{1}\cdot\left(-\sin\theta_{2}\right)}\\
+ & {\color{blue}=\cos\theta_{1}\cdot\sin\theta_{2}\pm\sin\theta_{1}\cdot\cos\theta_{2}}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ לכאורה רימיתי כאן, את הנוסחה 
+\begin_inset Formula
+$\MKcis\left(\theta_{1}+\theta_{2}\right)=\MKcis\left(\theta_{1}\right)\cdot\MKcis\left(\theta_{2}\right)$
+\end_inset
+ אני מכיר מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 2.2"
+plural false
+caps false
+noprefix false
+\end_inset
+ ואותה הוכחנו באמצעות הזהויות הטריגונומטריות הנ"ל, זהו נימוק מעגלי!
+\begin_inset Newline newline
+\end_inset
+אז זהו, שלא, הנימוק לכך שצריך להתקיים 
+\begin_inset Formula
+$\MKcis\left(\theta_{1}+\theta_{2}\right)=\MKcis\left(\theta_{1}\right)\cdot\MKcis\left(\theta_{2}\right)$
+\end_inset
+ הגיע מעולם אחר - מעולם הגאומטריה, שם ברור שלסובב פעם אחת ב-
+\begin_inset Formula
+$\theta_{1}$
+\end_inset
+ רדיאנים ואח"כ לסובב ב-
+\begin_inset Formula
+$\theta_{2}$
+\end_inset
+ רדיאנים שקול לסיבוב ב-
+\begin_inset Formula
+$\theta_{1}+\theta_{2}$
+\end_inset
+ רדיאנים, ומכיוון שהכפל במספר מרוכב הנמצא על מעגל היחידה שקול לסיבוב המישור השוויון 
+\begin_inset Formula
+$\MKcis\left(\theta_{1}+\theta_{2}\right)=\MKcis\left(\theta_{1}\right)\cdot\MKcis\left(\theta_{2}\right)$
+\end_inset
+ מוכרח להתקיים משום שאחרת נקבל סתירה למה שידוע לנו מן הגאומטריה.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ האמת היא שאין שום צורך במרוכבים בשביל הוכחה זו, ניתן לכתוב את אותה הוכחה בשפה של מטריצות סיבוב (וכך אכן עשינו בליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+כשעסקנו בהן); הסיבה האמיתית לכך שהבאתי את הדוגמה הזו כאן היא כדי להדגים את הרעיון שכל משוואה בנעלם אחד מעל המרוכבים היא שתי משוואות בשני נעלמים מעל הממשיים.
+\end_layout
+
+\begin_layout Example
+אין שום סיבה שפתרון 
+\series bold
+משוואה ריבועית
+\series default
+ מעל המרוכבים יהיה שונה מפתרונה מעל הממשיים, בשני המקרים מדובר בשדות ואנו יודעים להוציא בהם שורש, אין צורך ביותר מזה; לפיכך ניחוש מושכל הוא שהפתרונות למשוואה הריבועית 
+\begin_inset Formula
+$ax^{2}+bx+c=0$
+\end_inset
+ כאשר הוא 
+\begin_inset Formula
+$a,b,c\in\MKcomplex$
+\end_inset
+ ו-
+\begin_inset Formula
+$a\neq0$
+\end_inset
+ הם:
+\begin_inset Formula
+\[
+x_{1,2}=\frac{-b\pm d}{2a}
+\]
+
+
+\end_inset
+כאשר 
+\begin_inset Formula
+$d$
+\end_inset
+ הוא אחד משני המספרים המרוכבים המקיימים 
+\begin_inset Formula
+$d^{2}=b^{2}-4ac$
+\end_inset
+ (ראינו כבר איך מוצאים 
+\begin_inset Formula
+$d$
+\end_inset
+ כנ"ל, שני המספרים הללו נגדיים ולכן אין זה משנה איזה מביניהם נבחר).
+\begin_inset Newline newline
+\end_inset
+אין צורך לחזור כאן על כל ההוכחה מן ההתחלה מפני שהיא הסתמכה אך ורק על אקסיומות השדה ועל הקיום של 
+\begin_inset Formula
+$d$
+\end_inset
+ כנ"ל
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+מי שבכל זאת רוצה לחזור על ההוכחה מוזמן לעיין בסופו של הקובץ "
+\begin_inset CommandInset href
+LatexCommand href
+name "על פתרון משוואות ונוסחת השורשים"
+target https://drive.google.com/file/d/1oUy6NDpdg8bHIO4PkO_9RIFkoPuK3sZt/view?usp=drive_link
+literal false
+\end_inset
+".
+\end_layout
+
+\end_inset
+, וכפי שראינו ב-
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+ בהכרח קיים 
+\begin_inset Formula
+$d$
+\end_inset
+ כנ"ל ולכן תמיד יש למשוואה ריבועית לפחות פתרון אחד ובנוסף אנחנו יודעים לומר שיש לה פתרון יחיד אם"ם 
+\begin_inset Formula
+$d=0$
+\end_inset
+ וזה קורה אם"ם 
+\begin_inset Formula
+$b^{2}-4ac=0$
+\end_inset
+.
+\end_layout
+
+\end_body
+
+\end_document
+

@@ -1,0 +1,641 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Correct the reversed parentheses in labels:
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\newfontfamily{\hebrewfont}{David}
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+
+\end_preamble
+
+\use_default_options true
+\begin_modules
+theorems-ams
+\end_modules
+
+\maintain_unincluded_children no
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size      Larger
+	  Series     Bold
+	EndFont
+End
+Style Solution
+	LabelString           "פתרון: "End
+Style Notation
+	LabelString           "סימון  \thetheorem: "End
+Style Theorem
+	LabelString           "משפט \thetheorem: "End
+Style Property
+	LabelString           "תזכורת: "End
+
+\end_local_layout
+
+\language hebrew
+
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\boxbgcolor #cccccc
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+
+\tocdepth 3
+
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle empty
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename C:\Users\sraya\AppData\Roaming\LyX2.4\macros\MKmacros.lyx
+literal true
+\end_inset
+
+\end_layout
+
+\begin_layout Section*
+כמה נקודות
+\end_layout
+
+\begin_layout Itemize
+מומלץ להיכנס לסיכומים דרך 
+\begin_inset CommandInset href
+LatexCommand href
+name "האתר"
+target https://srayaa.wixsite.com/math
+literal false
+\end_inset
+, אני מעדכן את הסיכומים כל הזמן (כולל סיכומים של קורסים שכבר סיימתי) ולכן כדאי שלא להוריד את התיקייה
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ניתן ליצור קיצור דרך לתיקייה אצלכם בדרייב ואז אם אתם משתמשים ב-
+\begin_inset Quotes qrd
+\end_inset
+
+\lang english
+Google Drive
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\lang default
+
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+לשולחן עבודה
+\begin_inset Quotes qrd
+\end_inset
+ אז התיקייה תפתח אצלכם במחשב כרגיל, אני מנחש שאפילו תוכלו לשמור אותה או חלקים ממנה כך שיהיו ניתנים לקריאה גם כשהמחשב אינו מחובר לרשת ויתעדכנו בכל שינוי כשיחובר.
+\lang default
+
+\end_layout
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+גם הקובץ הזה וסידור הקבצים בתיקייה מתעדכן מדי פעם, ולכן אם לא מצאתם משהו במקום שבו היה אמור להיות ייתכן שקריאה נוספת של 
+\begin_inset CommandInset href
+LatexCommand href
+name "רשימת הקורסים בתיקייה"
+target https://srayaa.wixsite.com/math/sitemap
+literal false
+\end_inset
+ תוכל לעזור.
+\end_layout
+
+\begin_layout Itemize
+כדי לתאם ציפיות ביניכם לביני אנא קראו את הקובץ 
+\begin_inset CommandInset href
+LatexCommand href
+name "התנצלותו של המתמטיקאי"
+target https://drive.google.com/file/d/1r3pd2FhXY_AvBeY3EwnzbML5O27jZxyk/view?usp=share_link
+literal false
+\end_inset
+, אין צורך ממשי בקריאת הפסקה הראשונה (זוהי בסך הכל בדיחה), אך את הפסקאות הבאות כדאי לקרוא כדי להבין מה הולך כאן.
+\end_layout
+
+\begin_layout Itemize
+לתשומת לבכם: אני שומר לעצמי את הזכות לערוך את הסיכומים בכל דרך שתעלה בדעתי, גם אם זו שונה באופן מהותי מהצורה שבה נלמד החומר בקורס. אם מדובר בקורס שכבר סיימתי, ומועד ב' של אותו סמסטר כבר עבר, זה אומר שאעשה 
+\series bold
+כל מה שארצה
+\series default
+; ואם מדובר בקורס שנלמד בסמסטר הנוכחי, לא אביא משפטים שלא למדנו מבלי לציין זאת במפורש, וכמו כן אם אתן הגדרות שקולות לאלו שניתנו בשיעור אעיר על כך באופן בולט. שתי אלו תהיינה ההגבלות היחידות, בפרט, הסדר שבו ייכתבו הדברים יהיה הסדר שבו אני חושב שיש לסדרם ולא ע"פ הסדר הכרונולוגי שבו נלמדו. זה אומר שפעמים רבות נלמד חומר חדש בשבוע הנוכחי, ולמרות שעדכנתי את הסיכום, החומר החדש (או חלק ממנו) יופיע בנושא שלכאורה כבר סיימנו או בתחילת הנושא הנוכחי ולא בסופו.
+\end_layout
+
+\begin_layout Itemize
+שימו לב (!): בניגוד לסיכומים, את פתרונות תרגילי העבר אני לא מעדכן כלל, 
+\series bold
+\color blue
+אפילו אם אני יודע שהם מכילים טעויות
+\color inherit
+
+\series default
+ 
+\series bold
+\color blue
+מתמטיות
+\color inherit
+
+\series default
+. למעשה לא הייתי רוצה לפרסם את התרגילים כלל וכלל, מפני שאיני רואה בהם עניין לאחר שעבר מועד ההגשה; אלא שסטודנטים רבים מבקשים ללמוד מפתרונות תרגילים ולכן החלטתי לפרסם את פתרונותיי כשירות לציבור.
+\end_layout
+
+\begin_layout Itemize
+סימונים: בכל הסיכומים שלי הסימן 
+\begin_inset Formula
+$\MKnatural$
+\end_inset
+ מתייחס למספרים הטבעיים ללא 
+\begin_inset Formula
+$0$
+\end_inset
+ והסימן 
+\begin_inset Formula
+$\MKnatural_{0}$
+\end_inset
+ מתייחס לטבעיים כולל 
+\begin_inset Formula
+$0$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+זמן רב לא ידעתי אם הסימון הזה מקובל, המצאתי אותו בעצמי ואז איתמר צביק (שלימד אותי את ליניארית
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+2
+\numeric off
+) השתמש בו בהרצאה ללא כל הסבר וכששאלתי אותו אם זה סימון מקובל ענה 
+\begin_inset Quotes qld
+\end_inset
+כל הסימונים שלי מקובלים
+\begin_inset Quotes qrd
+\end_inset
+ (שפטו בעצמכם...) עד שמצאתי אותו ב
+\begin_inset CommandInset href
+LatexCommand href
+name "וויקיפדיה האנגלית"
+target https://en.wikipedia.org/wiki/Natural_number#Notation
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+; כמו כן הסימון 
+\begin_inset Formula
+$\subset$
+\end_inset
+ מתייחס להכלה ממש בעוד שהסימון 
+\begin_inset Formula
+$\subseteq$
+\end_inset
+ יסמן הכלה סתם, אך לעולם לא יופיע הסימון 
+\begin_inset Formula
+$\subsetneq$
+\end_inset
+ בשל כיעורו ובשל הרצון לשמור על 
+\begin_inset Quotes qld
+\end_inset
+עקביות
+\begin_inset Quotes qrd
+\end_inset
+ עם הסימונים 
+\begin_inset Formula
+$<$
+\end_inset
+ ו-
+\begin_inset Formula
+$\leq$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אני ממליץ מאד לכל סטודנט להתחיל לעבוד עם התוכנה \SpecialChar LyX (שהיא מעבד תמלילים מתמטי) כבר מהשבוע הראשון של הלימודים, לפירוט נוסף בנושא לחצו 
+\begin_inset CommandInset href
+LatexCommand href
+name "כאן"
+target https://drive.google.com/file/d/1dt2EKCQad92nqNVTJYqGLQ0pa0ad3D_i/view
+literal false
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אתרים שכל סטודנט למתמטיקה/מדמ"ח חייב להכיר (אתרים נוספים ב
+\begin_inset CommandInset href
+LatexCommand href
+name "רשימת המקורות"
+target https://srayaa.wixsite.com/math/about#thanks-and-references-title
+literal false
+\end_inset
+ שלי):
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset CommandInset href
+LatexCommand href
+name "לא מדויק"
+target https://gadial.net
+literal false
+\end_inset
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "3blue1brown"
+target https://www.youtube.com/@3blue1brown
+literal false
+\end_inset
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "הטכניון מלמדים"
+target https://www.youtube.com/@technionteaches
+literal false
+\end_inset
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "MathWorld"
+target https://mathworld.wolfram.com
+literal false
+\end_inset
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "WolframAlpha"
+target https://www.wolframalpha.com
+literal false
+\end_inset
+,
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Desmos"
+target https://www.desmos.com
+literal false
+\end_inset
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "Geogebra"
+target https://www.geogebra.org/classic
+literal false
+\end_inset
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "symbolab"
+target https://www.symbolab.com
+literal false
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+סביר להניח שהסיכומים שלי מכילים טעויות רבות - אני מוצא כאלה כל יום (
+\begin_inset CommandInset href
+LatexCommand href
+name "רשימת טעויות נפוצות"
+target https://drive.google.com/file/d/1ZX_KNQe6_sGYisMaS6ShnBv7T0rPf3D_/view?usp=drive_link
+literal false
+\end_inset
+), אני מפציר בכם לעדכן אותי בכל טעות שאתם מוצאים (ממש כל טעות ללא יוצא מן הכלל); אתם מוזמנים להגיב על גבי המסמכים ב-
+\lang english
+Google Drive
+\lang default
+
+\lang hebrew
+, לכתוב לי לתיבת הדוא
+\begin_inset Quotes qrd
+\end_inset
+ל 
+\begin_inset CommandInset href
+LatexCommand href
+name "sraya.ansbacher@mail.huji.ac.il"
+target sraya.ansbacher@mail.huji.ac.il
+type mailto:
+literal false
+\end_inset
+, או 
+\begin_inset CommandInset href
+LatexCommand href
+name "למלא פנייה באתר"
+target https://srayaa.wixsite.com/math#contact-body
+literal false
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יוצאים מכלל זה הם פתרונות תרגילי העבר שאותם איני מתקן כלל, אפילו שאני יודע שבחלקם יש טעויות מתמטיות.
+\lang default
+
+\end_layout
+
+\begin_layout Itemize
+לאתר הסיכומים:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\size large
+אקסיומת השלמות - סיכומי הרצאות במתמטיקה
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset CommandInset href
+LatexCommand href
+name "https://srayaa.wixsite.com/math"
+target https://srayaa.wixsite.com/math
+literal false
+\end_inset
+
+\size default
+
+\end_layout
+
+\end_deeper
+
+\end_body
+
+\end_document
+

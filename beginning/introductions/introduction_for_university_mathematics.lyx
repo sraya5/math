@@ -1,0 +1,5388 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The head's design for summuries,make the layout more similar to a book:
+\AtBeginDocument{
+\renewcommand\headrule{%
+  \kern -7pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+  \kern 10pt
+}}
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Correct the reversed parentheses in labels:
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\newfontfamily{\hebrewfont}{David}
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+
+\end_preamble
+
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+customHeadersFooters
+\end_modules
+
+\maintain_unincluded_children no
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size      Larger
+	  Series     Bold
+	EndFont
+End
+Style Solution
+	LabelString           "פתרון: "End
+Style Notation
+	LabelString           "סימון  \thetheorem: "End
+Style Theorem
+	LabelString           "משפט \thetheorem: "End
+Style Property
+	LabelString           "תזכורת: "End
+
+\end_local_layout
+
+\language hebrew
+
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\boxbgcolor #cccccc
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+
+\tocdepth 3
+
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename C:\Users\sraya\AppData\Roaming\LyX2.4\macros\MKmacros.lyx
+literal true
+\end_inset
+
+\end_layout
+
+\begin_layout Right Header
+\begin_inset Argument 1
+status open
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+\begin_layout Plain Layout
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\begin_inset ERT
+status open
+\begin_layout Plain Layout
+\backslash
+rightmark
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Left Header
+\begin_inset Argument 1
+status open
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+\begin_layout Plain Layout
+\backslash
+leftmark
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\begin_inset ERT
+status open
+\begin_layout Plain Layout
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Center Footer
+\end_layout
+
+\begin_layout Title
+\paragraph_spacing double
+\series bold
+\size huge
+הקדמה למתמטיקה אוניברסיטאית
+\size default
+
+\series default
+
+\end_layout
+
+\begin_layout Standard
+\align center
+נכתב ע"י: שריה אנסבכר
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+הקדמה
+\end_layout
+
+\begin_layout Standard
+הקובץ הזה התחיל כקובץ בן
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ ארבעה עמודים שנועד לרכך את הנפילה הקשה שרובנו חווים כשאנחנו מתחילים ללמוד מתמטיקה באוניברסיטה - צורת הלמידה כאן שונה מאד מהתיכון, מערבת הרבה פורמליות ולא שמה דגש מספיק על האינטואיציה. לאחר מכן כבר לא יכולתי להתאפק ופירטתי את נקודת המבט שלי בפילוסופיה של המתמטיקה בכלל ועל הקורסים אינפי' וליניארית 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+בפרט, כעת הקובץ כולל מעל עשרים עמודים...
+\begin_inset Newline newline
+\end_inset
+מכיוון שאני לא מצפה מאף אחד לקרוא את כולם (למרות שאני די בטוח שמי שיצליח יצא נשכר), אכתוב כאן את הרעיון הכללי במשפט אחד:
+\end_layout
+
+\begin_layout Standard
+\align center
+\series bold
+המתמטיקה לא צומחת בחלל הריק, לכל הגדרה יש מושג שהיא מנסה לפרמל וכמעט לכל משפט יש הסבר אינטואיטיבי; התפקיד שלנו הוא להבין את האינטואיציות הללו וכשאנו כותבים הוכחה הדרך הכי טובה היא לפרמל את האינטואיציה שלנו.
+\series default
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+בפרק הראשון אפרט את התפיסה שעומדת מאחורי משפט זה, בפרק השני אנסה להציע הסבר אינטואיטיבי להגדרה הפורמלית של המספרים הממשיים כפי שהיא מוצגת באינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\numeric off
+, ובפרק שאחריו לא אתאפק ואפתח בהסבר אינטואיטיבי למספרים המרוכבים והמרחבים הווקטוריים - הסבר שלא אסיים בקובץ זה אלא רק בסיכומים שלי מקורסי אלגברה ליניארית.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+מה אנחנו עושים פה בכלל???
+\end_layout
+
+\begin_layout Subsection
+התחלה
+\end_layout
+
+\begin_layout Standard
+איך מתנהלת הרצאה במתמטיקה? המרצה רושם הגדרה או שתיים על הלוח, הסטודנטים מבינים במה מדובר - מי יותר ומי פחות (ומי כלל לא), ואז המרצה נותן רצף של טענות והוכחותיהן; לאורך כל הוכחה הסטודנטים מנסים לעקוב אחרי כל שלב ולהבין מדוע הוא אכן מוצדק ובסופה גם מי שהצליח לעקוב אחרי כל שלב אומר לעצמו "אין מצב שהייתי חושב על זה בעצמי..."
+\begin_inset Newline newline
+\end_inset
+שאלתם את עצמכם פעם מאיפה המרצה מביא את ההגדרה? ואת הטענות? ואת ההוכחות? אנחנו יודעים שהמרצים שלנו לא חשבו על ההגדרות, הטענות וההוכחות הללו לבדם (רובן בנות כמה מאות שנים), אז מהיכן הם כן הביאו אותן? תאמרו "מה השאלה? היו מתמטיקאים לפניהם והם אלו שכתבו את כל הנ"ל." נכון, אבל כיצד הגיעו אותם מתמטיקאים לכל זה? האם פיה לחשה להם באוזן? האם הם קיבלו את המתמטיקה בחלום הלילה? לא ולא! המתמטיקאים הללו חשבו על ההגדרות, הטענות וההוכחות בעצמם. אבל כיצד זה קרה? האם באמת מתמטיקאים חושבים לעצמם "בואו נמציא מבנה אלגברי בעל תכונות כאלה וכאלה ונראה כיצד אנחנו ממשיכים משם"?! אני לא מאמין שזה מה שקורה וגם לא נראה לי שזה מה שקרה מבחינה היסטורית, בפסקה הבאה אני הולך להביא את דעתי האישית בשאלה "איך נכון 'לעשות' מתמטיקה?" - אתם מוזמנים לחלוק עליי, ואף אשמח אם תכתבו לי על כך שכן לדעתי הפילוסופיה של המתמטיקה חשובה יותר מן המתמטיקה עצמה.
+\begin_inset Newline newline
+\end_inset
+בעיניי הדרך הנכונה "לעשות" מתמטיקה היא לקחת טענות שאנו מחשיבים לנכונות ומצד שני לא נראה לנו שהן יכולות להיות הנחות יסוד, ואז לגזור 
+\series bold
+אחורה
+\series default
+ את הנחות היסוד שעליהן מתבססות הטענות הראשונות. כלומר יש לנו חוש רוחני המורה לנו על קיומם הרוחני של אובייקטים מסוימים ועל נכונות של טענות כלשהן על אודותיהם, אנו רוצים לשים את האצבע על המהות של אותם אובייקטים, וזאת נעשה ע"י התבוננות בטענות שעליהם ו"הנדסה לאחור", שכן מהות האובייקט היא המביאה לנכונות של אותן טענות עליו. כשאנו עובדים בצורה זו מה שקורה בעצם הוא שבמקום לחקור מציאות חיצונית לנו אנו חוקרים את הלך המחשבה שלנו על אודות אותה מציאות, איננו שואלים 
+\series bold
+האם
+\series default
+ הטענות הללו נכונות אלא 
+\series bold
+למה
+\series default
+ אנחנו חושבים שהן אכן נכונות; החלק המפתיע בגישה זו הוא שלאחר שחקרנו את עצמנו וגילינו מהן הנחות היסוד שלנו אנו יכולים להסיק מהן מסקנות חדשות שלא היו חלק ממערך הטענות המקורי, כעת, מכיוון שאלו באמת הנחות היסוד שלנו, נשתכנע שמסקנות אלו נכונות על אותם אובייקטים ובכך הרווחנו רווח כפול: הסברנו לעצמנו מדוע אנחנו חושבים כפי שחשבנו בעבר ובנוסף יש לנו מחשבות חדשות בנושא.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ זוהי בעצם הסיבה שאני כל כך נהנה ללמוד מתמטיקה: איני חוקר מציאות זרה - אני חוקר את הלך המחשבה של האנושות, ואני עושה זאת דרך חקירת מוחי שלי!
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+אדגיש ואומר שלדעתי האובייקטים המתמטיים שאנו חוקרים אכן קיימים במציאות, אלא שבבואנו לחקור אותם איננו יכולים "לגעת" בהם באופן ישיר, תמיד מתווך לנו מוחנו את אותו חלק רוחני של המציאות (כפי שהוא מתווך לנו כל חלק אחר שלה) ולכן בעצם אנו חוקרים את מוחנו ולא את האובייקטים המתמטיים.
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+ע"פ תפיסה זו המתמטיקה אינה המצאה פרי מוחו של האדם כי אם תגלית, ניתן אולי לדון בשאלה אם התגלית היא כיצד אנחנו חושבים על אובייקטים מתמטיים או שמא התגלית היא מה נכון לומר על אותם אובייקטים; לטעמי אין הבדל גדול בין השניים: אם אני חושב מחשבה כלשהי אודות אובייקט מסוים אני אמנם מודע לכך שזוהי בסך הכל המחשבה שלי ואין ערב להיותה נכונה, אך מכיוון שאני הוא זה שחושב אותה הרי שמבחינתי היא אכן נכונה וכך נראה ומתנהג אותו אובייקט. מצד שני, יבוא אדם ויזרוק לחלל האוויר מבנה אלגברי בעל תכונות שלא נובעות מגזירה אחורנית כפי שתיארנו לעיל, ימשיך אותו אדם להסיק מסקנות מן ההגדרה ששלף ממוחו הקודח, אזי תאמר תפיסה זו שכל זה טוב ויפה אך אין שום ראיה לכך שאותו מבנה אלגברי אכן קיים במציאות הרוחנית - זוהי המצאה ממש כפי שסיפורי חדי קרן ופיות הם בדיה, ולפיכך אין בהם את אותה רמת עניין שבאובייקטים מתמטיים שעליהם מצביע אותו חוש רוחני שהזכרנו לעיל. אם נכלול המצאות כעין אלה תחת השם "מתמטיקה" נבין מדוע יש המשווים את המתמטיקה לאומנות, זוהי ספרות שלמה הכתובה בשפה מתמטית.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ שאלה קלאסית בפילוסופיה של המתמטיקה היא מדוע המתמטיקה, שאיננה אלא פרי מחשבת האדם, כה מיטיבה להסביר את המציאות הפיזית?
+\begin_inset Newline newline
+\end_inset
+אני חושב שהשאלה אפילו לא מתחילה, מתמטיקה אינה צומחת בחלל הריק, לייבניץ וניוטון לא היו מתמטיקאים - הם היו פיזיקאים שפתחו תחום חדש במתמטיקה בנסותם להסביר את המציאות הפיזית, המתמטיקה תמיד צומחת מן הדרישות בשטח, אפילו תחומים שנפתחו לכאורה שלא מתוך צרכים מעשיים נבנו בהשראת תחומים קודמים שכן היו כאלה. כלומר המתמטיקה תמיד צמחה, ולעולם תצמח, מתוך ניסיונו של האדם להסביר את המציאות הפיזית והרוחנית שהוא רואה, ולפיכך אין זה פלא שעבור אותו אדם נראה שהיא אכן מצליחה להסביר היטב את אותה מציאות.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ אתם מוזמנים לעיין ב
+\begin_inset CommandInset href
+LatexCommand href
+name "וויקיפדיה"
+target https://he.wikipedia.org/wiki/%D7%A4%D7%99%D7%9C%D7%95%D7%A1%D7%95%D7%A4%D7%99%D7%94_%D7%A9%D7%9C_%D7%94%D7%9E%D7%AA%D7%9E%D7%98%D7%99%D7%A7%D7%94
+literal false
+\end_inset
+ ולמצוא שיטות נוספות בפילוסופיה של המתמטיקה, השיטה שאני מציג כאן היא סוג של מה שנקרא שם "ריאליזם מתמטי או פלאטוניזם". 
+\end_layout
+
+\begin_layout Subsection
+הפשטה
+\end_layout
+
+\begin_layout Standard
+הסיבה לכתיבת קובץ זה, ואחת הסיבות העיקריות לכך שכתבתי את כל הסיכומים שלי, היא קושי נפוץ שמתעורר אצל סטודנטים רבים בתחילת הלימודים: המתמטיקאים מפשיטים כל דבר עד היסוד, וכשאנו הסטודנטים נתקלים בזה לראשונה, אנחנו נוטים להתמקד בהגדרה המופשטת ולשכוח את מה שלמדנו בתיכון והיה אינטואיטיבי יותר. כך נוצרת התחושה שמתמטיקאי קם יום אחד בבוקר ובדה ממוחו הקודח מבנה אלגברי, ואז שאל את עצמו "הממ... מעניין מה אפשר להגיד על המבנה האלגברי שהמצאתי בזה הרגע?".
+\end_layout
+
+\begin_layout Standard
+כפי שהסברתי לעיל לדעתי זוהי טעות: כל הגדרה מופשטת כזו נוצרה מהמושג שאותו היא מנסה להפשיט, היופי במתמטיקה הוא להבין את האינטואיציה במושג המקורי, ולראות כיצד אפשר לפרמל אותה במושג המופשט. אבל למה בכלל אנחנו מפשיטים? לפני שאנחנו עונים על השאלה ארצה לתת כמה דוגמאות להפשטה, ולהראות בהן את מה שאני מתאר כהפשטת מושג מתוכנו עד שנשארת הגדר בלבד.
+\begin_inset Newline newline
+\end_inset
+
+\series bold
+דוגמאות להפשטה
+\series default
+
+\end_layout
+
+\begin_layout Standard
+חשבו רגע על המושגים חיבור, כפל, 
+\begin_inset Formula
+$0$
+\end_inset
+ ו-
+\begin_inset Formula
+$1$
+\end_inset
+, עולה לכם איזשהו תוכן בראש, נכון?
+\begin_inset Newline newline
+\end_inset
+כעת היזכרו בהגדרת שדה סדור:
+\end_layout
+
+\begin_layout Itemize
+מהם חיבור וכפל? פעולות דו-מקומיות שמקיימות
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\begin_inset Formula
+$5$
+\end_inset
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+פסוקים לוגיים כל אחת, כאשר אחד מהם (חוק הפילוג) משותף לשתיהן.
+\end_layout
+
+\begin_layout Itemize
+מהו 
+\begin_inset Formula
+$0$
+\end_inset
+? איבר בשדה המקיים שלכל איבר 
+\begin_inset Formula
+$a$
+\end_inset
+ בשדה, אם נפעיל עליו ועל 
+\begin_inset Formula
+$0$
+\end_inset
+ פעולה מסוימת (חיבור) נקבל את 
+\begin_inset Formula
+$a$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+מהו 
+\begin_inset Formula
+$1$
+\end_inset
+? איבר המקיים שלכל איבר 
+\begin_inset Formula
+$b$
+\end_inset
+ בשדה אם נפעיל עליו ועל 
+\begin_inset Formula
+$1$
+\end_inset
+ פעולה אחרת (כפל) נקבל את 
+\begin_inset Formula
+$b$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+למה לא הגדרנו את ההופכי של 
+\begin_inset Formula
+$0$
+\end_inset
+? כי אז: 
+\begin_inset Formula
+$0=0\cdot0^{-1}=1$
+\end_inset
+, בסתירה לכך שהגדרנו את 
+\begin_inset Formula
+$1$
+\end_inset
+ ו-
+\begin_inset Formula
+$0$
+\end_inset
+ כאיברים שונים; הא ותו לא, לא בגלל שאין שום תוכן מאחורי המילים "חילקתי
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ חמש סוכריות לאפס ילדים".
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\end_layout
+
+\begin_layout Itemize
+והדוגמה שהפילה לי את האסימון בשיעור השני של אינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\numeric off
+:
+\begin_inset Newline newline
+\end_inset
+כשהמרצה שלנו לאינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\numeric off
+ (רז קופרמן) הציג את אקסיומות השדה הסדור שאלתי אותו "למה באקסיומת הטריכוטומיה דרשת 'או' 
+\begin_inset CommandInset href
+LatexCommand href
+name "מוציא"
+target https://he.wikipedia.org/wiki/XOR
+literal false
+\end_inset
+? הרי 
+\series bold
+המהות
+\series default
+ של "היחס 'קטן מ-' קובעת שגם אם היינו משתמשים ב-'או' כולל היינו מקלים את אותה התוצאה?"
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר אם אתה מבין היטב איזה תוכן עומד מאחורי המילים "קטן מ-" תדע שרק אחת משלוש האפשרויות של הטריכוטומיה יכולה להתקיים.
+\end_layout
+
+\end_inset
+, מה הוא ענה? "אין שום דבר חוץ מן ההגדרה, אם היינו משתמשים ב-'או' כולל היינו מקבלים משהו אחר, 
+\series bold
+אין תוכן מאחורי הסימון אלא רק מה שכתוב בהגדרה
+\series default
+"...
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ אם כל זה לא הספיק לכם בואו ניקח את זה לקצה. בספרו, "הקשר המתמטי" (ידיעות ספרים), מביא צבי ארטשטיין
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+מתמטיקאי במכון ויצמן.
+\end_layout
+
+\end_inset
+ הגדרה די דומה להגדרה הבאה: מספר זוגי הוא מספר שלם שבכתיבה עשרונית ספרת היחידות שלו היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\begin_inset Formula
+$0$
+\end_inset
+,
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\begin_inset Formula
+$2$
+\end_inset
+,
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\begin_inset Formula
+$4$
+\end_inset
+,
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\begin_inset Formula
+$6$
+\end_inset
+,
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ או 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\begin_inset Formula
+$8$
+\end_inset
+; מבחינה פורמלית ההגדרה הזו קבילה לחלוטין (בהנחה שהכתיבה העשרונית מוגדרת). ארטשטיין לא אהב את ההגדרה שציטט מסיבותיו הוא, אך אני לא אוהב את ההגדרה הזו מסיבה אחרת: אמנם מבחינת ה
+\series bold
+גידור
+\series default
+ הגדרה זו עובדת היטב - אין מספר זוגי שאינו כלול בה ואין מספר אי-זוגי שמצליח להיכנס אליה, ה
+\series bold
+גדר
+\series default
+ אכן מונעת מעברים לא רצויים; אבל, וזה אבל גדול, ההגדרה הזו אינה הסיבה שבגללה אנחנו מתעניינים במספרים הזוגיים, ההגדרה הזו אינה מצביע על המהות של המספרים הזוגיים! מה אני כן רוצה לשמוע? מספר זוגי הוא מספר שניתן להצגה כמכפלה של 
+\begin_inset Formula
+$2$
+\end_inset
+ במספר שלם.
+\begin_inset Newline newline
+\end_inset
+דרך אגב, לפי זה מהי ההגדרה הרצויה של המספרים האי-זוגיים? לא "קיים 
+\begin_inset Formula
+$k$
+\end_inset
+ שלם כך שניתן להציג את המספר כ-
+\begin_inset Formula
+$2k-1$
+\end_inset
+", אלא "המספר אינו זוגי".
+\end_layout
+
+\begin_layout Standard
+אז למה אנחנו עובדים רק עם ה
+\series bold
+גדר
+\series default
+ של המושגים ולא עם ה
+\series bold
+מהות
+\series default
+ שלהם? למה אנחנו מפשיטים?
+\begin_inset Newline newline
+\end_inset
+יש לזה שלוש סיבות טובות ועוד אחת שמבחינה פילוסופית קצת קשה לי איתה.
+\begin_inset Newline newline
+\end_inset
+שלוש הסיבות הטובות הן
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+לא יכולתי להתאפק: "וְשֶׁבַע הַשִׁבֳּלִים הָרֵקוֹת... יִהְיוּ שֶׁבַע שְׁנֵי רָעָב" (בראשית, מ"א, כ"ז).
+\end_layout
+
+\end_inset
+:
+\end_layout
+
+\begin_layout Enumerate
+מניעת טעויות הנובעות מאינטואיציה שאינה נכונה.
+\end_layout
+
+\begin_layout Enumerate
+כאשר מפשיטים מן המושג את התוכן ונשארים רק עם ההגדרה כל הוכחה שתהיה תקפה במקרה אחד תהיה נכונה גם בכל המקרים האחרים שנכנסים לאותה הגדרה. כך לדוגמה, כאשר הוכחנו כי לכל 
+\begin_inset Formula
+$r\in\MKreal$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$0\cdot r=0$
+\end_inset
+, הוכחנו זאת לא רק בשדה הממשיים אלא בכל שדה אחר (כגון 
+\begin_inset Formula
+$\MKfield_{2}$
+\end_inset
+), וזאת משום שהשתמשנו באקסיומות השדה בלבד.
+\end_layout
+
+\begin_layout Enumerate
+הפשטת מושג מן התוכן שלו שמה את האצבע על מהותו, על מה שהופך אותו למה שהוא.
+\end_layout
+
+\begin_layout Standard
+כדי להסביר את הסיבה השלישית נעבור לרגע לעניין אחר: בפילוסופיה של המתמטיקה ישנו עיקרון מקובל האומר שעדיף להניח כמה שפחות הנחות יסוד ולהסיק מהן כמה שיותר, כלומר עדיף לומר כמה שפחות בהגדרה ולהרוויח את כל התכונות האחרות של המושג ע"י מה שכבר נאמר, לדוגמה: ניתן היה להגדיר מקבילית כמרובע שאורך כל שתי צלעות נגדיות בו זהה וגם גודל כל שתי זוויות נגדיות בו שווה, אולם נהוג להגדיר מקבילית רק לפי התנאי הראשון מפני שניתן להסיק ממנו את השני
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+למעשה ניתן היה לעשות בדיוק הפוך (להגדיר לפי הזוויות), אני חושב שהסיבה להעדפה זו היא שצלעות המצולע בולטות יותר לעין האנושית מאשר זוויותיו.
+\end_layout
+
+\end_inset
+. כשאנו גוזרים את הנחות היסוד מהטענות שמבוססות עליהן נלמד בעצם איך 
+\series bold
+אנחנו
+\series default
+ חושבים, כשנניח כמה שפחות נלמד על מה אנחנו באמת מתבססים בטענותינו; רצוני לומר שכשנפשיט אובייקט מתמטי עד הסוף נלמד כיצד 
+\series bold
+אנחנו
+\series default
+ תופסים אותו
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+אני חושב (אם יורשה לנחתום להעיד על עיסתו) שהבאתי לכך דוגמה מעולה בהסבירי את אקסיומת השלמות בפרק השני של קובץ זה, ובקובץ ההגדרות של המספרים הממשיים.
+\end_layout
+
+\end_inset
+. כאן עליי לדייק בדבריי: אני לא טוען שכל הפשטה היא מהסיבה השלישית (הרי גם האחרות קיימות), כל אחד מוזמן לחשוב בעצמו מאיזו סיבה שיש צורך בהפשטה שלפניו (או אפילו אם יש בה צורך בכלל).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ שימו לב: אמנם אמרתי שככל שמקטינים את מספר האקסיומות מבלי לאבד את הנובע מהן כן ייטב, אך זהו רק משום שהדבר מהווה 
+\series bold
+סימן
+\series default
+ לכך שאנחנו בדרך הנכונה, וזאת בניגוד לתפיסה השלטת במתמטיקה שעיקרון זה הוא מהותי ולא נועד לשרת עיקרון אחר; לכן אם אראה טענה "מיותרת" מבחינה זו אך לדעתי היא ראויה לתואר "אקסיומה" לא תהיה לי בעיה להשאיר אותה על כנה
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+דוגמה בולטת לכך היא ההגדרה של תת-מרחב וקטורי: ניתן להגדיר אותו כתת-קבוצה של המרחב המכילה את וקטור האפס וסגורה לחיבור וקטורי וכפל בסקלר, לכאורה התנאי הראשון רחב מדי - אפשר להחליפו בכך שהקבוצה אינה ריקה ולקבל את אותו מושג, כך מניחים פחות מבלי לאבד טיפת רווח. למרות זאת אני מעדיף את ההגדרה הראשונה משום שלדעתי וקטור האפס הוא מהמאפיינים המהותיים של תמ"ו, ולראיה הוא מופיע בהגדרת המרחב הווקטורי (והרי כל הרעיון של תמ"ו היא שהוא מרחב בפני עצמו).
+\end_layout
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+עם זאת לא כל טענה, אינטואיטיבית ככל שתהיה, ראויה לתואר אקסיומה. נביא דוגמה לכך: בתיכון למדנו שסכום הזוויות במצולע קמור הוא 
+\begin_inset Formula
+$180\cdot\left(n-2\right)$
+\end_inset
+ מעלות
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כאשר 
+\begin_inset Formula
+$n$
+\end_inset
+ הוא מספר הצלעות. הטענה נובעת מהעובדה שאם נבחר נקודה בתוך המצולע ונוציא ממנה ישרים לכל הקודקודים הרי שחילקנו את המצולע ל-
+\begin_inset Formula
+$n$
+\end_inset
+ משולשים, אך יהיה עלינו להחסיר את המעגל שסביב הנקודה (שהרי אינו חלק מזוויות המצולע).
+\end_layout
+
+\end_inset
+, אולם הטענה הזו נכונה גם עבור מצולע שאינו קמור; נוכיח את הטענה בכך שנראה כי לכל 
+\begin_inset Formula
+$3\leq n\in\MKnatural$
+\end_inset
+ ולכל מצולע בעל 
+\begin_inset Formula
+$n$
+\end_inset
+ צלעות ניתן לחלק את המצולע ל-
+\begin_inset Formula
+$n-2$
+\end_inset
+ משולשים, את טענת העזר הזו נוכיח באינדוקציה שלמה.
+\begin_inset Newline newline
+\end_inset
+בסיס האינדוקציה טריוויאלי. יהי 
+\begin_inset Formula
+$3\leq n\in\MKnatural$
+\end_inset
+ ונניח שהלמה נכונה לכל 
+\begin_inset Formula
+$3\leq m\leq n$
+\end_inset
+, 
+\series bold
+לכל מצולע בעל 
+\begin_inset Formula
+$n+1$
+\end_inset
+ צלעות קיים אלכסון העובר בתוך המצולע
+\series default
+, אלכסון זה מחלק את המצולע לשני מצולעים בעלי מספר צלעות קטן או שווה ל-
+\begin_inset Formula
+$n$
+\end_inset
+ ולכן הטענה נכונה עבורם; סכום הצלעות של שניהם יחד הוא 
+\begin_inset Formula
+$\left(n+1\right)+2=n+3$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+סופרים את הצלע המשותפת פעמיים.
+\end_layout
+
+\end_inset
+ ולכן ניתן לחלק אותם ל-
+\begin_inset Formula
+$n+3-2-2=\left(n+1\right)-2$
+\end_inset
+ משולשים ומכאן שהטענה נכונה עבור 
+\begin_inset Formula
+$n+1$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+הטענה המודגשת אינטואיטיבית מאד, למרות זאת נראה לי שהכל יסכימו שגם מבחינה אינטואיטיבית אנו רואים אותה כנובעת מתכונות המצולע ולא ככזו העומדת בפני עצמה ולכן איני רואה בה אקסיומה.
+\end_layout
+
+\begin_layout Standard
+הסיבה הרביעית להפשטה היא 
+\series bold
+חוסר עניין בתוכן של המושג
+\series default
+, כל עוד ה
+\series bold
+גְּדֵרוֹת
+\series default
+ (רבים של גָּדֵר) אינן מכילות סתירה פנימית יש לנו מבנה אלגברי מעניין וכיף לנו לשחק איתו. איפה הבעיה הפילוסופית? אי שם באמצע השמינית
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+"שמינית" היא כיתה י"ב (ראו 
+\begin_inset CommandInset href
+LatexCommand href
+name "כאן"
+target https://he.wikipedia.org/wiki/%D7%A9%D7%9E%D7%95%D7%AA_%D7%94%D7%9B%D7%99%D7%AA%D7%95%D7%AA_%D7%91%D7%91%D7%99%D7%AA_%D7%94%D7%A1%D7%A4%D7%A8_%D7%94%D7%AA%D7%99%D7%9B%D7%95%D7%9F_%D7%91%D7%99%D7%A9%D7%A8%D7%90%D7%9C
+literal false
+\end_inset
+), קצת הפתיע אותי שהשיטה הזו אינה מוכרת, אולם לאור הניסיון מוטב שאבהיר את דבריי.
+\end_layout
+
+\end_inset
+ למדנו על מספרים מרוכבים, באה המורה וסיפרה לנו שיש שורש ריבועי למספרים שליליים וסימנו 
+\begin_inset Formula
+$i:=\sqrt{-1}$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+הסימון 
+\begin_inset Formula
+$\sqrt{-1}$
+\end_inset
+ אינו מוגדר היטב מפני שגם 
+\begin_inset Formula
+$-i$
+\end_inset
+ מקיים 
+\begin_inset Formula
+$\left(-i\right)^{2}=-1$
+\end_inset
+ וא"א לומר שדווקא 
+\begin_inset Formula
+$i$
+\end_inset
+ הוא החיובי מפני ש-
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+ אינו שדה סדור, אבל הכוונה ברורה: סימנו את אחד משני המספרים המקיימים זאת ב-
+\begin_inset Formula
+$i$
+\end_inset
+ ואילו את השני (שהוא הנגדי של הראשון) סימנו ב-
+\begin_inset Formula
+$-i$
+\end_inset
+.
+\end_layout
+
+\end_inset
+, השאלה הראשונה שעברה לי ולחבריי לכיתה הייתה "למה לא נאמר שקיים 
+\begin_inset Formula
+$j=\frac{1}{0}$
+\end_inset
+?" (לא, אנחנו לא ניכנס לשאלה הזו כאן). וכעת הבהרה: גם בשמינית הסכמתי ש
+\series bold
+אם
+\series default
+ קיים שורש של 
+\begin_inset Formula
+$-1$
+\end_inset
+ אז הוא אכן מתנהג כפי שלימדו אותנו, אבל... (וכאן מתחיל הדיון הפילוסופי) מי אמר שהוא אכן קיים?
+\begin_inset Newline newline
+\end_inset
+התשובה שאני קיבלתי לזה מיועץ הלימודים של העברית היא שזה 
+\series bold
+לא מעניין אם השורש קיים אם לאו
+\series default
+; וכאן הבן שואל: אם לא ברור שהוא קיים, למה הוא מעניין אותי?
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כן, אני יודע שעבור המתמטיקה המודרנית זו אינה שאלה, ואותו יועץ אכן הציג את התפיסה המקובלת, אבל לי זה עדיין מפריע.
+\end_layout
+
+\end_inset
+ באותה מידה אפשר לספר סיפורי פיות וחדי קרן...
+\end_layout
+
+\begin_layout Standard
+בהקשר הזה אני מבין סוף סוף את המחלוקת אם מתמטיקה היא תגלית או המצאה ואיפה בדיוק הדמיון בינה לבין אומנות.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ דווקא 
+\begin_inset Formula
+$i$
+\end_inset
+ הוא מושג בעל ראיה טובה לקיומו - אפשר למצוא בעזרתו פתרון למשוואות ממעלה שלישית
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+שימו לב: טיעון זה אומר שהיכולת לפתור משוואות ממעלה שלישית מהווה 
+\series bold
+ראיה
+\series default
+ לקיומו הרוחני של 
+\begin_inset Formula
+$i$
+\end_inset
+, הוא אינו אומר שיש מקום רק למתמטיקה שימושית.
+\end_layout
+
+\end_inset
+, אך יתרה מזאת אני מאמין שהבאתי הסבר מספק יותר בפרק השלישי של קובץ זה; על כל פנים אין זה משנה לענייננו משום שהמתמטיקאים היו מחשיבים את 
+\begin_inset Formula
+$i$
+\end_inset
+ למושג מתמטי תקף גם לולא הסברים אלו.
+\end_layout
+
+\begin_layout Subsection
+איזומורפיזם
+\end_layout
+
+\begin_layout Standard
+וכעת למושג הזועק כאן מכל שורה ולמרות זאת לא הוזכר עד כה: ה
+\series bold
+\begin_inset CommandInset href
+LatexCommand href
+name "איזומורפיזם"
+target https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%96%D7%95%D7%9E%D7%95%D7%A8%D7%A4%D7%99%D7%96%D7%9D
+literal false
+\end_inset
+
+\series default
+. למרות שמבחינה פורמלית האיזומורפיזם הוא מושג שנלמד רק בשנה השנייה של התואר (מבנים
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\numeric off
+), אנו נתקלים באיזומורפיזם כבר בימים הראשונים של שנה א' שכן המושג הזה הוא נשמת אפה של המתמטיקה: הרעיון לעסוק בחיבור של מספרים במקום בחיבור של קבוצות בננות או תפוזים אומר ששני אלו מתנהגים באותה צורה ולכן אין עניין לעסוק בהם בנפרד. שימו לב - זה לא אומר שבננות ותפוזים הם אותו הדבר, אלא שמנקודת המבט של החיבור אין ביניהם שום הבדל ולכן אנחנו יכולים 
+\series bold
+להתייחס אליהם כאילו היו אותו הדבר
+\series default
+. כך גם אובייקטים מתמטיים שבתחילה נראו שונים ולאחר מכן התברר שהם מתנהגים באותה צורה - לדעתי עדיין אי אפשר לומר שמדובר באותו אובייקט ,אלא שמנקודת המבט הנוכחית שלנו הם מתנהגים באותה צורה, ולכן אנחנו יכולים להתייחס אליהם כאילו היו אובייקט אחד.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ פעמים רבות במתמטיקה המודרנית משמש האיזומורפיזם לביסוס המתמטיקה על יסודות יציבים, כך לדוגמה הגדרת הנגזרת אינה מתארת את המהות של המושג הפיזיקלי "
+\color blue
+\begin_inset CommandInset href
+LatexCommand href
+name "מהירות רגעית"
+target https://he.wikipedia.org/wiki/%D7%9E%D7%94%D7%99%D7%A8%D7%95%D7%AA#%D7%9E%D7%94%D7%99%D7%A8%D7%95%D7%AA_%D7%A8%D7%92%D7%A2%D7%99%D7%AA
+literal false
+\end_inset
+
+\color inherit
+" (שממנו נוצרה הנגזרת), אלא מעגנת אותו למושג 
+\series bold
+אחר
+\series default
+ שאותו ניתן להגדיר היטב. דוגמה נוספת היא הצורה שבה מוגדרים המספרים הטבעיים בתורת הקבוצות:
+\begin_inset Formula
+\[
+0:=\emptyset,\ 1:=\left\{ \emptyset\right\} ,\ 2:=\left\{ \left\{ \emptyset\right\} ,\emptyset\right\} ,\ 3:=\left\{ \left\{ \left\{ \emptyset\right\} ,\emptyset\right\} ,\emptyset\right\} \ldots
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+סיום
+\end_layout
+
+\begin_layout Standard
+אז למה אני כותב את כל זה? כמובן שעבור כל מתמטיקאי הפילוסופיה של המתמטיקה היא נושא מרתק, אבל אם יש נקודה אחת שאני רוצה שתצאו איתה מכאן היא החשיבות של האינטואיציה כשלומדים מתמטיקה:
+\end_layout
+
+\begin_layout Itemize
+כשהמרצה מציג הגדרה בכיתה השאלה הראשונה שלנו לא צריכה להיות "מה עושים עם ההגדרה הזו? ואילו משפטים המרצה עומד 'להנחית' עלינו?" אלא "איזה מושג ההגדרה הזו מנסה לפרמל? ולמה לפרמל אותו דווקא כך ולא אחרת?"
+\end_layout
+
+\begin_layout Itemize
+כשאנחנו ניגשים לענות על שלאה בתרגיל/במבחן לא כדאי לנסות להתחיל לשחק עם האלגברה ללא תוכנית - זה יכול לעבוד במקרים מסוימים אבל בדרך כלל אני יוצא מזה עם מפח נפש, כמעט תמיד יש לנו אינטואיציה מדוע הטענה נכונה ומה שעלינו לעשות הוא לפרמל אותה מבלי לחפש בכוח קיצורי דרך אלגבריים.
+\end_layout
+
+\begin_layout Standard
+בפרק הבא אנסה להציע הסבר אינטואיטיבי להגדרה הפורמלית של המספרים הממשיים כפי שהיא מוצגת באינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\numeric off
+, ובפרק שאחריו לא אתאפק ואפתח בהסבר אינטואיטיבי למספרים המרוכבים והמרחבים הווקטוריים - הסבר שלא אסיים בקובץ זה אלא רק בסיכומים שלי מקורסי אלגברה ליניארית.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+מה קורה באינפי'
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\numeric off
+?
+\end_layout
+
+\begin_layout Standard
+בפרק הקודם טענתי שכל הגדרה מופשטת נוצרת מהמושג שאותו היא מנסה להפשיט בתהליך של "הנדסה לאחור", בפרק הזה אני רוצה להראות כיצד הדבר מתבטא בהגדרה הפורמלית של המספרים הממשיים; אני תמיד אומר שלו היו לי
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+200-300
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+שנה ולו הייתי חכם מספיק גם אני הייתי מגיע לאותה הגדרה או להגדרה דומה מאד. הפרק הזה מנסה להציע דרך שבה הייתי יכול לעשות זאת, במקרה או שלא במקרה סדר הדברים שאכתוב כאן תואם במדויק לאופן ההיסטורי שבו התגלגלו הדברים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+אני נוטה להאמין שזה ממש לא מקרי, אבל למרות זאת אנחנו נראה שכאשר ארצה לבצע את המעבר מהישר הממשי אל המישור והמרחב התלת-ממדי, הדרך שבה אעשה זאת אינה זו שהתרחשה באופן היסטורי. נורא התאכזבתי לגלות זאת אבל אי אפשר לשכתב את ההיסטוריה...
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ סדר הדברים יהיה כדלהלן: המספרים הטבעיים, המספרים הרציונליים, המספרים החיוביים, הישר הממשי והמרחב התלת-ממדי; שימו לב בכל שלב כיצד שלב זה מכליל את השלב הקודם ואינו סותר אותו.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ שימו לב: אנחנו לא מנסים לפתח כאן מערכת אקסיומות אלא להסביר מדוע האקסיומות שלמדנו באינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+אכן מפרמלות את מה שאנחנו רוצים, כלומר איננו עונים על השאלה "מה עושים עם ההגדרה וכיצד מראים לפיה שהטענות המבוקשות אכן מתקיימות?" אלא על השאלה "למה להגדיר דווקא כך?"
+\end_layout
+
+\begin_layout Subsection
+המספרים הטבעיים
+\end_layout
+
+\begin_layout Standard
+ובכן, נתחיל במספרים הטבעיים: לכל ילד ברור שניתן לדבר על סלסילה שבה כדור אחד, שניים או שלושה כדורים וכו'; כפי שהזכרתי לעיל הכדורים, הבננות והשולחנות מתנהגים בדיוק באותה צורה בכל הקשור לתכונות של 
+\series bold
+כמות
+\series default
+ החפצים בקבוצה המדוברת (הם 
+\series bold
+איזומורפיים
+\series default
+) וזו הסיבה לכך שאנחנו מדברים על 
+\series bold
+מספרים
+\series default
+ ולא על עצמים מסוימים. למרות זאת, כדי שנוכל להסביר מדוע אנחנו רוצה שהטבעיים יתנהגו בצורה מסוימת אנחנו מוכרחים לדבר דווקא על עצמים. א"כ נניח שכל הכדורים בעולם זהים ונמצאים בסלסילות, ולכל סלסילה כזו נתאים מספר טבעי המציין את כמות הכדורים בסלסילה - באופן אינטואיטיבי אין דבר כזה "סלסילת כדורים שאין בה כדורים" ולכן 
+\begin_inset Formula
+$0$
+\end_inset
+ אינו מספר טבעי. הדרך שבה אנו קובעים את המספר הטבעי המתאים לסלסילה הוא כדלהלן: נסדר את הכדורים בשורה ואח"כ נעבור עליהם אחד אחד כאשר עבור כל אחד מהם נאמר את המספר הבא בסדרה 
+\begin_inset Formula
+$1,2,3,\ldots$
+\end_inset
+ - כלומר יש לנו בראש את סדרת המספרים הטבעיים ואנו עוברים עליה (בראש או בפה) במקביל למעבר על פני הכדורים וכאשר נגיע לכדור האחרון נגיע גם למספר הטבעי המתאים, פעולה זו נקראת 
+\series bold
+מנייה
+\series default
+.
+\end_layout
+
+\begin_layout Subsubsection*
+חיבור
+\end_layout
+
+\begin_layout Standard
+על המספרים הטבעיים מוגדרת פעולת 
+\series bold
+חיבור
+\series default
+: אם ניקח שתי סלסילות, אחת 
+\color green
+ירוקה
+\color inherit
+ ובה 
+\begin_inset Formula
+$m$
+\end_inset
+ כדורים ואחת 
+\color blue
+כחולה
+\color inherit
+ ובה 
+\begin_inset Formula
+$n$
+\end_inset
+ כדורים, ונעביר את כל הכדורים שבסלסילה 
+\color green
+הירוקה
+\color inherit
+ לסלסילה 
+\color blue
+הכחולה
+\color inherit
+ אז המספר הטבעי המתאים לסלסילה 
+\color blue
+הכחולה
+\color inherit
+ לאחר ההעברה הוא תוצאת החיבור 
+\begin_inset Formula
+$n+m$
+\end_inset
+. שימו לב לכך שכל הסיפור הזה אינו סימטרי - אם היינו מעבירים את הכדורים מהסלסילה 
+\color blue
+הכחולה
+\color inherit
+ אל 
+\color green
+הירוקה
+\color inherit
+ היינו מקבלים סיפור חדש שבו מספר הכדורים בסלסילה 
+\color green
+הירוקה
+\color inherit
+ לאחר ההעברה הוא 
+\begin_inset Formula
+$m+n$
+\end_inset
+, אז למה ברור לנו שמתקיים 
+\begin_inset Formula
+$n+m=m+n$
+\end_inset
+?
+\begin_inset Newline newline
+\end_inset
+ברור לכולנו שלאחר סידור הכדורים בשורה אין שום הבדל אם נמנה אותם מימין לשמאל או משמאל לימין (זוהי תכונה מהותית של המושג 
+\series bold
+כמות
+\series default
+), א"כ נסכים שלאחר כל העברת כדורים מסלסילה אחת לאחרת נסדר את הכדורים כך שבצד שמאל יהיו כל הכדורים שהיו בסלסילה השנייה לפני ההעברה ובצד ימין הכדורים מהסלסילה הראשונה; לאחר הסכם זה נקבל שהן בסיפור הראשון והן בסיפור השני מספר הכדורים בסלסילה שאינה ריקה זהה - זוהי הסיבה לכך ש
+\series bold
+חיבור מספרים טבעיים צריך לקיים את חוק החילוף
+\series default
+.
+\begin_inset Newline newline
+\end_inset
+כדי להסביר את העובדה ש
+\series bold
+חיבור מספרים טבעיים צריך לקיים חוק הקיבוץ
+\series default
+ נתבונן במקרה שבו יש לנו שלוש סלסילות ובהן 
+\begin_inset Formula
+$n$
+\end_inset
+, 
+\begin_inset Formula
+$m$
+\end_inset
+ ו-
+\begin_inset Formula
+$k$
+\end_inset
+ כדורים בהתאמה, כעת נתפצל לשני סיפורים: בסיפור הראשון ניקח את 
+\begin_inset Formula
+$m$
+\end_inset
+ הכדורים בסלסילה השנייה ונעביר אותם לסלסילה הראשונה ואח"כ נעביר את 
+\begin_inset Formula
+$k$
+\end_inset
+ הכדורים מהסלסילה השלישית לראשונה (כעת יש בסלסילה הראשונה 
+\begin_inset Formula
+$\left(n+m\right)+k$
+\end_inset
+ כדורים), ובסיפור השני ניקח את 
+\begin_inset Formula
+$k$
+\end_inset
+ הכדורים בסלסילה השלישית ונעביר אותם לסלסילה השנייה ואח"כ נעביר את 
+\begin_inset Formula
+$m+k$
+\end_inset
+ הכדורים מהסלסילה השנייה לראשונה (כעת יש בסלסילה הראשונה 
+\begin_inset Formula
+$n+\left(m+k\right)$
+\end_inset
+ כדורים). נוסיף סעיף קטן להסכם שלנו: אם בסלסילה מסוימת יש כדורים שהיו במקור בשתי סלסילות שונות אנו נשמור על הסדר שבו הכדורים סודרו לפי ההסכם גם כאשר נעביר את הכדורים מסלסילה זו לאחרת או להפך; במקרה שלנו זה אומר שלאחר שתי ההעברות, הכדורים שבסלסילה הראשונה מסודרים באותה צורה בשני הסיפורים: ראשית 
+\begin_inset Formula
+$n$
+\end_inset
+ כדורים שהיו בסלסילה במקור נמצאים בצד שמאל, אחריהם מגיעים 
+\begin_inset Formula
+$m$
+\end_inset
+ הכדורים מהסלסילה השנייה שנמצאים במרכז השורה, ולבסוף 
+\begin_inset Formula
+$k$
+\end_inset
+ הכדורים מהסלסילה השלישית נמצאים בצד ימין - כלומר בשני הסיפורים יש בסלסילה הראשונה את אותו מספר כדורים ולפיכך 
+\begin_inset Formula
+$\left(n+m\right)+k=n+\left(m+k\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Subsubsection*
+כפל
+\end_layout
+
+\begin_layout Standard
+נניח שיש לנו 
+\begin_inset Formula
+$10$
+\end_inset
+ סלסילות שבכל אחת מהן 
+\begin_inset Formula
+$4$
+\end_inset
+ כדורים, א"כ לאחר שנעביר את כל הכדורים לסלסילה אחת יהיו בה 
+\begin_inset Formula
+$\overset{\text{10 פעמים}}{\overbrace{4+4+\ldots+4}}$
+\end_inset
+ כדורים - הכתיב הזה לא כל כך נוח ולכן היינו רוצים כתיב מקוצר לפעולה זו של חיבור אותו מספר לעצמו מספר מסוים של פעמים; א"כ נסמן ב-
+\begin_inset Formula
+$k\times n$
+\end_inset
+ את מספר הכדורים הנמצאים ב-
+\begin_inset Formula
+$k$
+\end_inset
+ סלסילות כך שבכל אחת מהן 
+\begin_inset Formula
+$n$
+\end_inset
+ כדורים, כלומר פירושו של הסימון "
+\begin_inset Formula
+$\times$
+\end_inset
+" הוא 
+\series bold
+פעמים
+\series default
+ כפי שאנו לומדים בבית הספר היסודי ו-"
+\begin_inset Formula
+$k\times n$
+\end_inset
+" הוא "
+\begin_inset Formula
+$k$
+\end_inset
+ 
+\series bold
+פעמים
+\series default
+ 
+\begin_inset Formula
+$n$
+\end_inset
+". גם הסיפור הזה אינו סימטרי, אז למה כל כך ברור לנו ש-
+\begin_inset Formula
+$k\times n=n\times k$
+\end_inset
+? כפי שאתם מנחשים הסיבה היא שלאחר שנעביר את כל הכדורים לסלסילה אחת נוכל לסדר את הכדורים בטבלה שבה כל שורה מכילה את כל הכדורים שהיו במקור באותה סלסילה, כך במקרה השמאלי נקבל טבלה שבה 
+\begin_inset Formula
+$k$
+\end_inset
+ שורות שבכל אחת מהן 
+\begin_inset Formula
+$n$
+\end_inset
+ כדורים ובמקרה הימני נקבל טבלה שבה 
+\begin_inset Formula
+$n$
+\end_inset
+ שורות שבכל אחת מהן 
+\begin_inset Formula
+$k$
+\end_inset
+ כדורים, ואז אם נסובב את נקודת המבט שלנו ב-
+\begin_inset Formula
+$90^{\circ}$
+\end_inset
+ נקבל מכל מקרה את רעהו ולכן ברור לכולנו שבשני מקרים מספר הכדורים זהה. א"כ הסברנו מדוע 
+\series bold
+כפל מספרים טבעיים צריך לקיים את חוק החילוף
+\series default
+, וכדי להבין מדוע 
+\series bold
+כפל מספרים טבעיים צריך לקיים את חוק הקיבוץ
+\series default
+ כל מה שעלינו לעשות הוא לבנות "טבלה" תלת-ממדית.
+\begin_inset Newline newline
+\end_inset
+מהגדרה 
+\series bold
+כפל מספרים טבעיים מקיים את חוק הפילוג ביחס לחיבור שלהם
+\series default
+, שכן:
+\begin_inset Formula
+\[
+k\times\left(n+m\right)=\overset{k\ \text{פעמים}}{\overbrace{\left(n+m\right)+\left(n+m\right)+\ldots+\left(n+m\right)}}=\overset{k\ \text{פעמים}}{\overbrace{n+n+\ldots+n}}+\overset{k\ \text{פעמים}}{\overbrace{m+m+\ldots+m}}=\left(k\times n\right)+\left(k\times m\right)
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Description
+הסכמה: כפל תמיד קודם לחיבור, כלומר 
+\begin_inset Formula
+$k\times n+k\times m=\left(k\times n\right)+\left(k\times m\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מהמהות של הכפל נקבל ש-
+\begin_inset Formula
+$1\cdot n=n$
+\end_inset
+.
+\end_layout
+
+\begin_layout Subsubsection*
+יחס סדר
+\end_layout
+
+\begin_layout Standard
+אנחנו יודעים לא רק להוסיף כדורים מסלסילה אחת לאחרת אלא גם להשוות בין כל שתי סלסילות.
+\end_layout
+
+\begin_layout Itemize
+לכל שתי סלסילות מתקיימת בדיוק אחת משלוש האפשרויות הבאות (
+\series bold
+טריכוטומיה
+\series default
+):
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+מספר הכדורים בסלסילה הראשונה 
+\series bold
+שווה
+\series default
+ למספר הכדורים בשנייה, במקרה כזה נסמן 
+\begin_inset Formula
+$n=m$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+מספר הכדורים בסלסילה הראשונה 
+\series bold
+קטן
+\series default
+ ממספר הכדורים בשנייה, במקרה כזה נסמן 
+\begin_inset Formula
+$n<m$
+\end_inset
+ (או 
+\begin_inset Formula
+$m>n$
+\end_inset
+).
+\end_layout
+
+\begin_layout Enumerate
+מספר הכדורים בסלסילה הראשונה 
+\series bold
+גדול
+\series default
+ ממספר הכדורים בשנייה, במקרה כזה נסמן 
+\begin_inset Formula
+$n>m$
+\end_inset
+ (או 
+\begin_inset Formula
+$m<n$
+\end_inset
+).
+\end_layout
+
+\begin_layout Standard
+כאשר הקביעה איזו אחת מהאפשרויות מתקיימת נעשית ע"י מניית הכדורים שבכל אחת מן הסלסילות: אם התקדמנו במנייה בסלסילה הראשונה יותר מבשנייה אז מדובר במקרה השלישי, אם המצב הפוך אז זהו המצב השני ואם שניהם אינם מתקיימים אז אנו עוסקים באפשרות הראשונה.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+בנוסף, לכל שלוש סלסילות מתקיים: אם מספר הכדורים בראשונה קטן מזה שבשנייה, וזה בתורו קטן ממספר הכדורים בשלישית, אז מספר הכדורים בסלסילה הראשונה קטן ממספר הכדורים בסלסילה השלישית (
+\series bold
+טרנזיטיביות
+\series default
+).
+\end_layout
+
+\begin_layout Itemize
+לבסוף, הוספה של כדורים לסלסילה מגדילה את מספר הכדורים שבה (ניתן להסיק מכאן את ה
+\series bold
+הלימה לחיבור
+\series default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+נניח ש-
+\begin_inset Formula
+$n<m$
+\end_inset
+ ואנו מוסיפים 
+\begin_inset Formula
+$k$
+\end_inset
+ לשני האגפים (אם מתקיים 
+\begin_inset Formula
+$n=m$
+\end_inset
+ אז ממהות השוויון נובע ש-
+\begin_inset Formula
+$n+k=m+k$
+\end_inset
+), ניתן להשתמש בחילוף ולהסתכל על זה כאילו אנו מוסיפים לשתי סלסילות שבהן 
+\begin_inset Formula
+$k$
+\end_inset
+ כדורים - לאחת אנחנו מוסיפים 
+\begin_inset Formula
+$m$
+\end_inset
+ ולאחרת 
+\begin_inset Formula
+$n$
+\end_inset
+, את ההוספה של 
+\begin_inset Formula
+$m$
+\end_inset
+ הכדורים ניתן לבצע בשתי פעימות: קודם להוסיף 
+\begin_inset Formula
+$n$
+\end_inset
+ כדורים ואח"כ להוסיף את השאר.
+\end_layout
+
+\end_inset
+).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מכיוון שכפל של מספרים טבעיים הוא חיבור בלבד אין צורך לדבר עליו בנפרד, ולמעשה ניתן להוכיח שגם הכפלת מספר הכדורים בסלסילה מגדילה את מספר הכדורים אם מדובר בכפל בטבעי שונה מ-
+\begin_inset Formula
+$1$
+\end_inset
+ ואינה מקטינה אותו בכל מקרה.
+\end_layout
+
+\begin_layout Standard
+א"כ גם על הטבעיים מוגדר 
+\series bold
+יחס הסדר "קטן מ-"
+\series default
+ והוא מקיים את התכונות הנ"ל.
+\end_layout
+
+\begin_layout Subsubsection*
+חיסור
+\end_layout
+
+\begin_layout Standard
+יש לנו גם פעולת 
+\series bold
+חיסור
+\series default
+: נניח שיש לנו סלסילה ובה 
+\begin_inset Formula
+$n$
+\end_inset
+ כדורים, אם נוציא ממנה 
+\begin_inset Formula
+$m$
+\end_inset
+ כדורים ונעביר אותם לסלסילה אחרת אז מספר הכדורים שיישאר בה הוא תוצאת החיסור 
+\begin_inset Formula
+$n-m$
+\end_inset
+; ניתן להסתכל על פעולת החיסור גם בצורה הבאה: מספר הכדורים שהיו צריכים להיות בה כך שהמצב הנוכחי יתקבל ע"י הוספת 
+\begin_inset Formula
+$m$
+\end_inset
+ כדורים מסלסילה אחרת הוא תוצאת החיסור 
+\begin_inset Formula
+$n-m$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נשים לב לכך שבסלסילה צריך להיות לפחות כדור אחד
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+אחרי הוצאת הכדורים בניסוח הראשון של החיסור או לפני ההוספה בניסוח השני.
+\end_layout
+
+\end_inset
+ ולכן 
+\begin_inset Formula
+$n-m\geq1$
+\end_inset
+, ובנוסף, מכיוון שהוספת כדורים לסלסילה 
+\series bold
+מגדילה
+\series default
+ את מספר הכדורים שבה פעולת החיסור על הטבעיים מוגדרת רק כאשר 
+\begin_inset Formula
+$n>m$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הסיבה לכך שקשה יותר לבצע חיסור בראש לעומת חיבור היא שפעולת החיסור במהותה היא "הנדסה לאחור" בעוד שהחיבור אינו כזה.
+\end_layout
+
+\begin_layout Standard
+אנחנו יכולים להבין כבר כעת שהחיסור צריך לקיים "חילוף" ו"קיבוץ" בצורה הבאה:
+\end_layout
+
+\begin_layout Itemize
+"חילוף" - 
+\begin_inset Formula
+$\left(n-m\right)-k=\left(n-k\right)-m$
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+"קיבוץ" - 
+\begin_inset Formula
+$\left(n-m\right)-k=n-\left(m+k\right)$
+\end_inset
+
+\end_layout
+
+\begin_layout Subsubsection*
+חילוק
+\end_layout
+
+\begin_layout Standard
+בדומה לחיבור גם לכפל יש פעולה הפוכה והיא 
+\series bold
+חילוק
+\series default
+: נניח שיש לנו סלסילה ובה 
+\begin_inset Formula
+$n$
+\end_inset
+ כדורים ואנו מעבירים את כל הכדורים שבה ל-
+\begin_inset Formula
+$m$
+\end_inset
+ סלסילות, כך שלאחר ההעברה יהיה בכולן מספר שווה של כדורים, מספר הכדורים שבכל סלסילה הוא תוצאת החילוק 
+\begin_inset Formula
+$n\div m$
+\end_inset
+; ניתן להסתכל על פעולת החיסור גם בצורה הבאה: מספר הכדורים שהיו צריכים להיות בכל אחת מ-
+\begin_inset Formula
+$m$
+\end_inset
+ סלסילות שבהן מספר שווה של כדורים, כך שהמצב הנוכחי יתקבל ע"י העברת כל הכדורים מ-
+\begin_inset Formula
+$m$
+\end_inset
+ הסלסילות לסלסילה אחת, הוא תוצאת החילוק 
+\begin_inset Formula
+$n\div m$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+כך או כך תוצאת החילוק צריכה להיות מספר טבעי המקיים 
+\begin_inset Formula
+$m\times\left(n\div m\right)=n=\left(n\div m\right)\times m$
+\end_inset
+ וכפי שראינו לעיל נובע מזה ש-
+\begin_inset Formula
+$n\geq m$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ גם פעולת החילוק מערבת "הנדסה לאחור" ולכן היא קשה יותר לביצוע בראש מאשר כפל.
+\end_layout
+
+\begin_layout Standard
+אנחנו יכולים להבין כבר כעת שהחילוק צריך לקיים "חילוף" ו"קיבוץ" בצורה דומה לחיסור:
+\end_layout
+
+\begin_layout Itemize
+"חילוף" - 
+\begin_inset Formula
+$\left(n\div m\right)\div k=\left(n\div k\right)\div m$
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+"קיבוץ" - 
+\begin_inset Formula
+$\left(n\div m\right)\div k=n\div\left(m\times k\right)$
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+המספרים הרציונליים
+\end_layout
+
+\begin_layout Standard
+ראינו לעיל שבמספרים הטבעיים יש מגבלות על היכולת לחסר ולחלק, המגבלה על החיסור נראית טבעית מאד אך לעומתה המגבלה על החילוק נראית מלאכותית - למה שלא נוכל לחלק כל כדור לחלקים שווים וכך נוכל לחלק כל כמות של כדורים לכל כמות של סלסילות? בנוסף, המגבלה על החילוק חזקה הרבה יותר: כמעט עבור כל מספר טבעי יש יותר מספרים שניתן לחסר ממנו לעומת אלו שבהם ניתן לחלק אותו. מסיבה זו אנחנו נעבור לדבר על עוגות שנמצאות בקופסאות (הרבה יותר כיף לחשוב על חלוקה של עוגה לחלקים שווים מאשר על חלוקה של כדור); נניח שכל העוגות בעולם זהות ושהן וכל חתיכות העוגות בעולם נמצאות בקופסאות (במינוח שלנו עוגה אחת שלמה נחשבת "חתיכה" אבל לא כל חתיכה היא עוגה שלמה), ולכל קופסה כזו נתאים מספר שיציין את כמות העוגות בקופסה בצורה הבאה:
+\end_layout
+
+\begin_layout Enumerate
+עוגה שלמה תקבל את המספר 
+\begin_inset Formula
+$1=\frac{1}{1}$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n$
+\end_inset
+ טבעי.
+\end_layout
+
+\begin_layout Enumerate
+חתיכה שעבורה קיים מספר טבעי 
+\begin_inset Formula
+$n$
+\end_inset
+ כך שבכל עוגה ניתן "להכניס" 
+\begin_inset Formula
+$n$
+\end_inset
+ חתיכות כאלה תקבל את המספר 
+\begin_inset Formula
+$\frac{1}{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+עבור כל חתיכה קיים מספר טבעי 
+\begin_inset Formula
+$m$
+\end_inset
+ כך שאם נחלק את החתיכה ל-
+\begin_inset Formula
+$m$
+\end_inset
+ חלקים שווים נקבל שכל חלק כזה "נכנס" בעוגה 
+\begin_inset Formula
+$n$
+\end_inset
+ פעמים
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+אחרת זהו מספר לא רציונלי ואיננו עוסקים בו כעת.
+\end_layout
+
+\end_inset
+, חתיכה כזו תקבל את המספר 
+\begin_inset Formula
+$\frac{m}{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לכל קופסה, אם כל העוגות בה שלמות נתאים לה את המספר 
+\begin_inset Formula
+$n=\frac{n}{1}$
+\end_inset
+ כאשר 
+\begin_inset Formula
+$n$
+\end_inset
+ הוא המספר הטבעי שהיינו מתאימים לה קודם, אם יש בה חתיכה אחת נתאים לה את המספר המתאים לחתיכה זו על פי הנ"ל, ואם יש בה יותר מחתיכה אחת נתאים לה את הסכום של כל המספרים המתאימים לכל החתיכות שבקופסה כדלהלן (כשנעסוק בחיבור מספרים רציונליים).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ נשים לב לכמה נקודות:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+כאן "המספרים הרציונליים" הם אלו שבשפה המקובלת נקראים "המספרים הרציונליים החיוביים".
+\end_layout
+
+\begin_layout Itemize
+כל סעיף מכליל את קודמיו.
+\end_layout
+
+\begin_layout Itemize
+בסעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+ה-
+\begin_inset Formula
+$m$
+\end_inset
+ אינו מוכרח להיות יחיד ובהתאמה גם ה-
+\begin_inset Formula
+$n$
+\end_inset
+ אינו יחיד - אנחנו נזהה את כל המספרים הללו כאותו מספר רציונלי.
+\end_layout
+
+\begin_layout Itemize
+נכון לעכשיו עוד לא הראינו שהסימון 
+\begin_inset Formula
+$\frac{p}{q}$
+\end_inset
+ קשור לחילוק (זוהי בסה"כ דרך לכתוב זוג סדור של מספרים טבעיים), למרות זאת ברור שאנחנו עומדים להגיע לשם שכן מההגדרה ש-
+\begin_inset Formula
+$\frac{1}{n}$
+\end_inset
+ "נכנס" בעוגה אחת 
+\begin_inset Formula
+$n$
+\end_inset
+ פעמים נובע שאם נחבר אותו לעצמו 
+\begin_inset Formula
+$n$
+\end_inset
+ פעמים (כלומר נכפול אותו ב-
+\begin_inset Formula
+$n$
+\end_inset
+) נקבל 
+\begin_inset Formula
+$1$
+\end_inset
+, ועל כן אם נחבר את 
+\begin_inset Formula
+$\frac{m}{n}$
+\end_inset
+ לעצמו 
+\begin_inset Formula
+$n$
+\end_inset
+ פעמים (שוב כפל ב-
+\begin_inset Formula
+$n$
+\end_inset
+) נקבל את 
+\begin_inset Formula
+$m$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Subsubsection*
+חיבור
+\end_layout
+
+\begin_layout Standard
+בהינתן שתי חתיכות עוגה שהמספרים המתאימים להן הם 
+\begin_inset Formula
+$\frac{m_{1}}{n_{1}}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\frac{m_{2}}{n_{2}}$
+\end_inset
+ נרצה לקבוע מהי כמות העוגות בשתיהן יחד, ברור לכולנו שאם 
+\begin_inset Formula
+$n_{1}=n_{2}$
+\end_inset
+ אז התשובה פשוטה:
+\begin_inset Formula
+\[
+\frac{m_{1}}{n_{1}}+\frac{m_{2}}{n_{2}}=\frac{m_{1}}{n_{1}}+\frac{m_{2}}{n_{1}}=\frac{m_{1}+m_{2}}{n_{1}}
+\]
+
+
+\end_inset
+משום שאנו בעצם סופרים כמה חתיכות בגודל 
+\begin_inset Formula
+$\frac{1}{n_{1}}$
+\end_inset
+ נכנסות בשתיהן יחד; אבל מה קורה אם 
+\begin_inset Formula
+$n_{1}\neq n_{2}$
+\end_inset
+? מכיוון שאנחנו לא יכולים לחבר מספרים רציונליים שהמכנה שלהם שונה הדרך היחידה שעומדת לרשותנו היא לדאוג שהמכנה יהיה שווה, אבל איך נעשה זאת? ודאי תאמרו "מה הבעיה? עושים מכנה משותף וסיימנו", הבעיה היא שאנחנו לא מניחים כעת מערכת אקסיומות שעליה אני יכול להסתמך ולהוכיח שהטריק של מכנה משותף אכן עובד, הפרק הזה נכתב כדי להסביר מדוע בחרנו במערכת האקסיומות הזו, ולכן אני צריך להצדיק את הרעיון מבחינה אינטואיטיבית ולשם כך אני צריך לספר לכם קודם מהו כפל של מספר רציונלי במספר טבעי. ובכן, כבר יש לנו הגדרה עבור כפל של מספרים טבעיים וניתן להכליל אותה בקלות עבור כפל של מספר טבעי במספר רציונלי: המכפלה 
+\begin_inset Formula
+$k\times\frac{m}{n}$
+\end_inset
+ היא בעצם:
+\begin_inset Formula
+\[
+\overset{k\ \text{פעמים}}{\overbrace{\frac{m}{n}+\frac{m}{n}+\ldots+\frac{m}{n}}}
+\]
+
+
+\end_inset
+ושוב פירושו של הסימון "
+\begin_inset Formula
+$\times$
+\end_inset
+" הוא 
+\series bold
+פעמים
+\series default
+ כפי שלמדנו ביסודי ו-"
+\begin_inset Formula
+$k\times\frac{m}{n}$
+\end_inset
+" הוא "
+\begin_inset Formula
+$k$
+\end_inset
+ 
+\series bold
+פעמים
+\series default
+ 
+\begin_inset Formula
+$\frac{m}{n}$
+\end_inset
+".
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ שימו לב שנכון לעכשיו כפל מספר טבעי במספר רציונלי מוגדר רק כאשר המספר הטבעי נמצא משמאל והרציונלי מימין, הסיבה לכך היא שהתפקיד של המספר בצד שמאל הוא לקבוע כמה 
+\series bold
+פעמים
+\series default
+ יש לחבר את המספר שבצד ימין. נכון אני יכול להחליט שהכפל הזה חילופי ובכך להגדיר גם את המצב ההפוך, אני לא אעשה זאת מפני שאין לזה הצדקה אינטואיטיבית כעת, וגם מפני שזה לא יעזור לנו להגדיר כפל של שני מספרים רציונליים.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ושוב מהמהות של כפל במספר טבעי נקבל ש-
+\begin_inset Formula
+$1\cdot\frac{n}{m}=\frac{n}{m}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כבר כעת ניתן לראות ש-
+\begin_inset Formula
+$n\times\frac{m}{n}=m$
+\end_inset
+ ולכן הסימון 
+\begin_inset Formula
+$\frac{p}{q}$
+\end_inset
+ מייצג בעצם את החילוק 
+\begin_inset Formula
+$p\div q$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+מסקנה ראשונה שניתן להסיק מכאן היא שמתקיים 
+\begin_inset Formula
+$\frac{m}{n}=m\times\frac{1}{n}$
+\end_inset
+, נשים לב לכך שמתקיים גם 
+\begin_inset Formula
+$\frac{1}{n}=\frac{m}{n\times m}$
+\end_inset
+ שכן 
+\begin_inset Formula
+$1$
+\end_inset
+ "נכנס" 
+\begin_inset Formula
+$n$
+\end_inset
+ פעמים ב-
+\begin_inset Formula
+$n$
+\end_inset
+, וגם 
+\begin_inset Formula
+$m$
+\end_inset
+ "נכנס" 
+\begin_inset Formula
+$n$
+\end_inset
+ פעמים ב-
+\begin_inset Formula
+$n\times m$
+\end_inset
+, וביחד עם המסקנה הראשונה נקבל שמתקיים 
+\begin_inset Formula
+$\frac{1}{n}=m\times\frac{1}{n\times m}$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+לפני שנוכל להמשיך אני רוצה שנשים לב לכך שכפל מספר טבעי במספר רציונלי מקיים את חוק הקיבוץ: מתקיים
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$\left(l\times k\right)\times\frac{m}{n}=l\times\left(k\times\frac{m}{n}\right)$
+\end_inset
+, האינטואיציה זהה לזו שראינו עבור כפל של טבעיים.
+\begin_inset Newline newline
+\end_inset
+וסוף סוף אנחנו יכולים להפעיל את הטריק של מכנה משותף, מתקיים:
+\begin_inset Formula
+\begin{align*}
+\frac{m_{1}}{n_{1}}+\frac{m_{2}}{n_{2}} & =m_{1}\times\frac{1}{n_{1}}+m_{2}\times\frac{1}{n_{2}}=m_{1}\times\frac{n_{2}}{n_{1}\times n_{2}}+m_{2}\times\frac{n_{1}}{{\color{red}n_{2}\times n_{1}}}\\
+ & =m_{1}\times\frac{n_{2}}{n_{1}\times n_{2}}+m_{2}\times\frac{n_{1}}{{\color{red}n_{1}\times n_{2}}}=m_{1}\times\left(n_{2}\times\frac{1}{n_{1}\times n_{2}}\right)+m_{2}\times\left(n_{1}\times\frac{1}{n_{1}\times n_{2}}\right)\\
+ & =\left(m_{1}\times n_{2}\right)\times\frac{1}{n_{1}\times n_{2}}+\left(m_{2}\times n_{1}\right)\times\frac{1}{n_{1}\times n_{2}}\\
+ & =\frac{m_{1}\times n_{2}}{n_{1}\times n_{2}}+\frac{m_{2}\times n_{1}}{n_{1}\times n_{2}}=\frac{m_{1}\times n_{2}+m_{2}\times n_{1}}{n_{1}\times n_{2}}
+\end{align*}
+
+
+\end_inset
+האינטואיציה דורשת ש
+\series bold
+חיבור של מספרים רציונליים יקיים את חוקי החילוף והקיבוץ
+\series default
+ מאותן סיבות שדרשה זאת עבור הטבעיים.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מי שרוצה מוזמן לוודא שזה אכן מסתדר עם הנוסחה שהבאנו לעיל (כדי לעשות זאת יש להשתמש בכל החוקים שראינו עבור הטבעיים הן לגבי חיבור והן לגבי כפל).
+\end_layout
+
+\begin_layout Subsubsection*
+יחס סדר
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כעת, לאחר שהבנו מדוע הטריק של מכנה משותף צריך לעבוד, נוכל להגדיר את יחס הסדר על המספרים הרציונליים באמצעות זה של הטבעיים וכך נוכל להגדיר גם את החיסור של מספרים רציונליים.
+\end_layout
+
+\begin_layout Standard
+לאחר שהכרנו את הטריק של מכנה משותף ברור לכולנו כיצד יעבוד יחס הסדר על המספרים הרציונליים, עבור 
+\begin_inset Formula
+$\frac{m_{1}}{n_{1}}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\frac{m_{2}}{n_{2}}$
+\end_inset
+ תתקיים בדיוק אחת משלוש האפשרויות הבאות:
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$m_{1}\times n_{2}=m_{2}\times n_{1}$
+\end_inset
+ אז 
+\begin_inset Formula
+$\begin{alignedat}{1}\frac{m_{1}}{n_{1}}=\frac{m_{2}}{n_{2}}\end{alignedat}
+$
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$m_{1}\times n_{2}<m_{2}\times n_{1}$
+\end_inset
+ אז 
+\begin_inset Formula
+$\begin{alignedat}{1}\frac{m_{1}}{n_{1}}<\frac{m_{2}}{n_{2}}\end{alignedat}
+$
+
+\end_inset
+ (או 
+\begin_inset Formula
+$\begin{alignedat}{1}\frac{m_{2}}{n_{2}}>\frac{m_{1}}{n_{1}}\end{alignedat}
+$
+
+\end_inset
+).
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$m_{1}\times n_{2}>m_{2}\times n_{1}$
+\end_inset
+ אז 
+\begin_inset Formula
+$\begin{alignedat}{1}\frac{m_{1}}{n_{1}}>\frac{m_{2}}{n_{2}}\end{alignedat}
+$
+
+\end_inset
+ (או 
+\begin_inset Formula
+$\begin{alignedat}{1}\frac{m_{2}}{n_{2}}<\frac{m_{1}}{n_{1}}\end{alignedat}
+$
+
+\end_inset
+).
+\end_layout
+
+\begin_layout Standard
+וזאת מכיוון שמתקיים:
+\begin_inset Formula
+\[
+\frac{m_{1}}{n_{1}}=\frac{m_{1}\times n_{2}}{n_{1}\times n_{2}},\ \frac{m_{2}}{n_{2}}=\frac{m_{2}\times n_{1}}{n_{1}\times n_{2}}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ושוב, ניתן להסיק מכאן את הטרנזיטיביות וההלימה לחיבור גם עבור מספרים רציונליים.
+\end_layout
+
+\begin_layout Subsubsection*
+חיסור
+\end_layout
+
+\begin_layout Standard
+כמו כן הטריק של המכנה המשותף מסביר לנו מדוע צריך להתקיים:
+\begin_inset Formula
+\[
+\frac{m_{1}}{n_{1}}-\frac{m_{2}}{n_{2}}=\frac{m_{1}\times n_{2}-m_{2}\times n_{1}}{n_{1}\times n_{2}}
+\]
+
+
+\end_inset
+ומכאן שהחיסור 
+\begin_inset Formula
+$\begin{alignedat}{1}\frac{m_{1}}{n_{1}}-\frac{m_{2}}{n_{2}}\end{alignedat}
+$
+
+\end_inset
+ מוגדר רק כאשר 
+\begin_inset Formula
+$m_{1}\times n_{2}>m_{2}\times n_{1}$
+\end_inset
+ וזה מסתדר היטב עם האינטואיציה שלנו לכך שהחיסור 
+\begin_inset Formula
+$\begin{alignedat}{1}\frac{m_{1}}{n_{1}}-\frac{m_{2}}{n_{2}}\end{alignedat}
+$
+
+\end_inset
+ יוגדר רק כאשר 
+\begin_inset Formula
+$\begin{alignedat}{1}\frac{m_{1}}{n_{1}}>\frac{m_{2}}{n_{2}}\end{alignedat}
+$
+
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+ושוב, אנחנו יכולים להבין כבר כעת שהחיסור צריך לקיים "חילוף" ו"קיבוץ" בצורה הבאה:
+\end_layout
+
+\begin_layout Itemize
+"חילוף" - 
+\begin_inset Formula
+$\left(\frac{m_{1}}{n_{1}}-\frac{m_{2}}{n_{2}}\right)-\frac{m_{3}}{n_{3}}=\left(\frac{m_{1}}{n_{1}}-\frac{m_{3}}{n_{3}}\right)-\frac{m_{2}}{n_{2}}$
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+"קיבוץ" - 
+\begin_inset Formula
+$\left(\frac{m_{1}}{n_{1}}-\frac{m_{2}}{n_{2}}\right)-\frac{m_{3}}{n_{3}}=\frac{m_{1}}{n_{1}}-\left(\frac{m_{2}}{n_{2}}+\frac{m_{3}}{n_{3}}\right)$
+\end_inset
+
+\end_layout
+
+\begin_layout Subsubsection*
+כפל
+\end_layout
+
+\begin_layout Standard
+כבר הגדרנו כפל של מספר טבעי במספר רציונלי כאשר הטבעי נמצא משמאל והרציונלי מימין, אבל מה בדבר המצב ההפוך? מה הפשר של האמירה תחבר את 
+\begin_inset Formula
+$k$
+\end_inset
+ לעצמו 
+\begin_inset Formula
+$\frac{m}{n}$
+\end_inset
+ 
+\series bold
+פעמים
+\series default
+???
+\begin_inset Newline newline
+\end_inset
+אני כבר שומע את אלו שקופצים ואומרים: "מה אתה עושה צרות? קבע שהכפל חילופי וחסל", התשובה הראשונה שלי תהיה שזה נחמד מבחינה אלגברית אך כפי שאמרתי לעיל: הפרק הזה נכתב כדי להסביר מדוע אנחנו מגדירים את ההגדרות דווקא כך ולא כיצד ניתן לעבוד איתן אחרי שהוגדרו. התשובה השנייה היא שאפילו מבחינה אלגברית זה לא מספיק, מפני שאני רוצה להגדיר גם כפל של שני מספרים רציונליים זה בזה וכאן אני כבר לא יכול להסתמך על האינטואיציה שכפל הוא חיבור מספר פעמים (מי שלא מאמין שזה בלתי אפשרי מוזמן לנסות בעצמו), גם המכנה המשותף אינו עוזר מפני שבניגוד לחיבור אין לנו שום מושג כיצד כופלים שני מספרים רציונליים שהמכנה שלהם זהה.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הצעד הבא יהיה אחד הצעדים הדרמטיים שבפרק הזה, ולכן אני חוזר על בקשתי מתחילת הפרק שתשימו לב כיצד הוא מכליל את השלבים הקודמים.
+\end_layout
+
+\begin_layout Standard
+האינטואיציה לכפל של מספרים רציונליים היא שטחים של מלבנים (ונפחים של 
+\begin_inset CommandInset href
+LatexCommand href
+name "תיבות"
+target https://he.wikipedia.org/wiki/%D7%AA%D7%99%D7%91%D7%94_)%D7%92%D7%90%D7%95%D7%9E%D7%98%D7%A8%D7%99%D7%94(
+literal false
+\end_inset
+): במלבן שאורכי צלעותיו הם 
+\begin_inset Formula
+$n$
+\end_inset
+ ו-
+\begin_inset Formula
+$m$
+\end_inset
+ טבעיים "נכנסים" 
+\begin_inset Formula
+$n\times m$
+\end_inset
+ ריבועים שאורך כל צלע שלהם הוא 
+\begin_inset Formula
+$1$
+\end_inset
+, איך אנחנו יודעים זאת? פשוט מאד: נחלק את המלבן לטבלה שבה כל תא הוא ריבוע שאורך של צלע שלו הוא 
+\begin_inset Formula
+$1$
+\end_inset
+ (אנחנו יכולים לעשות זאת כי אורכי הצלעות טבעיים) וכבר ראינו כשעסקנו בטבעיים שבמצב כזה יש בטבלה 
+\begin_inset Formula
+$n\times m$
+\end_inset
+ תאים. אבל אורכי הצלעות של מלבן לא מוכרחים להיות מספרים טבעיים - הם יכולים להיות גם מספרים רציונליים (בדיוק כמו שניתן לסכום חתיכות של עוגות ניתן לסכום חתיכות של מקלות), אז מה? נרים ידיים? אנחנו רוצים להגדיר מהו השטח של כל מלבן!
+\begin_inset Newline newline
+\end_inset
+ובכן, נניח שיש לנו מלבן שאורכי צלעותיו הם מיודעינו משכבר הימים 
+\begin_inset Formula
+$\frac{m_{1}}{n_{1}}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\frac{m_{2}}{n_{2}}$
+\end_inset
+ ונתבונן במלבן שאורכי צלעותיו הם 
+\begin_inset Formula
+$m_{1}$
+\end_inset
+ ו-
+\begin_inset Formula
+$m_{2}$
+\end_inset
+: ניתן לחלק אותו לטבלה שבה כל תא יהיה מלבן שאורכי צלעותיו הם 
+\begin_inset Formula
+$\frac{m_{1}}{n_{1}}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\frac{m_{2}}{n_{2}}$
+\end_inset
+, בטבלה כזו יש 
+\begin_inset Formula
+$n_{1}\times n_{2}$
+\end_inset
+ תאים ולכן היות שהשטח של המלבן כולו הוא 
+\begin_inset Formula
+$m_{1}\times m_{2}$
+\end_inset
+ אנחנו מצפים שהשטח של כל תא כזה יהיה:
+\begin_inset Formula
+\[
+\frac{m_{1}}{n_{1}}\times\frac{m_{2}}{n_{2}}=\frac{m_{1}\times m_{2}}{n_{1}\times n_{2}}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מי שהמעבר למלבנים מופשטים פחות נראה לו מוזמן לדמיין שכל העוגות שלנו מלבניות ובגובה אחיד; הנקודה החשובה שיש לשים לב אליה היא שאם עד עכשיו ה-
+\begin_inset Formula
+$1$
+\end_inset
+ שלנו הוגדר באופן טבעי, כעת ה-
+\begin_inset Formula
+$1$
+\end_inset
+ שלנו הוא עוגה ריבועית שרירותית שעבורה החלטנו שאורך הצלעות שלה הוא אמת המידה שלנו ולכן היא בגודל 
+\begin_inset Formula
+$1$
+\end_inset
+ על 
+\begin_inset Formula
+$1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+כדי להבין מדוע אנחנו רוצים ש
+\series bold
+כפל מספרים רציונליים יקיים את חוק החילוף
+\series default
+ נשים לב לכך שמלבן שאורכי צלעותיו הם 
+\begin_inset Formula
+$\frac{m_{1}}{n_{1}}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\frac{m_{2}}{n_{2}}$
+\end_inset
+ חופף למלבן אורכי צלעותיו הם 
+\begin_inset Formula
+$\frac{m_{2}}{n_{2}}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\frac{m_{1}}{n_{1}}$
+\end_inset
+ ולכן שטחיהם שווים, כמו כן 
+\series bold
+כפל מספרים רציונליים צריך לקיים את חוק הקיבוץ
+\series default
+ בגלל שכפל של שלושה מספרים מתאר למעשה את הנפח של תיבה שאלו הם אורכי ה
+\begin_inset CommandInset href
+LatexCommand href
+name "מקצועות"
+target https://he.wikipedia.org/wiki/%D7%9E%D7%A7%D7%A6%D7%95%D7%A2_)%D7%92%D7%90%D7%95%D7%9E%D7%98%D7%A8%D7%99%D7%94(
+literal false
+\end_inset
+ שלה והתיבות המתאימות ל-
+\begin_inset Formula
+$\left(\frac{m_{1}}{n_{1}}\times\frac{m_{2}}{n_{2}}\right)\times\frac{m_{3}}{n_{3}}$
+\end_inset
+ ול-
+\begin_inset Formula
+$\frac{m_{1}}{n_{1}}\times\left(\frac{m_{2}}{n_{2}}\times\frac{m_{3}}{n_{3}}\right)$
+\end_inset
+ חופפות אף הן. כדי להבין מדוע אנחנו רוצים ש
+\series bold
+כפל מספרים רציונליים יקיים פילוג ביחס לחיבור שלהם
+\series default
+ נתבונן בשני מלבנים שאורכי צלעות האחד הם 
+\begin_inset Formula
+$\frac{m_{1}}{n_{1}}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\frac{m_{2}}{n_{2}}$
+\end_inset
+ ואורכי צלעות האחר הן 
+\begin_inset Formula
+$\frac{m_{1}}{n_{1}}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\frac{m_{2}}{n_{2}}$
+\end_inset
+, ניתן ליצור מהם מלבן אחד שאורכי צלעותיו הם 
+\begin_inset Formula
+$\frac{m_{1}}{n_{1}}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\frac{m_{2}}{n_{2}}+\frac{m_{3}}{n_{3}}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ושוב, מי שרוצה מוזמן לוודא שחוקים אלו אכן מתקיימים עבור הנוסחה שראינו לעיל.
+\end_layout
+
+\begin_layout Subsubsection*
+חילוק
+\end_layout
+
+\begin_layout Standard
+כשדיברנו על חילוק של מספרים טבעיים ראינו שתי אינטואיציות שקולות עבור פעולת החילוק:
+\end_layout
+
+\begin_layout Enumerate
+"נניח שיש לנו סלסילה ובה 
+\begin_inset Formula
+$n$
+\end_inset
+ כדורים ואנו מעבירים את כל הכדורים שבה ל-
+\begin_inset Formula
+$m$
+\end_inset
+ סלסילות, כך שלאחר ההעברה יהיה בכולן מספר שווה של כדורים, מספר הכדורים שבכל סלסילה הוא תוצאת החילוק 
+\begin_inset Formula
+$n\div m$
+\end_inset
+."
+\end_layout
+
+\begin_layout Enumerate
+"מספר הכדורים שהיו צריכים להיות בכל אחת מ-
+\begin_inset Formula
+$m$
+\end_inset
+ סלסילות שבהן מספר שווה של כדורים, כך שהמצב הנוכחי יתקבל ע"י העברת כל הכדורים מ-
+\begin_inset Formula
+$m$
+\end_inset
+ הסלסילות לסלסילה אחת, הוא תוצאת החילוק 
+\begin_inset Formula
+$n\div m$
+\end_inset
+."
+\end_layout
+
+\begin_layout Standard
+שתי האינטואיציות הללו אינן עוזרות לנו עבור חילוק של מספרים רציונליים מפני שבשתיהן צריכות להיות 
+\begin_inset Formula
+$m$
+\end_inset
+ סלסילות שבהן מספר שווה של כדורים, אבל אנחנו רוצים לחלק גם במספרים שאינם טבעיים - אין שום משמעות ל-
+\begin_inset Formula
+$\frac{m}{n}$
+\end_inset
+ סלסילות. למרות זאת ראינו ששתיהן אומרות שצריך להתקיים 
+\begin_inset Formula
+$m\times\left(n\div m\right)=n=\left(n\div m\right)\times m$
+\end_inset
+, כלומר פעולת החילוק היא פעולה הפוכה לפעולת הכפל: תוצאת החילוק 
+\begin_inset Formula
+$n\div m$
+\end_inset
+ היא המספר שאם נכפול אותו ב-
+\begin_inset Formula
+$m$
+\end_inset
+ נקבל את 
+\begin_inset Formula
+$n$
+\end_inset
+; אם כך נרצה שאם 
+\begin_inset Formula
+$\frac{x}{y}$
+\end_inset
+ היא תוצאת החילוק 
+\begin_inset Formula
+$\frac{m_{1}}{n_{1}}\div\frac{m_{2}}{n_{2}}$
+\end_inset
+ אז יתקיים:
+\begin_inset Formula
+\[
+\frac{m_{2}}{n_{2}}\times\frac{x}{y}=\frac{m_{1}}{n_{1}}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+נשים לב לכך שע"פ הנוסחה הנ"ל מתקיים:
+\begin_inset Formula
+\[
+\frac{m_{2}}{n_{2}}\times\frac{n_{2}}{m_{2}}=\frac{m_{2}\times n_{2}}{n_{2}\times m_{2}}=\frac{n_{2}\times m_{2}}{n_{2}\times m_{2}}=\frac{1}{1}=1
+\]
+
+
+\end_inset
+ולכן:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula
+\[
+\frac{m_{2}}{n_{2}}\times\frac{n_{2}\times m_{1}}{m_{2}\times n_{1}}=\frac{m_{2}}{n_{2}}\times\left(\frac{n_{2}}{m_{2}}\times\frac{m_{1}}{n_{1}}\right)=\left(\frac{m_{2}}{n_{2}}\times\frac{n_{2}}{m_{2}}\right)\times\frac{m_{1}}{n_{1}}=1\times\frac{m_{1}}{n_{1}}=\frac{m_{1}}{n_{1}}
+\]
+
+
+\end_inset
+א"כ מצאנו את התוצאה המבוקשת עבור החילוק
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+העובדה שקיים רק מספר רציונלי אחד שכזה נובעת מהטריכוטומיה של יחס הסדר ומהעובדה שאם נכפול במספר קטן יותר או גדול יותר נקבל מספר קטן מדי או גדול מדי בהתאמה (כן, אני יודע שלא הראיתי שניתן להסיק זאת מהאקסיומות אך את ההוכחות הללו אני משאיר לקורס אינפי'
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+עצמו).
+\end_layout
+
+\end_inset
+:
+\begin_inset Formula
+\[
+\frac{m_{1}}{n_{1}}\div\frac{m_{2}}{n_{2}}=\frac{n_{2}\times m_{1}}{m_{2}\times n_{1}}
+\]
+
+
+\end_inset
+ומזה נובע כי:
+\begin_inset Formula
+\[
+\boldsymbol{{\color{red}\frac{m_{1}}{n_{1}}}{\color{green}\div}\frac{{\color{blue}m_{2}}}{{\color{orange}n_{2}}}}=\frac{n_{2}}{m_{2}}\times\frac{m_{1}}{n_{1}}=\boldsymbol{{\color{red}\frac{m_{1}}{n_{1}}}{\color{green}\times}\frac{{\color{orange}n_{2}}}{{\color{blue}m_{2}}}}
+\]
+
+
+\end_inset
+כלומר כדי לחלק במספר רציונלי 
+\begin_inset Formula
+$\frac{m}{n}$
+\end_inset
+ כל מה שאנחנו צריכים לעשות הוא לכפול ב-
+\begin_inset Formula
+$\frac{n}{m}$
+\end_inset
+ - מספר זה ייקרא 
+\series bold
+ההופכי
+\series default
+ של 
+\begin_inset Formula
+$\frac{m}{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ שימו לב שבניגוד לחיסור הגדרה זו מאפשרת לנו לבצע חילוק גם כאשר המחלק גדול מהמחולק.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+הפעם העובדה שהחילוק מקיים "חילוף" ו"קיבוץ" כדלהלן נובעת ישירות מהחילוף והקיבוץ של כפל:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+\begin{align*}
+\boldsymbol{\left({\color{red}\frac{m_{1}}{n_{1}}}{\color{green}\div}\frac{{\color{blue}m_{2}}}{{\color{orange}n_{2}}}\right){\color{green}\div}\frac{{\color{blue}m_{3}}}{{\color{orange}n_{3}}}} & =\boldsymbol{\left({\color{red}\frac{m_{1}}{n_{1}}}{\color{green}\times}\frac{{\color{orange}n_{2}}}{{\color{blue}m_{2}}}\right){\color{green}\times}\frac{{\color{orange}n_{3}}}{{\color{blue}m_{3}}}}=\boldsymbol{{\color{red}\frac{m_{1}}{n_{1}}}{\color{green}\times}\left(\frac{{\color{orange}n_{2}}}{{\color{blue}m_{2}}}{\color{green}\times}\frac{{\color{orange}n_{3}}}{{\color{blue}m_{3}}}\right)}\\
+ & =\boldsymbol{{\color{red}\frac{m_{1}}{n_{1}}}{\color{green}\times}\left(\frac{{\color{orange}n_{3}}}{{\color{blue}m_{3}}}{\color{green}\times}\frac{{\color{orange}n_{2}}}{{\color{blue}m_{2}}}\right)}=\boldsymbol{\left({\color{red}\frac{m_{1}}{n_{1}}}{\color{green}\times}\frac{{\color{orange}n_{3}}}{{\color{blue}m_{3}}}\right){\color{green}\times}\frac{{\color{orange}n_{2}}}{{\color{blue}m_{2}}}}=\boldsymbol{\left({\color{red}\frac{m_{1}}{n_{1}}}{\color{green}\div}\frac{{\color{blue}m_{3}}}{{\color{orange}n_{3}}}\right){\color{green}\div}\frac{{\color{blue}m_{2}}}{{\color{orange}n_{2}}}}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula
+\begin{align*}
+\boldsymbol{\left({\color{red}\frac{m_{1}}{n_{1}}}{\color{green}\div}\frac{{\color{blue}m_{2}}}{{\color{orange}n_{2}}}\right){\color{green}\div}\frac{{\color{blue}m_{3}}}{{\color{orange}n_{3}}}} & =\boldsymbol{\left({\color{red}\frac{m_{1}}{n_{1}}}{\color{green}\times}\frac{{\color{orange}n_{2}}}{{\color{blue}m_{2}}}\right){\color{green}\times}\frac{{\color{orange}n_{3}}}{{\color{blue}m_{3}}}}=\boldsymbol{{\color{red}\frac{m_{1}}{n_{1}}}{\color{green}\times}\left(\frac{{\color{orange}n_{2}}}{{\color{blue}m_{2}}}{\color{green}\times}\frac{{\color{orange}n_{3}}}{{\color{blue}m_{3}}}\right)}=\boldsymbol{{\color{red}\frac{m_{1}}{n_{1}}}{\color{green}\times}\left(\frac{{\color{orange}n_{2}}{\color{green}\times}{\color{orange}n_{3}}}{{\color{blue}m_{2}}{\color{green}\times}{\color{blue}m_{3}}}\right)}\\
+ & =\boldsymbol{{\color{red}\frac{m_{1}}{n_{1}}}{\color{green}\div}\left(\frac{{\color{blue}m_{2}}{\color{green}\times}{\color{blue}m_{3}}}{{\color{orange}n_{2}}{\color{green}\times}{\color{orange}n_{3}}}\right)={\color{red}\frac{m_{1}}{n_{1}}}{\color{green}\div}\left(\frac{{\color{blue}m_{2}}}{{\color{orange}n_{2}}}{\color{green}\times}\frac{{\color{blue}m_{3}}}{{\color{orange}n_{3}}}\right)}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ עכשיו אפשר גם להבין מה הקשר בין הסימון של המספרים הרציונליים - "
+\begin_inset Formula
+$\frac{p}{q}$
+\end_inset
+" - לבין פעולת החילוק, מתקיים:
+\begin_inset Formula
+\[
+n\div m=\frac{n}{1}\div\frac{m}{1}=\frac{1\times n}{m\times1}=\frac{n}{m}
+\]
+
+
+\end_inset
+א"כ מעכשיו הסימון 
+\begin_inset Formula
+$\frac{p}{q}$
+\end_inset
+ יוגדר גם עבור 
+\begin_inset Formula
+$p$
+\end_inset
+ ו-
+\begin_inset Formula
+$q$
+\end_inset
+ רציונליים ופירושו יהיה 
+\begin_inset Formula
+$p\div q$
+\end_inset
+. מכאן שאם נסמן את ההופכי של מספר רציונלי 
+\begin_inset Formula
+$q$
+\end_inset
+ ב-
+\begin_inset Formula
+$q^{-1}$
+\end_inset
+ נקבל שמתקיים:
+\begin_inset Formula
+\[
+q^{-1}=1\times q^{-1}=1\div q=\frac{1}{q}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+המספרים החיוביים
+\end_layout
+
+\begin_layout Standard
+לכאורה הכל בסדר ואין שום סיבה להמשיך, המספרים הרציונליים מסתדרים נהדר זה עם זה ומסוגלים לתאר את כל מה שאנחנו רוצים, לא?
+\begin_inset Newline newline
+\end_inset
+אז זהו שלא, בסעיף הקודם ראינו שהמספרים שלנו מייצגים אורכים של קטעים גאומטריים ולכן היינו רוצים שלכל קטע גאומטרי יהיה מספר המציין את אורכו, הבעיה היא שעבור קטעים רבים ניתן להראות שאף מספר רציונלי אינו יכול לייצג את האורך שלהם (בהנחה הסבירה שהרציונליים צריכים לקיים את כל מה שראינו לעיל); מה עושים?
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הדרך הפשוטה ביותר למצוא קטעים שאורכיהם אינם רציונליים היא באמצעות משפט פיתגורס, על כן ניתן היה לחשוב שהוספת כל השורשים הריבועיים של מספרים רציונליים יחד עם כל הסכומים והמכפלות שלהם זה בזה ועם המספרים הרציונליים תפתור את הבעיה
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+\series bold
+\color red
+האם הכנסת השורשים הריבועיים תכריח אותנו להכניס גם שורשים מסדר גבוה יותר ולקבל את המספרים האלגבריים?
+\color inherit
+
+\series default
+
+\end_layout
+
+\end_inset
+, אלא שגם זה לא יעזור שכן 
+\begin_inset Formula
+$\pi$
+\end_inset
+ אינו מספר אלגברי
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כל מספר שניתן להצגה כמספר סופי של פעולות חיבור, חיסור, כפל, חילוק והוצאת שורש 
+\begin_inset Formula
+$n$
+\end_inset
+-י של מספרים שלמים - הוא מספר אלגברי, אך ההפך אינו נכון: קיימים מספרים אלגבריים שאינם ניתנים להצגה בצורה כזו (ראו 
+\begin_inset CommandInset href
+LatexCommand href
+name "כאן"
+target https://en.wikipedia.org/wiki/Algebraic_number#Numbers_defined_by_radicals
+literal false
+\end_inset
+).
+\end_layout
+
+\end_inset
+ אך לכולנו ברור שניתן לכרוך חוט סביב עיגול ואז ליישר את החוט ולקבל קטע באורך של 
+\begin_inset Formula
+$2\pi$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+מבחינה היסטורית הגילוי של המספרים האי-רציונליים הוא עתיק מאד, בעוד שההגדרה הפורמלית של המספרים הממשיים נכתבה לראשונה רק לאחר שהמתמטיקאים כבר קיבלו את מושג האפס והמספרים השליליים; למרות זאת אני מאמין שההגדרה הפורמלית מצביעה על נקודה שברורה לכל ילד. לכל ילד ברור שבהינתן שלושה קרשים ארוכים מספיק ניתן לבנות מהם משולש ישר זווית ושווה שוקיים ע"י חיתוך שלהם באורך המתאים, כלומר כל ילד בטוח שהנגר יכול לחתוך את הקרש כך שייוותר בידו קרש באורך המתאים ליתר של המשולש הנ"ל, ובכך להפריד בין החלק הרצוי לחלק המיותר. באופן דומה נוכל לכרוך חוט ארוך מספיק סביב עיגול ואז לחתוך אותו כך שיישאר בידינו חוט שאורכו שווה להיקף המעגל - גם כאן הפרדנו בין החלק הרצוי לחלק המיותר וזוהי המשמעות של אקסיומת השלמות.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+נדמיין קרש שקצהו האחד ניצב על הארץ "וְרֹאשׁוֹ מַגִּיעַ הַשָּׁמָיְמָה"
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+בראשית, כ"ח י"ב.
+\end_layout
+
+\end_inset
+ (מכל בחינה מעשית הקרש אין-סופי בכיוון אחד), נבחר נקודה על הקרש שאינה נקודת הקצה ונתאים לה את המספר 
+\begin_inset Formula
+$1$
+\end_inset
+ - בכך קבענו את המרחק שבינה לבין נקודת הקצה כאמת המידה שלנו, כל מספר טבעי 
+\begin_inset Formula
+$n$
+\end_inset
+ יותאם לנקודה שמרחקה מהקצה הוא 
+\begin_inset Formula
+$n$
+\end_inset
+ פעמים אמת המידה שלנו, ולכל מספר רציונלי נתאים נקודה על הקרש לפי הכללים שהבאנו בתחילת הסעיף הקודם (אלא שהפעם נפעיל אותם על הקרש ביחס לאמת המידה ולא על עוגות). האינטואיציה של כולנו אומרת שלכל שתי קבוצות
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+אני לא מתכוון כאן למונח המתמטי, פשוט לא מצאתי מילה טובה יותר.
+\end_layout
+
+\end_inset
+ של נקודות כאלה, כך שכל הנקודות בקבוצה האחת קרובות יותר אל הקצה לעומת כל נקודה בקבוצה האחרת
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר הנקודות שבקבוצה הראשונה נמצאות בחלק הרצוי של הקרש ואילו אלו שבשנייה נמצאות בחלק המיותר.
+\end_layout
+
+\end_inset
+, ניתן לחתוך את הקרש כך שבחלק אחד שלו (זה שקרוב לקצה) תהיינה כל הנקודות מהקבוצה הראשונה ובחלק האחר (זה שרחוק מהקצה) תהיינה כל הנקודות שבקבוצה השנייה.
+\begin_inset Newline newline
+\end_inset
+
+\series bold
+הכפל צריך לקיים חילוף, קיבוץ ופילוג ביחס לחיבור
+\series default
+ ע"פ אותן אינטואיציות שהבאנו עבור הרציונליים, אלא שכעת האורכים של הקטעים יכולים להיות אי-רציונליים וכך גם שטחי המלבנים; כדי להראות ש-
+\series bold
+\begin_inset Formula
+$\boldsymbol{1}$
+\end_inset
+ צריך להיות אדיש לכפל
+\series default
+ נשתמש בכך שהדבר מתקיים לכל מספר רציונלי ובעובדה שניתן להתקרב לכל נקודה אי-רציונלית ע"י נקודות רציונליות ככל שנרצה. 
+\series bold
+החיבור צריך לקיים חילוף
+\series default
+ שכן אורכו של קרש אינו מבחין בין מדידה מימין לשמאל למדידה בכיוון ההפוך, ובנוסף 
+\series bold
+צריך החיבור לקיים קיבוץ
+\series default
+ שכן ניתן לבצע את המדידה בשני צורות: באחת נצמיד את הקרש השני לראשון ונמדוד את אורכם המשותף ואח"כ נצמיד את הקרש השלישי, ובשנייה נצמיד את הקרש השני לשלישי ונמדוד את אורכם המשותף ואח"כ נצמיד אותם לקרש הראשון.
+\end_layout
+
+\begin_layout Standard
+א"כ נתאר את קבוצת המספרים שקיבלנו בצורה הבאה:
+\end_layout
+
+\begin_layout Itemize
+כל המספרים שלנו יותאמו לקרשים שניתן לחתוך מן הקרש האין-סופי.
+\end_layout
+
+\begin_layout Itemize
+כל קרש כזה מקבל מספר ממשי חיובי המציין את אורכו
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+אמת המידה למדידת האורך היא ה-
+\begin_inset Formula
+$1$
+\end_inset
+ שהוזכר בפסקה הקודמת.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+החיבור של שני מספרים כאלה נעשה ע"י הצמדת הקרשים זה לזה ומדידת אורכם המשותף, ובנוסף:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\series bold
+החיבור מקיים חילוף וקיבוץ
+\series default
+ כפי שתואר לעיל.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+הכפל של כל שני מספרים כאלה נעשה ע"י שימת הקרשים המתאימים במאונך זה לזה ושטח המלבן המתאים הוא המכפלה.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\series bold
+הכפל מקיים חילוף וקיבוץ
+\series default
+ כפי שתואר לעיל.
+\end_layout
+
+\begin_layout Itemize
+\series bold
+הכפל מקיים פילוג ביחס לחיבור
+\series default
+ כפי שתואר לעיל.
+\end_layout
+
+\begin_layout Itemize
+יש בקבוצת המספרים איבר הנקרא 
+\begin_inset Formula
+$\boldsymbol{1}$
+\end_inset
+ והוא 
+\series bold
+אדיש לפעולת הכפל
+\series default
+ - כלומר השטח של מלבן שצלעותיו הם קרש באורך 
+\begin_inset Formula
+$1$
+\end_inset
+ וקרש נוסף הוא אורך הקרש הנוסף.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+יחס הסדר ייקבע ע"י אורכי הקרשים - קרש ארוך יותר מותאם למספר גדול יותר, ובנוסף:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ניתן להשוות את האורך של כל שני קרשים (
+\series bold
+טריכוטומיה
+\series default
+).
+\end_layout
+
+\begin_layout Itemize
+אם קרש א' ארוך מקרש ב' וקרש ב' ארוך מקרש ג' אז קרש א' ארוך מקרש ג' (
+\series bold
+טרנזיטיביות
+\series default
+).
+\end_layout
+
+\begin_layout Itemize
+אם קרש א' ארוך מקרש ב' אז האורך של סכום הקרשים א' ו-ג' יהיה גדול מהאורך של סכום הקרשים ב' ו-ג' - כלומר הוספת אותו מספר לזוג מספרים תשמר את יחס הסדר ביניהם (
+\series bold
+הלימה לחיבור
+\series default
+).
+\end_layout
+
+\begin_layout Itemize
+אם קרש א' ארוך מקרש ב' אז מלבן שצלעותיו הם קרש א' קרש ג' יהיה גדול בשטחו ממלבן שאורכי צלעותיו הם ב' ו-ג' - כלומר הכפלת שני מספרים באותו מספר תשמר את יחס הסדר ביניהם (
+\series bold
+הלימה לכפל
+\series default
+).
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+לכל שתי קבוצות של נקודות על הקרש האין-סופי, כך שכל הנקודות בקבוצה האחת קרובות יותר אל הקצה לעומת כל נקודה בקבוצה האחרת
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר הנקודות שבקבוצה הראשונה נמצאות בחלק הרצוי של הקרש ואילו אלו שבשנייה נמצאות בחלק המיותר.
+\end_layout
+
+\end_inset
+, ניתן לחתוך את הקרש כך שבחלק אחד שלו (זה שקרוב לקצה) תהיינה כל הנקודות מהקבוצה הראשונה ובחלק האחר (זה שרחוק מהקצה) תהיינה כל הנקודות שבקבוצה השנייה. כלומר לכל שתי קבוצות של מספרים כך שכל המספרים בקבוצה הראשונה גדולים מכל המספרים בקבוצה השנייה קיים מספר שקטן או שווה לכל המספרים בקבוצה הראשונה וגדול או שווה לכל המספרים בקבוצה השנייה (
+\series bold
+אקסיומת השלמות
+\series default
+).
+\end_layout
+
+\begin_layout Standard
+את החיסור ניתן שוב לתאר כתשובה לשאלה "איזה מספר, אם נחבר אותו ל-
+\begin_inset Formula
+$a$
+\end_inset
+, נקבל את 
+\begin_inset Formula
+$b$
+\end_inset
+?" - כלומר 
+\begin_inset Formula
+$b-a$
+\end_inset
+ הוא המספר שמקיים 
+\begin_inset Formula
+$a+\left(b-a\right)=b$
+\end_inset
+, ואילו החילוק מתואר כתשובה לשאלה "איזה מספר, אם נכפול בו את 
+\begin_inset Formula
+$a$
+\end_inset
+, נקבל את 
+\begin_inset Formula
+$b$
+\end_inset
+?" - כלומר 
+\begin_inset Formula
+$b\div a$
+\end_inset
+ הוא המספר שמקיים 
+\begin_inset Formula
+$a\times\left(b\div a\right)=b$
+\end_inset
+. רגע רגע, מי אמר שקיים מספר כזה? ובכן, נציב קרש באורך 
+\begin_inset Formula
+$a$
+\end_inset
+ במאונך לקרש האין-סופי, אנחנו יודעים שממקום מסוים ואילך כל נקודה שבה נחתוך את הקרש האין-סופי תיתן לנו קרש שעבורו שטח המלבן הנוצר עם 
+\begin_inset Formula
+$a$
+\end_inset
+ גדול מ-
+\begin_inset Formula
+$b$
+\end_inset
+, ומצד שני כל נקודה קרובה יותר תיתן לנו קרש קצר מדי; אנחנו יודעים גם שנוכל למצוא נקודות (משני הצדדים) כך שהשטחים המתאימים ילכו ויתקרבו ל-
+\begin_inset Formula
+$y$
+\end_inset
+ ככל שנרצה ולכן נקודה שנמצאת בין שתי הקבוצות הללו (וע"פ אקסיומת השלמות אכן קיימת נקודה כזו) תקיים שהשטח המתאים למלבן שלה עם 
+\begin_inset Formula
+$x$
+\end_inset
+ הוא בדיוק 
+\begin_inset Formula
+$y$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ושוב, היחידות של נקודה כזו נובעת מהטריכוטומיה של יחס הסדר.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ניתן להגדיר את 
+\series bold
+ההופכי
+\series default
+ של 
+\begin_inset Formula
+$a$
+\end_inset
+ כמקודם ע"י 
+\begin_inset Formula
+$a^{-1}:=1\div a$
+\end_inset
+ ואז נקבל:
+\begin_inset Formula
+\[
+a\times\left(a^{-1}\times b\right)=\left(a\times a^{-1}\right)\times b=\left(a\times\left(1\div a\right)\right)\times b=1\times b=b
+\]
+
+
+\end_inset
+כלומר 
+\begin_inset Formula
+$b\div a=a^{-1}\times b=b\times a^{-1}$
+\end_inset
+ ושוב אנו רואים שחילוק שקול לכפל בהופכי.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ גם כאן אנו יכולים לראות שהחיסור והחילוק צריכים לקיים "חילוף" ו"קיבוץ" במובן שלעיל.
+\end_layout
+
+\begin_layout Subsection
+אפס
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ בשני השלבים הבאים לא אטרח להסביר מדוע כל האקסיומות ממשיכות להתקיים, אני מניח שזה כבר ברור.
+\end_layout
+
+\begin_layout Standard
+בשלב הקודם זיהינו כל מספר חיובי עם אורך גאומטרי על קרש אין-סופי בכיוון אחד, מה אם במקום לזהות את המספרים עם אורכים נזהה אותם עם הנקודות שאליהן מגיעים אותם אורכים על הקרש האין-סופי - לכל נקודה כזו קיים אורך אחד ויחיד ולכן איננו מאבדים מידע בשיטה זו. ננסה לפתח את הרעיון: כל נקודה תזוהה עם המספר שזוהה בעבר עם המרחק שלה מן הקצה, כדי לחבר לנקודה 
+\begin_inset Formula
+$a$
+\end_inset
+ לנקודה 
+\begin_inset Formula
+$b$
+\end_inset
+ נתבונן בדרך שיש לעבור מן הקצה עד לנקודה 
+\begin_inset Formula
+$b$
+\end_inset
+ ואז נתייחס ל-
+\begin_inset Formula
+$a$
+\end_inset
+ בתור נקודת הקצה ונלך ממנה את אותה הדרך - הנקודה שהגענו אליה היא בדיוק זו שזוהתה קודם לכן עם המספר 
+\begin_inset Formula
+$a+b$
+\end_inset
+. הכפל מעט מורכב יותר: זוכרים שהבחירה של הנקודה 
+\begin_inset Formula
+$1$
+\end_inset
+ הייתה שרירותית? באותה מידה היינו יכולים לבחור בנקודה 
+\begin_inset Formula
+$a$
+\end_inset
+ בתור אמת המידה שלנו, במקרה כזה המכפלה 
+\begin_inset Formula
+$a\times b$
+\end_inset
+ מציינת את המיקום של המספר המתאים ל-
+\begin_inset Formula
+$b$
+\end_inset
+ לו 
+\begin_inset Formula
+$a$
+\end_inset
+ הייתה אמת המידה שלנו; כלומר הכפלה במספר 
+\begin_inset Formula
+$a$
+\end_inset
+ 
+\series bold
+מותחת
+\series default
+ או 
+\series bold
+מכווצת
+\series default
+ את הקרש שלנו כך שכל המספרים באופן שבו היו מוגדרים לו היינו בוחרים ב-
+\begin_inset Formula
+$a$
+\end_inset
+ כ-"
+\begin_inset Formula
+$1$
+\end_inset
+" שלנו.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כמובן שיכולנו להגדיר את החיבור והכפל של נקודות על הקרש האין-סופי לפי האורכים המתאימים, אלא שכעת הפעולות הללו מקבלות משמעות אחרת בשפה של נקודות ולא של אורכים.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מכאן והלאה (לאורך כל פרק זה) אנחנו נדבר בשפה של נקודות אבל דווקא את החיבור יהיה נוח יותר להציג כחיבור של חיצים שכן החיצים מייצגים בצורה ברורה יותר את הדרך שיש ללכת מהראשית עד לנקודה; כמובן שזה לא משנה - החצים והנקודות מתנהגים בדיוק באותה הצורה (הם 
+\series bold
+איזומורפיים
+\series default
+).
+\end_layout
+
+\begin_layout Standard
+אם נשים לב, נראה שיש דמיון מסוים בין פעולת הכפל וה-
+\begin_inset Formula
+$1$
+\end_inset
+ לבין פעולת החיבור וקצה הקרש: בשניהם הפעולה מתחילה בכך שאנחנו מתייחסים לנקודה 
+\begin_inset Formula
+$a$
+\end_inset
+ כקצה הקרש או כ-
+\begin_inset Formula
+$1$
+\end_inset
+ ואז שואלים את עצמנו איפה נמצאת הנקודה 
+\begin_inset Formula
+$b$
+\end_inset
+ לפי ההתייחסות הזו - התשובה לשאלה היא הסכום 
+\begin_inset Formula
+$a+b$
+\end_inset
+ או המכפלה 
+\begin_inset Formula
+$a\times b$
+\end_inset
+ בהתאמה. הדמיון הזה מעלה בנו את האפשרות להתייחס גם לקצה הקרש כנקודה שצריכה להיות מותאמת למספר, במיוחד כשעכשיו כל המספרים מזוהים עם נקודות ולא עם אורכים אין שום הבדל גאומטרי בין הנקודה שבקצה הקרש לכל נקודה אחרת שעליו
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+אין הבדל ביניהן כנקודות - כולן חסרות אורך ומציינות רק מיקום, זה לא אומר שאין ביניהן שום הבדל מהותי - יש הבדל כזה והוא שהנקודה שבקצה הקרש... ובכן... נמצאת בקצה הקרש בניגוד לכל נקודה אחרת שנמצאת באמצע הקרש (אנחנו נראה בהמשך מדוע זה הבדל מהותי).
+\end_layout
+
+\end_inset
+; סיבה נוספת לקבל את קצה הקרש כמספר לגיטימי היא שכל המספרים האחרים הותאמו לנקודות ע"פ המרחק שלהן מקצה הקרש והחיבור של שתי נקודות הוגדר באמצעות הליכת מרחק זה מן המחובר הראשון - כלומר המרחק של 
+\begin_inset Formula
+$a+b$
+\end_inset
+ מ-
+\begin_inset Formula
+$a$
+\end_inset
+ הוא בדיוק 
+\begin_inset Formula
+$b$
+\end_inset
+ שהוא המרחק של 
+\begin_inset Formula
+$b$
+\end_inset
+ מקצה הקרש, יהיה זה נוח מאוד אם נוכל לחבר את 
+\begin_inset Formula
+$b$
+\end_inset
+ לקצה הקרש ולקבל את 
+\begin_inset Formula
+$b$
+\end_inset
+ וכך ההליכה מ-
+\begin_inset Formula
+$a$
+\end_inset
+ את המרחק של 
+\begin_inset Formula
+$b$
+\end_inset
+ מקצה הקרש תקבל תוקף חדש - אנחנו ממש נתייחס ל-
+\begin_inset Formula
+$a$
+\end_inset
+ כאילו היא קצה הקרש ונפעל באותה צורה. א"כ השתכנענו שכדאי להוסיף לקבוצת המספרים שלנו מספר חדש שיותאם לקצה הקרש, נקרא למספר זה "אפס" ונסמן אותו ב-
+\begin_inset Formula
+$0$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מהגדרה נקבל שלכל מספר 
+\begin_inset Formula
+$a$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a+0=0=0+a$
+\end_inset
+ וגם 
+\begin_inset Formula
+$0<a$
+\end_inset
+, אבל מה לגבי הכפל? אם נבחר בקצה הקרש בתור ה-"
+\begin_inset Formula
+$1$
+\end_inset
+" שלנו אז כל המספרים האחרים יותאמו גם הם לקצה הקרש ולא נוכל למדוד שום דבר! לכן 
+\begin_inset Formula
+$0$
+\end_inset
+ אינו יכול לשמש כאמת מידה וזהו ההבדל המהותי שבין 
+\begin_inset Formula
+$0$
+\end_inset
+ לכל מספר אחר: 
+\begin_inset Formula
+$1$
+\end_inset
+ מציין את ה
+\series bold
+\begin_inset CommandInset href
+LatexCommand href
+name "יש"
+target https://he.wikipedia.org/wiki/%D7%A7%D7%99%D7%95%D7%9D
+literal false
+\end_inset
+
+\series default
+ ובעקבותיו כל מספר שאינו 
+\begin_inset Formula
+$0$
+\end_inset
+ מתאים גם הוא לממשות מסוימת, ואילו 
+\begin_inset Formula
+$0$
+\end_inset
+ מציין את ה
+\series bold
+\begin_inset CommandInset href
+LatexCommand href
+name "אין"
+target https://he.wikipedia.org/wiki/%D7%9C%D7%90_%D7%9B%D7%9C%D7%95%D7%9D
+literal false
+\end_inset
+
+\series default
+.
+\begin_inset Newline newline
+\end_inset
+אז מה, לא נוכל לכפול ב-
+\begin_inset Formula
+$0$
+\end_inset
+? התשובה היא שדווקא ניתן להציע דרך לעשות זאת: אם נתבונן בפעולת הכפל רק כמתיחה וכיווץ של הקרש (ולא נשית את ליבנו לדרך שבה הגענו למסקנה שכך נראה הכפל), נבין שכפי שתואר לעיל הכפלה ב-
+\begin_inset Formula
+$0$
+\end_inset
+ צריכה לכווץ את כל הקרש לנקודה אחת. הרעיון הזה גם נראה טבעי משום שהכפלה במספרים קטנים מ-
+\begin_inset Formula
+$1$
+\end_inset
+ מכווצת את הקרש וככל שהמספר קטן יותר (כלומר קרוב יותר ל-
+\begin_inset Formula
+$0$
+\end_inset
+) כך הוא "שולח" מספרים גדולים קרוב יותר ויותר אל ה-
+\begin_inset Formula
+$0$
+\end_inset
+, למעשה לכל מספר 
+\begin_inset Formula
+$M$
+\end_inset
+ גדול ככל שיהיה ולכל מספר 
+\begin_inset Formula
+$\varepsilon$
+\end_inset
+ קטן ככל שיהיה קיים מספר 
+\begin_inset Formula
+$a$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$0<M\cdot a<\varepsilon$
+\end_inset
+, כלומר אם נרצה שהכפלה ב-
+\begin_inset Formula
+$0$
+\end_inset
+ תתאים לכללים הקודמים של יחס הסדר היא צריכה להחזיר 
+\begin_inset Formula
+$0$
+\end_inset
+ עבור כל מספר.
+\begin_inset Newline newline
+\end_inset
+לא דיברנו עדיין על החילוק והחיסור, באופן טבעי החיסור והחילוק יוגדרו כתשובות לשאלות "איזה מספר, אם נחבר אותו ל-
+\begin_inset Formula
+$a$
+\end_inset
+, נקבל את 
+\begin_inset Formula
+$b$
+\end_inset
+?" ו-"איזה מספר, אם נכפול בו את 
+\begin_inset Formula
+$a$
+\end_inset
+, נקבל את 
+\begin_inset Formula
+$b$
+\end_inset
+?" בהתאמה; זה אומר שכדי לחסר מנקודה 
+\begin_inset Formula
+$a$
+\end_inset
+ את הנקודה 
+\begin_inset Formula
+$b$
+\end_inset
+ נתחיל מ-
+\begin_inset Formula
+$a$
+\end_inset
+ אלא שהפעם נלך שיש לעבור מן הקצה עד לנקודה 
+\begin_inset Formula
+$b$
+\end_inset
+ בכיוון ההפוך, וכדי לחלק מספר 
+\begin_inset Formula
+$b$
+\end_inset
+ במספר 
+\begin_inset Formula
+$a$
+\end_inset
+ ניקח את המספר שעבורו - אם נחליט שהוא ה-"
+\begin_inset Formula
+$1$
+\end_inset
+" החדש - הנקודה שעכשיו היא 
+\begin_inset Formula
+$a$
+\end_inset
+ תקבל את המספר 
+\begin_inset Formula
+$b$
+\end_inset
+. ההסבר על החילוק היה קצת מבלבל, נכון? הנה דרך פשוטה יותר: אם שוב נסתכל על הכפל כמתיחה וכיווץ נבין שזוהי פעולה הפיכה - עבור כל מספר לאחר המתיחה או הכיווץ אנו יודעים מאיזה מספר הוא הגיע ולכן ניתן להסיק מכאן את הפעולה ההופכית.
+\begin_inset Newline newline
+\end_inset
+אבל... הכפלה ב-
+\begin_inset Formula
+$0$
+\end_inset
+ אינה פעולה הפיכה: היא מתאימה לכל המספרים את אותו המספר - את 
+\begin_inset Formula
+$0$
+\end_inset
+! לכן אנחנו לא יכולים להחזיר את הגלגל לאחור; נכון, אבל זה בסדר משום שלפי הגדרת הכפל ב-
+\begin_inset Formula
+$0$
+\end_inset
+ אין תשובה לשאלה "איזה מספר, אם נכפול בו את 
+\begin_inset Formula
+$0$
+\end_inset
+, נקבל את 
+\begin_inset Formula
+$b$
+\end_inset
+?" (כאשר 
+\begin_inset Formula
+$b\neq0$
+\end_inset
+) ולכן טבעי לומר שאי אפשר לחלק ב-
+\begin_inset Formula
+$0$
+\end_inset
+ בדיוק באותה צורה שעד עכשיו לא קיבלנו את החיסור 
+\begin_inset Formula
+$b-a$
+\end_inset
+ כאשר 
+\begin_inset Formula
+$b<a$
+\end_inset
+ משום שאז אין תשובה לשאלה "איזה מספר, אם נחבר אותו ל-
+\begin_inset Formula
+$a$
+\end_inset
+, נקבל את 
+\begin_inset Formula
+$b$
+\end_inset
+?"
+\end_layout
+
+\begin_layout Subsection
+הישר הממשי
+\end_layout
+
+\begin_layout Standard
+בואו נבצע עוד הפשטה: למה אנחנו צריכים את הקרש האין-סופי בכלל? ניקח נקודה כלשהי במרחב ונסמן אותה ב-
+\begin_inset Formula
+$0$
+\end_inset
+, נבחר נקודה 
+\series bold
+אחרת
+\series default
+ ונסמן אותה ב-
+\begin_inset Formula
+$1$
+\end_inset
+, וכל הנקודות האחרות יסודרו על ה
+\begin_inset CommandInset href
+LatexCommand href
+name "קרן"
+target https://he.wikipedia.org/wiki/%D7%99%D7%A9%D7%A8#%D7%9E%D7%95%D7%A9%D7%92%D7%99%D7%9D_%D7%92%D7%90%D7%95%D7%9E%D7%98%D7%A8%D7%99%D7%99%D7%9D_%D7%94%D7%9E%D7%AA%D7%91%D7%A1%D7%A1%D7%99%D7%9D_%D7%A2%D7%9C_%D7%94%D7%99%D7%A9%D7%A8
+literal false
+\end_inset
+ שמתחילה בנקודה 
+\begin_inset Formula
+$0$
+\end_inset
+ וממשיכה בכיוון המוגדר ע"י הדרך אל הנקודה 
+\begin_inset Formula
+$1$
+\end_inset
+ (כלומר במקום קרש אין-סופי נשתמש בקרן כלשהי במרחב). כעת המספרים מציינים נקודות גאומטריות על הקרן, חיבור הוא הליכה על הקרן לכיוון החלק האין-סופי שלה, חיסור הוא הליכה בכיוון ההפוך, כפל יהיה מתיחה/כיווץ של הקרן והחילוק יהיה כיווץ/מתיחה באופן שמחזיר את הגלגל לאחור.
+\begin_inset Newline newline
+\end_inset
+אבל רגע, הבחירה של הנקודה "אפס" הייתה שרירותית, במה חטאו הנקודות שנמצאות בכיוון ההפוך לנקודה "אחד"? למה שלא נתאים גם להן מספרים? הרעיון הזה גם יאפשר לנו לבטל את חוסר הסימטריה שבין הליכה על הקרן לכיוון החלק האין-סופי שלה לבין ההליכה בכיוון ההפוך. א"כ נתבונן בישר המכיל את הקרן: קבענו עליו נקודה שרירותית וקראנו לה 
+\begin_inset Formula
+$0$
+\end_inset
+ ובחרנו בנקודה נוספת וקראנו לה 
+\begin_inset Formula
+$1$
+\end_inset
+, כל המספרים שראינו עד כה יסודרו על החלק של הישר שמהנקודה 
+\begin_inset Formula
+$0$
+\end_inset
+ לכיוון הנקודה 
+\begin_inset Formula
+$1$
+\end_inset
+ (חלק זה ייקרא החלק החיובי של הישר ואילו החלק השני ייקרא החלק השלילי שלו), וכל המספרים בכיוון ההפוך יקבלו את שמם מהמרחק שלהם מ-
+\begin_inset Formula
+$0$
+\end_inset
+ שהוא מספר בצד השני בתוספת סימון קטן "
+\begin_inset Formula
+$-$
+\end_inset
+" שיציין את היותם בכיוון הנגדי (בעצם, מכיוון שיש סימטריה בין שני הצדדים נוכל להוסיף סימן "
+\begin_inset Formula
+$-$
+\end_inset
+" לסימון של מספר שלילי כדי לקבל את המספר החיובי הנגדי).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ שמתם לב כמה פעמים נאמרה כאן המילה "כיוון"? זה ממש לא מקרי, המשמעות היחידה של מספר שלילי היא שהוא נמצא בכיוון ההפוך; זה יכול להיות נוח כשמדברים על חובות
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+מינוס בבנק אומר שאתה חייב כסף לבנק במקום המצב הרצוי שבו הבנק חייב לך את הכסף שהפקדת.
+\end_layout
+
+\end_inset
+, אבל הנוחות המשמעותית ביותר נמצאת בפיזיקה: ניתן לייצג את כל הנקודות על ישר באמצעות מספרים, ניתן לדבר על מהירות שלילית (כלומר מהירות באותו גודל רק בכיוון ההפוך), על תאוצה שלילית (כלומר תאוטה) ועל כוחות מנוגדים שמאפסים זה את זה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+את החיבור ניתן לתאר שוב כהליכה בכיוון החיובי, החידוש בעניין זה הוא שכעת החיסור ניתן לתיאור באמצעות חיבור המספר הנגדי: אנו מתייחסים ל-
+\begin_inset Formula
+$a$
+\end_inset
+ כאילו היה 
+\begin_inset Formula
+$0$
+\end_inset
+ והולכים ממנו את הדרך שמובילה ל-
+\begin_inset Formula
+$-b$
+\end_inset
+ - פעולה זו שקולה להליכת הדרך מ-
+\begin_inset Formula
+$0$
+\end_inset
+ לב-
+\begin_inset Formula
+$b$
+\end_inset
+ בכיוון ההפוך! גם כפל במספר חיובי יתואר שוב כמתיחה או כיווץ - הפעם של הישר כולו וכפל ב-
+\begin_inset Formula
+$0$
+\end_inset
+ ייתן שוב 
+\begin_inset Formula
+$0$
+\end_inset
+ לכל מספר, והחילוק בדומה לחיסור ניתן לתיאור ככפל בהופכי; אבל מה לגבי כפל וחילוק במספר שלילי?
+\begin_inset Newline newline
+\end_inset
+בואו ננסה להפעיל את אותו היגיון שבאמצעותו קיבלנו את הכפל בשפה של הנקודות: הבחירה של הנקודה 
+\begin_inset Formula
+$1$
+\end_inset
+ הייתה שרירותית, באותה מידה יכולנו לבחור כל נקודה אחרת שאינה 
+\begin_inset Formula
+$0$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+שגם היא נבחרה באופן שרירותי אך לפני הבחירה ב-
+\begin_inset Formula
+$1$
+\end_inset
+.
+\end_layout
+
+\end_inset
+, מה היה קורה אם היינו בוחרים בנקודה 
+\begin_inset Formula
+$a$
+\end_inset
+ שבייצוג הנוכחי היא מספר שלילי? פשוט מאד: היינו הופכים את כיוון הישר ומותחים/מכווצים אותו לפי המרחק 
+\begin_inset Formula
+$a$
+\end_inset
+ מ-
+\begin_inset Formula
+$0$
+\end_inset
+ - כך כפל ב-
+\begin_inset Formula
+$-1$
+\end_inset
+ יתאים לכל מספר את הנגדי שלו, וכפל בכל מספר שלילי אחר יעשה את אותה פעולה ולאחר מכן ימתח/יכווץ אותו לפי המרחק של המספר השלילי מ-
+\begin_inset Formula
+$0$
+\end_inset
+; 
+\series bold
+זאת הסיבה לכך שמינוס כפול מינוס שווה פלוס
+\series default
+. מאותה סיבה גם חילוק במספר שלילי יהיה שקול להפיכת הכיוון של הישר וחילוק במספר החיובי התואם, מכיוון שחילוק במספר חיובי שקול לכפל בהופכי שלו נקבל מזה שחילוק במספר שלילי שקול לכפל בנגדי של ההופכי המתאים (כלומר עבור 
+\begin_inset Formula
+$a$
+\end_inset
+ חיובי חילוק ב-
+\begin_inset Formula
+$-a$
+\end_inset
+, שהוא מספר שלילי, שקול לכפל ב-
+\begin_inset Formula
+$-a^{-1}$
+\end_inset
+); נשים לב לכך שע"פ הכלל "מינוס כפול מינוס שווה פלוס" הנגדי של ההופכי הוא בדיוק ההופכי של המספר השלילי שלנו (שכן עבור 
+\begin_inset Formula
+$a$
+\end_inset
+ חיובי מתקיים 
+\begin_inset Formula
+$\left(-a\right)\times\left(-a^{-1}\right)=a\times a^{-1}=1$
+\end_inset
+ ולכן 
+\begin_inset Formula
+$1\div\left(-a\right)=-a^{-1}$
+\end_inset
+).
+\begin_inset Newline newline
+\end_inset
+יש כאן נקודה קטנה שדורשת את תשומת ליבנו: היפוך הכיוון של הישר הופך גם את הסדר של המספרים, לכן נצטרך להגביל את ההלימה של יחס הסדר לכפל עבור כפל במספרים חיוביים בלבד
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כפי שנראה בקורס עצמו, התכונה של היפוך הסדר עבור כפל במספר שלילי נובעת משאר האקסיומות.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Subsection
+סיכום
+\end_layout
+
+\begin_layout Standard
+בסעיפים
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1-2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+של פרק זה ראינו מדוע התכונות הבסיסיות של המספרים הרציונליים החיוביים נובעות מחוקי החילוף, הקיבוץ והפילוג של הכפל והחיבור יחד עם הטריכוטומיה, הטרנזיטיביות וההלימה של יחס הסדר לחיבור ולכפל. בסעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+ראינו למה זה לא מספיק כדי לתאר את אורכים של קטעים גאומטריים, וכיצד אקסיומת השלמות מפרמלת אמת שברורה לכל ילד ומספקת את החסר. ובסעיפים
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+4-5
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+הבאנו הצדקה להוספת האפס והמספרים השליליים לאותה קלחת.
+\begin_inset Newline newline
+\end_inset
+זהו, אני מקווה שכעת אנחנו מבינים טוב יותר מדוע הגדרנו את המספרים הממשיים דווקא בצורה זו.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+ומה קורה בליניארית
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\numeric off
+?
+\end_layout
+
+\begin_layout Standard
+כמה מכם אולי שמו לב לבעיה קטנה בשאלה "מדוע להסתפק בקרן ולא לקחת את כל הישר?" - למה אנחנו מצטמצמים לישר??? למה לא לקחת את כל המישור ואפילו את כל המרחב התלת-ממדי?
+\begin_inset Newline newline
+\end_inset
+העניין הוא שזהו שלב מתקדם יותר והיינו צריכים לעבור קודם דרך הישר הממשי, ובנוסף, התשובה לשאלה זו כבר חורגת מהתחום של אינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+ונכנסת לתחום של ליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\numeric off
+. סיבה נוספת היא שהחלפת הישר במישור דורשת מאיתנו להיפרד לשלום מיחס הסדר ולהישאר עם שדה בלבד, והמעבר מן המישור למרחב התלת-ממדי כבר דורש מאיתנו לזנוח את הגדרת הכפל על כל הקבוצה ולעבור למרחב הווקטורי; למעשה הסיבה הזו היא שגרמה לכך שהנושאים הללו נלמדים בשני קורסים שונים.
+\end_layout
+
+\begin_layout Subsection
+המישור המרוכב
+\end_layout
+
+\begin_layout Standard
+בואו נרחיב את קבוצת המספרים שלנו כך שיהיה לנו מספר שמתאים לכל נקודה במישור: נבחר נקודה שרירותית במישור ונסמן אותה ב-
+\begin_inset Formula
+$0$
+\end_inset
+, ניקח נקודה נוספת ונסמן אותה ב-
+\begin_inset Formula
+$1$
+\end_inset
+; כעת הגדרנו את הישר הממשי, ומה לגבי שאר הנקודות במישור?
+\begin_inset Newline newline
+\end_inset
+התשובה היא שכמו שאת המספרים השליליים קיבלנו ע"י יצירת עותק של הקרן החיובית בכיוון ההפוך, כך נוכל לקבל את כל הנקודות במישור ע"י יצירת העתק של הקרן החיובית בכל כיוון שהוא במישור (
+\begin_inset Formula
+$360$
+\end_inset
+ מעלות או 
+\begin_inset Formula
+$2\pi$
+\end_inset
+ רדיאנים); כעת כל נקודה במישור תאופיין ע"י המרחק שלה מ-
+\begin_inset Formula
+$0$
+\end_inset
+ והזווית שהיא יוצרת יחד עם הקרן החיובית, כלומר כל מספר מרוכב מאופיין ע"י הרדיוס המתאים לו והזווית שהוא יוצר עם החלק החיובי של ציר ה-
+\begin_inset Formula
+$x$
+\end_inset
+ נגד כיוון השעון.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כן, שמעתם נכון: בדיוק כמו ש
+\series bold
+המשמעות של מספר שלילי היא בסה"כ כיוון
+\series default
+ גם 
+\series bold
+המשמעות של מספר מרוכב היא בסה"כ כיוון
+\series default
+, במובן הזה ההצגה הקוטבית של המספרים המרוכבים טבעית יותר מן ההצגה הקרטזית.
+\end_layout
+
+\begin_layout Standard
+ושוב, החיבור יוגדר ע"י הליכת הדרך שמובילה מ-
+\begin_inset Formula
+$0$
+\end_inset
+ ל-
+\begin_inset Formula
+$w$
+\end_inset
+ אלא שהפעם נתחיל אותה ב-
+\begin_inset Formula
+$z$
+\end_inset
+ (כלומר אנו שואלים "לו היינו בוחרים ב-
+\begin_inset Formula
+$z$
+\end_inset
+ בתור ה-
+\begin_inset Formula
+$0$
+\end_inset
+ שלנו ומזיזים את ה-
+\begin_inset Formula
+$1$
+\end_inset
+ בהתאם, איפה הייתה הנקודה 
+\begin_inset Formula
+$w$
+\end_inset
+?"), ואילו הכפל יוגדר ע"י השאלה "לו היינו בוחרים ב-
+\begin_inset Formula
+$z$
+\end_inset
+ בתור ה-
+\begin_inset Formula
+$1$
+\end_inset
+ שלנו (לאחר שה-
+\begin_inset Formula
+$0$
+\end_inset
+ כבר נבחר), איפה הייתה הנקודה 
+\begin_inset Formula
+$w$
+\end_inset
+?" ולכן כפל במספר מרוכב המתאים לנקודה 
+\begin_inset Formula
+$z$
+\end_inset
+ שקול לסיבוב לפי הזווית 
+\begin_inset Formula
+$\measuredangle1\ 0\ z$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר הזווית הנוצרת בין הקרן שמגדירים 
+\begin_inset Formula
+$0$
+\end_inset
+ ו-
+\begin_inset Formula
+$1$
+\end_inset
+ לבין הקרן שמגדירים 
+\begin_inset Formula
+$0$
+\end_inset
+ ו-
+\begin_inset Formula
+$z$
+\end_inset
+.
+\end_layout
+
+\end_inset
+ ומתיחה או כיווץ לפי המרחק של 
+\begin_inset Formula
+$z$
+\end_inset
+ מ-
+\begin_inset Formula
+$0$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+כדי שנוכל לכתוב את החיבור בצורה נוחה
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+סימון זה הוא רק בשביל הנוחות, מבחינה אינטואיטיבית ברור כיצד מתרחש החיבור גם בלעדיה.
+\end_layout
+
+\end_inset
+ מבחינה אלגברית נסמן ב-
+\begin_inset Formula
+$i$
+\end_inset
+ את הנקודה שמרחקה מ-
+\begin_inset Formula
+$0$
+\end_inset
+ הוא 
+\begin_inset Formula
+$1$
+\end_inset
+ והזווית שהיא יוצרת עם החלק החיובי של ציר ה-
+\begin_inset Formula
+$x$
+\end_inset
+ נגד כיוון השעון היא 
+\begin_inset Formula
+$90$
+\end_inset
+ מעלות או 
+\begin_inset Formula
+$\frac{\pi}{2}$
+\end_inset
+ רדיאנים.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ שימו לב: הבחירה הזו לא הייתה שרירותית, זווית ישרה היא דבר מהותי ורק הבחירה אם להתייחס לזוויות נגד כיוון השעון היא שרירותית, לענייננו זה לא משנה משום שגם אם היינו בוחרים הפוך היינו מקבלים מבנה שמנהג בדיוק באותה צורה.
+\end_layout
+
+\begin_layout Standard
+כעת נוכל לאפיין כל נקודה ע"י ההיטלים שלה על הציר שפורש 
+\begin_inset Formula
+$1$
+\end_inset
+ ועל הציר שפורש 
+\begin_inset Formula
+$i$
+\end_inset
+, ואז החיבור יעבוד קואורדינטה קואורדינטה (אינטואיציה לכך ניתן למצוא בהקדמה שלי לאלגברה ליניארית).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ לא כתבנו כאן כיצד מוגדר יחס הסדר מפני שאי אפשר להגדיר על המרוכבים יחס סדר שיקיים את אקסיומות השדה הסדור
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ההוכחה לכך פשוטה: מאקסיומות השדה הסדור נובע שכל ריבוע הוא מספר אי-שלילי, ומצד שני מאותן אקסיומות נובע ש-
+\begin_inset Formula
+$-1$
+\end_inset
+ שלילי...
+\end_layout
+
+\end_inset
+, להרחבה בנושא אתם מוזמנים לעיין בערכים: 
+\begin_inset CommandInset href
+LatexCommand href
+name "רמה של שדה"
+target https://he.wikipedia.org/wiki/%D7%A8%D7%9E%D7%94_%D7%A9%D7%9C_%D7%A9%D7%93%D7%94
+literal false
+\end_inset
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "משפט ארטין-שרייר"
+target https://he.wikipedia.org/wiki/%D7%9E%D7%A9%D7%A4%D7%98_%D7%90%D7%A8%D7%98%D7%99%D7%9F-%D7%A9%D7%A8%D7%99%D7%99%D7%A8_)%D7%A9%D7%93%D7%95%D7%AA_%D7%A1%D7%93%D7%95%D7%A8%D7%99%D7%9D(
+literal false
+\end_inset
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "שדה סדור"
+target https://he.wikipedia.org/wiki/%D7%A9%D7%93%D7%94_%D7%A1%D7%93%D7%95%D7%A8#%D7%A1%D7%93%D7%A8_%D7%95%D7%A8%D7%99%D7%91%D7%95%D7%A2%D7%99%D7%9D
+literal false
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+ו
+\begin_inset CommandInset href
+LatexCommand href
+name "שדה סגור ממשית"
+target https://he.wikipedia.org/wiki/%D7%A9%D7%93%D7%94_%D7%A1%D7%92%D7%95%D7%A8_%D7%9E%D7%9E%D7%A9%D7%99%D7%AA
+literal false
+\end_inset
+ (בוויקיפדיה העברית). מסיבה זו היה ראוי לעצור בישר הממשי לפני שהתרחבנו לכל המישור.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+המרחב התלת-ממדי
+\end_layout
+
+\begin_layout Standard
+נפעל באותה דרך במרחב התלת-ממדי: נבחר נקודה שרירותית ונסמן אותה ב-
+\begin_inset Formula
+$0$
+\end_inset
+, ניקח נקודה נוספת ונסמן אותה ב-
+\begin_inset Formula
+$1$
+\end_inset
+ ו... האם אנחנו יכולים לעצור כאן ולאפיין כל נקודה במרחב ע"י שתי הבחירות הללו? לא! אנחנו חייבים לפחות עוד ציר אחד וגם אם נחייב אותו להיות בזווית ישרה עם הציר שפורש 
+\begin_inset Formula
+$1$
+\end_inset
+ עדיין תהיינה אפשרויות רבות (אין-סוף למעשה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+- כל זווית על המישור המאונך לציר הראשון). מסיבה זו לא תעבוד השיטה הרגילה שלנו לדמיין את הכפל 
+\begin_inset Formula
+$v\times w$
+\end_inset
+ בתור התשובה לשאלה "לו היינו בוחרים ב-
+\begin_inset Formula
+$v$
+\end_inset
+ בתור ה-
+\begin_inset Formula
+$1$
+\end_inset
+ שלנו (לאחר שה-
+\begin_inset Formula
+$0$
+\end_inset
+ כבר נבחר), איפה הייתה הנקודה 
+\begin_inset Formula
+$w$
+\end_inset
+?", שכן אין לה תשובה יחידה, הדבר תלוי בבחירת הציר השני
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+בחירת הציר השלישי הנדרש אינה שרירותית, ממש כפי שבמישור בחירת הציר השני לא הייתה שרירותית.
+\end_layout
+
+\end_inset
+; לעומת זאת החיבור כן יעבוד באותה צורה משום שהוא תלוי אך ורק בבחירת ה-
+\begin_inset Formula
+$0$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+כדי שבכל זאת תהיה לנו פעולת כפל כלשהי נצטרך לצמצם אותה לכפל במספרים ממשיים משום שפעולתם היא מתיחה וכיווץ בלבד ובחירת כיוון על אותו ישר לפי הסימן של המספר הכופל, כלומר עבור מספר ממשי 
+\begin_inset Formula
+$a$
+\end_inset
+ התשובה לשאלה "לו היינו בוחרים ב-
+\begin_inset Formula
+$a$
+\end_inset
+ בתור ה-
+\begin_inset Formula
+$1$
+\end_inset
+ שלנו (לאחר שה-
+\begin_inset Formula
+$0$
+\end_inset
+ כבר נבחר), איפה הייתה הנקודה 
+\begin_inset Formula
+$v$
+\end_inset
+?" דווקא כן מוגדרת למרות ששני הצירים האחרים עדיין לא הוגדרו; מתברר שעבור מספרים ממשיים זה לא משנה כיצד נבחר את שני הצירים האחרים, הבאנו לעיל אינטואיציה לעובדה זו ובקורס ליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+עצמו אנחנו נראה הוכחה פורמלית לכך.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ למיטב ידיעתי אין דרך להגדיר על המרחב התלת-ממדי פעולת כפל כך שיחד עם פעולת החיבור הווקטורי יתקבל שדה, הדבר הכי קרוב לכך (שאני מכיר) הוא 
+\begin_inset CommandInset href
+LatexCommand href
+name "אלגברת הקווטרניונים של המילטון"
+target https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%92%D7%91%D7%A8%D7%AA_%D7%94%D7%A7%D7%95%D7%95%D7%98%D7%A8%D7%A0%D7%99%D7%95%D7%A0%D7%99%D7%9D_%D7%A9%D7%9C_%D7%94%D7%9E%D7%99%D7%9C%D7%98%D7%95%D7%9F
+literal false
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ לא כתבתי מדוע המרחבים הווקטוריים הוגדרו דווקא כך מפני שעסקתי בנושא זה בהרחבה בהקדמה שלי לאלגברה ליניארית.
+\end_layout
+
+\begin_layout Subsection
+הערה היסטורית
+\end_layout
+
+\begin_layout Standard
+בניגוד לפרק הקודם שבו סדר הדברים דומה מאד להתפתחות ההיסטורית של המספרים הממשיים, התיאור בפרק זה חוטא להיסטוריה והדברים התרחשו אחרת לחלוטין: המרוכבים התפתחו מתוך הצורך לפתור משוואות ממעלה שלישית והמרחבים הווקטוריים התפתחו מהצורך לפתור מערכות משוואות ליניאריות; רק אחרי שהועלה הרעיון נמצאה גם הדרך הגאומטרית והוויזואלית להצגתם.
+\end_layout
+
+\end_body
+
+\end_document
+

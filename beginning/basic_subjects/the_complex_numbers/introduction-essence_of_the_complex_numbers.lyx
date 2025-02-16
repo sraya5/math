@@ -1,0 +1,4900 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The head's design for summuries,make the layout more similar to a book:
+\AtBeginDocument{
+\renewcommand\headrule{%
+  \kern -7pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+  \kern 10pt
+}}
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Correct the reversed parentheses in labels:
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\newfontfamily{\hebrewfont}{David}
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+
+
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size      Larger
+	  Series     Bold
+	EndFont
+End
+
+
+Style Solution
+
+	LabelString           "פתרון: "End
+
+
+Style Notation
+
+	LabelString           "סימון  \thetheorem: "End
+
+Style Theorem
+
+	LabelString           "משפט \thetheorem: "End
+
+Style Property
+
+	LabelString           "תזכורת: "End
+\end_local_layout
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\boxbgcolor #cccccc
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "C:/Users/sraya/AppData/Roaming/LyX2.4/macros/MKmacros.lyx"
+\end_inset
+
+
+\end_layout
+
+\begin_layout Right Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Roman{page}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+leftmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Left Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+הקדמה - מהות המספרים המרוכבים
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Roman{page}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Center Footer
+
+\end_layout
+
+\begin_layout Title
+\paragraph_spacing double
+
+\series bold
+\size huge
+הקדמה - מהות המספרים המרוכבים
+\end_layout
+
+\begin_layout Standard
+\align center
+אלגברה ליניארית )
+\numeric on
+1
+\numeric off
+( -
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+80134
+\numeric off
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+מרצה: ערן נבו
+\end_layout
+
+\begin_layout Standard
+\align center
+מתרגלים: איתמר ישראלי ושני שלומי
+\end_layout
+
+\begin_layout Standard
+\align center
+סמסטר ב' תשפ
+"
+ב, האוניברסיטה העברית
+\end_layout
+
+\begin_layout Standard
+\align center
+-
+\end_layout
+
+\begin_layout Standard
+\align center
+אלגברה ליניארית )
+\numeric on
+2
+\numeric off
+( -
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+80135
+\numeric off
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+מרצה: איתמר צביק
+\end_layout
+
+\begin_layout Standard
+\align center
+מתרגלים: גיל לבנה ויואב כהן
+\end_layout
+
+\begin_layout Standard
+\align center
+סמסטר א' תשפ
+"
+ג, האוניברסיטה העברית
+\end_layout
+
+\begin_layout Standard
+\align center
+-
+\end_layout
+
+\begin_layout Standard
+\align center
+פונקציות מרוכבות -
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+80519
+\numeric off
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+מרצה: אילון לינדנשטראוס
+\end_layout
+
+\begin_layout Standard
+\align center
+מתרגל: שאול )שאולי( רגימוב
+\end_layout
+
+\begin_layout Standard
+\align center
+סמסטר א' תשפ
+"
+ד, האוניברסיטה העברית
+\end_layout
+
+\begin_layout Standard
+\align center
+-
+\end_layout
+
+\begin_layout Standard
+\align center
+נכתב ע
+"
+י שריה אנסבכר
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+בדרך כלל לומדים על המספרים המרוכבים כבר בליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+; למרות זאת בחרתי להביא את הנושא הזה רק בליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מפני שבליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אין שום דבר המייחד את שדה המספרים המרוכבים ביחס לשדות אחרים, ולעומת זאת
+ בליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+הוא חלק מהותי מהקורס, סיבה נוספת היא שחלק קטן מהבנייה הפורמלית של המספרים
+ המרוכבים מסתמך על ידע בסיסי מליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+***
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+סיכומי קורס זה מוקדשים לאהרון כהן;
+\begin_inset Newline newline
+\end_inset
+
+אהרון, הידיעה שתקרא את הסיכומים הללו דרבנה אותי לאורך כל הדרך.
+\begin_inset Newline newline
+\end_inset
+
+בהצלחה!
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+***
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+סביר להניח שהסיכומים שלי מכילים טעויות רבות - אני מוצא כאלה כל יום )
+\begin_inset CommandInset href
+LatexCommand href
+name "רשימת טעויות נפוצות"target "https://drive.google.com/file/d/1ZX_KNQe6_sGYisMaS6ShnBv7T0rPf3D_/view?usp=drive_link"literal "false"
+\end_inset
+
+(,
+\begin_inset Newline newline
+\end_inset
+
+אני מפציר בכם לעדכן אותי בכל טעות שאתם מוצאים )ממש כל טעות ללא יוצא מן הכלל(;
+\begin_inset Newline newline
+\end_inset
+
+אתם מוזמנים להגיב על המסמכים ב-
+\lang english
+Google Drive
+\lang hebrew
+, 
+\begin_inset CommandInset href
+LatexCommand href
+name "לשלוח לי דוא“ל"target "sraya.ansbacher@mail.huji.ac.il"type "mailto:"literal "false"
+\end_inset
+
+ או 
+\begin_inset CommandInset href
+LatexCommand href
+name "למלא פנייה באתר"target "https://srayaa.wixsite.com/math#contact-body"literal "false"
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+לסיכומים נוספים היכנסו לאתר:
+\begin_inset Newline newline
+\end_inset
+
+אקסיומת השלמות - סיכומי הרצאות במתמטיקה
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "https://srayaa.wixsite.com/math"target "https://srayaa.wixsite.com/math"literal "false"
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+התחלה
+\end_layout
+
+\begin_layout Standard
+המוטיבציה המקובלת להגדרת המספרים המרוכבים היא 
+"
+חיסרון
+"
+ הנמצא במספרים הממשיים: קיימים פולינומים בעלי מקדמים ממשיים שאין להם שורש
+ ממשי )המפורסם שבהם הוא 
+\begin_inset Formula $x^{2}+1$
+\end_inset
+
+(, אישית אני לא רואה בכך שום בעיה או חיסרון של המספרים הממשיים, וזאת בניגוד
+ לחיסרון שאני רואה במספרים הרציונליים שאינם מתארים כל קטע גאומטרי אפשרי.
+ בפרק השני של קובץ זה אתאר בקצרה את הרעיון הפורמלי שבאמצעותו מרחיבים את
+ שדות ע
+"
+י 
+"
+המצאת
+"
+ שורשים לפולינומים חסרי שורשים
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+אני לא בקיא בתחום הזה וייתכן שנפלו בפרק זה טעויות גסות.
+\end_layout
+
+\end_inset
+
+; אך את התפיסה הפילוסופית בדבר הבעיה שבפולינומים חסרי שורשים לא אוכל לייצג
+ נאמנה, ולכן אפנה אתכם לסדרת פוסטים של גדי אלכסנדרוביץ' בבלוג שלו 
+"
+לא מדויק
+"
+ )מומלץ בחום בלי שום קשר(, הנה קישור לפוסט הראשון 
+"
+
+\begin_inset CommandInset href
+LatexCommand href
+name "איי!"target "https://gadial.net/2007/04/29/i_fail/"literal "false"
+\end_inset
+
+
+"
+.
+\begin_inset Newline newline
+\end_inset
+
+מבחינה היסטורית הגילוי )או ההמצאה, תלוי את מי שואלים( של המספרים המרוכבים
+ היה בדרך לפתרון משוואות ממעלה שלישית: אנחנו יודעים שלכל משוואה ממעלה אי-זוגית
+ יש לפחות פתרון 
+\series bold
+ממשי
+\series default
+ אחד )הוכחנו זאת באינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+(, אבל בניגוד למשוואות ממעלה שנייה 
+"
+נוסחת השורשים
+"
+ של משוואות ממעלה שלישית מערבת מספרים מרוכבים.
+ במשך שבע שנים זו הייתה הסיבה היחידה שראיתי בקיום של מספרים מרוכבים אמת
+ פילוסופית ולא סיפורי אלף לילה ולילה, עד שבמהלך החופשה הכפויה שקיבלנו בעקבות
+ מתקפת הפתע של שמחת תורה תשפ
+"
+ד, מצאתי את האינטואיציה שחיפשתי זמן רב כל כך.
+ באותה עת עסקתי בשיפוץ שני הפרקים הראשונים של הקובץ 
+"
+
+\begin_inset CommandInset href
+LatexCommand href
+name "הקדמה למתמטיקה אוניברסיטאית"target "https://drive.google.com/file/d/1fb0pn2bCO24Or07ZIayNiy0TXpCQjxk6/view?usp=drive_link"literal "false"
+\end_inset
+
+
+"
+, ובכתיבת הפרק השלישי מאפס.
+ מאז שלמדתי את אינפי'
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+רציתי לתאר כיצד )באופן תאורטי( הייתי מפתח את אקסיומות השדה הסדור השלם בעצמי,
+ לו רק היה לי מספיק זמן ולו הייתי חכם מספיק.
+ עניין זה מופיע במלואו בפרק השלישי של הקובץ הנ
+"
+ל, ואת הפרק הרביעי כלל לא תכננתי לכתוב: הוא פשוט צץ באופן טבעי במוחי בתור
+ ההמשך הישיר של הרעיונות אותם פיתחתי בפרק שלפניו.
+ בהקדמה זו אני עומד להביא בקצרה את מה שתיארתי שם בהרחבה, אני ממליץ לכם לעיין
+ גם בקובץ ההוא מפני שלטעמי זהו הקובץ היפה ביותר שכתבתי מעודי אודות המתמטיקה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+מהם מספרים?
+\end_layout
+
+\begin_layout Standard
+באופן טבעי כולנו מתחילים מהמספרים הטבעיים המתארים כמויות בדידות של עצמים
+ כגון כדורים, תפוחים וכיסאות; לאחר מכן אנחנו עוברים אל הרציונליים החיוביים
+ שמספרים לנו על משולשי פיצה ופרוסות עוגה; ובשלב הבא נדבר על המספרים הממשיים
+ החיוביים שמכמתים דברים רציפים כגון אורכי קטעים ושטחי בתים.
+ ומה אז? פתאום צצים להם שני יצורים מוזרים: האפס והמספר השלילי, זה לא מיקרי
+ שעברו אלפי שנים בין זיהוי המספרים האי-רציונליים ככאלה לבין קבלת האפס כמספר
+ לגיטימי; יש כאן קפיצת מדרגה עצומה: ממספרים שמתארים כמויות ולכן חיוביים
+ במהותם אנחנו עוברים למספרים שמייצגים...
+ ובכן, את מה מייצגים המספרים השליליים בכלל?
+\begin_inset Newline newline
+\end_inset
+
+יש לשאלה הזו כמה תשובות נפוצות )אתם מוזמנים להקליד ב-
+\lang english
+Google
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+את השאלה האלמותית 
+"
+למה מינוס כפול מינוס שווה פלוס?
+"
+(, אך התשובה הטובה ביותר לדעתי היא כדלהלן.
+ ניתן להפשיט את המספרים הממשיים החיוביים כך שייצגו נקודות על קרן אין-סופית
+ הנמצאות במרחק נתון מהקצה הסופי של הקרן - ההתאמה בין המספרים לנקודות תתבצע
+ ע
+"
+י המרחק של הנקודות מהקצה: נקבע נקודה שרירותית נוספת ונקרא לה 
+"
+אחד
+"
+, נקודה זו תשמש בתור אמת המידה שלנו, כעת יש משמעות לאמירה שנקודה מסוימת
+ נמצאת במרחק של 
+\begin_inset Formula $10$
+\end_inset
+
+ יחידות מקצה הקרן.
+ האינטואיציה לחיבור של מספרים ממשיים חיוביים תהיה ע
+"
+י השאלה 
+"
+אם קצה הקרן היה בנקודה 
+\begin_inset Formula $a$
+\end_inset
+
+, היכן הייתה נקודה 
+\begin_inset Formula $b$
+\end_inset
+
+?
+"
+ התשובה לשאלה היא הסכום 
+\begin_inset Formula $a+b$
+\end_inset
+
+, והאינטואיציה לכפל תהיה השאלה 
+"
+לו היינו בוחרים בנקודה 
+\begin_inset Formula $a$
+\end_inset
+
+ בתור ה-
+\begin_inset Formula $1$
+\end_inset
+
+, כלומר לו 
+\begin_inset Formula $a$
+\end_inset
+
+ הייתה אמת המידה, איפה תימצא נקודה 
+\begin_inset Formula $b$
+\end_inset
+
+?
+"
+ התשובה לשאלה היא המכפלה 
+\begin_inset Formula $a\cdot b$
+\end_inset
+
+.
+ ומה עם קצה הקרן? האין היא נקודה לגיטימית? מה גם שישנו חוסר סימטריה בין
+ השאלה הראשונה לשנייה: בראשונה אין שם למה שבעתיד ייקרא 
+"
+האיבר האדיש לפעולת החיבור
+"
+, ואילו בשנייה אנו מכנים את האיבר האדיש לכפל בשם 
+"
+אחד
+"
+; לפיכך נוסיף את קצה הקרן לקבוצת המספרים שלנו ונקרא לה 
+"
+אפס
+"
+.
+ אבל למה לעצור כאן? במה חטאו שאר הנקודות על הישר המכיל את הקרן? ומה פשען
+ של שאר הנקודות במישור המכיל את הישר? ושל כל הנקודות במרחב?
+\begin_inset Newline newline
+\end_inset
+
+רגע רגע, אני לא יכול לענות על כל השאלות הללו ביחד, בואו נענה עליהן אחת אחת
+ ולפי הסדר.
+ אכן אין שום סיבה להפלות את שאר הנקודות בישר, אך באיזה שם נכנה כל אחת מהן?
+ הדרך האינטואיטיבית ביותר היא להעתיק את הקרן המקורית שלנו על החלק השני של
+ הישר, כך שכל נקודה תקבל את המרחק שלה מ-
+\begin_inset Formula $0$
+\end_inset
+
+ בתוספת סימן מינוס המתאר את היותה ב
+\series bold
+כיוון
+\series default
+ ההפוך מזה של הקרן המקורית.
+ כלומר נבחר נקודה שרירותית במרחב ונקרא לה 
+"
+אפס
+"
+, נבחר נקודה 
+\series bold
+אחרת
+\series default
+ ונקרא לה 
+"
+אחד
+"
+, שוב יהיה ה-
+\begin_inset Formula $1$
+\end_inset
+
+ אמת המידה שלנו אלא שכעת אמת המידה כוללת יותר מאשר גודל - היא כוללת גם 
+\series bold
+כיוון
+\series default
+! א
+"
+כ כל נקודה על הישר שמגדירות הנקודות 
+\begin_inset Formula $0$
+\end_inset
+
+ ו-
+\begin_inset Formula $1$
+\end_inset
+
+ תיקרא בשם ע
+"
+פ מרחקה מ-
+\begin_inset Formula $0$
+\end_inset
+
+ והכיוון שלה ביחס לאפס כשהכיוון שבו נמצא 
+\begin_inset Formula $1$
+\end_inset
+
+ ייקרא הכיוון 
+"
+החיובי
+"
+ והכיוון ההפוך ייקרא הכיוון 
+"
+השלילי
+"
+.
+ השרירותיות בבחירה של 
+\begin_inset Formula $0$
+\end_inset
+
+ ו-
+\begin_inset Formula $1$
+\end_inset
+
+ מובילה אותנו שוב לשאלות 
+"
+מה אם היינו בוחרים בנקודה אחרת בתור ה-
+\begin_inset Formula $0$
+\end_inset
+
+?
+"
+ או 
+"
+מה אם היינו בוחרים בנקודה אחרת בתור ה-
+\begin_inset Formula $1$
+\end_inset
+
+?
+"
+, ושוב נגדיר את החיבור והכפל ע
+"
+י התשובות לשאלות אלו.
+ זוהי הסיבה לכך שסכום מספרים שליליים הוא שלילי בעוד שמכפלת שליליים היא מספר
+ חיובי.
+\begin_inset Newline newline
+\end_inset
+
+אבל למה שנגביל את עצמנו לישר? מה עם המישור והמרחב התלת-ממדי? בליניארית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ראינו דרך לחשוב על שני אלו כמרחבים וקטוריים, אולם דרך זו דרשה מאיתנו לוותר
+ על היכולת לכפול כל שני איברים שנרצה זה בזה ואפשרה לנו לכפול רק במספרים
+ ממשיים.
+ במרחב התלת-ממדי אין דרך מוכרת להיפטר מהבעיה הזו
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+אולי אפילו יש הוכחה שגם לעולם לא תימצא כזו?
+\end_layout
+
+\end_inset
+
+, אך במישור ניתן לבצע זאת בצורה מרהיבה.
+ כמו שאת הישר הממשי יצרנו ע
+"
+י העתקת הקרן בכיוון השלילי נוכל לבצע את אותה פעולה בכל זווית שהיא, 
+\begin_inset Formula $360^{\circ}$
+\end_inset
+
+ מעלות: שוב נבחר נקודה שרירותית שנכנה בשם 
+"
+אפס
+"
+ ונקודה נוספת שתיקרא 
+"
+אחד
+"
+, שוב תוביל אותנו שרירותיות זו לשאלה מה היה קורה לו היינו בוחרים באופן אחר
+ ולהגדרת החיבור והכפל באמצעות התשובות לשאלות אלו.
+ זו הסיבה לכך שחיבור מספרים מרוכבים מזדהה עם חיבור וקטורים ב-
+\begin_inset Formula $\MKreal^{2}$
+\end_inset
+
+, ואילו הכפל מוגדר לכל נקודה במישור ע
+"
+י כיווץ/מתיחה וסיבוב בזווית המתאימה.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ שימו לב לשינוי הגדול שחל במושג 
+"
+אחד
+"
+: בתחילה הוא הכיל גודל בלבד ובכך היה אמת מידה במובן המקובל, אח
+"
+כ הוספנו לו רכיב כיוון אך עוד ניתן היה לחשוב שמדובר בשיקוף בלבד
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+וזו אכן הדרך לחשוב עליו במרחבים וקטוריים - כך עדיין יש תשובה ברורה לשאלה
+ 
+"
+מה היה קורה אם היינו בוחרים בנקודה אחרת בתור ה-
+\begin_inset Formula $1$
+\end_inset
+
+ שלנו?
+"
+
+\end_layout
+
+\end_inset
+
+, וכעת משמעותו היא גודל ובנוסף כיוון יחיד ממעגל שלם.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+הרחבת שדות
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ בהינתן שדה 
+\begin_inset Formula $\MKfield$
+\end_inset
+
+ כך שבחוג הפולינומים 
+\begin_inset Formula $\MKfield\left[x\right]$
+\end_inset
+
+ קיימים פולינומים חסרי שורשים ניתן 
+"
+להרחיב
+"
+ את 
+\begin_inset Formula $\MKfield$
+\end_inset
+
+ לשדה גדול יותר
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+כלומר ליצור שדה ש-
+\begin_inset Formula $\MKfield$
+\end_inset
+
+ מהווה תת-שדה שלו, אתם מוזמנים לקרוא עוד על הרחבת שדות ב
+\begin_inset CommandInset href
+LatexCommand href
+name "וויקיפדיה"target "https://he.wikipedia.org/wiki/%D7%94%D7%A8%D7%97%D7%91%D7%AA_%D7%A9%D7%93%D7%95%D7%AA"literal "false"
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ ע
+"
+י 
+"
+המצאת
+"
+ איברים חדשים שיהוו שורשים של אותם פולינומים והוספת כל האיברים הנדרשים ע
+"
+מ שהקבוצה תישאר שדה
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+כלומר תקיים את תשע אקסיומות השדה שהכרנו.
+\end_layout
+
+\end_inset
+
+, בואו נראה את זה בפעולה.
+\end_layout
+
+\begin_layout Subsection
+דוגמה ראשונה: שדה בעל ארבעה איברים
+\end_layout
+
+\begin_layout Standard
+בקובץ 
+"
+
+\begin_inset CommandInset href
+LatexCommand href
+name "על שדות"target "https://drive.google.com/file/d/15MbYR0LcpnpSBVtmovoHuSmKhTn3zFA8/view?usp=drive_link"literal "false"
+\end_inset
+
+
+"
+ ראינו את השדה בעל שני האיברים הנקרא 
+\begin_inset Formula $\MKfield_{2}$
+\end_inset
+
+ שפעולות החיבור והכפל שלו מוגדרות ע
+"
+י הטבלאות:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $+$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\cdot$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נשים לב לכך שלפולינום 
+\begin_inset Formula $x^{2}+x+1\in\MKfield_{2}\left[x\right]$
+\end_inset
+
+ אין שורשים ב-
+\begin_inset Formula $\MKfield_{2}$
+\end_inset
+
+ )קל לוודא זאת בשדה סופי(, א
+"
+כ נגדיר קבוצה חדשה 
+\begin_inset Formula $\MKfield_{4}$
+\end_inset
+
+ )כי יהיו בה ארבעה איברים( שתקיים שלושה דברים: היא שדה, 
+\begin_inset Formula $\MKfield_{2}$
+\end_inset
+
+ הוא תת-שדה שלה )כלומר הוא תת-קבוצה של 
+\begin_inset Formula $\MKfield_{2}$
+\end_inset
+
+ והוא שדה ביחס לאותן פעולות( ובנוסף קיים 
+\begin_inset Formula $a\in\MKfield_{4}$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $a$
+\end_inset
+
+ הוא שורש של הפולינום הנ
+"
+ל.
+ אנחנו יודעים שאם 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ הוא שורש של פולינום אז הפולינום 
+\begin_inset Formula $x-\lambda$
+\end_inset
+
+ מחלק את אותו פולינום, עוד אנחנו יודעים שהדרגה של מכפלת פולינומים היא סכום
+ דרגות המוכפלים, מכאן שקיים פולינום ליניארי 
+\begin_inset Formula $x-b\in\MKfield_{4}\left[x\right]$
+\end_inset
+
+ כך שמתקיים 
+\begin_inset Formula $x^{2}+x+1=\left(x-a\right)\left(x-b\right)$
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+כמובן שהמשמעות של 
+\begin_inset Formula $x-a$
+\end_inset
+
+ היא 
+\begin_inset Formula $x+\left(-a\right)$
+\end_inset
+
+, כלומר הזכרנו כאן את הנגדי של 
+\begin_inset Formula $a$
+\end_inset
+
+ מבלי לומר זאת בפירוש; כנ
+"
+ל לגבי 
+\begin_inset Formula $-b$
+\end_inset
+
+ ו-
+\begin_inset Formula $b$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+א
+"
+כ 
+\begin_inset Formula $\left\{ 0,1,a,b\right\} \subseteq\MKfield_{4}$
+\end_inset
+
+ וטבלאות החיבור והכפל נראות כך:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $+$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+?
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+?
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+?
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+?
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+?
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+?
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+?
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+?
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\cdot$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+?
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+?
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+?
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+?
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+מהפילוג בחוג הפולינומים נובע ש-
+\begin_inset Formula $x^{2}+x+1=x^{2}+\left(-a-b\right)x+a\cdot b$
+\end_inset
+
+, כלומר: 
+\begin_inset Formula $a\cdot b=\left(-a\right)\left(-b\right)=1$
+\end_inset
+
+ )ומכאן ש-
+\begin_inset Formula $a^{-1}=b$
+\end_inset
+
+ ו-
+\begin_inset Formula $b^{-1}=a$
+\end_inset
+
+( ו-
+\begin_inset Formula $-\left(a+b\right)x=-ax-bx=x$
+\end_inset
+
+ )ומכאן ש-
+\begin_inset Formula $a+b=-1$
+\end_inset
+
+ ולכן גם 
+\begin_inset Formula $a+1=-b$
+\end_inset
+
+ ו-
+\begin_inset Formula $b+1=-a$
+\end_inset
+
+(.
+ א
+"
+כ מצאנו את הנגדיים וההופכיים של 
+\begin_inset Formula $a$
+\end_inset
+
+ ו-
+\begin_inset Formula $b$
+\end_inset
+
+ ובינתיים מילאנו את לוחות החיבור והכפל שלנו כך:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $+$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $-b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $-b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $-b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+?
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $-1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $-a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $-1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+?
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\cdot$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+?
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+?
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נשים לב שנכון לעכשיו ייתכן ש-
+\begin_inset Formula $-a$
+\end_inset
+
+ ו-
+\begin_inset Formula $-b$
+\end_inset
+
+ הם איברים שאינם נמצאים בקבוצה 
+\begin_inset Formula $\left\{ 0,1,a,b\right\} $
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+אנחנו יודעים ש-
+\begin_inset Formula $1+1=0$
+\end_inset
+
+ שהרי 
+\begin_inset Formula $\MKfield_{2}$
+\end_inset
+
+ הוא תת-שדה, מכאן ש-
+\begin_inset Formula $-1=1$
+\end_inset
+
+ וגם:
+\begin_inset Formula 
+\begin{align*}
+0 & =a\cdot0=a\cdot\left(1+1\right)=a\cdot1+a\cdot1=a+a\\
+0 & =b\cdot0=b\cdot\left(1+1\right)=b\cdot1+b\cdot1=b+b
+\end{align*}
+
+\end_inset
+
+כלומר 
+\begin_inset Formula $-a=a$
+\end_inset
+
+ ו-
+\begin_inset Formula $-b=b$
+\end_inset
+
+ ולכן טבלת החיבור שלנו הושלמה והיא נראית כך:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $+$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כעת נותרת השאלה מי הם 
+\begin_inset Formula $a\cdot a$
+\end_inset
+
+ ו-
+\begin_inset Formula $b\cdot b$
+\end_inset
+
+; מיחידות האיבר האדיש לכפל נובע ש-
+\begin_inset Formula $a\cdot a\neq a$
+\end_inset
+
+ ו-
+\begin_inset Formula $b\cdot b\neq b$
+\end_inset
+
+, מהעובדה שמכפלת שני מספרים שונים מאפס אינה יכולה להיות 
+\begin_inset Formula $0$
+\end_inset
+
+ בשדה נובע ש-
+\begin_inset Formula $a\cdot a\neq0$
+\end_inset
+
+ ו-
+\begin_inset Formula $b\cdot b\neq0$
+\end_inset
+
+, מיחידות ההופכי
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+ראינו ש-
+\begin_inset Formula $-a=a$
+\end_inset
+
+ ו-
+\begin_inset Formula $-b=b$
+\end_inset
+
+ אך לא ייתכן ש-
+\begin_inset Formula $a=b$
+\end_inset
+
+ משום שאז 
+\begin_inset Formula $1=a+b=a+a=0$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ נובע ש-
+\begin_inset Formula $a\cdot a\neq1$
+\end_inset
+
+ ו-
+\begin_inset Formula $b\cdot b\neq1$
+\end_inset
+
+ ולכן האפשרות היחידה שנותרה
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+כל עוד נרצה שלא להוסיף איברים אם לא ברור שיש בכך צורך.
+\end_layout
+
+\end_inset
+
+ היא 
+\begin_inset Formula $a\cdot a=b$
+\end_inset
+
+ ו-
+\begin_inset Formula $b\cdot b=a$
+\end_inset
+
+.
+ א
+"
+כ השלמנו את טבלאות החיבור והכפל שלנו והן נראות כך:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $+$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\cdot$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כעת ניתן לעבור על תשע אקסיומות השדה ולראות שהן אכן מתקיימות וא
+"
+כ 
+\begin_inset Formula $\MKfield_{4}$
+\end_inset
+
+ הוא שדה בעל ארבעה איברים ו-
+\begin_inset Formula $\MKfield_{2}$
+\end_inset
+
+ הוא תת-שדה שלו.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ ראינו בעבר את השדות מהצורה 
+\begin_inset Formula $\MKfield_{p}$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $p$
+\end_inset
+
+ הוא ראשוני, מעניין לדעת גם שהגודל של כל שדה סופי הוא מהצורה 
+\begin_inset Formula $p^{n}$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $p$
+\end_inset
+
+ ראשוני ו-
+\begin_inset Formula $n$
+\end_inset
+
+ טבעי ולכל מספר כזה קיים בדיוק שדה אחד מגודל זה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+דוגמה שנייה: שדה ההרחבה של שורש
+\family roman
+\series bold
+\shape smallcaps
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\numeric off
+ 
+\end_layout
+
+\begin_layout Standard
+לפולינום 
+\begin_inset Formula $x^{2}-2\in\MKrational\left[x\right]$
+\end_inset
+
+ אין שורש מעל 
+\begin_inset Formula $\MKrational$
+\end_inset
+
+, א
+"
+כ נוסיף ל-
+\begin_inset Formula $\MKrational$
+\end_inset
+
+ איבר שיהיה שורש חיובי של פולינום זה ונסמן אותו ב-
+\begin_inset Formula $\sqrt{2}$
+\end_inset
+
+ )מיחידות הנגדי נובע ש-
+\begin_inset Formula $\left(\sqrt{2}\right)^{2}=2$
+\end_inset
+
+(; כעת, כדי שנוכל לשמור על הסגירות לחיבור ולכפל עלינו להוסיף את כל האיברים
+ מהצורה 
+\begin_inset Formula $x+\sqrt{2}$
+\end_inset
+
+ או מהצורה 
+\begin_inset Formula $y\cdot\sqrt{2}$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $x,y\in\MKrational$
+\end_inset
+
+ ולכן נצטרך להוסיף את כל האיברים מהצורה 
+\begin_inset Formula $x+y\cdot\sqrt{2}$
+\end_inset
+
+.
+ א
+"
+כ נגדיר קבוצה חדשה להיות 
+\begin_inset Formula $\MKrational\left(\sqrt{2}\right):=\left\{ x+y\cdot\sqrt{2}\mid x,y\in\MKrational\right\} $
+\end_inset
+
+ כאשר החיבור והכפל בה מוגדרים ע
+"
+י:
+\begin_inset Formula 
+\begin{align*}
+\left(a+b\cdot\sqrt{2}\right)+\left(c+d\cdot\sqrt{2}\right) & =\left(a+c\right)+\left(b+d\right)\cdot\sqrt{2}\\
+\left(a+b\cdot\sqrt{2}\right)\cdot\left(c+d\cdot\sqrt{2}\right) & =a\cdot c+\left(a\cdot d+b\cdot c\right)\cdot\sqrt{2}+b\cdot d\cdot\left(\sqrt{2}\right)^{2}\\
+ & =ac+\left(ad+bc\right)\cdot\sqrt{2}+2bd\\
+ & =\left(ac+2bd\right)+\left(ad+bc\right)\cdot\sqrt{2}
+\end{align*}
+
+\end_inset
+
+כעת ניתן לעבור על אקסיומות השדה ולראות שהן אכן מתקיימות וא
+"
+כ 
+\begin_inset Formula $\MKrational\left(\sqrt{2}\right)$
+\end_inset
+
+ הוא אכן שדה ו-
+\begin_inset Formula $\MKrational$
+\end_inset
+
+ הוא תת-שדה שלו.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ במובן מסוים ניתן לומר שגם בניית המספרים השליליים והרציונליים נעשתה ע
+"
+י 
+"
+המצאת
+"
+ שורשים לפולינומים חסרי שורשים: רצינו שלפולינומים מהצורה 
+\begin_inset Formula $x+n$
+\end_inset
+
+ כש-
+\begin_inset Formula $n$
+\end_inset
+
+ טבעי יהיה שורש ולכן 
+"
+המצאנו
+"
+ את המספרים השליליים וכמו כן רצינו שלפולינומים מהצורה 
+\begin_inset Formula $nx-m$
+\end_inset
+
+ כש-
+\begin_inset Formula $n$
+\end_inset
+
+ טבעי ו-
+\begin_inset Formula $m$
+\end_inset
+
+ שלם יהיו שורשים ולכן 
+"
+המצאנו
+"
+ את המספרים הרציונליים.
+\end_layout
+
+\begin_layout Subsection
+שדה המספרים המרוכבים
+\end_layout
+
+\begin_layout Standard
+נתבונן ב-
+\begin_inset Formula $\MKreal$
+\end_inset
+
+ כשדה, לאו דווקא כשדה סדור שלם
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+נראה בהמשך ששדה המרוכבים אינו יכול להיות סדור ולא נעסוק בקובץ בתכונת השלמות.
+\end_layout
+
+\end_inset
+
+, ונשים לב לכך שהפולינום 
+\begin_inset Formula $x^{2}+1\in\MKreal\left[x\right]$
+\end_inset
+
+ הוא חסר שורשים
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+הריבוע של כל מספר ממשי הוא אי-שלילי ולכן לכל 
+\begin_inset Formula $x\in\MKreal$
+\end_inset
+
+ יתקיים 
+\begin_inset Formula $x^{2}+1\geq1>0$
+\end_inset
+
+, זו תהיה הפעם האחרונה שבה השתמשנו בהיותו של 
+\begin_inset Formula $\MKreal$
+\end_inset
+
+ שדה סדור.
+\end_layout
+
+\end_inset
+
+, א
+"
+כ נגדיר קבוצה חדשה 
+\begin_inset Formula $\MKcomplex$
+\end_inset
+
+ שתקיים שלושה דברים: היא שדה, 
+\begin_inset Formula $\MKreal$
+\end_inset
+
+ הוא תת-שדה שלה ובנוסף קיים 
+\begin_inset Formula $i\in\MKcomplex$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $i$
+\end_inset
+
+ הוא שורש של הפולינום הנ
+"
+ל, מהגדרה 
+\begin_inset Formula $i$
+\end_inset
+
+ מקיים 
+\begin_inset Formula $i^{2}+1=0$
+\end_inset
+
+ ולכן מיחידות הנגדי נקבל ש-
+\begin_inset Formula $i^{2}=-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ חשוב מאד: לביטוי 
+\begin_inset Formula $\sqrt{-1}$
+\end_inset
+
+ אין משמעות מפני שגם הנגדי של 
+\begin_inset Formula $i$
+\end_inset
+
+ מקיים 
+\begin_inset Formula $\left(-i\right)^{2}=-1$
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+שהרי 
+\begin_inset Formula $\left(-i\right)^{2}+1=\left(-1\right)^{2}\cdot i^{2}+1=1\cdot i^{2}+1=i^{2}+1=0$
+\end_inset
+
+ ולכן מיחידות הנגדי נובע ש-
+\begin_inset Formula $\left(-i\right)^{2}=-1$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ ומכיוון ש-
+\begin_inset Formula $\MKcomplex$
+\end_inset
+
+ אינו שדה סדור אי אפשר להחליט ש-
+\begin_inset Formula $\sqrt{-1}$
+\end_inset
+
+ הוא דווקא ה
+"
+חיובי
+"
+ מביניהם; הנקודה הזו היא ה
+"
+פתרון
+"
+ ל
+"
+סתירה
+"
+ הבאה:
+\begin_inset Formula 
+\[
+-1=i\cdot i=\sqrt{-1}\cdot\sqrt{-1}=\sqrt{\left(-1\right)\left(-1\right)}=\sqrt{1}=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כפי שראינו לעיל אם 
+\begin_inset Formula $\MKcomplex$
+\end_inset
+
+ הוא שדה אז קיים 
+\begin_inset Formula $j\in\MKcomplex$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $x^{2}+1=\left(x-i\right)\left(x-j\right)$
+\end_inset
+
+, אותו 
+\begin_inset Formula $j$
+\end_inset
+
+ צריך לקיים 
+\begin_inset Formula $x^{2}+1=x^{2}+\left(-i-j\right)x+i\cdot j$
+\end_inset
+
+, כלומר 
+\begin_inset Formula $-i-j=0$
+\end_inset
+
+ )ולכן 
+\begin_inset Formula $i+j=0$
+\end_inset
+
+ ו-
+\begin_inset Formula $j=-i$
+\end_inset
+
+( ו-
+\begin_inset Formula $i\cdot j=1$
+\end_inset
+
+ )ולכן 
+\begin_inset Formula $j=i^{-1}$
+\end_inset
+
+(.
+\begin_inset Newline newline
+\end_inset
+
+כדי ש-
+\begin_inset Formula $\MKcomplex$
+\end_inset
+
+ יהיה סגור לחיבור ולכפל אנחנו צריכים שלכל 
+\begin_inset Formula $x,y\in\MKreal$
+\end_inset
+
+ יתקיים 
+\begin_inset Formula $x+i\in\MKcomplex$
+\end_inset
+
+ ו-
+\begin_inset Formula $y\cdot i\in\MKcomplex$
+\end_inset
+
+ ומכאן שגם 
+\begin_inset Formula $x+y\cdot i\in\MKcomplex$
+\end_inset
+
+, נשים לב שניתן לכתוב כל מספר 
+\begin_inset Formula $x\in\MKreal$
+\end_inset
+
+ בצורה זו: 
+\begin_inset Formula $x=x+0\cdot i$
+\end_inset
+
+ )כמו כן ניתן לכתוב כך גם מספר ש
+"
+אין
+"
+ להם רכיב ממשי, כך: 
+\begin_inset Formula $0+y\cdot i$
+\end_inset
+
+(.
+\begin_inset Newline newline
+\end_inset
+
+עד כה הסברנו את המוטיבציה להגדיר את השדה החדש שלנו בתור 
+\begin_inset Formula $\MKcomplex:=\left\{ x+y\cdot i\mid x,y\in\MKreal\right\} $
+\end_inset
+
+, בקובץ ההגדרות של המספרים המרוכבים נראה שאכן מדובר בשדה אך כבר כעת ברור
+ שאת פעולות החיבור והכפל של 
+\begin_inset Formula $\MKcomplex$
+\end_inset
+
+ עלינו להגדיר כך שיתקיים:
+\begin_inset Formula 
+\begin{align*}
+\left(a+bi\right)+\left(c+di\right) & =\left(a+c\right)+\left(b+d\right)\cdot i\\
+\left(a+bi\right)\cdot\left(c+di\right) & =a\cdot\left(c+di\right)+bi\cdot\left(c+di\right)\\
+ & =ac+ad\cdot i+bc\cdot i+bd\cdot i^{2}\\
+ & =ac+\left(ad+bc\right)\cdot i+bd\cdot\left(-1\right)\\
+ & =\left(ac-bd\right)+\left(ad+bc\right)\cdot i
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

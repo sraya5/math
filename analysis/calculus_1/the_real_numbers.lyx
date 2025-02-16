@@ -1,0 +1,9100 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The head's design for summuries,make the layout more similar to a book:
+\AtBeginDocument{
+\renewcommand\headrule{%
+  \kern -7pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+  \kern 10pt
+}}
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Correct the reversed parentheses in labels:
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\newfontfamily{\hebrewfont}{David}
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+
+\end_preamble
+
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+customHeadersFooters
+\end_modules
+
+\maintain_unincluded_children no
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size      Larger
+	  Series     Bold
+	EndFont
+End
+Style Solution
+	LabelString           "פתרון: "End
+Style Notation
+	LabelString           "סימון  \thetheorem: "End
+Style Theorem
+	LabelString           "משפט \thetheorem: "End
+Style Property
+	LabelString           "תזכורת: "End
+
+\end_local_layout
+
+\language hebrew
+
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\boxbgcolor #cccccc
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+
+\tocdepth 3
+
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "C:/Users/sraya/AppData/Roaming/LyX2.4/macros/MKmacros.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Right Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+leftmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Left Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+המספרים הממשיים
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Center Footer
+
+\end_layout
+
+\begin_layout Title
+
+\series bold
+\size huge
+המספרים הממשיים
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+שדה סדור
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Definition
+\series bold
+שדה סדור
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+\bar under
+שדה סדור
+\bar default
+ הוא שדה 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ שעליו מוגדר יחס בינארי (נקרא לו "קטן מ-" ונסמן אותו ב-"
+\begin_inset Formula
+$<$
+\end_inset
+") המקיים את
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\begin_inset Formula
+$4$
+\end_inset
+ התכונות הבאות (נקראות יחד עם אקסיומות השדה "אקסיומות השדה הסדור"):
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+טריכוטומיה: לכל 
+\begin_inset Formula
+$a,b\in\MKfield$
+\end_inset
+ מתקיימת בדיוק אחת משלוש האפשרויות הבאות: 
+\begin_inset Formula
+$a<b$
+\end_inset
+, 
+\begin_inset Formula
+$b<a$
+\end_inset
+ או 
+\begin_inset Formula
+$a=b$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+טרנזיטיביות: לכל 
+\begin_inset Formula
+$a,b,c\in\MKfield$
+\end_inset
+ אם 
+\begin_inset Formula
+$a<b$
+\end_inset
+ וגם 
+\begin_inset Formula
+$b<c$
+\end_inset
+ אז 
+\begin_inset Formula
+$a<c$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+הלימה לחיבור: לכל 
+\begin_inset Formula
+$a,b,c\in\MKfield$
+\end_inset
+ אם 
+\begin_inset Formula
+$a<b$
+\end_inset
+ אז 
+\begin_inset Formula
+$a+c<b+c$
+\end_inset
+ (מחוק החילוף של חיבור נסיק שגם 
+\begin_inset Formula
+$c+a<c+b$
+\end_inset
+).
+\end_layout
+
+\begin_layout Enumerate
+הלימה לכפל בחיובי
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+המושג "חיובי" יוגדר בהמשך.
+\end_layout
+
+\end_inset
+: לכל 
+\begin_inset Formula
+$a,b,c\in\MKfield$
+\end_inset
+ אם 
+\begin_inset Formula
+$a<b$
+\end_inset
+ וגם 
+\begin_inset Formula
+$0<c$
+\end_inset
+ אז 
+\begin_inset Formula
+$a\cdot c<b\cdot c$
+\end_inset
+ (מחוק החילוף של כפל נסיק שגם 
+\begin_inset Formula
+$c\cdot a<c\cdot b$
+\end_inset
+).
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ שתי התכונות הראשונות שקולות לכך שמדובר ביחס סדר חזק ומלא.
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ שדה סדור ויהיו 
+\begin_inset Formula
+$a,b\in\MKfield$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+\series bold
+"גדול מ-", "קטן/גדול ו/או שווה ל-"
+\series default
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נאמר ש-
+\begin_inset Formula
+$a$
+\end_inset
+ 
+\bar under
+גדול מ-
+\bar default
+
+\begin_inset Formula
+$b$
+\end_inset
+ אם 
+\begin_inset Formula
+$b<a$
+\end_inset
+, במקרה כזה נסמן 
+\begin_inset Formula
+$a>b$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+נאמר ש-
+\begin_inset Formula
+$a$
+\end_inset
+ 
+\bar under
+קטן ו/או שווה ל-
+\bar default
+
+\begin_inset Formula
+$b$
+\end_inset
+ אם 
+\begin_inset Formula
+$a=b$
+\end_inset
+ ו/או 
+\begin_inset Formula
+$a<b$
+\end_inset
+, במקרה כזה נסמן 
+\begin_inset Formula
+$a\leq b$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+נאמר ש-
+\begin_inset Formula
+$a$
+\end_inset
+ 
+\bar under
+גדול ו/או שווה ל-
+\bar default
+
+\begin_inset Formula
+$b$
+\end_inset
+ אם 
+\begin_inset Formula
+$a=b$
+\end_inset
+ ו/או 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula
+$a>b$
+\end_inset
+, במקרה כזה
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+ נסמן 
+\begin_inset Formula
+$a\geq b$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+החיוביים והשליליים
+\series default
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נאמר ש-
+\begin_inset Formula
+$a$
+\end_inset
+ 
+\bar under
+חיובי
+\bar default
+ אם 
+\begin_inset Formula
+$0<a$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+נאמר ש-
+\begin_inset Formula
+$a$
+\end_inset
+ 
+\bar under
+שלילי
+\bar default
+ אם 
+\begin_inset Formula
+$0>a$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+נאמר ש-
+\begin_inset Formula
+$a$
+\end_inset
+ 
+\bar under
+אי-שלילי
+\bar default
+ אם 
+\begin_inset Formula
+$0\leq a$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+נאמר ש-
+\begin_inset Formula
+$a$
+\end_inset
+ 
+\bar under
+אי-חיובי
+\bar default
+ אם 
+\begin_inset Formula
+$0\geq a$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ שדה סדור.
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 1.1"
+\end_inset
+קבוצת המספרים החיוביים סגורה לחיבור ולכפל, כלומר לכל 
+\begin_inset Formula
+$0<a,b\in\MKfield$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$0<a+b$
+\end_inset
+ וגם 
+\begin_inset Formula
+$0<a\cdot b$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula
+\begin{align*}
+0<b & \Rightarrow a=a+0<a+b\\
+0<a & \Rightarrow0<a+b
+\end{align*}
+
+
+\end_inset
+מהלימת היחס "קטן מ-" לכפל בחיובי נובע ש-
+\begin_inset Formula
+$a\cdot0<a\cdot b$
+\end_inset
+ (שהרי 
+\begin_inset Formula
+$0<a$
+\end_inset
+ ולכן ניתן להחיל עליו את ההלימה ביחס ל-
+\begin_inset Formula
+$0<b$
+\end_inset
+) ומכיוון ש-
+\begin_inset Formula
+$0=a\cdot0$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$0<a\cdot b$
+\end_inset
+ כנדרש.
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 1.2"
+\end_inset
+יהי 
+\begin_inset Formula
+$a\in\MKfield$
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$0<a$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$-a<0$
+\end_inset
+, כלומר מספר הוא חיובי אם"ם הנגדי שלו שלילי.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula
+\begin{align*}
+0<a & \Rightarrow-a=0+\left(-a\right)<a+\left(-a\right)=0\\
+-a<0 & \Rightarrow0=a+\left(-a\right)<0+a=a
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+קבוצת המספרים החיוביים אינה ריקה.
+\end_layout
+
+\begin_layout Claim
+האיבר האדיש לכפל הוא מספר חיובי, כלומר 
+\begin_inset Formula
+$0<1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+מהמסקנה הקודמת נובע שקיים 
+\begin_inset Formula
+$a\in\MKfield$
+\end_inset
+ חיובי, יהי 
+\begin_inset Formula
+$a$
+\end_inset
+ כנ"ל ונניח בשלילה ש-
+\begin_inset Formula
+$1<0$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+לא ייתכן ש-
+\begin_inset Formula
+$1=0$
+\end_inset
+ ולכן מטריכוטומיה זו האפשרות היחידה שאינה 
+\begin_inset Formula
+$0<1$
+\end_inset
+.
+\end_layout
+
+\end_inset
+, א"כ מהלימת השוויון לכפל בחיובי נובע ש-
+\begin_inset Formula
+$a=a\cdot1<a\cdot0=0$
+\end_inset
+ בסתירה להגדרת 
+\begin_inset Formula
+$a$
+\end_inset
+; מכאן שהנחת השלילה אינה נכונה ו-
+\begin_inset Formula
+$0<1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 1.5"
+\end_inset
+יהיו 
+\begin_inset Formula
+$a,b\in\MKfield$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a<b$
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$-b<-a$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula
+\begin{align*}
+a<b & \Rightarrow0=a+\left(-a\right)<a+b\\
+ & \Rightarrow0+\left(-b\right)<\left(a+b\right)+\left(-b\right)\\
+ & \Rightarrow-b<a+\left(b+\left(-b\right)\right)\\
+ & \Rightarrow-b<a+0=a
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+יהיו 
+\begin_inset Formula
+$a,b,c\in\MKfield$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a<b$
+\end_inset
+ ו-
+\begin_inset Formula
+$c<0$
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$b\cdot c<a\cdot c$
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+נשים לב לכך ש-
+\begin_inset Formula
+$0<-c$
+\end_inset
+ (טענה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.2"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+), שמהלימה של א"ש חזק לכפל בחיובי נובע שמתקיים 
+\begin_inset Formula
+$-\left(a\cdot c\right)=a\cdot\left(-c\right)<b\cdot\left(-c\right)=-\left(b\cdot c\right)$
+\end_inset
+ ולכן מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.5"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+נקבל את המבוקש.
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$0\neq a\in\MKfield$
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$0<a$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$0<a^{-1}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\Leftarrow$
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+נניח ש-
+\begin_inset Formula
+$0<a$
+\end_inset
+ ונניח בשלילה ש-
+\begin_inset Formula
+$a^{-1}\leq0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+לא ייתכן ש-
+\begin_inset Formula
+$a^{-1}=0$
+\end_inset
+ משום שאז נקבל 
+\begin_inset Formula
+$1=a\cdot a^{-1}=a\cdot0=0$
+\end_inset
+, מכאן ש-
+\begin_inset Formula
+$a^{-1}<0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+מהלימת היחס "קטן מ-" לכפל בחיובי נובע ש-
+\begin_inset Formula
+$1=a\cdot a^{-1}<a\cdot0=0$
+\end_inset
+ (
+\begin_inset Formula
+$0<a$
+\end_inset
+ ולכן ניתן להחיל עליו את ההלימה ביחס ל-
+\begin_inset Formula
+$a^{-1}<0$
+\end_inset
+) בסתירה לכך שהוכחנו כי 
+\begin_inset Formula
+$0<1$
+\end_inset
+ (טריכוטומיה).
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+\begin_inset Formula
+$\Rightarrow$
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+נניח ש-
+\begin_inset Formula
+$0<a^{-1}$
+\end_inset
+, מהחלק הקודם של ההוכחה נובע ש-
+\begin_inset Formula
+$0<\left(a^{-1}\right)^{-1}=a$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\end_deeper
+
+\begin_layout Claim
+יהיו 
+\begin_inset Formula
+$0>a,b\in\MKfield$
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$0<a\cdot b$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.5"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+נובע ש-
+\begin_inset Formula
+$0<-a,-b$
+\end_inset
+, לכן מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.1"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+נובע ש-
+\begin_inset Formula
+$0<\left(-a\right)\left(-b\right)=a\cdot b$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula
+$0\neq a\in\MKfield$
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$a\cdot a>0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 1.9"
+\end_inset
+יהיו 
+\begin_inset Formula
+$a,b,c,d\in\MKfield$
+\end_inset
+, מתקיימים כל הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$a<b$
+\end_inset
+ ו-
+\begin_inset Formula
+$c<d$
+\end_inset
+ אז 
+\begin_inset Formula
+$a+c<b+d$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+טרנזיטיביות א"ש חלש: אם 
+\begin_inset Formula
+$a\leq b$
+\end_inset
+ ו-
+\begin_inset Formula
+$b\leq c$
+\end_inset
+ אז 
+\begin_inset Formula
+$a\leq c$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+הלימת א"ש חלש לחיבור: אם 
+\begin_inset Formula
+$a\leq b$
+\end_inset
+ אז 
+\begin_inset Formula
+$a+c\leq b+c$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$a\leq b$
+\end_inset
+ ו-
+\begin_inset Formula
+$c\leq d$
+\end_inset
+ אז 
+\begin_inset Formula
+$a+c\leq b+d$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$a\cdot b>0$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$a,b<0$
+\end_inset
+ או ש-
+\begin_inset Formula
+$a,b>0$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$0<a<b$
+\end_inset
+ אז 
+\begin_inset Formula
+$0<b^{-1}<a^{-1}$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$0<a<b$
+\end_inset
+ ו-
+\begin_inset Formula
+$0<c<d$
+\end_inset
+ אז 
+\begin_inset Formula
+$0<a\cdot c<b\cdot d$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+לא קיים שדה סדור בעל איבר מקסימלי ו/או מינימלי, כלומר לא קיים 
+\begin_inset Formula
+$M\in\MKfield$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$x\in\MKfield$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$x\leq M$
+\end_inset
+ ולא קיים 
+\begin_inset Formula
+$m\in\MKfield$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$x\in\MKfield$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$m\leq x$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+\begin{align*}
+a<b & \Rightarrow a+c<b+c\\
+c<d & \Rightarrow b+c<b+d\\
+ & \Rightarrow a+c<b+d
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+נובע מטרנזיטיביות של א"ש חזק ושל שוויון.
+\end_layout
+
+\begin_layout Enumerate
+נובע מהלימה לחיבור של א"ש חזק ושל שוויון.
+\end_layout
+
+\begin_layout Enumerate
+ההוכחה זהה לזו של סעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+ומשתמשת בסעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+3
+\numeric off
+.
+\end_layout
+
+\begin_layout Enumerate
+את הגרירה משמאל לימין כבר ראינו, הגרירה ההפוכה נובעת מהעובדה שלו היו הסימנים של 
+\begin_inset Formula
+$a$
+\end_inset
+ ו-
+\begin_inset Formula
+$b$
+\end_inset
+ שונים אז מהגרירה הראשונה נובע שמתקיים 
+\begin_inset Formula
+$-\left(a\cdot b\right)=\left(-a\right)\cdot b>0$
+\end_inset
+ ואז מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.2"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+ נקבל ש-
+\begin_inset Formula
+$a\cdot b<0$
+\end_inset
+ בסתירה לנתון.
+\end_layout
+
+\begin_layout Enumerate
+נניח ש-
+\begin_inset Formula
+$0<a<b$
+\end_inset
+, א"כ 
+\begin_inset Formula
+$0<a$
+\end_inset
+ וגם 
+\begin_inset Formula
+$0<b$
+\end_inset
+ ולכן 
+\begin_inset Formula
+$0<a^{-1}$
+\end_inset
+ וגם 
+\begin_inset Formula
+$0<b^{-1}$
+\end_inset
+.
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow0=\left(a^{-1}\cdot b^{-1}\right)\cdot0<\left(a^{-1}\cdot b^{-1}\right)\cdot a<\left(a^{-1}\cdot b^{-1}\right)\cdot b\\
+ & \Rightarrow0<\left(b^{-1}\cdot a^{-1}\right)\cdot a<\left(a^{-1}\cdot b^{-1}\right)\cdot b\\
+ & \Rightarrow0<b^{-1}\cdot\left(a^{-1}\cdot a\right)<a^{-1}\cdot\left(b^{-1}\cdot b\right)\\
+ & \Rightarrow0<b^{-1}\cdot1<a^{-1}\cdot1\\
+ & \Rightarrow0<b^{-1}<a^{-1}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+ההוכחה זהה לזו של סעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+ומשתמשת בהלימת הא"ש החזק לכפל החיובי.
+\end_layout
+
+\begin_layout Enumerate
+נשים לב שלכל 
+\begin_inset Formula
+$m,M\in\MKfield$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$M<M+1$
+\end_inset
+ ו-
+\begin_inset Formula
+$m-1<m$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+הערך המוחלט
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ שדה סדור ויהי 
+\begin_inset Formula
+$a\in\MKfield$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+\series bold
+הערך המוחלט
+\series default
+
+\begin_inset Newline newline
+\end_inset
+נסמן את 
+\bar under
+הערך המוחלט
+\bar default
+ של 
+\begin_inset Formula
+$a$
+\end_inset
+ ב-
+\begin_inset Formula
+$\left|a\right|$
+\end_inset
+ ונגדירו כך:
+\begin_inset Formula
+\[
+\left|a\right|:=\begin{cases}
+a & a\geq0\\
+-a & a<0
+\end{cases}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כמובן שהערך המוחלט מוגדר אך ורק בשדות סדורים.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ שדה סדור.
+\end_layout
+
+\begin_layout Lemma
+לכל 
+\begin_inset Formula
+$a\in\MKfield$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|-a\right|=\left|a\right|$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Lemma
+לכל 
+\begin_inset Formula
+$a\in\MKfield$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|a\right|\geq0$
+\end_inset
+, יתרה מזאת, 
+\begin_inset Formula
+$\left|a\right|=0$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$a=0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Lemma
+לכל 
+\begin_inset Formula
+$p\in\MKfield$
+\end_inset
+ ו-
+\begin_inset Formula
+$0\leq q\in\MKfield$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|p\right|\leq q$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$-q\leq p\leq q$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\Leftarrow$
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+נניח ש-
+\begin_inset Formula
+$\left|p\right|\leq q$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+אם 
+\begin_inset Formula
+$0\leq p$
+\end_inset
+ אז 
+\begin_inset Formula
+$p=\left|p\right|\leq q$
+\end_inset
+, ואם 
+\begin_inset Formula
+$p<0$
+\end_inset
+ אז 
+\begin_inset Formula
+$0<-p$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$p<0<-p=\left|p\right|\leq q$
+\end_inset
+; א"כ קיבלנו 
+\begin_inset Formula
+$p\leq q$
+\end_inset
+ בכל מקרה.
+\end_layout
+
+\begin_layout Standard
+אם 
+\begin_inset Formula
+$0\leq p$
+\end_inset
+ אז 
+\begin_inset Formula
+$p=\left|p\right|\leq q$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$-q\leq-p\leq0\leq p$
+\end_inset
+, ואם 
+\begin_inset Formula
+$p<0$
+\end_inset
+ אז 
+\begin_inset Formula
+$-p=\left|p\right|\leq q$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$-q\leq p$
+\end_inset
+; א"כ קיבלנו 
+\begin_inset Formula
+$-q\leq p$
+\end_inset
+ בכל מקרה וביחד 
+\begin_inset Formula
+$-q\leq p\leq q$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+\begin_inset Formula
+$\Rightarrow$
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+נניח ש-
+\begin_inset Formula
+$-q\leq p\leq q$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+אם 
+\begin_inset Formula
+$0\leq p$
+\end_inset
+ אז 
+\begin_inset Formula
+$\left|p\right|=p\leq q$
+\end_inset
+, נשים לב ש-
+\begin_inset Formula
+$-p\leq q$
+\end_inset
+ (בגלל ש-
+\begin_inset Formula
+$-q\leq p$
+\end_inset
+) ולכן אם 
+\begin_inset Formula
+$p<0$
+\end_inset
+ אז 
+\begin_inset Formula
+$\left|p\right|=-p\leq q$
+\end_inset
+; א"כ קיבלנו 
+\begin_inset Formula
+$\left|p\right|\leq q$
+\end_inset
+ בכל מקרה.
+\end_layout
+
+\end_deeper
+
+\end_deeper
+
+\begin_layout Corollary
+לכל 
+\begin_inset Formula
+$a\in\MKfield$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$-\left|a\right|\leq a\leq\left|a\right|$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+אי-שוויון המשולש
+\series default
+
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$a,b\in\MKfield$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|a+b\right|\leq\left|a\right|+\left|b\right|$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+ובגרסה אחרת (נציב 
+\begin_inset Formula
+$-b$
+\end_inset
+ במקום 
+\begin_inset Formula
+$b$
+\end_inset
+): 
+\begin_inset Formula
+$\left|a-b\right|\leq\left|a\right|+\left|b\right|$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מה הקשר למשולש?
+\begin_inset Newline newline
+\end_inset
+נשאל שאלה אחרת, גאומטרית: בהינתן שלושה 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+קטעים כיצד נדע אם ניתן לבנות מהם משולש?
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+ (לדוגמה: מהקטעים באורך 
+\begin_inset Formula
+$5,1,1$
+\end_inset
+ אי אפשר לבנות משולש).
+\begin_inset Newline newline
+\end_inset
+התשובה היא שניתן לבנות מהקטעים משולש אם"ם סכום אורכיהם של כל שניים מהקטעים גדול מאורך השלישי...
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ א"ש המשולש הוא אחת משלוש התכונות שנדרשות מכל פונקציית מרחק
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+שתי האחרות הן סימטריה וחיוביות בהחלט.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+מהמסקנה הקודמת נובע ש-
+\begin_inset Formula
+$-\left|a\right|\leq a\leq\left|a\right|$
+\end_inset
+ ו-
+\begin_inset Formula
+$-\left|b\right|\leq b\leq\left|b\right|$
+\end_inset
+,
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow-\left|a\right|-\left|b\right|\leq a+b\leq\left|a\right|+\left|b\right|\\
+ & \Rightarrow-\left(\left|a\right|+\left|b\right|\right)\leq a+b\leq\left|a\right|+\left|b\right|
+\end{align*}
+
+
+\end_inset
+ולכן מהלמה האחרונה נובע ש-
+\begin_inset Formula
+$\left|a+b\right|\leq\left|a\right|+\left|b\right|$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+אי-שוויון המשולש ההפוך
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+זהו שם אומלל מעט משום שאין זה המשפט ההפוך למשפט א"ש המשולש במובן המתמטי השכיח: המשפט ההפוך למשפט פיתגורס אומר שכל משולש המקיים את המשוואה 
+\begin_inset Formula
+$a^{2}+b^{2}=c^{2}$
+\end_inset
+ (כאשר 
+\begin_inset Formula
+$a,b,c$
+\end_inset
+ הם אורכי הצלעות שלו) הוא משולש ישר זווית, כלומר המשפט ההפוך הוא זה האומר שהגרירה ההפוכה נכונה (לא תמיד זה קורה).
+\end_layout
+
+\end_inset
+
+\series default
+
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$a,b\in\MKfield$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left|\left|a\right|-\left|b\right|\right|\leq\left|a+b\right|$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+נגדיר 
+\begin_inset Formula
+$c:=b+a$
+\end_inset
+ וע"פ הגרסה השנייה של א"ש המשולש נקבל:
+\begin_inset Formula
+\[
+\left|a\right|=\left|b-\left(b+a\right)\right|=\left|a-c\right|\leq\left|a\right|+\left|c\right|=\left|a\right|+\left|b+a\right|
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow\left|a\right|-\left|b\right|\leq\left|b+a\right|=\left|a+b\right|
+\]
+
+
+\end_inset
+מכאן שגם 
+\begin_inset Formula
+$\left|b\right|-\left|a\right|\leq\left|a+b\right|$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$-\left|a+b\right|\leq\left|a\right|-\left|b\right|$
+\end_inset
+ ולכן מהלמה האחרונה נובע ש-
+\begin_inset Formula
+$\left|\left|a\right|-\left|b\right|\right|\leq\left|a+b\right|$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula
+$a,b,c,x,y\in\MKfield$
+\end_inset
+ מתקיימים כל הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$a+b\geq a-\left|b\right|$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\left|a+b+c\right|\leq\left|a\right|+\left|b\right|+\left|c\right|$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\left|\left|a\right|-\left|b\right|\right|\leq\left|a-b\right|$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\max\left\{ x,y\right\} =\frac{1}{2}\left(x+y+\left|x-y\right|\right)$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\min\left\{ x,y\right\} =\frac{1}{2}\left(x+y-\left|x-y\right|\right)$
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+קבוצות מיוחדות בשדה סדור
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ שדה סדור.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ את הקבוצות המיוחדות הללו ניתן להגדיר גם בשדה שאינו סדור אולם בשדות מהסוג 
+\begin_inset Formula
+$\MKfield_{P}$
+\end_inset
+ (כאשר 
+\begin_inset Formula
+$P$
+\end_inset
+ ראשוני) כל אחת מהן כוללת את כל איברי השדה, לעומתם ב-
+\begin_inset Formula
+$\MKcomplex$
+\end_inset
+ (שדה המרוכבים) ניתן להגדירן מבלי לכלול את כל השדה.
+\end_layout
+
+\begin_layout Definition
+\series bold
+קבוצה אינדוקטיבית
+\series default
+
+\begin_inset Newline newline
+\end_inset
+נאמר שקבוצה 
+\begin_inset Formula
+$I\subseteq\MKfield$
+\end_inset
+ היא 
+\bar under
+קבוצה אינדוקטיבית
+\bar default
+ אם 
+\begin_inset Formula
+$1\in I$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$x\in I$
+\end_inset
+ גם 
+\begin_inset Formula
+$x+1\in I$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+קבוצת המספרים הטבעיים
+\series default
+
+\begin_inset Newline newline
+\end_inset
+נסמן את קבוצת המספרים הטבעיים ב-
+\begin_inset Formula
+$\MKnatural$
+\end_inset
+ ונגדיר אותה כחיתוך כל הקבוצות האינדוקטיביות המוכלות ב-
+\begin_inset Formula
+$\MKfield$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+במילים אחרות: יהא 
+\begin_inset Formula
+$A$
+\end_inset
+ אוסף כל הקבוצות האינדוקטיביות המוכלות ב-
+\begin_inset Formula
+$\MKfield$
+\end_inset
+, נגדיר:
+\begin_inset Formula
+\[
+\MKnatural:=\bigcap_{a\in A}a
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ לעיתים נשתמש גם בסימון: 
+\begin_inset Formula
+$\MKnatural_{0}:=\MKnatural\cup\left\{ 0\right\} $
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+\series bold
+קבוצת המספרים השלמים
+\series default
+
+\begin_inset Newline newline
+\end_inset
+נסמן את 
+\bar under
+קבוצת המספרים השלמים
+\bar default
+ ב-
+\begin_inset Formula
+$\MKinteger$
+\end_inset
+ ונגדיר אותה כך:
+\begin_inset Formula
+\[
+\MKinteger:=\MKnatural\cup\left\{ 0\right\} \cup\left\{ -n\in\MKfield:n\in\MKnatural\right\} 
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+מספר שלם הוא טבעי אם"ם הוא חיובי.
+\end_layout
+
+\begin_layout Definition
+\series bold
+יחס החלוקה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$m,n\in\MKinteger$
+\end_inset
+, נאמר ש-
+\begin_inset Formula
+$n$
+\end_inset
+ 
+\bar under
+מחלק
+\bar default
+ את 
+\begin_inset Formula
+$m$
+\end_inset
+ (או ש-
+\begin_inset Formula
+$m$
+\end_inset
+ הוא 
+\bar under
+כפולה
+\bar default
+ של 
+\begin_inset Formula
+$n$
+\end_inset
+) ונסמן 
+\begin_inset Formula
+$n\mid m$
+\end_inset
+ אם קיים 
+\begin_inset Formula
+$k\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$m=n\cdot k$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+קבוצת הזוגיים וקבוצת האי-זוגיים
+\series default
+
+\begin_inset Newline newline
+\end_inset
+נסמן:
+\begin_inset Formula
+\begin{align*}
+2 & :=1+1\\
+\MKeven & :=\left\{ n\in\MKinteger:2\mid n\right\} \\
+\MKodd & :=\MKinteger\setminus\MKeven
+\end{align*}
+
+
+\end_inset
+
+\begin_inset Formula
+$\MKeven$
+\end_inset
+ תיקרא 
+\bar under
+קבוצת הזוגיים
+\bar default
+ ו-
+\begin_inset Formula
+$\MKodd$
+\end_inset
+ תיקרא 
+\bar under
+קבוצת האי-זוגיים
+\bar default
+.
+\end_layout
+
+\begin_layout Corollary
+מתקיים 
+\begin_inset Formula
+$\MKeven=\left\{ n\in\MKinteger\mid\exists k\in\MKinteger:n=2k\right\} =\left\{ 2k\mid k\in\MKinteger\right\} $
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+\begin_inset Formula
+$\MKeven\cap\MKodd=\emptyset$
+\end_inset
+ וגם 
+\begin_inset Formula
+$\MKeven\cup\MKodd=\MKinteger$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+\series bold
+קבוצת המספרים הרציונליים
+\series default
+
+\begin_inset Newline newline
+\end_inset
+נסמן את 
+\bar under
+קבוצת המספרים הרציונליים
+\bar default
+ ב-
+\begin_inset Formula
+$\MKrational$
+\end_inset
+ ונגדיר אותה כך:
+\begin_inset Formula
+\[
+\MKrational:=\left\{ q\in\MKfield\ \mid\ \exists n\in\MKnatural,m\in\MKinteger:q=\frac{m}{n}\right\} 
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Lemma*
+יהיו 
+\begin_inset Formula
+$a,c\in\MKfield$
+\end_inset
+ ו-
+\begin_inset Formula
+$0\neq b,d\in\MKfield$
+\end_inset
+ אז 
+\begin_inset Formula
+$\frac{a}{b}=\frac{c}{d}$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$a\cdot d=b\cdot c$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ כלומר לכל מספר רציונלי יש יותר מהצגה אחת כמנה של שלם וטבעי (למעשה יש אין-סוף).
+\end_layout
+
+\begin_layout Lemma
+לכל 
+\begin_inset Formula
+$q\in\MKrational$
+\end_inset
+ קיימים 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ ו-
+\begin_inset Formula
+$m\in\MKinteger$
+\end_inset
+ יחידים כך שמתקיים 
+\begin_inset Formula
+$q=\frac{m}{n}$
+\end_inset
+ ובנוסף לא קיים 
+\begin_inset Formula
+$\pm1\neq k\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$k\mid n$
+\end_inset
+ ו-
+\begin_inset Formula
+$k\mid m$
+\end_inset
+ (כלומר 
+\begin_inset Formula
+$n$
+\end_inset
+ ו-
+\begin_inset Formula
+$m$
+\end_inset
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "זרים"
+target https://he.wikipedia.org/wiki/%D7%9E%D7%A1%D7%A4%D7%A8%D7%99%D7%9D_%D7%96%D7%A8%D7%99%D7%9D
+literal false
+\end_inset
+ זה לזה).
+\end_layout
+
+\begin_layout Definition
+במונחי הלמה הקודמת נגדיר את 
+\bar under
+ההצגה המצומצמת
+\bar default
+ של 
+\begin_inset Formula
+$q$
+\end_inset
+ להיות 
+\begin_inset Formula
+$\frac{m}{n}$
+\end_inset
+ עבור אותם 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ ו-
+\begin_inset Formula
+$m\in\MKinteger$
+\end_inset
+ יחידים המקיימים את הלמה (וזאת לכל 
+\begin_inset Formula
+$q\in\MKrational$
+\end_inset
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ שדה סדור.
+\end_layout
+
+\begin_layout Subsection
+המספרים הטבעיים
+\end_layout
+
+\begin_layout Claim
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ מכיל קבוצות אינדוקטיביות (לדוגמה 
+\begin_inset Formula
+$\left\{ x\in\MKreal:1\leq x\right\} $
+\end_inset
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+יהא 
+\begin_inset Formula
+$A$
+\end_inset
+ אוסף של קבוצות אינדוקטיביות המוכלות ב-
+\begin_inset Formula
+$\MKfield$
+\end_inset
+, החיתוך של כל איברי 
+\begin_inset Formula
+$A$
+\end_inset
+ (שהם קבוצות אינדוקטיביות) הוא קבוצה אינדוקטיבית.
+\end_layout
+
+\begin_layout Corollary
+\begin_inset Formula
+$\MKnatural$
+\end_inset
+ היא קבוצה אינדוקטיבית.
+\end_layout
+
+\begin_layout Claim
+לכל קבוצה אינדוקטיבית 
+\begin_inset Formula
+$I\subseteq\MKfield$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\MKnatural\subseteq I$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula
+$I$
+\end_inset
+ קבוצה אינדוקטיבית, אם 
+\begin_inset Formula
+$I\subseteq\MKnatural$
+\end_inset
+ אז 
+\begin_inset Formula
+$I=\MKnatural$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+הוכחה באינדוקציה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ יהי 
+\begin_inset Formula
+$P\left(n\right)$
+\end_inset
+ פסוק לוגי, אם 
+\begin_inset Formula
+$P\left(1\right)=\MKtrue$
+\end_inset
+ וגם לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$P\left(n\right)\rightarrow P\left(n+1\right)$
+\end_inset
+ אז 
+\begin_inset Formula
+$P\left(n\right)=\MKtrue$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ זהו הסוג הקלאסי של הוכחה באינדוקציה אך ישנם סוגים נוספים, ראו בערך "
+\begin_inset CommandInset href
+LatexCommand href
+name "מתמטית אינדוקציה"
+target https://he.wikipedia.org/wiki/%D7%90%D7%99%D7%A0%D7%93%D7%95%D7%A7%D7%A6%D7%99%D7%94_%D7%9E%D7%AA%D7%9E%D7%98%D7%99%D7%AA#%D7%95%D7%A8%D7%99%D7%90%D7%A6%D7%99%D7%95%D7%AA
+literal false
+\end_inset
+" בוויקיפדיה.
+\end_layout
+
+\begin_layout Proof
+נגדיר 
+\begin_inset Formula
+$I:=\left\{ n\in\MKnatural\mid P\left(n\right)=\MKtrue\right\} $
+\end_inset
+ (מהגדרה 
+\begin_inset Formula
+$I\subseteq\MKnatural$
+\end_inset
+), נתון ש-
+\begin_inset Formula
+$P\left(1\right)=\MKtrue$
+\end_inset
+ ולכן 
+\begin_inset Formula
+$1\in I$
+\end_inset
+; יהי 
+\begin_inset Formula
+$n\in I$
+\end_inset
+, נתון שאם 
+\begin_inset Formula
+$P\left(n\right)=\text{True}$
+\end_inset
+ אז גם 
+\begin_inset Formula
+$P\left(n+1\right)=\MKtrue$
+\end_inset
+, כלומר אם 
+\begin_inset Formula
+$n\in I$
+\end_inset
+ אז גם 
+\begin_inset Formula
+$n+1\in I$
+\end_inset
+. מכאן ש-
+\begin_inset Formula
+$I$
+\end_inset
+ היא קבוצה אינדוקטיבית ומכיוון ש-
+\begin_inset Formula
+$I\subseteq\MKnatural$
+\end_inset
+ נדע ש-
+\begin_inset Formula
+$I=\MKnatural$
+\end_inset
+, כלומר לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$P\left(n\right)=\text{True}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 3.7"
+\end_inset
+המספר 
+\begin_inset Formula
+$1$
+\end_inset
+ הוא האיבר הקטן ביותר ב-
+\begin_inset Formula
+$\MKnatural$
+\end_inset
+, במילים אחרות: לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$1\leq n$
+\end_inset
+ (וגם כמובן ש-
+\begin_inset Formula
+$1\in\MKnatural$
+\end_inset
+).
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula
+$\left[1,\infty\right)$
+\end_inset
+ היא קבוצה אינדוקטיבית ולכן 
+\begin_inset Formula
+$\MKnatural\subseteq\left[1,\infty\right)$
+\end_inset
+, מכאן שלכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$n\in\left[1,\infty\right)$
+\end_inset
+ ומהגדרה 
+\begin_inset Formula
+$1\leq n$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ את
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+ארבע הטענות הבאות קל להוכיח באינדוקציה.
+\end_layout
+
+\begin_layout Claim
+קבוצת המספרים הטבעיים סגורה לחיבור, במילים אחרות: לכל 
+\begin_inset Formula
+$n,m\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$n+m\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+קבוצת המספרים הטבעיים סגורה לכפל, לכל 
+\begin_inset Formula
+$n,m\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$n\cdot m\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula
+$1\neq n\in\MKnatural$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$n-1\in\MKnatural$
+\end_inset
+, לכל מספר טבעי שאינו 
+\begin_inset Formula
+$1$
+\end_inset
+ יש מספר טבעי קודם.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ רז הוכיח ע"י הגדרת הקבוצה 
+\begin_inset Formula
+$\MKnatural\setminus\left\{ n\right\} $
+\end_inset
+ עבור 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מסוים, הנחה בשלילה ש-
+\begin_inset Formula
+$n-1\notin\MKnatural\setminus\left\{ n\right\} $
+\end_inset
+ והוכחה שקבוצה זו היא אינדוקטיבית.
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 3.11"
+\end_inset
+לכל 
+\begin_inset Formula
+$n,m\in\MKnatural$
+\end_inset
+ המקיימים 
+\begin_inset Formula
+$n>m$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$n-m\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 3.12"
+\end_inset
+יהי 
+\begin_inset Formula
+$m\in\MKnatural$
+\end_inset
+, לא קיים 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ המקיים 
+\begin_inset Formula
+$m<n<m+1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+נניח בשלילה שקיים 
+\begin_inset Formula
+$n$
+\end_inset
+ כנ"ל ומכאן ש-
+\begin_inset Formula
+$0<n-m<1$
+\end_inset
+, מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 3.11"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+נובע ש-
+\begin_inset Formula
+$n-m\in\MKnatural$
+\end_inset
+ בסתירה לכך שאם 
+\begin_inset Formula
+$n-m\in\MKnatural$
+\end_inset
+ אז 
+\begin_inset Formula
+$1\leq n-m$
+\end_inset
+ (טענה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 3.7"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+); מכאן שהנחת השלילה אינה נכונה ולא קיים 
+\begin_inset Formula
+$n$
+\end_inset
+ כזה.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+עיקרון הסדר הטוב
+\series default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+סדר טוב על קבוצה הוא יחס סדר מלא המקיים שלכל תת-קבוצה לא ריקה יש מינימום (
+\begin_inset CommandInset href
+LatexCommand href
+name "ויקיפדיה"
+target https://he.wikipedia.org/wiki/%D7%A1%D7%93%D7%A8_%D7%98%D7%95%D7%91
+literal false
+\end_inset
+).
+\end_layout
+
+\end_inset
+
+\begin_inset Newline newline
+\end_inset
+לכל תת-קבוצה של 
+\begin_inset Formula
+$\MKnatural$
+\end_inset
+ שאינה ריקה יש איבר מינימלי
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+לאחר שנגדיר מינימום נוכל לומר שהוא המינימום של הקבוצה.
+\end_layout
+
+\end_inset
+, כלומר לכל 
+\begin_inset Formula
+$\emptyset\neq A\subseteq\MKnatural$
+\end_inset
+ קיים 
+\begin_inset Formula
+$m\in A$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$m\leq a$
+\end_inset
+ לכל 
+\begin_inset Formula
+$a\in A$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+נניח בשלילה שאין ל-
+\begin_inset Formula
+$A$
+\end_inset
+ איבר מינימלי ונגדיר 
+\begin_inset Formula
+$I:=\left\{ n\in\MKnatural\mid\forall a\in A:n<a\right\} $
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 3.7"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+נובע ש-
+\begin_inset Formula
+$1\leq a$
+\end_inset
+ לכל 
+\begin_inset Formula
+$a\in\MKnatural$
+\end_inset
+ ובפרט לכל 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ ולכן מהנחת השלילה נובע ש-
+\begin_inset Formula
+$1\notin A$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$1<a$
+\end_inset
+ לכל 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ ומהגדרה 
+\begin_inset Formula
+$1\in I$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$m\in I$
+\end_inset
+, מהנחת השלילה נובע ש-
+\begin_inset Formula
+$m+1\notin A$
+\end_inset
+ משום שאחרת מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 3.12"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+ינבע שלא קיים 
+\begin_inset Formula
+$a\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$m<a<m+1$
+\end_inset
+ ובפרט לא קיים 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ כזה והרי מהעובדה ש-
+\begin_inset Formula
+$m\in I$
+\end_inset
+ נובע שלא קיים 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a\leq m$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$m+1$
+\end_inset
+ הוא איבר מינימלי של 
+\begin_inset Formula
+$A$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+
+\begin_inset Formula
+$m$
+\end_inset
+ הנ"ל היה שרירותי ולכן לכל 
+\begin_inset Formula
+$m\in I$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$m+1\notin A$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$m+1\in I$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$I$
+\end_inset
+ אינדוקטיבית ו-
+\begin_inset Formula
+$I=\MKnatural$
+\end_inset
+, מהגדרה 
+\begin_inset Formula
+$I\cap A=\emptyset$
+\end_inset
+ ומכיוון ש-
+\begin_inset Formula
+$A\subseteq\MKnatural=I$
+\end_inset
+ נקבל ש-
+\begin_inset Formula
+$A=\emptyset$
+\end_inset
+ בסתירה לנתון. מכאן שהנחת השלילה אינה נכונה ויש ל-
+\begin_inset Formula
+$A$
+\end_inset
+ איבר מינימלי.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Subsection
+המספרים השלמים והמספרים הרציונליים
+\end_layout
+
+\begin_layout Claim
+קבוצת המספרים השלמים (
+\begin_inset Formula
+$\MKinteger$
+\end_inset
+) סגורה לחיבור, לחיסור ולכפל
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ומכיוון ש-
+\begin_inset Formula
+$0,1\in\MKinteger$
+\end_inset
+ נובע מזה ש-
+\begin_inset Formula
+$\MKinteger$
+\end_inset
+ הוא חוג חילופי - כלומר הוא מקיים את כל אקסיומות השדה מלבד קיום הופכי לכל איבר שונה מ-
+\begin_inset Formula
+$0$
+\end_inset
+ (בחוג סתם הכפל אינו מוכרח לקיים את חוק החילוף, לכן אמרנו ש-
+\begin_inset Formula
+$\MKinteger$
+\end_inset
+ הוא חוג 
+\series bold
+חילופי
+\series default
+)
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ שימו לב: 
+\begin_inset Formula
+$\MKinteger$
+\end_inset
+ אינה סגורה לחילוק, וזאת למרות שהחילוק הוגדר ע"י הכפל.
+\end_layout
+
+\begin_layout Claim
+המספר 
+\begin_inset Formula
+$2^{-1}$
+\end_inset
+ אינו שלם.
+\end_layout
+
+\begin_layout Proof
+הוא קטן מ-
+\begin_inset Formula
+$1$
+\end_inset
+ וגדול מ-
+\begin_inset Formula
+$0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula
+$n\in\MKinteger$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\begin{align*}
+ & n\in\MKeven\longleftrightarrow n\pm1\in\MKodd &  & n\in\MKodd\longleftrightarrow n\pm1\in\MKeven\\
+ & n\in\MKeven\longleftrightarrow n\pm2\in\MKeven &  & n\in\MKodd\longleftrightarrow n\pm2\in\MKodd
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Corollary
+מתקיים 
+\begin_inset Formula
+$\MKodd=\left\{ n\in\MKinteger|\exists k\in\MKinteger:2k-1=n\right\} =\left\{ 2k-1\mid k\in\MKinteger\right\} $
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+\begin_inset Formula
+$\MKrational$
+\end_inset
+ הוא 
+\bar under
+תת-שדה
+\bar default
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+\begin_inset Formula
+$\MKrational$
+\end_inset
+ הוא גם שדה 
+\bar under
+סדור
+\bar default
+.
+\end_layout
+
+\end_inset
+ של 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+, כלומר הוא שדה ביחס לאותן פעולות חיבור וכפל של 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כולל האיברים האדישים.
+\end_layout
+
+\end_inset
+ והוא תת-קבוצה של 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+יש להוכיח ש-
+\begin_inset Formula
+$0,1\in\MKrational$
+\end_inset
+ (נובע מהגדרת 
+\begin_inset Formula
+$\MKrational$
+\end_inset
+) וש-
+\begin_inset Formula
+$\MKrational$
+\end_inset
+ סגור לחיבור ולכפל
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+כלומר לכל 
+\begin_inset Formula
+$q,r\in\MKrational$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$q+r\in\MKrational$
+\end_inset
+ ו-
+\begin_inset Formula
+$q\cdot r\in\MKrational$
+\end_inset
+.
+\end_layout
+
+\end_inset
+,
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\begin_inset Formula
+$9$
+\end_inset
+ האקסיומות תנבענה ישירות מהעובדה ש-
+\begin_inset Formula
+$\MKrational\subseteq\MKfield$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+חסמים וארכימדיות
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ שדה סדור.
+\end_layout
+
+\begin_layout Definition
+\series bold
+חסמים וקבוצות חסומות
+\series default
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+קבוצה 
+\begin_inset Formula
+$A\subseteq\MKfield$
+\end_inset
+ תקרא 
+\bar under
+חסומה מלעיל
+\bar default
+ אם קיים 
+\begin_inset Formula
+$M\in\MKfield$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a\leq M$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+איבר 
+\begin_inset Formula
+$M\in\MKfield$
+\end_inset
+ ייקרא 
+\bar under
+חסם מלעיל
+\bar default
+ של קבוצה 
+\begin_inset Formula
+$A\subseteq\MKfield$
+\end_inset
+ אם לכל 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a\leq M$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+קבוצה 
+\begin_inset Formula
+$A\subseteq\MKfield$
+\end_inset
+ תיקרא 
+\bar under
+חסומה מלרע
+\bar default
+ אם קיים 
+\begin_inset Formula
+$m\in\MKfield$
+\end_inset
+ כך שלכל 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a\geq m$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+איבר 
+\begin_inset Formula
+$m\in\MKfield$
+\end_inset
+ ייקרא 
+\bar under
+חסם מלרע
+\bar default
+ של קבוצה 
+\begin_inset Formula
+$A\subseteq\MKfield$
+\end_inset
+ אם לכל 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a\geq m$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+קבוצה 
+\begin_inset Formula
+$A\subseteq\MKfield$
+\end_inset
+ תיקרא 
+\bar under
+חסומה
+\bar default
+ אם היא חסומה מלעיל ומלרע.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+שדה סדור 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ יקרא 
+\bar under
+ארכימדי
+\bar default
+ אם קבוצת הטבעיים שלו אינה חסומה מלעיל, כלומר לכל 
+\begin_inset Formula
+$M\in\MKfield$
+\end_inset
+ קיים 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$M<n$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ שדה סדור.
+\end_layout
+
+\begin_layout Claim
+קבוצה 
+\begin_inset Formula
+$A\subseteq\MKfield$
+\end_inset
+ היא חסומה אם"ם קיים 
+\begin_inset Formula
+$M\in\MKfield$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\left|a\right|<M$
+\end_inset
+ לכל 
+\begin_inset Formula
+$a\in A$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+קבוצת המספרים הטבעיים אינה חסומה מלעיל ע"י מספר טבעי, לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ קיים 
+\begin_inset Formula
+$m\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$n<m$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+קבוצת המספרים הטבעיים אינה חסומה מלעיל ע"י מספר רציונלי.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ מכאן ש-
+\begin_inset Formula
+$\MKrational$
+\end_inset
+ הוא שדה ארכימדי.
+\end_layout
+
+\begin_layout Standard
+נניח ש-
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ ארכימדי.
+\end_layout
+
+\begin_layout Theorem
+לכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKfield$
+\end_inset
+ קיים 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\frac{1}{n}<\varepsilon$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+לכל 
+\begin_inset Formula
+$0<x,y\in\MKfield$
+\end_inset
+ קיים 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$n\cdot x>y$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+השדה הסדור השלם (המספרים הממשיים)
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ שדה סדור.
+\end_layout
+
+\begin_layout Lemma*
+נסמן 
+\begin_inset Formula
+$4:=2+2$
+\end_inset
+, מתקיים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+לכל 
+\begin_inset Formula
+$m,n\in\MKeven$
+\end_inset
+ קיים 
+\begin_inset Formula
+$k\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$m\cdot n=4k$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$m,n\in\MKodd$
+\end_inset
+ אז 
+\begin_inset Formula
+$m\cdot n\in\MKodd$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Claim*
+לא קיים 
+\begin_inset Formula
+$q\in\MKrational$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$q^{2}=2$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+לכל 
+\begin_inset Formula
+$x\in\MKreal$
+\end_inset
+ נסמן 
+\begin_inset Formula
+$x^{2}:=x\cdot x$
+\end_inset
+.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ זהו המובן שבו שדה הרציונליים "מלא חורים", אם ניקח את ההמחשה שהבאנו בקובץ ההגדרות, ניתן לחלק את הקרש שאנו רוצים להפוך ליתר של המשולש לשני חלקים: החלק שאנו רוצים להפוך ליתר והאחר שאנו רוצים להיפטר ממנו, אם נשאר עם מספרים רציונליים בלבד לא נוכל להצביע על הנקודה שבין שני החלקים כדי שנוכל להעביר בה את המסור.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+השדה הסדור השלם (אקסיומת השלמות)
+\series default
+
+\begin_inset Newline newline
+\end_inset
+שדה סדור 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ ייקרא 
+\bar under
+שלם
+\bar default
+ אם יקיים את הפסוק הבא (נקרא "אקסיומת השלמות"):
+\begin_inset Newline newline
+\end_inset
+לכל שתי קבוצות 
+\begin_inset Formula
+$A,B\subseteq\MKfield$
+\end_inset
+ שאינן ריקות המקיימות 
+\begin_inset Formula
+$a\leq b$
+\end_inset
+ לכל 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$b\in B$
+\end_inset
+,
+\begin_inset Newline newline
+\end_inset
+קיים 
+\begin_inset Formula
+$c\in\MKfield$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a\leq c\leq b$
+\end_inset
+ לכל 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$b\in B$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נסמן את השדה הסדור השלם
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ניתן להוכיח שקיים רק שדה סדור שלם אחד (כל השדות הסדורים השלמים דומים עד כדי איזומורפיזם) ולכן מוצדק לקרוא לו "שדה הממשיים" בה"א הידיעה ותת לו סימון.
+\end_layout
+
+\end_inset
+ ב-
+\begin_inset Formula
+$\MKreal$
+\end_inset
+ ונקרא לו גם 
+\bar under
+שדה המספרים הממשיים
+\bar default
+ או 
+\bar under
+הישר הממשי
+\bar default
+, לאיברי 
+\begin_inset Formula
+$\MKreal$
+\end_inset
+ נקרא 
+\bar under
+מספרים ממשיים
+\bar default
+ או 
+\bar under
+נקודות
+\bar default
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ נשים לב ליופי שבדבר: המתמטיקאים הצליחו לשים את האצבע על התכונה שעושה את המספרים הממשיים למה שהם, על מהותם (!).
+\begin_inset Newline newline
+\end_inset
+נניח למשל שאני רוצה לבנות משולש ישר זווית שאורכי ניצביו שווים, אקח קרש אחד, אשים אותו ליד אחר (גדול יותר) ואחתוך את הקרש השני לפי הראשון (כך שיהיו שווים); כעת אניח את אחד הקרשים על הקרקע, אמדוד זווית ישרה (ניתן לעשות זאת עם סרגל ומחוגה) ואניח את הקרש השני כך שיהיה אנך לראשון וקצותיהם יגעו זה בזה. וכעת לעצם העניין: אני צריך צלע שלישית, תאמרו "מה הבעיה? קח קרש שלישי שיהיה ארוך יותר מהמרחק שבין קצות הקרשים הראשונים שאינם נוגעים זה בזה, הנח אותו על הישר שקצוות אלו מגדירים כך שאחד מקצותיו יגע באחד הקצוות הללו, חתוך את החלק הבולט של הקרש וחסל!", אבל... מי אמר שקיימת נקודה שנמצאת בדיוק בין החלק שאני רוצה לחלק המיותר???
+\begin_inset Newline newline
+\end_inset
+- זוהי אקסיומת השלמות!
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+filename C:\Users\sraya\Documents\HUJI\archive\for_LyX\summaries\2#analysis\1#calculus_1\1#the_real_numbers\figures\the_completeness_axiom.png
+scale 60
+\end_inset
+
+\begin_inset Caption Standard
+\begin_layout Plain Layout
+מי אמר שניתן לחתוך את הקרש במקום הרצוי???
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+קבוצה 
+\begin_inset Formula
+$I\subseteq\MKreal$
+\end_inset
+ תיקרא 
+\bar under
+מקטע
+\bar default
+ אם לכל 
+\begin_inset Formula
+$a,b\in I$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a<b$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$x\in\MKreal$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a<x<b$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$x\in I$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+מקטעים שונים
+\series default
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+יהיו 
+\begin_inset Formula
+$a,b\in\MKreal$
+\end_inset
+ המקיימים 
+\begin_inset Formula
+$a<b$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+קטע פתוח
+\bar default
+ הוא קבוצה מהצורה: 
+\begin_inset Formula
+$\left(a,b\right):=\left\{ x\in\MKreal:a<x<b\right\} $
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+קטע סגור
+\bar default
+ הוא קבוצה מהצורה: 
+\begin_inset Formula
+$\left[a,b\right]:=\left\{ x\in\MKreal:a\leq x\leq b\right\} $
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+קטעים חצי פתוחים-חצי סגורים (שני סוגים):
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\bar under
+קטע פתוח משמאל וסגור מימין
+\bar default
+ הוא קבוצה מהצורה: 
+\begin_inset Formula
+$\left(a,b\right]:=\left\{ x\in\MKreal:a<x\leq b\right\} $
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+קטע סגור משמאל ופתוח מימין
+\bar default
+ הוא קבוצה מהצורה: 
+\begin_inset Formula
+$\left[a,b\right):=\left\{ x\in\MKreal:a\leq x<b\right\} $
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+קרניים שונות (ארבעה סוגים):
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\bar under
+קרן ימנית פתוחה
+\bar default
+ היא קבוצה מהצורה: 
+\begin_inset Formula
+$\left(a,\infty\right):=\left\{ x\in\MKreal:a<x\right\} $
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+קרן ימנית סגורה
+\bar default
+ היא קבוצה מהצורה: 
+\begin_inset Formula
+$\left[a,\infty\right):=\left\{ x\in\MKreal:a\leq x\right\} $
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+קרן שמאלית פתוחה
+\bar default
+ היא קבוצה מהצורה: 
+\begin_inset Formula
+$\left(-\infty,a\right):=\left\{ x\in\MKreal:x<a\right\} $
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+קרן שמאלית סגורה
+\bar default
+ היא קבוצה מהצורה: 
+\begin_inset Formula
+$\left(-\infty,a\right]:=\left\{ x\in\MKreal:x\leq a\right\} $
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ גם הקבוצה הריקה והשדה כולו הם מקטעים.
+\end_layout
+
+\begin_layout Definition
+\series bold
+סביבה וסביבה מנוקבת
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$x\in\MKreal$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+סביבות דו-צדדיות:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\bar under
+סביבה
+\bar default
+ של 
+\begin_inset Formula
+$x$
+\end_inset
+ היא קטע פתוח 
+\begin_inset Formula
+$\left(a,b\right)$
+\end_inset
+ (כאשר 
+\begin_inset Formula
+$a,b\in\MKreal$
+\end_inset
+) המקיים 
+\begin_inset Formula
+$x\in\left(a,b\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+סביבה מנוקבת
+\bar default
+ של 
+\begin_inset Formula
+$x$
+\end_inset
+ היא קבוצה מהצורה 
+\begin_inset Formula
+$\left(a,b\right)\setminus\left\{ x\right\} $
+\end_inset
+ (כאשר 
+\begin_inset Formula
+$a,b\in\MKreal$
+\end_inset
+) המקיימת 
+\begin_inset Formula
+$x\in\left(a,b\right)$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+סביבות חד-צדדיות:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\bar under
+סביבה חד-צדדית ימנית
+\bar default
+ של 
+\begin_inset Formula
+$x$
+\end_inset
+ היא קטע פתוח מהצורה 
+\begin_inset Formula
+$\left(x,b\right)$
+\end_inset
+ כאשר 
+\begin_inset Formula
+$x<b\in\MKreal$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+\bar under
+סביבה חד-צדדית שמאלית
+\bar default
+ של 
+\begin_inset Formula
+$x$
+\end_inset
+ היא קטע פתוח מהצורה 
+\begin_inset Formula
+$\left(a,x\right)$
+\end_inset
+ כאשר 
+\begin_inset Formula
+$x>a\in\MKreal$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+יהיו 
+\begin_inset Formula
+$0<r\in\MKreal$
+\end_inset
+ ו-
+\begin_inset Formula
+$a\in\MKreal$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נסמן 
+\begin_inset Formula
+$B_{r}\left(a\right):=\left\{ x\in\MKreal:\left|x-a\right|<r\right\} =\left(a-r,a+r\right)$
+\end_inset
+ ונקרא ל-
+\begin_inset Formula
+$B_{r}\left(a\right)$
+\end_inset
+ 
+\bar under
+הכדור הפתוח
+\bar default
+ שרדיוסו 
+\begin_inset Formula
+$r$
+\end_inset
+ ומרכזו 
+\begin_inset Formula
+$a$
+\end_inset
+ וגם 
+\bar under
+סביבה סימטרית
+\bar default
+.
+\end_layout
+
+\begin_layout Itemize
+נסמן 
+\begin_inset Formula
+$B_{r}^{\circ}\left(a\right):=\left\{ x\in\MKreal:\left|x-a\right|<r\right\} =\left(a-r,a+r\right)$
+\end_inset
+ ונקרא ל-
+\begin_inset Formula
+$B_{r}^{\circ}\left(a\right)$
+\end_inset
+ 
+\bar under
+הכדור הפתוח המנוקב
+\bar default
+ שרדיוסו 
+\begin_inset Formula
+$r$
+\end_inset
+ ומרכזו 
+\begin_inset Formula
+$a$
+\end_inset
+ וגם 
+\bar under
+סביבה סימטרית מנוקבת
+\bar default
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ שדה סדור.
+\end_layout
+
+\begin_layout Lemma
+נסמן 
+\begin_inset Formula
+$4:=2+2$
+\end_inset
+, מתקיים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+לכל 
+\begin_inset Formula
+$m,n\in\MKeven$
+\end_inset
+ קיים 
+\begin_inset Formula
+$k\in\MKinteger$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$m\cdot n=4k$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$m,n\in\MKodd$
+\end_inset
+ אז 
+\begin_inset Formula
+$m\cdot n\in\MKodd$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Claim
+לא קיים 
+\begin_inset Formula
+$q\in\MKrational$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$q^{2}=2$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+לכל 
+\begin_inset Formula
+$x\in\MKreal$
+\end_inset
+ נסמן 
+\begin_inset Formula
+$x^{2}:=x\cdot x$
+\end_inset
+.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ זהו המובן שבו שדה הרציונליים "מלא חורים", אם ניקח את ההמחשה שהבאנו בקובץ ההגדרות, ניתן לחלק את הקרש שאנו רוצים להפוך ליתר של המשולש לשני חלקים: החלק שאנו רוצים להפוך ליתר והאחר שאנו רוצים להיפטר ממנו, אם נשאר עם מספרים רציונליים בלבד לא נוכל להצביע על הנקודה שבין שני החלקים כדי שנוכל להעביר בה את המסור.
+\end_layout
+
+\begin_layout Proof
+נניח בשלילה שקיים 
+\begin_inset Formula
+$q\in\MKrational$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$q^{2}=2$
+\end_inset
+, נשים לב לכך ש-
+\begin_inset Formula
+$q^{2}=2$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$\left(-q\right)^{2}=2$
+\end_inset
+ ולכן ניתן להניח בהג"כ ש-
+\begin_inset Formula
+$q$
+\end_inset
+ חיובי.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+יהיו 
+\begin_inset Formula
+$n,m\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$q=\frac{m}{n}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\frac{m}{n}$
+\end_inset
+ היא ההצגה המצומצמת של 
+\begin_inset Formula
+$q$
+\end_inset
+.
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow\frac{m^{2}}{n^{2}}=\left(\frac{m}{n}\right)^{2}=q^{2}=2\\
+ & \Rightarrow m^{2}=2n^{2}\\
+ & \Rightarrow m^{2}\in\MKeven\\
+ & \Rightarrow m\in\MKeven
+\end{align*}
+
+
+\end_inset
+מכאן שקיים 
+\begin_inset Formula
+$k\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$m^{2}=4k$
+\end_inset
+.
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow4k=2n^{2}\\
+ & \Rightarrow2k=n^{2}\\
+ & \Rightarrow n^{2}\in\MKeven\\
+ & \Rightarrow n\in\MKeven
+\end{align*}
+
+
+\end_inset
+מכאן ש-
+\begin_inset Formula
+$2$
+\end_inset
+ מחלק הן את 
+\begin_inset Formula
+$n$
+\end_inset
+ והן את 
+\begin_inset Formula
+$m$
+\end_inset
+ בסתירה לכך ש-
+\begin_inset Formula
+$\frac{m}{n}$
+\end_inset
+ היא ההצגה המצומצמת של 
+\begin_inset Formula
+$q$
+\end_inset
+, א"כ הנחת השלילה אינה נכונה ולא קיים 
+\begin_inset Formula
+$q\in\MKrational$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$q^{2}=2$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ניתן להכליל את ההוכחה לכל שורש של מספר טבעי שאינו ריבוע ולהראות שכל שורש של טבעי שאינו טבעי הוא אי-רציונלי (כדוגמת 
+\begin_inset Formula
+$\sqrt{3}$
+\end_inset
+).
+\end_layout
+
+\begin_layout Claim
+כל קטע (מכל סוג) מכיל קטע מכל סוג.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+כל קרן (מכל סוג) מכילה קטע מכל סוג.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula
+$a\in\MKreal$
+\end_inset
+, מתקיימים כל הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+החיתוך של כל שתי סביבות של 
+\begin_inset Formula
+$a$
+\end_inset
+ הוא סביבה של 
+\begin_inset Formula
+$a$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+החיתוך של שתי סביבות מנוקבות של 
+\begin_inset Formula
+$a$
+\end_inset
+ הוא סביבה מנוקבת של 
+\begin_inset Formula
+$a$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+כל סביבה של 
+\begin_inset Formula
+$a$
+\end_inset
+ מכילה סביבה 
+\series bold
+סימטרית
+\series default
+ של 
+\begin_inset Formula
+$a$
+\end_inset
+, כלומר לכל סביבה 
+\begin_inset Formula
+$U$
+\end_inset
+ של 
+\begin_inset Formula
+$a$
+\end_inset
+ קיים 
+\begin_inset Formula
+$0<r\in\MKreal$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$B_{r}\left(a\right)\subseteq U$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+כל סביבה מנוקבת של 
+\begin_inset Formula
+$a$
+\end_inset
+ מכילה סביבה 
+\series bold
+סימטרית
+\series default
+ מנוקבת של 
+\begin_inset Formula
+$a$
+\end_inset
+, כלומר לכל סביבה מנוקבת 
+\begin_inset Formula
+$U$
+\end_inset
+ של 
+\begin_inset Formula
+$a$
+\end_inset
+ קיים 
+\begin_inset Formula
+$0<r\in\MKreal$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$B_{r}^{\textdegree}\left(a\right)\subseteq U$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+חסם עליון וחסם תחתון
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+יהא 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ שדה סדור.
+\end_layout
+
+\begin_layout Definition
+\series bold
+חסם עליון וחסם תחתון
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$A\subseteq\MKfield$
+\end_inset
+ קבוצה לא ריקה.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נאמר ש-
+\begin_inset Formula
+$M\in\MKfield$
+\end_inset
+ הוא 
+\bar under
+חסם עליון
+\bar default
+ (נקרא גם 
+\bar under
+סופרמום
+\bar default
+) של 
+\begin_inset Formula
+$A$
+\end_inset
+ אם מתקיימים שני התנאים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$M$
+\end_inset
+ הוא חסם מלעיל של 
+\begin_inset Formula
+$A$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$M'\in\MKfield$
+\end_inset
+ המהווה חסם מלעיל של 
+\begin_inset Formula
+$A$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$M\leq M'$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+מכיוון שניתן להוכיח שאם יש לקבוצה סופרמום אז הוא יחיד נסמן אותו ב-
+\begin_inset Formula
+$\sup A$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+נאמר ש-
+\begin_inset Formula
+$m\in\MKfield$
+\end_inset
+ הוא 
+\bar under
+חסם תחתון
+\bar default
+ (נקרא גם 
+\bar under
+אינפימום
+\bar default
+) של 
+\begin_inset Formula
+$A$
+\end_inset
+ אם מתקיימים שני התנאים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$m$
+\end_inset
+ הוא חסם מלרע של 
+\begin_inset Formula
+$A$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$m'\in\MKfield$
+\end_inset
+ המהווה חסם מלרע של 
+\begin_inset Formula
+$A$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$m'\leq m$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+מכיוון שניתן להוכיח שאם יש לקבוצה סופרמום אז הוא יחיד נסמן אותו ב-
+\begin_inset Formula
+$\inf A$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+מינימום ומקסימום
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$A\subseteq\MKfield$
+\end_inset
+ קבוצה.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נאמר שיש ל-
+\begin_inset Formula
+$A$
+\end_inset
+ 
+\bar under
+מקסימום
+\bar default
+ אם קיים 
+\begin_inset Formula
+$M\in A$
+\end_inset
+ המהווה חסם מלעיל של 
+\begin_inset Formula
+$A$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+אותו 
+\begin_inset Formula
+$M$
+\end_inset
+ יקרא 
+\bar under
+מקסימום
+\bar default
+ של 
+\begin_inset Formula
+$A$
+\end_inset
+ ומכיוון שניתן להוכיח שאם הוא קיים אז הוא יחיד נסמן אותו ב-
+\begin_inset Formula
+$\max A$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+נאמר שיש ל-
+\begin_inset Formula
+$A$
+\end_inset
+ 
+\bar under
+מינימום
+\bar default
+ אם קיים 
+\begin_inset Formula
+$m\in A$
+\end_inset
+ המהווה חסם מלרע של 
+\begin_inset Formula
+$A$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+אותו 
+\begin_inset Formula
+$m$
+\end_inset
+ יקרא 
+\bar under
+מינימום
+\bar default
+ של 
+\begin_inset Formula
+$A$
+\end_inset
+ ומכיוון שניתן להוכיח שאם הוא קיים אז הוא יחיד נסמן אותו ב-
+\begin_inset Formula
+$\min A$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ שדה סדור.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+יחידות החסם העליון ויחידות החסם התחתון
+\series default
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+תהא 
+\begin_inset Formula
+$A\subseteq\MKfield$
+\end_inset
+ קבוצה שיש לה חסם עליון ויהי 
+\begin_inset Formula
+$M\in\MKfield$
+\end_inset
+ חסם עליון של 
+\begin_inset Formula
+$A$
+\end_inset
+, אם 
+\begin_inset Formula
+$M'\in\MKfield$
+\end_inset
+ הוא חסם עליון של 
+\begin_inset Formula
+$A$
+\end_inset
+ אז 
+\begin_inset Formula
+$M=M'$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+תהא 
+\begin_inset Formula
+$B\subseteq\MKfield$
+\end_inset
+ קבוצה שיש לה חסם תחתון ויהי 
+\begin_inset Formula
+$m\in\MKfield$
+\end_inset
+ חסם תחתון של 
+\begin_inset Formula
+$B$
+\end_inset
+, אם 
+\begin_inset Formula
+$m'\in\MKfield$
+\end_inset
+ הוא חסם תחתון של 
+\begin_inset Formula
+$B$
+\end_inset
+ אז 
+\begin_inset Formula
+$m=m'$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+אפיון נוסף לחסם עליון ולחסם תחתון
+\series default
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+תהא 
+\begin_inset Formula
+$A\subseteq\MKfield$
+\end_inset
+ קבוצה, מספר 
+\begin_inset Formula
+$M\in\MKfield$
+\end_inset
+ הוא החסם העליון של 
+\begin_inset Formula
+$A$
+\end_inset
+ אם"ם מתקיימים שני התנאים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$M$
+\end_inset
+ הוא חסם מלעיל של 
+\begin_inset Formula
+$A$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKfield$
+\end_inset
+ קיים 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$M-\varepsilon<a$
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+תהא 
+\begin_inset Formula
+$B\subseteq\MKfield$
+\end_inset
+ קבוצה, מספר 
+\begin_inset Formula
+$m\in\MKfield$
+\end_inset
+ הוא החסם התחתון של 
+\begin_inset Formula
+$B$
+\end_inset
+ אם"ם מתקיימים שני התנאים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$m$
+\end_inset
+ הוא חסם מלרע של 
+\begin_inset Formula
+$B$
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKfield$
+\end_inset
+ קיים 
+\begin_inset Formula
+$b\in B$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$m+\varepsilon>b$
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\end_deeper
+
+\begin_layout Proof
+נוכיח את יחידות החסם העליון, ההוכחה עבור החסם התחתון דומה מאד.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula
+$\Leftarrow$
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+נניח ש-
+\begin_inset Formula
+$M\in\MKfield$
+\end_inset
+ הוא החסם העליון של 
+\begin_inset Formula
+$A$
+\end_inset
+, בפרט 
+\begin_inset Formula
+$M$
+\end_inset
+ הוא חסם מלעיל של 
+\begin_inset Formula
+$A$
+\end_inset
+; יהי 
+\begin_inset Formula
+$0<\varepsilon\in\MKfield$
+\end_inset
+ ונגדיר 
+\begin_inset Formula
+$M':=M-\varepsilon<M$
+\end_inset
+, אם לא קיים 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$M'=M-\varepsilon<a$
+\end_inset
+ אז לכל 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$a\leq M'$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$M'$
+\end_inset
+ הוא חסם מלעיל של 
+\begin_inset Formula
+$A$
+\end_inset
+ בסתירה לכך ש-
+\begin_inset Formula
+$M'<M$
+\end_inset
+ ו-
+\begin_inset Formula
+$M$
+\end_inset
+ הוא החסם העליון, מכאן שקיים 
+\begin_inset Formula
+$a$
+\end_inset
+ כנ"ל.
+\end_layout
+
+\end_deeper
+
+\begin_layout Itemize
+\begin_inset Formula
+$\Rightarrow$
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+נניח ש-
+\begin_inset Formula
+$M\in\MKfield$
+\end_inset
+ מקיים את שני הפסוקים הנ"ל ויהי 
+\begin_inset Formula
+$M\neq M'\in\MKfield$
+\end_inset
+ חסם מלעיל של 
+\begin_inset Formula
+$A$
+\end_inset
+ ונגדיר 
+\begin_inset Formula
+$\varepsilon:=\left|M-M'\right|$
+\end_inset
+, כעת, אם 
+\begin_inset Formula
+$M'<M$
+\end_inset
+ אז 
+\begin_inset Formula
+$\varepsilon=M-M'$
+\end_inset
+ ומההנחה נובע שקיים 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$M'=M-\varepsilon<a\leq M$
+\end_inset
+ בסתירה להיות 
+\begin_inset Formula
+$M'$
+\end_inset
+ חסם מלעיל של 
+\begin_inset Formula
+$A$
+\end_inset
+; מכאן ש-
+\begin_inset Formula
+$M<M'$
+\end_inset
+ ומכיוון ש-
+\begin_inset Formula
+$M'$
+\end_inset
+ היה שרירותי נדע שלכל חסם מלעיל 
+\begin_inset Formula
+$M'\in\MKfield$
+\end_inset
+ של 
+\begin_inset Formula
+$A$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$M\leq M'$
+\end_inset
+, כלומר 
+\begin_inset Formula
+$M$
+\end_inset
+ הוא החסם העליון של 
+\begin_inset Formula
+$A$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\end_deeper
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "theorem 6.3"
+\end_inset
+
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+תהא 
+\begin_inset Formula
+$A\subseteq\MKfield$
+\end_inset
+ קבוצה שיש לה מקסימום, ל-
+\begin_inset Formula
+$A$
+\end_inset
+ יש חסם עליון (יחיד) ואותו מקסימום שווה לו (כלומר גם הוא יחיד).
+\end_layout
+
+\begin_layout Itemize
+תהא 
+\begin_inset Formula
+$B\subseteq\MKfield$
+\end_inset
+ קבוצה שיש לה מקסימום, ל-
+\begin_inset Formula
+$A$
+\end_inset
+ יש חסם תחתון (יחיד) ואותו מינימום שווה לו (כלומר גם הוא יחיד).
+\end_layout
+
+\end_deeper
+
+\begin_layout Claim
+לכל קבוצה סופית (שאינה ריקה) המוכלת בשדה סדור יש מקסימום ומינימום.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+בשדה הסדור השלם (
+\begin_inset Formula
+$\MKreal$
+\end_inset
+), לכל קבוצה החסומה מלעיל יש חסם עליון.
+\end_layout
+
+\begin_layout Itemize
+בשדה הסדור השלם (
+\begin_inset Formula
+$\MKreal$
+\end_inset
+), לכל קבוצה החסומה מלרע יש חסם תחתון.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ יש הלוקחים את החלק הראשון של משפט זה כאקסיומת השלמות (אלו טענות שקולות), כמובן שניתן היה גם לקחת את החלק השני.
+\end_layout
+
+\begin_layout Proof
+נוכיח את המשפט עבור החסם העליון, ההוכחה עבור החסם התחתון דומה מאד.
+\begin_inset Newline newline
+\end_inset
+תהא 
+\begin_inset Formula
+$\emptyset\neq A\subseteq\MKreal$
+\end_inset
+ קבוצה חסומה מלעיל, יהי 
+\begin_inset Formula
+$M\in\MKreal$
+\end_inset
+ חסם מלעיל של 
+\begin_inset Formula
+$A$
+\end_inset
+ מלעיל ונגדיר 
+\begin_inset Formula
+$B:=\left\{ b\in\MKreal\mid\forall a\in A:b\geq a\right\} $
+\end_inset
+, 
+\begin_inset Formula
+$B$
+\end_inset
+ אינה ריקה שכן 
+\begin_inset Formula
+$M\in B$
+\end_inset
+ ולכן מאקסיומת השלמות נובע שקיים 
+\begin_inset Formula
+$c\in\MKreal$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a\leq c\leq b$
+\end_inset
+ לכל 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$b\in B$
+\end_inset
+. מהגדרה 
+\begin_inset Formula
+$c$
+\end_inset
+ הוא חסם מלעיל של 
+\begin_inset Formula
+$A$
+\end_inset
+ ומכיוון ש-
+\begin_inset Formula
+$B$
+\end_inset
+ היא קבוצת החסמים מלעיל של 
+\begin_inset Formula
+$A$
+\end_inset
+ נקבל ש-
+\begin_inset Formula
+$c$
+\end_inset
+ הוא החסם העליון של 
+\begin_inset Formula
+$A$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+ארכימדיות של 
+\begin_inset Formula
+$\MKreal$
+\end_inset
+
+\series default
+
+\begin_inset Newline newline
+\end_inset
+בשדה הסדור השלם (
+\begin_inset Formula
+$\MKreal$
+\end_inset
+), 
+\begin_inset Formula
+$\MKnatural$
+\end_inset
+ אינה חסומה מלעיל; כלומר 
+\begin_inset Formula
+$\MKreal$
+\end_inset
+ הוא שדה ארכימדי.
+\end_layout
+
+\begin_layout Proof
+נניח בשלילה ש-
+\begin_inset Formula
+$\MKnatural$
+\end_inset
+ חסומה מלעיל ויהי 
+\begin_inset Formula
+$M\in\MKreal$
+\end_inset
+ החסם העליון של 
+\begin_inset Formula
+$\MKnatural$
+\end_inset
+ (קיים כזה ממשפט
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "theorem 6.3"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+), מהאפיון הנוסף של החסם העליון נובע שקיים 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$M-1<n$
+\end_inset
+, אותו 
+\begin_inset Formula
+$n$
+\end_inset
+ מקיים ש-
+\begin_inset Formula
+$M<n+1$
+\end_inset
+ והרי 
+\begin_inset Formula
+$n+1\in\MKnatural$
+\end_inset
+ בסתירה להיותו של 
+\begin_inset Formula
+$M$
+\end_inset
+ חסם מלעיל של 
+\begin_inset Formula
+$\MKnatural$
+\end_inset
+, מכאן שהנחת השלילה אינה נכונה ו-
+\begin_inset Formula
+$\MKnatural$
+\end_inset
+ אינה חסומה מלעיל.
+\end_layout
+
+\begin_layout Corollary
+בשדה הסדור השלם (
+\begin_inset Formula
+$\MKreal$
+\end_inset
+), 
+\begin_inset Formula
+$\MKinteger$
+\end_inset
+ אינה חסומה מלרע.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+הרציונליים צפופים בממשיים
+\series default
+
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$x,y\in\MKreal$
+\end_inset
+ המקיימים 
+\begin_inset Formula
+$x<y$
+\end_inset
+ קיים 
+\begin_inset Formula
+$q\in\MKrational$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$x<q<y$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$x>m\in\MKinteger$
+\end_inset
+ (קיים כזה מהמסקנה הקודמת) ויהי 
+\begin_inset Formula
+$0<\frac{1}{y-x}<n\in\MKnatural$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$0<\frac{1}{n}<y-x$
+\end_inset
+ כעת נתבונן ב-
+\begin_inset Formula
+$\left\{ k\in\MKnatural:x<m+\frac{k}{n}\right\} $
+\end_inset
+, זוהי קבוצה לא ריקה של טבעיים ומעקרון הסדר יש לה איבר מינימלי 
+\begin_inset Formula
+$k\in\MKnatural$
+\end_inset
+ המקיים (מהגדרתו) 
+\begin_inset Formula
+$m+\frac{k-1}{n}\leq x<m+\frac{k}{n}$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+אם 
+\begin_inset Formula
+$k=0$
+\end_inset
+ אז 
+\begin_inset Formula
+$m+\frac{k-1}{n}=m<x$
+\end_inset
+.
+\end_layout
+
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$m+\frac{k}{n}<y$
+\end_inset
+.
+\end_layout
+
+\begin_layout Lemma
+תהיינה 
+\begin_inset Formula
+$\emptyset\neq A,B\subseteq\MKreal$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a\leq b$
+\end_inset
+ לכל 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$b\in B$
+\end_inset
+, מתקיים 
+\begin_inset Formula
+$\sup A\leq\inf B$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+למת החתכים
+\series default
+
+\begin_inset Newline newline
+\end_inset
+תהיינה 
+\begin_inset Formula
+$\emptyset\neq A,B\subseteq\MKreal$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$a\leq b$
+\end_inset
+ לכל 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$b\in B$
+\end_inset
+, הפסוקים הבאים שקולים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+קיים 
+\begin_inset Formula
+$M\in\MKreal$
+\end_inset
+ יחיד כך ש-
+\begin_inset Formula
+$a\leq M\leq b$
+\end_inset
+ לכל 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$b\in B$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\sup A=\inf B$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ קיימים 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ ו-
+\begin_inset Formula
+$b\in B$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$b-a<\varepsilon$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ קיים 
+\begin_inset Formula
+$a\in A$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$0\leq\inf B-a<\varepsilon$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לכל 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ קיים 
+\begin_inset Formula
+$b\in B$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$0\leq b-\sup A<\varepsilon$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+תהיינה 
+\begin_inset Formula
+$\emptyset\neq A,B\subseteq\MKreal$
+\end_inset
+, מתקיים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$A$
+\end_inset
+ ו-
+\begin_inset Formula
+$B$
+\end_inset
+ חסומות מלעיל אז 
+\begin_inset Formula
+$\sup\left(A+B\right)=\sup\left(A\right)+\sup\left(B\right)$
+\end_inset
+, ואם 
+\begin_inset Formula
+$A$
+\end_inset
+ ו-
+\begin_inset Formula
+$B$
+\end_inset
+ חסומות מלרע אז 
+\begin_inset Formula
+$\inf\left(A+B\right)=\inf\left(A\right)+\inf\left(B\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+יהי 
+\begin_inset Formula
+$0\leq\beta\in\MKreal$
+\end_inset
+; אם 
+\begin_inset Formula
+$A$
+\end_inset
+ חסומה מלעיל אז 
+\begin_inset Formula
+$\sup\left(\beta\cdot A\right)=\beta\cdot\sup\left(A\right)$
+\end_inset
+, ואם 
+\begin_inset Formula
+$A$
+\end_inset
+ חסומה מלרע אז 
+\begin_inset Formula
+$\inf\left(\beta\cdot A\right)=\beta\cdot\inf\left(A\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$A,B\subseteq\left[0,\infty\right)$
+\end_inset
+ אז 
+\begin_inset Formula
+$\inf\left(A\cdot B\right)=\inf\left(A\right)\cdot\inf\left(B\right)$
+\end_inset
+, ואם (בנוסף) 
+\begin_inset Formula
+$A$
+\end_inset
+ ו-
+\begin_inset Formula
+$B$
+\end_inset
+ חסומות מלעיל אז 
+\begin_inset Formula
+$\sup\left(A\cdot B\right)=\sup\left(A\right)\cdot\sup\left(B\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+אם 
+\begin_inset Formula
+$A,B\subseteq\left(-\infty,0\right]$
+\end_inset
+ אז 
+\begin_inset Formula
+$\inf\left(A\cdot B\right)=\sup\left(A\right)\cdot\sup\left(B\right)$
+\end_inset
+, ואם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+(בנוסף) 
+\begin_inset Formula
+$A$
+\end_inset
+ ו-
+\begin_inset Formula
+$B$
+\end_inset
+ חסומות מלרע אז 
+\begin_inset Formula
+$\sup\left(A\cdot B\right)=\inf\left(A\right)\cdot\inf\left(B\right)$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+\end_layout
+
+\begin_layout Section
+חזקות
+\end_layout
+
+\begin_layout Subsection
+הגדרות
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ שדה סדור.
+\end_layout
+
+\begin_layout Definition
+\series bold
+חזקה טבעית
+\series default
+
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$x\in\MKfield$
+\end_inset
+ נגדיר 
+\begin_inset Formula
+$x^{1}:=x$
+\end_inset
+ (קרי: 
+\begin_inset Formula
+$x$
+\end_inset
+ בחזקת 
+\begin_inset Formula
+$1$
+\end_inset
+) ולכל 
+\begin_inset Formula
+$k\in\MKnatural$
+\end_inset
+ נגדיר 
+\begin_inset Formula
+$x^{k+1}:=x^{k}\cdot x$
+\end_inset
+ (קרי: 
+\begin_inset Formula
+$x$
+\end_inset
+ בחזקת 
+\begin_inset Formula
+$k+1$
+\end_inset
+)
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+הוכחנו באינדוקציה שכך 
+\begin_inset Formula
+$x^{k}$
+\end_inset
+ מוגדר היטב לכל 
+\begin_inset Formula
+$k\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula
+$a\in\MKfield$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ החזקה ה-
+\begin_inset Formula
+$n$
+\end_inset
+-ית של 
+\begin_inset Formula
+$a$
+\end_inset
+ (
+\begin_inset Formula
+$a^{n}$
+\end_inset
+) מוגדרת היטב.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+\end_layout
+
+\begin_layout Definition
+\series bold
+חזקה שלמה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$x\in\MKfield$
+\end_inset
+ נגדיר 
+\begin_inset Formula
+$x^{0}:=1$
+\end_inset
+ (קרי: 
+\begin_inset Formula
+$x$
+\end_inset
+ בחזקת 
+\begin_inset Formula
+$0$
+\end_inset
+).
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$x\in\MKfield$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$0>m\in\MKinteger$
+\end_inset
+ נגדיר:
+\begin_inset Formula
+\[
+x^{m}:=\frac{1}{x^{-m}}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ נשים לב שהסימון 
+\begin_inset Formula
+$a^{-1}$
+\end_inset
+ עבור ההופכי של 
+\begin_inset Formula
+$a\in\MKreal$
+\end_inset
+ והסימון 
+\begin_inset Formula
+$a^{-1}$
+\end_inset
+ עבור "
+\begin_inset Formula
+$a$
+\end_inset
+ בחזקת 
+\begin_inset Formula
+$-1$
+\end_inset
+" מגדירים את אותו מספר ולכן אין לנו בעיה בסימון.
+\begin_inset Newline newline
+\end_inset
+למה לא הגדרנו חזקה שלמה כשהבסיס הוא 
+\begin_inset Formula
+$0$
+\end_inset
+? כי אז נקבל את 
+\begin_inset Formula
+$0^{-1}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ניתן היה להגדיר את 
+\begin_inset Formula
+$0^{0}$
+\end_inset
+ להיות 
+\begin_inset Formula
+$1$
+\end_inset
+ או 
+\begin_inset Formula
+$0$
+\end_inset
+ כרצוננו (מבלי לקבל סתירה), אנו בחרנו להגדיר
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\begin_inset Formula
+$0^{0}:=1$
+\end_inset
+ מפני שהדבר יקל עלינו בנוסחאות רבות בהמשך.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ניתן להגדיר חזקות טבעיות ושלמות בכל שדה (לאו דווקא סדור) ומכיוון שההוכחות לכל חוקי החזקות שלא כללו אי-שוויונים משתמשות אך ורק באקסיומות השדה חוקים אלו חלים בכל שדה
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+למעשה, שני חוקי החזקות הראשונים במעריך טבעי (
+\begin_inset Formula
+$x^{m}\cdot x^{n}=x^{m+n}$
+\end_inset
+ ו-
+\begin_inset Formula
+$\left(x^{m}\right)^{n}=x^{m\cdot n}$
+\end_inset
+) השתמשו רק בקיבוץ של הכפל והחוק השלישי (
+\begin_inset Formula
+$\left(x\cdot y\right)^{n}=x^{n}\cdot y^{n}$
+\end_inset
+) השתמש גם בחילוף; מסיבה זו הם תקפים אפילו בקבוצות שאינן שדות אך מוגדרת עליהן פעולת כפל המקיימת את התכונות הללו.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem*
+\series bold
+קיום ויחידות השורש
+\series default
+
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$0<x\in\MKreal$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ קיים 
+\begin_inset Formula
+$0<y\in\MKreal$
+\end_inset
+ יחיד כך ש-
+\begin_inset Formula
+$y^{n}=x$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+\series bold
+שורש
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$0<x\in\MKreal$
+\end_inset
+, לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ 
+\bar under
+השורש ה-
+\begin_inset Formula
+$n$
+\end_inset
+-י
+\bar default
+ של 
+\begin_inset Formula
+$x$
+\end_inset
+ הוא 
+\begin_inset Formula
+$0<y\in\MKreal$
+\end_inset
+ היחיד שמקיים 
+\begin_inset Formula
+$y^{n}=x$
+\end_inset
+; נסמן את השורש ה-
+\begin_inset Formula
+$n$
+\end_inset
+-י של 
+\begin_inset Formula
+$x$
+\end_inset
+ ב-
+\begin_inset Formula
+$\sqrt[n]{x}$
+\end_inset
+ או ב-
+\begin_inset Formula
+$x^{1/n}$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+כמו כן לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ נגדיר 
+\begin_inset Formula
+$\sqrt[n]{0}:=0$
+\end_inset
+ (המוטיבציה להגדרה ברורה).
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Lemma*
+יהי 
+\begin_inset Formula
+$0<x\in\MKreal$
+\end_inset
+, לכל 
+\begin_inset Formula
+$n,k\in\MKnatural$
+\end_inset
+ ו-
+\begin_inset Formula
+$m,j\in\MKinteger$
+\end_inset
+ המקיימים 
+\begin_inset Formula
+$\frac{m}{n}=\frac{k}{j}$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left(x^{m}\right)^{\frac{1}{n}}=\left(x^{j}\right)^{\frac{1}{k}}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+\series bold
+חזקה רציונלית
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$q\in\MKrational$
+\end_inset
+, לכל 
+\begin_inset Formula
+$0<x\in\MKreal$
+\end_inset
+ נגדיר:
+\begin_inset Formula
+\[
+x^{q}:=\left(x^{m}\right)^{\frac{1}{n}}
+\]
+
+
+\end_inset
+כאשר 
+\begin_inset Formula
+$m$
+\end_inset
+ ו-
+\begin_inset Formula
+$n$
+\end_inset
+ הם שלם וטבעי (
+\begin_inset Formula
+$m\in\MKinteger$
+\end_inset
+, 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+) המקיימים 
+\begin_inset Formula
+$q=\frac{m}{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ למה לא הגדרנו חזקה רציונלית כשהבסיס שלילי? בגלל שא"א להגדיר זאת היטב, לדוגמה:
+\begin_inset Formula
+\[
+{\color{red}-5=}\left(-5\right)^{1}={\color{blue}\left(-5\right)^{\frac{6}{6}}}=\left(\left(-5\right)^{6}\right)^{\frac{1}{6}}=\left(5^{6}\right)^{\frac{1}{6}}{\color{red}=5}
+\]
+
+
+\end_inset
+כמובן שניתן היה להביא כאן גם את: 
+\begin_inset Formula
+$\left(\sqrt{-5}\right)^{4}={\color{blue}\left(-5\right)^{\frac{4}{2}}}=25$
+\end_inset
+, מצד אחד 
+\begin_inset Formula
+$25$
+\end_inset
+ מוגדר היטב אך מצד שני 
+\begin_inset Formula
+$\left(\sqrt{-5}\right)^{4}$
+\end_inset
+ אינו מוגדר כלל; אולם איני בטוח שזה היה מהווה עילה שלא להגדיר זאת, מצד שני אולי זו הסיבה שלא הגדרנו חזקה רציונלית חיובית כשהבסיס הוא 
+\begin_inset Formula
+$0$
+\end_inset
+:
+\begin_inset Formula
+\[
+0=0^{1}=0^{\frac{-1}{-1}}=\left(0^{-1}\right)^{\frac{1}{-1}}=\left(0^{-1}\right)^{-1}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ניתן להגדיר חזקות ממשיות כבר כעת אולם אנו נעשה זאת רק בקובץ שיעסוק בפונקציות כדי להקל על הוכחת חוקי חזקות כשהמעריך ממשי, להלן ההגדרה שניתן להגדיר כבר כעת (כמובן שהגדרה זו וההגדרה שתובא בהמשך שקולות): לכל 
+\begin_inset Formula
+$0<a\in\MKreal$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$x\in\MKreal$
+\end_inset
+ נגדיר:
+\begin_inset Formula
+\[
+a^{x}:=\begin{cases}
+\sup\left\{ a^{r}:r\in\MKrational,\ r<x\right\}  & 1<a\\
+1 & a=1\\
+\left(\frac{1}{a}\right)^{-x} & a<1
+\end{cases}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula
+$\MKfield$
+\end_inset
+ שדה סדור.
+\end_layout
+
+\begin_layout Claim
+\begin_inset CommandInset label
+LatexCommand label
+name "claim 7.1"
+\end_inset
+יהיו 
+\begin_inset Formula
+$0<a,b\in\MKfield$
+\end_inset
+ ו-
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+, 
+\begin_inset Formula
+$a<b$
+\end_inset
+ אם"ם 
+\begin_inset Formula
+$a^{n}<b^{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ הטענה נכונה גם עבור א"ש חלש.
+\end_layout
+
+\begin_layout Proof
+טענה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.9"
+\end_inset
+ סעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+7
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+ואינדוקציה (גם בשביל הכיוון שמשמאל לימין ע"י הנחה בשלילה ש-
+\begin_inset Formula
+$a\geq b$
+\end_inset
+).
+\end_layout
+
+\begin_layout Theorem
+\series bold
+חוקי חזקות כשהמעריך טבעי
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$0\neq x,y\in\MKfield$
+\end_inset
+ ו-
+\begin_inset Formula
+$n,m\in\MKnatural$
+\end_inset
+, מתקיימים כל הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$x^{m}\cdot x^{n}=x^{m+n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\left(x^{m}\right)^{n}=x^{m\cdot n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\left(x\cdot y\right)^{n}=x^{n}\cdot y^{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$0<x<y$
+\end_inset
+ אז 
+\begin_inset Formula
+$x^{n}<y^{n}$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+סעיף זה נובע ישירות מטענה
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 7.1"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+.
+\end_layout
+
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$1<x$
+\end_inset
+ ו-
+\begin_inset Formula
+$n<m$
+\end_inset
+ אז 
+\begin_inset Formula
+$x^{n}<x^{m}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$0<x<1$
+\end_inset
+ ו-
+\begin_inset Formula
+$n<m$
+\end_inset
+ אז 
+\begin_inset Formula
+$x^{n}>x^{m}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ שלושת חוקי החזקות הראשונים נכונים עבור כל פעולת כפל (על קבוצה כלשהי) המקיימת חילוף וקיבוץ.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ אם 
+\begin_inset Formula
+$x<0$
+\end_inset
+ אז לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+x^{n}=\begin{cases}
+\left(-x\right)^{n} & n\in\MKeven\\
+-\left(-x\right)^{n} & n\in\MKodd
+\end{cases}
+\]
+
+
+\end_inset
+ואם 
+\begin_inset Formula
+$x=0$
+\end_inset
+ אז 
+\begin_inset Formula
+$x^{n}=0$
+\end_inset
+ לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+את כל הסעיפים ניתן להוכיח בפשטות ע"י אינדוקציה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+חוקי חזקות כשהמעריך שלם
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$0\neq x,y\in\MKfield$
+\end_inset
+ ו-
+\begin_inset Formula
+$n,m\in\MKinteger$
+\end_inset
+, מתקיימים כל הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$x^{m}\cdot x^{n}=x^{m+n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\left(x^{m}\right)^{n}=x^{m\cdot n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\left(x\cdot y\right)^{n}=x^{n}\cdot y^{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$0<x<y$
+\end_inset
+ ו-
+\begin_inset Formula
+$0<n$
+\end_inset
+ אז 
+\begin_inset Formula
+$x^{n}<y^{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$0<x<y$
+\end_inset
+ ו-
+\begin_inset Formula
+$0>n$
+\end_inset
+ אז 
+\begin_inset Formula
+$x^{n}>y^{n}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$1<x$
+\end_inset
+ ו-
+\begin_inset Formula
+$n<m$
+\end_inset
+ אז 
+\begin_inset Formula
+$x^{n}<x^{m}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$0<x<1$
+\end_inset
+ ו-
+\begin_inset Formula
+$n<m$
+\end_inset
+ אז 
+\begin_inset Formula
+$x^{n}>x^{m}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ שלושת חוקי החזקות הראשונים נכונים עבור כל פעולת כפל (על קבוצה כלשהי) המקיימת חילוף וקיבוץ ובתנאי שלאיברים המדוברים יש איבר הופכי ביחס לפעולת הכפל.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ אם 
+\begin_inset Formula
+$x<0$
+\end_inset
+ אז לכל 
+\begin_inset Formula
+$0\neq n\in\MKinteger$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+x^{n}=\begin{cases}
+\left(-x\right)^{n} & \left|n\right|\in\MKeven\\
+-\left(-x\right)^{n} & \left|n\right|\in\MKodd
+\end{cases}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ ראינו בקובץ ההגדרות שניתן להגדיר 
+\begin_inset Formula
+$0^{0}:=0$
+\end_inset
+ או 
+\begin_inset Formula
+$0^{0}:=1$
+\end_inset
+ כרצוננו מבלי לקבל סתירה.
+\end_layout
+
+\begin_layout Proof
+סעיפים
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+3-5
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+נובעים ישירות מההגדרה והסעיפים המקבילים (
+\numeric on
+3-4
+\numeric off
+) עבור מעריך טבעי
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+בשביל סעיף
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+5
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+יש להשתמש גם בסעף
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+6
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+של טענה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.9"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+.
+\end_layout
+
+\end_inset
+, סעיפים
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1-2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+ו-
+\numeric on
+6-7
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+נובעים ישירות מהסעיפים המקבילים עבור מעריך טבעי (אם 
+\begin_inset Formula
+$n,m\in\MKnatural$
+\end_inset
+ או 
+\begin_inset Formula
+$n,m\notin\MKnatural$
+\end_inset
+
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+בסעיפים
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+5-6
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+יש להשתמש גם בטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.9"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+סעיף
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+6
+\numeric off
+.
+\end_layout
+
+\end_inset
+) או מאינדוקציה על המעריך הטבעי מבין 
+\begin_inset Formula
+$n,m$
+\end_inset
+ (אם אחד מהם טבעי והשני אינו כזה).
+\end_layout
+
+\begin_layout Theorem
+\series bold
+אי-שוויון ברנולי
+\begin_inset Foot
+status collapsed
+\begin_layout Plain Layout
+ערך בוויקיפדיה: 
+\begin_inset CommandInset href
+LatexCommand href
+name "ברנולי יאקוב"
+target https://he.wikipedia.org/wiki/%D7%99%D7%90%D7%A7%D7%95%D7%91_%D7%91%D7%A8%D7%A0%D7%95%D7%9C%D7%99
+literal false
+\end_inset
+.
+\end_layout
+
+\end_inset
+
+\series default
+
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$-1<x\in\MKfield$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left(1+x\right)^{n}\geq1+nx$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+יהי 
+\begin_inset Formula
+$-1<x\in\MKfield$
+\end_inset
+, נוכיח את הטענה באינדוקציה.
+\begin_inset Newline newline
+\end_inset
+בסיס האינדוקציה טריוויאלי: 
+\begin_inset Formula
+$\left(1+x\right)^{1}=1+x=1+1\cdot x$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+יהי 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+, נניח ש-
+\begin_inset Formula
+$\left(1+x\right)^{n}\geq1+nx$
+\end_inset
+ונשים לב שמהגדרה 
+\begin_inset Formula
+$0<1+x$
+\end_inset
+.
+\begin_inset Formula
+\[
+\Rightarrow\left(1+x\right)^{n+1}=\left(1+x\right)^{n}\cdot\left(1+x\right)\geq\left(1+nx\right)\left(1+x\right)=1+nx+x+nx^{2}\geq1+\left(n+1\right)x
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\series bold
+קיום ויחידות השורש
+\series default
+
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$0<x\in\MKreal$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ קיים 
+\begin_inset Formula
+$0<y\in\MKreal$
+\end_inset
+ יחיד כך ש-
+\begin_inset Formula
+$y^{n}=x$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+יהיו 
+\begin_inset Formula
+$0<x\in\MKreal$
+\end_inset
+ ו-
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 7.1"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+(ומטריכוטומיה) נובע שאם קיים 
+\begin_inset Formula
+$y$
+\end_inset
+ כזה אז הוא יחיד.
+\begin_inset Newline newline
+\end_inset
+נגדיר 
+\begin_inset Formula
+$S:=\left\{ 0\leq z\in\MKreal\mid z^{n}<x\right\} $
+\end_inset
+, קבוצה זו אינה ריקה שכן 
+\begin_inset Formula
+$0\in S$
+\end_inset
+ והיא חסומה מלעיל מפני שלכל 
+\begin_inset Formula
+$z\in S$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$z^{n}<\left(1+x\right)^{n}$
+\end_inset
+ ולכן מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 7.1"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+גם 
+\begin_inset Formula
+$z<1+x$
+\end_inset
+, מכאן שיש ל-
+\begin_inset Formula
+$S$
+\end_inset
+ חסם עליון, א"כ נגדיר 
+\begin_inset Formula
+$y:=\sup S$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נוכיח ש-
+\begin_inset Formula
+$0<y$
+\end_inset
+: נשים לב לכך ש-
+\begin_inset Formula
+$0<\frac{x}{1+x}<1$
+\end_inset
+ ולכן גם 
+\begin_inset Formula
+$\left(\frac{x}{1+x}\right)^{n}<\frac{x}{1+x}<x$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$\frac{x}{1+x}\in S$
+\end_inset
+ וממילא 
+\begin_inset Formula
+$0<\frac{x}{1+x}\leq y$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+נשלול את 
+\begin_inset Formula
+$y^{n}<x$
+\end_inset
+ ואת 
+\begin_inset Formula
+$y^{n}>x$
+\end_inset
+ ומטריכוטומיה נקבל ש-
+\begin_inset Formula
+$y^{n}=x$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נניח בשלילה ש-
+\begin_inset Formula
+$y^{n}<x$
+\end_inset
+, מכאן ש-
+\begin_inset Formula
+$0<\frac{y^{n}}{x}<1$
+\end_inset
+ ולכן גם:
+\begin_inset Formula
+\[
+0<\frac{1-\frac{y^{n}}{x}}{n}
+\]
+
+
+\end_inset
+יהי 
+\begin_inset Formula
+$0<\varepsilon\in\MKreal$
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+\varepsilon<1,\ \varepsilon<\frac{1-\frac{y^{n}}{x}}{n}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow n\varepsilon<1-\frac{y^{n}}{x}\\
+ & \Rightarrow\frac{y^{n}}{x}<1+n\cdot\left(-\varepsilon\right)
+\end{align*}
+
+
+\end_inset
+נשים לב לכך ש-
+\begin_inset Formula
+$-1<-\varepsilon$
+\end_inset
+ (וגם 
+\begin_inset Formula
+$0<1-\varepsilon$
+\end_inset
+) ולכן מא"ש ברנולי נובע שמתקיים:
+\begin_inset Formula
+\[
+\frac{y^{n}}{x}<1+n\cdot\left(-\varepsilon\right)\leq\left(1-\varepsilon\right)^{n}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow0\leq\left(\frac{y}{1-\varepsilon}\right)^{n}=\frac{y^{n}}{\left(1-\varepsilon\right)^{n}}<x\\
+ & \Rightarrow\frac{y}{1-\varepsilon}\in S
+\end{align*}
+
+
+\end_inset
+אבל 
+\begin_inset Formula
+$\frac{y}{1-\varepsilon}>y$
+\end_inset
+ בסתירה להיות 
+\begin_inset Formula
+$y$
+\end_inset
+ חסם מלעיל של 
+\begin_inset Formula
+$S$
+\end_inset
+, מכאן שהנחת השלילה אינה נכונה ו-
+\begin_inset Formula
+$y^{n}\geq x$
+\end_inset
+.
+\end_layout
+
+\begin_layout Itemize
+כעת נניח בשלילה ש-
+\begin_inset Formula
+$y^{n}>x$
+\end_inset
+, מכאן ש-
+\begin_inset Formula
+$0<\frac{x}{y^{n}}<1$
+\end_inset
+ ולכן גם:
+\begin_inset Formula
+\[
+0<\frac{1-\frac{x}{y^{n}}}{n}
+\]
+
+
+\end_inset
+יהי 
+\begin_inset Formula
+$0<\varepsilon'\in\MKreal$
+\end_inset
+ כך שמתקיים:
+\begin_inset Formula
+\[
+\varepsilon'<1,\ \varepsilon'<\frac{1-\frac{x}{y^{n}}}{n}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow n\varepsilon<1-\frac{x}{y^{n}}\\
+ & \Rightarrow\frac{x}{y^{n}}<1+n\cdot\left(-\varepsilon\right)
+\end{align*}
+
+
+\end_inset
+נשים לב לכך ש-
+\begin_inset Formula
+$-1<-\varepsilon'$
+\end_inset
+ (וגם 
+\begin_inset Formula
+$0<1-\varepsilon'$
+\end_inset
+) ולכן מא"ש ברנולי נובע שמתקיים:
+\begin_inset Formula
+\[
+\frac{x}{y^{n}}<1+n\cdot\left(-\varepsilon\right)\leq\left(1-\varepsilon\right)^{n}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow x<y^{n}\cdot\left(1-\varepsilon\right)^{n}=\left[y\cdot\left(1-\varepsilon\right)\right]^{n}
+\]
+
+
+\end_inset
+מטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 7.1"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+נובע שלכל 
+\begin_inset Formula
+$z\in S$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$z<y\cdot\left(1-\varepsilon\right)$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$y\cdot\left(1-\varepsilon\right)$
+\end_inset
+ הוא חסם מלעיל של 
+\begin_inset Formula
+$S$
+\end_inset
+, אבל 
+\begin_inset Formula
+$y\cdot\left(1-\varepsilon\right)<y$
+\end_inset
+ בסתירה לכך ש-
+\begin_inset Formula
+$y$
+\end_inset
+ הוא החסם העליון של 
+\begin_inset Formula
+$S$
+\end_inset
+; מכאן שהנחת השלילה אינה נכונה ו-
+\begin_inset Formula
+$y^{n}\leq x$
+\end_inset
+.
+\begin_inset Formula
+\[
+\Rightarrow y^{n}=x
+\]
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Theorem
+\series bold
+האי-רציונליים צפופים בממשיים
+\series default
+
+\begin_inset Newline newline
+\end_inset
+לכל 
+\begin_inset Formula
+$x,y\in\MKreal$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$x<y$
+\end_inset
+ קיים 
+\begin_inset Formula
+$\gamma\in\MKreal\setminus\MKrational$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$x<\gamma<y$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+יהיו 
+\begin_inset Formula
+$x,y\in\MKreal$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$x<y$
+\end_inset
+.
+\begin_inset Newline newline
+\end_inset
+מצפיפות הרציונליים בממשיים נובע שקיים 
+\begin_inset Formula
+$q\in\MKrational$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$x<q<y$
+\end_inset
+, יהי 
+\begin_inset Formula
+$q$
+\end_inset
+ כנ"ל.
+\begin_inset Newline newline
+\end_inset
+מהארכימדיות של 
+\begin_inset Formula
+$\MKreal$
+\end_inset
+ נובע שקיים 
+\begin_inset Formula
+$n\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$n>\frac{\sqrt{2}}{y-q}$
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow x<q<q+\frac{\sqrt{2}}{n}<y
+\]
+
+
+\end_inset
+מהיות 
+\begin_inset Formula
+$\MKrational$
+\end_inset
+ שדה נובע ש-
+\begin_inset Formula
+$q+\frac{\sqrt{2}}{n}\notin\MKrational$
+\end_inset
+, א"כ 
+\begin_inset Formula
+$q+\frac{\sqrt{2}}{n}$
+\end_inset
+ מקיים את המבוקש. 
+\end_layout
+
+\begin_layout Lemma
+יהי 
+\begin_inset Formula
+$0<x\in\MKreal$
+\end_inset
+, לכל 
+\begin_inset Formula
+$n,k\in\MKnatural$
+\end_inset
+ ו-
+\begin_inset Formula
+$m,j\in\MKinteger$
+\end_inset
+ המקיימים 
+\begin_inset Formula
+$\frac{m}{n}=\frac{k}{j}$
+\end_inset
+ מתקיים 
+\begin_inset Formula
+$\left(x^{m}\right)^{\frac{1}{n}}=\left(x^{j}\right)^{\frac{1}{k}}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+יהיו 
+\begin_inset Formula
+$a,c\in\MKinteger$
+\end_inset
+ ו-
+\begin_inset Formula
+$b,d\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$\frac{a}{b}=\frac{c}{d}$
+\end_inset
+.
+\begin_inset Formula
+\[
+\Rightarrow\left({\color{red}\left(x^{a}\right)^{\frac{1}{b}}}\right)^{{\color{blue}b}d}=\left(\left(\left(x^{a}\right)^{{\color{blue}\frac{1}{b}}}\right)^{{\color{blue}b}}\right)^{d}=\left(x^{a}\right)^{d}=x^{ad}=x^{bc}=\left(x^{c}\right)^{b}=\left(\left(\left(x^{c}\right)^{{\color{blue}\frac{1}{d}}}\right)^{{\color{blue}d}}\right)^{b}=\left({\color{red}\left(x^{c}\right)^{\frac{1}{d}}}\right)^{bd}
+\]
+
+
+\end_inset
+מיחידות השורש נובע ש-
+\begin_inset Formula
+$\left(x^{a}\right)^{\frac{1}{b}}=\left(x^{c}\right)^{\frac{1}{d}}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\series bold
+חוקי חזקות כשהמעריך רציונלי
+\series default
+
+\begin_inset Newline newline
+\end_inset
+יהיו 
+\begin_inset Formula
+$0<x,y\in\MKreal$
+\end_inset
+ ו-
+\begin_inset Formula
+$q,r\in\MKrational$
+\end_inset
+, מתקיימים כל הפסוקים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+$x^{q}\cdot x^{r}=x^{q+r}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\left(x^{q}\right)^{r}=x^{q\cdot r}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+$\left(x\cdot y\right)^{q}=x^{q}\cdot y^{q}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$0<x<y$
+\end_inset
+ ו-
+\begin_inset Formula
+$0<q$
+\end_inset
+ אז 
+\begin_inset Formula
+$x^{q}<y^{q}$
+\end_inset
+, כמו כן אם 
+\begin_inset Formula
+$0<x<y$
+\end_inset
+ ו-
+\begin_inset Formula
+$0>q$
+\end_inset
+ אז 
+\begin_inset Formula
+$x^{q}>y^{q}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$1<x$
+\end_inset
+ ו-
+\begin_inset Formula
+$q<r$
+\end_inset
+ אז 
+\begin_inset Formula
+$x^{q}<x^{r}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula
+$0<x<1$
+\end_inset
+ ו-
+\begin_inset Formula
+$q<r$
+\end_inset
+ אז 
+\begin_inset Formula
+$x^{q}>x^{r}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ חוקי חזקות אלו נכונים גם כשהמעריך ממשי.
+\end_layout
+
+\begin_layout Proof
+יהיו 
+\begin_inset Formula
+$a,c\in\MKinteger$
+\end_inset
+ ו-
+\begin_inset Formula
+$b,d\in\MKnatural$
+\end_inset
+ כך ש-
+\begin_inset Formula
+$q=\frac{a}{b}$
+\end_inset
+ ו-
+\begin_inset Formula
+$r=\frac{c}{d}$
+\end_inset
+, ההוכחות לסעיפים
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+1-3
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+משתמשו ביחידות השורש.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula
+\begin{align*}
+\left(x^{q}\cdot x^{r}\right)^{bd} & =\left(x^{{\color{red}q}}\right)^{bd}\cdot\left(x^{{\color{red}r}}\right)^{bd}=\left(\left(x^{{\color{red}a}}\right)^{{\color{red}\frac{1}{b}}}\right)^{{\color{blue}b}d}\cdot\left(\left(x^{{\color{red}c}}\right)^{{\color{red}\frac{1}{d}}}\right)^{b{\color{blue}d}}=\left(\left(\left(x^{a}\right)^{{\color{blue}\frac{1}{b}}}\right)^{{\color{blue}b}}\right)^{d}\cdot\left(\left(\left(x^{c}\right)^{{\color{blue}\frac{1}{d}}}\right)^{{\color{blue}d}}\right)^{b}=\left(x^{a}\right)^{d}\cdot\left(x^{c}\right)^{b}\\
+ & =x^{ad}\cdot x^{bc}=x^{ad+bc}=\left(\left(x^{ad+bc}\right)^{{\color{blue}\frac{1}{bd}}}\right)^{{\color{blue}bd}}=\left(x^{{\color{red}\frac{ad+bc}{bd}}}\right)^{bd}=\left(x^{{\color{red}\left(\frac{a}{b}+\frac{c}{d}\right)}}\right)^{bd}=\left(x^{{\color{red}q+r}}\right)^{bd}
+\end{align*}
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow x^{q}\cdot x^{r}=x^{q+r}
+\]
+
+
+\end_inset
+
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+\begin{align*}
+\left(\left(x^{q}\right)^{{\color{red}r}}\right)^{bd} & =\left(\left(\left(x^{q}\right)^{{\color{red}c}}\right)^{{\color{red}\frac{1}{d}}}\right)^{b{\color{blue}d}}=\left(\left(\left(\left(x^{q}\right)^{c}\right)^{{\color{blue}\frac{1}{d}}}\right)^{{\color{blue}d}}\right)^{b}=\left(\left(x^{{\color{red}q}}\right)^{{\color{green}c}}\right)^{b}=\left(\left(x^{{\color{red}a}}\right)^{{\color{red}\frac{1}{b}}}\right)^{{\color{blue}b}{\color{green}c}}=\left(\left(\left(x^{a}\right)^{{\color{blue}\frac{1}{b}}}\right)^{{\color{blue}b}}\right)^{c}\\
+ & =\left(x^{a}\right)^{c}=x^{ac}=\left(\left(x^{ac}\right)^{{\color{blue}\frac{1}{bd}}}\right)^{{\color{blue}bd}}=\left(x^{\left(\frac{ac}{bd}\right)}\right)^{bd}=\left(x^{\left({\color{red}\frac{a}{b}\cdot\frac{c}{d}}\right)}\right)^{bd}=\left(x^{{\color{red}q\cdot r}}\right)^{bd}
+\end{align*}
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow\left(x^{q}\right)^{r}=x^{q\cdot r}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula
+\[
+\left(\left(x\cdot y\right)^{{\color{purple}q}}\right)^{b}=\left(\left(\left(x\cdot y\right)^{{\color{red}a}}\right)^{{\color{blue}\frac{1}{b}}}\right)^{{\color{blue}b}}=\left(x\cdot y\right)^{a}=x^{a}\cdot y^{a}=\left(\left(x^{{\color{red}a}}\right)^{{\color{blue}\frac{1}{b}}}\right)^{{\color{blue}b}}\cdot\left(\left(y^{{\color{red}a}}\right)^{{\color{blue}\frac{1}{b}}}\right)^{{\color{blue}b}}=\left(x^{{\color{purple}q}}\right)^{b}\cdot\left(y^{{\color{purple}q}}\right)^{b}=\left(x^{q}\cdot y^{q}\right)^{b}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow\left(x\cdot y\right)^{q}=x^{q}\cdot y^{q}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+נניח ש-
+\begin_inset Formula
+$0<x<y$
+\end_inset
+ ו-
+\begin_inset Formula
+$0<q$
+\end_inset
+.
+\begin_inset Formula
+\[
+\left(x^{{\color{purple}q}}\right)^{b}=\left(\left(x^{{\color{red}a}}\right)^{{\color{blue}\frac{1}{b}}}\right)^{{\color{blue}b}}=x^{a}<y^{a}=\left(\left(y^{{\color{red}a}}\right)^{{\color{blue}\frac{1}{b}}}\right)^{{\color{blue}b}}=\left(y^{{\color{purple}q}}\right)^{b}
+\]
+
+
+\end_inset
+מהסעיפים המקבילים עבור מעריך שלם נקבל ש-
+\begin_inset Formula
+$x^{q}<y^{q}$
+\end_inset
+. אם 
+\begin_inset Formula
+$q<0$
+\end_inset
+ אז 
+\begin_inset Formula
+$0<-q$
+\end_inset
+ ולכן מהחלק הקודם של ההוכחה ומטענה 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "claim 1.9"
+plural false
+caps false
+noprefix false
+nolink false
+\end_inset
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+סעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric on
+6
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\emph default
+
+\size default
+
+\shape default
+
+\series default
+
+\family default
+
+\numeric off
+
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\color inherit
+
+\noun default
+
+\uwave default
+
+\uuline default
+
+\xout default
+
+\strikeout default
+
+\bar default
+נקבל את המבוקש.
+\end_layout
+
+\begin_layout Enumerate
+נתון 
+\begin_inset Formula
+$q<r$
+\end_inset
+, מכאן ש-
+\begin_inset Formula
+$q=\frac{ad}{bd}<\frac{cb}{bd}=r$
+\end_inset
+ ומכאן 
+\begin_inset Formula
+$ad<bc$
+\end_inset
+.
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow x^{ad}<x^{bc}\\
+ & \Rightarrow\left(\left(x^{ad}\right)^{{\color{blue}\frac{1}{bd}}}\right)^{{\color{blue}bd}}<\left(\left(x^{cb}\right)^{{\color{blue}\frac{1}{bd}}}\right)^{{\color{blue}bd}}\\
+ & \Rightarrow x^{{\color{red}q}}=\left(x^{{\color{red}a}d}\right)^{\frac{1}{{\color{red}b}d}}<\left(x^{b{\color{red}c}}\right)^{\frac{1}{b{\color{red}d}}}=x^{{\color{red}r}}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Enumerate
+נתון ש-
+\begin_inset Formula
+$0<x<1$
+\end_inset
+ ומכאן ש-
+\begin_inset Formula
+$0<1<x^{-1}$
+\end_inset
+, מהסעיף הקודם נובע שמתקיים:
+\begin_inset Formula
+\[
+0<\left(x^{-1}\right)^{q}<\left(x^{-1}\right)^{r}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+ & \Rightarrow0<\left(x^{q}\right)^{-1}<\left(x^{r}\right)^{-1}\\
+ & \Rightarrow0<x^{r}<x^{q}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\end_deeper
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+לכל 
+\begin_inset Formula
+$a,b\in\MKfield$
+\end_inset
+ ולכל 
+\begin_inset Formula
+$n\in\MKnatural_{0}$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+a^{n}-b^{n}=\left(a-b\right)\cdot\sum_{k=0}^{n-1}a^{n-1-k}\cdot b^{k}
+\]
+
+
+\end_inset
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\begin_inset Formula
+$\clubsuit$
+\end_inset
+ משפט זה הוא הכללה של נוסחת הכפל המקוצר 
+\begin_inset Formula
+$a^{2}-b^{2}=\left(a+b\right)\left(a-b\right)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+יהיו 
+\begin_inset Formula
+$a,b\in\MKfield$
+\end_inset
+, לכל 
+\begin_inset Formula
+$n-1\geq k\in\MKnatural$
+\end_inset
+ מתקיים:
+\begin_inset Formula
+\[
+a^{n-k}\cdot b^{k}=a^{n-1-\left(k-1\right)}\cdot b^{k+1-1}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\[
+\Rightarrow\sum_{k=1}^{n-1}a^{n-k}\cdot b^{k}=\sum_{k=1}^{n-1}a^{n-1-\left(k-1\right)}\cdot b^{k+1-1}=\sum_{k=0}^{n-2}a^{n-1-k}\cdot b^{k+1}
+\]
+
+
+\end_inset
+
+\begin_inset Formula
+\begin{align*}
+\Rightarrow\left(a-b\right)\cdot\sum_{k=0}^{n-1}a^{n-1-k}\cdot b^{k} & =a\cdot\sum_{k=0}^{n-1}a^{n-1-k}\cdot b^{k}-b\cdot\sum_{k=0}^{n-1}a^{n-1-k}\cdot b^{k}\\
+ & =\sum_{k=0}^{n-1}a^{n-k}\cdot b^{k}-\sum_{k=0}^{n-1}a^{n-1-k}\cdot b^{k+1}\\
+ & =a^{n}+\sum_{k=1}^{n-1}a^{n-k}\cdot b^{k}-\sum_{k=0}^{n-2}a^{n-1-k}\cdot b^{k+1}+b^{n}
+\end{align*}
+
+
+\end_inset
+
+\end_layout
+
+\end_body
+
+\end_document
+
