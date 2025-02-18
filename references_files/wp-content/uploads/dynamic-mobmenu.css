@@ -38,27 +38,27 @@
 }
 
 
-@media only screen and (min-width:5001px){
+@media only screen and (min-width:769px){
 	.mob_menu, .mobmenu-panel, .mobmenu, .mobmenu-cart-panel, .mobmenu-footer-menu-holder, .mobmenu-right-panel, .mobmenu-left-panel  {
 		display: none!important;
 	}
 }
 
-@media only screen and (max-width:5000px) {
+@media only screen and (max-width:768px) {
 
 			
 	.mobmenur-container i {
-		color: #118191;
+		color: #ffffff;
 	}
 	.mobmenul-container i {
 		color: #81d742;
 	}
 	.mobmenul-container img {
-		max-height:  40px;
+		max-height:  30px;
 		float: left;
 	}
 	.mobmenur-container img {
-		max-height:  25px;
+		max-height:  33px;
 		float: right;
 	}
 	.mob-expand-submenu i {
@@ -84,15 +84,15 @@
 		background-color: #666;
 	}
 	.mobmenu-content #mobmenuright li:hover  {
-		background-color: #cccccc ;
+		background-color: #084149 ;
 	}
 	/* 3rd Level Right Menu Items Background color on Hover*/
 	.mobmenu-content #mobmenuright .sub-menu .sub-menu li:hover {
-		background-color: #cccccc;
+		background-color: #084149;
 	}
 	/* 3rd Level Right Menu Items Background color on Hover*/
 	.mobmenu-content #mobmenuright .sub-menu  .sub-menu li a:hover {
-		color: #118191;
+		color: #ffffff;
 	}
 
 		.mobmenu-content #mobmenuleft .sub-menu {
@@ -123,15 +123,15 @@
 		color: #fff ;
 	}
 	.mobmenu-content #mobmenuright .sub-menu  a {
-		color: #084149 ;
+		color: #ffffff ;
 	}
 	.mobmenu-content #mobmenuright .sub-menu .sub-menu {
 		background-color: inherit;
 	}
 	.mobmenu-content #mobmenuright .sub-menu {
-		background-color: #cccccc ;
+		background-color: #084149 ;
 		margin: 0;
-		color: #084149 ;
+		color: #ffffff ;
 		position: initial;
 		width: 100%;
 	}
@@ -139,25 +139,25 @@
 		color: #FFF;
 	}
 	#mobmenuright li a , #mobmenuright li a:visited, .show-nav-right .mob-menu-copyright, .show-nav-right .mob-expand-submenu i {
-		color: #084149 ;
+		color: #ffffff ;
 	}
 	#mobmenuright li a:hover {
-		color: #0c5c6c ;
+		color: #ffffff ;
 	}
 	.mobmenul-container {
 		top: 10px;
 		margin-left: 5px;
-		margin-top: 0px;
+		margin-top: 5px;
 		height: 50px;
 		float: left;
 	}
 	.mobmenur-container {
-		top: 25px;
-		margin-right: 20px;
-		margin-top: 0px;
+		top: 7px;
+		margin-right: 7px;
+		margin-top: 5px;
 	}
 		.mob-menu-logo-holder {
-		margin-top:   0px;
+		margin-top:   5px;
 		text-align:   center;
 		margin-left:  0;
 		margin-right: 0;
@@ -167,7 +167,7 @@
 		width:  100% ;
 		background-color: transparent ;
 		height: 50px ;
-		position:fixed;
+		position:absolute;
 	}
 	body.mob-menu-overlay, body.mob-menu-slideout, body.mob-menu-slideout-over, body.mob-menu-slideout-top {
 		padding-top: 0px;
@@ -180,7 +180,7 @@
 		width:  270px;  
 	}
 	.mobmenu-right-panel {
-		background-color:#cccccc;		width:  270px; 
+		background-color:#084149;		width:  70%; 
 	}
 	.show-nav-left .mobmenu-overlay, .show-nav-right .mobmenu-overlay, .show-mob-menu-search .mobmenu-overlay  {
 		background: rgba(0, 0, 0, 0.83);
@@ -196,11 +196,11 @@
 		transform: translateX(270px);
 	}
 	.mob-menu-slideout.show-nav-right .mobmenu-push-wrap, .mob-menu-slideout.show-nav-right .mob-menu-header-holder {
-		-webkit-transform: translateX(-270px);
-		-moz-transform: translateX(-270px);
-		-ms-transform: translateX(-270px);
-		-o-transform: translateX(-270px);
-		transform: translateX(-270px);
+		-webkit-transform: translateX(-70%);
+		-moz-transform: translateX(-70%);
+		-ms-transform: translateX(-70%);
+		-o-transform: translateX(-70%);
+		transform: translateX(-70%);
 	}
 	.mob-menu-slideout-top .mobmenu-panel {
 		width:  100%;
@@ -268,8 +268,8 @@
 	}
 
 	.mobmenu-right-panel li, .rightmbottom, .rightmtop{
-		padding-left: 10%;
-		padding-right: 10%;
+		padding-left: 0%;
+		padding-right: 0%;
 	}
 	.mobmenul-container i {
 		line-height: 30px;
@@ -286,12 +286,12 @@
 	}
 	.right-menu-icon-text {
 		float: right;
-		line-height: 50px;
+		line-height: 35px;
 		color: #222;
 	}
 	.mobmenur-container i {
-		line-height: 50px;
-		font-size: 50px;
+		line-height: 35px;
+		font-size: 35px;
 		float: right;
 	}
 	.nav, .main-navigation, .genesis-nav-menu, #main-header, #et-top-navigation, .site-header, .site-branding, .ast-mobile-menu-buttons, .storefront-handheld-footer-bar, .hide {
@@ -308,13 +308,13 @@
 	}
 
 	.mobmenu-content #mobmenuright > li > a:hover {
-		background-color: #cccccc;
+		background-color: #084149;
 	}
 	.mobmenu-left-panel .mob-cancel-button {
 		color: #666;
 	}
 	.mobmenu-right-panel .mob-cancel-button {
-		color: #555555;
+		color: #cccccc;
 	}	
 	
 }
@@ -322,8 +322,8 @@
 
 .mob-menu-logo-holder > .headertext span,.mobmenu input.mob-menu-search-field {
 	font-family:inherit;
-	font-size:20px;
-	font-weight:inherit;
+	font-size:1.5em;
+	font-weight:bold;
 	font-style:normal;
 	letter-spacing:normal;
 	text-transform:none;
@@ -361,8 +361,8 @@
 
 #mobmenuright li a,#mobmenuright li a:visited,#mobmenuright .mobmenu-content h2,#mobmenuright .mobmenu-content h3,.mobmenu-left-panel .mobmenu-display-name {
 	font-family:inherit;
-	font-size:inherit;
-	font-weight:inherit;
+	font-size:1.5em;
+	font-weight:bold;
 	font-style:normal;
 	line-height:1.5em;
 	letter-spacing:normal;
