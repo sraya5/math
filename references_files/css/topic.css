@@ -10,12 +10,16 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "Suez One", serif;
 }
 
+#toc_container {
+    overflow-y: auto;
+}
+
 #content_column {
     overflow-x: auto;
     overflow-y: hidden;
 }
 
-#tools_container_desktop {
+#tools_container {
     z-index: 0;
 }
 

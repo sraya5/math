@@ -83,7 +83,7 @@
     </course>
   </branch>
   <branch en_name="algebra" he_name="אלגברה" divider="2">
-    <course en_name="linear_algebra_1" course_number="80134" lecturer="ערן נבו" semester="ב' תשפ&quot;ג" he_name="אלגברה לינארית (1)">
+    <course en_name="linear_algebra_1" course_number="80134" lecturer="ערן נבו" tutor="איתמר ישראלי ושני שלומי" semester="ב' תשפ&quot;ג" he_name="אלגברה לינארית (1)">
       <title en_name="basic_subjects" he_name="נושאים בסיסיים">
         <import en_name="naive_set_theory" he_name="תורת הקבוצות הנאיבית" />
         <import en_name="about_fields" he_name="על שדות" />
