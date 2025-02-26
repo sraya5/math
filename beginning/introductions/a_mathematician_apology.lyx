@@ -157,7 +157,7 @@ End
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
-\suppress_date false
+\suppress_date true
 \justification true
 \use_refstyle 1
 \use_formatted_ref 0
@@ -174,7 +174,7 @@ End
 \bottommargin 2cm
 \headheight 2cm
 \headsep 0cm
-\footskip 0cm
+\footskip 0.5cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -216,8 +216,6 @@ literal "false"
 \series bold
 \size giant
 התנצלותו של המתמטיקאי
-\size huge
-
 \begin_inset Foot
 status collapsed
 
@@ -234,22 +232,24 @@ literal "false"
  שכתב המתמטיקאי 
 \begin_inset CommandInset href
 LatexCommand href
-name "הארדי ה. ג."
+name "ג. ה. הארדי"
 target "https://he.wikipedia.org/wiki/%D7%92%D7%95%D7%93%D7%A4%D7%A8%D7%99_%D7%94%D7%A8%D7%95%D7%9C%D7%93_%D7%94%D7%90%D7%A8%D7%93%D7%99"
 literal "false"
 
 \end_inset
 
-;
+.
  באנגלית נקרא הספר בשם "
 \lang english
 A Mathematician's Apology
 \lang hebrew
-" והמילה '
+",
+ והמילה "
 \lang english
 Apology
 \lang hebrew
-' באה מלשון הצדקה או כתב הגנה,
+" באה מלשון "הצדקה" או:
+ "כתב הגנה",
  כך שהתרגום לעברית שוגה לכוונת המשורר.
 \end_layout
 
@@ -269,20 +269,14 @@ Apology
  כעבור שעה מקיץ הפיזיקאי ומגלה שהמגבת שהשאיר על ההסקה עולה באש,
  הוא מחשב כיצד ניתן לכבות את האש תוך הוצאת אנרגיה מינימלית,
  מכבה את האש ושב על יצועו.
-\begin_inset Newline newline
-\end_inset
-
-עוברת עוד שעה והפעם קם המתמטיקאי,
+ עוברת עוד שעה והפעם קם המתמטיקאי,
  והנה גם הוא רואה שפרצה שריפה בגלל קצר בארון החשמל,
  מסתכל המתמטיקאי על המטף שבפינת החדר,
  מביט בארון החשמל,
  ואומר:
  "אני יודע כיצד לפתור את הבעיה,
  יש להתיז על האש את החומר שבמטף ולכבות אותה" - והולך לישון.
-\end_layout
-
-\begin_layout Standard
-זוהי אמנם רק בדיחה אך לטעמי היא תופסת את אופיו של המתמטיקאי בצורה מדויקת,
+ זוהי אמנם רק בדיחה אך לטעמי היא תופסת את אופיו של המתמטיקאי בצורה מדויקת,
  הוא אינו מעוניין בפתרון משוואות מסוימות או בעיסוק במקרים פרטיים,
  גם אינו חפץ בפרטים שאינם קשורים לבעיה אלא תמיד ינסה להפשיט כל מושג ככל האפשר.
 \end_layout
@@ -300,10 +294,7 @@ Apology
  החלוקה הכללית בכל נושא היא:
  קובץ הגדרות,
  קובץ טענות ללא הוכחות וקובץ עם הוכחות נבחרות (את קובצי ההוכחות אכתוב רק בסוף הסמסטר כהכנה למבחן).
-\begin_inset Newline newline
-\end_inset
-
-עם זאת,
+ עם זאת,
  הסיכומים פורמליים כמעט לחלוטין במה שכן כתוב בהם,
  ואני סבור שיעזרו לסטודנטים שזהו עבורם הסמסטר הראשון להבין לאיזו רמה של פורמליות ניתן להגיע (אני נוטה לכיוון הפורמלי מדי,
  אין צורך אמיתי ללכת רחוק כל כך).
