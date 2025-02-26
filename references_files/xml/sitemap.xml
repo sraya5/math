@@ -91,7 +91,7 @@
       <import en_name="the_complex_numbers" he_name="המספרים המרוכבים" />
       <import en_name="about_polynomials" he_name="על פולינומים" />
       <topic en_name="operators" he_name="אופרטורים" />
-      <introduction en_name="introduction-length,_angle_and_the_dot_product" he_name="הקדמה - אורך, זווית והמכפלה הסקלרית" />
+      <introduction en_name="length,_angle_and_the_dot_product" he_name="הקדמה - אורך, זווית והמכפלה הסקלרית" />
       <topic en_name="inner_product_space" he_name="מרחבי מכפלה פנימית" />
       <figures />
     </course>
