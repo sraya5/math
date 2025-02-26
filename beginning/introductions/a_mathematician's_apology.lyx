@@ -48,14 +48,8 @@
 \titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
 \titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
 
-% Correct the reversed parentheses in labels:
 \usepackage{polyglossia}
 \setmainlanguage{hebrew}
-\newfontfamily{\hebrewfont}{David}
-\makeatletter
-\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
-\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
-\makeatother
 
 % Create disjoint union symbols:
 \makeatletter
@@ -96,26 +90,24 @@ Style Section*
 	Font
 	  Series     Medium
 	  Shape      Smallcaps
-	  Size      Larger
+	  Size       Larger
 	  Series     Bold
 	EndFont
 End
-Style Solution
-	LabelString           "פתרון: "End
-Style Notation
-	LabelString           "סימון  \thetheorem: "End
-Style Theorem
-	LabelString           "משפט \thetheorem: "End
-Style Property
-	LabelString           "תזכורת: "End
+Style Proposition
+	LabelString           ".הגד \thetheorem "
+End
+Style Proposition*
+	LabelString           ".הגד "
+End
 \end_local_layout
 \language hebrew
 \language_package default
 \inputencoding auto-legacy
 \fontencoding auto
 \font_roman "default" "David"
-\font_sans "default" "David"
-\font_typewriter "default" "David"
+\font_sans "default" "Arial"
+\font_typewriter "default" "Courier New"
 \font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts true
@@ -133,6 +125,7 @@ Style Property
 \bibtex_command default
 \index_command default
 \float_placement H
+\float_alignment class
 \paperfontsize default
 \spacing onehalf
 \use_hyperref true
@@ -164,7 +157,7 @@ Style Property
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
-\suppress_date true
+\suppress_date false
 \justification true
 \use_refstyle 1
 \use_formatted_ref 0
@@ -175,20 +168,20 @@ Style Property
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 3.2cm
+\leftmargin 2cm
 \topmargin 2.7cm
-\rightmargin 3.2cm
+\rightmargin 2cm
 \bottommargin 2cm
 \headheight 2cm
 \headsep 0cm
-\footskip 1cm
+\footskip 0cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation 0bp
 \is_math_indent 0
 \math_numbering_side default
-\quotes_style english
+\quotes_style plain
 \dynamic_quotes 0
 \papercolumns 1
 \papersides 1
@@ -211,7 +204,7 @@ Style Property
 \begin_inset CommandInset include
 LatexCommand include
 filename "C:/Users/sraya/AppData/Roaming/LyX2.4/macros/MKmacros.lyx"
-literal "true"
+literal "false"
 
 \end_inset
 
@@ -221,8 +214,10 @@ literal "true"
 \begin_layout Title
 
 \series bold
-\size huge
+\size giant
 התנצלותו של המתמטיקאי
+\size huge
+
 \begin_inset Foot
 status collapsed
 
@@ -261,35 +256,6 @@ Apology
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size small
-"המספר אליו הגעתם הוא מספר מדומה,
- אנא סובבו את הטלפון ב-
-\begin_inset Formula $90$
-\end_inset
-
- מעלות וחייגו שנית"
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-תיבת האוצרות המתמטיים של פרופסור סטיוארט,
- עמ' 218;
- הוצאת כנרת-זמורה ביתן,
- תשע"ב.
-\end_layout
-
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-(רמז להבנת הבדיחה מופיע בעמוד הבא)
 \end_layout
 
 \begin_layout Standard
@@ -349,52 +315,6 @@ status collapsed
 
 \begin_layout Standard
 שריה אנסבכר
-\end_layout
-
-\begin_layout Standard
-\begin_inset space \space{}
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-לסיכומים עצמם היכנסו לאתר:
-\begin_inset Newline newline
-\end_inset
-
-אקסיומת השלמות - סיכומי הרצאות במתמטיקה
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset CommandInset href
-LatexCommand href
-name "https://srayaa.wixsite.com/math"
-target "https://srayaa.wixsite.com/math"
-literal "false"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename figures/this_num_is_imaginary_number.png
-
-\end_inset
-
-
 \end_layout
 
 \end_body

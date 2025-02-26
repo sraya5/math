@@ -1,0 +1,4437 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The head's design for summuries,make the layout more similar to a book:
+\AtBeginDocument{
+\renewcommand\headrule{%
+  \kern -7pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+  \kern 10pt
+}}
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+% Correct the reversed parentheses in labels:
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+\newfontfamily{\hebrewfont}{David}
+\makeatletter
+\def\maketag@@@#1{\hbox{\m@th\normalfont\LRE{#1}}}
+\def\tagform@#1{\maketag@@@{(\ignorespaces#1\unskip)}}
+\makeatother
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children no
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size      Larger
+	  Series     Bold
+	EndFont
+End
+Style Solution
+	LabelString           "פתרון: "End
+Style Notation
+	LabelString           "סימון  \thetheorem: "End
+Style Theorem
+	LabelString           "משפט \thetheorem: "End
+Style Property
+	LabelString           "תזכורת: "End
+\end_local_layout
+\language hebrew
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "David"
+\font_sans "default" "David"
+\font_typewriter "default" "David"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\boxbgcolor #cccccc
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "C:/Users/sraya/AppData/Roaming/LyX2.4/macros/MKmacros.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Right Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Roman{page}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+leftmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Left Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+חבורות חשובות
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Roman{page}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Center Footer
+
+\end_layout
+
+\begin_layout Title
+\paragraph_spacing double
+
+\series bold
+\size huge
+חבורות חשובות
+\end_layout
+
+\begin_layout Standard
+\align center
+מבנים אלגבריים (
+\numeric on
+1
+\numeric off
+) -
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+80445
+\numeric off
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+מרצה:
+ אורי פרזנצ'בסקי
+\end_layout
+
+\begin_layout Standard
+\align center
+מתרגל:
+ ליאור נייהויזר
+\end_layout
+
+\begin_layout Standard
+\align center
+סוכם ע"י שריה אנסבכר
+\end_layout
+
+\begin_layout Standard
+\align center
+סמסטר א' תשפ"ד,
+ האוניברסיטה העברית
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+סביר להניח שהסיכומים שלי מכילים טעויות רבות - אני מוצא כאלה כל יום (
+\begin_inset CommandInset href
+LatexCommand href
+name "רשימת טעויות נפוצות"
+target "https://drive.google.com/file/d/1ZX_KNQe6_sGYisMaS6ShnBv7T0rPf3D_/view?usp=drive_link"
+literal "false"
+
+\end_inset
+
+),
+\begin_inset Newline newline
+\end_inset
+
+אני מפציר בכם לעדכן אותי בכל טעות שאתם מוצאים (ממש כל טעות ללא יוצא מן הכלל);
+\begin_inset Newline newline
+\end_inset
+
+אתם מוזמנים להגיב על המסמכים ב-
+\lang english
+Google Drive
+\lang hebrew
+,
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "לשלוח לי דוא“ל"
+target "sraya.ansbacher@mail.huji.ac.il"
+type "mailto:"
+literal "false"
+
+\end_inset
+
+ או 
+\begin_inset CommandInset href
+LatexCommand href
+name "למלא פנייה באתר"
+target "https://srayaa.wixsite.com/math#contact-body"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+לסיכומים נוספים היכנסו לאתר:
+\begin_inset Newline newline
+\end_inset
+
+אקסיומת השלמות - סיכומי הרצאות במתמטיקה
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "https://srayaa.wixsite.com/math"
+target "https://srayaa.wixsite.com/math"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+החבורה החיבורית של חוג השלמים
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $n\in\MKnatural$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+מתקיים 
+\begin_inset Formula $\MKaut\left(\MKinteger\right)\cong\MKinteger^{\times}=\left\{ 1,-1\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+סימון:
+ לכל 
+\begin_inset Formula $m\in\MKinteger$
+\end_inset
+
+ נסמן 
+\begin_inset Formula $m\MKinteger:=m\cdot\MKinteger:=\left\{ mk\in\MKinteger:k\in\MKinteger\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula $m\in\MKinteger$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $\left\langle m\right\rangle =m\cdot\MKinteger$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+לכל תת-חבורה 
+\begin_inset Formula $H\leqslant\MKinteger$
+\end_inset
+
+ קיים 
+\begin_inset Formula $d\in\MKinteger$
+\end_inset
+
+ יחיד כך ש-
+\begin_inset Formula $H=\left\langle d\right\rangle $
+\end_inset
+
+,
+ ואותו 
+\begin_inset Formula $d$
+\end_inset
+
+ הוא:
+\begin_inset Formula 
+\[
+d:=\min\left\{ m\in\MKnatural_{0}\mid m\in H\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ כלומר אין ל-
+\begin_inset Formula $\MKinteger$
+\end_inset
+
+ תתי-חבורות שאינן מהצורה 
+\begin_inset Formula $m\MKinteger$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+יהיו 
+\begin_inset Formula $a_{1},a_{2},\ldots,a_{n}\in\MKinteger$
+\end_inset
+
+ כך שלפחות אחד מהם שונה מ-
+\begin_inset Formula $0$
+\end_inset
+
+ מתקיים:
+\begin_inset Formula 
+\[
+\left\langle a_{1},a_{2},\ldots,a_{n}\right\rangle =\left\langle \gcd\left(a_{1},a_{2},\ldots,a_{n}\right)\right\rangle 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+החוג המודולרי 
+\begin_inset Formula $\MKinteger_{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $n\in\MKnatural$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+תזכורת:
+ אומרים ש-
+\begin_inset Formula $m,k\in\MKinteger$
+\end_inset
+
+ 
+\bar under
+שקולים מודולו
+\bar default
+ 
+\begin_inset Formula $n$
+\end_inset
+
+ אם מתקיים 
+\begin_inset Formula $n\mid m-k$
+\end_inset
+
+ (זהו אכן יחס שקילות),
+ את 
+\bar under
+החוג המודולרי
+\bar default
+ מגדירים ע"י 
+\begin_inset Formula $\MKinteger_{n}:=\left\{ k\in\MKnatural_{0}:k<n\right\} $
+\end_inset
+
+ או ע"י קבוצת מחלקות השקילות שמגדיר יחס השקילות המודולרי.
+\begin_inset Newline newline
+\end_inset
+
+החיבור והכפל ב-
+\begin_inset Formula $\MKinteger_{n}$
+\end_inset
+
+ מוגדרים ע"י לקיחת השארית של חלוקת הסכום/המכפלה ב-
+\begin_inset Formula $n$
+\end_inset
+
+ (בהגדרה הראשונה) או ע"י לקיחת מחלקת השקילות של המכפלה/הסכום (בהגדרה השנייה).
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ כמובן ששתי ההגדרות איזומורפיות ואנחנו נשתמש בשתיהן כאוות נפשנו לפי הנוחות.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ 
+\begin_inset Formula $n\MKinteger$
+\end_inset
+
+ היא תת-חבורה נורמלית של 
+\begin_inset Formula $\MKinteger$
+\end_inset
+
+,
+ וכפי שראינו כל תת-חבורה מגדירה יחס שקילות ע"י המחלקות השמאליות שלה וקבוצת המנה של יחס זה היא קבוצת המחלקות השמאליות.
+ במקרה שלנו 
+\begin_inset Formula $\nicefrac{\MKinteger}{n\MKinteger}$
+\end_inset
+
+ שהיא קבוצת המחלקות השמאליות של 
+\begin_inset Formula $n\MKinteger$
+\end_inset
+
+ היא בדיוק קבוצת המנה של יחס השקילות המודולרי.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ בשתי ההגדרות אנחנו מקבלים חוג חילופי,
+ וכמו בכל חוג נסמן את קבוצת האיברים ההפיכים שבו ב-
+\begin_inset Formula $\MKinteger_{n}^{\times}$
+\end_inset
+
+ שהיא חבורה ביחס לכפל של 
+\begin_inset Formula $\MKinteger_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+מתקיים 
+\begin_inset Formula $\MKaut\left(\MKinteger_{n}\right)\cong\MKinteger_{n}^{\times}=\left\{ m\in\MKinteger_{n}\mid\gcd\left(m,n\right)=1\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+לכל 
+\begin_inset Formula $m\in\MKinteger_{n}$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $\left\langle m\right\rangle =\left\langle \gcd\left(m,n\right)\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Corollary
+לכל 
+\begin_inset Formula $m\in\MKinteger_{n}$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $\left\langle m\right\rangle =\MKinteger_{n}$
+\end_inset
+
+ אם"ם 
+\begin_inset Formula $m$
+\end_inset
+
+ זר ל-
+\begin_inset Formula $n$
+\end_inset
+
+ (כלומר 
+\begin_inset Formula $\gcd\left(m,n\right)=1$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Theorem
+יהיו 
+\begin_inset Formula $n_{1},n_{2},\ldots,n_{r}\in\MKnatural$
+\end_inset
+
+ זרים זה לזה בזוגות
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula $\gcd\left(n_{i},n_{j}\right)=1$
+\end_inset
+
+ לכל 
+\begin_inset Formula $r\geq i,j\in\MKnatural$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $i\neq j$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ ונסמן 
+\begin_inset Formula $m:=n_{1}\cdot n_{2}\cdot\ldots\cdot n_{r}$
+\end_inset
+
+,
+ מתקיים 
+\begin_inset Formula $\MKinteger_{n_{1}}\times\MKinteger_{n_{2}}\times\ldots\times\MKinteger_{n_{r}}\cong\MKinteger_{m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ אחד האיזומורפיזמים הוא זה שמעתיק כל איבר 
+\begin_inset Formula $a\in\MKinteger_{m}$
+\end_inset
+
+ לסדרה 
+\begin_inset Formula $\left(a_{1},a_{2},\ldots,a_{r}\right)$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $a_{i}\equiv a\mod n_{i}$
+\end_inset
+
+,
+ וזה שקול ל
+\begin_inset CommandInset href
+LatexCommand href
+name "משפט השאריות הסיני"
+target "https://he.wikipedia.org/wiki/%D7%9E%D7%A9%D7%A4%D7%98_%D7%94%D7%A9%D7%90%D7%A8%D7%99%D7%95%D7%AA_%D7%94%D7%A1%D7%99%D7%A0%D7%99"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+חבורת התמורות
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $n\in\MKnatural$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+תזכורת:
+ 
+\bar under
+תמורה
+\bar default
+ על קבוצה היא העתקה חח"ע ועל (הפיכה) מהקבוצה לעצמה.
+\end_layout
+
+\begin_layout Standard
+ראינו שיש רק חבורת תמורות
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+הכוונה היא לחבורת 
+\series bold
+\size normal
+כל
+\series default
+ התמורות על הקבוצה.
+\end_layout
+
+\end_inset
+
+ אחת על קבוצה סופית מגודל 
+\begin_inset Formula $n$
+\end_inset
+
+ (עד כדי איזומורפיזם),
+ ולכן נעסוק רק בקבוצת התמורות על 
+\begin_inset Formula $\left\{ 1,2,\ldots,n\right\} $
+\end_inset
+
+ (שהיא חבורה שפעולתה היא הרכבת פונקציות) ונסמן אותה ב-
+\begin_inset Formula $S_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+סימון:
+ ניתן לייצג כל תמורה 
+\begin_inset Formula $\sigma\in S_{n}$
+\end_inset
+
+ ע"י מטריצה מהצורה הבאה:
+\begin_inset Formula 
+\[
+\begin{pmatrix}1 & 2 & \ldots & n\\
+\sigma\left(1\right) & \sigma\left(2\right) & \ldots & \sigma\left(n\right)
+\end{pmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+מחזורים
+\end_layout
+
+\begin_layout Definition
+תמורה 
+\begin_inset Formula $\sigma\in S_{n}$
+\end_inset
+
+ תיקרא 
+\bar under
+מחזור
+\bar default
+ אם קיימים 
+\begin_inset Formula $n\geq a_{1},a_{2},\ldots,a_{r}\in\MKnatural$
+\end_inset
+
+ שונים זה מזה כך ש-
+\begin_inset Formula $\sigma\left(a_{i}\right)=a_{i+1}$
+\end_inset
+
+ לכל 
+\begin_inset Formula $r>i\in\MKnatural$
+\end_inset
+
+ ו-
+\begin_inset Formula $\sigma\left(a_{r}\right)=a_{1}$
+\end_inset
+
+ ובנוסף 
+\begin_inset Formula $\sigma\left(x\right)=x$
+\end_inset
+
+ לכל 
+\begin_inset Formula $x\in\left\{ 1,2,\ldots,n\right\} \setminus\left\{ a_{1},a_{2},\ldots,a_{r}\right\} $
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+מחזור כזה נסמן ע"י הסדרה 
+\begin_inset Formula $\left(a_{1},a_{2},\ldots,a_{r}\right)$
+\end_inset
+
+,
+ ונאמר ש-
+\begin_inset Formula $\left(a_{1},a_{2},\ldots,a_{r}\right)$
+\end_inset
+
+ פועל על כל 
+\begin_inset Formula $x\in\left\{ 1,2,\ldots,n\right\} \setminus\left\{ a_{1},a_{2},\ldots,a_{r}\right\} $
+\end_inset
+
+ 
+\bar under
+באופן טריוויאלי
+\bar default
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ כמובן,
+ הרעיון הוא שמחזור פועל על קבוצת איברים באופן מעגלי ומסיבה זו לכל 
+\begin_inset Formula $r\geq i\in\MKnatural$
+\end_inset
+
+ שונה מ-
+\begin_inset Formula $1$
+\end_inset
+
+ מתקיים:
+\begin_inset Formula 
+\[
+\left(a_{1},a_{2},\ldots,a_{r}\right)=\left(a_{i},a_{i+1},\ldots,a_{r},a_{1},a_{2},\ldots,a_{i-1}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+מחזור באורך 
+\begin_inset Formula $0$
+\end_inset
+
+ או באורך 
+\begin_inset Formula $1$
+\end_inset
+
+ ייקרא 
+\bar under
+טריוויאלי
+\bar default
+,
+ שכן הוא פועל על כל האיברים באופן טריוויאלי.
+\end_layout
+
+\begin_layout Claim
+הסדר של מחזור לא טריוויאלי הוא האורך שלו.
+\end_layout
+
+\begin_layout Definition
+נאמר שמחזור 
+\begin_inset Formula $\left(a_{1},a_{2},\ldots,a_{r}\right)\in S_{n}$
+\end_inset
+
+ הוא 
+\bar under
+תת-מחזור
+\bar default
+ של תמורה 
+\begin_inset Formula $\sigma\in S_{n}$
+\end_inset
+
+ אם לכל 
+\begin_inset Formula $r>i\in\MKnatural$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $\sigma\left(a_{i}\right)=a_{i+1}$
+\end_inset
+
+ וגם 
+\begin_inset Formula $\sigma\left(a_{r}\right)=a_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Lemma
+תהא 
+\begin_inset Formula $\sigma\in S_{n}$
+\end_inset
+
+ תמורה,
+ לכל 
+\begin_inset Formula $n\geq i\in\MKnatural$
+\end_inset
+
+ קיים תת-מחזור של 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $i$
+\end_inset
+
+ מופיע בתת-המחזור,
+ ובנוסף אותו תת-מחזור הוא טריוויאלי אם"ם 
+\begin_inset Formula $\sigma\left(i\right)=i$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+נאמר שמחזורים 
+\begin_inset Formula $\left(a_{1},a_{2},\ldots,a_{m}\right),\left(b_{1},b_{2},\ldots,b_{k}\right)\in S_{n}$
+\end_inset
+
+ הם 
+\bar under
+זרים
+\bar default
+ זה לזה אם הקבוצות 
+\begin_inset Formula $\left\{ a_{1},a_{2},\ldots,a_{m}\right\} $
+\end_inset
+
+ ו-
+\begin_inset Formula $\left\{ b_{1},b_{2},\ldots,b_{k}\right\} $
+\end_inset
+
+ זרות זו לזו.
+\end_layout
+
+\begin_layout Lemma
+שני תתי-מחזורים של תמורה הם שווים או זרים.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Claim
+לכל תמורה ב-
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ קיימת קבוצה יחידה של מחזורים זרים בזוגות שאינם טריוויאליים כך ש-
+\begin_inset Formula $\sigma$
+\end_inset
+
+ שווה להרכבה של כל המחזורים הללו (לא משנה באיזה סדר) כשכל מחזור בדיוק מופיע פעם אחת בהרכבה.
+\begin_inset Newline newline
+\end_inset
+
+כלומר כל תמורה ניתנת להצגה כהרכבה של מחזורים זרים בזוגות שאינם טריוויאליים (ללא חזרות),
+ והצגה זו היא יחידה עד כדי סדר;
+ נקרא להצגה זו 
+\bar under
+הפירוק של התמורה למחזורים זרים
+\bar default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Claim
+כל תמורה ב-
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ ניתנת להצגה כהרכבה של מחזורים באורך 
+\begin_inset Formula $2$
+\end_inset
+
+ (לאו דווקא זרים),
+ כלומר:
+\begin_inset Formula 
+\[
+S_{n}=\left\langle \left\{ \left(k,l\right)\mid n\geq k,l\in\MKnatural,\ k\neq l\right\} \right\rangle 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary
+כל תמורה ב-
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ ניתנת להצגה כהרכבה של מחזורים מהצורה 
+\begin_inset Formula $\left(i,i+1\right)$
+\end_inset
+
+ עבור 
+\begin_inset Formula $n>i\in\MKnatural$
+\end_inset
+
+ כלשהו,
+ כלומר:
+\begin_inset Formula 
+\[
+S_{n}=\left\langle \left\{ \left(i,i+1\right)\right\} \mid n>i\in\MKnatural\right\rangle 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary
+כל תמורה ב-
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ ניתנת להצגה כהרכבה של המחזורים 
+\begin_inset Formula $\left(1,2\right)$
+\end_inset
+
+ ו-
+\begin_inset Formula $\left(1,2,\ldots,n\right)$
+\end_inset
+
+,
+ כלומר:
+\begin_inset Formula 
+\[
+S_{n}=\left\langle \left(1,2\right),\left(1,2,\ldots,n\right)\right\rangle 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Claim
+יהי 
+\begin_inset Formula $\left(a_{1},a_{2},\ldots,a_{r}\right)\in S_{n}$
+\end_inset
+
+ מחזור ותהא 
+\begin_inset Formula $\tau\in S_{n}$
+\end_inset
+
+ תמורה,
+ מתקיים:
+\begin_inset Formula 
+\[
+\varphi_{\tau}\left(a_{1},a_{2},\ldots,a_{r}\right)=\tau\circ\left(a_{1},a_{2},\ldots,a_{r}\right)\circ\tau^{-1}=\left(\tau\left(a_{1}\right),\tau\left(a_{2}\right),\ldots,\tau\left(a_{r}\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary
+תהא 
+\begin_inset Formula $\sigma\in S_{n}$
+\end_inset
+
+ ויהיו 
+\begin_inset Formula $\sigma_{1},\sigma_{2},\ldots,\sigma_{r}\in S_{n}$
+\end_inset
+
+ מחזורים כך ש-
+\begin_inset Formula $\sigma=\sigma_{1}\circ\sigma_{2}\circ\ldots\circ\sigma_{r}$
+\end_inset
+
+ היא ההצגה של כהרכבה של מחזורים זרים,
+ לכל תמורה 
+\begin_inset Formula $\tau\in S_{n}$
+\end_inset
+
+ מתקיים:
+\begin_inset Formula 
+\begin{align*}
+\varphi_{\tau}\left(\sigma\right) & =\tau\circ\sigma\circ\tau^{-1}=\tau\circ\sigma_{1}\circ\sigma_{2}\circ\ldots\circ\sigma_{r}\circ\tau^{-1}\\
+ & =\tau\circ\sigma_{1}\circ\tau^{-1}\circ\tau\circ\sigma_{2}\circ\tau^{-1}\circ\tau\circ\ldots\circ\tau^{-1}\circ\tau\circ\sigma_{r}\circ\tau^{-1}\\
+ & =\varphi_{\tau}\left(\sigma_{1}\right)\circ\varphi_{\tau}\left(\sigma_{2}\right)\circ\ldots\circ\varphi_{\tau}\left(\sigma_{r}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ מכאן שמחלקת הצמידות של תמורה היא קבוצת כל התמורות שבפירוק שלהן למחזורים זרים יש את אותה כמות של מחזורים מכל גודל.
+\end_layout
+
+\begin_layout Subsection
+הסימן והתמורות הזוגיות
+\end_layout
+
+\begin_layout Definition
+
+\series bold
+סימן של תמורה
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+תהא 
+\begin_inset Formula $\sigma\in S_{n}$
+\end_inset
+
+ תמורה,
+ 
+\bar under
+מספר החילופים
+\bar default
+ של תמורה הוא מספר הזוגות 
+\begin_inset Formula $\left(i,j\right)\in\MKnatural^{2}$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $i<j\leq n$
+\end_inset
+
+ ו-
+\begin_inset Formula $\sigma\left(i\right)>\sigma\left(j\right)$
+\end_inset
+
+,
+ ואילו 
+\bar under
+הסימן
+\bar default
+ של 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ הוא:
+\begin_inset Formula 
+\[
+\MKsign\left(\sigma\right):=\begin{cases}
+1 & \left|\left\{ \left(i,j\right)\in\MKnatural^{2}:i<j\leq n,\ \sigma\left(i\right)>\sigma\left(j\right)\right\} \right|\in\MKeven\\
+-1 & \left|\left\{ \left(i,j\right)\in\MKnatural^{2}:i<j\leq n,\ \sigma\left(i\right)>\sigma\left(j\right)\right\} \right|\in\MKodd
+\end{cases}
+\]
+
+\end_inset
+
+כלומר הסימן של תמורה הוא 
+\begin_inset Formula $1$
+\end_inset
+
+ אם מספר החילופים זוגי ו-
+\begin_inset Formula $-1$
+\end_inset
+
+ אם מספר החילופים אי-זוגי,
+ לכן נקרא לתמורה שסימנה הוא 
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\bar under
+תמורה זוגית
+\bar default
+ ולתמורה שסימנה 
+\begin_inset Formula $-1$
+\end_inset
+
+ נקרא 
+\bar under
+אי-זוגית
+\bar default
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ בהגדרה של מספר חילופים יש משהו שרירותי:
+ אין יחס סדר טבעי על סתם קבוצה,
+ והעובדה שאנו עוסקים רק בקבוצה 
+\begin_inset Formula $\left\{ 1,2,\ldots,n\right\} $
+\end_inset
+
+ אינה פותרת אותנו מעניין זה מפני שבאותה מידה היינו יכולים לתת לאיברים שמות אחרים.
+ ובאמת מספר החילופים של תמורה אינו נשמר תחת הצמדה - כלומר לו היינו נותנים לאיברים שמות אחרים ייתכן שעבור אותה תמורה היינו מקבלים מספר חילופים שונה.
+ לעומת זאת 
+\series bold
+הזוגיות
+\series default
+ של מספר החילופים נשמרת תחת הצמדה ולכן אינה שרירותית.
+\end_layout
+
+\begin_layout Claim
+תהא 
+\begin_inset Formula $\sigma\in S_{n}$
+\end_inset
+
+ תמורה ויהיו 
+\begin_inset Formula $\tau_{1},\tau_{2},\ldots,\tau_{r}\in S_{n}$
+\end_inset
+
+ מחזורים באורך 
+\begin_inset Formula $2$
+\end_inset
+
+ כך שמתקיים 
+\begin_inset Formula $\sigma=\tau_{1}\circ\tau_{2}\circ\ldots\circ\tau_{r}$
+\end_inset
+
+,
+ מתקיים:
+\begin_inset Formula 
+\[
+\MKsign\left(\sigma\right)=\left(-1\right)^{r}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary
+הסימן של מחזור באורך 
+\begin_inset Formula $r\in\MKnatural$
+\end_inset
+
+ הוא 
+\begin_inset Formula $\left(-1\right)^{r-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary
+לכל שתי תמורות צמודות יש את אותו סימן.
+\end_layout
+
+\begin_layout Claim
+נסמן 
+\begin_inset Formula $X:=\left\{ \left(i,j\right)\in\MKnatural^{2}:i<j\leq n\right\} $
+\end_inset
+
+,
+ לכל 
+\begin_inset Formula $\sigma\in S_{n}$
+\end_inset
+
+ מתקיים:
+\begin_inset Formula 
+\[
+\MKsign\left(\sigma\right)=\prod_{\left(i,j\right)\in X}\frac{j-i}{\sigma\left(j\right)-\sigma\left(i\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+סימון:
+ נסמן 
+\begin_inset Formula $A_{n}:=\left\{ \sigma\in S_{n}\mid\MKsign\left(\sigma\right)=1\right\} $
+\end_inset
+
+ - זוהי קבוצת התמורות הזוגיות.
+\end_layout
+
+\begin_layout Claim
+לכל שתי תמורות 
+\begin_inset Formula $\sigma_{1},\sigma_{2}\in S_{n}$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $\MKsign\left(\sigma_{1}\circ\sigma_{2}\right)=\MKsign\left(\sigma_{1}\right)\cdot\MKsign\left(\sigma_{2}\right)$
+\end_inset
+
+,
+ כלומר פונקציית הסימן היא הומומורפיזם מ-
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ ל-
+\begin_inset Formula $\left\{ 1,-1\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset Formula $\MKsign$
+\end_inset
+
+ הוא ההומומורפיזם היחיד ב-
+\begin_inset Formula $\MKhom\left(S_{n},\left\{ -1,1\right\} \right)$
+\end_inset
+
+ שאינו טריוויאלי.
+\end_layout
+
+\begin_layout Corollary
+מתקיים 
+\begin_inset Formula $\ker\left(\MKsign\right)=A_{n}$
+\end_inset
+
+,
+ בפרט 
+\begin_inset Formula $A_{n}\trianglelefteq S_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Claim
+מתקיים 
+\begin_inset Formula ${\displaystyle \left|A_{n}\right|=\frac{\left|S_{n}\right|}{2}=\frac{n!}{2}}$
+\end_inset
+
+ (בהנחה ש-
+\begin_inset Formula $n>1$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Claim
+תהא 
+\begin_inset Formula $\sigma\in A_{n}$
+\end_inset
+
+ ותהא 
+\begin_inset Formula $O\left(\sigma\right)$
+\end_inset
+
+ מחלקת הצמידות של 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ ב-
+\begin_inset Formula $S_{n}$
+\end_inset
+
+,
+ מתקיימת אחת משתי האפשרויות הבאות:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם 
+\begin_inset Formula $C_{S_{n}}\left(\sigma\right)\nsubseteq A_{n}$
+\end_inset
+
+ אז 
+\begin_inset Formula $O\left(\sigma\right)$
+\end_inset
+
+ היא מחלקת הצמידות של 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ גם ב-
+\begin_inset Formula $A_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+אם 
+\begin_inset Formula $C_{S_{n}}\left(\sigma\right)\subseteq A_{n}$
+\end_inset
+
+ אז קיימים 
+\begin_inset Formula $O_{1},O_{2}\subseteq A_{n}$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $\left|O_{1}\right|=\left|O_{2}\right|$
+\end_inset
+
+ ו-
+\begin_inset Formula $O\left(\sigma\right)=O_{1}\MKcupdot O_{2}$
+\end_inset
+
+ ו-
+\begin_inset Formula $O_{1}$
+\end_inset
+
+ היא מחלקת הצמידות של 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ ב-
+\begin_inset Formula $A_{n}$
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+כלומר מחלקת הצמידות של 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ ב-
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ "מתפרקת" לשתי קבוצות באותו גודל שאחת מהן היא מחלקת הצמידות של 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ ב-
+\begin_inset Formula $A_{n}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Corollary
+\begin_inset Formula $A_{5}$
+\end_inset
+
+ היא חבורה פשוטה.
+\end_layout
+
+\begin_layout Claim
+\begin_inset Formula $A_{n}$
+\end_inset
+
+ נוצרת ע"י קבוצת המחזורים באורך 
+\begin_inset Formula $3$
+\end_inset
+
+ לכל 
+\begin_inset Formula $3\leq n\in\MKnatural$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Claim
+קבוצת המחזורים באורך 
+\begin_inset Formula $3$
+\end_inset
+
+ היא מחלקת צמידות ב-
+\begin_inset Formula $A_{n}$
+\end_inset
+
+ לכל 
+\begin_inset Formula $5\leq n\in\MKnatural$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Lemma
+לכל 
+\begin_inset Formula $5\leq n\in\MKnatural$
+\end_inset
+
+ ולכל תת-חבורה נורמלית 
+\begin_inset Formula $N\trianglelefteq A_{n}$
+\end_inset
+
+ קיים 
+\begin_inset Formula $e\neq\tau\in N$
+\end_inset
+
+ כך שמתקיים:
+\begin_inset Formula 
+\[
+\left|\left\{ n\geq i\in\MKnatural:\tau\left(i\right)\neq i\right\} \right|\leq5
+\]
+
+\end_inset
+
+כלומר 
+\begin_inset Formula $\tau$
+\end_inset
+
+ משנה לכל היותר 
+\begin_inset Formula $5$
+\end_inset
+
+ איברים ולכל הפחות איבר אחד.
+\end_layout
+
+\begin_layout Corollary
+\begin_inset Formula $A_{n}$
+\end_inset
+
+ היא חבורה פשוטה לכל 
+\begin_inset Formula $5\leq n\in\MKnatural$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ 
+\begin_inset Formula $A_{4}$
+\end_inset
+
+ אינה פשוטה,
+ מתקיים 
+\begin_inset Formula $\left\{ \MKid,\left(1,2\right)\left(3,4\right),\left(1,3\right)\left(2,4\right),\left(1,4\right)\left(2,3\right)\right\} \trianglelefteq A_{4}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $\left\{ \MKid,\left(1,2\right)\left(3,4\right),\left(1,3\right)\left(2,4\right),\left(1,4\right)\left(2,3\right)\right\} \cong\MKinteger_{2}\times\MKinteger_{2}$
+\end_inset
+
+,
+ חבורה זו נקראת גם 
+\begin_inset CommandInset href
+LatexCommand href
+name "חבורת קליין"
+target "https://he.wikipedia.org/wiki/%D7%97%D7%91%D7%95%D7%A8%D7%AA_%D7%94%D7%90%D7%A8%D7%91%D7%A2%D7%94_%D7%A9%D7%9C_%D7%A7%D7%9C%D7%99%D7%99%D7%9F"
+literal "false"
+
+\end_inset
+
+ על שמו של
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "פליקס קליין"
+target "https://he.wikipedia.org/wiki/%D7%A4%D7%9C%D7%99%D7%A7%D7%A1_%D7%A7%D7%9C%D7%99%D7%99%D7%9F"
+literal "false"
+
+\end_inset
+
+ ומסומנת גם ב-
+\begin_inset Formula $V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+החבורה הדיהדרלית
+\end_layout
+
+\begin_layout Standard
+יהי 
+\begin_inset Formula $n\in\MKnatural$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+החבורה הדיהדרלית 
+\begin_inset Formula $D_{n}$
+\end_inset
+
+ היא חבורת הסימטריות של מצולע משוכלל בעל 
+\begin_inset Formula $n$
+\end_inset
+
+ צלעות,
+ כל סימטריה כזו נוצרת ע"י שיקוף שנעשה ע"י "מראה" או ע"י סיבוב סביב מרכזו,
+ כך שלאחר הפעולה הוא נראה זהה לחלוטין למצבו שלפניה.
+ ליתר דיוק מדובר בשיקופים דרך חוצי הזוויות של הקודקודים,
+ בשיקופים דרך האנכים האמצעיים של הצלעות ובסיבובים בזווית 
+\begin_inset Formula $\frac{2\pi k}{n}$
+\end_inset
+
+ רדיאנים כאשר 
+\begin_inset Formula $n$
+\end_inset
+
+ הוא מספר הצלעות ו-
+\begin_inset Formula $n>k\in\MKnatural_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ אם 
+\begin_inset Formula $n$
+\end_inset
+
+ אי-זוגי אז כל שיקוף דרך חוצה זווית של קודקוד הוא שיקוף דרך האנך האמצעי של הצלע הנגדית,
+ ומצד שני אם 
+\begin_inset Formula $n$
+\end_inset
+
+ זוגי אז כל שיקוף סביב חוצה זווית של קודקוד הוא שיקוף סביב חוצה הזווית של הקודקוד הנגדי,
+ ואותו הדבר קורה עבור שיקוף סביב האנכים האמצעיים של הצלעות (עם הצלעות הנגדיות כמובן);
+ א"כ מתקיים 
+\begin_inset Formula $\left|D_{n}\right|=2n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+ננסה למצוא את הנוסחה להכפלת שני איברים בחבורה הדיהדרלית 
+\begin_inset Formula $D_{n}$
+\end_inset
+
+,
+ למעשה נעשה הרבה יותר מזה - אין שום צורך להתמקד דווקא בסיבובים ובשיקופים בזוויות הנ"ל ניתן להתבונן בכל שיקוף וסיבוב של המישור
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+ניתן להסתכל על זה בתור חבורת הסימטריות של המעגל,
+ או 
+\begin_inset CommandInset href
+LatexCommand href
+name "החבורה. הדיהרדלית האין-סופית"
+target "https://he.wikipedia.org/wiki/%D7%94%D7%97%D7%91%D7%95%D7%A8%D7%94_%D7%94%D7%93%D7%99%D7%94%D7%93%D7%A8%D7%9C%D7%99%D7%AA_%D7%94%D7%90%D7%99%D7%A0%D7%A1%D7%95%D7%A4%D7%99%D7%AA"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+ראשית נשים לב לכך שכל סיבוב סביב ראשית הצירים (לא משנה באיזו זווית) אינו משנה את היחס שבין הצירים
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+מה שחברי,
+ איתמר סלהוב,
+ כינה בשיעור 
+\begin_inset CommandInset href
+LatexCommand href
+name "כיראליות"
+target "https://he.wikipedia.org/wiki/%D7%9B%D7%99%D7%A8%D7%90%D7%9C%D7%99%D7%95%D7%AA"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+:
+ מבחינת ציר ה-
+\begin_inset Formula $x$
+\end_inset
+
+,
+ ציר-
+\begin_inset Formula $y$
+\end_inset
+
+ תמיד יישאר 
+\begin_inset Formula $\frac{\pi}{2}$
+\end_inset
+
+ רדיאנים משמאלו,
+ ומבחינת ציר ה-
+\begin_inset Formula $y$
+\end_inset
+
+ ציר ה-
+\begin_inset Formula $x$
+\end_inset
+
+ תמיד יישאר 
+\begin_inset Formula $\frac{\pi}{2}$
+\end_inset
+
+ רדיאנים מימינו.
+ לעומת זאת כל שיקוף (לא משנה דרך איזה ישר אנחנו משקפים) הופך את היחס שבין הצירים:
+ לאחר כל פעולת השיקוף ציר ה-
+\begin_inset Formula $x$
+\end_inset
+
+ יהיה 
+\begin_inset Formula $\frac{\pi}{2}$
+\end_inset
+
+ רדיאנים משמאל לציר ה-
+\begin_inset Formula $y$
+\end_inset
+
+.
+ בנוסף,
+ ניתן לתאר כל פעולה ששומרת על היחס שבין הצירים כסיבוב בזווית כלשהי,
+ וכמו כן כל פעולה שהופכת את היחס בין הצירים ניתנת להצגה כשיקוף דרך ישר כלשהו
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+נבדוק לאיזו זווית הולך ציר ה-
+\begin_inset Formula $x$
+\end_inset
+
+ ונחלק ב-
+\begin_inset Formula $2$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+.
+ מכאן שההרכבה של שני סיבובים או שני שיקופים היא סיבוב,
+ וההרכבה של סיבוב ושיקוף (לא משנה באיזה סדר) היא שיקוף;
+ ובנוסף,
+ כדי לדעת כיצד פועל סיבוב או שיקוף נתונים מספיק שנדע כיצד הוא פועל על ציר ה-
+\begin_inset Formula $x$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+לכל 
+\begin_inset Formula $\alpha\in\MKreal$
+\end_inset
+
+ נסמן ב-
+\begin_inset Formula $s\left(\alpha\right)$
+\end_inset
+
+ את הסיבוב ב-
+\begin_inset Formula $\alpha$
+\end_inset
+
+ רדיאנים נגד כיוון השעון וב-
+\begin_inset Formula $r\left(\alpha\right)$
+\end_inset
+
+ את השיקוף דרך הישר שיוצר זווית 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ עם החלק החיובי של ציר ה-
+\begin_inset Formula $x$
+\end_inset
+
+ נגד כיוון השעון
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+נשים לב לכך שבסימון זה מתקיים 
+\begin_inset Formula $s\left(\alpha\right)=s\left(\alpha+2\pi k\right)$
+\end_inset
+
+ ו-
+\begin_inset Formula $r\left(\alpha\right)=r\left(\alpha+\pi k\right)$
+\end_inset
+
+ (לכל 
+\begin_inset Formula $\alpha\in\MKreal$
+\end_inset
+
+ ולכל 
+\begin_inset Formula $k\in\MKinteger$
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+.
+ א"כ המטריצות המייצגות של העתקות אלה
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+ראינו בליניארית
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size small
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+שאכן מדובר בהעתקות ליניאריות.
+\end_layout
+
+\end_inset
+
+ הן:
+\begin_inset Formula 
+\begin{align*}
+\left[s\left(\alpha\right)\right]_{E} & =\left[\begin{array}{cc}
+\cos\alpha & \cos\left(\alpha+\frac{\pi}{2}\right)\\
+\sin\alpha & \sin\left(\alpha+\frac{\pi}{2}\right)
+\end{array}\right]=\left[\begin{array}{cc}
+\cos\alpha & -\sin\alpha\\
+\sin\alpha & \cos\alpha
+\end{array}\right]\\
+\left[r\left(\alpha\right)\right]_{E} & =\left[\begin{array}{cc}
+\cos2\alpha & \cos\left(2\alpha-\frac{\pi}{2}\right)\\
+\sin2\alpha & \sin\left(2\alpha-\frac{\pi}{2}\right)
+\end{array}\right]=\left[\begin{array}{cc}
+\cos2\alpha & \sin2\alpha\\
+\sin2\alpha & -\cos2\alpha
+\end{array}\right]
+\end{align*}
+
+\end_inset
+
+כבר כעת ניתן להסיק את הנוסחה להרכבה של שיקופים וסיבובים (ע"י כפל מטריצות),
+ אבל אני הבאתי אותן כאן רק כדי שיהיה ברור למה אני מתכוון,
+ אני רוצה למצוא את הנוסחה בצורה אינטואיטיבית יותר.
+\begin_inset Newline newline
+\end_inset
+
+סיבוב בזווית 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ מעביר את הישר שבזווית 
+\begin_inset Formula $\theta$
+\end_inset
+
+ לישר שבזווית 
+\begin_inset Formula $\alpha+\theta$
+\end_inset
+
+,
+ ואילו שיקוף בזווית 
+\begin_inset Formula $\beta$
+\end_inset
+
+ מעביר את הישר שבזווית 
+\begin_inset Formula $\theta$
+\end_inset
+
+ לישר שבזווית 
+\begin_inset Formula $2\beta-\theta$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+הזכרנו שכדי להבין כיצד פועל שיקוף או סיבוב מספיק לדעת כיצד הוא פועל על ציר ה-
+\begin_inset Formula $x$
+\end_inset
+
+ (זווית 
+\begin_inset Formula $0$
+\end_inset
+
+),
+ לפיכך (ע"פ הנוסחות הנ"ל):
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $s\left(\beta\right)\circ s\left(\alpha\right)$
+\end_inset
+
+ הוא סיבוב ששולח את הציר ה-
+\begin_inset Formula $x$
+\end_inset
+
+ לזווית 
+\begin_inset Formula $\alpha_{1}+\alpha_{2}$
+\end_inset
+
+,
+ כלומר 
+\begin_inset Formula $s\left(\beta\right)\circ s\left(\alpha\right)=s\left(\alpha+\beta\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $r\left(\beta\right)\circ r\left(\alpha\right)$
+\end_inset
+
+ הוא סיבוב ששולח את ציר ה-
+\begin_inset Formula $x$
+\end_inset
+
+ לזווית 
+\begin_inset Formula $2\beta-2\alpha$
+\end_inset
+
+,
+ כלומר 
+\begin_inset Formula $r\left(\beta\right)\circ r\left(\alpha\right)=s\left(2\beta-2\alpha\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $r\left(\beta\right)\circ s\left(\alpha\right)$
+\end_inset
+
+ הוא שיקוף ששולח את ציר ה-
+\begin_inset Formula $x$
+\end_inset
+
+ לזווית 
+\begin_inset Formula $2\beta-\alpha$
+\end_inset
+
+,
+ כלומר 
+\begin_inset Formula $r\left(\beta\right)\circ s\left(\alpha\right)=r\left(\beta-\frac{\alpha}{2}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $s\left(\beta\right)\circ r\left(\alpha\right)$
+\end_inset
+
+ הוא שיקוף ששולח את ציר ה-
+\begin_inset Formula $x$
+\end_inset
+
+ לזווית 
+\begin_inset Formula $2\alpha+\beta$
+\end_inset
+
+,
+ כלומר 
+\begin_inset Formula $s\left(\beta\right)\circ r\left(\alpha\right)=r\left(\alpha+\frac{\beta}{2}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ מי שיכפיל את המטריצות המתאימות להרכבה 
+\begin_inset Formula $s\left(\beta\right)\circ s\left(\alpha\right)$
+\end_inset
+
+ יקבל הוכחה אלגנטית לזהויות הטריגונומטריות:
+\begin_inset Formula 
+\begin{align*}
+\sin\left(\alpha+\beta\right) & =\sin\alpha\cdot\cos\beta+\cos\alpha\cdot\sin\beta\\
+\cos\left(\alpha+\beta\right) & =\cos\alpha\cdot\cos\beta-\sin\alpha\cdot\sin\beta
+\end{align*}
+
+\end_inset
+
+שכן 
+\begin_inset Formula $s\left(\beta\right)\circ s\left(\alpha\right)=s\left(\alpha+\beta\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+סימון:
+ נהוג לסמן ב-
+\begin_inset Formula $s$
+\end_inset
+
+ או ב-
+\begin_inset Formula $\sigma$
+\end_inset
+
+ את הסיבוב ב\SpecialChar softhyphen
+
+\begin_inset Formula $\frac{2\pi}{n}$
+\end_inset
+
+ רדיאנים,
+ וב-
+\begin_inset Formula $r$
+\end_inset
+
+ או ב-
+\begin_inset Formula $\tau$
+\end_inset
+
+ את השיקוף "הראשי" - זה לא לגמרי מוגדר,
+ לא אמרנו באיזה כיוון הסיבוב ומהו הציר שדרכו אנו משקפים אך למעשה זה כלל לא משנה.
+ משום מה בקורס שלנו בחרו שכיוון הסיבוב החיובי יהיה עם כיוון השעון ושציר השיקוף הראשי יהיה הציר האנכי ("ציר ה-
+\begin_inset Formula $y$
+\end_inset
+
+");
+ למרות זאת,
+ כדי לשמור על עקביות עם הסיכומים האחרים שלי ועם המקובל בעולם המתמטי בכלל
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+הסיבה הראשונה חלה על שתי הבחירות,
+ אך סיבה זו חלה רק על כיוון הסיבוב שבאופן מקובל מוגדר כך שנגד כיוון השעון הוא הכיוון החיובי.
+\end_layout
+
+\end_inset
+
+,
+ אבחר בסיכום זה שכיוון הסיבוב החיובי יהיה נגד כיוון השעון וציר השיקוף הראשי יהיה הציר האופקי.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ לבחירה זו יש רווח נוסף והוא שכך סיבוב ב-
+\begin_inset Formula $\frac{2\pi k}{n}$
+\end_inset
+
+ רדיאנים מתאים למספר המרוכב 
+\begin_inset Formula $\MKcis\left(\frac{2\pi k}{n}\right)$
+\end_inset
+
+ והשיקוף הראשי מתאים לפעולת ההצמדה במרוכבים.
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula $n>k\in\MKnatural$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $k\mid n$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $\left\langle \sigma^{k}\right\rangle \cong\MKinteger_{\frac{n}{k}}$
+\end_inset
+
+,
+ בפרט 
+\begin_inset Formula $\left\langle \sigma\right\rangle \cong\MKinteger_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Claim
+מתקיים 
+\begin_inset Formula $D_{n}=\left\langle \sigma,\tau\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Claim
+מתקיים 
+\begin_inset Formula $D_{n}=\left\{ e,\sigma,\sigma^{2},\ldots,\sigma^{n-1},\tau,\sigma\tau,\sigma^{2}\tau,\ldots,\sigma^{n-1}\tau\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ ההוכחה פשוטה:
+ ראינו כבר ש-
+\begin_inset Formula $\left|D_{n}\right|=2n$
+\end_inset
+
+ ואנחנו יודעים שלכל 
+\begin_inset Formula $i,j\in\MKnatural_{0}$
+\end_inset
+
+ מתקיים:
+\begin_inset Formula 
+\begin{align*}
+\sigma^{i} & =\sigma^{j}\Longleftrightarrow i\equiv j\mod n\\
+\sigma^{i}\tau & =\sigma^{j}\tau\Longleftrightarrow i\equiv j\mod n
+\end{align*}
+
+\end_inset
+
+מכאן שלכל 
+\begin_inset Formula $n>i,j\in\MKnatural_{0}$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $i\neq j$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $\sigma^{i}\neq\sigma^{j}$
+\end_inset
+
+ ו-
+\begin_inset Formula $\sigma^{i}\tau\neq\sigma^{j}\tau$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ ע"פ הסימונים שלנו לעיל מתקיים 
+\begin_inset Formula $\sigma=s\left(\frac{2\pi}{n}\right)$
+\end_inset
+
+ ו-
+\begin_inset Formula $\tau=r\left(0\right)$
+\end_inset
+
+,
+ לכן ע"פ כללי הכפל שראינו לעיל מתקיים (לכל 
+\begin_inset Formula $n>k\in\MKnatural_{0}$
+\end_inset
+
+):
+\begin_inset Formula 
+\[
+\sigma^{k}=s\left(\frac{2\pi k}{n}\right),\ \sigma^{k}\tau=r\left(\frac{\pi k}{n}\right)
+\]
+
+\end_inset
+
+ולכן לכל 
+\begin_inset Formula $n>i,j\in\MKnatural_{0}$
+\end_inset
+
+ מתקיים:
+\begin_inset Formula 
+\begin{align*}
+\sigma^{i}\cdot\sigma^{j} & =s\left(\frac{2\pi i}{n}\right)\circ s\left(\frac{2\pi j}{n}\right)=s\left(\frac{2\pi\left(i+j\right)}{n}\right)=\sigma^{i+j}\\
+\sigma^{i}\tau\cdot\sigma^{j}\tau & =r\left(\frac{\pi i}{n}\right)\circ r\left(\frac{\pi j}{n}\right)=s\left(\frac{2\pi\left(i-j\right)}{n}\right)=\sigma^{i-j}\\
+\sigma^{i}\tau\cdot\sigma^{j} & =r\left(\frac{\pi i}{n}\right)\circ s\left(\frac{2\pi j}{n}\right)=r\left(\frac{\pi\left(i-j\right)}{n}\right)=\sigma^{i-j}\tau\\
+\sigma^{i}\cdot\sigma^{j}\tau & =s\left(\frac{2\pi i}{n}\right)\circ r\left(\frac{\pi j}{n}\right)=r\left(\frac{\pi\left(i+j\right)}{n}\right)=\sigma^{i+j}\tau
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Claim
+לכל 
+\begin_inset Formula $n>i,j\in\MKnatural_{0}$
+\end_inset
+
+ מתקיים:
+\begin_inset Formula 
+\begin{align*}
+\sigma^{i}\cdot\sigma^{j}\cdot\left(\sigma^{i}\right)^{-1} & =\sigma^{j}\\
+\left(\sigma^{i}\tau\right)\cdot\sigma^{j}\cdot\left(\sigma^{i}\tau\right)^{-1} & =\sigma^{-j}\\
+\sigma^{i}\cdot\sigma^{j}\tau\cdot\left(\sigma^{i}\right)^{-1} & =\sigma^{j+2i}\tau\\
+\left(\sigma^{i}\tau\right)\cdot\sigma^{j}\tau\cdot\left(\sigma^{i}\tau\right)^{-1} & =\sigma^{-j+2i}\tau
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary
+יהי 
+\begin_inset Formula $n>k\in\MKnatural_{0}$
+\end_inset
+
+,
+ מחלקת הצמידות של 
+\begin_inset Formula $\sigma^{k}$
+\end_inset
+
+ היא 
+\begin_inset Formula $\left\{ \sigma^{k},\sigma^{-k}\right\} $
+\end_inset
+
+,
+ ומחלקת הצמידות של 
+\begin_inset Formula $\sigma^{k}\tau$
+\end_inset
+
+ היא
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\left\{ \sigma^{i}\tau\mid i\in\MKinteger,\ i-k\equiv0\mod 2\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $n$
+\end_inset
+
+ אי-זוגי זה אומר שמחלקת הצמידות של שיקוף היא קבוצת כל השיקופים,
+ אך אם 
+\begin_inset Formula $n$
+\end_inset
+
+ זוגי אז קבוצת השיקופים מתחלקת לשתי מחלקות צמידות:
+ אלו שצמודים ל-
+\begin_inset Formula $\tau$
+\end_inset
+
+ ואלו שצמודים ל-
+\begin_inset Formula $\sigma\tau$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+המצב הזה אינו מפתיע אם זוכרים שהאינטואיציה מאחורי פעולת ההצמדה היא שאנו עוברים לעולם מ"נקודת המבט" של האיבר המצמיד,
+ מפעילים שם את האיבר המוצמד וחוזרים חזרה לעולם "הרגיל".
+ זה אומר שהצמדה חייבת לשמור על התכונות הגאומטריות של האיבר המוצמד:
+ כשמדובר בסיבוב זה אומר שניתן להגיע רק לסיבוב באותו גודל ורק הכיוון יכול להשתנות,
+ וכשמדובר בשיקוף זה אומר שהצמדה חייבת לשמור על "סוג" השיקוף - האם הוא שיקוף דרך חוצה זווית של קודקוד או שהוא שיקוף דרך אנך אמצעי של צלע.
+ עבור 
+\begin_inset Formula $n$
+\end_inset
+
+ אי-זוגי כל השיקופים שייכים לשני הסוגים ולכן יש רק מחלקת צמידות אחת,
+ אבל כש-
+\begin_inset Formula $n$
+\end_inset
+
+ זוגי השיקופים מתחלקים לשני הסוגים הנ"ל והם מחלקות הצמידות.
+\end_layout
+
+\begin_layout Corollary
+לכל 
+\begin_inset Formula $n>k\in\MKnatural$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $k\mid n$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $\left\langle \sigma^{k}\right\rangle \trianglelefteq D_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary
+אם 
+\begin_inset Formula $n$
+\end_inset
+
+ אי-זוגי אז 
+\begin_inset Formula $Z\left(D_{n}\right)=\left\{ e\right\} $
+\end_inset
+
+,
+ ואם 
+\begin_inset Formula $n$
+\end_inset
+
+ זוגי אז 
+\begin_inset Formula $Z\left(D_{n}\right)=\left\{ e,\sigma^{\frac{n}{2}}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary
+\begin_inset Formula $D_{n}$
+\end_inset
+
+ היא חבורה נילפוטנטית אם"ם קיים 
+\begin_inset Formula $k\in\MKnatural$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $n=2^{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+חבורת הקווטרניונים
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ כולנו מכירים המספרים המרוכבים המייצגים את המישור,
+ כך שהכפל והחיבור שלהם מתארים פעולות פשוטות עליו (הזזה,
+ מתיחה/כיווץ וסיבוב).
+ המתמטיקאי 
+\begin_inset CommandInset href
+LatexCommand href
+name "ויליאם רואן המילטון"
+target "https://he.wikipedia.org/wiki/%D7%95%D7%99%D7%9C%D7%99%D7%90%D7%9D_%D7%A8%D7%95%D7%90%D7%9F_%D7%94%D7%9E%D7%99%D7%9C%D7%98%D7%95%D7%9F"
+literal "false"
+
+\end_inset
+
+ חיפש מבנה אלגברי בעל פעולות חיבור וכפל שיוכל לתאר את המרחב התלת-ממדי,
+ אך מבנה כזה לא נמצא עד היום
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+המרחב הווקטורי 
+\begin_inset Formula $\MKreal^{3}$
+\end_inset
+
+ "מוותר" על האפשרות לכפול כל שני וקטורים זה בזה ו"מסתפק" ביכולת לכפול רק בווקטורים מסוימים - המספרים הממשיים.
+\end_layout
+
+\end_inset
+
+.
+ בשנת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1843
+\numeric off
+,
+ בעת שטייל עם אשתו בדבלין,
+ מצא המילטון את 
+\begin_inset CommandInset href
+LatexCommand href
+name "אלגברת הקווטרניונים של המילטון"
+target "https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%92%D7%91%D7%A8%D7%AA_%D7%94%D7%A7%D7%95%D7%95%D7%98%D7%A8%D7%A0%D7%99%D7%95%D7%A0%D7%99%D7%9D_%D7%A9%D7%9C_%D7%94%D7%9E%D7%99%D7%9C%D7%98%D7%95%D7%9F"
+literal "false"
+
+\end_inset
+
+ - מבנה אלגברי בעל פעולות חיבור וכפל המתאר את המרחב הארבע-ממדי - ובהתלהבותו הרבה חרט את הנוסחה הבסיסית לכפל על גשר שנמצא בסמוך:
+\begin_inset Formula 
+\[
+i^{2}=j^{2}=k^{2}=ijk=-1
+\]
+
+\end_inset
+
+האיברים 
+\begin_inset Formula $i,j,k$
+\end_inset
+
+ הם הווקטורים 
+\begin_inset Formula $e_{2},e_{3},e_{4}$
+\end_inset
+
+ ב-
+\begin_inset Formula $\MKreal^{4}$
+\end_inset
+
+,
+ ומהנוסחה הנ"ל ניתן להסיק את הכפל של כל שני וקטורים ב-
+\begin_inset Formula $\MKreal^{4}=\left\{ a+bi+cj+dk\mid a,b,c,d\in\MKreal\right\} $
+\end_inset
+
+ (החיבור הוא החיבור הווקטורי שאנחנו כבר מכירים).
+\end_layout
+
+\begin_layout Definition
+
+\bar under
+חבורת הקווטרניונים
+\bar default
+ היא הקבוצה 
+\begin_inset Formula $Q:=\left\{ \pm1,\pm i,\pm j,\pm k\right\} $
+\end_inset
+
+ והיא אכן סגורה לכפל המתקבל מן הנוסחה הנ"ל,
+ ליתר בהירות נביא כאן את טבלת הכפל שלה:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\cdot$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $i$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $j$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $i$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $j$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $i$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $i$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-j$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $j$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $j$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-k$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $i$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $j$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כאשר שינוי הסימן של אחד מן האיברים המוכפלים הופך את הסימן של תוצאת המכפלה,
+ ושינוי הסימן של שניהם משאיר את הסימן על כנו.
+\end_layout
+
+\end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ א"כ לכל 
+\begin_inset Formula $x\in\left\{ \pm i,\pm j,\pm k\right\} $
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $x^{-1}=-x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ כדי לזכור את כללי הכפל ניתן לסדר את 
+\begin_inset Formula $i,j,k$
+\end_inset
+
+ במעגל:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{ccccc}
+ &  & i\\
+ & \nearrow &  & \searrow\\
+k &  & \longleftarrow &  & j
+\end{array}
+\]
+
+\end_inset
+
+כך שכפל שני איברים עם כיוון השעון יחזיר את האיבר השלישי,
+ וכפל שני איברים נגד כיוון השעון יחזיר את הנגדי של האיבר השלישי.
+\end_layout
+
+\end_deeper
+\begin_layout Claim
+מתקיים 
+\begin_inset Formula $Z\left(Q\right)=\left\{ 1,-1\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Claim
+מחלקות הצמידות של 
+\begin_inset Formula $Q$
+\end_inset
+
+ הן 
+\begin_inset Formula $\left\{ 1\right\} $
+\end_inset
+
+,
+ 
+\begin_inset Formula $\left\{ -1\right\} $
+\end_inset
+
+,
+ 
+\begin_inset Formula $\left\{ \pm i\right\} $
+\end_inset
+
+,
+ 
+\begin_inset Formula $\left\{ \pm j\right\} $
+\end_inset
+
+ ו-
+\begin_inset Formula $\left\{ \pm k\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Claim
+מתקיים 
+\begin_inset Formula $\MKinn\left(Q\right)\cong\MKinteger_{2}\times\MKinteger_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+נספחים
+\end_layout
+
+\begin_layout Subsection
+מיון כל החבורות מסדר קטן מ-
+\begin_inset Formula $12$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+תזכורת:
+ ראינו שלכל ראשוני 
+\begin_inset Formula $p\in\MKnatural$
+\end_inset
+
+ קיימת רק חבורה אחת מסדר 
+\begin_inset Formula $p$
+\end_inset
+
+ (
+\begin_inset Formula $\MKinteger_{p}$
+\end_inset
+
+),
+ וכמו כן קיימות שתי חבורות מסדר 
+\begin_inset Formula $p^{2}$
+\end_inset
+
+:
+ 
+\begin_inset Formula $\MKinteger_{p^{2}}$
+\end_inset
+
+ ו-
+\begin_inset Formula $\MKinteger_{p}\times\MKinteger_{p}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+בנוסף,
+ ראינו שלכל שני מספרים ראשוניים 
+\begin_inset Formula $p,q\in\MKnatural$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $p\equiv1\mod p$
+\end_inset
+
+,
+ קיימות שתי חבורות מסדר 
+\begin_inset Formula $p\cdot q$
+\end_inset
+
+ (עד כדי איזומורפיזם):
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\MKinteger_{q}\times\MKinteger_{p}$
+\end_inset
+
+ שהיא חבורה ציקלית,
+ וחבורה שאינה אבלית 
+\begin_inset Formula $\MKinteger_{q}\rtimes_{\varphi}\MKinteger_{p}$
+\end_inset
+
+ עבור הומומורפיזם 
+\begin_inset Formula $\varphi:\MKinteger_{p}\rightarrow\MKaut\left(\MKinteger_{q}\right)$
+\end_inset
+
+ שאינו טריוויאלי.
+\end_layout
+
+\begin_layout Corollary
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+החבורה היחידה מסדר 
+\begin_inset Formula $1$
+\end_inset
+
+ היא 
+\begin_inset Formula $\left\{ e\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+החבורות היחידות מסדר 
+\begin_inset Formula $2$
+\end_inset
+
+,
+ 
+\begin_inset Formula $3$
+\end_inset
+
+,
+ 
+\begin_inset Formula $5$
+\end_inset
+
+,
+ 
+\begin_inset Formula $7$
+\end_inset
+
+ או 
+\begin_inset Formula $11$
+\end_inset
+
+ הן 
+\begin_inset Formula $\MKinteger_{2}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\MKinteger_{3}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\MKinteger_{5}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\MKinteger_{7}$
+\end_inset
+
+ או 
+\begin_inset Formula $\MKinteger_{11}$
+\end_inset
+
+ (בהתאמה).
+\end_layout
+
+\begin_layout Itemize
+יש שתי חבורות מסדר 
+\begin_inset Formula $4$
+\end_inset
+
+:
+ 
+\begin_inset Formula $\MKinteger_{4}$
+\end_inset
+
+ ו-
+\begin_inset Formula $\MKinteger_{2}\times\MKinteger_{2}$
+\end_inset
+
+,
+ וכמו כן יש שתי חבורות מסדר 
+\begin_inset Formula $9$
+\end_inset
+
+:
+ 
+\begin_inset Formula $\MKinteger_{9}$
+\end_inset
+
+ ו-
+\begin_inset Formula $\MKinteger_{3}\times\MKinteger_{3}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Theorem
+כל חבורה מסדר 
+\begin_inset Formula $8$
+\end_inset
+
+ איזומורפית לאחת מחמש החבורות הבאות:
+\begin_inset Formula 
+\begin{align*}
+ & \MKinteger_{8} &  & D_{4}\\
+ & \MKinteger_{2}\times\MKinteger_{4} &  & Q\\
+ & \MKinteger_{2}\times\MKinteger_{2}\times\MKinteger_{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+כל חבורה מסדר קטן מ-
+\begin_inset Formula $60$
+\end_inset
+
+ היא חבורה פתירה
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ כפי שראינו לעיל 
+\begin_inset Formula $A_{5}$
+\end_inset
+
+ אינה פתירה ומתקיים 
+\begin_inset Formula $\left|A_{5}\right|=60$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+תזכורת:
+ ראינו שחבורה סופית 
+\begin_inset Formula $G$
+\end_inset
+
+ היא פתירה אם"ם כל אחד מגורמי ההרכב שלה איזומורפי ל-
+\begin_inset Formula $\MKinteger_{p}$
+\end_inset
+
+ עבור ראשוני 
+\begin_inset Formula $p\in\MKnatural$
+\end_inset
+
+ כלשהו.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ מכאן שאם לכל חבורה פשוטה 
+\begin_inset Formula $G$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $\left|G\right|<60$
+\end_inset
+
+ קיים ראשוני 
+\begin_inset Formula $p\in\MKnatural$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $G\cong\MKinteger_{p}$
+\end_inset
+
+,
+ אז כל חבורה מסדר קטן מ-
+\begin_inset Formula $60$
+\end_inset
+
+ היא חבורה פתירה.
+\end_layout
+
+\begin_layout Description
+תזכורת:
+ ראינו שכל חבורת 
+\begin_inset Formula $p$
+\end_inset
+
+ היא פתירה.
+\end_layout
+
+\begin_layout Lemma
+יהיו 
+\begin_inset Formula $p,q,n\in\MKnatural$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $p$
+\end_inset
+
+ ו-
+\begin_inset Formula $q$
+\end_inset
+
+ הם מספרים ראשוניים,
+ אם 
+\begin_inset Formula $p^{n}<q$
+\end_inset
+
+ אז כל חבורה מסדר 
+\begin_inset Formula $p^{n}\cdot q$
+\end_inset
+
+ היא חבורה פתירה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Lemma
+יהיו 
+\begin_inset Formula $p,q,n,m\in\MKnatural$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $p$
+\end_inset
+
+ ו-
+\begin_inset Formula $q$
+\end_inset
+
+ הם מספרים ראשוניים,
+ אם 
+\begin_inset Formula $p^{n}\cdot q^{m}$
+\end_inset
+
+ אינו מחלק את 
+\begin_inset Formula $\left(p^{n}\right)!$
+\end_inset
+
+ אז כל חבורה מסדר 
+\begin_inset Formula $p^{n}\cdot q^{m}$
+\end_inset
+
+ היא חבורה פתירה.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ כדי שיהיה ברור אלו חבורות פסלנו עד כה נכתוב כעת את כל המספרים מ-
+\begin_inset Formula $1$
+\end_inset
+
+ עד 
+\begin_inset Formula $59$
+\end_inset
+
+ ונצבע אותם כך:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ב
+\series bold
+\color blue
+כחול
+\series default
+\color inherit
+ יופיעו כל המספרים המהווים חזקה של מספר ראשוני.
+\end_layout
+
+\begin_layout Itemize
+ב
+\series bold
+\color green
+ירוק
+\series default
+\color inherit
+ יופיעו כל המספרים מהצורה 
+\begin_inset Formula $p^{n}\cdot q$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $p^{n}<q$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+ב
+\series bold
+\color purple
+סגול
+\series default
+\color inherit
+ יופיעו כל המספרים מהצורה 
+\begin_inset Formula $p^{n}\cdot q^{m}$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $p^{n}\cdot q^{m}$
+\end_inset
+
+ אינו מחלק את 
+\begin_inset Formula $\left(p^{n}\right)!$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+ב
+\series bold
+\color red
+אדום
+\series default
+\color inherit
+ יופיעו המספרים הנותרים.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="10">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color green
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color green
+10
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color purple
+12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+13
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color green
+14
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color green
+15
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+16
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+17
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color purple
+18
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+19
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color green
+20
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color green
+21
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color green
+22
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+23
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color purple
+24
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+25
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color green
+26
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+27
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color green
+28
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+29
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\bar under
+\color red
+30
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+31
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+32
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color green
+33
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color green
+34
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color green
+35
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color purple
+36
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+37
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color green
+38
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color green
+39
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\bar under
+\color red
+40
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+41
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\bar under
+\color red
+42
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+43
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color green
+44
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color purple
+45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color green
+46
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+47
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color purple
+48
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+49
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color purple
+50
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color green
+51
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color green
+52
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+53
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color purple
+54
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color green
+55
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\bar under
+\color red
+56
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color green
+57
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color green
+58
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\numeric on
+\color blue
+59
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Lemma
+ממשפט סילו השלישי נובע שגם חבורות מסדר 
+\begin_inset Formula $30$
+\end_inset
+
+,
+ 
+\begin_inset Formula $40$
+\end_inset
+
+,
+ 
+\begin_inset Formula $42$
+\end_inset
+
+ או 
+\begin_inset Formula $56$
+\end_inset
+
+ הן חבורות פתירות.
+\end_layout
+
+\begin_layout Corollary
+כל חבורה סופית מסדר קטן מ-
+\begin_inset Formula $60$
+\end_inset
+
+ היא חבורה פתירה.
+\end_layout
+
+\end_body
+\end_document
