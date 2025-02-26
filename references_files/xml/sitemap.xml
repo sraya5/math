@@ -33,7 +33,7 @@
     <course en_name="calculus_2" course_number="80132" lecturer="יורם לסט" tutor="דניאל אופנר ומתן בן-אשר" semester="א' תשפ&quot;ג" he_name="חשבון אינפיניטסימלי (2)">
       <topic en_name="countable_sets_and_infinity_sums" he_name="קבוצות בנות מנייה וסכומים אין-סופיים" />
       <topic en_name="series" he_name="טורים" />
-      <introduction en_name="introduction-about_areas_and_integrals" he_name="הקדמה - על שטחים ואינטגרלים" />
+      <introduction en_name="about_areas_and_integrals" he_name="הקדמה - על שטחים ואינטגרלים" />
       <topic en_name="integrals" he_name="אינטגרלים" />
       <topic en_name="sequences_and_series_of_functions" he_name="סדרות וטורים של פונקציות" />
       <title en_name="appendices" he_name="נספחים">
