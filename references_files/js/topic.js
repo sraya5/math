@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
     toggleTailByClass("label", "layout.Proof")
 
 
-    treeView("section")
+    treeView("Section")
 
 
     const definitions = ["layout.Definition", "layout.Definition_"]
