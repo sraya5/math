@@ -1,4 +1,4 @@
-export function hideElemByClass(checkbox, classNames) {
+function hideElemByClass(checkbox, classNames) {
     classNames.forEach(name => {
         document.querySelectorAll(`.${name}`).forEach(el => {
             el.style.display = checkbox.checked ? "none" : "block";
@@ -7,7 +7,7 @@ export function hideElemByClass(checkbox, classNames) {
 }
 
 
-export function toggleTailByClass(childClassName, parentClassName) {
+function toggleTailByClass(childClassName, parentClassName) {
     // Get all parent elements with the specified parent class
     const parentElements = document.querySelectorAll(`.${parentClassName}`);
     
