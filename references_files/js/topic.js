@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 child.addEventListener("click", () => {
                     child._is_open = !child._is_open
                     if (child._is_open) {
-                        parent.style.margin = "solid";
+                        parent.style.border = "1px solid";
                         tails.forEach(sibling => {
                             if (sibling.style) {
                                 sibling.style.display = sibling._display
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             }
                         })
                     } else {
-                        parent.style.margin = "";
+                        parent.style.border = "";
                         tails.forEach(sibling => {
                             if (sibling.style) {
                                 sibling.style.display = "none";
