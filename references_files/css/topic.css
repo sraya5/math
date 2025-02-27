@@ -31,3 +31,14 @@ h1, h2, h3, h4, h5, h6 {
     font-size: x-large;
     margin: 0px;
 }
+
+.open {
+    border-bottom-style: solid;}
+  
+.nested {
+display: none;
+}
+
+.active {
+display: block;
+}
