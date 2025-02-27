@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     child._is_open = !child._is_open
                     if (child._is_open) {
                         parent.style.border = "1px solid";
-                        parent.style.padding = "1em";
+                        parent.style.padding = "0.5em";
                         tails.forEach(sibling => {
                             if (sibling.style) {
                                 sibling.style.display = sibling._display
