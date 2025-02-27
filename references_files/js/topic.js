@@ -74,6 +74,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    
+    toggleTailByClass("label", "layout.Proof")
+
+
+    treeView("section")
+
 
     const definitions = ["layout.Definition", "layout.Definition_"]
     const definitions_checkbox = document.getElementById("definitions_checkbox");
@@ -91,10 +97,4 @@ document.addEventListener("DOMContentLoaded", function() {
     const proofs = ["layout.Proof"]
     const proofs_checkbox = document.getElementById("proofs_checkbox");
     proofs_checkbox.addEventListener("change", hideElemByClass(proofs_checkbox, proofs));
-
-    
-    toggleTailByClass("label", "layout.Proof")
-
-
-    treeView("section")
 })
