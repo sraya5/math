@@ -1,0 +1,1408 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Necessary Commands:
+\usepackage{autobreak}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+
+% Set vertical space before and after dislpay equations to be longer for better redability:
+\AtBeginDocument{\setlength\abovedisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+\AtBeginDocument{\setlength\belowdisplayshortskip{6pt}}
+
+% The head's design for summuries,make the layout more similar to a book:
+\AtBeginDocument{
+\renewcommand\headrule{%
+  \kern -7pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 1\textwidth}
+  \kern 10pt
+}}
+% The footnoterule's design, put it on the right side.
+\AtBeginDocument{
+\renewcommand\footnoterule{%
+  \kern 3pt
+  \hbox to \textwidth{\hfill\vrule height 0.5pt width 0.4\textwidth}
+  \kern 4pt
+}}
+
+% Set space between words to be wider:
+\spaceskip=1.3\fontdimen2\font plus 1\fontdimen3\font minus 1.5\fontdimen4\font
+
+% Convert the Lyx colors into more pleasent colors:
+\usepackage{xcolor}
+\definecolor{blue}{RGB}{12,97,197}
+\definecolor{brown}{RGB}{154,58,0}
+\definecolor{green}{RGB}{0,128,40}
+\definecolor{orange}{RGB}{255,114,38}
+\definecolor{purple}{RGB}{94,53,177}
+\definecolor{red}{RGB}{235,16,16}
+
+% Convert the QED Symbol at the end of proofs to a solid black square (credit: Yakir Oz):
+\usepackage{amssymb}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Make the layout more similar to Hebrew Article, which I am more used to:
+\renewcommand*{\@seccntformat}[1]{\hspace{0.5cm}\csname the#1\endcsname\hspace{0.5cm}} 
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{20}{20}\bfseries}{\thesection}{10pt}{}
+\titleformat{\subsection}{\fontsize{15}{15}\bfseries}{\thesubsection}{10pt}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{10pt}{}
+
+\usepackage{polyglossia}
+\setmainlanguage{hebrew}
+
+% Create disjoint union symbols:
+\makeatletter
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{%
+   \baselineskip\z@skip \lineskiplimit-\maxdimen
+   \ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+    #1{\ifx#1\mathop\vphantom{#2}\fi
+        \mathpalette\mov@rlay{#2\cr#3}
+      }
+    \ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+\newcommand{\cupdot}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigcupdot}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+
+\newcommand{\kaliLargeLand}{\mathop{\mathlarger{\mathlarger{\mathlarger{\land}}}}}
+\newcommand{\hebtext}[1]{\mbox{\R{\#1}}}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-sec
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children no
+\begin_local_layout
+Style Section
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+	TocLevel 1
+End
+Style Section*
+	Font
+	  Series     Medium
+	  Shape      Smallcaps
+	  Size       Larger
+	  Series     Bold
+	EndFont
+End
+Style Solution
+	LabelString           ".פתרון \thetheorem "
+End
+Style Theorem
+	LabelString           ".משפט \thetheorem "
+End
+\end_local_layout
+\language hebrew
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "David"
+\font_sans "default" "Arial"
+\font_typewriter "default" "Courier New"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\float_alignment class
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, citecolor=black"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\boxbgcolor #cccccc
+\branch proofs
+\selected 1
+\filename_suffix 0
+\color #00ffff #000000
+\end_branch
+\branch pdf
+\selected 1
+\filename_suffix 0
+\color background background
+\end_branch
+\branch xhtml
+\selected 0
+\filename_suffix 0
+\color #71ffff #8e0000
+\end_branch
+\branch draft
+\selected 0
+\filename_suffix 0
+\color #71ffff #8e0000
+\end_branch
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2.7cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 0cm
+\footskip 0.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style plain
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 3
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "C:/Users/sraya/AppData/Roaming/LyX2.4/macros/MKmacros.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch pdf
+inverted 0
+status collapsed
+
+\begin_layout Right Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+leftmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Left Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+גאומטריות
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fbox{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Center Footer
+
+\end_layout
+
+\begin_layout Title
+
+\series bold
+\size giant
+גאומטריות
+\begin_inset Newline newline
+\end_inset
+
+
+\series default
+\size larger
+גאומטריה אוקלידית - חלק שני
+\end_layout
+
+\begin_layout Standard
+\align center
+נכתב ע"י שריה אנסבכר
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+לסיכומים נוספים היכנסו לאתר:
+\begin_inset Newline newline
+\end_inset
+
+אקסיומת השלמות - סיכומי הרצאות במתמטיקה
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "https://math.srayaa.com"
+target "https://math.srayaa.com"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+פונקציית זווית
+\end_layout
+
+\begin_layout Definition
+
+\series bold
+פונקציית זווית
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+יהי 
+\begin_inset Formula $\left(\MKbbg,\left|\cdot\right|\right)$
+\end_inset
+
+ מרחב מטרי,
+ ותהא 
+\begin_inset Formula $\measuredangle$
+\end_inset
+
+ מטריקה של קרנות על 
+\begin_inset Formula $\left(\MKbbg,\left|\cdot\right|\right)$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+נאמר ש-
+\begin_inset Formula $\measuredangle$
+\end_inset
+
+ היא 
+\bar under
+פונקציית זווית
+\bar default
+ על 
+\begin_inset Formula $\left(\MKbbg,\left|\cdot\right|\right)$
+\end_inset
+
+ אם היא מקיימת את הפסוק הנקרא "
+\bar under
+הקשר בין זווית למרחק
+\bar default
+":
+\begin_inset Newline newline
+\end_inset
+
+לכל שש נקודות 
+\begin_inset Formula $A,B,O,A',B',O'\in\MKbbg$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $A,B$
+\end_inset
+
+ שונות מ-
+\begin_inset Formula $O$
+\end_inset
+
+ ו-
+\begin_inset Formula $A',B'$
+\end_inset
+
+ שונות מ-
+\begin_inset Formula $O'$
+\end_inset
+
+,
+ ובנוסף 
+\begin_inset Formula $\left|AO\right|=\left|A'O'\right|$
+\end_inset
+
+ ו-
+\begin_inset Formula $\left|BO\right|=\left|B'O'\right|$
+\end_inset
+
+,
+ מתקיים:
+\begin_inset Formula 
+\[
+\left|AB\right|<\left|A'B'\right|\Longleftrightarrow\measuredangle AOB<\measuredangle A'O'B'
+\]
+
+\end_inset
+
+ובמקרה כזה נאמר שהשלשה 
+\begin_inset Formula $\left(\MKbbg,\left|\cdot\right|,\measuredangle\right)$
+\end_inset
+
+ היא 
+\bar under
+גאומטריה
+\bar default
+.
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula $\left(\MKbbg,\left|\cdot\right|,\measuredangle\right)$
+\end_inset
+
+ גאומטריה,
+ נניח שיש ב-
+\begin_inset Formula $\MKbbg$
+\end_inset
+
+ משולשים,
+ ויהיו 
+\begin_inset Formula $\triangle ABC$
+\end_inset
+
+ ו-
+\begin_inset Formula $\triangle A'B'C'$
+\end_inset
+
+ שני משולשים.
+\end_layout
+
+\begin_layout Corollary
+
+\series bold
+\begin_inset CommandInset label
+LatexCommand label
+name "SSS"
+
+\end_inset
+
+משפט חפיפה:
+ צלע-צלע-צלע (
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+צצ"צ
+\end_layout
+
+\end_inset
+
+)
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+אם 
+\begin_inset Formula $\left|AB\right|=\left|A'B'\right|$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\left|BC\right|=\left|B'C'\right|$
+\end_inset
+
+ וגם 
+\begin_inset Formula $\left|CA\right|=\left|C'A'\right|$
+\end_inset
+
+,
+ אז 
+\begin_inset Formula $\triangle ABC\cong\triangle A'B'C'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch proofs
+inverted 0
+status collapsed
+
+\begin_layout Proof
+נניח שאורכי הצלעות של המשולשים שווים זה לזה כנ"ל,
+ ונניח בשלילה שאחת משלוש הזוויות במשולש 
+\begin_inset Formula $\triangle ABC$
+\end_inset
+
+ אינה שווה לזווית המתאימה במשולש 
+\begin_inset Formula $\triangle A'B'C'$
+\end_inset
+
+.
+ כמו כן,
+ נניח בהג"כ שזוהי 
+\begin_inset Formula $\measuredangle ABC$
+\end_inset
+
+ (כלומר 
+\begin_inset Formula $\measuredangle ABC\neq\measuredangle A'B'C'$
+\end_inset
+
+).
+ וש-
+\begin_inset Formula $\measuredangle ABC<\measuredangle A'B'C'$
+\end_inset
+
+.
+ ע"פ הקשר בין זווית למרחק מתקיים 
+\begin_inset Formula $\left|AC\right|<\left|A'C'\right|$
+\end_inset
+
+ בסתירה להנחה.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary
+
+\series bold
+\begin_inset CommandInset label
+LatexCommand label
+name "SAS"
+
+\end_inset
+
+משפט חפיפה:
+ צלע-זווית-צלע (
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+צז"צ
+\end_layout
+
+\end_inset
+
+ )
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+אם 
+\begin_inset Formula $\left|AB\right|=\left|A'B'\right|$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\measuredangle ABC=\measuredangle A'B'C'$
+\end_inset
+
+ וגם 
+\begin_inset Formula $\left|BC\right|=\left|B'C'\right|$
+\end_inset
+
+,
+ אז 
+\begin_inset Formula $\triangle ABC\cong\triangle A'B'C'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch proofs
+inverted 0
+status collapsed
+
+\begin_layout Proof
+נניח ש-
+\begin_inset Formula $\left|AB\right|=\left|A'B'\right|$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\left|BC\right|=\left|B'C'\right|$
+\end_inset
+
+ וגם 
+\begin_inset Formula $\measuredangle ABC=\measuredangle A'B'C'$
+\end_inset
+
+.
+ מהקשר בין זווית למרחק נובע ש-
+\begin_inset Formula $\left|AC\right|=\left|A'C'\right|$
+\end_inset
+
+,
+ ולכן ע"פ משפט 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "SSS"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $\triangle ABC\cong\triangle A'B'C'$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary
+\begin_inset CommandInset label
+LatexCommand label
+name "corollary_1.4"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+במשולש שווה-שוקיים זוויות הבסיס שוות זו לזו
+\end_layout
+
+\end_inset
+
+,
+ כלומר אם 
+\begin_inset Formula $\left|AB\right|=\left|AC\right|$
+\end_inset
+
+ אז 
+\begin_inset Formula $\measuredangle ABC=\measuredangle BCA$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary
+כל משולש שווה-צלעות הוא משולש שווה-זוויות,
+ וגם משולש שווה-שוקיים.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+במשולש שווה-שוקיים חוצה זווית הראש והתיכון לבסיס מתלכדים
+\end_layout
+
+\end_inset
+
+;
+ כלומר אם 
+\begin_inset Formula $\left|AB\right|=\left|AC\right|$
+\end_inset
+
+ אז חוצה-הזווית של 
+\begin_inset Formula $\measuredangle ABC$
+\end_inset
+
+ קיים אם"ם התיכון לצלע 
+\begin_inset Formula $\left\{ A,C\right\} $
+\end_inset
+
+ קיים,
+ ובמקרה כזה הם שווים.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch proofs
+inverted 0
+status collapsed
+
+\begin_layout Proof
+תהא 
+\begin_inset Formula $D\in\MKbbg$
+\end_inset
+
+ נקודה בין 
+\begin_inset Formula $A$
+\end_inset
+
+ ל-
+\begin_inset Formula $C$
+\end_inset
+
+ (אם אין כזו המשפט נכון באופן ריק).
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+נניח ש-
+\begin_inset Formula $\left[B,D\right]$
+\end_inset
+
+ הוא חוצה הזווית של 
+\begin_inset Formula $\measuredangle ABC$
+\end_inset
+
+,
+ כלומר 
+\begin_inset Formula $\measuredangle ABD=\measuredangle CBD$
+\end_inset
+
+ ולכן ע"פ משפט 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "SAS"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ המשולשים 
+\begin_inset Formula $\triangle ABD$
+\end_inset
+
+ ו-
+\begin_inset Formula $\triangle CBD$
+\end_inset
+
+ חופפים.
+ בפרט 
+\begin_inset Formula $\left|AD\right|=\left|CD\right|$
+\end_inset
+
+,
+ ומכאן ש-
+\begin_inset Formula $\left[B,D\right]$
+\end_inset
+
+ הוא התיכון לצלע 
+\begin_inset Formula $\left\{ A,C\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+נניח ש-
+\begin_inset Formula $\left[B,D\right]$
+\end_inset
+
+ הוא התיכון לצלע 
+\begin_inset Formula $\left\{ A,C\right\} $
+\end_inset
+
+,
+ כלומר 
+\begin_inset Formula $\left|AD\right|=\left|CD\right|$
+\end_inset
+
+.
+ בנוסף,
+ ראינו ש
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "corollary_1.4"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ - כלומר 
+\begin_inset Formula $\measuredangle BAD=\measuredangle BAC=\measuredangle BCA=\measuredangle BCD$
+\end_inset
+
+,
+ ולכן ע"פ משפט 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "SAS"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ המשולשים 
+\begin_inset Formula $\triangle ABD$
+\end_inset
+
+ ו-
+\begin_inset Formula $\triangle CBD$
+\end_inset
+
+ חופפים.
+ בפרט 
+\begin_inset Formula $\measuredangle ABD=\measuredangle CBD$
+\end_inset
+
+,
+ ומכאן ש-
+\begin_inset Formula $\left[B,D\right]$
+\end_inset
+
+ הוא חוצה-הזווית של 
+\begin_inset Formula $\measuredangle ABC$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+שלמות
+\end_layout
+
+\begin_layout Definition
+גאומטריה 
+\begin_inset Formula $\left(\MKbbg,\left|\cdot\right|,\measuredangle\right)$
+\end_inset
+
+ תיקרא 
+\bar under
+שלמה
+\bar default
+ אם מתקיימים שני התנאים הבאים:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+לכל שתי נקודות 
+\begin_inset Formula $A,B\in\MKbbg$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $A\neq B$
+\end_inset
+
+,
+ ולכל 
+\begin_inset Formula $0<r_{1},r_{2}\in\MKreal$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $\left|r_{1}\pm r_{2}\right|=\left|AB\right|$
+\end_inset
+
+,
+ קיימת נקודה 
+\begin_inset Formula $C\in\MKbbg$
+\end_inset
+
+ המקיימת 
+\begin_inset Formula $\left|AC\right|=r_{1}$
+\end_inset
+
+ ו-
+\begin_inset Formula $\left|BC\right|=r_{2}$
+\end_inset
+
+;
+ כלומר כל קבוצה קווית מרבית היא ישר.
+\end_layout
+
+\begin_layout Itemize
+לכל שלוש נקודות 
+\begin_inset Formula $A,B,O\in\MKbbg$
+\end_inset
+
+ שאינן קוויות,
+ ולכל שתי זוויות 
+\begin_inset Formula $\alpha,\beta\in\left[0,\frac{1}{2}\right]$
+\end_inset
+
+ המקיימות 
+\begin_inset Formula $\left|\alpha\pm\beta\right|=\measuredangle AOB$
+\end_inset
+
+ ו/או 
+\begin_inset Formula $\measuredangle AOB+\alpha+\beta=1$
+\end_inset
+
+,
+ קיימת נקודה 
+\begin_inset Formula $C\in\MKbbg$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $\measuredangle AOC=\alpha$
+\end_inset
+
+ ו-
+\begin_inset Formula $\measuredangle BOC=\beta$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ התנאי הראשון מקפל בתוכו את שתי האקסיומות הראשונות של אוקלידס:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+"ניתן להעביר קטע ישר בין כל שתי נקודות" - בשפה שלנו:
+ לכל 
+\begin_inset Formula $A,B\in\MKbbg$
+\end_inset
+
+,
+ ולכל 
+\begin_inset Formula $0<r_{1},r_{2}\in\MKreal$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $r_{1}+r_{2}=\left|AB\right|$
+\end_inset
+
+,
+ קיימת נקודה 
+\begin_inset Formula $C\in\MKbbg$
+\end_inset
+
+ המקיימת 
+\begin_inset Formula $\left|AC\right|=r_{1}$
+\end_inset
+
+ ו-
+\begin_inset Formula $\left|BC\right|=r_{2}$
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+בהמשך נגדיר את קבוצת כל הנקודות הללו בתור הקטע 
+\begin_inset Formula $\left(A,B\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+"ניתן להמשיך כל קטע עד לקבלת ישר" - בשפה שלנו:
+ לכל 
+\begin_inset Formula $A,B\in\MKbbg$
+\end_inset
+
+,
+ אם הקבוצה 
+\begin_inset Formula $\left\{ P\in\MKbbg\mid B\text{ל-}\ A\ \text{נמצאת בין}\ P\right\} $
+\end_inset
+
+ היא קטע
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+ראו בהערה הקודמת מהו קטע.
+\end_layout
+
+\end_inset
+
+,
+ אז לכל 
+\begin_inset Formula $0<r_{1},r_{2}\in\MKreal$
+\end_inset
+
+ המקיימים 
+\begin_inset Formula $\left|r_{1}-r_{2}\right|=\left|AB\right|$
+\end_inset
+
+,
+ קיימת נקודה 
+\begin_inset Formula $C\in\MKbbg$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $\left|AC\right|=r_{1}$
+\end_inset
+
+ ו-
+\begin_inset Formula $\left|BC\right|=r_{2}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+\begin_inset Formula $\clubsuit$
+\end_inset
+
+ התנאי השני מתאים לאקסיומה השלישית של אוקלידס
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+אמנם התנאי השני שלנו חלש ממנו,
+ אך יחד עם הראשון מתקבלת האקסיומה השלישית של אוקלידס במלואה.
+\end_layout
+
+\end_inset
+
+ - "ניתן לצייר מעגל בכל רדיוס וסביב כל מרכז".
+\begin_inset Newline newline
+\end_inset
+
+כאן ההמרה לשפה שלנו מסובכת מעט:
+ ראשית,
+ אוקלידס עובד במישור,
+ ואילו אנו לא הגבלנו את 
+\begin_inset Formula $\MKbbg$
+\end_inset
+
+;
+ שנית,
+ מעגל 
+\series bold
+במישור
+\series default
+ הוא קבוצת כל הנקודות 
+\series bold
+במישור
+\series default
+ הנמצאות במרחק מסוים מנקודה הנקראת "מרכז המעגל",
+ אלא שהמילה "במישור" טומנת בתוכה הרבה יותר משנראה במבט ראשון - היא מוסיפה את העובדה שלכל כיוון אכן קיימת נקודה בכיוון זה ובמרחק המתאים.
+ נשים לב:
+ לכל שתי נקודות,
+ ולכל זווית שאינה מנוונת/שטוחה,
+ ישנם שני כיוונים היוצרים את אותה זווית עם הישר שמגדירות שתי הנקודות - גם בעיה זו נוצרת מהעובדה שאיננו עובדים במישור,
+ שכן רק במישור ניתן לעבוד עם זווית מכוונת
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+זווית מכוונת היא זווית המבדילה בין סיבוב עם כיוון השעון לסיבוב נגדו.
+\end_layout
+
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+הדרך שבה התמודדנו עם הבעיה היא לזהות את כיוון הזווית באמצעות השוואתה לשתי קרניים שהזווית ביניהן אינה שטוחה/מנוונת,
+ ובאותה הזדמנות דרשנו שהנקודה החדשה תהיה במישור שמגדירות שתי הקרניים.
+ כך השגנו את כל הכיוונים האפשריים במישור זה,
+ ואילו את הקיום של נקודה עבור כל מרחק אפשרי נקבל מהתנאי הראשון.
+\end_layout
+
+\begin_layout Standard
+תהא 
+\begin_inset Formula $\left(\MKbbg,\left|\cdot\right|,\measuredangle\right)$
+\end_inset
+
+ גאומטריה,
+ נניח שיש ב-
+\begin_inset Formula $\MKbbg$
+\end_inset
+
+ משולשים,
+ ויהיו 
+\begin_inset Formula $\triangle ABC$
+\end_inset
+
+ ו-
+\begin_inset Formula $\triangle A'B'C'$
+\end_inset
+
+ שני משולשים.
+\end_layout
+
+\begin_layout Corollary
+
+\series bold
+\begin_inset CommandInset label
+LatexCommand label
+name "ASA"
+
+\end_inset
+
+משפט חפיפה:
+ זווית-צלע-זווית (
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+זצ"ז
+\end_layout
+
+\end_inset
+
+ )
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+אם 
+\begin_inset Formula $\measuredangle ABC=\measuredangle A'B'C'$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\left|AB\right|=\left|A'B'\right|$
+\end_inset
+
+ וגם 
+\begin_inset Formula $\measuredangle BAC=\measuredangle B'A'C'$
+\end_inset
+
+,
+ אז 
+\begin_inset Formula $\triangle ABC\cong\triangle A'B'C'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch proofs
+inverted 0
+status collapsed
+
+\begin_layout Proof
+נניח ש-
+\begin_inset Formula $\measuredangle ABC=\measuredangle A'B'C'$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\left|AB\right|=\left|A'B'\right|$
+\end_inset
+
+ וגם 
+\begin_inset Formula $\measuredangle BAC=\measuredangle B'A'C'$
+\end_inset
+
+,
+ ונניח בשלילה ש-
+\begin_inset Formula $\triangle ABC\ncong\triangle A'B'C'$
+\end_inset
+
+.
+ מכאן ש-
+\begin_inset Formula $\left|AC\right|\neq\left|A'C'\right|$
+\end_inset
+
+ וגם 
+\begin_inset Formula $\left|BC\right|\neq\left|B'C'\right|$
+\end_inset
+
+,
+ שכן אחרת נקבל ממשפט 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "SAS"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ ש-
+\begin_inset Formula $\triangle ABC\cong\triangle A'B'C'$
+\end_inset
+
+.
+ כעת נניח בהג"כ ש-
+\begin_inset Formula $\left|AC\right|<\left|A'C'\right|$
+\end_inset
+
+,
+ ותהא 
+\begin_inset Formula $D\in\MKbbg$
+\end_inset
+
+ כך ש-
+\begin_inset Formula $\left|AD\right|=\left|A'C'\right|$
+\end_inset
+
+ ו-
+\begin_inset Formula $\left|CD\right|=\left|A'C'\right|-\left|AC\right|$
+\end_inset
+
+ (הקיום של 
+\begin_inset Formula $D$
+\end_inset
+
+ נובע משלמות הגאומטריה) - משוויונות המשולש המנוון נובע ש-
+\begin_inset Formula $C$
+\end_inset
+
+ נמצאת בין 
+\begin_inset Formula $A$
+\end_inset
+
+ ל-
+\begin_inset Formula $D$
+\end_inset
+
+,
+ ולפיכך 
+\begin_inset Formula $\measuredangle BAC=\measuredangle BAD$
+\end_inset
+
+.
+ כעת נקבל ממשפט 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "SAS"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ ש-
+\begin_inset Formula $\triangle ABD\cong\triangle A'B'C'$
+\end_inset
+
+,
+ ובפרט 
+\begin_inset Formula $\measuredangle ABD=\measuredangle A'B'C'=\measuredangle ABC$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+מצד שני,
+ ראינו בחלק הקודם שמהיות 
+\begin_inset Formula $C$
+\end_inset
+
+ בין 
+\begin_inset Formula $A$
+\end_inset
+
+ ל-
+\begin_inset Formula $D$
+\end_inset
+
+ נובע ש-
+\begin_inset Formula $\measuredangle ABD=\measuredangle ABC+\measuredangle CBD$
+\end_inset
+
+,
+ אם כן קיבלנו ש-
+\begin_inset Formula $\measuredangle CBD=0$
+\end_inset
+
+ ומכאן ש-
+\begin_inset Formula $D\in L_{BC}$
+\end_inset
+
+;
+ אך זה עומד בסתירה לכך שלישרים 
+\begin_inset Formula $L_{AC}$
+\end_inset
+
+ ו-
+\begin_inset Formula $L_{BC}$
+\end_inset
+
+ יש לכל היותר נקודת חיתוך אחת.
+ מכאן שהנחת השלילה שאינה נכונה ו-
+\begin_inset Formula $\triangle ABC\cong\triangle A'B'C'$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

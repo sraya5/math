@@ -10,6 +10,11 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "Suez One", serif;
 }
 
+span.inset.Branch.pdf {display: none;}
+span.inset.Branch.pdf * {display: none;}
+span.inset.Branch.draft {display: none;}
+span.inset.Branch.draft * {display: none;}
+
 #toc_container {
     overflow-y: auto;
 }

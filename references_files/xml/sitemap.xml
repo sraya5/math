@@ -92,7 +92,7 @@
       <import en_name="about_polynomials" he_name="על פולינומים" />
       <topic en_name="operators" he_name="אופרטורים" />
       <introduction en_name="length,_angle_and_the_dot_product" he_name="הקדמה - אורך, זווית והמכפלה הסקלרית" />
-      <topic en_name="inner_product_space" he_name="מרחבי מכפלה פנימית" />
+      <topic en_name="inner_product_spaces" he_name="מרחבי מכפלה פנימית" />
       <figures />
     </course>
     <course en_name="algebraic_structures_1" course_number="80445" lecturer="אורי פרזנצ'בסקי" tutor="ליאור נייהויזר" semester="א' תשפ&quot;ד" he_name="מבנים אלגבריים (1)">
@@ -125,7 +125,8 @@
       <figures />
     </course>
     <course en_name="Euclidean_geometry" he_name="גאוטמטריה אוקלידית">
-      <topic en_name="rays,_lines_and_planes" he_name="קרנות, ישרים ומישורים" />
+      <topic en_name="metric_of_rays" he_name="מטריקה של קרנות" />
+      <topic en_name="geometries" he_name="גאומטריות" />
     </course>
   </branch>
 </root>

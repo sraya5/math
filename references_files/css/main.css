@@ -29,6 +29,3 @@ span.inset.Foot:hover span.layout.Plain.Layout  {
     padding-right: 0.5em;
     z-index: 1;
 }
-
-span.inset.Branch.pdf {display: none;}
-span.inset.Branch.pdf * {display: none;}
