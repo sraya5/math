@@ -1215,8 +1215,6 @@ status collapsed
 
 \series default
  
-\bar under
-
 \begin_inset CommandInset href
 LatexCommand href
 name "פסאודו-מטריקה"
@@ -1225,8 +1223,6 @@ literal "false"
 
 \end_inset
 
-
-\bar default
  היא פונקציה המקיימת את שלוש התכונות הנדרשות ממטריקה (חיוביות בהחלט,
  סימטריה וא"ש המשולש),
  למעט הבדל אחד:
@@ -1922,7 +1918,7 @@ name "claim_1.16"
 \begin_layout Standard
 \begin_inset Branch proofs
 inverted 0
-status collapsed
+status open
 
 \begin_layout Proof
 ע"פ שוויונות המשולש המנוון מתקיים 
@@ -1966,8 +1962,7 @@ status collapsed
 .
 \end_layout
 
-\end_deeper
-\begin_layout Proof
+\begin_layout Standard
 לא ייתכן ששתי הזוויות שטוחות משום שהדבר יהווה סתירה לטענה 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1982,6 +1977,7 @@ nolink "false"
 .
 \end_layout
 
+\end_deeper
 \end_inset
 
 
