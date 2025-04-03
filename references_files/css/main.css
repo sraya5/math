@@ -10,22 +10,3 @@
 .justify {text-align: justify;}
 
 ul li ul li ul li ul {list-style-type: "- ";}
-
-span.inset.Foot span.label {
-    display: inline;
-    vertical-align: super;
-    font-size: 0.7em;
-    cursor: pointer;
-}
-span.inset.Foot span.layout.Plain.Layout {display: none;}
-span.inset.Foot:hover span.layout.Plain.Layout  {
-    display: inline;
-    width: fit-content;
-    font-size: small;
-    position: absolute;
-    background-color: light-dark(lightgray, rgb(50, 50, 50));
-    padding: 0.3em;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-    z-index: 1;
-}
