@@ -142,23 +142,23 @@ span.size.large {font-size: large;}
 span.size.larger {font-size: x-large;}
 span.size.largest {font-size: xx-large;}
 
-span.color.blue {color: blue}
-span.color.brown {color: brown}
-span.color.cyan {color: cyan}
-span.color.darkgray {color: darkgray}
-span.color.gray {color: gray}
-span.color.green {color: green}
-span.color.lightgray {color: lightgrey}
-span.color.lime.green {color: limegreen}
-span.color.magenta {color: magenta}
-span.color.olive.green {color: olive}
-span.color.orange {color: orange}
-span.color.pink {color: pink}
-span.color.purple {color: purple}
-span.color.red {color: red}
-span.color.teal {color: teal}
-span.color.violet {color: violet}
-span.color.yellow {color: yellow}
+span.color.blue {color: light-dark(blue, rgb(64, 64, 255))}
+span.color.brown {color: light-dark(brown, rgb(227, 63, 63))}
+span.color.cyan {color: light-dark(cyan, cyan)}
+span.color.darkgray {color: light-dark(darkgray, lightgray)}
+span.color.gray {color: light-dark(gray, gray)}
+span.color.green {color: light-dark(green, rgb(0, 192, 0))}
+span.color.lightgray {color: light-dark(lightgrey, darkgray)}
+span.color.lime.green {color: light-dark(limegreen, limegreen)}
+span.color.magenta {color: light-dark(magenta, magenta)}
+span.color.olive.green {color: light-dark(olive, rgb(192, 192, 0))}
+span.color.orange {color: light-dark(orange, orange)}
+span.color.pink {color: light-dark(pink, pink)}
+span.color.purple {color: light-dark(purple, rgb(192, 0, 192))}
+span.color.red {color: light-dark(red, rgb(255, 64, 64))}
+span.color.teal {color: light-dark(teal, rgb(0, 192, 192))}
+span.color.violet {color: light-dark(violet, violet)}
+span.color.yellow {color: light-dark(yellow, yellow)}
 
 div.align.block {text-align: justify;}
 div.align.right {text-align: right;}
