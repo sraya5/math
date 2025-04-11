@@ -19,10 +19,6 @@ span.inset.Branch.draft * {display: none;}
     overflow-y: auto;
 }
 
-#toc_column {
-    overflow-y: auto;
-}
-
 #content_column {
     overflow-x: auto;
     overflow-y: hidden;
