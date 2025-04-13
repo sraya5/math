@@ -63,12 +63,17 @@
         <textarea id="message" name="message" style="height: 7em; text-align: right;" required="required"></textarea>
       </div>
       <div class="row">
-        <div class="g-recaptcha" data-sitekey="6LcaWhQrAAAAAKjeb0GASjbZODqbLwpB8rYCZpPH"></div>
         <script src="https://www.google.com/recaptcha/api.js" async="async" defer="defer"></script>
-      </div>
-      <div class="row">
+        <script>
+          function onSubmit(token) {
+            document.getElementById("demo-form").submit();
+          }
+        </script>
         <input type="hidden" name="redirectTo" value="https://math.srayaa.com/contact" />
-        <input type="submit" value="שלח" />
+        <input type="submit" class="g-recaptcha" 
+        data-sitekey="6LcaWhQrAAAAAKjeb0GASjbZODqbLwpB8rYCZpPH"
+        data-callback='onSubmit' 
+        data-action='submit' value="שלח" />
       </div>
     </form>
   </div>
