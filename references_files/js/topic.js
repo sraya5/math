@@ -5,12 +5,13 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     })
 
-    function hideElemByClass(checkbox, classNames) {
-        classNames.forEach(name => {
-            document.querySelectorAll(`.${name}`).forEach(el => {
-                el.style.display = checkbox.checked ? "block" : "none";
-            });
-        })
+    function toggleMultipleClasses(classList, show) {
+        classList.forEach(className => {
+          const elements = document.querySelectorAll('.' + className);
+          elements.forEach(el => {
+            el.style.display = show ? '' : 'none';
+          });
+        });
     }
 
     function toggleTailByClass(childClassName, parentClassName) {

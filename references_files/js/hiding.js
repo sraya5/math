@@ -1,9 +1,10 @@
-function hideElemByClass(checkbox, classNames) {
-    classNames.forEach(name => {
-        document.querySelectorAll(`.${name}`).forEach(el => {
-            el.style.display = checkbox.checked ? "none" : "block";
-        });
-    })
+function toggleMultipleClasses(classList, show) {
+    classList.forEach(className => {
+      const elements = document.querySelectorAll('.' + className);
+      elements.forEach(el => {
+        el.style.display = show ? '' : 'none';
+      });
+    });
 }
 
 

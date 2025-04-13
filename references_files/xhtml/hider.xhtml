@@ -11,19 +11,16 @@
       font-size: small;
     }
   </style>
-  <p style="font-size: small;">סמנו ב-✔, או בטלו את הסימון, כדי לראות/להסיר את האובייקטים השונים:</p>
-  <div class="container">
-    <input type="checkbox" id="definitions_checkbox" checked="checked" />
+  <p style="font-size: small;">סמנו ב-✔, או בטלו את הסימון, כדי להחביא/לראות את האובייקטים השונים:</p>
+  <form class="container">
+    <input type="checkbox" checked="checked" onclick="toggleMultipleClasses(['Definition'], this.checked)" />
     <label for="definitions_checkbox">הגדרות</label>
-    <br />
-    <input type="checkbox" id="theorems_checkbox" checked="checked" />
+    <input type="checkbox" checked="checked" onclick="toggleMultipleClasses(['Lemma', 'Claim', 'Proposition', 'Theorem', 'Corollary', 'Proof'], this.checked)" />
     <label for="theorems_checkbox">משפטים</label>
-    <br />
-    <input type="checkbox" id="proofs_checkbox" checked="checked" />
+    <input type="checkbox" checked="checked" onclick="toggleMultipleClasses(['Proof'], this.checked)" />
     <label for="proofs_checkbox">הוכחות</label>
-    <br />
-    <input type="checkbox" id="examples_checkbox" checked="checked" />
+    <input type="checkbox" checked="checked"  onclick="toggleMultipleClasses(['Example'], this.checked)" />
     <label for="examples_checkbox">דוגמאות</label>
-  </div>
+  </form>
 </body>
 </html>
