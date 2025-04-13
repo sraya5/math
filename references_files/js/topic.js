@@ -1,18 +1,19 @@
+function toggleMultipleClasses(classList, show) {
+    classList.forEach(className => {
+      const elements = document.querySelectorAll('.' + className);
+      elements.forEach(el => {
+        el.style.display = show ? '' : 'none';
+      });
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll(".Formula").forEach(el => {
         if (el.clientWidth > screen.width*0.8) {
             el.setAttribute("display", "none")
         }
     })
-
-    function toggleMultipleClasses(classList, show) {
-        classList.forEach(className => {
-          const elements = document.querySelectorAll('.' + className);
-          elements.forEach(el => {
-            el.style.display = show ? '' : 'none';
-          });
-        });
-    }
+    
 
     function toggleTailByClass(childClassName, parentClassName) {
         // Get all parent elements with the specified parent class
@@ -84,22 +85,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     treeView("Section")
-
-
-    const definitions = ["layout.Definition", "layout.Definition_"]
-    const definitions_checkbox = document.getElementById("definitions_checkbox");
-    definitions_checkbox.addEventListener("change", hideElemByClass(definitions_checkbox, definitions));
-
-    const examples = ["layout.Example", "layout.Example_"]
-    const examples_checkbox = document.getElementById("examples_checkbox");
-    examples_checkbox.addEventListener("change", hideElemByClass(examples_checkbox, examples));
-
-    const theorems = ["layout.Lemma", "layout.Claim", "layout.Theorem", "layout.Corollary",
-                        "layout.Lemma_", "layout.Claim_", "layout.Theorem_", "layout.Corollary_"]
-    const theorems_checkbox = document.getElementById("theorems_checkbox");
-    theorems_checkbox.addEventListener("change", hideElemByClass(theorems_checkbox, theorems));
-
-    const proofs = ["layout.Proof"]
-    const proofs_checkbox = document.getElementById("proofs_checkbox");
-    proofs_checkbox.addEventListener("change", hideElemByClass(proofs_checkbox, proofs));
 })
