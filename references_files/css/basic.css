@@ -135,6 +135,8 @@ span.size.large {font-size: large;}
 span.size.larger {font-size: x-large;}
 span.size.largest {font-size: xx-large;}
 
+span.color.black {color: light-dark(black, white)}
+span.color.white {color: light-dark(white, black)}
 span.color.blue {color: light-dark(blue, rgb(64, 64, 255))}
 span.color.brown {color: light-dark(brown, rgb(227, 63, 63))}
 span.color.cyan {color: cyan}
