@@ -83,7 +83,7 @@
       <topic en_name="Galois_theory" he_name="תורת גלואה" />
     </course>
   </branch>
-  <branch en_name="additional_branches" he_name="ענפים נוספים" divider="2">
+  <branch en_name="additional_branches" he_name="ענפים נוספים" divider="3">
     <course en_name="basic_subjects" he_name="נושאים בסיסיים">
       <topic en_name="naive_set_theory" he_name="תורת הקבוצות הנאיבית" />
       <topic en_name="fields" he_name="שדות" />
