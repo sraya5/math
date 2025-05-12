@@ -36,18 +36,24 @@
       <topic en_name="differentiability" he_name="דיפרנציאביליות" />
       <topic en_name="integrals" he_name="אינטגרלים" />
     </course>
-    <course en_name="complex_variables" course_number="80519" lecturer="אילון לינדנשטראוס" tutor="שאול (שאולי) רגימוב" semester="א' תשפ&quot;ד" he_name="פונקציות מרוכבות">
-      <import en_name="the_complex_numbers" he_name="המספרים המרוכבים" />
-      <topic en_name="introduction_for_complex_analysis" he_name="מבוא לאנליזה מרוכבת" />
-      <topic en_name="analytic_functions" he_name="פונקציות אנליטיות" />
-      <figures />
-    </course>
     <course en_name="analysis_on_manifolds" course_number="80416" lecturer="אור הרשקוביץ" tutor="אור קדר" semester="ב' תשפ&quot;ד" he_name="אנליזה על יריעות">
       <topic en_name="integrals_along_curves" he_name="אינטגרלים לאורך מסילות" />
       <topic en_name="integrals_on_manifolds" he_name="אינגרלים על יריעות" />
       <topic en_name="divergence_theorem" he_name="משפט הדיברגנץ" />
     </course>
     <course en_name="functional_analysis" course_number="80417" lecturer="שיא מאור" tutor="גיא ספיר" semester="ב' תשפ&quot;ד" he_name="אנליזה פונקציונלית">
+      <none en_name="none" he_name="הסיכומים עדיין לא נכתבו" />
+    </course>
+    <course en_name="complex_variables" course_number="80519" lecturer="אילון לינדנשטראוס" tutor="שאול (שאולי) רגימוב" semester="א' תשפ&quot;ד" he_name="פונקציות מרוכבות">
+      <import en_name="the_complex_numbers" he_name="המספרים המרוכבים" />
+      <topic en_name="introduction_for_complex_analysis" he_name="מבוא לאנליזה מרוכבת" />
+      <topic en_name="analytic_functions" he_name="פונקציות אנליטיות" />
+      <figures />
+    </course>
+    <course en_name="introduction_to_topology" course_number="80516" lecturer="שחר מוזס" tutor="דניאל יוסוב" semester="ב' תשפ&quot;ה" he_name="מבוא לטופולוגיה">
+      <none en_name="none" he_name="הסיכומים עדיין לא נכתבו" />
+    </course>
+    <course en_name="differential_equations" course_number="80320" lecturer="יונתן ברויאר" tutor="דניאל אופנר" semester="ב' תשפ&quot;ה" he_name="משוואות דיפנרציאליות">
       <none en_name="none" he_name="הסיכומים עדיין לא נכתבו" />
     </course>
   </branch>
