@@ -50,9 +50,6 @@
       <topic en_name="analytic_functions" he_name="פונקציות אנליטיות" />
       <figures />
     </course>
-    <course en_name="introduction_to_topology" course_number="80516" lecturer="שחר מוזס" tutor="דניאל יוסוב" semester="ב' תשפ&quot;ה" he_name="מבוא לטופולוגיה">
-      <none en_name="none" he_name="הסיכומים עדיין לא נכתבו" />
-    </course>
     <course en_name="differential_equations" course_number="80320" lecturer="יונתן ברויאר" tutor="דניאל אופנר" semester="ב' תשפ&quot;ה" he_name="משוואות דיפנרציאליות">
       <none en_name="none" he_name="הסיכומים עדיין לא נכתבו" />
     </course>
@@ -112,21 +109,31 @@
       <none en_name="none" he_name="הסיכומים עדיין לא נכתבו" />
     </course>
     <course en_name="probability_theory_1" course_number="80420" lecturer="אורי גוראל-גורביץ" tutor="אמיר בכר" semester="א' תשפ&quot;ה" he_name="תורת ההסתברות (1)">
-      <topic en_name="discrete_probability" he_name="הסתברות בדידה" />
+      <topic en_name="probability_spaces" he_name="מרחבי הסתברות" />
+      <topic en_name="random_variables" he_name="משתנים מקריים" />
+      <topic en_name="expected_value_and_variance" he_name="תוחלת ושונות" />
+      <topic en_name="sequences_of_distributions" he_name="סדרות של התפלגויות" />
+      <appendix en_name="common_distributions" he_name="התפלגויות נפוצות" />
       <figures />
+    </course>
+    <course en_name="introduction_to_topology" course_number="80516" lecturer="שחר מוזס" tutor="דניאל יוסוב" semester="ב' תשפ&quot;ה" he_name="מבוא לטופולוגיה">
+      <topic en_name="general_topology" he_name="טופולוגיה קבוצתית" />
+      <topic en_name="algebraic_topology" he_name="טופולוגיה אלגברית" />
     </course>
   </branch>
   <branch en_name="articles" he_name="מאמרים" divider="1">
     <course en_name="introductions" he_name="הקדמות">
       <topic en_name="introduction_for_university_mathematics" he_name="הקדמה למתמטיקה אוניברסיטאית" />
-      <topic en_name="introduction_for_linear_algebra" he_name="הקדמה לאלגברה לינארית" />
-      <topic en_name="about_areas_and_integrals" he_name="על שטחים ואינטגרלים" />
       <topic en_name="about_solving_equations_and_the_quadratic_formula" he_name="על פתרון משוואות ונוסחת השורשים" />
+      <topic en_name="introduction_for_linear_algebra" he_name="הקדמה לאלגברה לינארית" />
       <topic en_name="length,_angle_and_the_dot_product" he_name="אורך, זווית והמכפלה הסקלרית" />
+      <topic en_name="about_areas_and_integrals" he_name="על שטחים ואינטגרלים" />
     </course>
     <course en_name="Euclidean_geometry" he_name="גאומטריה אוקלידית">
-      <topic en_name="metric_of_rays" he_name="מטריקה של קרנות" />
-      <topic en_name="geometries" he_name="גאומטריות" />
+      <topic en_name="directed_spaces" he_name="מרחבים מכוונים" />
+      <topic en_name="ays_spaces" he_name="מרחבי קרנות" />
+      <topic en_name="absolute_geometry" he_name="גאומטריה מוחלטת" />
+      <topic en_name="parallel_postulate" he_name="אקסיומת המקבילים" />
     </course>
     <course en_name="extras" he_name="תוספות">
       <topic en_name="global_Cauchy_characterization_for_limit" he_name="תנאי קושי כללי לקיום גבול" />
