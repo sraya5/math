@@ -130,7 +130,7 @@
       <topic en_name="about_areas_and_integrals" he_name="על שטחים ואינטגרלים" />
     </course>
     <course en_name="Euclidean_geometry" he_name="גאומטריה אוקלידית">
-      <topic en_name="directed_spaces" he_name="מרחבים מכוונים" />
+      <topic en_name="1#directed_spaces_and_spherical_spaces" he_name="מרחבים מכוונים ומרחבים ספיריים" />
       <topic en_name="rays_spaces" he_name="מרחבי קרנות" />
       <topic en_name="absolute_geometry" he_name="גאומטריה מוחלטת" />
       <topic en_name="parallel_postulate" he_name="אקסיומת המקבילים" />
