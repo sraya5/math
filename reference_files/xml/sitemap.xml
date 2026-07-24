@@ -13,7 +13,10 @@
       <figures />
     </course>
     <course en_name="calculus_2" course_number="80132" lecturer="יורם לסט" tutor="דניאל אופנר ומתן בן-אשר" semester="א' תשפ&quot;ג" he_name="חשבון אינפיניטסימלי (2)">
-      <topic en_name="countable_sets_and_infinity_sums" he_name="קבוצות בנות מנייה וסכומים אין-סופיים" />
+      <title en_name="introductions" he_name="הקדמות">
+        <import en_name="countable_sets_and_infinity_sums" he_name="קבוצות בנות מנייה וסכומים אין-סופיים" />
+        <import en_name="about_areas_and_integrals" he_name="על שטחים ואינטגרלים" />
+      </title>
       <topic en_name="series" he_name="טורים" />
       <topic en_name="integrals" he_name="אינטגרלים" />
       <topic en_name="sequences_and_series_of_functions" he_name="סדרות וטורים של פונקציות" />
@@ -56,7 +59,7 @@
   </branch>
   <branch en_name="algebra" he_name="אלגברה" divider="2">
     <course en_name="linear_algebra_1" course_number="80134" lecturer="ערן נבו" tutor="איתמר ישראלי ושני שלומי" semester="ב' תשפ&quot;ג" he_name="אלגברה לינארית (1)">
-      <title en_name="basic_subjects" he_name="נושאים בסיסיים">
+      <title en_name="basic_subjects" he_name="נושאים בסיסיים והקדמה">
         <import en_name="naive_set_theory" he_name="תורת הקבוצות הנאיבית" />
         <import en_name="fields" he_name="שדות" />
         <import en_name="introduction_for_linear_algebra" he_name="הקדמה לאלגברה לינארית" />
@@ -130,10 +133,7 @@
       <topic en_name="about_areas_and_integrals" he_name="על שטחים ואינטגרלים" />
     </course>
     <course en_name="Euclidean_geometry" he_name="גאומטריה אוקלידית">
-      <topic en_name="directed_spaces" he_name="מרחבים מכוונים" />
-      <topic en_name="rays_spaces" he_name="מרחבי קרנות" />
-      <topic en_name="absolute_geometry" he_name="גאומטריה מוחלטת" />
-      <topic en_name="parallel_postulate" he_name="אקסיומת המקבילים" />
+      <topic en_name="betweenness" he_name="יחס הביניים" />
     </course>
     <course en_name="extras" he_name="תוספות">
       <topic en_name="global_Cauchy_characterization_for_limit" he_name="תנאי קושי כללי לקיום גבול" />
